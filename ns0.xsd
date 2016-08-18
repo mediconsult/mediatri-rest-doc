@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="laakitysAnto" type="laakitysAnto"/>
+  <xs:element name="tutkimuspyynto" type="tutkimuspyynto"/>
+  <xs:element name="tutkimuspyyntoHerkkyys" type="tutkimuspyyntoHerkkyys"/>
+  <xs:element name="tutkimuspyyntoMikrobi" type="tutkimuspyyntoMikrobi"/>
+  <xs:element name="tutkimuspyyntoTiedot" type="tutkimuspyyntoTiedot"/>
+  <xs:element name="hoito" type="hoito"/>
+<xs:complexType name="abstractDTO" abstract="true">
+ </xs:complexType>
+
+<xs:complexType name="laakitysAnto">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakitysAnto.
+
+* A class to present LAAKITYS_ANTO table in medication functionality.
+Used to carry the data from database to the client side.
+
+<table style="border: 1px solid black;">
+<tr><th>property</th><th>only for frontend</th><th>obligatory from api</th><th>editable</th><th>must be same as laakityshistorias</th></tr>
+<tr><td>antaja</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr>
+<tr><td>huomautuksia</td><td>no</td><td>no</td><td>yes</td><td>no</td></tr>
+<tr><td>kello</td><td>no</td><td>yes (in planned)</td><td>yes</td><td>yes (all in one field)</td></tr>
+<tr><td>kirjaaja</td><td>no</td><td>no (added by api)</td><td>no</td><td>no</td></tr>
+<tr><td>laake</td><td>yes</td><td>no (added by api)</td><td>no</td><td>yes</td></tr>
+<tr><td>maara</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr>
+<tr><td>muutosAika</td><td>no</td><td>no (added by api)</td><td>no</td><td>no</td></tr>
+<tr><td>omistaja</td><td>no</td><td>yes (doublechecked)</td><td>no</td><td>yes</td></tr>
+<tr><td>osa</td><td>no</td><td>yes (doublechecked)</td><td>no</td><td>yes</td></tr>
+<tr><td>poistettu</td><td>no</td><td>no (added by api)</td><td>no</td><td>no</td></tr>
+<tr><td>toteutunutAika</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr>
+<tr><td>toteutunutAikaOriginal</td><td>no</td><td>yes (only for editing)</td><td>no</td><td>no</td></tr>
+<tr><td>toteutunutAikaLoppu</td><td>no</td><td>no</td><td>yes</td><td>no</td></tr>
+<tr><td>tyyppi</td><td>no</td><td>yes</td><td>no</td><td>no</td></tr>
+<tr><td>yksikko</td><td>no</td><td>yes (doublechecked)</td><td>no</td><td>yes</td></tr>
+<tr><td>kirjaajaName</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>antajaName</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>annettavaMaara</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>annettavaYksikko</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>annettavaMaksimi</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+</table>]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="antaja" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the id of the medication giver]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="huomautuksia" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the observetion comments related to the medication giving]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kirjaaja" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the id of the actual person that fed this info to the DB/system]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="laake" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the laake VNR. VNR is a code that is used to identify the medication. @see http://www.laaketietokeskus.fi/vnr]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="maara" type="xs:float" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the medication amount]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="omistaja" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the owner ie. patients mediatri id.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="osa" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Retuns the part number that is the id of the medication together with alku and omistaja]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the code of the medication time removal. 'E' - not removed, 'K' = removed]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="suunniteltuAika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the planned time for medication. Tells which time the medication should be given]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="toteutunutAika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the actual time of medication. Mapped from PK id ALKU]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tyyppi" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the type of LaakitysAnto object, 1 = planned and given, 2 = planned but not yet given, 3 = extra]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="yksikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the used unit. ml, l, etc.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kirjaajaName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the name of the actual person that fed this info to the DB/system]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="antajaName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the name of the medication giver]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="annettavaMaara" type="xs:decimal" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the base amount that is given if swiped. Also the lower border of the amount.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="annettavaYksikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the base unit that is described by laakityshistoria.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="annettavaMaksimi" type="xs:decimal" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the uuper border of the amount.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="toteutunutAikaOriginal" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Original time of medication. mapped from PK id ALKU. This PK is modified so to find the modifiable row the old row must be also given.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tutkimuspyynto">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LabExamination
+
+A class to present TUTKIMUSPYYNTO table in laboratory examination functionality.
+Used to carry the data from database to the client side.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="tutkimus" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the name of the Tutkimus]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tutkimuspyyntoTiedotList" type="tutkimuspyyntoTiedot" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns a list of Tutkimus details under the same tutkimus name]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kategoria" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the category of the tutkimus. Category could be
+"tilattu", "kuittaamaton" or "tulos"]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="latestTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tutkimuspyyntoHerkkyys">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for TutkimuspyyntoHerkkyys
+
+A class to present TUTKIMUSPYYNTOHERKKYYS table in laboratory examination functionality.
+Used to carry the data from database to the client side.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="rivi" type="xs:short" minOccurs="1">
+              </xs:element>
+              <xs:element name="antibiootti" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="kiekkoherkkyys" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="micherkkyys" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="lyhenne" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="numero" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="ryhma" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tutkimuspyyntoMikrobi">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for Lab Examination Microbe
+
+A class to present TUTKIMUSPYYNTOMIKROBI table in laboratory examination functionality.
+Used to carry the data from database to the client side.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="rivi" type="xs:short" minOccurs="1">
+              </xs:element>
+              <xs:element name="mikrobi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tutkimustyyppi" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="maara" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="numero" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="kommentti" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:short" minOccurs="1">
+              </xs:element>
+              <xs:element name="herkkyydet" type="tutkimuspyyntoHerkkyys" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tutkimuspyyntoTiedot">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for Lab Examination Details
+
+A class to present TUTKIMUSPYYNTO table in laboratory examination functionality.
+Used to carry the data from database to the client side.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="pyynto" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the pyynto id]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="rivi" type="xs:short" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the row number]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tutkimus" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the Tutkimus name]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="versio" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the version]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="hajautettu" type="xs:unsignedShort" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the char value for Hajautettu]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="hoitojakso" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the Hoitojakso]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="huomautuksia" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the notifications]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kontrolloitava" type="date" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the possible control date]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="korvausluokka" type="xs:unsignedShort" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the korvausluokka]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kunta" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the county council]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kustannuslinkki" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the Kustannuslinkki]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lisatietoja" type="xs:unsignedShort" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the info about if there is some extra information]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lomakelinkki" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the Lomakelinkki]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="maksaja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the payer]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="mikrobitietoja" type="xs:unsignedShort" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the info about if there is Mikrobitietoja available]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the time of change]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:short" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the place of change]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="nayte" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the sample]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="naytetietoja" type="xs:unsignedShort" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the info about if there is sample information]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="numerotulos" type="xs:double" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the result in numeric format]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="numeroyksikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the unit of the result]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="osalinkki" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the Osalinkki]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="osasto" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the department]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="ottoaika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the time when the lab examination is done]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="paketti" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the package]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="piiri" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the V?est?vastuupiiri]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="poistettu" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the info about if the result is removed]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="pyydetty" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the time when the lab examination is ordered]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="sanallinenvastaus" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the verbal result]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="sijaintiosasto" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the location (department)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="sijaintipaikka" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the location (place)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="sisainenMaksaja" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the internal payer]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="suoritelinkki" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the Suoritelinkki]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tehty" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the time when lab examination is done]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tekopaikka" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the place where lab examination is done]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tekstitulos" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the result in textual format]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tekstiviesti" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the SMS]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tila" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the state]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tilaaja" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the orderer]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tilaajaNimi" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the name of the orderer]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tilaajayksikko" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the unit of the orderer]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tilaustunnus" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the identifier of the order]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="toistoloppuu" type="date" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the date when the repetition ends]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="toistovali" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the interval of the repetition]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tulkinta" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the interpretation]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tuottaja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the producer]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tyonantaja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the employer]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="vastaustietoja" type="xs:unsignedShort" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the info about if there is Vastaustietoja available]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="viitearvot" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the Viitearvot, which contains min and max values for the
+result. Result is normal, if the value is between the min and max values.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kirjaaja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Return the recorder of the result]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tilaKoodi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="poikkeava" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="mikrobit" type="tutkimuspyyntoMikrobi" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="hoito">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for Hoito
+
+A class to present HOITO table in hoito-ohjeet ja -m??r?ykset functionality.
+Used to carry the data from database to the client side.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="alkaa" type="date" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the alkaa date]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="loppuu" type="date" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the loppuu date]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="maaraaja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the maaraaja id]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tekija" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the tekija id]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="otsikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the header (otsikko)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="vakio" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the constant string (vakio)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="vapaa" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the free string (vapaa)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="huomautuksia" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the notifications (huomautuksia)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kellonajat" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the times as a string]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kirjaaja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the recorder (kirjaaja)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lopettaja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the ender (lopettaja)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lopetettu" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the time of ending (lopetettu)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kerta" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the type of Hoito (K = kertaluonteinen, E = pysyv?)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tehty" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the time when Hoito is done]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lomake" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the used form (lomake)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="rivi" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the row number (rivi)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the time of change]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="maaraajaNimi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="kirjaajaNimi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tekijaNimi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="lopettajaNimi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="lomakeNimi" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="date">
+  <xs:simpleContent>
+    <xs:extension base="xs:dateTime">
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+</xs:schema>

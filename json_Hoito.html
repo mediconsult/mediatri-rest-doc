@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Mediatri REST: Hoito</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Mediatri REST: Hoito</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+          <li><a href="downloads.html">Files and Libraries</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="syntax_json.html">JSON</a></li>
+          <li class="dropdown"><a href="json_Hoito.html">Hoito</a></li>
+        </ol>
+
+      <h1 class="page-header">Hoito <small>Data Type</small></h1>
+
+      <p>DTO for Hoito
+
+A class to present HOITO table in hoito-ohjeet ja -m��r�ykset functionality.
+Used to carry the data from database to the client side.</p>
+
+      <dl class="dl-horizontal">
+      </dl>
+
+      <table class="table">
+        <caption>Properties</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>data type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>  alkaa
+</td>
+          <td>  <a href="json_Date.html">Date</a>
+
+</td>
+          <td>  Returns the alkaa date
+</td>
+        </tr>
+        <tr>
+          <td>  loppuu
+</td>
+          <td>  <a href="json_Date.html">Date</a>
+
+</td>
+          <td>  Returns the loppuu date
+</td>
+        </tr>
+        <tr>
+          <td>  maaraaja
+</td>
+          <td>  number
+
+</td>
+          <td>  Returns the maaraaja id
+</td>
+        </tr>
+        <tr>
+          <td>  tekija
+</td>
+          <td>  number
+
+</td>
+          <td>  Returns the tekija id
+</td>
+        </tr>
+        <tr>
+          <td>  otsikko
+</td>
+          <td>  string
+
+</td>
+          <td>  Returns the header (otsikko)
+</td>
+        </tr>
+        <tr>
+          <td>  vakio
+</td>
+          <td>  string
+
+</td>
+          <td>  Returns the constant string (vakio)
+</td>
+        </tr>
+        <tr>
+          <td>  vapaa
+</td>
+          <td>  string
+
+</td>
+          <td>  Returns the free string (vapaa)
+</td>
+        </tr>
+        <tr>
+          <td>  huomautuksia
+</td>
+          <td>  string
+
+</td>
+          <td>  Returns the notifications (huomautuksia)
+</td>
+        </tr>
+        <tr>
+          <td>  kellonajat
+</td>
+          <td>  string
+
+</td>
+          <td>  Returns the times as a string
+</td>
+        </tr>
+        <tr>
+          <td>  kirjaaja
+</td>
+          <td>  number
+
+</td>
+          <td>  Returns the recorder (kirjaaja)
+</td>
+        </tr>
+        <tr>
+          <td>  lopettaja
+</td>
+          <td>  number
+
+</td>
+          <td>  Returns the ender (lopettaja)
+</td>
+        </tr>
+        <tr>
+          <td>  lopetettu
+</td>
+          <td>  number
+
+</td>
+          <td>  Returns the time of ending (lopetettu)
+</td>
+        </tr>
+        <tr>
+          <td>  kerta
+</td>
+          <td>  object
+
+</td>
+          <td>  Returns the type of Hoito (K = kertaluonteinen, E = pysyv�)
+</td>
+        </tr>
+        <tr>
+          <td>  tehty
+</td>
+          <td>  number
+
+</td>
+          <td>  Returns the time when Hoito is done
+</td>
+        </tr>
+        <tr>
+          <td>  lomake
+</td>
+          <td>  number
+
+</td>
+          <td>  Returns the used form (lomake)
+</td>
+        </tr>
+        <tr>
+          <td>  rivi
+</td>
+          <td>  number
+
+</td>
+          <td>  Returns the row number (rivi)
+</td>
+        </tr>
+        <tr>
+          <td>  muutosaika
+</td>
+          <td>  number
+
+</td>
+          <td>  Returns the time of change
+</td>
+        </tr>
+        <tr>
+          <td>  maaraajaNimi
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kirjaajaNimi
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  tekijaNimi
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  lopettajaNimi
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  lomakeNimi
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Example</p>
+
+      <pre class="prettyprint lang-js">{
+  &quot;alkaa&quot; : { },
+  &quot;loppuu&quot; : { },
+  &quot;maaraaja&quot; : 12345,
+  &quot;tekija&quot; : 12345,
+  &quot;otsikko&quot; : &quot;...&quot;,
+  &quot;vakio&quot; : &quot;...&quot;,
+  &quot;vapaa&quot; : &quot;...&quot;,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;kellonajat&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;lopettaja&quot; : 12345,
+  &quot;lopetettu&quot; : 12345,
+  &quot;kerta&quot; : { },
+  &quot;tehty&quot; : 12345,
+  &quot;lomake&quot; : 12345,
+  &quot;rivi&quot; : 12345,
+  &quot;muutosaika&quot; : 12345,
+  &quot;maaraajaNimi&quot; : &quot;...&quot;,
+  &quot;kirjaajaNimi&quot; : &quot;...&quot;,
+  &quot;tekijaNimi&quot; : &quot;...&quot;,
+  &quot;lopettajaNimi&quot; : &quot;...&quot;,
+  &quot;lomakeNimi&quot; : &quot;...&quot;
+}</pre>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

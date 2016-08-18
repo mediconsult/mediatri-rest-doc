@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Mediatri REST</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Mediatri REST</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+          <li><a href="downloads.html">Files and Libraries</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#syntax_json">JSON</a></li>
+          <li><a href="#syntax_xml">XML</a></li>
+          <li class="divider"></li>
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="dropdown"><a href="index.html">Home</a></li>
+        </ol>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Mediatri REST</h1><p>This is Mediatri REST spesification 2016.05. This is work-in-progress documentation that Mediconsult also uses internally.</p>
+    </div>
+  </div>
+
+  <h1 class="page-header" id="resources">Resources</h1>
+
+  <p>
+    The resources use a data model that is supported by a set of client-side libraries that are made available on the
+    <a href="downloads.html">files and libraries</a> page.
+  </p>
+
+  <p>
+    There is a <a href="application.wadl">WADL document</a> available that describes the resources API.
+  </p>
+
+  <p>
+    You may also enjoy the <a href="ui/index.html">Swagger UI</a> provided for this API.
+  </p>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th align="center">name</th>
+      <th align="center">path</th>
+      <th align="center">methods</th>
+      <th align="center">description</th>
+    </tr>
+    </thead>
+    <tbody data-link="row" class="rowlink">
+    <tr class="clickable-row" data-href="resource_AdminResource.html">
+      <td>  AdminResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /admin/clearcache
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for various admin tasks like clearing cache onfly.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_AuthenticationResource.html">
+      <td>  AuthenticationResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /authentication/contextLogin
+</samp></li><li><samp>  /authentication/identity
+</samp></li><li><samp>  /authentication/login
+</samp></li><li><samp>  /authentication/logout
+</samp></li><li><samp>  /authentication/ping
+</samp></li><li><samp>  /authentication/plannerRights
+</samp></li><li><samp>  /authentication/role
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  POST
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET, POST
+</samp></li><li><samp>  GET, POST
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  POST
+</samp></li></ul></td>
+      <td>  Service for authentication
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_ClientLogResource.html">
+      <td>  ClientLogResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /log/error
+</samp></li><li><samp>  /log/info
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  POST
+</samp></li><li><samp>  POST
+</samp></li></ul></td>
+      <td>  Service for client logs
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_ExtKurssiResource.html">
+      <td>  ExtKurssiResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /ext/kurssit/list
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li></ul></td>
+      <td>  Rest service for ExtKurssiService for getting kurssi-information for patients
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_FysiologisetMittauksetResource.html">
+      <td>  FysiologisetMittauksetResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /measurements/config
+</samp></li><li><samp>  /measurements/{id}
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for measurements (Fysiologiset mittaukset)
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_HoitoResource.html">
+      <td>  HoitoResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /hoidot/{id}
+</samp></li><li><samp>  /hoidot/{id}/done
+</samp></li><li><samp>  /hoidot/{id}/end
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  PUT
+</samp></li><li><samp>  PUT
+</samp></li></ul></td>
+      <td>  REST API for Hoito (Hoito-ohjeet ja m��r�ykset)
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_HoitotyoResource.html">
+      <td>  HoitotyoResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /hoitotyo/asetukset
+</samp></li><li><samp>  /hoitotyo/{id}/asetukset
+</samp></li><li><samp>  /hoitotyo/{id}/current
+</samp></li><li><samp>  /hoitotyo/{patientOmistajaId}/{osaId}
+</samp></li><li><samp>  /hoitotyo/{patientOmistajaId}/merkinta/{osaId}
+</samp></li><li><samp>  /hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta
+</samp></li><li><samp>  /hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  POST
+</samp></li><li><samp>  POST
+</samp></li></ul></td>
+      <td>  API for hoitotyonmerkinnat
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_LaakitysHistoriaResource.html">
+      <td>  LaakitysHistoriaResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /medication/{id}
+</samp></li><li><samp>  /medication/{id}/part/{osa}/time
+</samp></li><li><samp>  /medication/{id}/part/{osa}/times
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  DELETE, POST, PUT
+</samp></li><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for medication
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_LaakitysResource.html">
+      <td>  LaakitysResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /medicationlist/{id}
+</samp></li><li><samp>  /medicationlist/medicine/{code}
+</samp></li><li><samp>  /medicationlist/medicine/atc/{atc}
+</samp></li><li><samp>  /medicationlist/medicine/name/{name}
+</samp></li><li><samp>  /medicationlist/medicine/therapygroup/{therapygroup}
+</samp></li><li><samp>  /medicationlist/history/{omistaja}/part/{osa}
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for Laakitys component
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_MedicalRecordsResource.html">
+      <td>  MedicalRecordsResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /medicalreports/config
+</samp></li><li><samp>  /medicalreports/lock
+</samp></li><li><samp>  /medicalreports/unlock
+</samp></li><li><samp>  /medicalreports/{id}
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  PUT
+</samp></li><li><samp>  PUT
+</samp></li><li><samp>  GET, POST, PUT
+</samp></li></ul></td>
+      <td>  REST API for kertomukset
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_MetadataResource.html">
+      <td>  MetadataResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /metadata
+</samp></li><li><samp>  /metadata/{groupID}
+</samp></li><li><samp>  /metadata/{groupID}/{metadataID}
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for metadata
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_OsastokarttaResource.html">
+      <td>  OsastokarttaResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /osastokartta
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for osastokartta.
+
+There is only one osastokartta-configuration in Mediatri for logged in user and thus this resource has only one GET accesspoint without any parameters.
+Osastokartta contains list of osastolistat which are separate maps in different osasto.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PalvelupaatosResource.html">
+      <td>  PalvelupaatosResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /palvelupaatos/keskeytyssyyt
+</samp></li><li><samp>  /palvelupaatos/palveluluokat
+</samp></li><li><samp>  /palvelupaatos/patient/{id}
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for palvelupaatokses.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PalvelutapahtumaResource.html">
+      <td>  PalvelutapahtumaResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /palvelutapahtuma
+</samp></li><li><samp>  /palvelutapahtuma/id
+</samp></li><li><samp>  /palvelutapahtuma/listavailableforcarerelation
+</samp></li><li><samp>  /palvelutapahtuma/select
+</samp></li><li><samp>  /palvelutapahtuma/aktiivinen/{id}
+</samp></li><li><samp>  /palvelutapahtuma/hoitojakso/{patientId}
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  POST
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for patients
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PatientResource.html">
+      <td>  PatientResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /patients/list
+</samp></li><li><samp>  /patients/listed
+</samp></li><li><samp>  /patients/search
+</samp></li><li><samp>  /patients/id/{id}
+</samp></li><li><samp>  /patients/ssn/{ssn}
+</samp></li><li><samp>  /patients/id/{id}/basicinfos
+</samp></li><li><samp>  /patients/id/{id}/courses
+</samp></li><li><samp>  /patients/id/{id}/lists
+</samp></li><li><samp>  /patients/id/{id}/riskistatus
+</samp></li><li><samp>  /patients/ssn/{ssn}/basicinfos
+</samp></li><li><samp>  /patients/ssn/{ssn}/lists
+</samp></li><li><samp>  /patients/id/{omistajaId}/list/{listId}
+</samp></li><li><samp>  /patients/ssn/{ssn}/list/{listId}
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET, PUT
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for patients
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PingResource.html">
+      <td>  PingResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /ping
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li></ul></td>
+      <td>  Simple server ping resource that mobile applications can use for heartbeat. Mobile applications can enable "offline mode" when connection to this resource is lost.
+GET
+/ping returns String "OK"
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_RiskitietoResource.html">
+      <td>  RiskitietoResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /riskit/{id}
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for riskitiedot
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_SeurantaResource.html">
+      <td>  SeurantaResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /seuranta/config
+</samp></li><li><samp>  /seuranta/{id}
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET, POST
+</samp></li></ul></td>
+      <td>  REST API for seuranta
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_TitleResource.html">
+      <td>  TitleResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /titles/component/{id}
+</samp></li><li><samp>  /titles/{name}/config
+</samp></li><li><samp>  /titles/{name}/options
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for title resource. Supported operations:
+GET
+titles/{title name}/config returns configuration for the titles
+titles/{title name}/options returns list of available values for the title
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_TutkimuspyyntoResource.html">
+      <td>  TutkimuspyyntoResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /labs/{id}
+</samp></li><li><samp>  /labs/{id}/acknowledge
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  PUT
+</samp></li></ul></td>
+      <td>  REST API for laboratory examinations
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_UnitResource.html">
+      <td>  UnitResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /units/{id}
+</samp></li><li><samp>  /units/{id}/basicinfos
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for users
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_UserResource.html">
+      <td>  UserResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /users/availability
+</samp></li><li><samp>  /users/groups
+</samp></li><li><samp>  /users/list
+</samp></li><li><samp>  /users/listed
+</samp></li><li><samp>  /users/listedWithAvailability
+</samp></li><li><samp>  /users/search
+</samp></li><li><samp>  /users/{id}
+</samp></li><li><samp>  /users/{id}/availability
+</samp></li><li><samp>  /users/{id}/basicinfos
+</samp></li><li><samp>  /users/{id}/lists
+</samp></li><li><samp>  /users/{id}/skills
+</samp></li><li><samp>  /users/{id}/timeRules
+</samp></li><li><samp>  /users/{id}/timeRules/{ruleId}
+</samp></li><li><samp>  /users/{omistajaId}/list/{listId}
+</samp></li><li><samp>  /users/{id}/timeRules/{ruleId}/instances/{instanceId}
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET, PUT
+</samp></li><li><samp>  GET, POST
+</samp></li><li><samp>  DELETE, PUT
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  DELETE, PUT
+</samp></li></ul></td>
+      <td>  REST API for users
+</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h1 class="page-header" id="data">Data Types</h1>
+
+  <h3 id="syntax_json">JSON</h3>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th align="center">type</th>
+        <th align="center">description</th>
+      </tr>
+    </thead>
+    <tbody data-link="row" class="rowlink">
+    <tr class="clickable-row" data-href="json_ACLPerm.html">
+      <td>  ACLPerm
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_AbstractDTO.html">
+      <td>  AbstractDTO
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_AvailabilityDto.html">
+      <td>  AvailabilityDto
+</td>
+      <td>  Data transfer object for workers' availability information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_BaseModel.html">
+      <td>  BaseModel
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_BaseTitleValue.html">
+      <td>  BaseTitleValue
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_BasicInfo.html">
+      <td>  BasicInfo
+</td>
+      <td>  DTO for BasicInfo (Perustieto).
+Bound to ViewTitleValue class.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_BasicInfoCategory.html">
+      <td>  BasicInfoCategory
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CalendarContextDto.html">
+      <td>  CalendarContextDto
+</td>
+      <td>  Data transfer object for calendar context related fields, utilized to control the visibility of events and courses.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CalendarDomainRightsAndSettings.html">
+      <td>  CalendarDomainRightsAndSettings
+</td>
+      <td>  Data transfer object for calendarForm domain rights and settings.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CalendarEventContentGroupDto.html">
+      <td>  CalendarEventContentGroupDto
+</td>
+      <td>  Data transfer object class for user defined content groups in calendar events.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CalendarEventContentGroupItemDto.html">
+      <td>  CalendarEventContentGroupItemDto
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CalendarEventDto.html">
+      <td>  CalendarEventDto
+</td>
+      <td>  Data transfer object for calendar events.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ClientTitleConfig.html">
+      <td>  ClientTitleConfig
+</td>
+      <td>  Title class is used in edit and view models to represent a title for different components.
+Also this class is used as title configuration in different component config
+like KertomusComponentConfig or FysiologinenMittaus.
+The class contains the value as the object of the class derived from  @BaseTitleValue.
+fi.mediconsult.core.internal.titles.presentations package contains the available value for the titles depending from title type.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ContentGroupDto.html">
+      <td>  ContentGroupDto
+</td>
+      <td>  Represents Content Groups in EventModelDto
+
+Example:
+
+<pre>
+<code>
+{
+id: 1,
+name: "Perustiedot",
+type: "SYSTEM_DEFINED"
+}
+</code>
+</pre>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ContentGroupType.html">
+      <td>  ContentGroupType
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ContentGroupVisibility.html">
+      <td>  ContentGroupVisibility
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CoreAuthenticationDTO.html">
+      <td>  CoreAuthenticationDTO
+</td>
+      <td>  DTO object for authentication purposes. This DTO is returned when logging in with REST.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CourseCollectionDto.html">
+      <td>  CourseCollectionDto
+</td>
+      <td>  Data transfer object representing list of courses and associated course data for each course
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CourseCustomerDto.html">
+      <td>  CourseCustomerDto
+</td>
+      <td>  Dto representing a customer attending a course period.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CourseDto.html">
+      <td>  CourseDto
+</td>
+      <td>  Data transfer object for course data
+
+Examle of course JSON without any "child" dtos:
+<pre>
+ {
+   "courses":[
+      {
+         "created":1444210792000,
+         "id":1,
+         "name":"kela aslak",
+         "abbr":"ka",
+         "status":"DRAFT",
+         "periods":[  ],
+         "tags":[
+            {  },
+            {  }
+         ]
+      }
+   ]
+}
+</pre>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CourseNamedGroupDto.html">
+      <td>  CourseNamedGroupDto
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CoursePeriodDto.html">
+      <td>  CoursePeriodDto
+</td>
+      <td>  Data transfer object representing course period data.
+Can be used alone or part of CourseDto
+
+Example:
+
+<pre>
+ "periods":[
+            {
+               "created":1444213751000,
+               "modified":1444214056000,
+               "id":1,
+               "name":"aloitus jakso",
+               "abbr":"aj",
+               "startTime":1444251599000,
+               "endTime":1444510799000,
+               "minAttendees":5,
+               "maxAttendees":10,
+               "status":"DRAFT",
+               "customers":[
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  }
+               ]
+            },
+            {
+               "created":1444213783000,
+               "modified":1444214056000,
+               "id":2,
+               "name":"keskijakso",
+               "abbr":"kj",
+               "startTime":1445288399000,
+               "endTime":1445633999000,
+               "minAttendees":7,
+               "maxAttendees":20,
+               "status":"DRAFT",
+               "customers":[
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  }
+               ]
+            },
+            {
+               "created":1444213814000,
+               "modified":1444214056000,
+               "id":3,
+               "name":"loppu jakso",
+               "abbr":"lj",
+               "startTime":1446501599000,
+               "endTime":1446847199000,
+               "minAttendees":5,
+               "maxAttendees":15,
+               "status":"DRAFT",
+               "customers":[
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  }
+               ]
+            }
+         ],
+
+ </pre>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Date.html">
+      <td>  Date
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EditTitleValue.html">
+      <td>  EditTitleValue
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Employee.html">
+      <td>  Employee
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EquipmentRequirement.html">
+      <td>  EquipmentRequirement
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventCategory.html">
+      <td>  EventCategory
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventCoursePeriodDto.html">
+      <td>  EventCoursePeriodDto
+</td>
+      <td>  Data transfer object for event course period information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventCustomerDto.html">
+      <td>  EventCustomerDto
+</td>
+      <td>  Data transfer object for event customer information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventDto.html">
+      <td>  EventDto
+</td>
+      <td>  Data transfer object for events.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventMissingResourcesDto.html">
+      <td>  EventMissingResourcesDto
+</td>
+      <td>  Data transfer object for missing resource information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventModelBasicInfo.html">
+      <td>  EventModelBasicInfo
+</td>
+      <td>  Represents one Perustiedot otsikko, connected to Tapahtuman perustiedot
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventModelDto.html">
+      <td>  EventModelDto
+</td>
+      <td>  Data transfer object for event models.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventOverlapConflictDto.html">
+      <td>  EventOverlapConflictDto
+</td>
+      <td>  Data transfer object for resource conflict information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventParticipantDto.html">
+      <td>  EventParticipantDto
+</td>
+      <td>  Data transfer object for event participant information (worker and customer base).
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventResourceDto.html">
+      <td>  EventResourceDto
+</td>
+      <td>  Data transfer object for event resource information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventStatus.html">
+      <td>  EventStatus
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventWorkerDto.html">
+      <td>  EventWorkerDto
+</td>
+      <td>  Data transfer object for event worker information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ExtendFormInfo.html">
+      <td>  ExtendFormInfo
+</td>
+      <td>  DTO class to present information about lomake from Lomake table.
+This class extends FormInfo.
+This class is not designed to use in Json model and can be built only from ILomakeGetters class using build method
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_FormInfo.html">
+      <td>  FormInfo
+</td>
+      <td>  DTO for representing Mediatri form related information
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_FormRights.html">
+      <td>  FormRights
+</td>
+      <td>  Data transfer object for Mediatri form rights information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_FormTypeInfo.html">
+      <td>  FormTypeInfo
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_FreeContentGroupItem.html">
+      <td>  FreeContentGroupItem
+</td>
+      <td>  DTO information for one vapaa sis�lt�ryhm�
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_FysiologinenMittaus.html">
+      <td>  FysiologinenMittaus
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_FysiologisetMittauksetView.html">
+      <td>  FysiologisetMittauksetView
+</td>
+      <td>  Basic DTO model for physiological measurements.
+This class includes list of measurements objects which are the instances of FysiologinenMittaus.
+MittausComponentConfig class presents the configuration used in adding new measurements.
+This configuration includes the list of kertomusteksti forms and main titles configured for every form.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_GenericOmistaja.html">
+      <td>  GenericOmistaja
+</td>
+      <td>  Unit, Patient and User inherits this. They all are Mediatri omistajas with same set of properties (but bit different API and business rules)
+
+Generic omistaja DTO representative class that forms a concrete object instance that presents omistaja without binding directly to concrete
+leaf class (patient, unit etc.) in inheritance hierarchy.
+
+This class also provides common code base for creating new skeletal omistaja leaf classes that do not yet have any business
+logic at start (but business logic is added as development proceeds naturally).
+
+Each omistajatyyppi leaf-class should be sub-classed directly from this class.
+
+
+This class can be also used as generic omistaja instance, in case no proper leaf class for the omistajatyyppi yet exists.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Hoidot.html">
+      <td>  Hoidot
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Hoito.html">
+      <td>  Hoito
+</td>
+      <td>  DTO for Hoito
+
+A class to present HOITO table in hoito-ohjeet ja -m��r�ykset functionality.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Hoitojakso.html">
+      <td>  Hoitojakso
+</td>
+      <td>  Hoitojakso DTO
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Hoitosuhde.html">
+      <td>  Hoitosuhde
+</td>
+      <td>  This DTO contains information about user&lt;-&gt;patient hoitosuhde
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Hoitotyo.html">
+      <td>  Hoitotyo
+</td>
+      <td>  This DTO contains information about one hoitotyon merkint� record
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Hoitotyoasetukset.html">
+      <td>  Hoitotyoasetukset
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Hoitotyomerkinta.html">
+      <td>  Hoitotyomerkinta
+</td>
+      <td>  This DTO contains information about one hoitotyon merkint� record
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_IdNamePair.html">
+      <td>  IdNamePair
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_KertomuksetView.html">
+      <td>  KertomuksetView
+</td>
+      <td>  DTO model for general medical record(kertomus) component.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_KertomusComponentConfig.html">
+      <td>  KertomusComponentConfig
+</td>
+      <td>  Class to present general configuration for kertomus component.
+
+Configuration includes two parts:
+<ul>
+<li>available kertomus form configurations KertomusFormConfig used on the client for every lomake of type Lomakeluokka#KERTOMUSTEKSTI.
+<p>This configuration includes name of the titles with any information about types and titles configuration. </p></li>
+<li>Title's configuration map which contains client configurations ClientTitleConfig for all titles available for the component:</li>
+</ul>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_KertomusEntryEdit.html">
+      <td>  KertomusEntryEdit
+</td>
+      <td>  DTO model for kertomus edit.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_KertomusEntryView.html">
+      <td>  KertomusEntryView
+</td>
+      <td>  DTO model for kertomus view.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_KertomusFormConfig.html">
+      <td>  KertomusFormConfig
+</td>
+      <td>  Configuration for one kertomus lomake.
+
+The list of main titles for every form is fetched from asetus table.
+Asetus for main titles has following format in asetus table:
+- asetus: 'P��%'
+- teksti: name of p��otsikko
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_KertomusID.html">
+      <td>  KertomusID
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_KertomusTilaEnum.html">
+      <td>  KertomusTilaEnum
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Koodisto.html">
+      <td>  Koodisto
+</td>
+      <td>  Simple koodisto for sending koodisto to client side.
+
+This is has special mapping in jacksonconfigurator- &gt; it parses the koodisto to quick-json.
+Koodisto can have headers and values and first column is used as access-key for json.
+
+Headers is optional.
+
+Example:
+
+<pre>
+ | id | short name | long name |
+ | 1  | YLE        | Yleisl��ketiede |
+ | 2  | PSY        | Psykiatria |
+ </pre>
+becomes:
+<pre>
+{
+otsikot: [short name, long name],
+koodisto: {
+1:[YLE, Yleisl��ketiede],
+2:[PSY, Psykiatria]
+}
+</pre>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_KuhaDtoBase.html">
+      <td>  KuhaDtoBase
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_KuhaDtoNameBase.html">
+      <td>  KuhaDtoNameBase
+</td>
+      <td>  Base class for data transfer objects for objects with name/abbreviation/description data.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Laake.html">
+      <td>  Laake
+</td>
+      <td>  DTO for Laake, data base table LAAKE_VALMISTE
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeAine.html">
+      <td>  LaakeAine
+</td>
+      <td>  DTO for LaakeAine, data base table LAAKE_AINE
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_AINE.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeAnnostus.html">
+      <td>  LaakeAnnostus
+</td>
+      <td>  DTO for LaakeAnnostus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeAnnostusSoveltuvuus.html">
+      <td>  LaakeAnnostusSoveltuvuus
+</td>
+      <td>  DTO for LaakeAnnostusSoveltuvuus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS_SOVELTUVUUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeAtc.html">
+      <td>  LaakeAtc
+</td>
+      <td>  DTO for LaakeAtc, data base table LAAKE_ATC
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeKoostumus.html">
+      <td>  LaakeKoostumus
+</td>
+      <td>  DTO for LaakeKoostumus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeSeloste.html">
+      <td>  LaakeSeloste
+</td>
+      <td>  DTO for LaakeSeloste
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeSelosteTeksti.html">
+      <td>  LaakeSelosteTeksti
+</td>
+      <td>  DTO for LaakeSelosteTeksti
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_TEKSTI.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeTerapiaryhma.html">
+      <td>  LaakeTerapiaryhma
+</td>
+      <td>  DTO for LaakeTerapiaryhma
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TERAPIARYHMA.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/TERAPIARYHMA.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeTiivistelma.html">
+      <td>  LaakeTiivistelma
+</td>
+      <td>  DTO for LaakeTiivistelma
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeTiivistelmaTeksti.html">
+      <td>  LaakeTiivistelmaTeksti
+</td>
+      <td>  DTO for LaakeTiivistelmaTeksti
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_TEKSTI.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeVastaAihe.html">
+      <td>  LaakeVastaAihe
+</td>
+      <td>  DTO for LaakeVastaAihe
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakeYhteisvaikutus.html">
+      <td>  LaakeYhteisvaikutus
+</td>
+      <td>  DTO for Yhteisvaikutus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_YHTEISVAIKUTUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Laakitys.html">
+      <td>  Laakitys
+</td>
+      <td>  DTO for Laakitys
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakitysAnto.html">
+      <td>  LaakitysAnto
+</td>
+      <td>  DTO for LaakitysAnto.
+
+* A class to present LAAKITYS_ANTO table in medication functionality.
+Used to carry the data from database to the client side.
+
+<table style="border: 1px solid black;">
+<tr><th>property</th><th>only for frontend</th><th>obligatory from api</th><th>editable</th><th>must be same as laakityshistorias</th></tr>
+<tr><td>antaja</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr>
+<tr><td>huomautuksia</td><td>no</td><td>no</td><td>yes</td><td>no</td></tr>
+<tr><td>kello</td><td>no</td><td>yes (in planned)</td><td>yes</td><td>yes (all in one field)</td></tr>
+<tr><td>kirjaaja</td><td>no</td><td>no (added by api)</td><td>no</td><td>no</td></tr>
+<tr><td>laake</td><td>yes</td><td>no (added by api)</td><td>no</td><td>yes</td></tr>
+<tr><td>maara</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr>
+<tr><td>muutosAika</td><td>no</td><td>no (added by api)</td><td>no</td><td>no</td></tr>
+<tr><td>omistaja</td><td>no</td><td>yes (doublechecked)</td><td>no</td><td>yes</td></tr>
+<tr><td>osa</td><td>no</td><td>yes (doublechecked)</td><td>no</td><td>yes</td></tr>
+<tr><td>poistettu</td><td>no</td><td>no (added by api)</td><td>no</td><td>no</td></tr>
+<tr><td>toteutunutAika</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr>
+<tr><td>toteutunutAikaOriginal</td><td>no</td><td>yes (only for editing)</td><td>no</td><td>no</td></tr>
+<tr><td>toteutunutAikaLoppu</td><td>no</td><td>no</td><td>yes</td><td>no</td></tr>
+<tr><td>tyyppi</td><td>no</td><td>yes</td><td>no</td><td>no</td></tr>
+<tr><td>yksikko</td><td>no</td><td>yes (doublechecked)</td><td>no</td><td>yes</td></tr>
+<tr><td>kirjaajaName</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>antajaName</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>annettavaMaara</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>annettavaYksikko</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>annettavaMaksimi</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+</table>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakitysKayttoaihe.html">
+      <td>  LaakitysKayttoaihe
+</td>
+      <td>  DTO for LAAKITYS_KAYTTOAIHE and KAYTTOAIHE database tables
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KAYTTOAIHE.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/KAYTTOAIHE.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakitysKayttoaiheView.html">
+      <td>  LaakitysKayttoaiheView
+</td>
+      <td>  DTO for LaakitysKayttoaihe
+
+A class to present LAAKITYS_KAYTTOAIHE and KAYTTOAIHE tables in medication functionality
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakitysKuittaus.html">
+      <td>  LaakitysKuittaus
+</td>
+      <td>  DTO for LaakitysKuittaus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KUITTAUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakitysLista.html">
+      <td>  LaakitysLista
+</td>
+      <td>  DTO for LaakitysLista
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakitysTapa.html">
+      <td>  LaakitysTapa
+</td>
+      <td>  DTO for LAAKITYS_TAPA
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAPA.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakitysTauko.html">
+      <td>  LaakitysTauko
+</td>
+      <td>  DTO for LaakitysTauko
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LaakitysView.html">
+      <td>  LaakitysView
+</td>
+      <td>  DTO for Medicine
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Laatu.html">
+      <td>  Laatu
+</td>
+      <td>  Palvelup��t�s laatu.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LazyLoadedDto.html">
+      <td>  LazyLoadedDto
+</td>
+      <td>  DTO-class for any client side lazy loading.
+Eg: Patient has lazyloaded hoitosuhde
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LockDto.html">
+      <td>  LockDto
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_LoginCredentials.html">
+      <td>  LoginCredentials
+</td>
+      <td>  Overrider LoginCredentials to provide domain-name
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Meaning.html">
+      <td>  Meaning
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Metadata.html">
+      <td>  Metadata
+</td>
+      <td>  This  DTO contains information about metadata
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_MetadataGroup.html">
+      <td>  MetadataGroup
+</td>
+      <td>  This DTO contains information about metadata group
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_MittausBase.html">
+      <td>  MittausBase
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_MittausComponentConfig.html">
+      <td>  MittausComponentConfig
+</td>
+      <td>  Class to present general configuration for kertomus component.
+Basic implementation contains list of available kertomus form configurations used on the client.
+Kertomus lomake type is Lomakeluokka#KERTOMUSTEKSTI.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_MittausFormConfig.html">
+      <td>  MittausFormConfig
+</td>
+      <td>  Configuration for Core mittaus component.
+
+This configuration includes all mittaus titles(type: 183,184) available for the form.
+
+The list of main titles is fetched from asetus table.
+Asetus for main titles has following format in asetus table:
+- asetus: 'P��%'
+- teksti: name of p��otsikko
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_NamedGroupMemberDto.html">
+      <td>  NamedGroupMemberDto
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_OmistajaList.html">
+      <td>  OmistajaList
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_OmistajaListConfig.html">
+      <td>  OmistajaListConfig
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_OptimizationRightsAndSettings.html">
+      <td>  OptimizationRightsAndSettings
+</td>
+      <td>  Data transfer object for event optimization rights and settings.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Optional.html">
+      <td>  Optional
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Osastokartta.html">
+      <td>  Osastokartta
+</td>
+      <td>  This is the configuration for all paikka's.
+Contains ASETUKSET from paikkahistoria.
+Each Osastokartta consist of multiple different Osastolista
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Osastolista.html">
+      <td>  Osastolista
+</td>
+      <td>  This is one item inside Osastolista
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_OsastolistaPaikkatieto.html">
+      <td>  OsastolistaPaikkatieto
+</td>
+      <td>  This is one paikka inside Osastolista
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_OsastolistaTilannekoodi.html">
+      <td>  OsastolistaTilannekoodi
+</td>
+      <td>  Dto for Tilanne in osastolista.
+This is found from paikkahistoria-form "Tilanne".
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_OwnerTypeInfo.html">
+      <td>  OwnerTypeInfo
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_PaatosSeurantaTilaCodes.html">
+      <td>  PaatosSeurantaTilaCodes
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Palvelukeskeytys.html">
+      <td>  Palvelukeskeytys
+</td>
+      <td>  DTO for palvelukeskeytys (related to palvelup��t�kses)
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Palveluluokka.html">
+      <td>  Palveluluokka
+</td>
+      <td>  Stores the information of the following ASETUS-table fields configured for Palveluluokkas:
+
+0.  Nimi (Yleiset tab)
+1.  K�ytt�j�ryhm� (Yleiset tab)
+2.  Palvelun tarve-otsikko (Yleiset tab)
+3.  P��t�stekstin otsikko (Yleiset tab)
+4.  Lakipyk�l�t (Yleiset tab)
+5.  Suoritekoodi (parsed, but not added Core DTO)
+6.  Diaarinumerosarja (Yleiset tab)
+7.  P��t�s avoin (K/E, Yleiset tab)
+8.  Riviotsikko (Maksuperusteet tab)
+9.  Sarakeotsikko (Maksuperusteet tab)
+10. (not used currently in Mediatri)
+11. Laskutus tapahtumien mukaisesti (K/E, Seuranta tab)
+12. Tukipalvelu  (K/E, Yleiset tab)
+13. (a field related to Suorite-handling, parsed, but not added Core DTO))
+14. P��tt�j�ryhm�n otsikko (Yleiset tab)
+15. (not used currently in Mediatri)
+16. Palvelunimikkeist� ((Yleiset tab)
+17. Tapahtumamalli (Yleiset tab)
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Palvelupaatos.html">
+      <td>  Palvelupaatos
+</td>
+      <td>  Palvelup��t�s DTO.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Palvelutapahtuma.html">
+      <td>  Palvelutapahtuma
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_PalvelutapahtumaList.html">
+      <td>  PalvelutapahtumaList
+</td>
+      <td>  This class is dto for transferring multiple different palvelutapahtumas in single query.
+This has:<br>
+<ul>
+<li>list of palvelutapahtumas</li>
+<li>reference to preferred palvelutapahtuma from list (Care relation requires this)</li>
+</ul>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Palvelutapahtumaluokitus.html">
+      <td>  Palvelutapahtumaluokitus
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Patient.html">
+      <td>  Patient
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_PatientList.html">
+      <td>  PatientList
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Permission.html">
+      <td>  Permission
+</td>
+      <td>  The (initial) rights dto for permissions
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_PermissionDTO.html">
+      <td>  PermissionDTO
+</td>
+      <td>  Generic permission dto for client usage
+
+Example:
+/hoitoohje/config
+{
+permissions: [
+{
+view: true,
+change: false,
+add: false,
+remove: false,
+type: ExtendFormInfo
+data: {
+formOwnerId: 0,
+fullFormTypeId: 73,
+formTypeInfo: {
+id: 73,
+name: ""
+description: ""
+},
+ownerTypeInfo: {
+id: 0,
+name: ""
+},
+lomakeId: 168,
+name: "",
+hoitosuhdevaatimus: "E"
+}
+}
+}
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_PersonListByUnitAndForm.html">
+      <td>  PersonListByUnitAndForm
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_PlannerRightsAndSettings.html">
+      <td>  PlannerRightsAndSettings
+</td>
+      <td>  Data transfer object for MediPlan rights and settings information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_PoistettuStatus.html">
+      <td>  PoistettuStatus
+</td>
+      <td>  Status possibilities for poistettu-field.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Potilasryhma.html">
+      <td>  Potilasryhma
+</td>
+      <td>  Dto for ryhma in Paikkakartta
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_PuutteellinenStatus.html">
+      <td>  PuutteellinenStatus
+</td>
+      <td>  Status possibilities for puutteellinen-field.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ReportingGroupDto.html">
+      <td>  ReportingGroupDto
+</td>
+      <td>  This DTO pass ReportingGroup (Raportointiryhm�) information
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RequiredEquipmentTypeDto.html">
+      <td>  RequiredEquipmentTypeDto
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Riskitiedot.html">
+      <td>  Riskitiedot
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Riskitieto.html">
+      <td>  Riskitieto
+</td>
+      <td>  DTO for Riskitieto
+
+A class to present RISKI table in Medisairaala.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RiskitietoStatus.html">
+      <td>  RiskitietoStatus
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RoleDTO.html">
+      <td>  RoleDTO
+</td>
+      <td>  A class for saving role+unit information
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RoomDto.html">
+      <td>  RoomDto
+</td>
+      <td>  Data transfer object representing room
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RoomGroupDto.html">
+      <td>  RoomGroupDto
+</td>
+      <td>  Data transfer object representing room group
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_SeurantaConfig.html">
+      <td>  SeurantaConfig
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_SeurantaEntry.html">
+      <td>  SeurantaEntry
+</td>
+      <td>  DTO edit model for seuranta.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_SeurantaFormConfig.html">
+      <td>  SeurantaFormConfig
+</td>
+      <td>  Form config for one seuranta lomake.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_SkillDto.html">
+      <td>  SkillDto
+</td>
+      <td>  Data transfer object for workers skill data
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_SkillsInfo.html">
+      <td>  SkillsInfo
+</td>
+      <td>  DTO for gathering multiple skills into one DTO that can be lazy loadable.
+Bound to SkillDto class.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_TagsForCourseDto.html">
+      <td>  TagsForCourseDto
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_TagsForPeriodDto.html">
+      <td>  TagsForPeriodDto
+</td>
+      <td>  DTO representing one period tag
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_TapahtumaLuonne.html">
+      <td>  TapahtumaLuonne
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Tapahtumalaji.html">
+      <td>  Tapahtumalaji
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Tila.html">
+      <td>  Tila
+</td>
+      <td>  Tila of palvelupaatos.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Time.html">
+      <td>  Time
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_TimeInterval.html">
+      <td>  TimeInterval
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_TimeRuleDto.html">
+      <td>  TimeRuleDto
+</td>
+      <td>  Data transfer object for defining working hour rules.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Tutkimuspyynnot.html">
+      <td>  Tutkimuspyynnot
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Tutkimuspyynto.html">
+      <td>  Tutkimuspyynto
+</td>
+      <td>  DTO for LabExamination
+
+A class to present TUTKIMUSPYYNTO table in laboratory examination functionality.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_TutkimuspyyntoHerkkyys.html">
+      <td>  TutkimuspyyntoHerkkyys
+</td>
+      <td>  DTO for TutkimuspyyntoHerkkyys
+
+A class to present TUTKIMUSPYYNTOHERKKYYS table in laboratory examination functionality.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_TutkimuspyyntoMikrobi.html">
+      <td>  TutkimuspyyntoMikrobi
+</td>
+      <td>  DTO for Lab Examination Microbe
+
+A class to present TUTKIMUSPYYNTOMIKROBI table in laboratory examination functionality.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_TutkimuspyyntoTiedot.html">
+      <td>  TutkimuspyyntoTiedot
+</td>
+      <td>  DTO for Lab Examination Details
+
+A class to present TUTKIMUSPYYNTO table in laboratory examination functionality.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Unit.html">
+      <td>  Unit
+</td>
+      <td>  DTO for Unit (=toimintayksikk�) that combines information both from OMISTAJA and PERUSTIETO tables related
+to units (palveluyksikk�) where users (k�ytt�j�) signs in and works for.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_User.html">
+      <td>  User
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_UserGroup.html">
+      <td>  UserGroup
+</td>
+      <td>  DTO to present available user groupd in the system
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_UserList.html">
+      <td>  UserList
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ViewTitleValue.html">
+      <td>  ViewTitleValue
+</td>
+      <td>  Mediatri titles can have special format of the value data stored in DB.
+Server creates the separate object to present title value which is returned as Json model to the client for viewing.
+All title value should have presentation property.
+BaseTitleValue class contains default presentation implementation for the all titles.
+All title value classes should be derived from BaseTitleValue and reimplement
+buildPresentation() method if it is necessary some special text presentation of the value.
+
+Mediatri logic requires get vapaa or vakio fields from title in different use cases.
+CoreApi also need this functionality. Therefore two methods added:
+- getVapaa()
+- getVakio()
+By default these methods return empty String.
+Derived title value classes can redefined these emethods.
+By default these values are included into client Json model.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_WorkerAvailabilityDto.html">
+      <td>  WorkerAvailabilityDto
+</td>
+      <td>  
+</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3 id="syntax_xml">XML</h3>
+
+  <table class="table table-hover">
+    <caption>Default Namespace  (<a href="ns0.xsd">schema</a>)</caption>
+    <thead>
+      <tr>
+        <th align="center">type</th>
+        <th align="center">description</th>
+      </tr>
+    </thead>
+    <tbody data-link="row" class="rowlink">
+    <tr class="clickable-row" data-href="xml_ns0_abstractDTO.html">
+      <td>  abstractDTO
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakitysAnto.html">
+      <td>  laakitysAnto
+</td>
+      <td>  DTO for LaakitysAnto.
+
+* A class to present LAAKITYS_ANTO table in medication functionality.
+Used to carry the data from database to the client side.
+
+<table style="border: 1px solid black;">
+<tr><th>property</th><th>only for frontend</th><th>obligatory from api</th><th>editable</th><th>must be same as laakityshistorias</th></tr>
+<tr><td>antaja</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr>
+<tr><td>huomautuksia</td><td>no</td><td>no</td><td>yes</td><td>no</td></tr>
+<tr><td>kello</td><td>no</td><td>yes (in planned)</td><td>yes</td><td>yes (all in one field)</td></tr>
+<tr><td>kirjaaja</td><td>no</td><td>no (added by api)</td><td>no</td><td>no</td></tr>
+<tr><td>laake</td><td>yes</td><td>no (added by api)</td><td>no</td><td>yes</td></tr>
+<tr><td>maara</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr>
+<tr><td>muutosAika</td><td>no</td><td>no (added by api)</td><td>no</td><td>no</td></tr>
+<tr><td>omistaja</td><td>no</td><td>yes (doublechecked)</td><td>no</td><td>yes</td></tr>
+<tr><td>osa</td><td>no</td><td>yes (doublechecked)</td><td>no</td><td>yes</td></tr>
+<tr><td>poistettu</td><td>no</td><td>no (added by api)</td><td>no</td><td>no</td></tr>
+<tr><td>toteutunutAika</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr>
+<tr><td>toteutunutAikaOriginal</td><td>no</td><td>yes (only for editing)</td><td>no</td><td>no</td></tr>
+<tr><td>toteutunutAikaLoppu</td><td>no</td><td>no</td><td>yes</td><td>no</td></tr>
+<tr><td>tyyppi</td><td>no</td><td>yes</td><td>no</td><td>no</td></tr>
+<tr><td>yksikko</td><td>no</td><td>yes (doublechecked)</td><td>no</td><td>yes</td></tr>
+<tr><td>kirjaajaName</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>antajaName</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>annettavaMaara</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>annettavaYksikko</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+<tr><td>annettavaMaksimi</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
+</table>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tutkimuspyynto.html">
+      <td>  tutkimuspyynto
+</td>
+      <td>  DTO for LabExamination
+
+A class to present TUTKIMUSPYYNTO table in laboratory examination functionality.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tutkimuspyyntoHerkkyys.html">
+      <td>  tutkimuspyyntoHerkkyys
+</td>
+      <td>  DTO for TutkimuspyyntoHerkkyys
+
+A class to present TUTKIMUSPYYNTOHERKKYYS table in laboratory examination functionality.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tutkimuspyyntoMikrobi.html">
+      <td>  tutkimuspyyntoMikrobi
+</td>
+      <td>  DTO for Lab Examination Microbe
+
+A class to present TUTKIMUSPYYNTOMIKROBI table in laboratory examination functionality.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tutkimuspyyntoTiedot.html">
+      <td>  tutkimuspyyntoTiedot
+</td>
+      <td>  DTO for Lab Examination Details
+
+A class to present TUTKIMUSPYYNTO table in laboratory examination functionality.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_hoito.html">
+      <td>  hoito
+</td>
+      <td>  DTO for Hoito
+
+A class to present HOITO table in hoito-ohjeet ja -m��r�ykset functionality.
+Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_date.html">
+      <td>  date
+</td>
+      <td>  
+</td>
+    </tr>
+    </tbody>
+  </table>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

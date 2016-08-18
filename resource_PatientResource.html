@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Mediatri REST: PatientResource</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Mediatri REST: PatientResource</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+          <li><a href="downloads.html">Files and Libraries</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li><a href="#resource_PatientResource_getPatientByMediatriId_GET">GET /patients/id/{id}</a></li>
+          <li><a href="#resource_PatientResource_getPatient_GET">GET /patients/ssn/{ssn}</a></li>
+          <li><a href="#resource_PatientResource_getPatientBasicInfoByMediatriId_GET"><abbr title="GET /patients/id/{id}/basicinfos">GET /patients/id/{id}/basicinf...</abbr></a></li>
+          <li><a href="#resource_PatientResource_getPatientBasicInfo_GET"><abbr title="GET /patients/ssn/{ssn}/basicinfos">GET /patients/ssn/{ssn}/basici...</abbr></a></li>
+          <li><a href="#resource_PatientResource_getPatients_GET">GET /patients/list</a></li>
+          <li><a href="#resource_PatientResource_searchPatients_GET">GET /patients/search</a></li>
+          <li><a href="#resource_PatientResource_getListedPatients_GET">GET /patients/listed</a></li>
+          <li><a href="#resource_PatientResource_getListsByMediatriId_GET">GET /patients/id/{id}/lists</a></li>
+          <li><a href="#resource_PatientResource_getLists_GET">GET /patients/ssn/{ssn}/lists</a></li>
+          <li><a href="#resource_PatientResource_getOmistajasFromListByMediatriId_GET"><abbr title="GET /patients/id/{omistajaId}/list/{listId}">GET /patients/id/{omistajaId}/...</abbr></a></li>
+          <li><a href="#resource_PatientResource_getOmistajasFromList_GET"><abbr title="GET /patients/ssn/{ssn}/list/{listId}">GET /patients/ssn/{ssn}/list/{...</abbr></a></li>
+          <li><a href="#resource_PatientResource_getPatientCourses_GET">GET /patients/id/{id}/courses</a></li>
+          <li><a href="#resource_PatientResource_getPatientsRiskitietoStatus_GET"><abbr title="GET /patients/id/{id}/riskistatus">GET /patients/id/{id}/riskista...</abbr></a></li>
+          <li><a href="#resource_PatientResource_putPerson_PUT">PUT /patients/id/{id}</a></li>
+          <li class="divider"></li>
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="resources.html">Resources</a></li>
+          <li class="dropdown"><a href="resource_PatientResource.html">PatientResource</a></li>
+        </ol>
+
+      <h1 class="page-header">PatientResource <small>Resource</small></h1>
+
+      <p>REST API for patients</p>
+
+      <div id="resource_PatientResource_getPatientByMediatriId_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id} <a href="../api/v1patients/id/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>id</td>
+            <td>path</td>
+            <td></td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>includeBasicInfo</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          <tr>
+            <td>includeHoitosuhde</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          <tr>
+            <td>includeRiskitietoStatus</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_Patient.html">Patient</a>
+ (JSON)</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getPatient_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/ssn/{ssn} <a href="../api/v1patients/ssn/{ssn}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>ssn</td>
+            <td>path</td>
+            <td></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>includeBasicInfo</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          <tr>
+            <td>includeHoitosuhde</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          <tr>
+            <td>includeRiskitietoStatus</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_Patient.html">Patient</a>
+ (JSON)</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getPatientBasicInfoByMediatriId_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id}/basicinfos <a href="../api/v1patients/id/{id}/basicinfos" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets patients basic information based on Mediatri owner id.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>id</td>
+            <td>path</td>
+            <td>Mediari owner id.</td>
+            <td>int</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_BasicInfo.html">BasicInfo</a>
+ (JSON)</td>
+            <td>basic information object</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getPatientBasicInfo_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/ssn/{ssn}/basicinfos <a href="../api/v1patients/ssn/{ssn}/basicinfos" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets patients basic information based on patients' social security number.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>ssn</td>
+            <td>path</td>
+            <td>patients' social security number</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_BasicInfo.html">BasicInfo</a>
+ (JSON)</td>
+            <td>basic information object</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getPatients_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/list <a href="../api/v1patients/list" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets list of patients. If no limiting parameters are given, returns all active patients from the system.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>maxId</td>
+            <td>query</td>
+            <td>optional parameter, sets minimum owner id for the returned patient list (not inclusive)</td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>minId</td>
+            <td>query</td>
+            <td>optional parameter, sets minimum owner id for the returned patient list (inclusive)</td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>pageIndex</td>
+            <td>query</td>
+            <td>page index, starting from which client wants to list patients. Minimum value for page index is 1.</td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>pageSize</td>
+            <td>query</td>
+            <td>defines page size i.e. maximum amount of patients returned in on query, if page size is set, then also
+<code>pageIndex</code> parameter must be defined. If not set, returning all the patients
+matching given conditions.</td>
+            <td>int</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_PatientList.html">PatientList</a>
+ (JSON)</td>
+            <td>patient list with paging related metadata</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_searchPatients_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/search <a href="../api/v1patients/search" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Makes search from all patients with given criteria.
+Either none or all search parameters can be set.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>firstNamePrefix</td>
+            <td>query</td>
+            <td>first name starts with condition, or <code>null</code> if not used as criterion</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>fullNameContains</td>
+            <td>query</td>
+            <td>patient's full name contains string condition, or <code>null</code> if not used as criterion
+Full name search overrides more specific lastNamePrefix, firstNamePrefix, userNamePrefix searches.</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>lastNamePrefix</td>
+            <td>query</td>
+            <td>last name starts with condition, or <code>null</code> if not used as criterion</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>pageIndex</td>
+            <td>query</td>
+            <td>page index starting from which client wants to list patients</td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>pageSize</td>
+            <td>query</td>
+            <td>defines page size i.e. maximum amount of patients returned in on query, if page size is set, then also
+<code>pageIndex</code> parameter must be defined. If not set, returning all the patients
+matching given conditions.</td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>ssnPrefix</td>
+            <td>query</td>
+            <td>social security starts with condition, or <code>null</code> if not used as criterion</td>
+            <td>&nbsp;</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_PatientList.html">PatientList</a>
+ (JSON)</td>
+            <td>patients found with given criteria</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getListedPatients_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/listed <a href="../api/v1patients/listed" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get patients by given unit specific lists.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+            <th>multivalued</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>endTime</td>
+            <td>query</td>
+            <td>list members should be valid before this time (inclusive)</td>
+            <td>&nbsp;</td>
+            <td>no</td>
+          </tr>
+          <tr>
+            <td>list</td>
+            <td>query</td>
+            <td>patient list form id</td>
+            <td>int</td>
+            <td>no</td>
+          </tr>
+          <tr>
+            <td>startTime</td>
+            <td>query</td>
+            <td>list members should be valid after this time (inclusive)</td>
+            <td>&nbsp;</td>
+            <td>no</td>
+          </tr>
+          <tr>
+            <td>unit</td>
+            <td>query</td>
+            <td>unit ids for which list contents should be fetched</td>
+            <td>int</td>
+            <td>yes</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>array of <a href="json_PersonListByUnitAndForm.html">PersonListByUnitAndForm</a>
+ (JSON)</td>
+            <td>a list of patient lists grouped by (unit id, list id)</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getListsByMediatriId_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id}/lists <a href="../api/v1patients/id/{id}/lists" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets all patient's lists based on omistaja id.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>id</td>
+            <td>path</td>
+            <td>omistaja id</td>
+            <td>int</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>array of <a href="json_OmistajaListConfig.html">OmistajaListConfig</a>
+ (JSON)</td>
+            <td>all patient's lists</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getLists_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/ssn/{ssn}/lists <a href="../api/v1patients/ssn/{ssn}/lists" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets all patient's lists based on social security number.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>ssn</td>
+            <td>path</td>
+            <td>social security number</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>array of <a href="json_OmistajaListConfig.html">OmistajaListConfig</a>
+ (JSON)</td>
+            <td>all patient's lists</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getOmistajasFromListByMediatriId_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{omistajaId}/list/{listId} <a href="../api/v1patients/id/{omistajaId}/list/{listId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets omistajas for given list owned by the given owner (=form owner).</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>listId</td>
+            <td>path</td>
+            <td>list id (currently equals to form id)</td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>omistajaId</td>
+            <td>path</td>
+            <td>omistaja id that is used as criteria to fetch data from list. It is also checked if this omistaja owns form with <code>lomakeId</code>, but otherwise it is expected that <code>lomakeId</code> refers to form owned by system owner (0) (this method requires always omistaja id)</td>
+            <td>int</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>array of <a href="json_GenericOmistaja.html">GenericOmistaja</a>
+ (JSON)</td>
+            <td>omistajas belonging to the list</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getOmistajasFromList_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/ssn/{ssn}/list/{listId} <a href="../api/v1patients/ssn/{ssn}/list/{listId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets omistajas for given list owned by the given owner (=form owner).</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>listId</td>
+            <td>path</td>
+            <td>list id (currently equals to form id)</td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>ssn</td>
+            <td>path</td>
+            <td>patient's social security number</td>
+            <td>&nbsp;</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>array of <a href="json_GenericOmistaja.html">GenericOmistaja</a>
+ (JSON)</td>
+            <td>omistajas belonging to the list</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getPatientCourses_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id}/courses <a href="../api/v1patients/id/{id}/courses" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets information about the patients' course attendance based on Mediatri owner id.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>id</td>
+            <td>path</td>
+            <td>Mediari owner id.</td>
+            <td>int</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_CourseCollectionDto.html">CourseCollectionDto</a>
+ (JSON)</td>
+            <td>collection of courses</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getPatientsRiskitietoStatus_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id}/riskistatus <a href="../api/v1patients/id/{id}/riskistatus" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets patients iskitieto status based on Mediatri owner id.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>id</td>
+            <td>path</td>
+            <td>Mediari owner id.</td>
+            <td>int</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_RiskitietoStatus.html">RiskitietoStatus</a>
+ (JSON)</td>
+            <td>riskitieto status object</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_putPerson_PUT">
+        <h3><span class="resource-method">PUT</span> <span class="resource-path">/patients/id/{id} <a href="../api/v1patients/id/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>id</td>
+            <td>path</td>
+            <td></td>
+            <td>int</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>object
+ (JSON)</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

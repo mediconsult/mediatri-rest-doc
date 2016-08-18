@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Mediatri REST: AuthenticationResource</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Mediatri REST: AuthenticationResource</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+          <li><a href="downloads.html">Files and Libraries</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li><a href="#resource_AuthenticationResource_loginWithForm_POST">POST /authentication/login</a></li>
+          <li><a href="#resource_AuthenticationResource_loginWithContextOldPath_POST">POST /authentication/login</a></li>
+          <li><a href="#resource_AuthenticationResource_loginWithContext_POST"><abbr title="POST /authentication/contextLogin">POST /authentication/contextLo...</abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_loginGet_GET">GET /authentication/login</a></li>
+          <li><a href="#resource_AuthenticationResource_logoutPost_POST">POST /authentication/logout</a></li>
+          <li><a href="#resource_AuthenticationResource_logoutGet_GET">GET /authentication/logout</a></li>
+          <li><a href="#resource_AuthenticationResource_setRole_POST">POST /authentication/role</a></li>
+          <li><a href="#resource_AuthenticationResource_getCurretUser_GET">GET /authentication/identity</a></li>
+          <li><a href="#resource_AuthenticationResource_getPlannerRightsAndSettings_GET"><abbr title="GET /authentication/plannerRights">GET /authentication/plannerRig...</abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_ping_GET">GET /authentication/ping</a></li>
+          <li class="divider"></li>
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="resources.html">Resources</a></li>
+          <li class="dropdown"><a href="resource_AuthenticationResource.html">AuthenticationResource</a></li>
+        </ol>
+
+      <h1 class="page-header">AuthenticationResource <small>Resource</small></h1>
+
+      <p>Service for authentication</p>
+
+      <div id="resource_AuthenticationResource_loginWithForm_POST">
+        <h3><span class="resource-method">POST</span> <span class="resource-path">/authentication/login <a href="../api/v1authentication/login" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Login with username and password. This returns with http-200 even authentication fails. Response has "success" true/false if authentication was successful.</p>
+
+        <table class="table">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/x-authc-username-password+json&quot; HTTP header to specify this media type to the server.">application/x-authc-username-password+json</abbr></td>
+            <td><a href="json_LoginCredentials.html">LoginCredentials</a>
+ (JSON)</td>
+            <td>LoginCredentials with userId and Password.</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>500</td>
+            <td>Unexpected critical error.</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</td>
+            <td>CoreAuthenticationDTO on successful login</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_AuthenticationResource_loginWithContextOldPath_POST">
+        <h3><span class="resource-method">POST</span> <span class="resource-path">/authentication/login <a href="../api/v1authentication/login" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <div class="alert alert-danger">This method has been deprecated.  Deprecated api. You should use POST /contextLogin instead. See documentation from that.</div>
+
+        <p></p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>domain</td>
+            <td>form</td>
+            <td>domain</td>
+          </tr>
+          <tr>
+            <td>sessionKey</td>
+            <td>form</td>
+            <td>key</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>500</td>
+            <td>Unexpected error</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</td>
+            <td>response</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_AuthenticationResource_loginWithContext_POST">
+        <h3><span class="resource-method">POST</span> <span class="resource-path">/authentication/contextLogin <a href="../api/v1authentication/contextLogin" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Login with context. Currently this will join context once with given sessionKey and fetch all keys.
+Context login will fetch User.Co.[mediconsult.fi]UserId that is mediatri omistajaId. It can be professional or customer too. Customers have very limited priviledges.
+If context doesn't contain value in User.Co.[mediconsult.fi]UserId then User.Id.Logon value is used to search for username from mediatri. User.Id.Logon login is limited only to professionals logging in.   *</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>domain</td>
+            <td>form</td>
+            <td>Mediatri-domainId</td>
+          </tr>
+          <tr>
+            <td>sessionKey</td>
+            <td>form</td>
+            <td>Context session-key to be used in join</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>500</td>
+            <td>Unexpected error</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</td>
+            <td>200 if ok</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_AuthenticationResource_loginGet_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/authentication/login <a href="../api/v1authentication/login" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>API for authenticating to Core.
+Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?username=MGR&password=&mediatritunnus= </p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>mediatritunnus</td>
+            <td>query</td>
+            <td>Mediatri-domainID</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>password</td>
+            <td>query</td>
+            <td>password for user. Password can be reset in mediatri</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>role</td>
+            <td>query</td>
+            <td>Must have optionalUnitId-parameter too if role is given. If role+unit doesnt exist, bad request is thrown and user is logged out.</td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>unit</td>
+            <td>query</td>
+            <td>UnitId can be given directly as parameter-&gt; session will use this unit and no 2-nd login step is required.</td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>username</td>
+            <td>query</td>
+            <td>Username eg "MGR"</td>
+            <td>&nbsp;</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>500</td>
+            <td>Unexpected error</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</td>
+            <td>Status 200 with json message status:"Authenticated"</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_AuthenticationResource_logoutPost_POST">
+        <h3><span class="resource-method">POST</span> <span class="resource-path">/authentication/logout <a href="../api/v1authentication/logout" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>A simple logout method using POST</p>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>object
+ (JSON)</td>
+            <td>200 http code without body IF ok.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_AuthenticationResource_logoutGet_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/authentication/logout <a href="../api/v1authentication/logout" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>A simple logout method using GET</p>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>object
+ (JSON)</td>
+            <td>200 http code without body IF ok.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_AuthenticationResource_setRole_POST">
+        <h3><span class="resource-method">POST</span> <span class="resource-path">/authentication/role <a href="../api/v1authentication/role" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Set the active role</p>
+
+        <table class="table">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
+            <td><a href="json_RoleDTO.html">RoleDTO</a>
+ (JSON)</td>
+            <td>RoleDTO which contains info about current selected role</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>400</td>
+            <td>If given role+unit was invalid for current user</td>
+          </tr>
+          <tr>
+            <td>500</td>
+            <td>Unexpected error</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</td>
+            <td>CoreAuthenticationDTO returns CoreAuthenticationDTO on succesfull role change</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_AuthenticationResource_getCurretUser_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/authentication/identity <a href="../api/v1authentication/identity" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>You can verify current session information using this API.</p>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</td>
+            <td>Information about the session</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_AuthenticationResource_getPlannerRightsAndSettings_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/authentication/plannerRights <a href="../api/v1authentication/plannerRights" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get information about Mediplan related rights and settings that are configured in Mediatri.</p>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_PlannerRightsAndSettings.html">PlannerRightsAndSettings</a>
+ (JSON)</td>
+            <td>planner rights of the current user, settings for planner features</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_AuthenticationResource_ping_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/authentication/ping <a href="../api/v1authentication/ping" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Client Side ping for server every 30 sec on offline.</p>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/plain&quot; HTTP header to request that this media type be provided by the server.">text/plain</abbr></td>
+            <td>(custom)
+</td>
+            <td>200 http code, body to be desided later</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>
