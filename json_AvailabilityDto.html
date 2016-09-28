@@ -165,6 +165,9 @@ if any exist during a 12 hour interval before of after the required time.
     &quot;description&quot; : &quot;...&quot;,
     &quot;durationInMinutes&quot; : 12345,
     &quot;serviceClass&quot; : &quot;...&quot;,
+    &quot;startTimeLimit&quot; : &quot;...&quot;,
+    &quot;endTimeLimit&quot; : &quot;...&quot;,
+    &quot;internalNote&quot; : &quot;...&quot;,
     &quot;event&quot; : {
       &quot;startTime&quot; : 12345,
       &quot;durationInMinutes&quot; : 12345,
@@ -177,7 +180,9 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;calendarContext&quot; : { },
       &quot;excludedDays&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;reportingGroup&quot; : { },
+      &quot;eventModel&quot; : { },
       &quot;unitBasicInfoTitles&quot; : [ { }, { } ],
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -196,8 +201,7 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     }, {
       &quot;skillid&quot; : 12345,
       &quot;workingHoursConflict&quot; : true,
@@ -212,13 +216,14 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     } ],
     &quot;customers&quot; : [ {
       &quot;amount&quot; : 12345,
       &quot;coursePeriodId&quot; : 12345,
+      &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
       &quot;serviceDecision&quot; : { },
+      &quot;homeAddress&quot; : &quot;...&quot;,
       &quot;id&quot; : 12345,
       &quot;unit&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
@@ -229,12 +234,13 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     }, {
       &quot;amount&quot; : 12345,
       &quot;coursePeriodId&quot; : 12345,
+      &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
       &quot;serviceDecision&quot; : { },
+      &quot;homeAddress&quot; : &quot;...&quot;,
       &quot;id&quot; : 12345,
       &quot;unit&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
@@ -245,42 +251,53 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     } ],
     &quot;rooms&quot; : [ {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     }, {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     } ],
     &quot;equipmentTypes&quot; : [ {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     }, {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     } ],
     &quot;coursePeriods&quot; : [ {
       &quot;coursePeriodId&quot; : 12345,
@@ -299,25 +316,34 @@ if any exist during a 12 hour interval before of after the required time.
     } ],
     &quot;locked&quot; : true,
     &quot;lock&quot; : {
-      &quot;reason&quot; : &quot;...&quot;,
       &quot;user&quot; : 12345,
+      &quot;reason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     },
     &quot;contentGroups&quot; : [ {
-      &quot;items&quot; : [ { }, { } ],
+      &quot;eventModelContentGroupId&quot; : 12345,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
-      &quot;items&quot; : [ { }, { } ],
+      &quot;eventModelContentGroupId&quot; : 12345,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -334,6 +360,7 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;numOfMissingRoomGroups&quot; : 12345,
       &quot;missingRoomGroup&quot; : 12345
     },
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -344,6 +371,9 @@ if any exist during a 12 hour interval before of after the required time.
     &quot;description&quot; : &quot;...&quot;,
     &quot;durationInMinutes&quot; : 12345,
     &quot;serviceClass&quot; : &quot;...&quot;,
+    &quot;startTimeLimit&quot; : &quot;...&quot;,
+    &quot;endTimeLimit&quot; : &quot;...&quot;,
+    &quot;internalNote&quot; : &quot;...&quot;,
     &quot;event&quot; : {
       &quot;startTime&quot; : 12345,
       &quot;durationInMinutes&quot; : 12345,
@@ -356,7 +386,9 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;calendarContext&quot; : { },
       &quot;excludedDays&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;reportingGroup&quot; : { },
+      &quot;eventModel&quot; : { },
       &quot;unitBasicInfoTitles&quot; : [ { }, { } ],
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -375,8 +407,7 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     }, {
       &quot;skillid&quot; : 12345,
       &quot;workingHoursConflict&quot; : true,
@@ -391,13 +422,14 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     } ],
     &quot;customers&quot; : [ {
       &quot;amount&quot; : 12345,
       &quot;coursePeriodId&quot; : 12345,
+      &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
       &quot;serviceDecision&quot; : { },
+      &quot;homeAddress&quot; : &quot;...&quot;,
       &quot;id&quot; : 12345,
       &quot;unit&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
@@ -408,12 +440,13 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     }, {
       &quot;amount&quot; : 12345,
       &quot;coursePeriodId&quot; : 12345,
+      &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
       &quot;serviceDecision&quot; : { },
+      &quot;homeAddress&quot; : &quot;...&quot;,
       &quot;id&quot; : 12345,
       &quot;unit&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
@@ -424,42 +457,53 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     } ],
     &quot;rooms&quot; : [ {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     }, {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     } ],
     &quot;equipmentTypes&quot; : [ {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     }, {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     } ],
     &quot;coursePeriods&quot; : [ {
       &quot;coursePeriodId&quot; : 12345,
@@ -478,25 +522,34 @@ if any exist during a 12 hour interval before of after the required time.
     } ],
     &quot;locked&quot; : true,
     &quot;lock&quot; : {
-      &quot;reason&quot; : &quot;...&quot;,
       &quot;user&quot; : 12345,
+      &quot;reason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     },
     &quot;contentGroups&quot; : [ {
-      &quot;items&quot; : [ { }, { } ],
+      &quot;eventModelContentGroupId&quot; : 12345,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
-      &quot;items&quot; : [ { }, { } ],
+      &quot;eventModelContentGroupId&quot; : 12345,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -513,6 +566,7 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;numOfMissingRoomGroups&quot; : 12345,
       &quot;missingRoomGroup&quot; : 12345
     },
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -524,6 +578,9 @@ if any exist during a 12 hour interval before of after the required time.
     &quot;description&quot; : &quot;...&quot;,
     &quot;durationInMinutes&quot; : 12345,
     &quot;serviceClass&quot; : &quot;...&quot;,
+    &quot;startTimeLimit&quot; : &quot;...&quot;,
+    &quot;endTimeLimit&quot; : &quot;...&quot;,
+    &quot;internalNote&quot; : &quot;...&quot;,
     &quot;event&quot; : {
       &quot;startTime&quot; : 12345,
       &quot;durationInMinutes&quot; : 12345,
@@ -536,7 +593,9 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;calendarContext&quot; : { },
       &quot;excludedDays&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;reportingGroup&quot; : { },
+      &quot;eventModel&quot; : { },
       &quot;unitBasicInfoTitles&quot; : [ { }, { } ],
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -555,8 +614,7 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     }, {
       &quot;skillid&quot; : 12345,
       &quot;workingHoursConflict&quot; : true,
@@ -571,13 +629,14 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     } ],
     &quot;customers&quot; : [ {
       &quot;amount&quot; : 12345,
       &quot;coursePeriodId&quot; : 12345,
+      &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
       &quot;serviceDecision&quot; : { },
+      &quot;homeAddress&quot; : &quot;...&quot;,
       &quot;id&quot; : 12345,
       &quot;unit&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
@@ -588,12 +647,13 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     }, {
       &quot;amount&quot; : 12345,
       &quot;coursePeriodId&quot; : 12345,
+      &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
       &quot;serviceDecision&quot; : { },
+      &quot;homeAddress&quot; : &quot;...&quot;,
       &quot;id&quot; : 12345,
       &quot;unit&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
@@ -604,42 +664,53 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     } ],
     &quot;rooms&quot; : [ {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     }, {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     } ],
     &quot;equipmentTypes&quot; : [ {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     }, {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     } ],
     &quot;coursePeriods&quot; : [ {
       &quot;coursePeriodId&quot; : 12345,
@@ -658,25 +729,34 @@ if any exist during a 12 hour interval before of after the required time.
     } ],
     &quot;locked&quot; : true,
     &quot;lock&quot; : {
-      &quot;reason&quot; : &quot;...&quot;,
       &quot;user&quot; : 12345,
+      &quot;reason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     },
     &quot;contentGroups&quot; : [ {
-      &quot;items&quot; : [ { }, { } ],
+      &quot;eventModelContentGroupId&quot; : 12345,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
-      &quot;items&quot; : [ { }, { } ],
+      &quot;eventModelContentGroupId&quot; : 12345,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -693,6 +773,7 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;numOfMissingRoomGroups&quot; : 12345,
       &quot;missingRoomGroup&quot; : 12345
     },
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -703,6 +784,9 @@ if any exist during a 12 hour interval before of after the required time.
     &quot;description&quot; : &quot;...&quot;,
     &quot;durationInMinutes&quot; : 12345,
     &quot;serviceClass&quot; : &quot;...&quot;,
+    &quot;startTimeLimit&quot; : &quot;...&quot;,
+    &quot;endTimeLimit&quot; : &quot;...&quot;,
+    &quot;internalNote&quot; : &quot;...&quot;,
     &quot;event&quot; : {
       &quot;startTime&quot; : 12345,
       &quot;durationInMinutes&quot; : 12345,
@@ -715,7 +799,9 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;calendarContext&quot; : { },
       &quot;excludedDays&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;reportingGroup&quot; : { },
+      &quot;eventModel&quot; : { },
       &quot;unitBasicInfoTitles&quot; : [ { }, { } ],
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -734,8 +820,7 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     }, {
       &quot;skillid&quot; : 12345,
       &quot;workingHoursConflict&quot; : true,
@@ -750,13 +835,14 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     } ],
     &quot;customers&quot; : [ {
       &quot;amount&quot; : 12345,
       &quot;coursePeriodId&quot; : 12345,
+      &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
       &quot;serviceDecision&quot; : { },
+      &quot;homeAddress&quot; : &quot;...&quot;,
       &quot;id&quot; : 12345,
       &quot;unit&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
@@ -767,12 +853,13 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     }, {
       &quot;amount&quot; : 12345,
       &quot;coursePeriodId&quot; : 12345,
+      &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
       &quot;serviceDecision&quot; : { },
+      &quot;homeAddress&quot; : &quot;...&quot;,
       &quot;id&quot; : 12345,
       &quot;unit&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
@@ -783,42 +870,53 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;conflicting&quot; : true,
       &quot;overlapConflicts&quot; : [ { }, { } ],
       &quot;basicInfoTitles&quot; : [ { }, { } ],
-      &quot;participantId&quot; : 12345,
-      &quot;removed&quot; : true
+      &quot;participantId&quot; : 12345
     } ],
     &quot;rooms&quot; : [ {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     }, {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     } ],
     &quot;equipmentTypes&quot; : [ {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     }, {
-      &quot;id&quot; : 12345,
       &quot;typeid&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;delay&quot; : 12345,
       &quot;duration&quot; : 12345,
       &quot;amount&quot; : 12345,
-      &quot;required&quot; : true
+      &quot;required&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
     } ],
     &quot;coursePeriods&quot; : [ {
       &quot;coursePeriodId&quot; : 12345,
@@ -837,25 +935,34 @@ if any exist during a 12 hour interval before of after the required time.
     } ],
     &quot;locked&quot; : true,
     &quot;lock&quot; : {
-      &quot;reason&quot; : &quot;...&quot;,
       &quot;user&quot; : 12345,
+      &quot;reason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     },
     &quot;contentGroups&quot; : [ {
-      &quot;items&quot; : [ { }, { } ],
+      &quot;eventModelContentGroupId&quot; : 12345,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
-      &quot;items&quot; : [ { }, { } ],
+      &quot;eventModelContentGroupId&quot; : 12345,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -872,6 +979,7 @@ if any exist during a 12 hour interval before of after the required time.
       &quot;numOfMissingRoomGroups&quot; : 12345,
       &quot;missingRoomGroup&quot; : 12345
     },
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345

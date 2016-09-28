@@ -68,193 +68,40 @@ module Fi
 
 module Mediconsult
 
-module Core
-
-module Client
+module Mediplan
 
 module Dto
 
+module Worker
+
   # (no documentation provided)
-  class Palvelutapahtuma 
+  class WorkerAvailabilityDto 
 
-    # (no documentation provided)
-    attr_accessor :kirjausyksikkoId
-    # (no documentation provided)
-    attr_accessor :omistaja
-    # (no documentation provided)
-    attr_accessor :rekisteri
-    # (no documentation provided)
-    attr_accessor :loppuaika
-    # (no documentation provided)
-    attr_accessor :kirjausAika
-    # (no documentation provided)
-    attr_accessor :kirjausyksikko
-    # (no documentation provided)
-    attr_accessor :peruuntumisSyyKoodi
-    # (no documentation provided)
-    attr_accessor :aktiivinen
-    # (no documentation provided)
-    attr_accessor :palvelunantaja
-    # (no documentation provided)
-    attr_accessor :tapahtumalaji
-    # (no documentation provided)
-    attr_accessor :tyonantaja
-    # (no documentation provided)
-    attr_accessor :kirjaaja
-    # (no documentation provided)
-    attr_accessor :palveluntuottaja
-    # (no documentation provided)
-    attr_accessor :tyyppi
-    # (no documentation provided)
-    attr_accessor :id
-    # (no documentation provided)
-    attr_accessor :alkuaika
-    # (no documentation provided)
-    attr_accessor :oid
-    # (no documentation provided)
-    attr_accessor :luovutusHaunPalvelutapahtuma
+    # the worker
+    attr_accessor :worker
+    # the availability
+    attr_accessor :availability
 
-    # the json hash for this Palvelutapahtuma
+    # the json hash for this WorkerAvailabilityDto
     def to_jaxb_json_hash
       _h = {}
-      _h['kirjausyksikkoId'] = kirjausyksikkoId.to_jaxb_json_hash unless kirjausyksikkoId.nil?
-      _h['omistaja'] = omistaja.to_jaxb_json_hash unless omistaja.nil?
-      _h['rekisteri'] = rekisteri.to_jaxb_json_hash unless rekisteri.nil?
-      _h['loppuaika'] = loppuaika.to_jaxb_json_hash unless loppuaika.nil?
-      _h['kirjausAika'] = kirjausAika.to_jaxb_json_hash unless kirjausAika.nil?
-      _h['kirjausyksikko'] = kirjausyksikko.to_jaxb_json_hash unless kirjausyksikko.nil?
-      _h['peruuntumisSyyKoodi'] = peruuntumisSyyKoodi.to_jaxb_json_hash unless peruuntumisSyyKoodi.nil?
-      _h['aktiivinen'] = aktiivinen.to_jaxb_json_hash unless aktiivinen.nil?
-      _h['palvelunantaja'] = palvelunantaja.to_jaxb_json_hash unless palvelunantaja.nil?
-      _h['tapahtumalaji'] = tapahtumalaji.to_jaxb_json_hash unless tapahtumalaji.nil?
-      _h['tyonantaja'] = tyonantaja.to_jaxb_json_hash unless tyonantaja.nil?
-      _h['kirjaaja'] = kirjaaja.to_jaxb_json_hash unless kirjaaja.nil?
-      _h['palveluntuottaja'] = palveluntuottaja.to_jaxb_json_hash unless palveluntuottaja.nil?
-      _h['tyyppi'] = tyyppi.to_jaxb_json_hash unless tyyppi.nil?
-      _h['id'] = id.to_jaxb_json_hash unless id.nil?
-      _h['alkuaika'] = alkuaika.to_jaxb_json_hash unless alkuaika.nil?
-      _h['oid'] = oid.to_jaxb_json_hash unless oid.nil?
-      _h['luovutusHaunPalvelutapahtuma'] = luovutusHaunPalvelutapahtuma.to_jaxb_json_hash unless luovutusHaunPalvelutapahtuma.nil?
+      _h['worker'] = worker.to_jaxb_json_hash unless worker.nil?
+      _h['availability'] = availability.to_jaxb_json_hash unless availability.nil?
       return _h
     end
 
-    # the json (string form) for this Palvelutapahtuma
+    # the json (string form) for this WorkerAvailabilityDto
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this Palvelutapahtuma with a json hash
+    #initializes this WorkerAvailabilityDto with a json hash
     def init_jaxb_json_hash(_o)
-      @kirjausyksikkoId = Fixnum.from_json(_o['kirjausyksikkoId']) unless _o['kirjausyksikkoId'].nil?
-      @omistaja = Fixnum.from_json(_o['omistaja']) unless _o['omistaja'].nil?
-      @rekisteri = String.from_json(_o['rekisteri']) unless _o['rekisteri'].nil?
-      @loppuaika = Time.from_json(_o['loppuaika']) unless _o['loppuaika'].nil?
-      @kirjausAika = Time.from_json(_o['kirjausAika']) unless _o['kirjausAika'].nil?
-      @kirjausyksikko = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['kirjausyksikko']) unless _o['kirjausyksikko'].nil?
-      @peruuntumisSyyKoodi = String.from_json(_o['peruuntumisSyyKoodi']) unless _o['peruuntumisSyyKoodi'].nil?
-      @aktiivinen = Boolean.from_json(_o['aktiivinen']) unless _o['aktiivinen'].nil?
-      @palvelunantaja = String.from_json(_o['palvelunantaja']) unless _o['palvelunantaja'].nil?
-      @tapahtumalaji = String.from_json(_o['tapahtumalaji']) unless _o['tapahtumalaji'].nil?
-      @tyonantaja = Fixnum.from_json(_o['tyonantaja']) unless _o['tyonantaja'].nil?
-      @kirjaaja = Fixnum.from_json(_o['kirjaaja']) unless _o['kirjaaja'].nil?
-      @palveluntuottaja = String.from_json(_o['palveluntuottaja']) unless _o['palveluntuottaja'].nil?
-      @tyyppi = String.from_json(_o['tyyppi']) unless _o['tyyppi'].nil?
-      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
-      @alkuaika = Time.from_json(_o['alkuaika']) unless _o['alkuaika'].nil?
-      @oid = String.from_json(_o['oid']) unless _o['oid'].nil?
-      @luovutusHaunPalvelutapahtuma = Boolean.from_json(_o['luovutusHaunPalvelutapahtuma']) unless _o['luovutusHaunPalvelutapahtuma'].nil?
+      @worker = Fi::Mediconsult::Core::Client::Dto::Omistaja::User.from_json(_o['worker']) unless _o['worker'].nil?
+      @availability = Fi::Mediconsult::Mediplan::Dto::Worker::AvailabilityDto.from_json(_o['availability']) unless _o['availability'].nil?
     end
 
-    # constructs a Palvelutapahtuma from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class MetadataGroup 
-
-    # (no documentation provided)
-    attr_accessor :groupID
-    # (no documentation provided)
-    attr_accessor :groupName
-    # (no documentation provided)
-    attr_accessor :startDate
-    # (no documentation provided)
-    attr_accessor :endDate
-    # (no documentation provided)
-    attr_accessor :metadata
-
-    # the json hash for this MetadataGroup
-    def to_jaxb_json_hash
-      _h = {}
-      _h['groupID'] = groupID.to_jaxb_json_hash unless groupID.nil?
-      _h['groupName'] = groupName.to_jaxb_json_hash unless groupName.nil?
-      _h['startDate'] = startDate.to_jaxb_json_hash unless startDate.nil?
-      _h['endDate'] = endDate.to_jaxb_json_hash unless endDate.nil?
-      if !metadata.nil?
-        _ha = Array.new
-        metadata.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['metadata'] = _ha
-      end
-      return _h
-    end
-
-    # the json (string form) for this MetadataGroup
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this MetadataGroup with a json hash
-    def init_jaxb_json_hash(_o)
-      @groupID = Fixnum.from_json(_o['groupID']) unless _o['groupID'].nil?
-      @groupName = String.from_json(_o['groupName']) unless _o['groupName'].nil?
-      @startDate = Time.from_json(_o['startDate']) unless _o['startDate'].nil?
-      @endDate = Time.from_json(_o['endDate']) unless _o['endDate'].nil?
-      if !_o['metadata'].nil?
-        @metadata = Array.new
-        _oa = _o['metadata']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @metadata.push Fi::Mediconsult::Core::Client::Dto::Metadata.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @metadata.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-    end
-
-    # constructs a MetadataGroup from a (parsed) JSON hash
+    # constructs a WorkerAvailabilityDto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -290,22 +137,22 @@ module Dto
   class Riskitiedot 
 
     # (no documentation provided)
-    attr_accessor :permissionDTO
+    attr_accessor :omistaja
     # (no documentation provided)
     attr_accessor :riskitiedotList
     # (no documentation provided)
-    attr_accessor :omistaja
+    attr_accessor :permissionDTO
 
     # the json hash for this Riskitiedot
     def to_jaxb_json_hash
       _h = {}
-      _h['permissionDTO'] = permissionDTO.to_jaxb_json_hash unless permissionDTO.nil?
+      _h['omistaja'] = omistaja.to_jaxb_json_hash unless omistaja.nil?
       if !riskitiedotList.nil?
         _ha = Array.new
         riskitiedotList.each { | _item | _ha.push _item.to_jaxb_json_hash }
         _h['riskitiedotList'] = _ha
       end
-      _h['omistaja'] = omistaja.to_jaxb_json_hash unless omistaja.nil?
+      _h['permissionDTO'] = permissionDTO.to_jaxb_json_hash unless permissionDTO.nil?
       return _h
     end
 
@@ -316,7 +163,7 @@ module Dto
 
     #initializes this Riskitiedot with a json hash
     def init_jaxb_json_hash(_o)
-      @permissionDTO = Fi::Mediconsult::Core::Client::Dto::Permission.from_json(_o['permissionDTO']) unless _o['permissionDTO'].nil?
+      @omistaja = Fixnum.from_json(_o['omistaja']) unless _o['omistaja'].nil?
       if !_o['riskitiedotList'].nil?
         @riskitiedotList = Array.new
         _oa = _o['riskitiedotList']
@@ -332,7 +179,7 @@ module Dto
           end
          }
       end
-      @omistaja = Fixnum.from_json(_o['omistaja']) unless _o['omistaja'].nil?
+      @permissionDTO = Fi::Mediconsult::Core::Client::Dto::Permission.from_json(_o['permissionDTO']) unless _o['permissionDTO'].nil?
     end
 
     # constructs a Riskitiedot from a (parsed) JSON hash
@@ -367,44 +214,98 @@ module Client
 
 module Dto
 
-module Kertomus
-
   # (no documentation provided)
-  class MittausFormConfig 
+  class Palvelutapahtuma 
 
     # (no documentation provided)
-    attr_accessor :mainTitles
+    attr_accessor :peruuntumisSyyKoodi
     # (no documentation provided)
-    attr_accessor :kayttajaRyhmaId
+    attr_accessor :rekisteri
     # (no documentation provided)
-    attr_accessor :editable
+    attr_accessor :alkuaika
     # (no documentation provided)
-    attr_accessor :permission
+    attr_accessor :tyyppi
+    # (no documentation provided)
+    attr_accessor :palveluntuottaja
+    # (no documentation provided)
+    attr_accessor :kirjausyksikkoId
+    # (no documentation provided)
+    attr_accessor :luovutusHaunPalvelutapahtuma
+    # (no documentation provided)
+    attr_accessor :oid
+    # (no documentation provided)
+    attr_accessor :palvelunantaja
+    # (no documentation provided)
+    attr_accessor :loppuaika
+    # (no documentation provided)
+    attr_accessor :tyonantaja
+    # (no documentation provided)
+    attr_accessor :kirjausyksikko
+    # (no documentation provided)
+    attr_accessor :tapahtumalaji
+    # (no documentation provided)
+    attr_accessor :kirjaaja
+    # (no documentation provided)
+    attr_accessor :kirjausaika
+    # (no documentation provided)
+    attr_accessor :aktiivinen
+    # (no documentation provided)
+    attr_accessor :id
+    # (no documentation provided)
+    attr_accessor :omistaja
 
-    # the json hash for this MittausFormConfig
+    # the json hash for this Palvelutapahtuma
     def to_jaxb_json_hash
       _h = {}
-      _h['mainTitles'] = mainTitles.to_jaxb_json_hash unless mainTitles.nil?
-      _h['kayttajaRyhmaId'] = kayttajaRyhmaId.to_jaxb_json_hash unless kayttajaRyhmaId.nil?
-      _h['editable'] = editable.to_jaxb_json_hash unless editable.nil?
-      _h['permission'] = permission.to_jaxb_json_hash unless permission.nil?
+      _h['peruuntumisSyyKoodi'] = peruuntumisSyyKoodi.to_jaxb_json_hash unless peruuntumisSyyKoodi.nil?
+      _h['rekisteri'] = rekisteri.to_jaxb_json_hash unless rekisteri.nil?
+      _h['alkuaika'] = alkuaika.to_jaxb_json_hash unless alkuaika.nil?
+      _h['tyyppi'] = tyyppi.to_jaxb_json_hash unless tyyppi.nil?
+      _h['palveluntuottaja'] = palveluntuottaja.to_jaxb_json_hash unless palveluntuottaja.nil?
+      _h['kirjausyksikkoId'] = kirjausyksikkoId.to_jaxb_json_hash unless kirjausyksikkoId.nil?
+      _h['luovutusHaunPalvelutapahtuma'] = luovutusHaunPalvelutapahtuma.to_jaxb_json_hash unless luovutusHaunPalvelutapahtuma.nil?
+      _h['oid'] = oid.to_jaxb_json_hash unless oid.nil?
+      _h['palvelunantaja'] = palvelunantaja.to_jaxb_json_hash unless palvelunantaja.nil?
+      _h['loppuaika'] = loppuaika.to_jaxb_json_hash unless loppuaika.nil?
+      _h['tyonantaja'] = tyonantaja.to_jaxb_json_hash unless tyonantaja.nil?
+      _h['kirjausyksikko'] = kirjausyksikko.to_jaxb_json_hash unless kirjausyksikko.nil?
+      _h['tapahtumalaji'] = tapahtumalaji.to_jaxb_json_hash unless tapahtumalaji.nil?
+      _h['kirjaaja'] = kirjaaja.to_jaxb_json_hash unless kirjaaja.nil?
+      _h['kirjausaika'] = kirjausaika.to_jaxb_json_hash unless kirjausaika.nil?
+      _h['aktiivinen'] = aktiivinen.to_jaxb_json_hash unless aktiivinen.nil?
+      _h['id'] = id.to_jaxb_json_hash unless id.nil?
+      _h['omistaja'] = omistaja.to_jaxb_json_hash unless omistaja.nil?
       return _h
     end
 
-    # the json (string form) for this MittausFormConfig
+    # the json (string form) for this Palvelutapahtuma
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this MittausFormConfig with a json hash
+    #initializes this Palvelutapahtuma with a json hash
     def init_jaxb_json_hash(_o)
-      @mainTitles = Hash.from_json(_o['mainTitles']) unless _o['mainTitles'].nil?
-      @kayttajaRyhmaId = Fixnum.from_json(_o['kayttajaRyhmaId']) unless _o['kayttajaRyhmaId'].nil?
-      @editable = Boolean.from_json(_o['editable']) unless _o['editable'].nil?
-      @permission = Fi::Mediconsult::Core::Client::Dto::PermissionDTO.from_json(_o['permission']) unless _o['permission'].nil?
+      @peruuntumisSyyKoodi = String.from_json(_o['peruuntumisSyyKoodi']) unless _o['peruuntumisSyyKoodi'].nil?
+      @rekisteri = String.from_json(_o['rekisteri']) unless _o['rekisteri'].nil?
+      @alkuaika = Time.from_json(_o['alkuaika']) unless _o['alkuaika'].nil?
+      @tyyppi = String.from_json(_o['tyyppi']) unless _o['tyyppi'].nil?
+      @palveluntuottaja = String.from_json(_o['palveluntuottaja']) unless _o['palveluntuottaja'].nil?
+      @kirjausyksikkoId = Fixnum.from_json(_o['kirjausyksikkoId']) unless _o['kirjausyksikkoId'].nil?
+      @luovutusHaunPalvelutapahtuma = Boolean.from_json(_o['luovutusHaunPalvelutapahtuma']) unless _o['luovutusHaunPalvelutapahtuma'].nil?
+      @oid = String.from_json(_o['oid']) unless _o['oid'].nil?
+      @palvelunantaja = String.from_json(_o['palvelunantaja']) unless _o['palvelunantaja'].nil?
+      @loppuaika = Time.from_json(_o['loppuaika']) unless _o['loppuaika'].nil?
+      @tyonantaja = Fixnum.from_json(_o['tyonantaja']) unless _o['tyonantaja'].nil?
+      @kirjausyksikko = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['kirjausyksikko']) unless _o['kirjausyksikko'].nil?
+      @tapahtumalaji = String.from_json(_o['tapahtumalaji']) unless _o['tapahtumalaji'].nil?
+      @kirjaaja = Fixnum.from_json(_o['kirjaaja']) unless _o['kirjaaja'].nil?
+      @kirjausaika = Time.from_json(_o['kirjausaika']) unless _o['kirjausaika'].nil?
+      @aktiivinen = Boolean.from_json(_o['aktiivinen']) unless _o['aktiivinen'].nil?
+      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
+      @omistaja = Fixnum.from_json(_o['omistaja']) unless _o['omistaja'].nil?
     end
 
-    # constructs a MittausFormConfig from a (parsed) JSON hash
+    # constructs a Palvelutapahtuma from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -417,6 +318,200 @@ module Kertomus
   end
 
 end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Security
+
+module Dto
+
+  # (no documentation provided)
+  class ViewConfiguration 
+
+    # (no documentation provided)
+    attr_accessor :landingPage
+    # (no documentation provided)
+    attr_accessor :landingPageWithOwner
+    # (no documentation provided)
+    attr_accessor :components
+
+    # the json hash for this ViewConfiguration
+    def to_jaxb_json_hash
+      _h = {}
+      _h['landingPage'] = landingPage.to_jaxb_json_hash unless landingPage.nil?
+      _h['landingPageWithOwner'] = landingPageWithOwner.to_jaxb_json_hash unless landingPageWithOwner.nil?
+      if !components.nil?
+        _ha = Array.new
+        components.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['components'] = _ha
+      end
+      return _h
+    end
+
+    # the json (string form) for this ViewConfiguration
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this ViewConfiguration with a json hash
+    def init_jaxb_json_hash(_o)
+      @landingPage = String.from_json(_o['landingPage']) unless _o['landingPage'].nil?
+      @landingPageWithOwner = String.from_json(_o['landingPageWithOwner']) unless _o['landingPageWithOwner'].nil?
+      if !_o['components'].nil?
+        @components = Array.new
+        _oa = _o['components']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @components.push String.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @components.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+    end
+
+    # constructs a ViewConfiguration from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Worker
+
+  # (no documentation provided)
+  class AvailabilityDto 
+
+    # the start
+    attr_accessor :start
+    # the end
+    attr_accessor :end
+    # the available
+    attr_accessor :available
+    # the workingHoursPlanned
+    attr_accessor :workingHoursPlanned
+    # the conflicts
+    attr_accessor :conflicts
+    # the workingHourEvents
+    attr_accessor :workingHourEvents
+    # the conflictingEvents
+    attr_accessor :conflictingEvents
+
+    # the json hash for this AvailabilityDto
+    def to_jaxb_json_hash
+      _h = {}
+      _h['start'] = start.to_jaxb_json_hash unless start.nil?
+      _h['end'] = end.to_jaxb_json_hash unless end.nil?
+      _h['available'] = available.to_jaxb_json_hash unless available.nil?
+      _h['workingHoursPlanned'] = workingHoursPlanned.to_jaxb_json_hash unless workingHoursPlanned.nil?
+      _h['conflicts'] = conflicts.to_jaxb_json_hash unless conflicts.nil?
+      if !workingHourEvents.nil?
+        _ha = Array.new
+        workingHourEvents.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['workingHourEvents'] = _ha
+      end
+      if !conflictingEvents.nil?
+        _ha = Array.new
+        conflictingEvents.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['conflictingEvents'] = _ha
+      end
+      return _h
+    end
+
+    # the json (string form) for this AvailabilityDto
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this AvailabilityDto with a json hash
+    def init_jaxb_json_hash(_o)
+      @start = Time.from_json(_o['start']) unless _o['start'].nil?
+      @end = Time.from_json(_o['end']) unless _o['end'].nil?
+      @available = Boolean.from_json(_o['available']) unless _o['available'].nil?
+      @workingHoursPlanned = Boolean.from_json(_o['workingHoursPlanned']) unless _o['workingHoursPlanned'].nil?
+      @conflicts = Boolean.from_json(_o['conflicts']) unless _o['conflicts'].nil?
+      if !_o['workingHourEvents'].nil?
+        @workingHourEvents = Array.new
+        _oa = _o['workingHourEvents']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @workingHourEvents.push Fi::Mediconsult::Mediplan::Dto::Event::CalendarEventDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @workingHourEvents.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['conflictingEvents'].nil?
+        @conflictingEvents = Array.new
+        _oa = _o['conflictingEvents']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @conflictingEvents.push Fi::Mediconsult::Mediplan::Dto::Event::CalendarEventDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @conflictingEvents.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+    end
+
+    # constructs a AvailabilityDto from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
 
 end
 
@@ -579,56 +674,58 @@ module Client
 
 module Dto
 
+module Kertomus
+
   # (no documentation provided)
-  class Laakityskategoria 
+  class KertomusComponentConfig 
 
+    # list of configs for all forms.
+    attr_accessor :kertomusConfigs
     # (no documentation provided)
-    attr_accessor :displayName
+    attr_accessor :titleConfigs
     # (no documentation provided)
-    attr_accessor :code
-    # (no documentation provided)
-    attr_accessor :laakityshistoriaList
+    attr_accessor :mainTitleConfigs
 
-    # the json hash for this Laakityskategoria
+    # the json hash for this KertomusComponentConfig
     def to_jaxb_json_hash
       _h = {}
-      _h['displayName'] = displayName.to_jaxb_json_hash unless displayName.nil?
-      _h['code'] = code.to_jaxb_json_hash unless code.nil?
-      if !laakityshistoriaList.nil?
+      if !kertomusConfigs.nil?
         _ha = Array.new
-        laakityshistoriaList.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['laakityshistoriaList'] = _ha
+        kertomusConfigs.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['kertomusConfigs'] = _ha
       end
+      _h['titleConfigs'] = titleConfigs.to_jaxb_json_hash unless titleConfigs.nil?
+      _h['mainTitleConfigs'] = mainTitleConfigs.to_jaxb_json_hash unless mainTitleConfigs.nil?
       return _h
     end
 
-    # the json (string form) for this Laakityskategoria
+    # the json (string form) for this KertomusComponentConfig
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this Laakityskategoria with a json hash
+    #initializes this KertomusComponentConfig with a json hash
     def init_jaxb_json_hash(_o)
-      @displayName = String.from_json(_o['displayName']) unless _o['displayName'].nil?
-      @code = String.from_json(_o['code']) unless _o['code'].nil?
-      if !_o['laakityshistoriaList'].nil?
-        @laakityshistoriaList = Array.new
-        _oa = _o['laakityshistoriaList']
+      if !_o['kertomusConfigs'].nil?
+        @kertomusConfigs = Array.new
+        _oa = _o['kertomusConfigs']
         _oa.each { | _item | 
            if (_item['@class'].nil?)
-             @laakityshistoriaList.push Fi::Mediconsult::Core::Client::Dto::LaakitysHistoria.from_json(_item)
+             @kertomusConfigs.push Fi::Mediconsult::Core::Client::Dto::Kertomus::KertomusFormConfig.from_json(_item)
            else
              clazz_array_parts = _item['@class'].split('.')
              short_clazz = clazz_array_parts.pop
              clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
              clazz = clazz_package + "::" + short_clazz
-             @laakityshistoriaList.push Object.const_get(clazz).send(:from_json, _item)
+             @kertomusConfigs.push Object.const_get(clazz).send(:from_json, _item)
           end
          }
       end
+      @titleConfigs = Hash.from_json(_o['titleConfigs']) unless _o['titleConfigs'].nil?
+      @mainTitleConfigs = Hash.from_json(_o['mainTitleConfigs']) unless _o['mainTitleConfigs'].nil?
     end
 
-    # constructs a Laakityskategoria from a (parsed) JSON hash
+    # constructs a KertomusComponentConfig from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -639,6 +736,8 @@ module Dto
       end
     end
   end
+
+end
 
 end
 
@@ -654,50 +753,42 @@ module Fi
 
 module Mediconsult
 
-module Core
-
-module Client
+module Mediplan
 
 module Dto
 
-module Kertomus
-
   # (no documentation provided)
-  class KertomusID 
+  class Employee 
 
-    # (no documentation provided)
-    attr_accessor :ownerId
-    # (no documentation provided)
-    attr_accessor :aika
-    # (no documentation provided)
-    attr_accessor :formId
-    # (no documentation provided)
-    attr_accessor :reportId
+    # the id
+    attr_accessor :id
+    # the name
+    attr_accessor :name
+    # the data
+    attr_accessor :data
 
-    # the json hash for this KertomusID
+    # the json hash for this Employee
     def to_jaxb_json_hash
       _h = {}
-      _h['ownerId'] = ownerId.to_jaxb_json_hash unless ownerId.nil?
-      _h['aika'] = aika.to_jaxb_json_hash unless aika.nil?
-      _h['formId'] = formId.to_jaxb_json_hash unless formId.nil?
-      _h['reportId'] = reportId.to_jaxb_json_hash unless reportId.nil?
+      _h['id'] = id.to_jaxb_json_hash unless id.nil?
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['data'] = data.to_jaxb_json_hash unless data.nil?
       return _h
     end
 
-    # the json (string form) for this KertomusID
+    # the json (string form) for this Employee
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this KertomusID with a json hash
+    #initializes this Employee with a json hash
     def init_jaxb_json_hash(_o)
-      @ownerId = Fixnum.from_json(_o['ownerId']) unless _o['ownerId'].nil?
-      @aika = Time.from_json(_o['aika']) unless _o['aika'].nil?
-      @formId = Fixnum.from_json(_o['formId']) unless _o['formId'].nil?
-      @reportId = Fixnum.from_json(_o['reportId']) unless _o['reportId'].nil?
+      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @data = Fi::Mediconsult::Core::Client::Dto::Omistaja::User.from_json(_o['data']) unless _o['data'].nil?
     end
 
-    # constructs a KertomusID from a (parsed) JSON hash
+    # constructs a Employee from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -708,10 +799,6 @@ module Kertomus
       end
     end
   end
-
-end
-
-end
 
 end
 
@@ -736,6 +823,8 @@ module Palvelupaatos
   # (no documentation provided)
   class Palvelupaatos 
 
+    # (no documentation provided)
+    attr_accessor :permissions
     # (no documentation provided)
     attr_accessor :paatos
     # (no documentation provided)
@@ -828,10 +917,13 @@ module Palvelupaatos
     attr_accessor :lasnaolot
     # (no documentation provided)
     attr_accessor :palvelukeskeytykset
+    # (no documentation provided)
+    attr_accessor :effectivePalvelukeskeytykset
 
     # the json hash for this Palvelupaatos
     def to_jaxb_json_hash
       _h = {}
+      _h['permissions'] = permissions.to_jaxb_json_hash unless permissions.nil?
       _h['paatos'] = paatos.to_jaxb_json_hash unless paatos.nil?
       _h['palveluluokkaTunnus'] = palveluluokkaTunnus.to_jaxb_json_hash unless palveluluokkaTunnus.nil?
       _h['palveluluokka'] = palveluluokka.to_jaxb_json_hash unless palveluluokka.nil?
@@ -882,6 +974,11 @@ module Palvelupaatos
         palvelukeskeytykset.each { | _item | _ha.push _item.to_jaxb_json_hash }
         _h['palvelukeskeytykset'] = _ha
       end
+      if !effectivePalvelukeskeytykset.nil?
+        _ha = Array.new
+        effectivePalvelukeskeytykset.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['effectivePalvelukeskeytykset'] = _ha
+      end
       return _h
     end
 
@@ -892,19 +989,20 @@ module Palvelupaatos
 
     #initializes this Palvelupaatos with a json hash
     def init_jaxb_json_hash(_o)
+      @permissions = Fi::Mediconsult::Core::Client::Dto::PermissionDTO.from_json(_o['permissions']) unless _o['permissions'].nil?
       @paatos = Fixnum.from_json(_o['paatos']) unless _o['paatos'].nil?
       @palveluluokkaTunnus = String.from_json(_o['palveluluokkaTunnus']) unless _o['palveluluokkaTunnus'].nil?
       @palveluluokka = Fi::Mediconsult::Core::Client::Dto::Palvelupaatos::Palveluluokka.from_json(_o['palveluluokka']) unless _o['palveluluokka'].nil?
-      @alkaa = Java::Sql::Date.from_json(_o['alkaa']) unless _o['alkaa'].nil?
+      @alkaa = Bignum.from_json(_o['alkaa']) unless _o['alkaa'].nil?
       @diaarinumero = String.from_json(_o['diaarinumero']) unless _o['diaarinumero'].nil?
-      @haettu = Java::Sql::Date.from_json(_o['haettu']) unless _o['haettu'].nil?
+      @haettu = Bignum.from_json(_o['haettu']) unless _o['haettu'].nil?
       @huomautuksia = String.from_json(_o['huomautuksia']) unless _o['huomautuksia'].nil?
       @kayttajaryhma = Fixnum.from_json(_o['kayttajaryhma']) unless _o['kayttajaryhma'].nil?
       @kustannuspaikka = Fixnum.from_json(_o['kustannuspaikka']) unless _o['kustannuspaikka'].nil?
       @kuukausimaksu = Float.from_json(_o['kuukausimaksu']) unless _o['kuukausimaksu'].nil?
       @laki = String.from_json(_o['laki']) unless _o['laki'].nil?
-      @laskutusalkaa = Java::Sql::Date.from_json(_o['laskutusalkaa']) unless _o['laskutusalkaa'].nil?
-      @loppuu = Java::Sql::Date.from_json(_o['loppuu']) unless _o['loppuu'].nil?
+      @laskutusalkaa = Bignum.from_json(_o['laskutusalkaa']) unless _o['laskutusalkaa'].nil?
+      @loppuu = Bignum.from_json(_o['loppuu']) unless _o['loppuu'].nil?
       @luokittelu1 = String.from_json(_o['luokittelu1']) unless _o['luokittelu1'].nil?
       @luokittelu2 = String.from_json(_o['luokittelu2']) unless _o['luokittelu2'].nil?
       @maara = Fixnum.from_json(_o['maara']) unless _o['maara'].nil?
@@ -915,7 +1013,7 @@ module Palvelupaatos
       @mitatoity = Time.from_json(_o['mitatoity']) unless _o['mitatoity'].nil?
       @muutosaika = Time.from_json(_o['muutosaika']) unless _o['muutosaika'].nil?
       @muutospaikka = Fixnum.from_json(_o['muutospaikka']) unless _o['muutospaikka'].nil?
-      @paatetty = Java::Sql::Date.from_json(_o['paatetty']) unless _o['paatetty'].nil?
+      @paatetty = Bignum.from_json(_o['paatetty']) unless _o['paatetty'].nil?
       @paatosyksikko = Fixnum.from_json(_o['paatosyksikko']) unless _o['paatosyksikko'].nil?
       @paatosyksikkoUnit = Fi::Mediconsult::Core::Client::Dto::Omistaja::Unit.from_json(_o['paatosyksikkoUnit']) unless _o['paatosyksikkoUnit'].nil?
       @paattaja = Fixnum.from_json(_o['paattaja']) unless _o['paattaja'].nil?
@@ -929,7 +1027,7 @@ module Palvelupaatos
       @tilasto2 = String.from_json(_o['tilasto2']) unless _o['tilasto2'].nil?
       @tilasto3 = String.from_json(_o['tilasto3']) unless _o['tilasto3'].nil?
       @tulot = Float.from_json(_o['tulot']) unless _o['tulot'].nil?
-      @valitettu = Java::Sql::Date.from_json(_o['valitettu']) unless _o['valitettu'].nil?
+      @valitettu = Bignum.from_json(_o['valitettu']) unless _o['valitettu'].nil?
       @valmistelija = Fixnum.from_json(_o['valmistelija']) unless _o['valmistelija'].nil?
       @valmistelijaUser = Fi::Mediconsult::Core::Client::Dto::Omistaja::User.from_json(_o['valmistelijaUser']) unless _o['valmistelijaUser'].nil?
       @valmisteluyksikko = Fixnum.from_json(_o['valmisteluyksikko']) unless _o['valmisteluyksikko'].nil?
@@ -949,6 +1047,21 @@ module Palvelupaatos
              clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
              clazz = clazz_package + "::" + short_clazz
              @palvelukeskeytykset.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['effectivePalvelukeskeytykset'].nil?
+        @effectivePalvelukeskeytykset = Array.new
+        _oa = _o['effectivePalvelukeskeytykset']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @effectivePalvelukeskeytykset.push Fi::Mediconsult::Core::Client::Dto::Palvelupaatos::Palvelukeskeytys.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @effectivePalvelukeskeytykset.push Object.const_get(clazz).send(:from_json, _item)
           end
          }
       end
@@ -991,51 +1104,51 @@ module Dto
 module Seuranta
 
   # (no documentation provided)
-  class SeurantaConfig 
+  class SeurantaFormConfig 
 
     # (no documentation provided)
-    attr_accessor :writeCount
+    attr_accessor :titles
     # (no documentation provided)
-    attr_accessor :configs
+    attr_accessor :permission
 
-    # the json hash for this SeurantaConfig
+    # the json hash for this SeurantaFormConfig
     def to_jaxb_json_hash
       _h = {}
-      _h['writeCount'] = writeCount.to_jaxb_json_hash unless writeCount.nil?
-      if !configs.nil?
+      if !titles.nil?
         _ha = Array.new
-        configs.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['configs'] = _ha
+        titles.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['titles'] = _ha
       end
+      _h['permission'] = permission.to_jaxb_json_hash unless permission.nil?
       return _h
     end
 
-    # the json (string form) for this SeurantaConfig
+    # the json (string form) for this SeurantaFormConfig
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this SeurantaConfig with a json hash
+    #initializes this SeurantaFormConfig with a json hash
     def init_jaxb_json_hash(_o)
-      @writeCount = Fixnum.from_json(_o['writeCount']) unless _o['writeCount'].nil?
-      if !_o['configs'].nil?
-        @configs = Array.new
-        _oa = _o['configs']
+      if !_o['titles'].nil?
+        @titles = Array.new
+        _oa = _o['titles']
         _oa.each { | _item | 
            if (_item['@class'].nil?)
-             @configs.push Fi::Mediconsult::Core::Client::Dto::Seuranta::SeurantaFormConfig.from_json(_item)
+             @titles.push Fi::Mediconsult::Core::Client::Dto::Seuranta::SeurantaTitleEditFlag.from_json(_item)
            else
              clazz_array_parts = _item['@class'].split('.')
              short_clazz = clazz_array_parts.pop
              clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
              clazz = clazz_package + "::" + short_clazz
-             @configs.push Object.const_get(clazz).send(:from_json, _item)
+             @titles.push Object.const_get(clazz).send(:from_json, _item)
           end
          }
       end
+      @permission = Fi::Mediconsult::Core::Client::Dto::PermissionDTO.from_json(_o['permission']) unless _o['permission'].nil?
     end
 
-    # constructs a SeurantaConfig from a (parsed) JSON hash
+    # constructs a SeurantaFormConfig from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -1075,26 +1188,26 @@ module Hoito
   class Hoidot 
 
     # (no documentation provided)
-    attr_accessor :permissions
-    # (no documentation provided)
     attr_accessor :hoidot
     # (no documentation provided)
     attr_accessor :omistaja
+    # (no documentation provided)
+    attr_accessor :permissions
 
     # the json hash for this Hoidot
     def to_jaxb_json_hash
       _h = {}
-      if !permissions.nil?
-        _ha = Array.new
-        permissions.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['permissions'] = _ha
-      end
       if !hoidot.nil?
         _ha = Array.new
         hoidot.each { | _item | _ha.push _item.to_jaxb_json_hash }
         _h['hoidot'] = _ha
       end
       _h['omistaja'] = omistaja.to_jaxb_json_hash unless omistaja.nil?
+      if !permissions.nil?
+        _ha = Array.new
+        permissions.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['permissions'] = _ha
+      end
       return _h
     end
 
@@ -1105,21 +1218,6 @@ module Hoito
 
     #initializes this Hoidot with a json hash
     def init_jaxb_json_hash(_o)
-      if !_o['permissions'].nil?
-        @permissions = Array.new
-        _oa = _o['permissions']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @permissions.push Fi::Mediconsult::Core::Client::Dto::PermissionDTO.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @permissions.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
       if !_o['hoidot'].nil?
         @hoidot = Array.new
         _oa = _o['hoidot']
@@ -1136,6 +1234,21 @@ module Hoito
          }
       end
       @omistaja = Fixnum.from_json(_o['omistaja']) unless _o['omistaja'].nil?
+      if !_o['permissions'].nil?
+        @permissions = Array.new
+        _oa = _o['permissions']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @permissions.push Fi::Mediconsult::Core::Client::Dto::PermissionDTO.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @permissions.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
     end
 
     # constructs a Hoidot from a (parsed) JSON hash
@@ -1166,60 +1279,44 @@ module Fi
 
 module Mediconsult
 
-module Mediplan
+module Core
+
+module Client
 
 module Dto
 
-module Event
-
   # (no documentation provided)
-  class EventResourceDto 
+  class BaseModel 
 
-    # the id
-    attr_accessor :id
-    # the typeid
-    attr_accessor :typeid
-    # the name
-    attr_accessor :name
-    # the delay
-    attr_accessor :delay
-    # the duration
-    attr_accessor :duration
-    # the amount
-    attr_accessor :amount
-    # the required
-    attr_accessor :required
+    # (no documentation provided)
+    attr_accessor :editTime
+    # (no documentation provided)
+    attr_accessor :ownerId
+    # (no documentation provided)
+    attr_accessor :componentId
 
-    # the json hash for this EventResourceDto
+    # the json hash for this BaseModel
     def to_jaxb_json_hash
       _h = {}
-      _h['id'] = id.to_jaxb_json_hash unless id.nil?
-      _h['typeid'] = typeid.to_jaxb_json_hash unless typeid.nil?
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['delay'] = delay.to_jaxb_json_hash unless delay.nil?
-      _h['duration'] = duration.to_jaxb_json_hash unless duration.nil?
-      _h['amount'] = amount.to_jaxb_json_hash unless amount.nil?
-      _h['required'] = required.to_jaxb_json_hash unless required.nil?
+      _h['editTime'] = editTime.to_jaxb_json_hash unless editTime.nil?
+      _h['ownerId'] = ownerId.to_jaxb_json_hash unless ownerId.nil?
+      _h['componentId'] = componentId.to_jaxb_json_hash unless componentId.nil?
       return _h
     end
 
-    # the json (string form) for this EventResourceDto
+    # the json (string form) for this BaseModel
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this EventResourceDto with a json hash
+    #initializes this BaseModel with a json hash
     def init_jaxb_json_hash(_o)
-      @id = Bignum.from_json(_o['id']) unless _o['id'].nil?
-      @typeid = Bignum.from_json(_o['typeid']) unless _o['typeid'].nil?
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @delay = Fixnum.from_json(_o['delay']) unless _o['delay'].nil?
-      @duration = Fixnum.from_json(_o['duration']) unless _o['duration'].nil?
-      @amount = Fixnum.from_json(_o['amount']) unless _o['amount'].nil?
-      @required = Boolean.from_json(_o['required']) unless _o['required'].nil?
+      @editTime = Bignum.from_json(_o['editTime']) unless _o['editTime'].nil?
+      @ownerId = Fixnum.from_json(_o['ownerId']) unless _o['ownerId'].nil?
+      @componentId = String.from_json(_o['componentId']) unless _o['componentId'].nil?
     end
 
-    # constructs a EventResourceDto from a (parsed) JSON hash
+    # constructs a BaseModel from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -1254,41 +1351,33 @@ module Dto
 module Omistaja
 
   # (no documentation provided)
-  class OmistajaList 
+  class OwnerTypeInfo 
 
     # (no documentation provided)
-    attr_accessor :pageSize
+    attr_accessor :name
     # (no documentation provided)
-    attr_accessor :allItemsCount
-    # (no documentation provided)
-    attr_accessor :pageIndex
-    # (no documentation provided)
-    attr_accessor :pageItemsCount
+    attr_accessor :id
 
-    # the json hash for this OmistajaList
+    # the json hash for this OwnerTypeInfo
     def to_jaxb_json_hash
       _h = {}
-      _h['pageSize'] = pageSize.to_jaxb_json_hash unless pageSize.nil?
-      _h['allItemsCount'] = allItemsCount.to_jaxb_json_hash unless allItemsCount.nil?
-      _h['pageIndex'] = pageIndex.to_jaxb_json_hash unless pageIndex.nil?
-      _h['pageItemsCount'] = pageItemsCount.to_jaxb_json_hash unless pageItemsCount.nil?
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['id'] = id.to_jaxb_json_hash unless id.nil?
       return _h
     end
 
-    # the json (string form) for this OmistajaList
+    # the json (string form) for this OwnerTypeInfo
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this OmistajaList with a json hash
+    #initializes this OwnerTypeInfo with a json hash
     def init_jaxb_json_hash(_o)
-      @pageSize = Fixnum.from_json(_o['pageSize']) unless _o['pageSize'].nil?
-      @allItemsCount = Fixnum.from_json(_o['allItemsCount']) unless _o['allItemsCount'].nil?
-      @pageIndex = Fixnum.from_json(_o['pageIndex']) unless _o['pageIndex'].nil?
-      @pageItemsCount = Fixnum.from_json(_o['pageItemsCount']) unless _o['pageItemsCount'].nil?
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
     end
 
-    # constructs a OmistajaList from a (parsed) JSON hash
+    # constructs a OwnerTypeInfo from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -1301,83 +1390,6 @@ module Omistaja
   end
 
 end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class FysiologisetMittauksetView 
-
-    # (no documentation provided)
-    attr_accessor :patientId
-    # (no documentation provided)
-    attr_accessor :fysiologinenMittausList
-
-    # the json hash for this FysiologisetMittauksetView
-    def to_jaxb_json_hash
-      _h = {}
-      _h['patientId'] = patientId.to_jaxb_json_hash unless patientId.nil?
-      if !fysiologinenMittausList.nil?
-        _ha = Array.new
-        fysiologinenMittausList.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['fysiologinenMittausList'] = _ha
-      end
-      return _h
-    end
-
-    # the json (string form) for this FysiologisetMittauksetView
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this FysiologisetMittauksetView with a json hash
-    def init_jaxb_json_hash(_o)
-      @patientId = Fixnum.from_json(_o['patientId']) unless _o['patientId'].nil?
-      if !_o['fysiologinenMittausList'].nil?
-        @fysiologinenMittausList = Array.new
-        _oa = _o['fysiologinenMittausList']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @fysiologinenMittausList.push Fi::Mediconsult::Core::Client::Dto::FysiologinenMittaus.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @fysiologinenMittausList.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-    end
-
-    # constructs a FysiologisetMittauksetView from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
 
 end
 
@@ -1404,52 +1416,212 @@ module Laakitys
   # (no documentation provided)
   class Laakitys 
 
-    # the omistaja
+    # (no documentation provided)
     attr_accessor :omistaja
-    # Maps to columns
-    # &lt;ul&gt;
-    # &lt;li&gt;LaakitysHistoriaPK#getOsa()
-    # &lt;/ul&gt;
+    # (no documentation provided)
     attr_accessor :osa
-    # Maps to columns
-    # &lt;ul&gt;
-    # &lt;li&gt;LaakeValmisteEntity#getNimi()
-    # &lt;/ul&gt;
-    attr_accessor :nimi
     # (no documentation provided)
-    attr_accessor :annostus
+    attr_accessor :laakevalmiste
     # (no documentation provided)
-    attr_accessor :aloitusPvm
+    attr_accessor :laake
     # (no documentation provided)
-    attr_accessor :lopetusPvm
+    attr_accessor :aloitettu
     # (no documentation provided)
-    attr_accessor :kokoNimi
+    attr_accessor :tapahtunut
+    # (no documentation provided)
+    attr_accessor :tapahtuma
+    # (no documentation provided)
+    attr_accessor :riittoisuus
+    # (no documentation provided)
+    attr_accessor :lopetettu
+    # (no documentation provided)
+    attr_accessor :lopetussyy
+    # (no documentation provided)
+    attr_accessor :reseptiteksti
+    # (no documentation provided)
+    attr_accessor :malli
+    # (no documentation provided)
+    attr_accessor :lyhyesti
+    # (no documentation provided)
+    attr_accessor :vaihdettavuus
+    # (no documentation provided)
+    attr_accessor :annettavaMaara
+    # (no documentation provided)
+    attr_accessor :annettavaMaksimi
+    # (no documentation provided)
+    attr_accessor :annettavaYksikko
     # (no documentation provided)
     attr_accessor :kertaAnnos
     # (no documentation provided)
+    attr_accessor :annosteluteksti
+    # (no documentation provided)
+    attr_accessor :desimaaleja
+    # (no documentation provided)
+    attr_accessor :paino
+    # (no documentation provided)
+    attr_accessor :lapsenPaino
+    # (no documentation provided)
+    attr_accessor :toisto
+    # (no documentation provided)
     attr_accessor :toistokuvaus
-    # (no documentation provided)
-    attr_accessor :maaraaja
-    # (no documentation provided)
-    attr_accessor :kirjaaja
-    # (no documentation provided)
-    attr_accessor :huomautuksia
-    # (no documentation provided)
-    attr_accessor :ohjeet
     # (no documentation provided)
     attr_accessor :kellonajat
     # (no documentation provided)
-    attr_accessor :annosteluteksti
-    # (no documentation provided)
-    attr_accessor :kayttotarkoitus
+    attr_accessor :kellonajatString
     # (no documentation provided)
     attr_accessor :aikayksikko
     # (no documentation provided)
     attr_accessor :antotahti
     # (no documentation provided)
-    attr_accessor :laakeaineet
+    attr_accessor :antotahtiString
+    # (no documentation provided)
+    attr_accessor :antotahtiyksikko
+    # (no documentation provided)
+    attr_accessor :vrkMaara
+    # (no documentation provided)
+    attr_accessor :vrkMaaraYksikko
+    # (no documentation provided)
+    attr_accessor :kokonaiskesto
+    # (no documentation provided)
+    attr_accessor :kokonaismaara
+    # (no documentation provided)
+    attr_accessor :kokonaismaarayksikko
+    # (no documentation provided)
+    attr_accessor :pakkauksia
+    # (no documentation provided)
+    attr_accessor :kirjaaja
+    # (no documentation provided)
+    attr_accessor :kirjaajaString
+    # (no documentation provided)
+    attr_accessor :maaraaja
+    # (no documentation provided)
+    attr_accessor :maaraajaString
+    # (no documentation provided)
+    attr_accessor :maaraysyksikko
+    # (no documentation provided)
+    attr_accessor :varmistus
+    # (no documentation provided)
+    attr_accessor :kayttotarkoitus
+    # (no documentation provided)
+    attr_accessor :ohjeet
+    # (no documentation provided)
+    attr_accessor :perustelu
+    # (no documentation provided)
+    attr_accessor :iterointi
+    # (no documentation provided)
+    attr_accessor :uusittu
     # (no documentation provided)
     attr_accessor :kuitattava
+    # (no documentation provided)
+    attr_accessor :pysyva
+    # (no documentation provided)
+    attr_accessor :tarvittaessa
+    # (no documentation provided)
+    attr_accessor :terapiaryhma
+    # (no documentation provided)
+    attr_accessor :soveltumaton
+    # (no documentation provided)
+    attr_accessor :vaikutus
+    # (no documentation provided)
+    attr_accessor :huomautuksia
+    # (no documentation provided)
+    attr_accessor :reseptityyppi
+    # (no documentation provided)
+    attr_accessor :reseptityyppiString
+    # (no documentation provided)
+    attr_accessor :tulostaja
+    # (no documentation provided)
+    attr_accessor :tulostettu
+    # (no documentation provided)
+    attr_accessor :oid
+    # (no documentation provided)
+    attr_accessor :tunnistustapa
+    # (no documentation provided)
+    attr_accessor :tunnistustapaselite
+    # (no documentation provided)
+    attr_accessor :annosjakeluperuste
+    # (no documentation provided)
+    attr_accessor :iterointivali
+    # (no documentation provided)
+    attr_accessor :erillisselvityskoodi
+    # (no documentation provided)
+    attr_accessor :erillisselvitys
+    # (no documentation provided)
+    attr_accessor :apteekkiviesti
+    # (no documentation provided)
+    attr_accessor :ereseptikielto
+    # (no documentation provided)
+    attr_accessor :hoitolaji
+    # (no documentation provided)
+    attr_accessor :uusi
+    # (no documentation provided)
+    attr_accessor :lahetetty
+    # (no documentation provided)
+    attr_accessor :reseptinLaji
+    # (no documentation provided)
+    attr_accessor :muutoksenSyy
+    # (no documentation provided)
+    attr_accessor :muutoksenPerustelu
+    # (no documentation provided)
+    attr_accessor :uusimiskielto
+    # (no documentation provided)
+    attr_accessor :uusimiskiellonSyy
+    # (no documentation provided)
+    attr_accessor :uusimiskiellonPerustelu
+    # (no documentation provided)
+    attr_accessor :potilasohjekielto
+    # (no documentation provided)
+    attr_accessor :tyonantaja
+    # (no documentation provided)
+    attr_accessor :vakuutusyhtio
+    # (no documentation provided)
+    attr_accessor :voimassaoloLoppu
+    # (no documentation provided)
+    attr_accessor :annostuslinkki
+    # (no documentation provided)
+    attr_accessor :hoitojakso
+    # (no documentation provided)
+    attr_accessor :alkuperainen
+    # (no documentation provided)
+    attr_accessor :palkkio
+    # (no documentation provided)
+    attr_accessor :palkkioErikoislaakarina
+    # (no documentation provided)
+    attr_accessor :tartuntatautilaake
+    # (no documentation provided)
+    attr_accessor :palvelutapahtuma
+    # (no documentation provided)
+    attr_accessor :palvelutapahtumaOid
+    # (no documentation provided)
+    attr_accessor :sairaalaApteekkiOid
+    # (no documentation provided)
+    attr_accessor :sairaalaApteekkiNimi
+    # (no documentation provided)
+    attr_accessor :tarkistus
+    # (no documentation provided)
+    attr_accessor :poistosyy
+    # (no documentation provided)
+    attr_accessor :poistettu
+    # (no documentation provided)
+    attr_accessor :muutosaika
+    # (no documentation provided)
+    attr_accessor :muutospaikka
+    # (no documentation provided)
+    attr_accessor :pysyvyys
+    # (no documentation provided)
+    attr_accessor :nimi
+    # (no documentation provided)
+    attr_accessor :annostus
+    # (no documentation provided)
+    attr_accessor :vaihteleva
+    # (no documentation provided)
+    attr_accessor :vaihtelevaAnnostus
+    # (no documentation provided)
+    attr_accessor :sic
+    # (no documentation provided)
+    attr_accessor :kokoNimi
+    # (no documentation provided)
+    attr_accessor :laakeaineet
     # (no documentation provided)
     attr_accessor :tauonAloitusPvm
     # (no documentation provided)
@@ -1457,36 +1629,15 @@ module Laakitys
     # (no documentation provided)
     attr_accessor :taukohuomautuksia
     # (no documentation provided)
-    attr_accessor :reseptityyppi
-    # (no documentation provided)
-    attr_accessor :laakitysKayttoaiheList
-    # the annettavaMaara
-    attr_accessor :annettavaMaara
-    # the annettavaMaksimi
-    attr_accessor :annettavaMaksimi
-    # the annettavaYksikko
-    attr_accessor :annettavaYksikko
-    # return Medicine VNR Code Maps to columns
-    # &lt;ul&gt;
-    # &lt;li&gt;LaakeValmisteEntity#getKoodi()
-    # &lt;/ul&gt;
-    attr_accessor :laake
-    # the vrkmaara
-    attr_accessor :vrkmaara
-    # the vrkmaaraYksikko
-    attr_accessor :vrkmaaraYksikko
-    # (no documentation provided)
-    attr_accessor :vaihtelevaAnnostus
-    # (no documentation provided)
-    attr_accessor :vaihteleva
-    # (no documentation provided)
-    attr_accessor :paino
-    # (no documentation provided)
     attr_accessor :annettavaMaaraTimesPaino
+    # (no documentation provided)
+    attr_accessor :vrkmaara
     # (no documentation provided)
     attr_accessor :vrkkerratCalc
     # (no documentation provided)
     attr_accessor :vrkmaaraCalc
+    # (no documentation provided)
+    attr_accessor :vrkmaaraYksikko
     # (no documentation provided)
     attr_accessor :tauot
     # (no documentation provided)
@@ -1496,6 +1647,8 @@ module Laakitys
     # (no documentation provided)
     attr_accessor :kayttoaiheet
     # (no documentation provided)
+    attr_accessor :laakitysKayttoaiheList
+    # (no documentation provided)
     attr_accessor :kuittaukset
 
     # the json hash for this Laakitys
@@ -1503,45 +1656,115 @@ module Laakitys
       _h = {}
       _h['omistaja'] = omistaja.to_jaxb_json_hash unless omistaja.nil?
       _h['osa'] = osa.to_jaxb_json_hash unless osa.nil?
-      _h['nimi'] = nimi.to_jaxb_json_hash unless nimi.nil?
-      _h['annostus'] = annostus.to_jaxb_json_hash unless annostus.nil?
-      _h['aloitusPvm'] = aloitusPvm.to_jaxb_json_hash unless aloitusPvm.nil?
-      _h['lopetusPvm'] = lopetusPvm.to_jaxb_json_hash unless lopetusPvm.nil?
-      _h['kokoNimi'] = kokoNimi.to_jaxb_json_hash unless kokoNimi.nil?
-      _h['kertaAnnos'] = kertaAnnos.to_jaxb_json_hash unless kertaAnnos.nil?
-      _h['toistokuvaus'] = toistokuvaus.to_jaxb_json_hash unless toistokuvaus.nil?
-      _h['maaraaja'] = maaraaja.to_jaxb_json_hash unless maaraaja.nil?
-      _h['kirjaaja'] = kirjaaja.to_jaxb_json_hash unless kirjaaja.nil?
-      _h['huomautuksia'] = huomautuksia.to_jaxb_json_hash unless huomautuksia.nil?
-      _h['ohjeet'] = ohjeet.to_jaxb_json_hash unless ohjeet.nil?
-      _h['kellonajat'] = kellonajat.to_jaxb_json_hash unless kellonajat.nil?
-      _h['annosteluteksti'] = annosteluteksti.to_jaxb_json_hash unless annosteluteksti.nil?
-      _h['kayttotarkoitus'] = kayttotarkoitus.to_jaxb_json_hash unless kayttotarkoitus.nil?
-      _h['aikayksikko'] = aikayksikko.to_jaxb_json_hash unless aikayksikko.nil?
-      _h['antotahti'] = antotahti.to_jaxb_json_hash unless antotahti.nil?
-      _h['laakeaineet'] = laakeaineet.to_jaxb_json_hash unless laakeaineet.nil?
-      _h['kuitattava'] = kuitattava.to_jaxb_json_hash unless kuitattava.nil?
-      _h['tauonAloitusPvm'] = tauonAloitusPvm.to_jaxb_json_hash unless tauonAloitusPvm.nil?
-      _h['tauonLopetusPvm'] = tauonLopetusPvm.to_jaxb_json_hash unless tauonLopetusPvm.nil?
-      _h['taukohuomautuksia'] = taukohuomautuksia.to_jaxb_json_hash unless taukohuomautuksia.nil?
-      _h['reseptityyppi'] = reseptityyppi.to_jaxb_json_hash unless reseptityyppi.nil?
-      if !laakitysKayttoaiheList.nil?
-        _ha = Array.new
-        laakitysKayttoaiheList.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['laakitysKayttoaiheList'] = _ha
-      end
+      _h['laakevalmiste'] = laakevalmiste.to_jaxb_json_hash unless laakevalmiste.nil?
+      _h['laake'] = laake.to_jaxb_json_hash unless laake.nil?
+      _h['aloitettu'] = aloitettu.to_jaxb_json_hash unless aloitettu.nil?
+      _h['tapahtunut'] = tapahtunut.to_jaxb_json_hash unless tapahtunut.nil?
+      _h['tapahtuma'] = tapahtuma.to_jaxb_json_hash unless tapahtuma.nil?
+      _h['riittoisuus'] = riittoisuus.to_jaxb_json_hash unless riittoisuus.nil?
+      _h['lopetettu'] = lopetettu.to_jaxb_json_hash unless lopetettu.nil?
+      _h['lopetussyy'] = lopetussyy.to_jaxb_json_hash unless lopetussyy.nil?
+      _h['reseptiteksti'] = reseptiteksti.to_jaxb_json_hash unless reseptiteksti.nil?
+      _h['malli'] = malli.to_jaxb_json_hash unless malli.nil?
+      _h['lyhyesti'] = lyhyesti.to_jaxb_json_hash unless lyhyesti.nil?
+      _h['vaihdettavuus'] = vaihdettavuus.to_jaxb_json_hash unless vaihdettavuus.nil?
       _h['annettavaMaara'] = annettavaMaara.to_jaxb_json_hash unless annettavaMaara.nil?
       _h['annettavaMaksimi'] = annettavaMaksimi.to_jaxb_json_hash unless annettavaMaksimi.nil?
       _h['annettavaYksikko'] = annettavaYksikko.to_jaxb_json_hash unless annettavaYksikko.nil?
-      _h['laake'] = laake.to_jaxb_json_hash unless laake.nil?
-      _h['vrkmaara'] = vrkmaara.to_jaxb_json_hash unless vrkmaara.nil?
-      _h['vrkmaaraYksikko'] = vrkmaaraYksikko.to_jaxb_json_hash unless vrkmaaraYksikko.nil?
-      _h['vaihtelevaAnnostus'] = vaihtelevaAnnostus.to_jaxb_json_hash unless vaihtelevaAnnostus.nil?
-      _h['vaihteleva'] = vaihteleva.to_jaxb_json_hash unless vaihteleva.nil?
+      _h['kertaAnnos'] = kertaAnnos.to_jaxb_json_hash unless kertaAnnos.nil?
+      _h['annosteluteksti'] = annosteluteksti.to_jaxb_json_hash unless annosteluteksti.nil?
+      _h['desimaaleja'] = desimaaleja.to_jaxb_json_hash unless desimaaleja.nil?
       _h['paino'] = paino.to_jaxb_json_hash unless paino.nil?
+      _h['lapsenPaino'] = lapsenPaino.to_jaxb_json_hash unless lapsenPaino.nil?
+      _h['toisto'] = toisto.to_jaxb_json_hash unless toisto.nil?
+      _h['toistokuvaus'] = toistokuvaus.to_jaxb_json_hash unless toistokuvaus.nil?
+      _h['kellonajat'] = kellonajat.to_jaxb_json_hash unless kellonajat.nil?
+      _h['kellonajatString'] = kellonajatString.to_jaxb_json_hash unless kellonajatString.nil?
+      _h['aikayksikko'] = aikayksikko.to_jaxb_json_hash unless aikayksikko.nil?
+      _h['antotahti'] = antotahti.to_jaxb_json_hash unless antotahti.nil?
+      _h['antotahtiString'] = antotahtiString.to_jaxb_json_hash unless antotahtiString.nil?
+      _h['antotahtiyksikko'] = antotahtiyksikko.to_jaxb_json_hash unless antotahtiyksikko.nil?
+      _h['vrkMaara'] = vrkMaara.to_jaxb_json_hash unless vrkMaara.nil?
+      _h['vrkMaaraYksikko'] = vrkMaaraYksikko.to_jaxb_json_hash unless vrkMaaraYksikko.nil?
+      _h['kokonaiskesto'] = kokonaiskesto.to_jaxb_json_hash unless kokonaiskesto.nil?
+      _h['kokonaismaara'] = kokonaismaara.to_jaxb_json_hash unless kokonaismaara.nil?
+      _h['kokonaismaarayksikko'] = kokonaismaarayksikko.to_jaxb_json_hash unless kokonaismaarayksikko.nil?
+      _h['pakkauksia'] = pakkauksia.to_jaxb_json_hash unless pakkauksia.nil?
+      _h['kirjaaja'] = kirjaaja.to_jaxb_json_hash unless kirjaaja.nil?
+      _h['kirjaajaString'] = kirjaajaString.to_jaxb_json_hash unless kirjaajaString.nil?
+      _h['maaraaja'] = maaraaja.to_jaxb_json_hash unless maaraaja.nil?
+      _h['maaraajaString'] = maaraajaString.to_jaxb_json_hash unless maaraajaString.nil?
+      _h['maaraysyksikko'] = maaraysyksikko.to_jaxb_json_hash unless maaraysyksikko.nil?
+      _h['varmistus'] = varmistus.to_jaxb_json_hash unless varmistus.nil?
+      _h['kayttotarkoitus'] = kayttotarkoitus.to_jaxb_json_hash unless kayttotarkoitus.nil?
+      _h['ohjeet'] = ohjeet.to_jaxb_json_hash unless ohjeet.nil?
+      _h['perustelu'] = perustelu.to_jaxb_json_hash unless perustelu.nil?
+      _h['iterointi'] = iterointi.to_jaxb_json_hash unless iterointi.nil?
+      _h['uusittu'] = uusittu.to_jaxb_json_hash unless uusittu.nil?
+      _h['kuitattava'] = kuitattava.to_jaxb_json_hash unless kuitattava.nil?
+      _h['pysyva'] = pysyva.to_jaxb_json_hash unless pysyva.nil?
+      _h['tarvittaessa'] = tarvittaessa.to_jaxb_json_hash unless tarvittaessa.nil?
+      _h['terapiaryhma'] = terapiaryhma.to_jaxb_json_hash unless terapiaryhma.nil?
+      _h['soveltumaton'] = soveltumaton.to_jaxb_json_hash unless soveltumaton.nil?
+      _h['vaikutus'] = vaikutus.to_jaxb_json_hash unless vaikutus.nil?
+      _h['huomautuksia'] = huomautuksia.to_jaxb_json_hash unless huomautuksia.nil?
+      _h['reseptityyppi'] = reseptityyppi.to_jaxb_json_hash unless reseptityyppi.nil?
+      _h['reseptityyppiString'] = reseptityyppiString.to_jaxb_json_hash unless reseptityyppiString.nil?
+      _h['tulostaja'] = tulostaja.to_jaxb_json_hash unless tulostaja.nil?
+      _h['tulostettu'] = tulostettu.to_jaxb_json_hash unless tulostettu.nil?
+      _h['oid'] = oid.to_jaxb_json_hash unless oid.nil?
+      _h['tunnistustapa'] = tunnistustapa.to_jaxb_json_hash unless tunnistustapa.nil?
+      _h['tunnistustapaselite'] = tunnistustapaselite.to_jaxb_json_hash unless tunnistustapaselite.nil?
+      _h['annosjakeluperuste'] = annosjakeluperuste.to_jaxb_json_hash unless annosjakeluperuste.nil?
+      _h['iterointivali'] = iterointivali.to_jaxb_json_hash unless iterointivali.nil?
+      _h['erillisselvityskoodi'] = erillisselvityskoodi.to_jaxb_json_hash unless erillisselvityskoodi.nil?
+      _h['erillisselvitys'] = erillisselvitys.to_jaxb_json_hash unless erillisselvitys.nil?
+      _h['apteekkiviesti'] = apteekkiviesti.to_jaxb_json_hash unless apteekkiviesti.nil?
+      _h['ereseptikielto'] = ereseptikielto.to_jaxb_json_hash unless ereseptikielto.nil?
+      _h['hoitolaji'] = hoitolaji.to_jaxb_json_hash unless hoitolaji.nil?
+      _h['uusi'] = uusi.to_jaxb_json_hash unless uusi.nil?
+      _h['lahetetty'] = lahetetty.to_jaxb_json_hash unless lahetetty.nil?
+      _h['reseptinLaji'] = reseptinLaji.to_jaxb_json_hash unless reseptinLaji.nil?
+      _h['muutoksenSyy'] = muutoksenSyy.to_jaxb_json_hash unless muutoksenSyy.nil?
+      _h['muutoksenPerustelu'] = muutoksenPerustelu.to_jaxb_json_hash unless muutoksenPerustelu.nil?
+      _h['uusimiskielto'] = uusimiskielto.to_jaxb_json_hash unless uusimiskielto.nil?
+      _h['uusimiskiellonSyy'] = uusimiskiellonSyy.to_jaxb_json_hash unless uusimiskiellonSyy.nil?
+      _h['uusimiskiellonPerustelu'] = uusimiskiellonPerustelu.to_jaxb_json_hash unless uusimiskiellonPerustelu.nil?
+      _h['potilasohjekielto'] = potilasohjekielto.to_jaxb_json_hash unless potilasohjekielto.nil?
+      _h['tyonantaja'] = tyonantaja.to_jaxb_json_hash unless tyonantaja.nil?
+      _h['vakuutusyhtio'] = vakuutusyhtio.to_jaxb_json_hash unless vakuutusyhtio.nil?
+      _h['voimassaoloLoppu'] = voimassaoloLoppu.to_jaxb_json_hash unless voimassaoloLoppu.nil?
+      _h['annostuslinkki'] = annostuslinkki.to_jaxb_json_hash unless annostuslinkki.nil?
+      _h['hoitojakso'] = hoitojakso.to_jaxb_json_hash unless hoitojakso.nil?
+      _h['alkuperainen'] = alkuperainen.to_jaxb_json_hash unless alkuperainen.nil?
+      _h['palkkio'] = palkkio.to_jaxb_json_hash unless palkkio.nil?
+      _h['palkkioErikoislaakarina'] = palkkioErikoislaakarina.to_jaxb_json_hash unless palkkioErikoislaakarina.nil?
+      _h['tartuntatautilaake'] = tartuntatautilaake.to_jaxb_json_hash unless tartuntatautilaake.nil?
+      _h['palvelutapahtuma'] = palvelutapahtuma.to_jaxb_json_hash unless palvelutapahtuma.nil?
+      _h['palvelutapahtumaOid'] = palvelutapahtumaOid.to_jaxb_json_hash unless palvelutapahtumaOid.nil?
+      _h['sairaalaApteekkiOid'] = sairaalaApteekkiOid.to_jaxb_json_hash unless sairaalaApteekkiOid.nil?
+      _h['sairaalaApteekkiNimi'] = sairaalaApteekkiNimi.to_jaxb_json_hash unless sairaalaApteekkiNimi.nil?
+      _h['tarkistus'] = tarkistus.to_jaxb_json_hash unless tarkistus.nil?
+      _h['poistosyy'] = poistosyy.to_jaxb_json_hash unless poistosyy.nil?
+      _h['poistettu'] = poistettu.to_jaxb_json_hash unless poistettu.nil?
+      _h['muutosaika'] = muutosaika.to_jaxb_json_hash unless muutosaika.nil?
+      _h['muutospaikka'] = muutospaikka.to_jaxb_json_hash unless muutospaikka.nil?
+      _h['pysyvyys'] = pysyvyys.to_jaxb_json_hash unless pysyvyys.nil?
+      _h['nimi'] = nimi.to_jaxb_json_hash unless nimi.nil?
+      _h['annostus'] = annostus.to_jaxb_json_hash unless annostus.nil?
+      _h['vaihteleva'] = vaihteleva.to_jaxb_json_hash unless vaihteleva.nil?
+      _h['vaihtelevaAnnostus'] = vaihtelevaAnnostus.to_jaxb_json_hash unless vaihtelevaAnnostus.nil?
+      _h['sic'] = sic.to_jaxb_json_hash unless sic.nil?
+      _h['kokoNimi'] = kokoNimi.to_jaxb_json_hash unless kokoNimi.nil?
+      _h['laakeaineet'] = laakeaineet.to_jaxb_json_hash unless laakeaineet.nil?
+      _h['tauonAloitusPvm'] = tauonAloitusPvm.to_jaxb_json_hash unless tauonAloitusPvm.nil?
+      _h['tauonLopetusPvm'] = tauonLopetusPvm.to_jaxb_json_hash unless tauonLopetusPvm.nil?
+      _h['taukohuomautuksia'] = taukohuomautuksia.to_jaxb_json_hash unless taukohuomautuksia.nil?
       _h['annettavaMaaraTimesPaino'] = annettavaMaaraTimesPaino.to_jaxb_json_hash unless annettavaMaaraTimesPaino.nil?
+      _h['vrkmaara'] = vrkmaara.to_jaxb_json_hash unless vrkmaara.nil?
       _h['vrkkerratCalc'] = vrkkerratCalc.to_jaxb_json_hash unless vrkkerratCalc.nil?
       _h['vrkmaaraCalc'] = vrkmaaraCalc.to_jaxb_json_hash unless vrkmaaraCalc.nil?
+      _h['vrkmaaraYksikko'] = vrkmaaraYksikko.to_jaxb_json_hash unless vrkmaaraYksikko.nil?
       if !tauot.nil?
         _ha = Array.new
         tauot.each { | _item | _ha.push _item.to_jaxb_json_hash }
@@ -1562,6 +1785,11 @@ module Laakitys
         kayttoaiheet.each { | _item | _ha.push _item.to_jaxb_json_hash }
         _h['kayttoaiheet'] = _ha
       end
+      if !laakitysKayttoaiheList.nil?
+        _ha = Array.new
+        laakitysKayttoaiheList.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['laakitysKayttoaiheList'] = _ha
+      end
       if !kuittaukset.nil?
         _ha = Array.new
         kuittaukset.each { | _item | _ha.push _item.to_jaxb_json_hash }
@@ -1579,55 +1807,115 @@ module Laakitys
     def init_jaxb_json_hash(_o)
       @omistaja = Fixnum.from_json(_o['omistaja']) unless _o['omistaja'].nil?
       @osa = Fixnum.from_json(_o['osa']) unless _o['osa'].nil?
-      @nimi = String.from_json(_o['nimi']) unless _o['nimi'].nil?
-      @annostus = String.from_json(_o['annostus']) unless _o['annostus'].nil?
-      @aloitusPvm = Time.from_json(_o['aloitusPvm']) unless _o['aloitusPvm'].nil?
-      @lopetusPvm = Time.from_json(_o['lopetusPvm']) unless _o['lopetusPvm'].nil?
-      @kokoNimi = String.from_json(_o['kokoNimi']) unless _o['kokoNimi'].nil?
-      @kertaAnnos = String.from_json(_o['kertaAnnos']) unless _o['kertaAnnos'].nil?
-      @toistokuvaus = String.from_json(_o['toistokuvaus']) unless _o['toistokuvaus'].nil?
-      @maaraaja = String.from_json(_o['maaraaja']) unless _o['maaraaja'].nil?
-      @kirjaaja = String.from_json(_o['kirjaaja']) unless _o['kirjaaja'].nil?
-      @huomautuksia = String.from_json(_o['huomautuksia']) unless _o['huomautuksia'].nil?
-      @ohjeet = String.from_json(_o['ohjeet']) unless _o['ohjeet'].nil?
-      @kellonajat = String.from_json(_o['kellonajat']) unless _o['kellonajat'].nil?
-      @annosteluteksti = String.from_json(_o['annosteluteksti']) unless _o['annosteluteksti'].nil?
-      @kayttotarkoitus = String.from_json(_o['kayttotarkoitus']) unless _o['kayttotarkoitus'].nil?
-      @aikayksikko = String.from_json(_o['aikayksikko']) unless _o['aikayksikko'].nil?
-      @antotahti = String.from_json(_o['antotahti']) unless _o['antotahti'].nil?
-      @laakeaineet = String.from_json(_o['laakeaineet']) unless _o['laakeaineet'].nil?
-      @kuitattava = String.from_json(_o['kuitattava']) unless _o['kuitattava'].nil?
-      @tauonAloitusPvm = Bignum.from_json(_o['tauonAloitusPvm']) unless _o['tauonAloitusPvm'].nil?
-      @tauonLopetusPvm = Bignum.from_json(_o['tauonLopetusPvm']) unless _o['tauonLopetusPvm'].nil?
-      @taukohuomautuksia = String.from_json(_o['taukohuomautuksia']) unless _o['taukohuomautuksia'].nil?
-      @reseptityyppi = String.from_json(_o['reseptityyppi']) unless _o['reseptityyppi'].nil?
-      if !_o['laakitysKayttoaiheList'].nil?
-        @laakitysKayttoaiheList = Array.new
-        _oa = _o['laakitysKayttoaiheList']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @laakitysKayttoaiheList.push Fi::Mediconsult::Core::Client::Dto::LaakitysKayttoaiheView.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @laakitysKayttoaiheList.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
+      @laakevalmiste = Fi::Mediconsult::Core::Client::Dto::Laakitys::Laake.from_json(_o['laakevalmiste']) unless _o['laakevalmiste'].nil?
+      @laake = String.from_json(_o['laake']) unless _o['laake'].nil?
+      @aloitettu = Time.from_json(_o['aloitettu']) unless _o['aloitettu'].nil?
+      @tapahtunut = Time.from_json(_o['tapahtunut']) unless _o['tapahtunut'].nil?
+      @tapahtuma = Fixnum.from_json(_o['tapahtuma']) unless _o['tapahtuma'].nil?
+      @riittoisuus = Time.from_json(_o['riittoisuus']) unless _o['riittoisuus'].nil?
+      @lopetettu = Time.from_json(_o['lopetettu']) unless _o['lopetettu'].nil?
+      @lopetussyy = String.from_json(_o['lopetussyy']) unless _o['lopetussyy'].nil?
+      @reseptiteksti = String.from_json(_o['reseptiteksti']) unless _o['reseptiteksti'].nil?
+      @malli = String.from_json(_o['malli']) unless _o['malli'].nil?
+      @lyhyesti = String.from_json(_o['lyhyesti']) unless _o['lyhyesti'].nil?
+      @vaihdettavuus = Fixnum.from_json(_o['vaihdettavuus']) unless _o['vaihdettavuus'].nil?
       @annettavaMaara = Float.from_json(_o['annettavaMaara']) unless _o['annettavaMaara'].nil?
       @annettavaMaksimi = Float.from_json(_o['annettavaMaksimi']) unless _o['annettavaMaksimi'].nil?
       @annettavaYksikko = String.from_json(_o['annettavaYksikko']) unless _o['annettavaYksikko'].nil?
-      @laake = String.from_json(_o['laake']) unless _o['laake'].nil?
-      @vrkmaara = Float.from_json(_o['vrkmaara']) unless _o['vrkmaara'].nil?
-      @vrkmaaraYksikko = String.from_json(_o['vrkmaaraYksikko']) unless _o['vrkmaaraYksikko'].nil?
-      @vaihtelevaAnnostus = String.from_json(_o['vaihtelevaAnnostus']) unless _o['vaihtelevaAnnostus'].nil?
-      @vaihteleva = Boolean.from_json(_o['vaihteleva']) unless _o['vaihteleva'].nil?
+      @kertaAnnos = String.from_json(_o['kertaAnnos']) unless _o['kertaAnnos'].nil?
+      @annosteluteksti = String.from_json(_o['annosteluteksti']) unless _o['annosteluteksti'].nil?
+      @desimaaleja = Fixnum.from_json(_o['desimaaleja']) unless _o['desimaaleja'].nil?
       @paino = Float.from_json(_o['paino']) unless _o['paino'].nil?
+      @lapsenPaino = Float.from_json(_o['lapsenPaino']) unless _o['lapsenPaino'].nil?
+      @toisto = String.from_json(_o['toisto']) unless _o['toisto'].nil?
+      @toistokuvaus = String.from_json(_o['toistokuvaus']) unless _o['toistokuvaus'].nil?
+      @kellonajat = String.from_json(_o['kellonajat']) unless _o['kellonajat'].nil?
+      @kellonajatString = String.from_json(_o['kellonajatString']) unless _o['kellonajatString'].nil?
+      @aikayksikko = String.from_json(_o['aikayksikko']) unless _o['aikayksikko'].nil?
+      @antotahti = Float.from_json(_o['antotahti']) unless _o['antotahti'].nil?
+      @antotahtiString = String.from_json(_o['antotahtiString']) unless _o['antotahtiString'].nil?
+      @antotahtiyksikko = String.from_json(_o['antotahtiyksikko']) unless _o['antotahtiyksikko'].nil?
+      @vrkMaara = Float.from_json(_o['vrkMaara']) unless _o['vrkMaara'].nil?
+      @vrkMaaraYksikko = String.from_json(_o['vrkMaaraYksikko']) unless _o['vrkMaaraYksikko'].nil?
+      @kokonaiskesto = String.from_json(_o['kokonaiskesto']) unless _o['kokonaiskesto'].nil?
+      @kokonaismaara = Float.from_json(_o['kokonaismaara']) unless _o['kokonaismaara'].nil?
+      @kokonaismaarayksikko = String.from_json(_o['kokonaismaarayksikko']) unless _o['kokonaismaarayksikko'].nil?
+      @pakkauksia = Fixnum.from_json(_o['pakkauksia']) unless _o['pakkauksia'].nil?
+      @kirjaaja = Fixnum.from_json(_o['kirjaaja']) unless _o['kirjaaja'].nil?
+      @kirjaajaString = String.from_json(_o['kirjaajaString']) unless _o['kirjaajaString'].nil?
+      @maaraaja = Fixnum.from_json(_o['maaraaja']) unless _o['maaraaja'].nil?
+      @maaraajaString = String.from_json(_o['maaraajaString']) unless _o['maaraajaString'].nil?
+      @maaraysyksikko = Fixnum.from_json(_o['maaraysyksikko']) unless _o['maaraysyksikko'].nil?
+      @varmistus = Fixnum.from_json(_o['varmistus']) unless _o['varmistus'].nil?
+      @kayttotarkoitus = String.from_json(_o['kayttotarkoitus']) unless _o['kayttotarkoitus'].nil?
+      @ohjeet = String.from_json(_o['ohjeet']) unless _o['ohjeet'].nil?
+      @perustelu = String.from_json(_o['perustelu']) unless _o['perustelu'].nil?
+      @iterointi = Fixnum.from_json(_o['iterointi']) unless _o['iterointi'].nil?
+      @uusittu = Fixnum.from_json(_o['uusittu']) unless _o['uusittu'].nil?
+      @kuitattava = Fixnum.from_json(_o['kuitattava']) unless _o['kuitattava'].nil?
+      @pysyva = Fixnum.from_json(_o['pysyva']) unless _o['pysyva'].nil?
+      @tarvittaessa = Fixnum.from_json(_o['tarvittaessa']) unless _o['tarvittaessa'].nil?
+      @terapiaryhma = String.from_json(_o['terapiaryhma']) unless _o['terapiaryhma'].nil?
+      @soveltumaton = Fixnum.from_json(_o['soveltumaton']) unless _o['soveltumaton'].nil?
+      @vaikutus = String.from_json(_o['vaikutus']) unless _o['vaikutus'].nil?
+      @huomautuksia = String.from_json(_o['huomautuksia']) unless _o['huomautuksia'].nil?
+      @reseptityyppi = Fixnum.from_json(_o['reseptityyppi']) unless _o['reseptityyppi'].nil?
+      @reseptityyppiString = String.from_json(_o['reseptityyppiString']) unless _o['reseptityyppiString'].nil?
+      @tulostaja = Fixnum.from_json(_o['tulostaja']) unless _o['tulostaja'].nil?
+      @tulostettu = Time.from_json(_o['tulostettu']) unless _o['tulostettu'].nil?
+      @oid = String.from_json(_o['oid']) unless _o['oid'].nil?
+      @tunnistustapa = String.from_json(_o['tunnistustapa']) unless _o['tunnistustapa'].nil?
+      @tunnistustapaselite = String.from_json(_o['tunnistustapaselite']) unless _o['tunnistustapaselite'].nil?
+      @annosjakeluperuste = String.from_json(_o['annosjakeluperuste']) unless _o['annosjakeluperuste'].nil?
+      @iterointivali = Fixnum.from_json(_o['iterointivali']) unless _o['iterointivali'].nil?
+      @erillisselvityskoodi = String.from_json(_o['erillisselvityskoodi']) unless _o['erillisselvityskoodi'].nil?
+      @erillisselvitys = String.from_json(_o['erillisselvitys']) unless _o['erillisselvitys'].nil?
+      @apteekkiviesti = String.from_json(_o['apteekkiviesti']) unless _o['apteekkiviesti'].nil?
+      @ereseptikielto = Fixnum.from_json(_o['ereseptikielto']) unless _o['ereseptikielto'].nil?
+      @hoitolaji = String.from_json(_o['hoitolaji']) unless _o['hoitolaji'].nil?
+      @uusi = Fixnum.from_json(_o['uusi']) unless _o['uusi'].nil?
+      @lahetetty = Time.from_json(_o['lahetetty']) unless _o['lahetetty'].nil?
+      @reseptinLaji = String.from_json(_o['reseptinLaji']) unless _o['reseptinLaji'].nil?
+      @muutoksenSyy = String.from_json(_o['muutoksenSyy']) unless _o['muutoksenSyy'].nil?
+      @muutoksenPerustelu = String.from_json(_o['muutoksenPerustelu']) unless _o['muutoksenPerustelu'].nil?
+      @uusimiskielto = Fixnum.from_json(_o['uusimiskielto']) unless _o['uusimiskielto'].nil?
+      @uusimiskiellonSyy = String.from_json(_o['uusimiskiellonSyy']) unless _o['uusimiskiellonSyy'].nil?
+      @uusimiskiellonPerustelu = String.from_json(_o['uusimiskiellonPerustelu']) unless _o['uusimiskiellonPerustelu'].nil?
+      @potilasohjekielto = Fixnum.from_json(_o['potilasohjekielto']) unless _o['potilasohjekielto'].nil?
+      @tyonantaja = String.from_json(_o['tyonantaja']) unless _o['tyonantaja'].nil?
+      @vakuutusyhtio = String.from_json(_o['vakuutusyhtio']) unless _o['vakuutusyhtio'].nil?
+      @voimassaoloLoppu = Time.from_json(_o['voimassaoloLoppu']) unless _o['voimassaoloLoppu'].nil?
+      @annostuslinkki = Fixnum.from_json(_o['annostuslinkki']) unless _o['annostuslinkki'].nil?
+      @hoitojakso = Fixnum.from_json(_o['hoitojakso']) unless _o['hoitojakso'].nil?
+      @alkuperainen = Fixnum.from_json(_o['alkuperainen']) unless _o['alkuperainen'].nil?
+      @palkkio = Float.from_json(_o['palkkio']) unless _o['palkkio'].nil?
+      @palkkioErikoislaakarina = Fixnum.from_json(_o['palkkioErikoislaakarina']) unless _o['palkkioErikoislaakarina'].nil?
+      @tartuntatautilaake = Fixnum.from_json(_o['tartuntatautilaake']) unless _o['tartuntatautilaake'].nil?
+      @palvelutapahtuma = Fixnum.from_json(_o['palvelutapahtuma']) unless _o['palvelutapahtuma'].nil?
+      @palvelutapahtumaOid = String.from_json(_o['palvelutapahtumaOid']) unless _o['palvelutapahtumaOid'].nil?
+      @sairaalaApteekkiOid = String.from_json(_o['sairaalaApteekkiOid']) unless _o['sairaalaApteekkiOid'].nil?
+      @sairaalaApteekkiNimi = String.from_json(_o['sairaalaApteekkiNimi']) unless _o['sairaalaApteekkiNimi'].nil?
+      @tarkistus = Fixnum.from_json(_o['tarkistus']) unless _o['tarkistus'].nil?
+      @poistosyy = String.from_json(_o['poistosyy']) unless _o['poistosyy'].nil?
+      @poistettu = Fixnum.from_json(_o['poistettu']) unless _o['poistettu'].nil?
+      @muutosaika = Time.from_json(_o['muutosaika']) unless _o['muutosaika'].nil?
+      @muutospaikka = Fixnum.from_json(_o['muutospaikka']) unless _o['muutospaikka'].nil?
+      @pysyvyys = String.from_json(_o['pysyvyys']) unless _o['pysyvyys'].nil?
+      @nimi = String.from_json(_o['nimi']) unless _o['nimi'].nil?
+      @annostus = String.from_json(_o['annostus']) unless _o['annostus'].nil?
+      @vaihteleva = Boolean.from_json(_o['vaihteleva']) unless _o['vaihteleva'].nil?
+      @vaihtelevaAnnostus = String.from_json(_o['vaihtelevaAnnostus']) unless _o['vaihtelevaAnnostus'].nil?
+      @sic = String.from_json(_o['sic']) unless _o['sic'].nil?
+      @kokoNimi = String.from_json(_o['kokoNimi']) unless _o['kokoNimi'].nil?
+      @laakeaineet = String.from_json(_o['laakeaineet']) unless _o['laakeaineet'].nil?
+      @tauonAloitusPvm = Bignum.from_json(_o['tauonAloitusPvm']) unless _o['tauonAloitusPvm'].nil?
+      @tauonLopetusPvm = Bignum.from_json(_o['tauonLopetusPvm']) unless _o['tauonLopetusPvm'].nil?
+      @taukohuomautuksia = String.from_json(_o['taukohuomautuksia']) unless _o['taukohuomautuksia'].nil?
       @annettavaMaaraTimesPaino = Float.from_json(_o['annettavaMaaraTimesPaino']) unless _o['annettavaMaaraTimesPaino'].nil?
+      @vrkmaara = Float.from_json(_o['vrkmaara']) unless _o['vrkmaara'].nil?
       @vrkkerratCalc = Fixnum.from_json(_o['vrkkerratCalc']) unless _o['vrkkerratCalc'].nil?
       @vrkmaaraCalc = Float.from_json(_o['vrkmaaraCalc']) unless _o['vrkmaaraCalc'].nil?
+      @vrkmaaraYksikko = String.from_json(_o['vrkmaaraYksikko']) unless _o['vrkmaaraYksikko'].nil?
       if !_o['tauot'].nil?
         @tauot = Array.new
         _oa = _o['tauot']
@@ -1688,6 +1976,21 @@ module Laakitys
           end
          }
       end
+      if !_o['laakitysKayttoaiheList'].nil?
+        @laakitysKayttoaiheList = Array.new
+        _oa = _o['laakitysKayttoaiheList']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @laakitysKayttoaiheList.push Fi::Mediconsult::Core::Client::Dto::LaakitysKayttoaiheView.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @laakitysKayttoaiheList.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
       if !_o['kuittaukset'].nil?
         @kuittaukset = Array.new
         _oa = _o['kuittaukset']
@@ -1733,76 +2036,38 @@ module Fi
 
 module Mediconsult
 
-module Core
-
-module Client
+module Mediplan
 
 module Dto
 
-module Omistaja
-
   # (no documentation provided)
-  class OmistajaListConfig 
+  class IdNamePair 
 
     # (no documentation provided)
-    attr_accessor :linkedFormInfo
+    attr_accessor :id
     # (no documentation provided)
-    attr_accessor :listDataOwnerType
-    # (no documentation provided)
-    attr_accessor :listOwnerId
-    # (no documentation provided)
-    attr_accessor :listId
-    # (no documentation provided)
-    attr_accessor :basicInfoTitles
-    # (no documentation provided)
-    attr_accessor :listName
+    attr_accessor :name
 
-    # the json hash for this OmistajaListConfig
+    # the json hash for this IdNamePair
     def to_jaxb_json_hash
       _h = {}
-      _h['linkedFormInfo'] = linkedFormInfo.to_jaxb_json_hash unless linkedFormInfo.nil?
-      _h['listDataOwnerType'] = listDataOwnerType.to_jaxb_json_hash unless listDataOwnerType.nil?
-      _h['listOwnerId'] = listOwnerId.to_jaxb_json_hash unless listOwnerId.nil?
-      _h['listId'] = listId.to_jaxb_json_hash unless listId.nil?
-      if !basicInfoTitles.nil?
-        _ha = Array.new
-        basicInfoTitles.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['basicInfoTitles'] = _ha
-      end
-      _h['listName'] = listName.to_jaxb_json_hash unless listName.nil?
+      _h['id'] = id.to_jaxb_json_hash unless id.nil?
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
       return _h
     end
 
-    # the json (string form) for this OmistajaListConfig
+    # the json (string form) for this IdNamePair
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this OmistajaListConfig with a json hash
+    #initializes this IdNamePair with a json hash
     def init_jaxb_json_hash(_o)
-      @linkedFormInfo = Fi::Mediconsult::Core::Client::Dto::FormInfo.from_json(_o['linkedFormInfo']) unless _o['linkedFormInfo'].nil?
-      @listDataOwnerType = Fi::Mediconsult::Core::Client::Dto::Omistaja::OwnerTypeInfo.from_json(_o['listDataOwnerType']) unless _o['listDataOwnerType'].nil?
-      @listOwnerId = Fixnum.from_json(_o['listOwnerId']) unless _o['listOwnerId'].nil?
-      @listId = Fixnum.from_json(_o['listId']) unless _o['listId'].nil?
-      if !_o['basicInfoTitles'].nil?
-        @basicInfoTitles = Array.new
-        _oa = _o['basicInfoTitles']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @basicInfoTitles.push String.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @basicInfoTitles.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @listName = String.from_json(_o['listName']) unless _o['listName'].nil?
+      @id = Bignum.from_json(_o['id']) unless _o['id'].nil?
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
     end
 
-    # constructs a OmistajaListConfig from a (parsed) JSON hash
+    # constructs a IdNamePair from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -1813,10 +2078,6 @@ module Omistaja
       end
     end
   end
-
-end
-
-end
 
 end
 
@@ -1838,22 +2099,22 @@ module Dto
   class PersonListByUnitAndForm<T extends Object> 
 
     # (no documentation provided)
-    attr_accessor :unitId
-    # (no documentation provided)
     attr_accessor :people
     # (no documentation provided)
     attr_accessor :listId
+    # (no documentation provided)
+    attr_accessor :unitId
 
     # the json hash for this PersonListByUnitAndForm<T extends Object>
     def to_jaxb_json_hash
       _h = {}
-      _h['unitId'] = unitId.to_jaxb_json_hash unless unitId.nil?
       if !people.nil?
         _ha = Array.new
         people.each { | _item | _ha.push _item.to_jaxb_json_hash }
         _h['people'] = _ha
       end
       _h['listId'] = listId.to_jaxb_json_hash unless listId.nil?
+      _h['unitId'] = unitId.to_jaxb_json_hash unless unitId.nil?
       return _h
     end
 
@@ -1864,7 +2125,6 @@ module Dto
 
     #initializes this PersonListByUnitAndForm<T extends Object> with a json hash
     def init_jaxb_json_hash(_o)
-      @unitId = Fixnum.from_json(_o['unitId']) unless _o['unitId'].nil?
       if !_o['people'].nil?
         @people = Array.new
         _oa = _o['people']
@@ -1881,6 +2141,7 @@ module Dto
          }
       end
       @listId = Fixnum.from_json(_o['listId']) unless _o['listId'].nil?
+      @unitId = Fixnum.from_json(_o['unitId']) unless _o['unitId'].nil?
     end
 
     # constructs a PersonListByUnitAndForm<T extends Object> from a (parsed) JSON hash
@@ -1914,29 +2175,111 @@ module Client
 module Dto
 
   # (no documentation provided)
-  class Permission 
+  class Hoitotyo 
 
     # (no documentation provided)
-    attr_accessor :permissions
+    attr_accessor :id
+    # (no documentation provided)
+    attr_accessor :patientId
+    # (no documentation provided)
+    attr_accessor :locked
+    # (no documentation provided)
+    attr_accessor :lukitsija
+    # (no documentation provided)
+    attr_accessor :vastuullinen
+    # (no documentation provided)
+    attr_accessor :muutosaika
+    # (no documentation provided)
+    attr_accessor :alkaa
+    # (no documentation provided)
+    attr_accessor :loppuu
+    # (no documentation provided)
+    attr_accessor :lastEntry
+    # (no documentation provided)
+    attr_accessor :firstEntry
+    # (no documentation provided)
+    attr_accessor :previousEntry
+    # (no documentation provided)
+    attr_accessor :asetukset
+    # (no documentation provided)
+    attr_accessor :nextEntry
+    # (no documentation provided)
+    attr_accessor :merkinnat
+    # (no documentation provided)
+    attr_accessor :previousVersion
+    # (no documentation provided)
+    attr_accessor :nextVersion
+    # (no documentation provided)
+    attr_accessor :readTime
 
-    # the json hash for this Permission
+    # the json hash for this Hoitotyo
     def to_jaxb_json_hash
       _h = {}
-      _h['permissions'] = permissions.to_jaxb_json_hash unless permissions.nil?
+      _h['id'] = id.to_jaxb_json_hash unless id.nil?
+      _h['patientId'] = patientId.to_jaxb_json_hash unless patientId.nil?
+      _h['locked'] = locked.to_jaxb_json_hash unless locked.nil?
+      _h['lukitsija'] = lukitsija.to_jaxb_json_hash unless lukitsija.nil?
+      _h['vastuullinen'] = vastuullinen.to_jaxb_json_hash unless vastuullinen.nil?
+      _h['muutosaika'] = muutosaika.to_jaxb_json_hash unless muutosaika.nil?
+      _h['alkaa'] = alkaa.to_jaxb_json_hash unless alkaa.nil?
+      _h['loppuu'] = loppuu.to_jaxb_json_hash unless loppuu.nil?
+      _h['lastEntry'] = lastEntry.to_jaxb_json_hash unless lastEntry.nil?
+      _h['firstEntry'] = firstEntry.to_jaxb_json_hash unless firstEntry.nil?
+      _h['previousEntry'] = previousEntry.to_jaxb_json_hash unless previousEntry.nil?
+      _h['asetukset'] = asetukset.to_jaxb_json_hash unless asetukset.nil?
+      _h['nextEntry'] = nextEntry.to_jaxb_json_hash unless nextEntry.nil?
+      if !merkinnat.nil?
+        _ha = Array.new
+        merkinnat.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['merkinnat'] = _ha
+      end
+      _h['previousVersion'] = previousVersion.to_jaxb_json_hash unless previousVersion.nil?
+      _h['nextVersion'] = nextVersion.to_jaxb_json_hash unless nextVersion.nil?
+      _h['readTime'] = readTime.to_jaxb_json_hash unless readTime.nil?
       return _h
     end
 
-    # the json (string form) for this Permission
+    # the json (string form) for this Hoitotyo
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this Permission with a json hash
+    #initializes this Hoitotyo with a json hash
     def init_jaxb_json_hash(_o)
-      @permissions = Hash.from_json(_o['permissions']) unless _o['permissions'].nil?
+      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
+      @patientId = Fixnum.from_json(_o['patientId']) unless _o['patientId'].nil?
+      @locked = Boolean.from_json(_o['locked']) unless _o['locked'].nil?
+      @lukitsija = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['lukitsija']) unless _o['lukitsija'].nil?
+      @vastuullinen = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['vastuullinen']) unless _o['vastuullinen'].nil?
+      @muutosaika = Time.from_json(_o['muutosaika']) unless _o['muutosaika'].nil?
+      @alkaa = Time.from_json(_o['alkaa']) unless _o['alkaa'].nil?
+      @loppuu = Time.from_json(_o['loppuu']) unless _o['loppuu'].nil?
+      @lastEntry = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['lastEntry']) unless _o['lastEntry'].nil?
+      @firstEntry = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['firstEntry']) unless _o['firstEntry'].nil?
+      @previousEntry = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['previousEntry']) unless _o['previousEntry'].nil?
+      @asetukset = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['asetukset']) unless _o['asetukset'].nil?
+      @nextEntry = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['nextEntry']) unless _o['nextEntry'].nil?
+      if !_o['merkinnat'].nil?
+        @merkinnat = Array.new
+        _oa = _o['merkinnat']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @merkinnat.push Fi::Mediconsult::Core::Client::Dto::Hoitotyomerkinta.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @merkinnat.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @previousVersion = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['previousVersion']) unless _o['previousVersion'].nil?
+      @nextVersion = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['nextVersion']) unless _o['nextVersion'].nil?
+      @readTime = Bignum.from_json(_o['readTime']) unless _o['readTime'].nil?
     end
 
-    # constructs a Permission from a (parsed) JSON hash
+    # constructs a Hoitotyo from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -2018,6 +2361,61 @@ module Dto
     end
 
     # constructs a FysiologinenMittaus from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+  # (no documentation provided)
+  class Permission 
+
+    # (no documentation provided)
+    attr_accessor :permissions
+
+    # the json hash for this Permission
+    def to_jaxb_json_hash
+      _h = {}
+      _h['permissions'] = permissions.to_jaxb_json_hash unless permissions.nil?
+      return _h
+    end
+
+    # the json (string form) for this Permission
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this Permission with a json hash
+    def init_jaxb_json_hash(_o)
+      @permissions = Hash.from_json(_o['permissions']) unless _o['permissions'].nil?
+    end
+
+    # constructs a Permission from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -2384,282 +2782,48 @@ module Client
 
 module Dto
 
-module Title
-
-module Config
-
-  # (no documentation provided)
-  class ClientTitleConfig 
-
-    # (no documentation provided)
-    attr_accessor :name
-    # (no documentation provided)
-    attr_accessor :type
-    # (no documentation provided)
-    attr_accessor :pakollinen
-    # (no documentation provided)
-    attr_accessor :onlyFromList
-    # (no documentation provided)
-    attr_accessor :optionsUrl
-    # (no documentation provided)
-    attr_accessor :editable
-    # (no documentation provided)
-    attr_accessor :attribute
-    # (no documentation provided)
-    attr_accessor :optionValues
-
-    # the json hash for this ClientTitleConfig
-    def to_jaxb_json_hash
-      _h = {}
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['type'] = type.to_jaxb_json_hash unless type.nil?
-      _h['pakollinen'] = pakollinen.to_jaxb_json_hash unless pakollinen.nil?
-      _h['onlyFromList'] = onlyFromList.to_jaxb_json_hash unless onlyFromList.nil?
-      _h['optionsUrl'] = optionsUrl.to_jaxb_json_hash unless optionsUrl.nil?
-      _h['editable'] = editable.to_jaxb_json_hash unless editable.nil?
-      _h['attribute'] = attribute.to_jaxb_json_hash unless attribute.nil?
-      if !optionValues.nil?
-        _ha = Array.new
-        optionValues.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['optionValues'] = _ha
-      end
-      return _h
-    end
-
-    # the json (string form) for this ClientTitleConfig
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this ClientTitleConfig with a json hash
-    def init_jaxb_json_hash(_o)
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @type = Fixnum.from_json(_o['type']) unless _o['type'].nil?
-      @pakollinen = Boolean.from_json(_o['pakollinen']) unless _o['pakollinen'].nil?
-      @onlyFromList = Boolean.from_json(_o['onlyFromList']) unless _o['onlyFromList'].nil?
-      @optionsUrl = String.from_json(_o['optionsUrl']) unless _o['optionsUrl'].nil?
-      @editable = Boolean.from_json(_o['editable']) unless _o['editable'].nil?
-      @attribute = Fixnum.from_json(_o['attribute']) unless _o['attribute'].nil?
-      if !_o['optionValues'].nil?
-        @optionValues = Array.new
-        _oa = _o['optionValues']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @optionValues.push Fi::Mediconsult::Core::Client::Dto::Title::View::ViewTitleValue.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @optionValues.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-    end
-
-    # constructs a ClientTitleConfig from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class AbstractDTO 
-
-
-    # the json hash for this AbstractDTO
-    def to_jaxb_json_hash
-      _h = {}
-      return _h
-    end
-
-    # the json (string form) for this AbstractDTO
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this AbstractDTO with a json hash
-    def init_jaxb_json_hash(_o)
-    end
-
-    # constructs a AbstractDTO from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class FormTypeInfo 
-
-    # (no documentation provided)
-    attr_accessor :description
-    # (no documentation provided)
-    attr_accessor :name
-    # (no documentation provided)
-    attr_accessor :id
-
-    # the json hash for this FormTypeInfo
-    def to_jaxb_json_hash
-      _h = {}
-      _h['description'] = description.to_jaxb_json_hash unless description.nil?
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['id'] = id.to_jaxb_json_hash unless id.nil?
-      return _h
-    end
-
-    # the json (string form) for this FormTypeInfo
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this FormTypeInfo with a json hash
-    def init_jaxb_json_hash(_o)
-      @description = String.from_json(_o['description']) unless _o['description'].nil?
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
-    end
-
-    # constructs a FormTypeInfo from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
 module Omistaja
 
   # (no documentation provided)
-  class SkillsInfo 
+  class GenericOmistaja 
 
-    # &lt;code&gt;true&lt;/code&gt; if basic information loaded, otherwise &lt;code&gt;false&lt;/code&gt;
-    attr_accessor :dataLoaded
-    # If #getDataLoaded() returns &lt;code&gt;false&lt;/code&gt;
-    # then this method will return URL to fetch the missing data, otherwise &lt;code&gt;null&lt;/code&gt;.
-    attr_accessor :href
-    # all skills
-    attr_accessor :skills
+    # (no documentation provided)
+    attr_accessor :name
+    # (no documentation provided)
+    attr_accessor :nameExtension
+    # (no documentation provided)
+    attr_accessor :editTime
+    # (no documentation provided)
+    attr_accessor :omistajaId
+    # (no documentation provided)
+    attr_accessor :omistajaListAvailability
 
-    # the json hash for this SkillsInfo
+    # the json hash for this GenericOmistaja
     def to_jaxb_json_hash
       _h = {}
-      _h['dataLoaded'] = dataLoaded.to_jaxb_json_hash unless dataLoaded.nil?
-      _h['href'] = href.to_jaxb_json_hash unless href.nil?
-      if !skills.nil?
-        _ha = Array.new
-        skills.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['skills'] = _ha
-      end
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['nameExtension'] = nameExtension.to_jaxb_json_hash unless nameExtension.nil?
+      _h['editTime'] = editTime.to_jaxb_json_hash unless editTime.nil?
+      _h['omistajaId'] = omistajaId.to_jaxb_json_hash unless omistajaId.nil?
+      _h['omistajaListAvailability'] = omistajaListAvailability.to_jaxb_json_hash unless omistajaListAvailability.nil?
       return _h
     end
 
-    # the json (string form) for this SkillsInfo
+    # the json (string form) for this GenericOmistaja
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this SkillsInfo with a json hash
+    #initializes this GenericOmistaja with a json hash
     def init_jaxb_json_hash(_o)
-      @dataLoaded = Boolean.from_json(_o['dataLoaded']) unless _o['dataLoaded'].nil?
-      @href = String.from_json(_o['href']) unless _o['href'].nil?
-      if !_o['skills'].nil?
-        @skills = Array.new
-        _oa = _o['skills']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @skills.push Fi::Mediconsult::Mediplan::Dto::Worker::SkillDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @skills.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @nameExtension = String.from_json(_o['nameExtension']) unless _o['nameExtension'].nil?
+      @editTime = Bignum.from_json(_o['editTime']) unless _o['editTime'].nil?
+      @omistajaId = Fixnum.from_json(_o['omistajaId']) unless _o['omistajaId'].nil?
+      @omistajaListAvailability = Fi::Mediconsult::Core::Client::Dto::Omistaja::TimeInterval.from_json(_o['omistajaListAvailability']) unless _o['omistajaListAvailability'].nil?
     end
 
-    # constructs a SkillsInfo from a (parsed) JSON hash
+    # constructs a GenericOmistaja from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -2689,40 +2853,82 @@ module Mediconsult
 
 module Core
 
-module Security
+module Client
+
+module Dto
 
   # (no documentation provided)
-  class LoginCredentials 
+  class Hoitotyomerkinta 
 
     # (no documentation provided)
-    attr_accessor :username
+    attr_accessor :merkinta
     # (no documentation provided)
-    attr_accessor :password
+    attr_accessor :vaihe
     # (no documentation provided)
-    attr_accessor :domainName
+    attr_accessor :otsikkokoodi
+    # (no documentation provided)
+    attr_accessor :komponentti
+    # (no documentation provided)
+    attr_accessor :luokka
+    # (no documentation provided)
+    attr_accessor :jarjestys
+    # (no documentation provided)
+    attr_accessor :teksti
+    # (no documentation provided)
+    attr_accessor :kirjaaja
+    # (no documentation provided)
+    attr_accessor :kirjausaika
+    # (no documentation provided)
+    attr_accessor :varmuus
+    # (no documentation provided)
+    attr_accessor :tilanne
+    # (no documentation provided)
+    attr_accessor :pysyvyys
+    # (no documentation provided)
+    attr_accessor :readTime
 
-    # the json hash for this LoginCredentials
+    # the json hash for this Hoitotyomerkinta
     def to_jaxb_json_hash
       _h = {}
-      _h['username'] = username.to_jaxb_json_hash unless username.nil?
-      _h['password'] = password.to_jaxb_json_hash unless password.nil?
-      _h['domainName'] = domainName.to_jaxb_json_hash unless domainName.nil?
+      _h['merkinta'] = merkinta.to_jaxb_json_hash unless merkinta.nil?
+      _h['vaihe'] = vaihe.to_jaxb_json_hash unless vaihe.nil?
+      _h['otsikkokoodi'] = otsikkokoodi.to_jaxb_json_hash unless otsikkokoodi.nil?
+      _h['komponentti'] = komponentti.to_jaxb_json_hash unless komponentti.nil?
+      _h['luokka'] = luokka.to_jaxb_json_hash unless luokka.nil?
+      _h['jarjestys'] = jarjestys.to_jaxb_json_hash unless jarjestys.nil?
+      _h['teksti'] = teksti.to_jaxb_json_hash unless teksti.nil?
+      _h['kirjaaja'] = kirjaaja.to_jaxb_json_hash unless kirjaaja.nil?
+      _h['kirjausaika'] = kirjausaika.to_jaxb_json_hash unless kirjausaika.nil?
+      _h['varmuus'] = varmuus.to_jaxb_json_hash unless varmuus.nil?
+      _h['tilanne'] = tilanne.to_jaxb_json_hash unless tilanne.nil?
+      _h['pysyvyys'] = pysyvyys.to_jaxb_json_hash unless pysyvyys.nil?
+      _h['readTime'] = readTime.to_jaxb_json_hash unless readTime.nil?
       return _h
     end
 
-    # the json (string form) for this LoginCredentials
+    # the json (string form) for this Hoitotyomerkinta
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this LoginCredentials with a json hash
+    #initializes this Hoitotyomerkinta with a json hash
     def init_jaxb_json_hash(_o)
-      @username = String.from_json(_o['username']) unless _o['username'].nil?
-      @password = String.from_json(_o['password']) unless _o['password'].nil?
-      @domainName = String.from_json(_o['domainName']) unless _o['domainName'].nil?
+      @merkinta = Fixnum.from_json(_o['merkinta']) unless _o['merkinta'].nil?
+      @vaihe = String.from_json(_o['vaihe']) unless _o['vaihe'].nil?
+      @otsikkokoodi = String.from_json(_o['otsikkokoodi']) unless _o['otsikkokoodi'].nil?
+      @komponentti = String.from_json(_o['komponentti']) unless _o['komponentti'].nil?
+      @luokka = String.from_json(_o['luokka']) unless _o['luokka'].nil?
+      @jarjestys = Float.from_json(_o['jarjestys']) unless _o['jarjestys'].nil?
+      @teksti = String.from_json(_o['teksti']) unless _o['teksti'].nil?
+      @kirjaaja = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['kirjaaja']) unless _o['kirjaaja'].nil?
+      @kirjausaika = Time.from_json(_o['kirjausaika']) unless _o['kirjausaika'].nil?
+      @varmuus = String.from_json(_o['varmuus']) unless _o['varmuus'].nil?
+      @tilanne = String.from_json(_o['tilanne']) unless _o['tilanne'].nil?
+      @pysyvyys = String.from_json(_o['pysyvyys']) unless _o['pysyvyys'].nil?
+      @readTime = Bignum.from_json(_o['readTime']) unless _o['readTime'].nil?
     end
 
-    # constructs a LoginCredentials from a (parsed) JSON hash
+    # constructs a Hoitotyomerkinta from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -2733,6 +2939,85 @@ module Security
       end
     end
   end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+  # (no documentation provided)
+  class Osastolista 
+
+    # (no documentation provided)
+    attr_accessor :paikkatiedot
+    # (no documentation provided)
+    attr_accessor :nimi
+
+    # the json hash for this Osastolista
+    def to_jaxb_json_hash
+      _h = {}
+      if !paikkatiedot.nil?
+        _ha = Array.new
+        paikkatiedot.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['paikkatiedot'] = _ha
+      end
+      _h['nimi'] = nimi.to_jaxb_json_hash unless nimi.nil?
+      return _h
+    end
+
+    # the json (string form) for this Osastolista
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this Osastolista with a json hash
+    def init_jaxb_json_hash(_o)
+      if !_o['paikkatiedot'].nil?
+        @paikkatiedot = Array.new
+        _oa = _o['paikkatiedot']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @paikkatiedot.push Fi::Mediconsult::Core::Client::Dto::OsastolistaPaikkatieto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @paikkatiedot.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @nimi = String.from_json(_o['nimi']) unless _o['nimi'].nil?
+    end
+
+    # constructs a Osastolista from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
 
 end
 
@@ -2825,56 +3110,125 @@ module Fi
 
 module Mediconsult
 
-module Mediplan
+module Core
 
-module Dto
-
-module Event
+module Security
 
   # (no documentation provided)
-  class EventCoursePeriodDto 
+  class LoginCredentials 
 
-    # the coursePeriodId
-    attr_accessor :coursePeriodId
-    # the coursePeriodName
-    attr_accessor :coursePeriodName
-    # the coursePeriodAbbreviation
-    attr_accessor :coursePeriodAbbreviation
-    # the courseId
-    attr_accessor :courseId
-    # the courseName
-    attr_accessor :courseName
-    # the courseAbbreviation
-    attr_accessor :courseAbbreviation
+    # (no documentation provided)
+    attr_accessor :username
+    # (no documentation provided)
+    attr_accessor :password
+    # (no documentation provided)
+    attr_accessor :domainName
 
-    # the json hash for this EventCoursePeriodDto
+    # the json hash for this LoginCredentials
     def to_jaxb_json_hash
       _h = {}
-      _h['coursePeriodId'] = coursePeriodId.to_jaxb_json_hash unless coursePeriodId.nil?
-      _h['coursePeriodName'] = coursePeriodName.to_jaxb_json_hash unless coursePeriodName.nil?
-      _h['coursePeriodAbbreviation'] = coursePeriodAbbreviation.to_jaxb_json_hash unless coursePeriodAbbreviation.nil?
-      _h['courseId'] = courseId.to_jaxb_json_hash unless courseId.nil?
-      _h['courseName'] = courseName.to_jaxb_json_hash unless courseName.nil?
-      _h['courseAbbreviation'] = courseAbbreviation.to_jaxb_json_hash unless courseAbbreviation.nil?
+      _h['username'] = username.to_jaxb_json_hash unless username.nil?
+      _h['password'] = password.to_jaxb_json_hash unless password.nil?
+      _h['domainName'] = domainName.to_jaxb_json_hash unless domainName.nil?
       return _h
     end
 
-    # the json (string form) for this EventCoursePeriodDto
+    # the json (string form) for this LoginCredentials
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this EventCoursePeriodDto with a json hash
+    #initializes this LoginCredentials with a json hash
     def init_jaxb_json_hash(_o)
-      @coursePeriodId = Bignum.from_json(_o['coursePeriodId']) unless _o['coursePeriodId'].nil?
-      @coursePeriodName = String.from_json(_o['coursePeriodName']) unless _o['coursePeriodName'].nil?
-      @coursePeriodAbbreviation = String.from_json(_o['coursePeriodAbbreviation']) unless _o['coursePeriodAbbreviation'].nil?
-      @courseId = Bignum.from_json(_o['courseId']) unless _o['courseId'].nil?
-      @courseName = String.from_json(_o['courseName']) unless _o['courseName'].nil?
-      @courseAbbreviation = String.from_json(_o['courseAbbreviation']) unless _o['courseAbbreviation'].nil?
+      @username = String.from_json(_o['username']) unless _o['username'].nil?
+      @password = String.from_json(_o['password']) unless _o['password'].nil?
+      @domainName = String.from_json(_o['domainName']) unless _o['domainName'].nil?
     end
 
-    # constructs a EventCoursePeriodDto from a (parsed) JSON hash
+    # constructs a LoginCredentials from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Rights
+
+  # (no documentation provided)
+  class FormRights 
+
+    # the id
+    attr_accessor :id
+    # the name
+    attr_accessor :name
+    # the ownerId
+    attr_accessor :ownerId
+    # the rights
+    attr_accessor :rights
+
+    # the json hash for this FormRights
+    def to_jaxb_json_hash
+      _h = {}
+      _h['id'] = id.to_jaxb_json_hash unless id.nil?
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['ownerId'] = ownerId.to_jaxb_json_hash unless ownerId.nil?
+      if !rights.nil?
+        _ha = Array.new
+        rights.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['rights'] = _ha
+      end
+      return _h
+    end
+
+    # the json (string form) for this FormRights
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this FormRights with a json hash
+    def init_jaxb_json_hash(_o)
+      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @ownerId = Fixnum.from_json(_o['ownerId']) unless _o['ownerId'].nil?
+      if !_o['rights'].nil?
+        @rights = Array.new
+        _oa = _o['rights']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @rights.push String.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @rights.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+    end
+
+    # constructs a FormRights from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -2906,44 +3260,117 @@ module Client
 
 module Dto
 
-module Omistaja
-
   # (no documentation provided)
-  class LazyLoadedDto<T extends Object> 
+  class Tutkimuspyynnot 
 
     # (no documentation provided)
-    attr_accessor :object
+    attr_accessor :permissionDTO
     # (no documentation provided)
-    attr_accessor :loaded
+    attr_accessor :tutkimuspyyntoList
     # (no documentation provided)
-    attr_accessor :loadUrl
-    # (no documentation provided)
-    attr_accessor :type
+    attr_accessor :patientId
 
-    # the json hash for this LazyLoadedDto<T extends Object>
+    # the json hash for this Tutkimuspyynnot
     def to_jaxb_json_hash
       _h = {}
-      _h['object'] = object.to_jaxb_json_hash unless object.nil?
-      _h['loaded'] = loaded.to_jaxb_json_hash unless loaded.nil?
-      _h['loadUrl'] = loadUrl.to_jaxb_json_hash unless loadUrl.nil?
-      _h['type'] = type.to_jaxb_json_hash unless type.nil?
+      _h['permissionDTO'] = permissionDTO.to_jaxb_json_hash unless permissionDTO.nil?
+      if !tutkimuspyyntoList.nil?
+        _ha = Array.new
+        tutkimuspyyntoList.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['tutkimuspyyntoList'] = _ha
+      end
+      _h['patientId'] = patientId.to_jaxb_json_hash unless patientId.nil?
       return _h
     end
 
-    # the json (string form) for this LazyLoadedDto<T extends Object>
+    # the json (string form) for this Tutkimuspyynnot
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this LazyLoadedDto<T extends Object> with a json hash
+    #initializes this Tutkimuspyynnot with a json hash
     def init_jaxb_json_hash(_o)
-      @object = Object.from_json(_o['object']) unless _o['object'].nil?
-      @loaded = Boolean.from_json(_o['loaded']) unless _o['loaded'].nil?
-      @loadUrl = String.from_json(_o['loadUrl']) unless _o['loadUrl'].nil?
-      @type = String.from_json(_o['type']) unless _o['type'].nil?
+      @permissionDTO = Fi::Mediconsult::Core::Client::Dto::Permission.from_json(_o['permissionDTO']) unless _o['permissionDTO'].nil?
+      if !_o['tutkimuspyyntoList'].nil?
+        @tutkimuspyyntoList = Array.new
+        _oa = _o['tutkimuspyyntoList']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @tutkimuspyyntoList.push Fi::Mediconsult::Core::Client::Dto::Tutkimuspyynto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @tutkimuspyyntoList.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @patientId = Fixnum.from_json(_o['patientId']) unless _o['patientId'].nil?
     end
 
-    # constructs a LazyLoadedDto<T extends Object> from a (parsed) JSON hash
+    # constructs a Tutkimuspyynnot from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+module Seuranta
+
+  # (no documentation provided)
+  class SeurantaTitleEditFlag 
+
+    # (no documentation provided)
+    attr_accessor :name
+    # (no documentation provided)
+    attr_accessor :edited
+
+    # the json hash for this SeurantaTitleEditFlag
+    def to_jaxb_json_hash
+      _h = {}
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['edited'] = edited.to_jaxb_json_hash unless edited.nil?
+      return _h
+    end
+
+    # the json (string form) for this SeurantaTitleEditFlag
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this SeurantaTitleEditFlag with a json hash
+    def init_jaxb_json_hash(_o)
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @edited = Boolean.from_json(_o['edited']) unless _o['edited'].nil?
+    end
+
+    # constructs a SeurantaTitleEditFlag from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -3053,6 +3480,137 @@ module Kertomus
   end
 
 end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Event
+
+  # (no documentation provided)
+  class EventParticipantDto 
+
+    # the id
+    attr_accessor :id
+    # the unit
+    attr_accessor :unit
+    # the name
+    attr_accessor :name
+    # the delay
+    attr_accessor :delay
+    # the duration
+    attr_accessor :duration
+    # the canceled
+    attr_accessor :canceled
+    # the description
+    attr_accessor :cancellationReason
+    # the conflicting
+    attr_accessor :conflicting
+    # the overlapConflicts
+    attr_accessor :overlapConflicts
+    # the basicInfoTitles
+    attr_accessor :basicInfoTitles
+    # the participantId
+    attr_accessor :participantId
+
+    # the json hash for this EventParticipantDto
+    def to_jaxb_json_hash
+      _h = {}
+      _h['id'] = id.to_jaxb_json_hash unless id.nil?
+      _h['unit'] = unit.to_jaxb_json_hash unless unit.nil?
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['delay'] = delay.to_jaxb_json_hash unless delay.nil?
+      _h['duration'] = duration.to_jaxb_json_hash unless duration.nil?
+      _h['canceled'] = canceled.to_jaxb_json_hash unless canceled.nil?
+      _h['cancellationReason'] = cancellationReason.to_jaxb_json_hash unless cancellationReason.nil?
+      _h['conflicting'] = conflicting.to_jaxb_json_hash unless conflicting.nil?
+      if !overlapConflicts.nil?
+        _ha = Array.new
+        overlapConflicts.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['overlapConflicts'] = _ha
+      end
+      if !basicInfoTitles.nil?
+        _ha = Array.new
+        basicInfoTitles.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['basicInfoTitles'] = _ha
+      end
+      _h['participantId'] = participantId.to_jaxb_json_hash unless participantId.nil?
+      return _h
+    end
+
+    # the json (string form) for this EventParticipantDto
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this EventParticipantDto with a json hash
+    def init_jaxb_json_hash(_o)
+      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
+      @unit = Fixnum.from_json(_o['unit']) unless _o['unit'].nil?
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @delay = Fixnum.from_json(_o['delay']) unless _o['delay'].nil?
+      @duration = Fixnum.from_json(_o['duration']) unless _o['duration'].nil?
+      @canceled = Boolean.from_json(_o['canceled']) unless _o['canceled'].nil?
+      @cancellationReason = String.from_json(_o['cancellationReason']) unless _o['cancellationReason'].nil?
+      @conflicting = Boolean.from_json(_o['conflicting']) unless _o['conflicting'].nil?
+      if !_o['overlapConflicts'].nil?
+        @overlapConflicts = Array.new
+        _oa = _o['overlapConflicts']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @overlapConflicts.push Fi::Mediconsult::Mediplan::Dto::Event::EventOverlapConflictDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @overlapConflicts.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['basicInfoTitles'].nil?
+        @basicInfoTitles = Array.new
+        _oa = _o['basicInfoTitles']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @basicInfoTitles.push Fi::Mediconsult::Core::Client::Dto::Title::BaseTitleValue.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @basicInfoTitles.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @participantId = Bignum.from_json(_o['participantId']) unless _o['participantId'].nil?
+    end
+
+    # constructs a EventParticipantDto from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
 
 end
 
@@ -3261,6 +3819,10 @@ module Dto
     attr_accessor :userId
     # (no documentation provided)
     attr_accessor :developer
+    # (no documentation provided)
+    attr_accessor :componentRights
+    # (no documentation provided)
+    attr_accessor :viewConfiguration
 
     # the json hash for this CoreAuthenticationDTO
     def to_jaxb_json_hash
@@ -3281,6 +3843,12 @@ module Dto
       _h['patient'] = patient.to_jaxb_json_hash unless patient.nil?
       _h['userId'] = userId.to_jaxb_json_hash unless userId.nil?
       _h['developer'] = developer.to_jaxb_json_hash unless developer.nil?
+      if !componentRights.nil?
+        _ha = Array.new
+        componentRights.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['componentRights'] = _ha
+      end
+      _h['viewConfiguration'] = viewConfiguration.to_jaxb_json_hash unless viewConfiguration.nil?
       return _h
     end
 
@@ -3317,6 +3885,22 @@ module Dto
       @patient = Boolean.from_json(_o['patient']) unless _o['patient'].nil?
       @userId = Fixnum.from_json(_o['userId']) unless _o['userId'].nil?
       @developer = Boolean.from_json(_o['developer']) unless _o['developer'].nil?
+      if !_o['componentRights'].nil?
+        @componentRights = Array.new
+        _oa = _o['componentRights']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @componentRights.push Fi::Mediconsult::Core::Client::Dto::ComponentRightDTO.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @componentRights.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @viewConfiguration = Fi::Mediconsult::Core::Security::Dto::ViewConfiguration.from_json(_o['viewConfiguration']) unless _o['viewConfiguration'].nil?
     end
 
     # constructs a CoreAuthenticationDTO from a (parsed) JSON hash
@@ -3352,49 +3936,41 @@ module Client
 module Dto
 
   # (no documentation provided)
-  class PermissionDTO<T extends Object> 
+  class FormInfo 
 
     # (no documentation provided)
-    attr_accessor :view
+    attr_accessor :fullFormTypeId
     # (no documentation provided)
-    attr_accessor :change
+    attr_accessor :formTypeInfo
     # (no documentation provided)
-    attr_accessor :add
+    attr_accessor :ownerTypeInfo
     # (no documentation provided)
-    attr_accessor :data
-    # (no documentation provided)
-    attr_accessor :remove
-    # (no documentation provided)
-    attr_accessor :type
+    attr_accessor :formOwnerId
 
-    # the json hash for this PermissionDTO<T extends Object>
+    # the json hash for this FormInfo
     def to_jaxb_json_hash
       _h = {}
-      _h['view'] = view.to_jaxb_json_hash unless view.nil?
-      _h['change'] = change.to_jaxb_json_hash unless change.nil?
-      _h['add'] = add.to_jaxb_json_hash unless add.nil?
-      _h['data'] = data.to_jaxb_json_hash unless data.nil?
-      _h['remove'] = remove.to_jaxb_json_hash unless remove.nil?
-      _h['type'] = type.to_jaxb_json_hash unless type.nil?
+      _h['fullFormTypeId'] = fullFormTypeId.to_jaxb_json_hash unless fullFormTypeId.nil?
+      _h['formTypeInfo'] = formTypeInfo.to_jaxb_json_hash unless formTypeInfo.nil?
+      _h['ownerTypeInfo'] = ownerTypeInfo.to_jaxb_json_hash unless ownerTypeInfo.nil?
+      _h['formOwnerId'] = formOwnerId.to_jaxb_json_hash unless formOwnerId.nil?
       return _h
     end
 
-    # the json (string form) for this PermissionDTO<T extends Object>
+    # the json (string form) for this FormInfo
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this PermissionDTO<T extends Object> with a json hash
+    #initializes this FormInfo with a json hash
     def init_jaxb_json_hash(_o)
-      @view = Boolean.from_json(_o['view']) unless _o['view'].nil?
-      @change = Boolean.from_json(_o['change']) unless _o['change'].nil?
-      @add = Boolean.from_json(_o['add']) unless _o['add'].nil?
-      @data = Object.from_json(_o['data']) unless _o['data'].nil?
-      @remove = Boolean.from_json(_o['remove']) unless _o['remove'].nil?
-      @type = String.from_json(_o['type']) unless _o['type'].nil?
+      @fullFormTypeId = Fixnum.from_json(_o['fullFormTypeId']) unless _o['fullFormTypeId'].nil?
+      @formTypeInfo = Fi::Mediconsult::Core::Client::Dto::FormTypeInfo.from_json(_o['formTypeInfo']) unless _o['formTypeInfo'].nil?
+      @ownerTypeInfo = Fi::Mediconsult::Core::Client::Dto::Omistaja::OwnerTypeInfo.from_json(_o['ownerTypeInfo']) unless _o['ownerTypeInfo'].nil?
+      @formOwnerId = Fixnum.from_json(_o['formOwnerId']) unless _o['formOwnerId'].nil?
     end
 
-    # constructs a PermissionDTO<T extends Object> from a (parsed) JSON hash
+    # constructs a FormInfo from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -3585,33 +4161,56 @@ module Dto
 module Omistaja
 
   # (no documentation provided)
-  class TimeInterval 
+  class BasicInfo 
 
-    # (no documentation provided)
-    attr_accessor :endTime
-    # (no documentation provided)
-    attr_accessor :startTime
+    # &lt;code&gt;true&lt;/code&gt; if basic information loaded, otherwise &lt;code&gt;false&lt;/code&gt;
+    attr_accessor :dataLoaded
+    # If #getDataLoaded() returns &lt;code&gt;false&lt;/code&gt;
+    # then this method will return URL to fetch the missing data, otherwise &lt;code&gt;null&lt;/code&gt;.
+    attr_accessor :href
+    # basic info titles
+    attr_accessor :titles
 
-    # the json hash for this TimeInterval
+    # the json hash for this BasicInfo
     def to_jaxb_json_hash
       _h = {}
-      _h['endTime'] = endTime.to_jaxb_json_hash unless endTime.nil?
-      _h['startTime'] = startTime.to_jaxb_json_hash unless startTime.nil?
+      _h['dataLoaded'] = dataLoaded.to_jaxb_json_hash unless dataLoaded.nil?
+      _h['href'] = href.to_jaxb_json_hash unless href.nil?
+      if !titles.nil?
+        _ha = Array.new
+        titles.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['titles'] = _ha
+      end
       return _h
     end
 
-    # the json (string form) for this TimeInterval
+    # the json (string form) for this BasicInfo
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this TimeInterval with a json hash
+    #initializes this BasicInfo with a json hash
     def init_jaxb_json_hash(_o)
-      @endTime = Time.from_json(_o['endTime']) unless _o['endTime'].nil?
-      @startTime = Time.from_json(_o['startTime']) unless _o['startTime'].nil?
+      @dataLoaded = Boolean.from_json(_o['dataLoaded']) unless _o['dataLoaded'].nil?
+      @href = String.from_json(_o['href']) unless _o['href'].nil?
+      if !_o['titles'].nil?
+        @titles = Array.new
+        _oa = _o['titles']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @titles.push Fi::Mediconsult::Core::Client::Dto::Title::View::ViewTitleValue.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @titles.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
     end
 
-    # constructs a TimeInterval from a (parsed) JSON hash
+    # constructs a BasicInfo from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -3721,56 +4320,33 @@ module Dto
 module Omistaja
 
   # (no documentation provided)
-  class BasicInfo 
+  class TimeInterval 
 
-    # &lt;code&gt;true&lt;/code&gt; if basic information loaded, otherwise &lt;code&gt;false&lt;/code&gt;
-    attr_accessor :dataLoaded
-    # If #getDataLoaded() returns &lt;code&gt;false&lt;/code&gt;
-    # then this method will return URL to fetch the missing data, otherwise &lt;code&gt;null&lt;/code&gt;.
-    attr_accessor :href
-    # basic info titles
-    attr_accessor :titles
+    # (no documentation provided)
+    attr_accessor :startTime
+    # (no documentation provided)
+    attr_accessor :endTime
 
-    # the json hash for this BasicInfo
+    # the json hash for this TimeInterval
     def to_jaxb_json_hash
       _h = {}
-      _h['dataLoaded'] = dataLoaded.to_jaxb_json_hash unless dataLoaded.nil?
-      _h['href'] = href.to_jaxb_json_hash unless href.nil?
-      if !titles.nil?
-        _ha = Array.new
-        titles.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['titles'] = _ha
-      end
+      _h['startTime'] = startTime.to_jaxb_json_hash unless startTime.nil?
+      _h['endTime'] = endTime.to_jaxb_json_hash unless endTime.nil?
       return _h
     end
 
-    # the json (string form) for this BasicInfo
+    # the json (string form) for this TimeInterval
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this BasicInfo with a json hash
+    #initializes this TimeInterval with a json hash
     def init_jaxb_json_hash(_o)
-      @dataLoaded = Boolean.from_json(_o['dataLoaded']) unless _o['dataLoaded'].nil?
-      @href = String.from_json(_o['href']) unless _o['href'].nil?
-      if !_o['titles'].nil?
-        @titles = Array.new
-        _oa = _o['titles']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @titles.push Fi::Mediconsult::Core::Client::Dto::Title::View::ViewTitleValue.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @titles.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
+      @startTime = Time.from_json(_o['startTime']) unless _o['startTime'].nil?
+      @endTime = Time.from_json(_o['endTime']) unless _o['endTime'].nil?
     end
 
-    # constructs a BasicInfo from a (parsed) JSON hash
+    # constructs a TimeInterval from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -3783,73 +4359,6 @@ module Omistaja
   end
 
 end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class FormInfo 
-
-    # (no documentation provided)
-    attr_accessor :fullFormTypeId
-    # (no documentation provided)
-    attr_accessor :formTypeInfo
-    # (no documentation provided)
-    attr_accessor :ownerTypeInfo
-    # (no documentation provided)
-    attr_accessor :formOwnerId
-
-    # the json hash for this FormInfo
-    def to_jaxb_json_hash
-      _h = {}
-      _h['fullFormTypeId'] = fullFormTypeId.to_jaxb_json_hash unless fullFormTypeId.nil?
-      _h['formTypeInfo'] = formTypeInfo.to_jaxb_json_hash unless formTypeInfo.nil?
-      _h['ownerTypeInfo'] = ownerTypeInfo.to_jaxb_json_hash unless ownerTypeInfo.nil?
-      _h['formOwnerId'] = formOwnerId.to_jaxb_json_hash unless formOwnerId.nil?
-      return _h
-    end
-
-    # the json (string form) for this FormInfo
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this FormInfo with a json hash
-    def init_jaxb_json_hash(_o)
-      @fullFormTypeId = Fixnum.from_json(_o['fullFormTypeId']) unless _o['fullFormTypeId'].nil?
-      @formTypeInfo = Fi::Mediconsult::Core::Client::Dto::FormTypeInfo.from_json(_o['formTypeInfo']) unless _o['formTypeInfo'].nil?
-      @ownerTypeInfo = Fi::Mediconsult::Core::Client::Dto::Omistaja::OwnerTypeInfo.from_json(_o['ownerTypeInfo']) unless _o['ownerTypeInfo'].nil?
-      @formOwnerId = Fixnum.from_json(_o['formOwnerId']) unless _o['formOwnerId'].nil?
-    end
-
-    # constructs a FormInfo from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
 
 end
 
@@ -3873,6 +4382,8 @@ module Dto
   class KuhaDtoBase 
 
     # (no documentation provided)
+    attr_accessor :version
+    # (no documentation provided)
     attr_accessor :id
     # (no documentation provided)
     attr_accessor :created
@@ -3882,6 +4393,7 @@ module Dto
     # the json hash for this KuhaDtoBase
     def to_jaxb_json_hash
       _h = {}
+      _h['version'] = version.to_jaxb_json_hash unless version.nil?
       _h['id'] = id.to_jaxb_json_hash unless id.nil?
       _h['created'] = created.to_jaxb_json_hash unless created.nil?
       _h['modified'] = modified.to_jaxb_json_hash unless modified.nil?
@@ -3895,6 +4407,7 @@ module Dto
 
     #initializes this KuhaDtoBase with a json hash
     def init_jaxb_json_hash(_o)
+      @version = Fixnum.from_json(_o['version']) unless _o['version'].nil?
       @id = Bignum.from_json(_o['id']) unless _o['id'].nil?
       @created = Bignum.from_json(_o['created']) unless _o['created'].nil?
       @modified = Bignum.from_json(_o['modified']) unless _o['modified'].nil?
@@ -3911,6 +4424,81 @@ module Dto
       end
     end
   end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+  # (no documentation provided)
+  class PermissionDTO<T extends Object> 
+
+    # (no documentation provided)
+    attr_accessor :view
+    # (no documentation provided)
+    attr_accessor :change
+    # (no documentation provided)
+    attr_accessor :add
+    # (no documentation provided)
+    attr_accessor :data
+    # (no documentation provided)
+    attr_accessor :remove
+    # (no documentation provided)
+    attr_accessor :type
+
+    # the json hash for this PermissionDTO<T extends Object>
+    def to_jaxb_json_hash
+      _h = {}
+      _h['view'] = view.to_jaxb_json_hash unless view.nil?
+      _h['change'] = change.to_jaxb_json_hash unless change.nil?
+      _h['add'] = add.to_jaxb_json_hash unless add.nil?
+      _h['data'] = data.to_jaxb_json_hash unless data.nil?
+      _h['remove'] = remove.to_jaxb_json_hash unless remove.nil?
+      _h['type'] = type.to_jaxb_json_hash unless type.nil?
+      return _h
+    end
+
+    # the json (string form) for this PermissionDTO<T extends Object>
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this PermissionDTO<T extends Object> with a json hash
+    def init_jaxb_json_hash(_o)
+      @view = Boolean.from_json(_o['view']) unless _o['view'].nil?
+      @change = Boolean.from_json(_o['change']) unless _o['change'].nil?
+      @add = Boolean.from_json(_o['add']) unless _o['add'].nil?
+      @data = Object.from_json(_o['data']) unless _o['data'].nil?
+      @remove = Boolean.from_json(_o['remove']) unless _o['remove'].nil?
+      @type = String.from_json(_o['type']) unless _o['type'].nil?
+    end
+
+    # constructs a PermissionDTO<T extends Object> from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
 
 end
 
@@ -4025,254 +4613,6 @@ module Fi
 
 module Mediconsult
 
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class LaakitysHistoria 
-
-    # the omistaja
-    attr_accessor :omistaja
-    # Maps to columns
-    # &lt;ul&gt;
-    # &lt;li&gt;LaakitysHistoriaPK#getOsa()
-    # &lt;/ul&gt;
-    attr_accessor :osa
-    # Maps to columns
-    # &lt;ul&gt;
-    # &lt;li&gt;LaakeValmisteEntity#getNimi()
-    # &lt;/ul&gt;
-    attr_accessor :nimi
-    # (no documentation provided)
-    attr_accessor :annostus
-    # (no documentation provided)
-    attr_accessor :aloitusPvm
-    # (no documentation provided)
-    attr_accessor :lopetusPvm
-    # (no documentation provided)
-    attr_accessor :kokoNimi
-    # (no documentation provided)
-    attr_accessor :kertaAnnos
-    # (no documentation provided)
-    attr_accessor :toistokuvaus
-    # (no documentation provided)
-    attr_accessor :maaraaja
-    # (no documentation provided)
-    attr_accessor :kirjaaja
-    # (no documentation provided)
-    attr_accessor :huomautuksia
-    # (no documentation provided)
-    attr_accessor :ohjeet
-    # (no documentation provided)
-    attr_accessor :kellonajat
-    # (no documentation provided)
-    attr_accessor :annosteluteksti
-    # (no documentation provided)
-    attr_accessor :kayttotarkoitus
-    # (no documentation provided)
-    attr_accessor :aikayksikko
-    # (no documentation provided)
-    attr_accessor :antotahti
-    # (no documentation provided)
-    attr_accessor :laakeaineet
-    # (no documentation provided)
-    attr_accessor :kuitattava
-    # (no documentation provided)
-    attr_accessor :tauonAloitusPvm
-    # (no documentation provided)
-    attr_accessor :tauonLopetusPvm
-    # (no documentation provided)
-    attr_accessor :taukohuomautuksia
-    # (no documentation provided)
-    attr_accessor :reseptityyppi
-    # (no documentation provided)
-    attr_accessor :laakitysAntoList
-    # (no documentation provided)
-    attr_accessor :laakitysKayttoaiheList
-    # the annettavaMaara
-    attr_accessor :annettavaMaara
-    # the annettavaMaksimi
-    attr_accessor :annettavaMaksimi
-    # the annettavaYksikko
-    attr_accessor :annettavaYksikko
-    # return Medicine VNR Code Maps to columns
-    # &lt;ul&gt;
-    # &lt;li&gt;LaakeValmisteEntity#getKoodi()
-    # &lt;/ul&gt;
-    attr_accessor :laake
-    # the vrkmaara
-    attr_accessor :vrkmaara
-    # the vrkmaaraYksikko
-    attr_accessor :vrkmaaraYksikko
-    # (no documentation provided)
-    attr_accessor :vaihtelevaAnnostus
-    # (no documentation provided)
-    attr_accessor :vaihteleva
-    # (no documentation provided)
-    attr_accessor :paino
-    # (no documentation provided)
-    attr_accessor :annettavaMaaraTimesPaino
-    # (no documentation provided)
-    attr_accessor :vrkkerratCalc
-    # (no documentation provided)
-    attr_accessor :vrkmaaraCalc
-
-    # the json hash for this LaakitysHistoria
-    def to_jaxb_json_hash
-      _h = {}
-      _h['omistaja'] = omistaja.to_jaxb_json_hash unless omistaja.nil?
-      _h['osa'] = osa.to_jaxb_json_hash unless osa.nil?
-      _h['nimi'] = nimi.to_jaxb_json_hash unless nimi.nil?
-      _h['annostus'] = annostus.to_jaxb_json_hash unless annostus.nil?
-      _h['aloitusPvm'] = aloitusPvm.to_jaxb_json_hash unless aloitusPvm.nil?
-      _h['lopetusPvm'] = lopetusPvm.to_jaxb_json_hash unless lopetusPvm.nil?
-      _h['kokoNimi'] = kokoNimi.to_jaxb_json_hash unless kokoNimi.nil?
-      _h['kertaAnnos'] = kertaAnnos.to_jaxb_json_hash unless kertaAnnos.nil?
-      _h['toistokuvaus'] = toistokuvaus.to_jaxb_json_hash unless toistokuvaus.nil?
-      _h['maaraaja'] = maaraaja.to_jaxb_json_hash unless maaraaja.nil?
-      _h['kirjaaja'] = kirjaaja.to_jaxb_json_hash unless kirjaaja.nil?
-      _h['huomautuksia'] = huomautuksia.to_jaxb_json_hash unless huomautuksia.nil?
-      _h['ohjeet'] = ohjeet.to_jaxb_json_hash unless ohjeet.nil?
-      _h['kellonajat'] = kellonajat.to_jaxb_json_hash unless kellonajat.nil?
-      _h['annosteluteksti'] = annosteluteksti.to_jaxb_json_hash unless annosteluteksti.nil?
-      _h['kayttotarkoitus'] = kayttotarkoitus.to_jaxb_json_hash unless kayttotarkoitus.nil?
-      _h['aikayksikko'] = aikayksikko.to_jaxb_json_hash unless aikayksikko.nil?
-      _h['antotahti'] = antotahti.to_jaxb_json_hash unless antotahti.nil?
-      _h['laakeaineet'] = laakeaineet.to_jaxb_json_hash unless laakeaineet.nil?
-      _h['kuitattava'] = kuitattava.to_jaxb_json_hash unless kuitattava.nil?
-      _h['tauonAloitusPvm'] = tauonAloitusPvm.to_jaxb_json_hash unless tauonAloitusPvm.nil?
-      _h['tauonLopetusPvm'] = tauonLopetusPvm.to_jaxb_json_hash unless tauonLopetusPvm.nil?
-      _h['taukohuomautuksia'] = taukohuomautuksia.to_jaxb_json_hash unless taukohuomautuksia.nil?
-      _h['reseptityyppi'] = reseptityyppi.to_jaxb_json_hash unless reseptityyppi.nil?
-      if !laakitysAntoList.nil?
-        _ha = Array.new
-        laakitysAntoList.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['laakitysAntoList'] = _ha
-      end
-      if !laakitysKayttoaiheList.nil?
-        _ha = Array.new
-        laakitysKayttoaiheList.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['laakitysKayttoaiheList'] = _ha
-      end
-      _h['annettavaMaara'] = annettavaMaara.to_jaxb_json_hash unless annettavaMaara.nil?
-      _h['annettavaMaksimi'] = annettavaMaksimi.to_jaxb_json_hash unless annettavaMaksimi.nil?
-      _h['annettavaYksikko'] = annettavaYksikko.to_jaxb_json_hash unless annettavaYksikko.nil?
-      _h['laake'] = laake.to_jaxb_json_hash unless laake.nil?
-      _h['vrkmaara'] = vrkmaara.to_jaxb_json_hash unless vrkmaara.nil?
-      _h['vrkmaaraYksikko'] = vrkmaaraYksikko.to_jaxb_json_hash unless vrkmaaraYksikko.nil?
-      _h['vaihtelevaAnnostus'] = vaihtelevaAnnostus.to_jaxb_json_hash unless vaihtelevaAnnostus.nil?
-      _h['vaihteleva'] = vaihteleva.to_jaxb_json_hash unless vaihteleva.nil?
-      _h['paino'] = paino.to_jaxb_json_hash unless paino.nil?
-      _h['annettavaMaaraTimesPaino'] = annettavaMaaraTimesPaino.to_jaxb_json_hash unless annettavaMaaraTimesPaino.nil?
-      _h['vrkkerratCalc'] = vrkkerratCalc.to_jaxb_json_hash unless vrkkerratCalc.nil?
-      _h['vrkmaaraCalc'] = vrkmaaraCalc.to_jaxb_json_hash unless vrkmaaraCalc.nil?
-      return _h
-    end
-
-    # the json (string form) for this LaakitysHistoria
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this LaakitysHistoria with a json hash
-    def init_jaxb_json_hash(_o)
-      @omistaja = Fixnum.from_json(_o['omistaja']) unless _o['omistaja'].nil?
-      @osa = Fixnum.from_json(_o['osa']) unless _o['osa'].nil?
-      @nimi = String.from_json(_o['nimi']) unless _o['nimi'].nil?
-      @annostus = String.from_json(_o['annostus']) unless _o['annostus'].nil?
-      @aloitusPvm = Time.from_json(_o['aloitusPvm']) unless _o['aloitusPvm'].nil?
-      @lopetusPvm = Time.from_json(_o['lopetusPvm']) unless _o['lopetusPvm'].nil?
-      @kokoNimi = String.from_json(_o['kokoNimi']) unless _o['kokoNimi'].nil?
-      @kertaAnnos = String.from_json(_o['kertaAnnos']) unless _o['kertaAnnos'].nil?
-      @toistokuvaus = String.from_json(_o['toistokuvaus']) unless _o['toistokuvaus'].nil?
-      @maaraaja = String.from_json(_o['maaraaja']) unless _o['maaraaja'].nil?
-      @kirjaaja = String.from_json(_o['kirjaaja']) unless _o['kirjaaja'].nil?
-      @huomautuksia = String.from_json(_o['huomautuksia']) unless _o['huomautuksia'].nil?
-      @ohjeet = String.from_json(_o['ohjeet']) unless _o['ohjeet'].nil?
-      @kellonajat = String.from_json(_o['kellonajat']) unless _o['kellonajat'].nil?
-      @annosteluteksti = String.from_json(_o['annosteluteksti']) unless _o['annosteluteksti'].nil?
-      @kayttotarkoitus = String.from_json(_o['kayttotarkoitus']) unless _o['kayttotarkoitus'].nil?
-      @aikayksikko = String.from_json(_o['aikayksikko']) unless _o['aikayksikko'].nil?
-      @antotahti = String.from_json(_o['antotahti']) unless _o['antotahti'].nil?
-      @laakeaineet = String.from_json(_o['laakeaineet']) unless _o['laakeaineet'].nil?
-      @kuitattava = String.from_json(_o['kuitattava']) unless _o['kuitattava'].nil?
-      @tauonAloitusPvm = Bignum.from_json(_o['tauonAloitusPvm']) unless _o['tauonAloitusPvm'].nil?
-      @tauonLopetusPvm = Bignum.from_json(_o['tauonLopetusPvm']) unless _o['tauonLopetusPvm'].nil?
-      @taukohuomautuksia = String.from_json(_o['taukohuomautuksia']) unless _o['taukohuomautuksia'].nil?
-      @reseptityyppi = String.from_json(_o['reseptityyppi']) unless _o['reseptityyppi'].nil?
-      if !_o['laakitysAntoList'].nil?
-        @laakitysAntoList = Array.new
-        _oa = _o['laakitysAntoList']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @laakitysAntoList.push Fi::Mediconsult::Core::Client::Dto::LaakitysAnto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @laakitysAntoList.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['laakitysKayttoaiheList'].nil?
-        @laakitysKayttoaiheList = Array.new
-        _oa = _o['laakitysKayttoaiheList']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @laakitysKayttoaiheList.push Fi::Mediconsult::Core::Client::Dto::LaakitysKayttoaiheView.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @laakitysKayttoaiheList.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @annettavaMaara = Float.from_json(_o['annettavaMaara']) unless _o['annettavaMaara'].nil?
-      @annettavaMaksimi = Float.from_json(_o['annettavaMaksimi']) unless _o['annettavaMaksimi'].nil?
-      @annettavaYksikko = String.from_json(_o['annettavaYksikko']) unless _o['annettavaYksikko'].nil?
-      @laake = String.from_json(_o['laake']) unless _o['laake'].nil?
-      @vrkmaara = Float.from_json(_o['vrkmaara']) unless _o['vrkmaara'].nil?
-      @vrkmaaraYksikko = String.from_json(_o['vrkmaaraYksikko']) unless _o['vrkmaaraYksikko'].nil?
-      @vaihtelevaAnnostus = String.from_json(_o['vaihtelevaAnnostus']) unless _o['vaihtelevaAnnostus'].nil?
-      @vaihteleva = Boolean.from_json(_o['vaihteleva']) unless _o['vaihteleva'].nil?
-      @paino = Float.from_json(_o['paino']) unless _o['paino'].nil?
-      @annettavaMaaraTimesPaino = Float.from_json(_o['annettavaMaaraTimesPaino']) unless _o['annettavaMaaraTimesPaino'].nil?
-      @vrkkerratCalc = Fixnum.from_json(_o['vrkkerratCalc']) unless _o['vrkkerratCalc'].nil?
-      @vrkmaaraCalc = Float.from_json(_o['vrkmaaraCalc']) unless _o['vrkmaaraCalc'].nil?
-    end
-
-    # constructs a LaakitysHistoria from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
 module Mediplan
 
 module Dto
@@ -4321,6 +4661,73 @@ module Event
       end
     end
   end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+module Palvelupaatos
+
+  # (no documentation provided)
+  class PalvelukeskeytysSyy 
+
+    # (no documentation provided)
+    attr_accessor :syyDescription
+    # (no documentation provided)
+    attr_accessor :billingType
+    # (no documentation provided)
+    attr_accessor :maxBillingDays
+
+    # the json hash for this PalvelukeskeytysSyy
+    def to_jaxb_json_hash
+      _h = {}
+      _h['syyDescription'] = syyDescription.to_jaxb_json_hash unless syyDescription.nil?
+      _h['billingType'] = billingType.to_jaxb_json_hash unless billingType.nil?
+      _h['maxBillingDays'] = maxBillingDays.to_jaxb_json_hash unless maxBillingDays.nil?
+      return _h
+    end
+
+    # the json (string form) for this PalvelukeskeytysSyy
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this PalvelukeskeytysSyy with a json hash
+    def init_jaxb_json_hash(_o)
+      @syyDescription = String.from_json(_o['syyDescription']) unless _o['syyDescription'].nil?
+      @billingType = String.from_json(_o['billingType']) unless _o['billingType'].nil?
+      @maxBillingDays = Fixnum.from_json(_o['maxBillingDays']) unless _o['maxBillingDays'].nil?
+    end
+
+    # constructs a PalvelukeskeytysSyy from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
 
 end
 
@@ -4404,141 +4811,6 @@ module Dto
     end
 
     # constructs a OsastolistaPaikkatieto from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Mediplan
-
-module Dto
-
-module Event
-
-  # (no documentation provided)
-  class EventParticipantDto 
-
-    # the id
-    attr_accessor :id
-    # the unit
-    attr_accessor :unit
-    # the name
-    attr_accessor :name
-    # the delay
-    attr_accessor :delay
-    # the duration
-    attr_accessor :duration
-    # the canceled
-    attr_accessor :canceled
-    # the description
-    attr_accessor :cancellationReason
-    # the conflicting
-    attr_accessor :conflicting
-    # the overlapConflicts
-    attr_accessor :overlapConflicts
-    # the basicInfoTitles
-    attr_accessor :basicInfoTitles
-    # the participantId
-    attr_accessor :participantId
-    # the removed
-    attr_accessor :removed
-
-    # the json hash for this EventParticipantDto
-    def to_jaxb_json_hash
-      _h = {}
-      _h['id'] = id.to_jaxb_json_hash unless id.nil?
-      _h['unit'] = unit.to_jaxb_json_hash unless unit.nil?
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['delay'] = delay.to_jaxb_json_hash unless delay.nil?
-      _h['duration'] = duration.to_jaxb_json_hash unless duration.nil?
-      _h['canceled'] = canceled.to_jaxb_json_hash unless canceled.nil?
-      _h['cancellationReason'] = cancellationReason.to_jaxb_json_hash unless cancellationReason.nil?
-      _h['conflicting'] = conflicting.to_jaxb_json_hash unless conflicting.nil?
-      if !overlapConflicts.nil?
-        _ha = Array.new
-        overlapConflicts.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['overlapConflicts'] = _ha
-      end
-      if !basicInfoTitles.nil?
-        _ha = Array.new
-        basicInfoTitles.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['basicInfoTitles'] = _ha
-      end
-      _h['participantId'] = participantId.to_jaxb_json_hash unless participantId.nil?
-      _h['removed'] = removed.to_jaxb_json_hash unless removed.nil?
-      return _h
-    end
-
-    # the json (string form) for this EventParticipantDto
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this EventParticipantDto with a json hash
-    def init_jaxb_json_hash(_o)
-      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
-      @unit = Fixnum.from_json(_o['unit']) unless _o['unit'].nil?
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @delay = Fixnum.from_json(_o['delay']) unless _o['delay'].nil?
-      @duration = Fixnum.from_json(_o['duration']) unless _o['duration'].nil?
-      @canceled = Boolean.from_json(_o['canceled']) unless _o['canceled'].nil?
-      @cancellationReason = String.from_json(_o['cancellationReason']) unless _o['cancellationReason'].nil?
-      @conflicting = Boolean.from_json(_o['conflicting']) unless _o['conflicting'].nil?
-      if !_o['overlapConflicts'].nil?
-        @overlapConflicts = Array.new
-        _oa = _o['overlapConflicts']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @overlapConflicts.push Fi::Mediconsult::Mediplan::Dto::Event::EventOverlapConflictDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @overlapConflicts.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['basicInfoTitles'].nil?
-        @basicInfoTitles = Array.new
-        _oa = _o['basicInfoTitles']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @basicInfoTitles.push Fi::Mediconsult::Core::Client::Dto::Title::BaseTitleValue.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @basicInfoTitles.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @participantId = Bignum.from_json(_o['participantId']) unless _o['participantId'].nil?
-      @removed = Boolean.from_json(_o['removed']) unless _o['removed'].nil?
-    end
-
-    # constructs a EventParticipantDto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -4665,56 +4937,121 @@ module Client
 
 module Dto
 
+module Omistaja
+
   # (no documentation provided)
-  class Tutkimuspyynnot 
+  class LazyLoadedDto<T extends Object> 
 
     # (no documentation provided)
-    attr_accessor :patientId
+    attr_accessor :object
     # (no documentation provided)
-    attr_accessor :tutkimuspyyntoList
+    attr_accessor :loaded
     # (no documentation provided)
-    attr_accessor :permissionDTO
+    attr_accessor :loadUrl
+    # (no documentation provided)
+    attr_accessor :type
 
-    # the json hash for this Tutkimuspyynnot
+    # the json hash for this LazyLoadedDto<T extends Object>
     def to_jaxb_json_hash
       _h = {}
-      _h['patientId'] = patientId.to_jaxb_json_hash unless patientId.nil?
-      if !tutkimuspyyntoList.nil?
-        _ha = Array.new
-        tutkimuspyyntoList.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['tutkimuspyyntoList'] = _ha
-      end
-      _h['permissionDTO'] = permissionDTO.to_jaxb_json_hash unless permissionDTO.nil?
+      _h['object'] = object.to_jaxb_json_hash unless object.nil?
+      _h['loaded'] = loaded.to_jaxb_json_hash unless loaded.nil?
+      _h['loadUrl'] = loadUrl.to_jaxb_json_hash unless loadUrl.nil?
+      _h['type'] = type.to_jaxb_json_hash unless type.nil?
       return _h
     end
 
-    # the json (string form) for this Tutkimuspyynnot
+    # the json (string form) for this LazyLoadedDto<T extends Object>
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this Tutkimuspyynnot with a json hash
+    #initializes this LazyLoadedDto<T extends Object> with a json hash
     def init_jaxb_json_hash(_o)
-      @patientId = Fixnum.from_json(_o['patientId']) unless _o['patientId'].nil?
-      if !_o['tutkimuspyyntoList'].nil?
-        @tutkimuspyyntoList = Array.new
-        _oa = _o['tutkimuspyyntoList']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @tutkimuspyyntoList.push Fi::Mediconsult::Core::Client::Dto::Tutkimuspyynto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @tutkimuspyyntoList.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @permissionDTO = Fi::Mediconsult::Core::Client::Dto::Permission.from_json(_o['permissionDTO']) unless _o['permissionDTO'].nil?
+      @object = Object.from_json(_o['object']) unless _o['object'].nil?
+      @loaded = Boolean.from_json(_o['loaded']) unless _o['loaded'].nil?
+      @loadUrl = String.from_json(_o['loadUrl']) unless _o['loadUrl'].nil?
+      @type = String.from_json(_o['type']) unless _o['type'].nil?
     end
 
-    # constructs a Tutkimuspyynnot from a (parsed) JSON hash
+    # constructs a LazyLoadedDto<T extends Object> from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Event
+
+  # (no documentation provided)
+  class EventCoursePeriodDto 
+
+    # the coursePeriodId
+    attr_accessor :coursePeriodId
+    # the coursePeriodName
+    attr_accessor :coursePeriodName
+    # the coursePeriodAbbreviation
+    attr_accessor :coursePeriodAbbreviation
+    # the courseId
+    attr_accessor :courseId
+    # the courseName
+    attr_accessor :courseName
+    # the courseAbbreviation
+    attr_accessor :courseAbbreviation
+
+    # the json hash for this EventCoursePeriodDto
+    def to_jaxb_json_hash
+      _h = {}
+      _h['coursePeriodId'] = coursePeriodId.to_jaxb_json_hash unless coursePeriodId.nil?
+      _h['coursePeriodName'] = coursePeriodName.to_jaxb_json_hash unless coursePeriodName.nil?
+      _h['coursePeriodAbbreviation'] = coursePeriodAbbreviation.to_jaxb_json_hash unless coursePeriodAbbreviation.nil?
+      _h['courseId'] = courseId.to_jaxb_json_hash unless courseId.nil?
+      _h['courseName'] = courseName.to_jaxb_json_hash unless courseName.nil?
+      _h['courseAbbreviation'] = courseAbbreviation.to_jaxb_json_hash unless courseAbbreviation.nil?
+      return _h
+    end
+
+    # the json (string form) for this EventCoursePeriodDto
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this EventCoursePeriodDto with a json hash
+    def init_jaxb_json_hash(_o)
+      @coursePeriodId = Bignum.from_json(_o['coursePeriodId']) unless _o['coursePeriodId'].nil?
+      @coursePeriodName = String.from_json(_o['coursePeriodName']) unless _o['coursePeriodName'].nil?
+      @coursePeriodAbbreviation = String.from_json(_o['coursePeriodAbbreviation']) unless _o['coursePeriodAbbreviation'].nil?
+      @courseId = Bignum.from_json(_o['courseId']) unless _o['courseId'].nil?
+      @courseName = String.from_json(_o['courseName']) unless _o['courseName'].nil?
+      @courseAbbreviation = String.from_json(_o['courseAbbreviation']) unless _o['courseAbbreviation'].nil?
+    end
+
+    # constructs a EventCoursePeriodDto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -4886,91 +5223,6 @@ module Fi
 
 module Mediconsult
 
-module Mediplan
-
-module Dto
-
-module Rights
-
-  # (no documentation provided)
-  class FormRights 
-
-    # the id
-    attr_accessor :id
-    # the name
-    attr_accessor :name
-    # the ownerId
-    attr_accessor :ownerId
-    # the rights
-    attr_accessor :rights
-
-    # the json hash for this FormRights
-    def to_jaxb_json_hash
-      _h = {}
-      _h['id'] = id.to_jaxb_json_hash unless id.nil?
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['ownerId'] = ownerId.to_jaxb_json_hash unless ownerId.nil?
-      if !rights.nil?
-        _ha = Array.new
-        rights.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['rights'] = _ha
-      end
-      return _h
-    end
-
-    # the json (string form) for this FormRights
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this FormRights with a json hash
-    def init_jaxb_json_hash(_o)
-      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @ownerId = Fixnum.from_json(_o['ownerId']) unless _o['ownerId'].nil?
-      if !_o['rights'].nil?
-        @rights = Array.new
-        _oa = _o['rights']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @rights.push String.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @rights.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-    end
-
-    # constructs a FormRights from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
 module Core
 
 module Client
@@ -4978,154 +5230,45 @@ module Client
 module Dto
 
   # (no documentation provided)
-  class Osastolista 
+  class ComponentRightDTO 
 
     # (no documentation provided)
-    attr_accessor :paikkatiedot
+    attr_accessor :serialversionuid
     # (no documentation provided)
-    attr_accessor :nimi
+    attr_accessor :component
+    # (no documentation provided)
+    attr_accessor :inDevelopment
+    # (no documentation provided)
+    attr_accessor :requiresTarget
+    # (no documentation provided)
+    attr_accessor :permissionDTO
 
-    # the json hash for this Osastolista
+    # the json hash for this ComponentRightDTO
     def to_jaxb_json_hash
       _h = {}
-      if !paikkatiedot.nil?
-        _ha = Array.new
-        paikkatiedot.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['paikkatiedot'] = _ha
-      end
-      _h['nimi'] = nimi.to_jaxb_json_hash unless nimi.nil?
+      _h['serialversionuid'] = serialversionuid.to_jaxb_json_hash unless serialversionuid.nil?
+      _h['component'] = component.to_jaxb_json_hash unless component.nil?
+      _h['inDevelopment'] = inDevelopment.to_jaxb_json_hash unless inDevelopment.nil?
+      _h['requiresTarget'] = requiresTarget.to_jaxb_json_hash unless requiresTarget.nil?
+      _h['permissionDTO'] = permissionDTO.to_jaxb_json_hash unless permissionDTO.nil?
       return _h
     end
 
-    # the json (string form) for this Osastolista
+    # the json (string form) for this ComponentRightDTO
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this Osastolista with a json hash
+    #initializes this ComponentRightDTO with a json hash
     def init_jaxb_json_hash(_o)
-      if !_o['paikkatiedot'].nil?
-        @paikkatiedot = Array.new
-        _oa = _o['paikkatiedot']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @paikkatiedot.push Fi::Mediconsult::Core::Client::Dto::OsastolistaPaikkatieto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @paikkatiedot.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @nimi = String.from_json(_o['nimi']) unless _o['nimi'].nil?
+      @serialversionuid = Bignum.from_json(_o['serialversionuid']) unless _o['serialversionuid'].nil?
+      @component = String.from_json(_o['component']) unless _o['component'].nil?
+      @inDevelopment = Boolean.from_json(_o['inDevelopment']) unless _o['inDevelopment'].nil?
+      @requiresTarget = Boolean.from_json(_o['requiresTarget']) unless _o['requiresTarget'].nil?
+      @permissionDTO = Fi::Mediconsult::Core::Client::Dto::PermissionDTO.from_json(_o['permissionDTO']) unless _o['permissionDTO'].nil?
     end
 
-    # constructs a Osastolista from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class Hoitotyomerkinta 
-
-    # (no documentation provided)
-    attr_accessor :merkinta
-    # (no documentation provided)
-    attr_accessor :vaihe
-    # (no documentation provided)
-    attr_accessor :otsikkokoodi
-    # (no documentation provided)
-    attr_accessor :komponentti
-    # (no documentation provided)
-    attr_accessor :luokka
-    # (no documentation provided)
-    attr_accessor :jarjestys
-    # (no documentation provided)
-    attr_accessor :teksti
-    # (no documentation provided)
-    attr_accessor :kirjaaja
-    # (no documentation provided)
-    attr_accessor :kirjausaika
-    # (no documentation provided)
-    attr_accessor :varmuus
-    # (no documentation provided)
-    attr_accessor :tilanne
-    # (no documentation provided)
-    attr_accessor :pysyvyys
-    # (no documentation provided)
-    attr_accessor :readTime
-
-    # the json hash for this Hoitotyomerkinta
-    def to_jaxb_json_hash
-      _h = {}
-      _h['merkinta'] = merkinta.to_jaxb_json_hash unless merkinta.nil?
-      _h['vaihe'] = vaihe.to_jaxb_json_hash unless vaihe.nil?
-      _h['otsikkokoodi'] = otsikkokoodi.to_jaxb_json_hash unless otsikkokoodi.nil?
-      _h['komponentti'] = komponentti.to_jaxb_json_hash unless komponentti.nil?
-      _h['luokka'] = luokka.to_jaxb_json_hash unless luokka.nil?
-      _h['jarjestys'] = jarjestys.to_jaxb_json_hash unless jarjestys.nil?
-      _h['teksti'] = teksti.to_jaxb_json_hash unless teksti.nil?
-      _h['kirjaaja'] = kirjaaja.to_jaxb_json_hash unless kirjaaja.nil?
-      _h['kirjausaika'] = kirjausaika.to_jaxb_json_hash unless kirjausaika.nil?
-      _h['varmuus'] = varmuus.to_jaxb_json_hash unless varmuus.nil?
-      _h['tilanne'] = tilanne.to_jaxb_json_hash unless tilanne.nil?
-      _h['pysyvyys'] = pysyvyys.to_jaxb_json_hash unless pysyvyys.nil?
-      _h['readTime'] = readTime.to_jaxb_json_hash unless readTime.nil?
-      return _h
-    end
-
-    # the json (string form) for this Hoitotyomerkinta
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this Hoitotyomerkinta with a json hash
-    def init_jaxb_json_hash(_o)
-      @merkinta = Fixnum.from_json(_o['merkinta']) unless _o['merkinta'].nil?
-      @vaihe = String.from_json(_o['vaihe']) unless _o['vaihe'].nil?
-      @otsikkokoodi = String.from_json(_o['otsikkokoodi']) unless _o['otsikkokoodi'].nil?
-      @komponentti = String.from_json(_o['komponentti']) unless _o['komponentti'].nil?
-      @luokka = String.from_json(_o['luokka']) unless _o['luokka'].nil?
-      @jarjestys = Float.from_json(_o['jarjestys']) unless _o['jarjestys'].nil?
-      @teksti = String.from_json(_o['teksti']) unless _o['teksti'].nil?
-      @kirjaaja = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['kirjaaja']) unless _o['kirjaaja'].nil?
-      @kirjausaika = Time.from_json(_o['kirjausaika']) unless _o['kirjausaika'].nil?
-      @varmuus = String.from_json(_o['varmuus']) unless _o['varmuus'].nil?
-      @tilanne = String.from_json(_o['tilanne']) unless _o['tilanne'].nil?
-      @pysyvyys = String.from_json(_o['pysyvyys']) unless _o['pysyvyys'].nil?
-      @readTime = Bignum.from_json(_o['readTime']) unless _o['readTime'].nil?
-    end
-
-    # constructs a Hoitotyomerkinta from a (parsed) JSON hash
+    # constructs a ComponentRightDTO from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -5160,45 +5303,56 @@ module Dto
 module Omistaja
 
   # (no documentation provided)
-  class GenericOmistaja 
+  class SkillsInfo 
 
-    # (no documentation provided)
-    attr_accessor :name
-    # (no documentation provided)
-    attr_accessor :nameExtension
-    # (no documentation provided)
-    attr_accessor :editTime
-    # (no documentation provided)
-    attr_accessor :omistajaId
-    # (no documentation provided)
-    attr_accessor :omistajaListAvailability
+    # &lt;code&gt;true&lt;/code&gt; if basic information loaded, otherwise &lt;code&gt;false&lt;/code&gt;
+    attr_accessor :dataLoaded
+    # If #getDataLoaded() returns &lt;code&gt;false&lt;/code&gt;
+    # then this method will return URL to fetch the missing data, otherwise &lt;code&gt;null&lt;/code&gt;.
+    attr_accessor :href
+    # all skills
+    attr_accessor :skills
 
-    # the json hash for this GenericOmistaja
+    # the json hash for this SkillsInfo
     def to_jaxb_json_hash
       _h = {}
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['nameExtension'] = nameExtension.to_jaxb_json_hash unless nameExtension.nil?
-      _h['editTime'] = editTime.to_jaxb_json_hash unless editTime.nil?
-      _h['omistajaId'] = omistajaId.to_jaxb_json_hash unless omistajaId.nil?
-      _h['omistajaListAvailability'] = omistajaListAvailability.to_jaxb_json_hash unless omistajaListAvailability.nil?
+      _h['dataLoaded'] = dataLoaded.to_jaxb_json_hash unless dataLoaded.nil?
+      _h['href'] = href.to_jaxb_json_hash unless href.nil?
+      if !skills.nil?
+        _ha = Array.new
+        skills.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['skills'] = _ha
+      end
       return _h
     end
 
-    # the json (string form) for this GenericOmistaja
+    # the json (string form) for this SkillsInfo
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this GenericOmistaja with a json hash
+    #initializes this SkillsInfo with a json hash
     def init_jaxb_json_hash(_o)
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @nameExtension = String.from_json(_o['nameExtension']) unless _o['nameExtension'].nil?
-      @editTime = Bignum.from_json(_o['editTime']) unless _o['editTime'].nil?
-      @omistajaId = Fixnum.from_json(_o['omistajaId']) unless _o['omistajaId'].nil?
-      @omistajaListAvailability = Fi::Mediconsult::Core::Client::Dto::Omistaja::TimeInterval.from_json(_o['omistajaListAvailability']) unless _o['omistajaListAvailability'].nil?
+      @dataLoaded = Boolean.from_json(_o['dataLoaded']) unless _o['dataLoaded'].nil?
+      @href = String.from_json(_o['href']) unless _o['href'].nil?
+      if !_o['skills'].nil?
+        @skills = Array.new
+        _oa = _o['skills']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @skills.push Fi::Mediconsult::Mediplan::Dto::Worker::SkillDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @skills.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
     end
 
-    # constructs a GenericOmistaja from a (parsed) JSON hash
+    # constructs a SkillsInfo from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -5233,111 +5387,37 @@ module Client
 module Dto
 
   # (no documentation provided)
-  class Hoitotyo 
+  class FormTypeInfo 
 
+    # (no documentation provided)
+    attr_accessor :name
+    # (no documentation provided)
+    attr_accessor :description
     # (no documentation provided)
     attr_accessor :id
-    # (no documentation provided)
-    attr_accessor :patientId
-    # (no documentation provided)
-    attr_accessor :locked
-    # (no documentation provided)
-    attr_accessor :lukitsija
-    # (no documentation provided)
-    attr_accessor :vastuullinen
-    # (no documentation provided)
-    attr_accessor :muutosaika
-    # (no documentation provided)
-    attr_accessor :alkaa
-    # (no documentation provided)
-    attr_accessor :loppuu
-    # (no documentation provided)
-    attr_accessor :lastEntry
-    # (no documentation provided)
-    attr_accessor :firstEntry
-    # (no documentation provided)
-    attr_accessor :previousEntry
-    # (no documentation provided)
-    attr_accessor :asetukset
-    # (no documentation provided)
-    attr_accessor :nextEntry
-    # (no documentation provided)
-    attr_accessor :merkinnat
-    # (no documentation provided)
-    attr_accessor :previousVersion
-    # (no documentation provided)
-    attr_accessor :nextVersion
-    # (no documentation provided)
-    attr_accessor :readTime
 
-    # the json hash for this Hoitotyo
+    # the json hash for this FormTypeInfo
     def to_jaxb_json_hash
       _h = {}
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['description'] = description.to_jaxb_json_hash unless description.nil?
       _h['id'] = id.to_jaxb_json_hash unless id.nil?
-      _h['patientId'] = patientId.to_jaxb_json_hash unless patientId.nil?
-      _h['locked'] = locked.to_jaxb_json_hash unless locked.nil?
-      _h['lukitsija'] = lukitsija.to_jaxb_json_hash unless lukitsija.nil?
-      _h['vastuullinen'] = vastuullinen.to_jaxb_json_hash unless vastuullinen.nil?
-      _h['muutosaika'] = muutosaika.to_jaxb_json_hash unless muutosaika.nil?
-      _h['alkaa'] = alkaa.to_jaxb_json_hash unless alkaa.nil?
-      _h['loppuu'] = loppuu.to_jaxb_json_hash unless loppuu.nil?
-      _h['lastEntry'] = lastEntry.to_jaxb_json_hash unless lastEntry.nil?
-      _h['firstEntry'] = firstEntry.to_jaxb_json_hash unless firstEntry.nil?
-      _h['previousEntry'] = previousEntry.to_jaxb_json_hash unless previousEntry.nil?
-      _h['asetukset'] = asetukset.to_jaxb_json_hash unless asetukset.nil?
-      _h['nextEntry'] = nextEntry.to_jaxb_json_hash unless nextEntry.nil?
-      if !merkinnat.nil?
-        _ha = Array.new
-        merkinnat.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['merkinnat'] = _ha
-      end
-      _h['previousVersion'] = previousVersion.to_jaxb_json_hash unless previousVersion.nil?
-      _h['nextVersion'] = nextVersion.to_jaxb_json_hash unless nextVersion.nil?
-      _h['readTime'] = readTime.to_jaxb_json_hash unless readTime.nil?
       return _h
     end
 
-    # the json (string form) for this Hoitotyo
+    # the json (string form) for this FormTypeInfo
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this Hoitotyo with a json hash
+    #initializes this FormTypeInfo with a json hash
     def init_jaxb_json_hash(_o)
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @description = String.from_json(_o['description']) unless _o['description'].nil?
       @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
-      @patientId = Fixnum.from_json(_o['patientId']) unless _o['patientId'].nil?
-      @locked = Boolean.from_json(_o['locked']) unless _o['locked'].nil?
-      @lukitsija = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['lukitsija']) unless _o['lukitsija'].nil?
-      @vastuullinen = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['vastuullinen']) unless _o['vastuullinen'].nil?
-      @muutosaika = Time.from_json(_o['muutosaika']) unless _o['muutosaika'].nil?
-      @alkaa = Time.from_json(_o['alkaa']) unless _o['alkaa'].nil?
-      @loppuu = Time.from_json(_o['loppuu']) unless _o['loppuu'].nil?
-      @lastEntry = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['lastEntry']) unless _o['lastEntry'].nil?
-      @firstEntry = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['firstEntry']) unless _o['firstEntry'].nil?
-      @previousEntry = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['previousEntry']) unless _o['previousEntry'].nil?
-      @asetukset = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['asetukset']) unless _o['asetukset'].nil?
-      @nextEntry = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['nextEntry']) unless _o['nextEntry'].nil?
-      if !_o['merkinnat'].nil?
-        @merkinnat = Array.new
-        _oa = _o['merkinnat']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @merkinnat.push Fi::Mediconsult::Core::Client::Dto::Hoitotyomerkinta.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @merkinnat.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @previousVersion = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['previousVersion']) unless _o['previousVersion'].nil?
-      @nextVersion = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['nextVersion']) unless _o['nextVersion'].nil?
-      @readTime = Bignum.from_json(_o['readTime']) unless _o['readTime'].nil?
     end
 
-    # constructs a Hoitotyo from a (parsed) JSON hash
+    # constructs a FormTypeInfo from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -5348,6 +5428,166 @@ module Dto
       end
     end
   end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+  # (no documentation provided)
+  class AbstractDTO 
+
+
+    # the json hash for this AbstractDTO
+    def to_jaxb_json_hash
+      _h = {}
+      return _h
+    end
+
+    # the json (string form) for this AbstractDTO
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this AbstractDTO with a json hash
+    def init_jaxb_json_hash(_o)
+    end
+
+    # constructs a AbstractDTO from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+module Title
+
+module Config
+
+  # (no documentation provided)
+  class ClientTitleConfig 
+
+    # (no documentation provided)
+    attr_accessor :name
+    # (no documentation provided)
+    attr_accessor :type
+    # (no documentation provided)
+    attr_accessor :pakollinen
+    # (no documentation provided)
+    attr_accessor :onlyFromList
+    # (no documentation provided)
+    attr_accessor :optionsUrl
+    # (no documentation provided)
+    attr_accessor :editable
+    # (no documentation provided)
+    attr_accessor :attribute
+    # (no documentation provided)
+    attr_accessor :optionValues
+
+    # the json hash for this ClientTitleConfig
+    def to_jaxb_json_hash
+      _h = {}
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['type'] = type.to_jaxb_json_hash unless type.nil?
+      _h['pakollinen'] = pakollinen.to_jaxb_json_hash unless pakollinen.nil?
+      _h['onlyFromList'] = onlyFromList.to_jaxb_json_hash unless onlyFromList.nil?
+      _h['optionsUrl'] = optionsUrl.to_jaxb_json_hash unless optionsUrl.nil?
+      _h['editable'] = editable.to_jaxb_json_hash unless editable.nil?
+      _h['attribute'] = attribute.to_jaxb_json_hash unless attribute.nil?
+      if !optionValues.nil?
+        _ha = Array.new
+        optionValues.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['optionValues'] = _ha
+      end
+      return _h
+    end
+
+    # the json (string form) for this ClientTitleConfig
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this ClientTitleConfig with a json hash
+    def init_jaxb_json_hash(_o)
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @type = Fixnum.from_json(_o['type']) unless _o['type'].nil?
+      @pakollinen = Boolean.from_json(_o['pakollinen']) unless _o['pakollinen'].nil?
+      @onlyFromList = Boolean.from_json(_o['onlyFromList']) unless _o['onlyFromList'].nil?
+      @optionsUrl = String.from_json(_o['optionsUrl']) unless _o['optionsUrl'].nil?
+      @editable = Boolean.from_json(_o['editable']) unless _o['editable'].nil?
+      @attribute = Fixnum.from_json(_o['attribute']) unless _o['attribute'].nil?
+      if !_o['optionValues'].nil?
+        @optionValues = Array.new
+        _oa = _o['optionValues']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @optionValues.push Fi::Mediconsult::Core::Client::Dto::Title::View::ViewTitleValue.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @optionValues.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+    end
+
+    # constructs a ClientTitleConfig from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
 
 end
 
@@ -5522,38 +5762,76 @@ module Fi
 
 module Mediconsult
 
-module Mediplan
+module Core
+
+module Client
 
 module Dto
 
+module Omistaja
+
   # (no documentation provided)
-  class IdNamePair 
+  class OmistajaListConfig 
 
     # (no documentation provided)
-    attr_accessor :name
+    attr_accessor :listId
     # (no documentation provided)
-    attr_accessor :id
+    attr_accessor :basicInfoTitles
+    # (no documentation provided)
+    attr_accessor :listOwnerId
+    # (no documentation provided)
+    attr_accessor :linkedFormInfo
+    # (no documentation provided)
+    attr_accessor :listName
+    # (no documentation provided)
+    attr_accessor :listDataOwnerType
 
-    # the json hash for this IdNamePair
+    # the json hash for this OmistajaListConfig
     def to_jaxb_json_hash
       _h = {}
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['id'] = id.to_jaxb_json_hash unless id.nil?
+      _h['listId'] = listId.to_jaxb_json_hash unless listId.nil?
+      if !basicInfoTitles.nil?
+        _ha = Array.new
+        basicInfoTitles.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['basicInfoTitles'] = _ha
+      end
+      _h['listOwnerId'] = listOwnerId.to_jaxb_json_hash unless listOwnerId.nil?
+      _h['linkedFormInfo'] = linkedFormInfo.to_jaxb_json_hash unless linkedFormInfo.nil?
+      _h['listName'] = listName.to_jaxb_json_hash unless listName.nil?
+      _h['listDataOwnerType'] = listDataOwnerType.to_jaxb_json_hash unless listDataOwnerType.nil?
       return _h
     end
 
-    # the json (string form) for this IdNamePair
+    # the json (string form) for this OmistajaListConfig
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this IdNamePair with a json hash
+    #initializes this OmistajaListConfig with a json hash
     def init_jaxb_json_hash(_o)
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @id = Bignum.from_json(_o['id']) unless _o['id'].nil?
+      @listId = Fixnum.from_json(_o['listId']) unless _o['listId'].nil?
+      if !_o['basicInfoTitles'].nil?
+        @basicInfoTitles = Array.new
+        _oa = _o['basicInfoTitles']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @basicInfoTitles.push String.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @basicInfoTitles.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @listOwnerId = Fixnum.from_json(_o['listOwnerId']) unless _o['listOwnerId'].nil?
+      @linkedFormInfo = Fi::Mediconsult::Core::Client::Dto::FormInfo.from_json(_o['linkedFormInfo']) unless _o['linkedFormInfo'].nil?
+      @listName = String.from_json(_o['listName']) unless _o['listName'].nil?
+      @listDataOwnerType = Fi::Mediconsult::Core::Client::Dto::Omistaja::OwnerTypeInfo.from_json(_o['listDataOwnerType']) unless _o['listDataOwnerType'].nil?
     end
 
-    # constructs a IdNamePair from a (parsed) JSON hash
+    # constructs a OmistajaListConfig from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -5564,6 +5842,10 @@ module Dto
       end
     end
   end
+
+end
+
+end
 
 end
 
@@ -5587,24 +5869,24 @@ module Dto
   class Hoitotyoasetukset 
 
     # (no documentation provided)
-    attr_accessor :tulosluokitus
+    attr_accessor :toimintoluokitusKoodisto
     # (no documentation provided)
     attr_accessor :hoitoprosessinVaiheKoodisto
     # (no documentation provided)
-    attr_accessor :otsikkoKoodisto
-    # (no documentation provided)
     attr_accessor :tarveluokitusKoodisto
     # (no documentation provided)
-    attr_accessor :toimintoluokitusKoodisto
+    attr_accessor :tulosluokitus
+    # (no documentation provided)
+    attr_accessor :otsikkoKoodisto
 
     # the json hash for this Hoitotyoasetukset
     def to_jaxb_json_hash
       _h = {}
-      _h['tulosluokitus'] = tulosluokitus.to_jaxb_json_hash unless tulosluokitus.nil?
-      _h['hoitoprosessinVaiheKoodisto'] = hoitoprosessinVaiheKoodisto.to_jaxb_json_hash unless hoitoprosessinVaiheKoodisto.nil?
-      _h['otsikkoKoodisto'] = otsikkoKoodisto.to_jaxb_json_hash unless otsikkoKoodisto.nil?
-      _h['tarveluokitusKoodisto'] = tarveluokitusKoodisto.to_jaxb_json_hash unless tarveluokitusKoodisto.nil?
       _h['toimintoluokitusKoodisto'] = toimintoluokitusKoodisto.to_jaxb_json_hash unless toimintoluokitusKoodisto.nil?
+      _h['hoitoprosessinVaiheKoodisto'] = hoitoprosessinVaiheKoodisto.to_jaxb_json_hash unless hoitoprosessinVaiheKoodisto.nil?
+      _h['tarveluokitusKoodisto'] = tarveluokitusKoodisto.to_jaxb_json_hash unless tarveluokitusKoodisto.nil?
+      _h['tulosluokitus'] = tulosluokitus.to_jaxb_json_hash unless tulosluokitus.nil?
+      _h['otsikkoKoodisto'] = otsikkoKoodisto.to_jaxb_json_hash unless otsikkoKoodisto.nil?
       return _h
     end
 
@@ -5615,11 +5897,11 @@ module Dto
 
     #initializes this Hoitotyoasetukset with a json hash
     def init_jaxb_json_hash(_o)
-      @tulosluokitus = Fi::Mediconsult::Core::Client::Dto::Koodisto.from_json(_o['tulosluokitus']) unless _o['tulosluokitus'].nil?
-      @hoitoprosessinVaiheKoodisto = Fi::Mediconsult::Core::Client::Dto::Koodisto.from_json(_o['hoitoprosessinVaiheKoodisto']) unless _o['hoitoprosessinVaiheKoodisto'].nil?
-      @otsikkoKoodisto = Fi::Mediconsult::Core::Client::Dto::Koodisto.from_json(_o['otsikkoKoodisto']) unless _o['otsikkoKoodisto'].nil?
-      @tarveluokitusKoodisto = Fi::Mediconsult::Core::Client::Dto::Koodisto.from_json(_o['tarveluokitusKoodisto']) unless _o['tarveluokitusKoodisto'].nil?
       @toimintoluokitusKoodisto = Fi::Mediconsult::Core::Client::Dto::Koodisto.from_json(_o['toimintoluokitusKoodisto']) unless _o['toimintoluokitusKoodisto'].nil?
+      @hoitoprosessinVaiheKoodisto = Fi::Mediconsult::Core::Client::Dto::Koodisto.from_json(_o['hoitoprosessinVaiheKoodisto']) unless _o['hoitoprosessinVaiheKoodisto'].nil?
+      @tarveluokitusKoodisto = Fi::Mediconsult::Core::Client::Dto::Koodisto.from_json(_o['tarveluokitusKoodisto']) unless _o['tarveluokitusKoodisto'].nil?
+      @tulosluokitus = Fi::Mediconsult::Core::Client::Dto::Koodisto.from_json(_o['tulosluokitus']) unless _o['tulosluokitus'].nil?
+      @otsikkoKoodisto = Fi::Mediconsult::Core::Client::Dto::Koodisto.from_json(_o['otsikkoKoodisto']) unless _o['otsikkoKoodisto'].nil?
     end
 
     # constructs a Hoitotyoasetukset from a (parsed) JSON hash
@@ -5654,36 +5936,121 @@ module Client
 
 module Dto
 
+  # (no documentation provided)
+  class FysiologisetMittauksetView 
+
+    # (no documentation provided)
+    attr_accessor :patientId
+    # (no documentation provided)
+    attr_accessor :fysiologinenMittausList
+
+    # the json hash for this FysiologisetMittauksetView
+    def to_jaxb_json_hash
+      _h = {}
+      _h['patientId'] = patientId.to_jaxb_json_hash unless patientId.nil?
+      if !fysiologinenMittausList.nil?
+        _ha = Array.new
+        fysiologinenMittausList.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['fysiologinenMittausList'] = _ha
+      end
+      return _h
+    end
+
+    # the json (string form) for this FysiologisetMittauksetView
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this FysiologisetMittauksetView with a json hash
+    def init_jaxb_json_hash(_o)
+      @patientId = Fixnum.from_json(_o['patientId']) unless _o['patientId'].nil?
+      if !_o['fysiologinenMittausList'].nil?
+        @fysiologinenMittausList = Array.new
+        _oa = _o['fysiologinenMittausList']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @fysiologinenMittausList.push Fi::Mediconsult::Core::Client::Dto::FysiologinenMittaus.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @fysiologinenMittausList.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+    end
+
+    # constructs a FysiologisetMittauksetView from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
 module Omistaja
 
   # (no documentation provided)
-  class OwnerTypeInfo 
+  class OmistajaList 
 
     # (no documentation provided)
-    attr_accessor :name
+    attr_accessor :pageItemsCount
     # (no documentation provided)
-    attr_accessor :id
+    attr_accessor :pageSize
+    # (no documentation provided)
+    attr_accessor :pageIndex
+    # (no documentation provided)
+    attr_accessor :allItemsCount
 
-    # the json hash for this OwnerTypeInfo
+    # the json hash for this OmistajaList
     def to_jaxb_json_hash
       _h = {}
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['id'] = id.to_jaxb_json_hash unless id.nil?
+      _h['pageItemsCount'] = pageItemsCount.to_jaxb_json_hash unless pageItemsCount.nil?
+      _h['pageSize'] = pageSize.to_jaxb_json_hash unless pageSize.nil?
+      _h['pageIndex'] = pageIndex.to_jaxb_json_hash unless pageIndex.nil?
+      _h['allItemsCount'] = allItemsCount.to_jaxb_json_hash unless allItemsCount.nil?
       return _h
     end
 
-    # the json (string form) for this OwnerTypeInfo
+    # the json (string form) for this OmistajaList
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this OwnerTypeInfo with a json hash
+    #initializes this OmistajaList with a json hash
     def init_jaxb_json_hash(_o)
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
+      @pageItemsCount = Fixnum.from_json(_o['pageItemsCount']) unless _o['pageItemsCount'].nil?
+      @pageSize = Fixnum.from_json(_o['pageSize']) unless _o['pageSize'].nil?
+      @pageIndex = Fixnum.from_json(_o['pageIndex']) unless _o['pageIndex'].nil?
+      @allItemsCount = Fixnum.from_json(_o['allItemsCount']) unless _o['allItemsCount'].nil?
     end
 
-    # constructs a OwnerTypeInfo from a (parsed) JSON hash
+    # constructs a OmistajaList from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -5696,132 +6063,6 @@ module Omistaja
   end
 
 end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class UserRoleInfo 
-
-    # (no documentation provided)
-    attr_accessor :id
-    # (no documentation provided)
-    attr_accessor :name
-    # (no documentation provided)
-    attr_accessor :forceVahvatunnistus
-
-    # the json hash for this UserRoleInfo
-    def to_jaxb_json_hash
-      _h = {}
-      _h['id'] = id.to_jaxb_json_hash unless id.nil?
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['forceVahvatunnistus'] = forceVahvatunnistus.to_jaxb_json_hash unless forceVahvatunnistus.nil?
-      return _h
-    end
-
-    # the json (string form) for this UserRoleInfo
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this UserRoleInfo with a json hash
-    def init_jaxb_json_hash(_o)
-      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @forceVahvatunnistus = Boolean.from_json(_o['forceVahvatunnistus']) unless _o['forceVahvatunnistus'].nil?
-    end
-
-    # constructs a UserRoleInfo from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class BaseModel 
-
-    # (no documentation provided)
-    attr_accessor :ownerId
-    # (no documentation provided)
-    attr_accessor :editTime
-    # (no documentation provided)
-    attr_accessor :componentId
-
-    # the json hash for this BaseModel
-    def to_jaxb_json_hash
-      _h = {}
-      _h['ownerId'] = ownerId.to_jaxb_json_hash unless ownerId.nil?
-      _h['editTime'] = editTime.to_jaxb_json_hash unless editTime.nil?
-      _h['componentId'] = componentId.to_jaxb_json_hash unless componentId.nil?
-      return _h
-    end
-
-    # the json (string form) for this BaseModel
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this BaseModel with a json hash
-    def init_jaxb_json_hash(_o)
-      @ownerId = Fixnum.from_json(_o['ownerId']) unless _o['ownerId'].nil?
-      @editTime = Bignum.from_json(_o['editTime']) unless _o['editTime'].nil?
-      @componentId = String.from_json(_o['componentId']) unless _o['componentId'].nil?
-    end
-
-    # constructs a BaseModel from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
 
 end
 
@@ -5846,33 +6087,51 @@ module Dto
 module Seuranta
 
   # (no documentation provided)
-  class SeurantaFormConfig 
+  class SeurantaConfig 
 
     # (no documentation provided)
-    attr_accessor :titles
+    attr_accessor :configs
     # (no documentation provided)
-    attr_accessor :permission
+    attr_accessor :writeCount
 
-    # the json hash for this SeurantaFormConfig
+    # the json hash for this SeurantaConfig
     def to_jaxb_json_hash
       _h = {}
-      _h['titles'] = titles.to_jaxb_json_hash unless titles.nil?
-      _h['permission'] = permission.to_jaxb_json_hash unless permission.nil?
+      if !configs.nil?
+        _ha = Array.new
+        configs.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['configs'] = _ha
+      end
+      _h['writeCount'] = writeCount.to_jaxb_json_hash unless writeCount.nil?
       return _h
     end
 
-    # the json (string form) for this SeurantaFormConfig
+    # the json (string form) for this SeurantaConfig
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this SeurantaFormConfig with a json hash
+    #initializes this SeurantaConfig with a json hash
     def init_jaxb_json_hash(_o)
-      @titles = Hash.from_json(_o['titles']) unless _o['titles'].nil?
-      @permission = Fi::Mediconsult::Core::Client::Dto::PermissionDTO.from_json(_o['permission']) unless _o['permission'].nil?
+      if !_o['configs'].nil?
+        @configs = Array.new
+        _oa = _o['configs']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @configs.push Fi::Mediconsult::Core::Client::Dto::Seuranta::SeurantaFormConfig.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @configs.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @writeCount = Fixnum.from_json(_o['writeCount']) unless _o['writeCount'].nil?
     end
 
-    # constructs a SeurantaFormConfig from a (parsed) JSON hash
+    # constructs a SeurantaConfig from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -5900,42 +6159,48 @@ module Fi
 
 module Mediconsult
 
-module Mediplan
+module Core
+
+module Client
 
 module Dto
 
   # (no documentation provided)
-  class Employee 
+  class UserViewDTO 
 
-    # the id
-    attr_accessor :id
-    # the name
-    attr_accessor :name
-    # the data
-    attr_accessor :data
+    # the mediatriId
+    attr_accessor :mediatriId
+    # the loginName
+    attr_accessor :loginName
+    # the applName
+    attr_accessor :applName
+    # the viewJson
+    attr_accessor :viewJson
 
-    # the json hash for this Employee
+    # the json hash for this UserViewDTO
     def to_jaxb_json_hash
       _h = {}
-      _h['id'] = id.to_jaxb_json_hash unless id.nil?
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['data'] = data.to_jaxb_json_hash unless data.nil?
+      _h['mediatriId'] = mediatriId.to_jaxb_json_hash unless mediatriId.nil?
+      _h['loginName'] = loginName.to_jaxb_json_hash unless loginName.nil?
+      _h['applName'] = applName.to_jaxb_json_hash unless applName.nil?
+      _h['viewJson'] = viewJson.to_jaxb_json_hash unless viewJson.nil?
       return _h
     end
 
-    # the json (string form) for this Employee
+    # the json (string form) for this UserViewDTO
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this Employee with a json hash
+    #initializes this UserViewDTO with a json hash
     def init_jaxb_json_hash(_o)
-      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @data = Fi::Mediconsult::Core::Client::Dto::Omistaja::User.from_json(_o['data']) unless _o['data'].nil?
+      @mediatriId = Fixnum.from_json(_o['mediatriId']) unless _o['mediatriId'].nil?
+      @loginName = String.from_json(_o['loginName']) unless _o['loginName'].nil?
+      @applName = String.from_json(_o['applName']) unless _o['applName'].nil?
+      @viewJson = String.from_json(_o['viewJson']) unless _o['viewJson'].nil?
     end
 
-    # constructs a Employee from a (parsed) JSON hash
+    # constructs a UserViewDTO from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -5946,6 +6211,79 @@ module Dto
       end
     end
   end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+module Kertomus
+
+  # (no documentation provided)
+  class KertomusID 
+
+    # (no documentation provided)
+    attr_accessor :aika
+    # (no documentation provided)
+    attr_accessor :formId
+    # (no documentation provided)
+    attr_accessor :reportId
+    # (no documentation provided)
+    attr_accessor :ownerId
+
+    # the json hash for this KertomusID
+    def to_jaxb_json_hash
+      _h = {}
+      _h['aika'] = aika.to_jaxb_json_hash unless aika.nil?
+      _h['formId'] = formId.to_jaxb_json_hash unless formId.nil?
+      _h['reportId'] = reportId.to_jaxb_json_hash unless reportId.nil?
+      _h['ownerId'] = ownerId.to_jaxb_json_hash unless ownerId.nil?
+      return _h
+    end
+
+    # the json (string form) for this KertomusID
+    def to_json
+      to_jaxb_json_hash.to_json
+    end
+
+    #initializes this KertomusID with a json hash
+    def init_jaxb_json_hash(_o)
+      @aika = Time.from_json(_o['aika']) unless _o['aika'].nil?
+      @formId = Fixnum.from_json(_o['formId']) unless _o['formId'].nil?
+      @reportId = Fixnum.from_json(_o['reportId']) unless _o['reportId'].nil?
+      @ownerId = Fixnum.from_json(_o['ownerId']) unless _o['ownerId'].nil?
+    end
+
+    # constructs a KertomusID from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
 
 end
 
@@ -6089,96 +6427,50 @@ module Fi
 
 module Mediconsult
 
-module Mediplan
+module Core
+
+module Client
 
 module Dto
 
-module Worker
+module Kertomus
 
   # (no documentation provided)
-  class AvailabilityDto 
+  class MittausFormConfig 
 
-    # the start
-    attr_accessor :start
-    # the end
-    attr_accessor :end
-    # the available
-    attr_accessor :available
-    # the workingHoursPlanned
-    attr_accessor :workingHoursPlanned
-    # the conflicts
-    attr_accessor :conflicts
-    # the workingHourEvents
-    attr_accessor :workingHourEvents
-    # the conflictingEvents
-    attr_accessor :conflictingEvents
+    # (no documentation provided)
+    attr_accessor :mainTitles
+    # (no documentation provided)
+    attr_accessor :kayttajaRyhmaId
+    # (no documentation provided)
+    attr_accessor :editable
+    # (no documentation provided)
+    attr_accessor :permission
 
-    # the json hash for this AvailabilityDto
+    # the json hash for this MittausFormConfig
     def to_jaxb_json_hash
       _h = {}
-      _h['start'] = start.to_jaxb_json_hash unless start.nil?
-      _h['end'] = end.to_jaxb_json_hash unless end.nil?
-      _h['available'] = available.to_jaxb_json_hash unless available.nil?
-      _h['workingHoursPlanned'] = workingHoursPlanned.to_jaxb_json_hash unless workingHoursPlanned.nil?
-      _h['conflicts'] = conflicts.to_jaxb_json_hash unless conflicts.nil?
-      if !workingHourEvents.nil?
-        _ha = Array.new
-        workingHourEvents.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['workingHourEvents'] = _ha
-      end
-      if !conflictingEvents.nil?
-        _ha = Array.new
-        conflictingEvents.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['conflictingEvents'] = _ha
-      end
+      _h['mainTitles'] = mainTitles.to_jaxb_json_hash unless mainTitles.nil?
+      _h['kayttajaRyhmaId'] = kayttajaRyhmaId.to_jaxb_json_hash unless kayttajaRyhmaId.nil?
+      _h['editable'] = editable.to_jaxb_json_hash unless editable.nil?
+      _h['permission'] = permission.to_jaxb_json_hash unless permission.nil?
       return _h
     end
 
-    # the json (string form) for this AvailabilityDto
+    # the json (string form) for this MittausFormConfig
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this AvailabilityDto with a json hash
+    #initializes this MittausFormConfig with a json hash
     def init_jaxb_json_hash(_o)
-      @start = Time.from_json(_o['start']) unless _o['start'].nil?
-      @end = Time.from_json(_o['end']) unless _o['end'].nil?
-      @available = Boolean.from_json(_o['available']) unless _o['available'].nil?
-      @workingHoursPlanned = Boolean.from_json(_o['workingHoursPlanned']) unless _o['workingHoursPlanned'].nil?
-      @conflicts = Boolean.from_json(_o['conflicts']) unless _o['conflicts'].nil?
-      if !_o['workingHourEvents'].nil?
-        @workingHourEvents = Array.new
-        _oa = _o['workingHourEvents']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @workingHourEvents.push Fi::Mediconsult::Mediplan::Dto::Event::CalendarEventDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @workingHourEvents.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['conflictingEvents'].nil?
-        @conflictingEvents = Array.new
-        _oa = _o['conflictingEvents']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @conflictingEvents.push Fi::Mediconsult::Mediplan::Dto::Event::CalendarEventDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @conflictingEvents.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
+      @mainTitles = Hash.from_json(_o['mainTitles']) unless _o['mainTitles'].nil?
+      @kayttajaRyhmaId = Fixnum.from_json(_o['kayttajaRyhmaId']) unless _o['kayttajaRyhmaId'].nil?
+      @editable = Boolean.from_json(_o['editable']) unless _o['editable'].nil?
+      @permission = Fi::Mediconsult::Core::Client::Dto::PermissionDTO.from_json(_o['permission']) unless _o['permission'].nil?
     end
 
-    # constructs a AvailabilityDto from a (parsed) JSON hash
+    # constructs a MittausFormConfig from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -6189,6 +6481,8 @@ module Worker
       end
     end
   end
+
+end
 
 end
 
@@ -6263,123 +6557,70 @@ module Fi
 
 module Mediconsult
 
-module Mediplan
-
-module Dto
-
-module Worker
-
-  # (no documentation provided)
-  class WorkerAvailabilityDto 
-
-    # the worker
-    attr_accessor :worker
-    # the availability
-    attr_accessor :availability
-
-    # the json hash for this WorkerAvailabilityDto
-    def to_jaxb_json_hash
-      _h = {}
-      _h['worker'] = worker.to_jaxb_json_hash unless worker.nil?
-      _h['availability'] = availability.to_jaxb_json_hash unless availability.nil?
-      return _h
-    end
-
-    # the json (string form) for this WorkerAvailabilityDto
-    def to_json
-      to_jaxb_json_hash.to_json
-    end
-
-    #initializes this WorkerAvailabilityDto with a json hash
-    def init_jaxb_json_hash(_o)
-      @worker = Fi::Mediconsult::Core::Client::Dto::Omistaja::User.from_json(_o['worker']) unless _o['worker'].nil?
-      @availability = Fi::Mediconsult::Mediplan::Dto::Worker::AvailabilityDto.from_json(_o['availability']) unless _o['availability'].nil?
-    end
-
-    # constructs a WorkerAvailabilityDto from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
 module Core
 
 module Client
 
 module Dto
 
-module Kertomus
-
   # (no documentation provided)
-  class KertomusComponentConfig 
+  class MetadataGroup 
 
-    # list of configs for all forms.
-    attr_accessor :kertomusConfigs
     # (no documentation provided)
-    attr_accessor :titleConfigs
+    attr_accessor :groupID
     # (no documentation provided)
-    attr_accessor :mainTitleConfigs
+    attr_accessor :groupName
+    # (no documentation provided)
+    attr_accessor :startDate
+    # (no documentation provided)
+    attr_accessor :endDate
+    # (no documentation provided)
+    attr_accessor :metadata
 
-    # the json hash for this KertomusComponentConfig
+    # the json hash for this MetadataGroup
     def to_jaxb_json_hash
       _h = {}
-      if !kertomusConfigs.nil?
+      _h['groupID'] = groupID.to_jaxb_json_hash unless groupID.nil?
+      _h['groupName'] = groupName.to_jaxb_json_hash unless groupName.nil?
+      _h['startDate'] = startDate.to_jaxb_json_hash unless startDate.nil?
+      _h['endDate'] = endDate.to_jaxb_json_hash unless endDate.nil?
+      if !metadata.nil?
         _ha = Array.new
-        kertomusConfigs.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['kertomusConfigs'] = _ha
+        metadata.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['metadata'] = _ha
       end
-      _h['titleConfigs'] = titleConfigs.to_jaxb_json_hash unless titleConfigs.nil?
-      _h['mainTitleConfigs'] = mainTitleConfigs.to_jaxb_json_hash unless mainTitleConfigs.nil?
       return _h
     end
 
-    # the json (string form) for this KertomusComponentConfig
+    # the json (string form) for this MetadataGroup
     def to_json
       to_jaxb_json_hash.to_json
     end
 
-    #initializes this KertomusComponentConfig with a json hash
+    #initializes this MetadataGroup with a json hash
     def init_jaxb_json_hash(_o)
-      if !_o['kertomusConfigs'].nil?
-        @kertomusConfigs = Array.new
-        _oa = _o['kertomusConfigs']
+      @groupID = Fixnum.from_json(_o['groupID']) unless _o['groupID'].nil?
+      @groupName = String.from_json(_o['groupName']) unless _o['groupName'].nil?
+      @startDate = Time.from_json(_o['startDate']) unless _o['startDate'].nil?
+      @endDate = Time.from_json(_o['endDate']) unless _o['endDate'].nil?
+      if !_o['metadata'].nil?
+        @metadata = Array.new
+        _oa = _o['metadata']
         _oa.each { | _item | 
            if (_item['@class'].nil?)
-             @kertomusConfigs.push Fi::Mediconsult::Core::Client::Dto::Kertomus::KertomusFormConfig.from_json(_item)
+             @metadata.push Fi::Mediconsult::Core::Client::Dto::Metadata.from_json(_item)
            else
              clazz_array_parts = _item['@class'].split('.')
              short_clazz = clazz_array_parts.pop
              clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
              clazz = clazz_package + "::" + short_clazz
-             @kertomusConfigs.push Object.const_get(clazz).send(:from_json, _item)
+             @metadata.push Object.const_get(clazz).send(:from_json, _item)
           end
          }
       end
-      @titleConfigs = Hash.from_json(_o['titleConfigs']) unless _o['titleConfigs'].nil?
-      @mainTitleConfigs = Hash.from_json(_o['mainTitleConfigs']) unless _o['mainTitleConfigs'].nil?
     end
 
-    # constructs a KertomusComponentConfig from a (parsed) JSON hash
+    # constructs a MetadataGroup from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -6390,8 +6631,6 @@ module Kertomus
       end
     end
   end
-
-end
 
 end
 
@@ -6484,6 +6723,56 @@ module Fi
 
 module Mediconsult
 
+module Mediplan
+
+module Status
+
+  # (no documentation provided)
+  class EventStatus
+
+    # 
+    DRAFT = "DRAFT"
+
+    # 
+    PLANNED = "PLANNED"
+
+    # 
+    CONFIRMED = "CONFIRMED"
+
+    # 
+    ONGOING = "ONGOING"
+
+    # 
+    DONE = "DONE"
+
+    # 
+    CANCELED = "CANCELED"
+
+    # 
+    CANCELED_BY_PARTICIPANT = "CANCELED_BY_PARTICIPANT"
+
+    # 
+    CANCELED_BY_PROVIDER = "CANCELED_BY_PROVIDER"
+
+    # 
+    NOT_REALIZED = "NOT_REALIZED"
+
+    # 
+    INTERRUPTED = "INTERRUPTED"
+  end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
 module Core
 
 module Client
@@ -6491,56 +6780,101 @@ module Client
 module Dto
 
   # (no documentation provided)
-  class Tutkimuspyynto < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
+  class LaakitysAnto < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
 
-    # Returns the name of the Tutkimus
-    attr_accessor :tutkimus
-    # Returns a list of Tutkimus details under the same tutkimus name
-    attr_accessor :tutkimuspyyntoTiedotList
-    # Returns the category of the tutkimus. Category could be
-    # &quot;tilattu&quot;, &quot;kuittaamaton&quot; or &quot;tulos&quot;
-    attr_accessor :kategoria
-    # (no documentation provided)
-    attr_accessor :latestTime
+    # Returns the id of the medication giver
+    attr_accessor :antaja
+    # Returns the observetion comments related to the medication giving
+    attr_accessor :huomautuksia
+    # Returns the id of the actual person that fed this info to the DB/system
+    attr_accessor :kirjaaja
+    # Returns the laake VNR. VNR is a code that is used to identify the medication. @see http://www.laaketietokeskus.fi/vnr
+    attr_accessor :laake
+    # Returns the medication amount
+    attr_accessor :maara
+    # Returns the actual DB-change time of the medication giving
+    attr_accessor :muutosAika
+    # Returns the owner ie. patients mediatri id.
+    attr_accessor :omistaja
+    # Retuns the part number that is the id of the medication together with alku and omistaja
+    attr_accessor :osa
+    # Returns the code of the medication time removal. &#39;E&#39; - not removed, &#39;K&#39; = removed
+    attr_accessor :poistettu
+    # Returns the planned time for medication. Tells which time the medication should be given
+    attr_accessor :suunniteltuAika
+    # Returns the actual time of medication. Mapped from PK id ALKU
+    attr_accessor :toteutunutAika
+    # Returns the actual end time of medication. a.k.a. LOPPU
+    attr_accessor :toteutunutAikaLoppu
+    # Returns the type of LaakitysAnto object, 1 = planned and given, 2 = planned but not yet given, 3 = extra
+    attr_accessor :tyyppi
+    # Returns the used unit. ml, l, etc.
+    attr_accessor :yksikko
+    # Returns the name of the actual person that fed this info to the DB/system
+    attr_accessor :kirjaajaName
+    # Returns the name of the medication giver
+    attr_accessor :antajaName
+    # Returns the base amount that is given if swiped. Also the lower border of the amount.
+    attr_accessor :annettavaMaara
+    # Returns the base unit that is described by laakityshistoria.
+    attr_accessor :annettavaYksikko
+    # Returns the uuper border of the amount.
+    attr_accessor :annettavaMaksimi
+    # Original time of medication. mapped from PK id ALKU. This PK is modified so to find the modifiable row the old row must be also given.
+    attr_accessor :toteutunutAikaOriginal
 
-    # the json hash for this Tutkimuspyynto
+    # the json hash for this LaakitysAnto
     def to_jaxb_json_hash
       _h = super
-      _h['tutkimus'] = tutkimus.to_jaxb_json_hash unless tutkimus.nil?
-      if !tutkimuspyyntoTiedotList.nil?
-        _ha = Array.new
-        tutkimuspyyntoTiedotList.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['tutkimuspyyntoTiedotList'] = _ha
-      end
-      _h['kategoria'] = kategoria.to_jaxb_json_hash unless kategoria.nil?
-      _h['latestTime'] = latestTime.to_jaxb_json_hash unless latestTime.nil?
+      _h['antaja'] = antaja.to_jaxb_json_hash unless antaja.nil?
+      _h['huomautuksia'] = huomautuksia.to_jaxb_json_hash unless huomautuksia.nil?
+      _h['kirjaaja'] = kirjaaja.to_jaxb_json_hash unless kirjaaja.nil?
+      _h['laake'] = laake.to_jaxb_json_hash unless laake.nil?
+      _h['maara'] = maara.to_jaxb_json_hash unless maara.nil?
+      _h['muutosAika'] = muutosAika.to_jaxb_json_hash unless muutosAika.nil?
+      _h['omistaja'] = omistaja.to_jaxb_json_hash unless omistaja.nil?
+      _h['osa'] = osa.to_jaxb_json_hash unless osa.nil?
+      _h['poistettu'] = poistettu.to_jaxb_json_hash unless poistettu.nil?
+      _h['suunniteltuAika'] = suunniteltuAika.to_jaxb_json_hash unless suunniteltuAika.nil?
+      _h['toteutunutAika'] = toteutunutAika.to_jaxb_json_hash unless toteutunutAika.nil?
+      _h['toteutunutAikaLoppu'] = toteutunutAikaLoppu.to_jaxb_json_hash unless toteutunutAikaLoppu.nil?
+      _h['tyyppi'] = tyyppi.to_jaxb_json_hash unless tyyppi.nil?
+      _h['yksikko'] = yksikko.to_jaxb_json_hash unless yksikko.nil?
+      _h['kirjaajaName'] = kirjaajaName.to_jaxb_json_hash unless kirjaajaName.nil?
+      _h['antajaName'] = antajaName.to_jaxb_json_hash unless antajaName.nil?
+      _h['annettavaMaara'] = annettavaMaara.to_jaxb_json_hash unless annettavaMaara.nil?
+      _h['annettavaYksikko'] = annettavaYksikko.to_jaxb_json_hash unless annettavaYksikko.nil?
+      _h['annettavaMaksimi'] = annettavaMaksimi.to_jaxb_json_hash unless annettavaMaksimi.nil?
+      _h['toteutunutAikaOriginal'] = toteutunutAikaOriginal.to_jaxb_json_hash unless toteutunutAikaOriginal.nil?
       return _h
     end
 
-    #initializes this Tutkimuspyynto with a json hash
+    #initializes this LaakitysAnto with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @tutkimus = String.from_json(_o['tutkimus']) unless _o['tutkimus'].nil?
-      if !_o['tutkimuspyyntoTiedotList'].nil?
-        @tutkimuspyyntoTiedotList = Array.new
-        _oa = _o['tutkimuspyyntoTiedotList']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @tutkimuspyyntoTiedotList.push Fi::Mediconsult::Core::Client::Dto::TutkimuspyyntoTiedot.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @tutkimuspyyntoTiedotList.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @kategoria = String.from_json(_o['kategoria']) unless _o['kategoria'].nil?
-      @latestTime = Time.from_json(_o['latestTime']) unless _o['latestTime'].nil?
+      @antaja = Fixnum.from_json(_o['antaja']) unless _o['antaja'].nil?
+      @huomautuksia = String.from_json(_o['huomautuksia']) unless _o['huomautuksia'].nil?
+      @kirjaaja = Fixnum.from_json(_o['kirjaaja']) unless _o['kirjaaja'].nil?
+      @laake = String.from_json(_o['laake']) unless _o['laake'].nil?
+      @maara = Float.from_json(_o['maara']) unless _o['maara'].nil?
+      @muutosAika = Time.from_json(_o['muutosAika']) unless _o['muutosAika'].nil?
+      @omistaja = Fixnum.from_json(_o['omistaja']) unless _o['omistaja'].nil?
+      @osa = Fixnum.from_json(_o['osa']) unless _o['osa'].nil?
+      @poistettu = Fixnum.from_json(_o['poistettu']) unless _o['poistettu'].nil?
+      @suunniteltuAika = Time.from_json(_o['suunniteltuAika']) unless _o['suunniteltuAika'].nil?
+      @toteutunutAika = Time.from_json(_o['toteutunutAika']) unless _o['toteutunutAika'].nil?
+      @toteutunutAikaLoppu = Time.from_json(_o['toteutunutAikaLoppu']) unless _o['toteutunutAikaLoppu'].nil?
+      @tyyppi = Fixnum.from_json(_o['tyyppi']) unless _o['tyyppi'].nil?
+      @yksikko = String.from_json(_o['yksikko']) unless _o['yksikko'].nil?
+      @kirjaajaName = String.from_json(_o['kirjaajaName']) unless _o['kirjaajaName'].nil?
+      @antajaName = String.from_json(_o['antajaName']) unless _o['antajaName'].nil?
+      @annettavaMaara = Float.from_json(_o['annettavaMaara']) unless _o['annettavaMaara'].nil?
+      @annettavaYksikko = String.from_json(_o['annettavaYksikko']) unless _o['annettavaYksikko'].nil?
+      @annettavaMaksimi = Float.from_json(_o['annettavaMaksimi']) unless _o['annettavaMaksimi'].nil?
+      @toteutunutAikaOriginal = Time.from_json(_o['toteutunutAikaOriginal']) unless _o['toteutunutAikaOriginal'].nil?
     end
 
-    # constructs a Tutkimuspyynto from a (parsed) JSON hash
+    # constructs a LaakitysAnto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -6572,69 +6906,106 @@ module Client
 
 module Dto
 
+module Palvelupaatos
+
+  # (no documentation provided)
+  class Laatu
+
+    # 
+    KIELTEINEN = "KIELTEINEN"
+
+    # 
+    OSITTAIN_KIELTEINEN = "OSITTAIN_KIELTEINEN"
+
+    # 
+    MYONTEINEN = "MYONTEINEN"
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
 module Omistaja
 
   # (no documentation provided)
   class Patient < Fi::Mediconsult::Core::Client::Dto::Omistaja::GenericOmistaja 
 
     # (no documentation provided)
-    attr_accessor :lastName
+    attr_accessor :hoitosuhde
     # (no documentation provided)
-    attr_accessor :ssn
-    # (no documentation provided)
-    attr_accessor :domainId
+    attr_accessor :uuid
     # (no documentation provided)
     attr_accessor :realmId
     # (no documentation provided)
+    attr_accessor :firstName
+    # (no documentation provided)
     attr_accessor :basicInfo
     # (no documentation provided)
+    attr_accessor :riskitietoStatus
+    # (no documentation provided)
     attr_accessor :gender
+    # (no documentation provided)
+    attr_accessor :lastName
+    # (no documentation provided)
+    attr_accessor :domainId
     # (no documentation provided)
     attr_accessor :age
     # (no documentation provided)
     attr_accessor :hoitojakso
     # (no documentation provided)
-    attr_accessor :hoitosuhde
-    # (no documentation provided)
-    attr_accessor :uuid
-    # (no documentation provided)
-    attr_accessor :firstName
-    # (no documentation provided)
-    attr_accessor :riskitietoStatus
+    attr_accessor :ssn
 
     # the json hash for this Patient
     def to_jaxb_json_hash
       _h = super
-      _h['lastName'] = lastName.to_jaxb_json_hash unless lastName.nil?
-      _h['ssn'] = ssn.to_jaxb_json_hash unless ssn.nil?
-      _h['domainId'] = domainId.to_jaxb_json_hash unless domainId.nil?
-      _h['realmId'] = realmId.to_jaxb_json_hash unless realmId.nil?
-      _h['basicInfo'] = basicInfo.to_jaxb_json_hash unless basicInfo.nil?
-      _h['gender'] = gender.to_jaxb_json_hash unless gender.nil?
-      _h['age'] = age.to_jaxb_json_hash unless age.nil?
-      _h['hoitojakso'] = hoitojakso.to_jaxb_json_hash unless hoitojakso.nil?
       _h['hoitosuhde'] = hoitosuhde.to_jaxb_json_hash unless hoitosuhde.nil?
       _h['uuid'] = uuid.to_jaxb_json_hash unless uuid.nil?
+      _h['realmId'] = realmId.to_jaxb_json_hash unless realmId.nil?
       _h['firstName'] = firstName.to_jaxb_json_hash unless firstName.nil?
+      _h['basicInfo'] = basicInfo.to_jaxb_json_hash unless basicInfo.nil?
       _h['riskitietoStatus'] = riskitietoStatus.to_jaxb_json_hash unless riskitietoStatus.nil?
+      _h['gender'] = gender.to_jaxb_json_hash unless gender.nil?
+      _h['lastName'] = lastName.to_jaxb_json_hash unless lastName.nil?
+      _h['domainId'] = domainId.to_jaxb_json_hash unless domainId.nil?
+      _h['age'] = age.to_jaxb_json_hash unless age.nil?
+      _h['hoitojakso'] = hoitojakso.to_jaxb_json_hash unless hoitojakso.nil?
+      _h['ssn'] = ssn.to_jaxb_json_hash unless ssn.nil?
       return _h
     end
 
     #initializes this Patient with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @lastName = String.from_json(_o['lastName']) unless _o['lastName'].nil?
-      @ssn = String.from_json(_o['ssn']) unless _o['ssn'].nil?
-      @domainId = String.from_json(_o['domainId']) unless _o['domainId'].nil?
-      @realmId = String.from_json(_o['realmId']) unless _o['realmId'].nil?
-      @basicInfo = Fi::Mediconsult::Core::Client::Dto::Omistaja::BasicInfo.from_json(_o['basicInfo']) unless _o['basicInfo'].nil?
-      @gender = String.from_json(_o['gender']) unless _o['gender'].nil?
-      @age = Fixnum.from_json(_o['age']) unless _o['age'].nil?
-      @hoitojakso = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['hoitojakso']) unless _o['hoitojakso'].nil?
       @hoitosuhde = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['hoitosuhde']) unless _o['hoitosuhde'].nil?
       @uuid = String.from_json(_o['uuid']) unless _o['uuid'].nil?
+      @realmId = String.from_json(_o['realmId']) unless _o['realmId'].nil?
       @firstName = String.from_json(_o['firstName']) unless _o['firstName'].nil?
+      @basicInfo = Fi::Mediconsult::Core::Client::Dto::Omistaja::BasicInfo.from_json(_o['basicInfo']) unless _o['basicInfo'].nil?
       @riskitietoStatus = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['riskitietoStatus']) unless _o['riskitietoStatus'].nil?
+      @gender = String.from_json(_o['gender']) unless _o['gender'].nil?
+      @lastName = String.from_json(_o['lastName']) unless _o['lastName'].nil?
+      @domainId = String.from_json(_o['domainId']) unless _o['domainId'].nil?
+      @age = Fixnum.from_json(_o['age']) unless _o['age'].nil?
+      @hoitojakso = Fi::Mediconsult::Core::Client::Dto::Omistaja::LazyLoadedDto.from_json(_o['hoitojakso']) unless _o['hoitojakso'].nil?
+      @ssn = String.from_json(_o['ssn']) unless _o['ssn'].nil?
     end
 
     # constructs a Patient from a (parsed) JSON hash
@@ -6751,119 +7122,6 @@ module Util
     # 
     TIME = "TIME"
   end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class Osastokartta < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
-
-    # (no documentation provided)
-    attr_accessor :listat
-    # (no documentation provided)
-    attr_accessor :tilanteet
-    # (no documentation provided)
-    attr_accessor :ryhmat
-
-    # the json hash for this Osastokartta
-    def to_jaxb_json_hash
-      _h = super
-      if !listat.nil?
-        _ha = Array.new
-        listat.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['listat'] = _ha
-      end
-      if !tilanteet.nil?
-        _ha = Array.new
-        tilanteet.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['tilanteet'] = _ha
-      end
-      if !ryhmat.nil?
-        _ha = Array.new
-        ryhmat.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['ryhmat'] = _ha
-      end
-      return _h
-    end
-
-    #initializes this Osastokartta with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      if !_o['listat'].nil?
-        @listat = Array.new
-        _oa = _o['listat']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @listat.push Fi::Mediconsult::Core::Client::Dto::Osastolista.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @listat.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['tilanteet'].nil?
-        @tilanteet = Array.new
-        _oa = _o['tilanteet']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @tilanteet.push Fi::Mediconsult::Core::Client::Dto::OsastolistaTilannekoodi.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @tilanteet.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['ryhmat'].nil?
-        @ryhmat = Array.new
-        _oa = _o['ryhmat']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @ryhmat.push Fi::Mediconsult::Core::Client::Dto::Potilasryhma.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @ryhmat.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-    end
-
-    # constructs a Osastokartta from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
 
 end
 
@@ -7080,6 +7338,245 @@ end
 
 end
 
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Event
+
+  # (no documentation provided)
+  class CalendarEventDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
+
+    # (no documentation provided)
+    attr_accessor :restricted
+    # the startTime
+    attr_accessor :startTime
+    # the status
+    attr_accessor :status
+    # the description
+    attr_accessor :description
+    # the durationInMinutes
+    attr_accessor :durationInMinutes
+    # the serviceClass
+    attr_accessor :serviceClass
+    # the startTimeLimit
+    attr_accessor :startTimeLimit
+    # the endTimeLimit
+    attr_accessor :endTimeLimit
+    # the internalNote
+    attr_accessor :internalNote
+    # the event
+    attr_accessor :event
+    # the workers
+    attr_accessor :workers
+    # the customers
+    attr_accessor :customers
+    # the rooms
+    attr_accessor :rooms
+    # the equipmentTypes
+    attr_accessor :equipmentTypes
+    # (no documentation provided)
+    attr_accessor :coursePeriods
+    # (no documentation provided)
+    attr_accessor :locked
+    # the lock
+    attr_accessor :lock
+    # the contentGroups
+    attr_accessor :contentGroups
+    # the actualStartTime
+    attr_accessor :actualStartTime
+    # the actualEndTime
+    attr_accessor :actualEndTime
+    # the missingResources
+    attr_accessor :missingResources
+
+    # the json hash for this CalendarEventDto
+    def to_jaxb_json_hash
+      _h = super
+      _h['restricted'] = restricted.to_jaxb_json_hash unless restricted.nil?
+      _h['startTime'] = startTime.to_jaxb_json_hash unless startTime.nil?
+      _h['status'] = status.to_jaxb_json_hash unless status.nil?
+      _h['description'] = description.to_jaxb_json_hash unless description.nil?
+      _h['durationInMinutes'] = durationInMinutes.to_jaxb_json_hash unless durationInMinutes.nil?
+      _h['serviceClass'] = serviceClass.to_jaxb_json_hash unless serviceClass.nil?
+      _h['startTimeLimit'] = startTimeLimit.to_jaxb_json_hash unless startTimeLimit.nil?
+      _h['endTimeLimit'] = endTimeLimit.to_jaxb_json_hash unless endTimeLimit.nil?
+      _h['internalNote'] = internalNote.to_jaxb_json_hash unless internalNote.nil?
+      _h['event'] = event.to_jaxb_json_hash unless event.nil?
+      if !workers.nil?
+        _ha = Array.new
+        workers.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['workers'] = _ha
+      end
+      if !customers.nil?
+        _ha = Array.new
+        customers.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['customers'] = _ha
+      end
+      if !rooms.nil?
+        _ha = Array.new
+        rooms.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['rooms'] = _ha
+      end
+      if !equipmentTypes.nil?
+        _ha = Array.new
+        equipmentTypes.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['equipmentTypes'] = _ha
+      end
+      if !coursePeriods.nil?
+        _ha = Array.new
+        coursePeriods.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['coursePeriods'] = _ha
+      end
+      _h['locked'] = locked.to_jaxb_json_hash unless locked.nil?
+      _h['lock'] = lock.to_jaxb_json_hash unless lock.nil?
+      if !contentGroups.nil?
+        _ha = Array.new
+        contentGroups.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['contentGroups'] = _ha
+      end
+      _h['actualStartTime'] = actualStartTime.to_jaxb_json_hash unless actualStartTime.nil?
+      _h['actualEndTime'] = actualEndTime.to_jaxb_json_hash unless actualEndTime.nil?
+      _h['missingResources'] = missingResources.to_jaxb_json_hash unless missingResources.nil?
+      return _h
+    end
+
+    #initializes this CalendarEventDto with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @restricted = Boolean.from_json(_o['restricted']) unless _o['restricted'].nil?
+      @startTime = java.time::OffsetDateTime.from_json(_o['startTime']) unless _o['startTime'].nil?
+      @status = String.from_json(_o['status']) unless _o['status'].nil?
+      @description = String.from_json(_o['description']) unless _o['description'].nil?
+      @durationInMinutes = Fixnum.from_json(_o['durationInMinutes']) unless _o['durationInMinutes'].nil?
+      @serviceClass = String.from_json(_o['serviceClass']) unless _o['serviceClass'].nil?
+      @startTimeLimit = java.time::LocalTime.from_json(_o['startTimeLimit']) unless _o['startTimeLimit'].nil?
+      @endTimeLimit = java.time::LocalTime.from_json(_o['endTimeLimit']) unless _o['endTimeLimit'].nil?
+      @internalNote = String.from_json(_o['internalNote']) unless _o['internalNote'].nil?
+      @event = Fi::Mediconsult::Mediplan::Dto::Event::EventDto.from_json(_o['event']) unless _o['event'].nil?
+      if !_o['workers'].nil?
+        @workers = Array.new
+        _oa = _o['workers']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @workers.push Fi::Mediconsult::Mediplan::Dto::Event::EventWorkerDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @workers.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['customers'].nil?
+        @customers = Array.new
+        _oa = _o['customers']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @customers.push Fi::Mediconsult::Mediplan::Dto::Event::EventCustomerDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @customers.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['rooms'].nil?
+        @rooms = Array.new
+        _oa = _o['rooms']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @rooms.push Fi::Mediconsult::Mediplan::Dto::Event::EventResourceDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @rooms.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['equipmentTypes'].nil?
+        @equipmentTypes = Array.new
+        _oa = _o['equipmentTypes']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @equipmentTypes.push Fi::Mediconsult::Mediplan::Dto::Event::EventResourceDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @equipmentTypes.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['coursePeriods'].nil?
+        @coursePeriods = Array.new
+        _oa = _o['coursePeriods']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @coursePeriods.push Fi::Mediconsult::Mediplan::Dto::Event::EventCoursePeriodDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @coursePeriods.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @locked = Boolean.from_json(_o['locked']) unless _o['locked'].nil?
+      @lock = Fi::Mediconsult::Mediplan::Dto::LockDto.from_json(_o['lock']) unless _o['lock'].nil?
+      if !_o['contentGroups'].nil?
+        @contentGroups = Array.new
+        _oa = _o['contentGroups']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @contentGroups.push Fi::Mediconsult::Mediplan::Dto::Contentgroup::CalendarEventContentGroupDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @contentGroups.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @actualStartTime = java.time::OffsetDateTime.from_json(_o['actualStartTime']) unless _o['actualStartTime'].nil?
+      @actualEndTime = java.time::OffsetDateTime.from_json(_o['actualEndTime']) unless _o['actualEndTime'].nil?
+      @missingResources = Fi::Mediconsult::Mediplan::Dto::Event::EventMissingResourcesDto.from_json(_o['missingResources']) unless _o['missingResources'].nil?
+    end
+
+    # constructs a CalendarEventDto from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
 module Java
 
 module Sql
@@ -7110,6 +7607,71 @@ module Sql
       end
     end
   end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Constants
+
+  # (no documentation provided)
+  class Components
+
+    # 
+    BASIC_INFORMATION = "BASIC_INFORMATION"
+
+    # 
+    MEDICAL_RECORDS_READ = "MEDICAL_RECORDS_READ"
+
+    # 
+    MEDICAL_RECORDS_WRITE = "MEDICAL_RECORDS_WRITE"
+
+    # 
+    MEDICATION = "MEDICATION"
+
+    # 
+    LABORATORY_EXAMINATIONS = "LABORATORY_EXAMINATIONS"
+
+    # 
+    CARE_ORDERS = "CARE_ORDERS"
+
+    # 
+    SERVICE_DECISIONS = "SERVICE_DECISIONS"
+
+    # 
+    RISK_INFORMATION = "RISK_INFORMATION"
+
+    # 
+    CARE_RECORDS = "CARE_RECORDS"
+
+    # 
+    MEASUREMENTS = "MEASUREMENTS"
+
+    # 
+    WARD_LIST = "WARD_LIST"
+
+    # 
+    CALENDAR = "CALENDAR"
+
+    # 
+    CALENDAR_EVENT = "CALENDAR_EVENT"
+
+    # 
+    SUMMARY_VIEW = "SUMMARY_VIEW"
+
+    # 
+    WIDGETS = "WIDGETS"
+  end
+
+end
+
+end
 
 end
 
@@ -7190,43 +7752,43 @@ module Omistaja
   class User < Fi::Mediconsult::Core::Client::Dto::Omistaja::GenericOmistaja 
 
     # (no documentation provided)
-    attr_accessor :firstName
-    # (no documentation provided)
     attr_accessor :lastName
     # (no documentation provided)
-    attr_accessor :skills
+    attr_accessor :startTime
     # (no documentation provided)
     attr_accessor :endTime
     # (no documentation provided)
     attr_accessor :userName
     # (no documentation provided)
-    attr_accessor :startTime
+    attr_accessor :firstName
     # (no documentation provided)
     attr_accessor :basicInfo
+    # (no documentation provided)
+    attr_accessor :skills
 
     # the json hash for this User
     def to_jaxb_json_hash
       _h = super
-      _h['firstName'] = firstName.to_jaxb_json_hash unless firstName.nil?
       _h['lastName'] = lastName.to_jaxb_json_hash unless lastName.nil?
-      _h['skills'] = skills.to_jaxb_json_hash unless skills.nil?
+      _h['startTime'] = startTime.to_jaxb_json_hash unless startTime.nil?
       _h['endTime'] = endTime.to_jaxb_json_hash unless endTime.nil?
       _h['userName'] = userName.to_jaxb_json_hash unless userName.nil?
-      _h['startTime'] = startTime.to_jaxb_json_hash unless startTime.nil?
+      _h['firstName'] = firstName.to_jaxb_json_hash unless firstName.nil?
       _h['basicInfo'] = basicInfo.to_jaxb_json_hash unless basicInfo.nil?
+      _h['skills'] = skills.to_jaxb_json_hash unless skills.nil?
       return _h
     end
 
     #initializes this User with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @firstName = String.from_json(_o['firstName']) unless _o['firstName'].nil?
       @lastName = String.from_json(_o['lastName']) unless _o['lastName'].nil?
-      @skills = Fi::Mediconsult::Core::Client::Dto::Omistaja::SkillsInfo.from_json(_o['skills']) unless _o['skills'].nil?
+      @startTime = Bignum.from_json(_o['startTime']) unless _o['startTime'].nil?
       @endTime = Bignum.from_json(_o['endTime']) unless _o['endTime'].nil?
       @userName = String.from_json(_o['userName']) unless _o['userName'].nil?
-      @startTime = Bignum.from_json(_o['startTime']) unless _o['startTime'].nil?
+      @firstName = String.from_json(_o['firstName']) unless _o['firstName'].nil?
       @basicInfo = Fi::Mediconsult::Core::Client::Dto::Omistaja::BasicInfo.from_json(_o['basicInfo']) unless _o['basicInfo'].nil?
+      @skills = Fi::Mediconsult::Core::Client::Dto::Omistaja::SkillsInfo.from_json(_o['skills']) unless _o['skills'].nil?
     end
 
     # constructs a User from a (parsed) JSON hash
@@ -7321,208 +7883,42 @@ module Fi
 
 module Mediconsult
 
-module Mediplan
+module Core
+
+module Client
 
 module Dto
 
-module Event
+module Laakitys
 
   # (no documentation provided)
-  class CalendarEventDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
+  class Yhteisvaikutus < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
 
     # (no documentation provided)
-    attr_accessor :restricted
-    # the startTime
-    attr_accessor :startTime
-    # the status
-    attr_accessor :status
-    # the description
-    attr_accessor :description
-    # the durationInMinutes
-    attr_accessor :durationInMinutes
-    # the serviceClass
-    attr_accessor :serviceClass
-    # the event
-    attr_accessor :event
-    # the workers
-    attr_accessor :workers
-    # the customers
-    attr_accessor :customers
-    # the rooms
-    attr_accessor :rooms
-    # the equipmentTypes
-    attr_accessor :equipmentTypes
+    attr_accessor :laake1
     # (no documentation provided)
-    attr_accessor :coursePeriods
+    attr_accessor :laake2
     # (no documentation provided)
-    attr_accessor :locked
-    # the lock
-    attr_accessor :lock
-    # the contentGroups
-    attr_accessor :contentGroups
-    # the actualStartTime
-    attr_accessor :actualStartTime
-    # the actualEndTime
-    attr_accessor :actualEndTime
-    # the missingResources
-    attr_accessor :missingResources
+    attr_accessor :interaktio
 
-    # the json hash for this CalendarEventDto
+    # the json hash for this Yhteisvaikutus
     def to_jaxb_json_hash
       _h = super
-      _h['restricted'] = restricted.to_jaxb_json_hash unless restricted.nil?
-      _h['startTime'] = startTime.to_jaxb_json_hash unless startTime.nil?
-      _h['status'] = status.to_jaxb_json_hash unless status.nil?
-      _h['description'] = description.to_jaxb_json_hash unless description.nil?
-      _h['durationInMinutes'] = durationInMinutes.to_jaxb_json_hash unless durationInMinutes.nil?
-      _h['serviceClass'] = serviceClass.to_jaxb_json_hash unless serviceClass.nil?
-      _h['event'] = event.to_jaxb_json_hash unless event.nil?
-      if !workers.nil?
-        _ha = Array.new
-        workers.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['workers'] = _ha
-      end
-      if !customers.nil?
-        _ha = Array.new
-        customers.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['customers'] = _ha
-      end
-      if !rooms.nil?
-        _ha = Array.new
-        rooms.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['rooms'] = _ha
-      end
-      if !equipmentTypes.nil?
-        _ha = Array.new
-        equipmentTypes.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['equipmentTypes'] = _ha
-      end
-      if !coursePeriods.nil?
-        _ha = Array.new
-        coursePeriods.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['coursePeriods'] = _ha
-      end
-      _h['locked'] = locked.to_jaxb_json_hash unless locked.nil?
-      _h['lock'] = lock.to_jaxb_json_hash unless lock.nil?
-      if !contentGroups.nil?
-        _ha = Array.new
-        contentGroups.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['contentGroups'] = _ha
-      end
-      _h['actualStartTime'] = actualStartTime.to_jaxb_json_hash unless actualStartTime.nil?
-      _h['actualEndTime'] = actualEndTime.to_jaxb_json_hash unless actualEndTime.nil?
-      _h['missingResources'] = missingResources.to_jaxb_json_hash unless missingResources.nil?
+      _h['laake1'] = laake1.to_jaxb_json_hash unless laake1.nil?
+      _h['laake2'] = laake2.to_jaxb_json_hash unless laake2.nil?
+      _h['interaktio'] = interaktio.to_jaxb_json_hash unless interaktio.nil?
       return _h
     end
 
-    #initializes this CalendarEventDto with a json hash
+    #initializes this Yhteisvaikutus with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @restricted = Boolean.from_json(_o['restricted']) unless _o['restricted'].nil?
-      @startTime = java.time::OffsetDateTime.from_json(_o['startTime']) unless _o['startTime'].nil?
-      @status = String.from_json(_o['status']) unless _o['status'].nil?
-      @description = String.from_json(_o['description']) unless _o['description'].nil?
-      @durationInMinutes = Fixnum.from_json(_o['durationInMinutes']) unless _o['durationInMinutes'].nil?
-      @serviceClass = String.from_json(_o['serviceClass']) unless _o['serviceClass'].nil?
-      @event = Fi::Mediconsult::Mediplan::Dto::Event::EventDto.from_json(_o['event']) unless _o['event'].nil?
-      if !_o['workers'].nil?
-        @workers = Array.new
-        _oa = _o['workers']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @workers.push Fi::Mediconsult::Mediplan::Dto::Event::EventWorkerDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @workers.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['customers'].nil?
-        @customers = Array.new
-        _oa = _o['customers']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @customers.push Fi::Mediconsult::Mediplan::Dto::Event::EventCustomerDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @customers.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['rooms'].nil?
-        @rooms = Array.new
-        _oa = _o['rooms']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @rooms.push Fi::Mediconsult::Mediplan::Dto::Event::EventResourceDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @rooms.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['equipmentTypes'].nil?
-        @equipmentTypes = Array.new
-        _oa = _o['equipmentTypes']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @equipmentTypes.push Fi::Mediconsult::Mediplan::Dto::Event::EventResourceDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @equipmentTypes.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['coursePeriods'].nil?
-        @coursePeriods = Array.new
-        _oa = _o['coursePeriods']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @coursePeriods.push Fi::Mediconsult::Mediplan::Dto::Event::EventCoursePeriodDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @coursePeriods.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @locked = Boolean.from_json(_o['locked']) unless _o['locked'].nil?
-      @lock = Fi::Mediconsult::Mediplan::Dto::LockDto.from_json(_o['lock']) unless _o['lock'].nil?
-      if !_o['contentGroups'].nil?
-        @contentGroups = Array.new
-        _oa = _o['contentGroups']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @contentGroups.push Fi::Mediconsult::Mediplan::Dto::Event::CalendarEventContentGroupDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @contentGroups.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @actualStartTime = java.time::OffsetDateTime.from_json(_o['actualStartTime']) unless _o['actualStartTime'].nil?
-      @actualEndTime = java.time::OffsetDateTime.from_json(_o['actualEndTime']) unless _o['actualEndTime'].nil?
-      @missingResources = Fi::Mediconsult::Mediplan::Dto::Event::EventMissingResourcesDto.from_json(_o['missingResources']) unless _o['missingResources'].nil?
+      @laake1 = String.from_json(_o['laake1']) unless _o['laake1'].nil?
+      @laake2 = String.from_json(_o['laake2']) unless _o['laake2'].nil?
+      @interaktio = String.from_json(_o['interaktio']) unless _o['interaktio'].nil?
     end
 
-    # constructs a CalendarEventDto from a (parsed) JSON hash
+    # constructs a Yhteisvaikutus from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -7533,6 +7929,8 @@ module Event
       end
     end
   end
+
+end
 
 end
 
@@ -7619,6 +8017,148 @@ module Client
 
 module Dto
 
+  # (no documentation provided)
+  class Osastokartta < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
+
+    # (no documentation provided)
+    attr_accessor :listat
+    # (no documentation provided)
+    attr_accessor :tilanteet
+    # (no documentation provided)
+    attr_accessor :ryhmat
+
+    # the json hash for this Osastokartta
+    def to_jaxb_json_hash
+      _h = super
+      if !listat.nil?
+        _ha = Array.new
+        listat.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['listat'] = _ha
+      end
+      if !tilanteet.nil?
+        _ha = Array.new
+        tilanteet.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['tilanteet'] = _ha
+      end
+      if !ryhmat.nil?
+        _ha = Array.new
+        ryhmat.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['ryhmat'] = _ha
+      end
+      return _h
+    end
+
+    #initializes this Osastokartta with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      if !_o['listat'].nil?
+        @listat = Array.new
+        _oa = _o['listat']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @listat.push Fi::Mediconsult::Core::Client::Dto::Osastolista.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @listat.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['tilanteet'].nil?
+        @tilanteet = Array.new
+        _oa = _o['tilanteet']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @tilanteet.push Fi::Mediconsult::Core::Client::Dto::OsastolistaTilannekoodi.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @tilanteet.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['ryhmat'].nil?
+        @ryhmat = Array.new
+        _oa = _o['ryhmat']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @ryhmat.push Fi::Mediconsult::Core::Client::Dto::Potilasryhma.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @ryhmat.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+    end
+
+    # constructs a Osastokartta from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Enums
+
+  # (no documentation provided)
+  class EquipmentRequirement
+
+    # 
+    FOR_EVERY_CUSTOMER = "FOR_EVERY_CUSTOMER"
+
+    # 
+    FOR_EVERY_CUSTOMER_AND_WORKER = "FOR_EVERY_CUSTOMER_AND_WORKER"
+
+    # 
+    FIXED_AMOUNT = "FIXED_AMOUNT"
+  end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
 module Laakitys
 
   # (no documentation provided)
@@ -7683,321 +8223,6 @@ module Laakitys
   end
 
 end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Mediplan
-
-module Enums
-
-  # (no documentation provided)
-  class EquipmentRequirement
-
-    # 
-    FOR_EVERY_CUSTOMER = "FOR_EVERY_CUSTOMER"
-
-    # 
-    FOR_EVERY_CUSTOMER_AND_WORKER = "FOR_EVERY_CUSTOMER_AND_WORKER"
-
-    # 
-    FIXED_AMOUNT = "FIXED_AMOUNT"
-  end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class Potilasryhma < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
-
-    # (no documentation provided)
-    attr_accessor :otsikko
-    # (no documentation provided)
-    attr_accessor :koodi
-    # (no documentation provided)
-    attr_accessor :selite
-
-    # the json hash for this Potilasryhma
-    def to_jaxb_json_hash
-      _h = super
-      _h['otsikko'] = otsikko.to_jaxb_json_hash unless otsikko.nil?
-      _h['koodi'] = koodi.to_jaxb_json_hash unless koodi.nil?
-      _h['selite'] = selite.to_jaxb_json_hash unless selite.nil?
-      return _h
-    end
-
-    #initializes this Potilasryhma with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      @otsikko = String.from_json(_o['otsikko']) unless _o['otsikko'].nil?
-      @koodi = String.from_json(_o['koodi']) unless _o['koodi'].nil?
-      @selite = String.from_json(_o['selite']) unless _o['selite'].nil?
-    end
-
-    # constructs a Potilasryhma from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-module Kertomus
-
-  # (no documentation provided)
-  class KertomuksetView < Fi::Mediconsult::Core::Client::Dto::BaseModel 
-
-    # (no documentation provided)
-    attr_accessor :entries
-    # (no documentation provided)
-    attr_accessor :updated
-    # (no documentation provided)
-    attr_accessor :currentRecord
-    # (no documentation provided)
-    attr_accessor :prevUrl
-    # (no documentation provided)
-    attr_accessor :nextUrl
-    # (no documentation provided)
-    attr_accessor :maxSize
-    # (no documentation provided)
-    attr_accessor :pageSize
-
-    # the json hash for this KertomuksetView
-    def to_jaxb_json_hash
-      _h = super
-      if !entries.nil?
-        _ha = Array.new
-        entries.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['entries'] = _ha
-      end
-      _h['updated'] = updated.to_jaxb_json_hash unless updated.nil?
-      _h['currentRecord'] = currentRecord.to_jaxb_json_hash unless currentRecord.nil?
-      _h['prevUrl'] = prevUrl.to_jaxb_json_hash unless prevUrl.nil?
-      _h['nextUrl'] = nextUrl.to_jaxb_json_hash unless nextUrl.nil?
-      _h['maxSize'] = maxSize.to_jaxb_json_hash unless maxSize.nil?
-      _h['pageSize'] = pageSize.to_jaxb_json_hash unless pageSize.nil?
-      return _h
-    end
-
-    #initializes this KertomuksetView with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      if !_o['entries'].nil?
-        @entries = Array.new
-        _oa = _o['entries']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @entries.push Fi::Mediconsult::Core::Client::Dto::Kertomus::KertomusEntryView.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @entries.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @updated = Boolean.from_json(_o['updated']) unless _o['updated'].nil?
-      @currentRecord = Fixnum.from_json(_o['currentRecord']) unless _o['currentRecord'].nil?
-      @prevUrl = String.from_json(_o['prevUrl']) unless _o['prevUrl'].nil?
-      @nextUrl = String.from_json(_o['nextUrl']) unless _o['nextUrl'].nil?
-      @maxSize = Fixnum.from_json(_o['maxSize']) unless _o['maxSize'].nil?
-      @pageSize = Fixnum.from_json(_o['pageSize']) unless _o['pageSize'].nil?
-    end
-
-    # constructs a KertomuksetView from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class OsastolistaTilannekoodi < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
-
-    # (no documentation provided)
-    attr_accessor :koodi
-    # (no documentation provided)
-    attr_accessor :variRGB
-    # (no documentation provided)
-    attr_accessor :selitys
-    # (no documentation provided)
-    attr_accessor :vihje
-
-    # the json hash for this OsastolistaTilannekoodi
-    def to_jaxb_json_hash
-      _h = super
-      _h['koodi'] = koodi.to_jaxb_json_hash unless koodi.nil?
-      _h['variRGB'] = variRGB.to_jaxb_json_hash unless variRGB.nil?
-      _h['selitys'] = selitys.to_jaxb_json_hash unless selitys.nil?
-      _h['vihje'] = vihje.to_jaxb_json_hash unless vihje.nil?
-      return _h
-    end
-
-    #initializes this OsastolistaTilannekoodi with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      @koodi = String.from_json(_o['koodi']) unless _o['koodi'].nil?
-      @variRGB = String.from_json(_o['variRGB']) unless _o['variRGB'].nil?
-      @selitys = String.from_json(_o['selitys']) unless _o['selitys'].nil?
-      @vihje = String.from_json(_o['vihje']) unless _o['vihje'].nil?
-    end
-
-    # constructs a OsastolistaTilannekoodi from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-  # (no documentation provided)
-  class ExtendFormInfo < Fi::Mediconsult::Core::Client::Dto::FormInfo 
-
-    # (no documentation provided)
-    attr_accessor :lomakeId
-    # (no documentation provided)
-    attr_accessor :name
-    # (no documentation provided)
-    attr_accessor :hoitosuhdevaatimus
-    # (no documentation provided)
-    attr_accessor :vastuuyksikko
-    # (no documentation provided)
-    attr_accessor :pohjavari
-
-    # the json hash for this ExtendFormInfo
-    def to_jaxb_json_hash
-      _h = super
-      _h['lomakeId'] = lomakeId.to_jaxb_json_hash unless lomakeId.nil?
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['hoitosuhdevaatimus'] = hoitosuhdevaatimus.to_jaxb_json_hash unless hoitosuhdevaatimus.nil?
-      _h['vastuuyksikko'] = vastuuyksikko.to_jaxb_json_hash unless vastuuyksikko.nil?
-      _h['pohjavari'] = pohjavari.to_jaxb_json_hash unless pohjavari.nil?
-      return _h
-    end
-
-    #initializes this ExtendFormInfo with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      @lomakeId = Fixnum.from_json(_o['lomakeId']) unless _o['lomakeId'].nil?
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @hoitosuhdevaatimus = String.from_json(_o['hoitosuhdevaatimus']) unless _o['hoitosuhdevaatimus'].nil?
-      @vastuuyksikko = Fixnum.from_json(_o['vastuuyksikko']) unless _o['vastuuyksikko'].nil?
-      @pohjavari = Fixnum.from_json(_o['pohjavari']) unless _o['pohjavari'].nil?
-    end
-
-    # constructs a ExtendFormInfo from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
 
 end
 
@@ -8115,6 +8340,267 @@ module Fi
 
 module Mediconsult
 
+module Core
+
+module Client
+
+module Dto
+
+  # (no documentation provided)
+  class OsastolistaTilannekoodi < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
+
+    # (no documentation provided)
+    attr_accessor :koodi
+    # (no documentation provided)
+    attr_accessor :variRGB
+    # (no documentation provided)
+    attr_accessor :selitys
+    # (no documentation provided)
+    attr_accessor :vihje
+
+    # the json hash for this OsastolistaTilannekoodi
+    def to_jaxb_json_hash
+      _h = super
+      _h['koodi'] = koodi.to_jaxb_json_hash unless koodi.nil?
+      _h['variRGB'] = variRGB.to_jaxb_json_hash unless variRGB.nil?
+      _h['selitys'] = selitys.to_jaxb_json_hash unless selitys.nil?
+      _h['vihje'] = vihje.to_jaxb_json_hash unless vihje.nil?
+      return _h
+    end
+
+    #initializes this OsastolistaTilannekoodi with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @koodi = String.from_json(_o['koodi']) unless _o['koodi'].nil?
+      @variRGB = String.from_json(_o['variRGB']) unless _o['variRGB'].nil?
+      @selitys = String.from_json(_o['selitys']) unless _o['selitys'].nil?
+      @vihje = String.from_json(_o['vihje']) unless _o['vihje'].nil?
+    end
+
+    # constructs a OsastolistaTilannekoodi from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+module Kertomus
+
+  # (no documentation provided)
+  class KertomuksetView < Fi::Mediconsult::Core::Client::Dto::BaseModel 
+
+    # (no documentation provided)
+    attr_accessor :entries
+    # (no documentation provided)
+    attr_accessor :updated
+    # (no documentation provided)
+    attr_accessor :currentPage
+    # (no documentation provided)
+    attr_accessor :prevUrl
+    # (no documentation provided)
+    attr_accessor :nextUrl
+    # (no documentation provided)
+    attr_accessor :maxSize
+    # (no documentation provided)
+    attr_accessor :pageSize
+
+    # the json hash for this KertomuksetView
+    def to_jaxb_json_hash
+      _h = super
+      if !entries.nil?
+        _ha = Array.new
+        entries.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['entries'] = _ha
+      end
+      _h['updated'] = updated.to_jaxb_json_hash unless updated.nil?
+      _h['currentPage'] = currentPage.to_jaxb_json_hash unless currentPage.nil?
+      _h['prevUrl'] = prevUrl.to_jaxb_json_hash unless prevUrl.nil?
+      _h['nextUrl'] = nextUrl.to_jaxb_json_hash unless nextUrl.nil?
+      _h['maxSize'] = maxSize.to_jaxb_json_hash unless maxSize.nil?
+      _h['pageSize'] = pageSize.to_jaxb_json_hash unless pageSize.nil?
+      return _h
+    end
+
+    #initializes this KertomuksetView with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      if !_o['entries'].nil?
+        @entries = Array.new
+        _oa = _o['entries']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @entries.push Fi::Mediconsult::Core::Client::Dto::Kertomus::KertomusEntryView.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @entries.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @updated = Boolean.from_json(_o['updated']) unless _o['updated'].nil?
+      @currentPage = Fixnum.from_json(_o['currentPage']) unless _o['currentPage'].nil?
+      @prevUrl = String.from_json(_o['prevUrl']) unless _o['prevUrl'].nil?
+      @nextUrl = String.from_json(_o['nextUrl']) unless _o['nextUrl'].nil?
+      @maxSize = Fixnum.from_json(_o['maxSize']) unless _o['maxSize'].nil?
+      @pageSize = Fixnum.from_json(_o['pageSize']) unless _o['pageSize'].nil?
+    end
+
+    # constructs a KertomuksetView from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+  # (no documentation provided)
+  class ExtendFormInfo < Fi::Mediconsult::Core::Client::Dto::FormInfo 
+
+    # (no documentation provided)
+    attr_accessor :lomakeId
+    # (no documentation provided)
+    attr_accessor :name
+    # (no documentation provided)
+    attr_accessor :hoitosuhdevaatimus
+    # (no documentation provided)
+    attr_accessor :vastuuyksikko
+    # (no documentation provided)
+    attr_accessor :pohjavari
+
+    # the json hash for this ExtendFormInfo
+    def to_jaxb_json_hash
+      _h = super
+      _h['lomakeId'] = lomakeId.to_jaxb_json_hash unless lomakeId.nil?
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['hoitosuhdevaatimus'] = hoitosuhdevaatimus.to_jaxb_json_hash unless hoitosuhdevaatimus.nil?
+      _h['vastuuyksikko'] = vastuuyksikko.to_jaxb_json_hash unless vastuuyksikko.nil?
+      _h['pohjavari'] = pohjavari.to_jaxb_json_hash unless pohjavari.nil?
+      return _h
+    end
+
+    #initializes this ExtendFormInfo with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @lomakeId = Fixnum.from_json(_o['lomakeId']) unless _o['lomakeId'].nil?
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @hoitosuhdevaatimus = String.from_json(_o['hoitosuhdevaatimus']) unless _o['hoitosuhdevaatimus'].nil?
+      @vastuuyksikko = Fixnum.from_json(_o['vastuuyksikko']) unless _o['vastuuyksikko'].nil?
+      @pohjavari = Fixnum.from_json(_o['pohjavari']) unless _o['pohjavari'].nil?
+    end
+
+    # constructs a ExtendFormInfo from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+module Palvelupaatos
+
+  # (no documentation provided)
+  class BillingType
+
+    # 
+    FROM_START_OF_PERIOD = "FROM_START_OF_PERIOD"
+
+    # 
+    FROM_END_OF_PERIOD = "FROM_END_OF_PERIOD"
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
 module Mediplan
 
 module Dto
@@ -8202,6 +8688,9 @@ module Dto
 
     # 
     SARJAHOITO = "SARJAHOITO"
+
+    # 
+    ASIA = "ASIA"
   end
 
 end
@@ -8232,11 +8721,95 @@ module Enums
     COLLAPSED = "COLLAPSED"
 
     # 
-    HIDDEN = "HIDDEN"
-
-    # 
     EXCLUDED = "EXCLUDED"
   end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+module Laakitys
+
+  # (no documentation provided)
+  class LaakeKoostumus < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
+
+    # Returns the part number of the medicine component
+    attr_accessor :osa
+    # Returns the type of the medicine component
+    # -&#39;B&#39; if &quot;pohja-aine&quot;
+    # -Perusaine, johon lis�aineet sekoitetaan
+    # -&#39;A&#39; if &quot;lis�aine&quot;
+    # -Lis�aineet ovat yleens� varsinaisia vaikuttavia aineita
+    attr_accessor :tyyppi
+    # Returns the component code (VNR code)
+    attr_accessor :komponentinKoodi
+    # Returns the component in text format
+    attr_accessor :komponentti
+    # Returns the amount of component
+    attr_accessor :maara
+    # Returns the unit of amount
+    attr_accessor :yksikko
+    # Returns the strength of the component
+    attr_accessor :vahvuus
+    # Returns the unit of strength
+    attr_accessor :vahvuusyksikko
+
+    # the json hash for this LaakeKoostumus
+    def to_jaxb_json_hash
+      _h = super
+      _h['osa'] = osa.to_jaxb_json_hash unless osa.nil?
+      _h['tyyppi'] = tyyppi.to_jaxb_json_hash unless tyyppi.nil?
+      _h['komponentinKoodi'] = komponentinKoodi.to_jaxb_json_hash unless komponentinKoodi.nil?
+      _h['komponentti'] = komponentti.to_jaxb_json_hash unless komponentti.nil?
+      _h['maara'] = maara.to_jaxb_json_hash unless maara.nil?
+      _h['yksikko'] = yksikko.to_jaxb_json_hash unless yksikko.nil?
+      _h['vahvuus'] = vahvuus.to_jaxb_json_hash unless vahvuus.nil?
+      _h['vahvuusyksikko'] = vahvuusyksikko.to_jaxb_json_hash unless vahvuusyksikko.nil?
+      return _h
+    end
+
+    #initializes this LaakeKoostumus with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @osa = Fixnum.from_json(_o['osa']) unless _o['osa'].nil?
+      @tyyppi = Fixnum.from_json(_o['tyyppi']) unless _o['tyyppi'].nil?
+      @komponentinKoodi = String.from_json(_o['komponentinKoodi']) unless _o['komponentinKoodi'].nil?
+      @komponentti = String.from_json(_o['komponentti']) unless _o['komponentti'].nil?
+      @maara = Float.from_json(_o['maara']) unless _o['maara'].nil?
+      @yksikko = String.from_json(_o['yksikko']) unless _o['yksikko'].nil?
+      @vahvuus = Float.from_json(_o['vahvuus']) unless _o['vahvuus'].nil?
+      @vahvuusyksikko = String.from_json(_o['vahvuusyksikko']) unless _o['vahvuusyksikko'].nil?
+    end
+
+    # constructs a LaakeKoostumus from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
 
 end
 
@@ -9000,12 +9573,12 @@ module Palvelupaatos
     #initializes this Palvelukeskeytys with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @alkaa = Java::Sql::Date.from_json(_o['alkaa']) unless _o['alkaa'].nil?
+      @alkaa = Bignum.from_json(_o['alkaa']) unless _o['alkaa'].nil?
       @paatos = Fixnum.from_json(_o['paatos']) unless _o['paatos'].nil?
       @syy = String.from_json(_o['syy']) unless _o['syy'].nil?
-      @loppuu = Java::Sql::Date.from_json(_o['loppuu']) unless _o['loppuu'].nil?
-      @alkuaika = Java::Sql::Time.from_json(_o['alkuaika']) unless _o['alkuaika'].nil?
-      @loppuaika = Java::Sql::Time.from_json(_o['loppuaika']) unless _o['loppuaika'].nil?
+      @loppuu = Bignum.from_json(_o['loppuu']) unless _o['loppuu'].nil?
+      @alkuaika = java.time::LocalTime.from_json(_o['alkuaika']) unless _o['alkuaika'].nil?
+      @loppuaika = java.time::LocalTime.from_json(_o['loppuaika']) unless _o['loppuaika'].nil?
       @alusta = Boolean.from_json(_o['alusta']) unless _o['alusta'].nil?
       @laskutetaan = Fixnum.from_json(_o['laskutetaan']) unless _o['laskutetaan'].nil?
       @huomautuksia = String.from_json(_o['huomautuksia']) unless _o['huomautuksia'].nil?
@@ -9014,6 +9587,112 @@ module Palvelupaatos
     end
 
     # constructs a Palvelukeskeytys from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+module Laakitys
+
+  # (no documentation provided)
+  class LaakeTiivistelma < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
+
+    # Returns the id of the summary
+    attr_accessor :tiivistelma
+    # Returns the name of the medicine the summary is about
+    attr_accessor :nimi
+    # Returns the preconditions for the medicine
+    # (m��r�ys-/toimitusehto)
+    attr_accessor :ehto
+    # Returns the manufacturer
+    attr_accessor :valmistaja
+    # Returns the refundability
+    attr_accessor :korvattavuus
+    # Returns the code of the summary removal. &#39;E&#39; - not removed, &#39;K&#39; = removed
+    attr_accessor :poistettu
+    # Returns the actual DB-change time of the summary
+    attr_accessor :muutosaika
+    # Returns the organization in which the change has been made
+    attr_accessor :muutospaikka
+    # Returns a list of summary texts
+    attr_accessor :tekstit
+
+    # the json hash for this LaakeTiivistelma
+    def to_jaxb_json_hash
+      _h = super
+      _h['tiivistelma'] = tiivistelma.to_jaxb_json_hash unless tiivistelma.nil?
+      _h['nimi'] = nimi.to_jaxb_json_hash unless nimi.nil?
+      _h['ehto'] = ehto.to_jaxb_json_hash unless ehto.nil?
+      _h['valmistaja'] = valmistaja.to_jaxb_json_hash unless valmistaja.nil?
+      _h['korvattavuus'] = korvattavuus.to_jaxb_json_hash unless korvattavuus.nil?
+      _h['poistettu'] = poistettu.to_jaxb_json_hash unless poistettu.nil?
+      _h['muutosaika'] = muutosaika.to_jaxb_json_hash unless muutosaika.nil?
+      _h['muutospaikka'] = muutospaikka.to_jaxb_json_hash unless muutospaikka.nil?
+      if !tekstit.nil?
+        _ha = Array.new
+        tekstit.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['tekstit'] = _ha
+      end
+      return _h
+    end
+
+    #initializes this LaakeTiivistelma with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @tiivistelma = Fixnum.from_json(_o['tiivistelma']) unless _o['tiivistelma'].nil?
+      @nimi = String.from_json(_o['nimi']) unless _o['nimi'].nil?
+      @ehto = String.from_json(_o['ehto']) unless _o['ehto'].nil?
+      @valmistaja = String.from_json(_o['valmistaja']) unless _o['valmistaja'].nil?
+      @korvattavuus = String.from_json(_o['korvattavuus']) unless _o['korvattavuus'].nil?
+      @poistettu = Fixnum.from_json(_o['poistettu']) unless _o['poistettu'].nil?
+      @muutosaika = Time.from_json(_o['muutosaika']) unless _o['muutosaika'].nil?
+      @muutospaikka = Fixnum.from_json(_o['muutospaikka']) unless _o['muutospaikka'].nil?
+      if !_o['tekstit'].nil?
+        @tekstit = Array.new
+        _oa = _o['tekstit']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @tekstit.push Fi::Mediconsult::Core::Client::Dto::Laakitys::LaakeTiivistelmaTeksti.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @tekstit.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+    end
+
+    # constructs a LaakeTiivistelma from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -9173,76 +9852,33 @@ module Dto
 module Laakitys
 
   # (no documentation provided)
-  class LaakeTiivistelma < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
+  class LaakeSelosteTeksti < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
 
-    # Returns the id of the summary
-    attr_accessor :tiivistelma
-    # Returns the name of the medicine the summary is about
-    attr_accessor :nimi
-    # Returns the preconditions for the medicine
-    # (m��r�ys-/toimitusehto)
-    attr_accessor :ehto
-    # Returns the manufacturer
-    attr_accessor :valmistaja
-    # Returns the refundability
-    attr_accessor :korvattavuus
-    # Returns the code of the summary removal. &#39;E&#39; - not removed, &#39;K&#39; = removed
-    attr_accessor :poistettu
-    # Returns the actual DB-change time of the summary
-    attr_accessor :muutosaika
-    # Returns the organization in which the change has been made
-    attr_accessor :muutospaikka
-    # Returns a list of summary texts
-    attr_accessor :tekstit
+    # Returns the part number of the description, can be used to order descriptions
+    attr_accessor :osa
+    # 
+    attr_accessor :otsikko
+    # Returns the text of the description
+    attr_accessor :teksti
 
-    # the json hash for this LaakeTiivistelma
+    # the json hash for this LaakeSelosteTeksti
     def to_jaxb_json_hash
       _h = super
-      _h['tiivistelma'] = tiivistelma.to_jaxb_json_hash unless tiivistelma.nil?
-      _h['nimi'] = nimi.to_jaxb_json_hash unless nimi.nil?
-      _h['ehto'] = ehto.to_jaxb_json_hash unless ehto.nil?
-      _h['valmistaja'] = valmistaja.to_jaxb_json_hash unless valmistaja.nil?
-      _h['korvattavuus'] = korvattavuus.to_jaxb_json_hash unless korvattavuus.nil?
-      _h['poistettu'] = poistettu.to_jaxb_json_hash unless poistettu.nil?
-      _h['muutosaika'] = muutosaika.to_jaxb_json_hash unless muutosaika.nil?
-      _h['muutospaikka'] = muutospaikka.to_jaxb_json_hash unless muutospaikka.nil?
-      if !tekstit.nil?
-        _ha = Array.new
-        tekstit.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['tekstit'] = _ha
-      end
+      _h['osa'] = osa.to_jaxb_json_hash unless osa.nil?
+      _h['otsikko'] = otsikko.to_jaxb_json_hash unless otsikko.nil?
+      _h['teksti'] = teksti.to_jaxb_json_hash unless teksti.nil?
       return _h
     end
 
-    #initializes this LaakeTiivistelma with a json hash
+    #initializes this LaakeSelosteTeksti with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @tiivistelma = Fixnum.from_json(_o['tiivistelma']) unless _o['tiivistelma'].nil?
-      @nimi = String.from_json(_o['nimi']) unless _o['nimi'].nil?
-      @ehto = String.from_json(_o['ehto']) unless _o['ehto'].nil?
-      @valmistaja = String.from_json(_o['valmistaja']) unless _o['valmistaja'].nil?
-      @korvattavuus = String.from_json(_o['korvattavuus']) unless _o['korvattavuus'].nil?
-      @poistettu = Fixnum.from_json(_o['poistettu']) unless _o['poistettu'].nil?
-      @muutosaika = Time.from_json(_o['muutosaika']) unless _o['muutosaika'].nil?
-      @muutospaikka = Fixnum.from_json(_o['muutospaikka']) unless _o['muutospaikka'].nil?
-      if !_o['tekstit'].nil?
-        @tekstit = Array.new
-        _oa = _o['tekstit']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @tekstit.push Fi::Mediconsult::Core::Client::Dto::Laakitys::LaakeTiivistelmaTeksti.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @tekstit.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
+      @osa = Fixnum.from_json(_o['osa']) unless _o['osa'].nil?
+      @otsikko = Fixnum.from_json(_o['otsikko']) unless _o['otsikko'].nil?
+      @teksti = String.from_json(_o['teksti']) unless _o['teksti'].nil?
     end
 
-    # constructs a LaakeTiivistelma from a (parsed) JSON hash
+    # constructs a LaakeSelosteTeksti from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -9349,36 +9985,34 @@ module Client
 
 module Dto
 
-module Laakitys
-
   # (no documentation provided)
-  class LaakeSelosteTeksti < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
+  class Potilasryhma < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
 
-    # Returns the part number of the description, can be used to order descriptions
-    attr_accessor :osa
-    # 
+    # (no documentation provided)
     attr_accessor :otsikko
-    # Returns the text of the description
-    attr_accessor :teksti
+    # (no documentation provided)
+    attr_accessor :koodi
+    # (no documentation provided)
+    attr_accessor :selite
 
-    # the json hash for this LaakeSelosteTeksti
+    # the json hash for this Potilasryhma
     def to_jaxb_json_hash
       _h = super
-      _h['osa'] = osa.to_jaxb_json_hash unless osa.nil?
       _h['otsikko'] = otsikko.to_jaxb_json_hash unless otsikko.nil?
-      _h['teksti'] = teksti.to_jaxb_json_hash unless teksti.nil?
+      _h['koodi'] = koodi.to_jaxb_json_hash unless koodi.nil?
+      _h['selite'] = selite.to_jaxb_json_hash unless selite.nil?
       return _h
     end
 
-    #initializes this LaakeSelosteTeksti with a json hash
+    #initializes this Potilasryhma with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @osa = Fixnum.from_json(_o['osa']) unless _o['osa'].nil?
-      @otsikko = Fixnum.from_json(_o['otsikko']) unless _o['otsikko'].nil?
-      @teksti = String.from_json(_o['teksti']) unless _o['teksti'].nil?
+      @otsikko = String.from_json(_o['otsikko']) unless _o['otsikko'].nil?
+      @koodi = String.from_json(_o['koodi']) unless _o['koodi'].nil?
+      @selite = String.from_json(_o['selite']) unless _o['selite'].nil?
     end
 
-    # constructs a LaakeSelosteTeksti from a (parsed) JSON hash
+    # constructs a Potilasryhma from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -9389,8 +10023,6 @@ module Laakitys
       end
     end
   end
-
-end
 
 end
 
@@ -9406,66 +10038,70 @@ module Fi
 
 module Mediconsult
 
-module Core
-
-module Client
+module Mediplan
 
 module Dto
 
-module Laakitys
+module Contentgroup
 
   # (no documentation provided)
-  class LaakeKoostumus < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
+  class ContentGroup<T extends Fi::Mediconsult::Mediplan::Dto::Contentgroup::ContentGroupTitle> < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
 
-    # Returns the part number of the medicine component
-    attr_accessor :osa
-    # Returns the type of the medicine component
-    # -&#39;B&#39; if &quot;pohja-aine&quot;
-    # -Perusaine, johon lis�aineet sekoitetaan
-    # -&#39;A&#39; if &quot;lis�aine&quot;
-    # -Lis�aineet ovat yleens� varsinaisia vaikuttavia aineita
-    attr_accessor :tyyppi
-    # Returns the component code (VNR code)
-    attr_accessor :komponentinKoodi
-    # Returns the component in text format
-    attr_accessor :komponentti
-    # Returns the amount of component
-    attr_accessor :maara
-    # Returns the unit of amount
-    attr_accessor :yksikko
-    # Returns the strength of the component
-    attr_accessor :vahvuus
-    # Returns the unit of strength
-    attr_accessor :vahvuusyksikko
+    # (no documentation provided)
+    attr_accessor :freeItems
+    # (no documentation provided)
+    attr_accessor :name
+    # (no documentation provided)
+    attr_accessor :removed
+    # (no documentation provided)
+    attr_accessor :visibility
+    # (no documentation provided)
+    attr_accessor :order
+    # (no documentation provided)
+    attr_accessor :type
 
-    # the json hash for this LaakeKoostumus
+    # the json hash for this ContentGroup<T extends Fi::Mediconsult::Mediplan::Dto::Contentgroup::ContentGroupTitle>
     def to_jaxb_json_hash
       _h = super
-      _h['osa'] = osa.to_jaxb_json_hash unless osa.nil?
-      _h['tyyppi'] = tyyppi.to_jaxb_json_hash unless tyyppi.nil?
-      _h['komponentinKoodi'] = komponentinKoodi.to_jaxb_json_hash unless komponentinKoodi.nil?
-      _h['komponentti'] = komponentti.to_jaxb_json_hash unless komponentti.nil?
-      _h['maara'] = maara.to_jaxb_json_hash unless maara.nil?
-      _h['yksikko'] = yksikko.to_jaxb_json_hash unless yksikko.nil?
-      _h['vahvuus'] = vahvuus.to_jaxb_json_hash unless vahvuus.nil?
-      _h['vahvuusyksikko'] = vahvuusyksikko.to_jaxb_json_hash unless vahvuusyksikko.nil?
+      if !freeItems.nil?
+        _ha = Array.new
+        freeItems.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['freeItems'] = _ha
+      end
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['removed'] = removed.to_jaxb_json_hash unless removed.nil?
+      _h['visibility'] = visibility.to_jaxb_json_hash unless visibility.nil?
+      _h['order'] = order.to_jaxb_json_hash unless order.nil?
+      _h['type'] = type.to_jaxb_json_hash unless type.nil?
       return _h
     end
 
-    #initializes this LaakeKoostumus with a json hash
+    #initializes this ContentGroup<T extends Fi::Mediconsult::Mediplan::Dto::Contentgroup::ContentGroupTitle> with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @osa = Fixnum.from_json(_o['osa']) unless _o['osa'].nil?
-      @tyyppi = Fixnum.from_json(_o['tyyppi']) unless _o['tyyppi'].nil?
-      @komponentinKoodi = String.from_json(_o['komponentinKoodi']) unless _o['komponentinKoodi'].nil?
-      @komponentti = String.from_json(_o['komponentti']) unless _o['komponentti'].nil?
-      @maara = Float.from_json(_o['maara']) unless _o['maara'].nil?
-      @yksikko = String.from_json(_o['yksikko']) unless _o['yksikko'].nil?
-      @vahvuus = Float.from_json(_o['vahvuus']) unless _o['vahvuus'].nil?
-      @vahvuusyksikko = String.from_json(_o['vahvuusyksikko']) unless _o['vahvuusyksikko'].nil?
+      if !_o['freeItems'].nil?
+        @freeItems = Array.new
+        _oa = _o['freeItems']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @freeItems.push Fi::Mediconsult::Mediplan::Dto::Contentgroup::ContentGroupTitle.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @freeItems.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @removed = Boolean.from_json(_o['removed']) unless _o['removed'].nil?
+      @visibility = String.from_json(_o['visibility']) unless _o['visibility'].nil?
+      @order = Fixnum.from_json(_o['order']) unless _o['order'].nil?
+      @type = String.from_json(_o['type']) unless _o['type'].nil?
     end
 
-    # constructs a LaakeKoostumus from a (parsed) JSON hash
+    # constructs a ContentGroup<T extends Fi::Mediconsult::Mediplan::Dto::Contentgroup::ContentGroupTitle> from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -9476,8 +10112,6 @@ module Laakitys
       end
     end
   end
-
-end
 
 end
 
@@ -9564,38 +10198,6 @@ end
 
 end
 
-module Fi
-
-module Mediconsult
-
-module Kuha
-
-module Util
-
-  # (no documentation provided)
-  class TapahtumaLuonne
-
-    # 
-    ASSIGNED = "ASSIGNED"
-
-    # 
-    TEMPLATE = "TEMPLATE"
-
-    # 
-    COMMON = "COMMON"
-
-    # 
-    TRANSITION = "TRANSITION"
-  end
-
-end
-
-end
-
-end
-
-end
-
 module Java
 
 module Sql
@@ -9635,6 +10237,44 @@ module Fi
 
 module Mediconsult
 
+module Kuha
+
+module Util
+
+  # (no documentation provided)
+  class TapahtumaLuonne
+
+    # 
+    ASSIGNED = "ASSIGNED"
+
+    # 
+    TEMPLATE = "TEMPLATE"
+
+    # 
+    COMMON = "COMMON"
+
+    # 
+    TRANSITION = "TRANSITION"
+
+    # 
+    ANCHOR = "ANCHOR"
+
+    # 
+    WORKING_TIME = "WORKING_TIME"
+  end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
 module Core
 
 module Client
@@ -9646,15 +10286,19 @@ module Laakitys
   # (no documentation provided)
   class LaakitysLista < Fi::Mediconsult::Core::Client::Dto::BaseModel 
 
-    # Returns the laakityskategoria. Map of laakitysKategorias. Laakityskategoria type as key
-    attr_accessor :laakityskategoria
+    # Returns a list of Laakitys objects
+    attr_accessor :laakityslista
     # Returns the permissionDTO object.
     attr_accessor :permissionDTO
 
     # the json hash for this LaakitysLista
     def to_jaxb_json_hash
       _h = super
-      _h['laakityskategoria'] = laakityskategoria.to_jaxb_json_hash unless laakityskategoria.nil?
+      if !laakityslista.nil?
+        _ha = Array.new
+        laakityslista.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['laakityslista'] = _ha
+      end
       _h['permissionDTO'] = permissionDTO.to_jaxb_json_hash unless permissionDTO.nil?
       return _h
     end
@@ -9662,7 +10306,21 @@ module Laakitys
     #initializes this LaakitysLista with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @laakityskategoria = Hash.from_json(_o['laakityskategoria']) unless _o['laakityskategoria'].nil?
+      if !_o['laakityslista'].nil?
+        @laakityslista = Array.new
+        _oa = _o['laakityslista']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @laakityslista.push Fi::Mediconsult::Core::Client::Dto::Laakitys::Laakitys.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @laakityslista.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
       @permissionDTO = Fi::Mediconsult::Core::Client::Dto::Permission.from_json(_o['permissionDTO']) unless _o['permissionDTO'].nil?
     end
 
@@ -10350,15 +11008,21 @@ module Event
     attr_accessor :amount
     # the coursePeriodId
     attr_accessor :coursePeriodId
+    # the serviceDecisionStatus
+    attr_accessor :serviceDecisionStatus
     # the serviceDecision
     attr_accessor :serviceDecision
+    # the homeAddress
+    attr_accessor :homeAddress
 
     # the json hash for this EventCustomerDto
     def to_jaxb_json_hash
       _h = super
       _h['amount'] = amount.to_jaxb_json_hash unless amount.nil?
       _h['coursePeriodId'] = coursePeriodId.to_jaxb_json_hash unless coursePeriodId.nil?
+      _h['serviceDecisionStatus'] = serviceDecisionStatus.to_jaxb_json_hash unless serviceDecisionStatus.nil?
       _h['serviceDecision'] = serviceDecision.to_jaxb_json_hash unless serviceDecision.nil?
+      _h['homeAddress'] = homeAddress.to_jaxb_json_hash unless homeAddress.nil?
       return _h
     end
 
@@ -10367,7 +11031,9 @@ module Event
       super _o
       @amount = Fixnum.from_json(_o['amount']) unless _o['amount'].nil?
       @coursePeriodId = Bignum.from_json(_o['coursePeriodId']) unless _o['coursePeriodId'].nil?
+      @serviceDecisionStatus = String.from_json(_o['serviceDecisionStatus']) unless _o['serviceDecisionStatus'].nil?
       @serviceDecision = Fi::Mediconsult::Core::Client::Dto::Palvelupaatos::Palvelupaatos.from_json(_o['serviceDecision']) unless _o['serviceDecision'].nil?
+      @homeAddress = String.from_json(_o['homeAddress']) unless _o['homeAddress'].nil?
     end
 
     # constructs a EventCustomerDto from a (parsed) JSON hash
@@ -10402,18 +11068,51 @@ module Client
 
 module Dto
 
+module Laakitys
+
   # (no documentation provided)
-  class PuutteellinenStatus
+  class LaakeYhteisvaikutus < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
 
-    # 
-    UNDEFINED = "UNDEFINED"
+    # Returns the ATC code or the name of the agent (atc tai vaikuttava aine)
+    attr_accessor :aine
+    # Returns the used code system
+    # -If getAine returns an ATC code, getKoodisto returns &quot;ATC&quot;
+    attr_accessor :koodisto
+    # Returns the origin of interaction
+    # -&#39;O&#39; if interaction is linked in the current organization
+    # -&#39;A&#39; or &#39;M&#39; otherwise
+    attr_accessor :alkupera
 
-    # 
-    PUUTTEELLINEN = "PUUTTEELLINEN"
+    # the json hash for this LaakeYhteisvaikutus
+    def to_jaxb_json_hash
+      _h = super
+      _h['aine'] = aine.to_jaxb_json_hash unless aine.nil?
+      _h['koodisto'] = koodisto.to_jaxb_json_hash unless koodisto.nil?
+      _h['alkupera'] = alkupera.to_jaxb_json_hash unless alkupera.nil?
+      return _h
+    end
 
-    # 
-    OK = "OK"
+    #initializes this LaakeYhteisvaikutus with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @aine = String.from_json(_o['aine']) unless _o['aine'].nil?
+      @koodisto = String.from_json(_o['koodisto']) unless _o['koodisto'].nil?
+      @alkupera = Fixnum.from_json(_o['alkupera']) unless _o['alkupera'].nil?
+    end
+
+    # constructs a LaakeYhteisvaikutus from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
   end
+
+end
 
 end
 
@@ -10518,72 +11217,6 @@ module Client
 
 module Dto
 
-module Laakitys
-
-  # (no documentation provided)
-  class LaakeYhteisvaikutus < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
-
-    # Returns the ATC code or the name of the agent (atc tai vaikuttava aine)
-    attr_accessor :aine
-    # Returns the used code system
-    # -If getAine returns an ATC code, getKoodisto returns &quot;ATC&quot;
-    attr_accessor :koodisto
-    # Returns the origin of interaction
-    # -&#39;O&#39; if interaction is linked in the current organization
-    # -&#39;A&#39; or &#39;M&#39; otherwise
-    attr_accessor :alkupera
-
-    # the json hash for this LaakeYhteisvaikutus
-    def to_jaxb_json_hash
-      _h = super
-      _h['aine'] = aine.to_jaxb_json_hash unless aine.nil?
-      _h['koodisto'] = koodisto.to_jaxb_json_hash unless koodisto.nil?
-      _h['alkupera'] = alkupera.to_jaxb_json_hash unless alkupera.nil?
-      return _h
-    end
-
-    #initializes this LaakeYhteisvaikutus with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      @aine = String.from_json(_o['aine']) unless _o['aine'].nil?
-      @koodisto = String.from_json(_o['koodisto']) unless _o['koodisto'].nil?
-      @alkupera = Fixnum.from_json(_o['alkupera']) unless _o['alkupera'].nil?
-    end
-
-    # constructs a LaakeYhteisvaikutus from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
 module Omistaja
 
   # (no documentation provided)
@@ -10641,48 +11274,48 @@ module Mediplan
 
 module Dto
 
-module Setup
+module Event
 
   # (no documentation provided)
-  class FreeContentGroupItem < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
+  class EventResourceDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
 
-    # (no documentation provided)
-    attr_accessor :title
-    # (no documentation provided)
-    attr_accessor :meaningId
-    # (no documentation provided)
-    attr_accessor :meaningChangeable
-    # (no documentation provided)
-    attr_accessor :ordering
-    # (no documentation provided)
-    attr_accessor :mandatory
-    # (no documentation provided)
-    attr_accessor :changeable
+    # the typeid
+    attr_accessor :typeid
+    # the name
+    attr_accessor :name
+    # the delay
+    attr_accessor :delay
+    # the duration
+    attr_accessor :duration
+    # the amount
+    attr_accessor :amount
+    # the required
+    attr_accessor :required
 
-    # the json hash for this FreeContentGroupItem
+    # the json hash for this EventResourceDto
     def to_jaxb_json_hash
       _h = super
-      _h['title'] = title.to_jaxb_json_hash unless title.nil?
-      _h['meaningId'] = meaningId.to_jaxb_json_hash unless meaningId.nil?
-      _h['meaningChangeable'] = meaningChangeable.to_jaxb_json_hash unless meaningChangeable.nil?
-      _h['ordering'] = ordering.to_jaxb_json_hash unless ordering.nil?
-      _h['mandatory'] = mandatory.to_jaxb_json_hash unless mandatory.nil?
-      _h['changeable'] = changeable.to_jaxb_json_hash unless changeable.nil?
+      _h['typeid'] = typeid.to_jaxb_json_hash unless typeid.nil?
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['delay'] = delay.to_jaxb_json_hash unless delay.nil?
+      _h['duration'] = duration.to_jaxb_json_hash unless duration.nil?
+      _h['amount'] = amount.to_jaxb_json_hash unless amount.nil?
+      _h['required'] = required.to_jaxb_json_hash unless required.nil?
       return _h
     end
 
-    #initializes this FreeContentGroupItem with a json hash
+    #initializes this EventResourceDto with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @title = Fi::Mediconsult::Core::Client::Dto::Title::BaseTitleValue.from_json(_o['title']) unless _o['title'].nil?
-      @meaningId = Fixnum.from_json(_o['meaningId']) unless _o['meaningId'].nil?
-      @meaningChangeable = Boolean.from_json(_o['meaningChangeable']) unless _o['meaningChangeable'].nil?
-      @ordering = Fixnum.from_json(_o['ordering']) unless _o['ordering'].nil?
-      @mandatory = Boolean.from_json(_o['mandatory']) unless _o['mandatory'].nil?
-      @changeable = Boolean.from_json(_o['changeable']) unless _o['changeable'].nil?
+      @typeid = Bignum.from_json(_o['typeid']) unless _o['typeid'].nil?
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @delay = Fixnum.from_json(_o['delay']) unless _o['delay'].nil?
+      @duration = Fixnum.from_json(_o['duration']) unless _o['duration'].nil?
+      @amount = Fixnum.from_json(_o['amount']) unless _o['amount'].nil?
+      @required = Boolean.from_json(_o['required']) unless _o['required'].nil?
     end
 
-    # constructs a FreeContentGroupItem from a (parsed) JSON hash
+    # constructs a EventResourceDto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -10847,28 +11480,63 @@ module Fi
 
 module Mediconsult
 
+module Mediplan
+
+module Dto
+
+module Event
+
+  # (no documentation provided)
+  class EventServiceDecisionStatus
+
+    # 
+    NOT_REQUIRED = "NOT_REQUIRED"
+
+    # 
+    MISSING = "MISSING"
+
+    # 
+    INTERRUPTED = "INTERRUPTED"
+
+    # 
+    PENDING = "PENDING"
+
+    # 
+    AVAILABLE = "AVAILABLE"
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
 module Core
 
 module Client
 
 module Dto
 
-module Palvelupaatos
-
   # (no documentation provided)
-  class Laatu
+  class PuutteellinenStatus
 
     # 
-    KIELTEINEN = "KIELTEINEN"
+    UNDEFINED = "UNDEFINED"
 
     # 
-    OSITTAIN_KIELTEINEN = "OSITTAIN_KIELTEINEN"
+    PUUTTEELLINEN = "PUUTTEELLINEN"
 
     # 
-    MYONTEINEN = "MYONTEINEN"
+    OK = "OK"
   end
-
-end
 
 end
 
@@ -10896,35 +11564,39 @@ module Title
   class BaseTitleValue < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
 
     # (no documentation provided)
-    attr_accessor :type
+    attr_accessor :name
     # (no documentation provided)
     attr_accessor :vapaa
     # (no documentation provided)
-    attr_accessor :editModel
+    attr_accessor :emptyValue
+    # (no documentation provided)
+    attr_accessor :type
     # (no documentation provided)
     attr_accessor :vakio
     # (no documentation provided)
-    attr_accessor :name
+    attr_accessor :editModel
 
     # the json hash for this BaseTitleValue
     def to_jaxb_json_hash
       _h = super
-      _h['type'] = type.to_jaxb_json_hash unless type.nil?
-      _h['vapaa'] = vapaa.to_jaxb_json_hash unless vapaa.nil?
-      _h['editModel'] = editModel.to_jaxb_json_hash unless editModel.nil?
-      _h['vakio'] = vakio.to_jaxb_json_hash unless vakio.nil?
       _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['vapaa'] = vapaa.to_jaxb_json_hash unless vapaa.nil?
+      _h['emptyValue'] = emptyValue.to_jaxb_json_hash unless emptyValue.nil?
+      _h['type'] = type.to_jaxb_json_hash unless type.nil?
+      _h['vakio'] = vakio.to_jaxb_json_hash unless vakio.nil?
+      _h['editModel'] = editModel.to_jaxb_json_hash unless editModel.nil?
       return _h
     end
 
     #initializes this BaseTitleValue with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @type = Fixnum.from_json(_o['type']) unless _o['type'].nil?
-      @vapaa = String.from_json(_o['vapaa']) unless _o['vapaa'].nil?
-      @editModel = Boolean.from_json(_o['editModel']) unless _o['editModel'].nil?
-      @vakio = String.from_json(_o['vakio']) unless _o['vakio'].nil?
       @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @vapaa = String.from_json(_o['vapaa']) unless _o['vapaa'].nil?
+      @emptyValue = Boolean.from_json(_o['emptyValue']) unless _o['emptyValue'].nil?
+      @type = Fixnum.from_json(_o['type']) unless _o['type'].nil?
+      @vakio = String.from_json(_o['vakio']) unless _o['vakio'].nil?
+      @editModel = Boolean.from_json(_o['editModel']) unless _o['editModel'].nil?
     end
 
     # constructs a BaseTitleValue from a (parsed) JSON hash
@@ -11025,101 +11697,56 @@ module Client
 module Dto
 
   # (no documentation provided)
-  class LaakitysAnto < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
+  class Tutkimuspyynto < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
 
-    # Returns the id of the medication giver
-    attr_accessor :antaja
-    # Returns the observetion comments related to the medication giving
-    attr_accessor :huomautuksia
-    # Returns the id of the actual person that fed this info to the DB/system
-    attr_accessor :kirjaaja
-    # Returns the laake VNR. VNR is a code that is used to identify the medication. @see http://www.laaketietokeskus.fi/vnr
-    attr_accessor :laake
-    # Returns the medication amount
-    attr_accessor :maara
-    # Returns the actual DB-change time of the medication giving
-    attr_accessor :muutosAika
-    # Returns the owner ie. patients mediatri id.
-    attr_accessor :omistaja
-    # Retuns the part number that is the id of the medication together with alku and omistaja
-    attr_accessor :osa
-    # Returns the code of the medication time removal. &#39;E&#39; - not removed, &#39;K&#39; = removed
-    attr_accessor :poistettu
-    # Returns the planned time for medication. Tells which time the medication should be given
-    attr_accessor :suunniteltuAika
-    # Returns the actual time of medication. Mapped from PK id ALKU
-    attr_accessor :toteutunutAika
-    # Returns the actual end time of medication. a.k.a. LOPPU
-    attr_accessor :toteutunutAikaLoppu
-    # Returns the type of LaakitysAnto object, 1 = planned and given, 2 = planned but not yet given, 3 = extra
-    attr_accessor :tyyppi
-    # Returns the used unit. ml, l, etc.
-    attr_accessor :yksikko
-    # Returns the name of the actual person that fed this info to the DB/system
-    attr_accessor :kirjaajaName
-    # Returns the name of the medication giver
-    attr_accessor :antajaName
-    # Returns the base amount that is given if swiped. Also the lower border of the amount.
-    attr_accessor :annettavaMaara
-    # Returns the base unit that is described by laakityshistoria.
-    attr_accessor :annettavaYksikko
-    # Returns the uuper border of the amount.
-    attr_accessor :annettavaMaksimi
-    # Original time of medication. mapped from PK id ALKU. This PK is modified so to find the modifiable row the old row must be also given.
-    attr_accessor :toteutunutAikaOriginal
+    # Returns the name of the Tutkimus
+    attr_accessor :tutkimus
+    # Returns a list of Tutkimus details under the same tutkimus name
+    attr_accessor :tutkimuspyyntoTiedotList
+    # Returns the category of the tutkimus. Category could be
+    # &quot;tilattu&quot;, &quot;kuittaamaton&quot; or &quot;tulos&quot;
+    attr_accessor :kategoria
+    # (no documentation provided)
+    attr_accessor :latestTime
 
-    # the json hash for this LaakitysAnto
+    # the json hash for this Tutkimuspyynto
     def to_jaxb_json_hash
       _h = super
-      _h['antaja'] = antaja.to_jaxb_json_hash unless antaja.nil?
-      _h['huomautuksia'] = huomautuksia.to_jaxb_json_hash unless huomautuksia.nil?
-      _h['kirjaaja'] = kirjaaja.to_jaxb_json_hash unless kirjaaja.nil?
-      _h['laake'] = laake.to_jaxb_json_hash unless laake.nil?
-      _h['maara'] = maara.to_jaxb_json_hash unless maara.nil?
-      _h['muutosAika'] = muutosAika.to_jaxb_json_hash unless muutosAika.nil?
-      _h['omistaja'] = omistaja.to_jaxb_json_hash unless omistaja.nil?
-      _h['osa'] = osa.to_jaxb_json_hash unless osa.nil?
-      _h['poistettu'] = poistettu.to_jaxb_json_hash unless poistettu.nil?
-      _h['suunniteltuAika'] = suunniteltuAika.to_jaxb_json_hash unless suunniteltuAika.nil?
-      _h['toteutunutAika'] = toteutunutAika.to_jaxb_json_hash unless toteutunutAika.nil?
-      _h['toteutunutAikaLoppu'] = toteutunutAikaLoppu.to_jaxb_json_hash unless toteutunutAikaLoppu.nil?
-      _h['tyyppi'] = tyyppi.to_jaxb_json_hash unless tyyppi.nil?
-      _h['yksikko'] = yksikko.to_jaxb_json_hash unless yksikko.nil?
-      _h['kirjaajaName'] = kirjaajaName.to_jaxb_json_hash unless kirjaajaName.nil?
-      _h['antajaName'] = antajaName.to_jaxb_json_hash unless antajaName.nil?
-      _h['annettavaMaara'] = annettavaMaara.to_jaxb_json_hash unless annettavaMaara.nil?
-      _h['annettavaYksikko'] = annettavaYksikko.to_jaxb_json_hash unless annettavaYksikko.nil?
-      _h['annettavaMaksimi'] = annettavaMaksimi.to_jaxb_json_hash unless annettavaMaksimi.nil?
-      _h['toteutunutAikaOriginal'] = toteutunutAikaOriginal.to_jaxb_json_hash unless toteutunutAikaOriginal.nil?
+      _h['tutkimus'] = tutkimus.to_jaxb_json_hash unless tutkimus.nil?
+      if !tutkimuspyyntoTiedotList.nil?
+        _ha = Array.new
+        tutkimuspyyntoTiedotList.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['tutkimuspyyntoTiedotList'] = _ha
+      end
+      _h['kategoria'] = kategoria.to_jaxb_json_hash unless kategoria.nil?
+      _h['latestTime'] = latestTime.to_jaxb_json_hash unless latestTime.nil?
       return _h
     end
 
-    #initializes this LaakitysAnto with a json hash
+    #initializes this Tutkimuspyynto with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @antaja = Fixnum.from_json(_o['antaja']) unless _o['antaja'].nil?
-      @huomautuksia = String.from_json(_o['huomautuksia']) unless _o['huomautuksia'].nil?
-      @kirjaaja = Fixnum.from_json(_o['kirjaaja']) unless _o['kirjaaja'].nil?
-      @laake = String.from_json(_o['laake']) unless _o['laake'].nil?
-      @maara = Float.from_json(_o['maara']) unless _o['maara'].nil?
-      @muutosAika = Time.from_json(_o['muutosAika']) unless _o['muutosAika'].nil?
-      @omistaja = Fixnum.from_json(_o['omistaja']) unless _o['omistaja'].nil?
-      @osa = Fixnum.from_json(_o['osa']) unless _o['osa'].nil?
-      @poistettu = Fixnum.from_json(_o['poistettu']) unless _o['poistettu'].nil?
-      @suunniteltuAika = Time.from_json(_o['suunniteltuAika']) unless _o['suunniteltuAika'].nil?
-      @toteutunutAika = Time.from_json(_o['toteutunutAika']) unless _o['toteutunutAika'].nil?
-      @toteutunutAikaLoppu = Time.from_json(_o['toteutunutAikaLoppu']) unless _o['toteutunutAikaLoppu'].nil?
-      @tyyppi = Fixnum.from_json(_o['tyyppi']) unless _o['tyyppi'].nil?
-      @yksikko = String.from_json(_o['yksikko']) unless _o['yksikko'].nil?
-      @kirjaajaName = String.from_json(_o['kirjaajaName']) unless _o['kirjaajaName'].nil?
-      @antajaName = String.from_json(_o['antajaName']) unless _o['antajaName'].nil?
-      @annettavaMaara = Float.from_json(_o['annettavaMaara']) unless _o['annettavaMaara'].nil?
-      @annettavaYksikko = String.from_json(_o['annettavaYksikko']) unless _o['annettavaYksikko'].nil?
-      @annettavaMaksimi = Float.from_json(_o['annettavaMaksimi']) unless _o['annettavaMaksimi'].nil?
-      @toteutunutAikaOriginal = Time.from_json(_o['toteutunutAikaOriginal']) unless _o['toteutunutAikaOriginal'].nil?
+      @tutkimus = String.from_json(_o['tutkimus']) unless _o['tutkimus'].nil?
+      if !_o['tutkimuspyyntoTiedotList'].nil?
+        @tutkimuspyyntoTiedotList = Array.new
+        _oa = _o['tutkimuspyyntoTiedotList']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @tutkimuspyyntoTiedotList.push Fi::Mediconsult::Core::Client::Dto::TutkimuspyyntoTiedot.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @tutkimuspyyntoTiedotList.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @kategoria = String.from_json(_o['kategoria']) unless _o['kategoria'].nil?
+      @latestTime = Time.from_json(_o['latestTime']) unless _o['latestTime'].nil?
     end
 
-    # constructs a LaakitysAnto from a (parsed) JSON hash
+    # constructs a Tutkimuspyynto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -11176,6 +11803,8 @@ module Event
     attr_accessor :excludedDays
     # (no documentation provided)
     attr_accessor :reportingGroup
+    # the eventModel
+    attr_accessor :eventModel
     # the unitBasicInfoTitles
     attr_accessor :unitBasicInfoTitles
 
@@ -11197,6 +11826,7 @@ module Event
         _h['excludedDays'] = _ha
       end
       _h['reportingGroup'] = reportingGroup.to_jaxb_json_hash unless reportingGroup.nil?
+      _h['eventModel'] = eventModel.to_jaxb_json_hash unless eventModel.nil?
       if !unitBasicInfoTitles.nil?
         _ha = Array.new
         unitBasicInfoTitles.each { | _item | _ha.push _item.to_jaxb_json_hash }
@@ -11233,6 +11863,7 @@ module Event
          }
       end
       @reportingGroup = Fi::Mediconsult::Mediplan::Dto::Setup::ReportingGroupDto.from_json(_o['reportingGroup']) unless _o['reportingGroup'].nil?
+      @eventModel = Fi::Mediconsult::Mediplan::Dto::Event::EventModelDto.from_json(_o['eventModel']) unless _o['eventModel'].nil?
       if !_o['unitBasicInfoTitles'].nil?
         @unitBasicInfoTitles = Array.new
         _oa = _o['unitBasicInfoTitles']
@@ -11301,6 +11932,162 @@ module Kertomus
   end
 
 end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Worker
+
+  # (no documentation provided)
+  class TimeRuleDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
+
+    # the start
+    attr_accessor :start
+    # the duration
+    attr_accessor :durationInMinutes
+    # the recurrenceEnd, null if not given or if the rule has no recurrence
+    attr_accessor :recurrenceEnd
+    # the recurrenceCode or null if there is no recurrence
+    attr_accessor :recurrenceCode
+    # the calendarContext
+    attr_accessor :calendarContext
+    # the calendarEventIds
+    attr_accessor :calendarEventIds
+    # the eventModelId
+    attr_accessor :eventModelId
+
+    # the json hash for this TimeRuleDto
+    def to_jaxb_json_hash
+      _h = super
+      _h['start'] = start.to_jaxb_json_hash unless start.nil?
+      _h['durationInMinutes'] = durationInMinutes.to_jaxb_json_hash unless durationInMinutes.nil?
+      _h['recurrenceEnd'] = recurrenceEnd.to_jaxb_json_hash unless recurrenceEnd.nil?
+      _h['recurrenceCode'] = recurrenceCode.to_jaxb_json_hash unless recurrenceCode.nil?
+      _h['calendarContext'] = calendarContext.to_jaxb_json_hash unless calendarContext.nil?
+      if !calendarEventIds.nil?
+        _ha = Array.new
+        calendarEventIds.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['calendarEventIds'] = _ha
+      end
+      _h['eventModelId'] = eventModelId.to_jaxb_json_hash unless eventModelId.nil?
+      return _h
+    end
+
+    #initializes this TimeRuleDto with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @start = Time.from_json(_o['start']) unless _o['start'].nil?
+      @durationInMinutes = Fixnum.from_json(_o['durationInMinutes']) unless _o['durationInMinutes'].nil?
+      @recurrenceEnd = Time.from_json(_o['recurrenceEnd']) unless _o['recurrenceEnd'].nil?
+      @recurrenceCode = String.from_json(_o['recurrenceCode']) unless _o['recurrenceCode'].nil?
+      @calendarContext = Fi::Mediconsult::Mediplan::Dto::CalendarContextDto.from_json(_o['calendarContext']) unless _o['calendarContext'].nil?
+      if !_o['calendarEventIds'].nil?
+        @calendarEventIds = Array.new
+        _oa = _o['calendarEventIds']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @calendarEventIds.push Bignum.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @calendarEventIds.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @eventModelId = Bignum.from_json(_o['eventModelId']) unless _o['eventModelId'].nil?
+    end
+
+    # constructs a TimeRuleDto from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Course
+
+  # (no documentation provided)
+  class TagsForCourseDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
+
+    # (no documentation provided)
+    attr_accessor :name
+    # (no documentation provided)
+    attr_accessor :removed
+    # id of the KurssiTunniste
+    attr_accessor :courseTagId
+    # (no documentation provided)
+    attr_accessor :tagId
+
+    # the json hash for this TagsForCourseDto
+    def to_jaxb_json_hash
+      _h = super
+      _h['name'] = name.to_jaxb_json_hash unless name.nil?
+      _h['removed'] = removed.to_jaxb_json_hash unless removed.nil?
+      _h['courseTagId'] = courseTagId.to_jaxb_json_hash unless courseTagId.nil?
+      _h['tagId'] = tagId.to_jaxb_json_hash unless tagId.nil?
+      return _h
+    end
+
+    #initializes this TagsForCourseDto with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @name = String.from_json(_o['name']) unless _o['name'].nil?
+      @removed = Boolean.from_json(_o['removed']) unless _o['removed'].nil?
+      @courseTagId = Bignum.from_json(_o['courseTagId']) unless _o['courseTagId'].nil?
+      @tagId = Bignum.from_json(_o['tagId']) unless _o['tagId'].nil?
+    end
+
+    # constructs a TagsForCourseDto from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
 
 end
 
@@ -11408,69 +12195,52 @@ module Fi
 
 module Mediconsult
 
-module Kuha
-
-module Util
-
-  # (no documentation provided)
-  class Meaning
-
-    # 
-    AVAILABLE = "AVAILABLE"
-
-    # 
-    BUSY_MANDATORY = "BUSY_MANDATORY"
-
-    # 
-    BUSY_OPTIONAL = "BUSY_OPTIONAL"
-  end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
 module Mediplan
 
 module Dto
 
-module Event
+module Contentgroup
 
   # (no documentation provided)
-  class EventWorkerDto < Fi::Mediconsult::Mediplan::Dto::Event::EventParticipantDto 
+  class ContentGroupTitle < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
 
-    # the skillid
-    attr_accessor :skillid
-    # the workingHoursConflict
-    attr_accessor :workingHoursConflict
-    # the required
-    attr_accessor :required
+    # (no documentation provided)
+    attr_accessor :title
+    # (no documentation provided)
+    attr_accessor :meaningId
+    # (no documentation provided)
+    attr_accessor :meaningChangeable
+    # (no documentation provided)
+    attr_accessor :ordering
+    # (no documentation provided)
+    attr_accessor :mandatory
+    # (no documentation provided)
+    attr_accessor :changeable
 
-    # the json hash for this EventWorkerDto
+    # the json hash for this ContentGroupTitle
     def to_jaxb_json_hash
       _h = super
-      _h['skillid'] = skillid.to_jaxb_json_hash unless skillid.nil?
-      _h['workingHoursConflict'] = workingHoursConflict.to_jaxb_json_hash unless workingHoursConflict.nil?
-      _h['required'] = required.to_jaxb_json_hash unless required.nil?
+      _h['title'] = title.to_jaxb_json_hash unless title.nil?
+      _h['meaningId'] = meaningId.to_jaxb_json_hash unless meaningId.nil?
+      _h['meaningChangeable'] = meaningChangeable.to_jaxb_json_hash unless meaningChangeable.nil?
+      _h['ordering'] = ordering.to_jaxb_json_hash unless ordering.nil?
+      _h['mandatory'] = mandatory.to_jaxb_json_hash unless mandatory.nil?
+      _h['changeable'] = changeable.to_jaxb_json_hash unless changeable.nil?
       return _h
     end
 
-    #initializes this EventWorkerDto with a json hash
+    #initializes this ContentGroupTitle with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @skillid = Bignum.from_json(_o['skillid']) unless _o['skillid'].nil?
-      @workingHoursConflict = Boolean.from_json(_o['workingHoursConflict']) unless _o['workingHoursConflict'].nil?
-      @required = Boolean.from_json(_o['required']) unless _o['required'].nil?
+      @title = Fi::Mediconsult::Core::Client::Dto::Title::BaseTitleValue.from_json(_o['title']) unless _o['title'].nil?
+      @meaningId = Fixnum.from_json(_o['meaningId']) unless _o['meaningId'].nil?
+      @meaningChangeable = Boolean.from_json(_o['meaningChangeable']) unless _o['meaningChangeable'].nil?
+      @ordering = Fixnum.from_json(_o['ordering']) unless _o['ordering'].nil?
+      @mandatory = Boolean.from_json(_o['mandatory']) unless _o['mandatory'].nil?
+      @changeable = Boolean.from_json(_o['changeable']) unless _o['changeable'].nil?
     end
 
-    # constructs a EventWorkerDto from a (parsed) JSON hash
+    # constructs a ContentGroupTitle from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -11563,40 +12333,36 @@ module Mediplan
 
 module Dto
 
-module Course
+module Event
 
   # (no documentation provided)
-  class TagsForCourseDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
+  class EventWorkerDto < Fi::Mediconsult::Mediplan::Dto::Event::EventParticipantDto 
 
-    # (no documentation provided)
-    attr_accessor :name
-    # (no documentation provided)
-    attr_accessor :removed
-    # id of the KurssiTunniste
-    attr_accessor :courseTagId
-    # (no documentation provided)
-    attr_accessor :tagId
+    # the skillid
+    attr_accessor :skillid
+    # the workingHoursConflict
+    attr_accessor :workingHoursConflict
+    # the required
+    attr_accessor :required
 
-    # the json hash for this TagsForCourseDto
+    # the json hash for this EventWorkerDto
     def to_jaxb_json_hash
       _h = super
-      _h['name'] = name.to_jaxb_json_hash unless name.nil?
-      _h['removed'] = removed.to_jaxb_json_hash unless removed.nil?
-      _h['courseTagId'] = courseTagId.to_jaxb_json_hash unless courseTagId.nil?
-      _h['tagId'] = tagId.to_jaxb_json_hash unless tagId.nil?
+      _h['skillid'] = skillid.to_jaxb_json_hash unless skillid.nil?
+      _h['workingHoursConflict'] = workingHoursConflict.to_jaxb_json_hash unless workingHoursConflict.nil?
+      _h['required'] = required.to_jaxb_json_hash unless required.nil?
       return _h
     end
 
-    #initializes this TagsForCourseDto with a json hash
+    #initializes this EventWorkerDto with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @name = String.from_json(_o['name']) unless _o['name'].nil?
-      @removed = Boolean.from_json(_o['removed']) unless _o['removed'].nil?
-      @courseTagId = Bignum.from_json(_o['courseTagId']) unless _o['courseTagId'].nil?
-      @tagId = Bignum.from_json(_o['tagId']) unless _o['tagId'].nil?
+      @skillid = Bignum.from_json(_o['skillid']) unless _o['skillid'].nil?
+      @workingHoursConflict = Boolean.from_json(_o['workingHoursConflict']) unless _o['workingHoursConflict'].nil?
+      @required = Boolean.from_json(_o['required']) unless _o['required'].nil?
     end
 
-    # constructs a TagsForCourseDto from a (parsed) JSON hash
+    # constructs a EventWorkerDto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -11609,6 +12375,35 @@ module Course
   end
 
 end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Kuha
+
+module Util
+
+  # (no documentation provided)
+  class Meaning
+
+    # 
+    AVAILABLE = "AVAILABLE"
+
+    # 
+    BUSY_MANDATORY = "BUSY_MANDATORY"
+
+    # 
+    BUSY_OPTIONAL = "BUSY_OPTIONAL"
+  end
 
 end
 
@@ -11685,124 +12480,42 @@ module Fi
 
 module Mediconsult
 
-module Mediplan
+module Core
 
-module Status
-
-  # (no documentation provided)
-  class EventStatus
-
-    # 
-    DRAFT = "DRAFT"
-
-    # 
-    PLANNED = "PLANNED"
-
-    # 
-    CONFIRMED = "CONFIRMED"
-
-    # 
-    ONGOING = "ONGOING"
-
-    # 
-    DONE = "DONE"
-
-    # 
-    CANCELED = "CANCELED"
-
-    # 
-    CANCELED_BY_PARTICIPANT = "CANCELED_BY_PARTICIPANT"
-
-    # 
-    CANCELED_BY_PROVIDER = "CANCELED_BY_PROVIDER"
-
-    # 
-    NOT_REALIZED = "NOT_REALIZED"
-
-    # 
-    INTERRUPTED = "INTERRUPTED"
-  end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Mediplan
+module Client
 
 module Dto
 
-module Worker
+module Laakitys
 
   # (no documentation provided)
-  class TimeRuleDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
+  class LaakeTiivistelmaTeksti < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
 
-    # the start
-    attr_accessor :start
-    # the duration
-    attr_accessor :durationInMinutes
-    # the recurrenceEnd, null if not given or if the rule has no recurrence
-    attr_accessor :recurrenceEnd
-    # the recurrenceCode or null if there is no recurrence
-    attr_accessor :recurrenceCode
-    # the calendarContext
-    attr_accessor :calendarContext
-    # the calendarEventIds
-    attr_accessor :calendarEventIds
-    # the eventModelId
-    attr_accessor :eventModelId
+    # Returns the part number of the summary text, can be used to order summaries
+    attr_accessor :osa
+    # Returns the header of the
+    attr_accessor :otsikko
+    # Returns the summary text
+    attr_accessor :teksti
 
-    # the json hash for this TimeRuleDto
+    # the json hash for this LaakeTiivistelmaTeksti
     def to_jaxb_json_hash
       _h = super
-      _h['start'] = start.to_jaxb_json_hash unless start.nil?
-      _h['durationInMinutes'] = durationInMinutes.to_jaxb_json_hash unless durationInMinutes.nil?
-      _h['recurrenceEnd'] = recurrenceEnd.to_jaxb_json_hash unless recurrenceEnd.nil?
-      _h['recurrenceCode'] = recurrenceCode.to_jaxb_json_hash unless recurrenceCode.nil?
-      _h['calendarContext'] = calendarContext.to_jaxb_json_hash unless calendarContext.nil?
-      if !calendarEventIds.nil?
-        _ha = Array.new
-        calendarEventIds.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['calendarEventIds'] = _ha
-      end
-      _h['eventModelId'] = eventModelId.to_jaxb_json_hash unless eventModelId.nil?
+      _h['osa'] = osa.to_jaxb_json_hash unless osa.nil?
+      _h['otsikko'] = otsikko.to_jaxb_json_hash unless otsikko.nil?
+      _h['teksti'] = teksti.to_jaxb_json_hash unless teksti.nil?
       return _h
     end
 
-    #initializes this TimeRuleDto with a json hash
+    #initializes this LaakeTiivistelmaTeksti with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @start = Time.from_json(_o['start']) unless _o['start'].nil?
-      @durationInMinutes = Fixnum.from_json(_o['durationInMinutes']) unless _o['durationInMinutes'].nil?
-      @recurrenceEnd = Time.from_json(_o['recurrenceEnd']) unless _o['recurrenceEnd'].nil?
-      @recurrenceCode = String.from_json(_o['recurrenceCode']) unless _o['recurrenceCode'].nil?
-      @calendarContext = Fi::Mediconsult::Mediplan::Dto::CalendarContextDto.from_json(_o['calendarContext']) unless _o['calendarContext'].nil?
-      if !_o['calendarEventIds'].nil?
-        @calendarEventIds = Array.new
-        _oa = _o['calendarEventIds']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @calendarEventIds.push Bignum.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @calendarEventIds.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @eventModelId = Bignum.from_json(_o['eventModelId']) unless _o['eventModelId'].nil?
+      @osa = Fixnum.from_json(_o['osa']) unless _o['osa'].nil?
+      @otsikko = Fixnum.from_json(_o['otsikko']) unless _o['otsikko'].nil?
+      @teksti = String.from_json(_o['teksti']) unless _o['teksti'].nil?
     end
 
-    # constructs a TimeRuleDto from a (parsed) JSON hash
+    # constructs a LaakeTiivistelmaTeksti from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -11813,6 +12526,8 @@ module Worker
       end
     end
   end
+
+end
 
 end
 
@@ -11974,6 +12689,14 @@ module Laakitys
     # (no documentation provided)
     attr_accessor :valmistusohje
     # (no documentation provided)
+    attr_accessor :markkinoija
+    # (no documentation provided)
+    attr_accessor :veriplasmavalmiste
+    # (no documentation provided)
+    attr_accessor :biologinenLaake
+    # (no documentation provided)
+    attr_accessor :lisaseurannassa
+    # (no documentation provided)
     attr_accessor :lisatiedot
     # (no documentation provided)
     attr_accessor :atc
@@ -12064,6 +12787,10 @@ module Laakitys
       _h['suorakorvauskoodi'] = suorakorvauskoodi.to_jaxb_json_hash unless suorakorvauskoodi.nil?
       _h['pkv'] = pkv.to_jaxb_json_hash unless pkv.nil?
       _h['valmistusohje'] = valmistusohje.to_jaxb_json_hash unless valmistusohje.nil?
+      _h['markkinoija'] = markkinoija.to_jaxb_json_hash unless markkinoija.nil?
+      _h['veriplasmavalmiste'] = veriplasmavalmiste.to_jaxb_json_hash unless veriplasmavalmiste.nil?
+      _h['biologinenLaake'] = biologinenLaake.to_jaxb_json_hash unless biologinenLaake.nil?
+      _h['lisaseurannassa'] = lisaseurannassa.to_jaxb_json_hash unless lisaseurannassa.nil?
       _h['lisatiedot'] = lisatiedot.to_jaxb_json_hash unless lisatiedot.nil?
       if !atc.nil?
         _ha = Array.new
@@ -12183,6 +12910,10 @@ module Laakitys
       @suorakorvauskoodi = String.from_json(_o['suorakorvauskoodi']) unless _o['suorakorvauskoodi'].nil?
       @pkv = String.from_json(_o['pkv']) unless _o['pkv'].nil?
       @valmistusohje = String.from_json(_o['valmistusohje']) unless _o['valmistusohje'].nil?
+      @markkinoija = String.from_json(_o['markkinoija']) unless _o['markkinoija'].nil?
+      @veriplasmavalmiste = Fixnum.from_json(_o['veriplasmavalmiste']) unless _o['veriplasmavalmiste'].nil?
+      @biologinenLaake = Fixnum.from_json(_o['biologinenLaake']) unless _o['biologinenLaake'].nil?
+      @lisaseurannassa = Fixnum.from_json(_o['lisaseurannassa']) unless _o['lisaseurannassa'].nil?
       @lisatiedot = String.from_json(_o['lisatiedot']) unless _o['lisatiedot'].nil?
       if !_o['atc'].nil?
         @atc = Array.new
@@ -12349,69 +13080,6 @@ module Fi
 
 module Mediconsult
 
-module Mediplan
-
-module Dto
-
-module Event
-
-  # (no documentation provided)
-  class CalendarEventContentGroupItemDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoBase 
-
-    # the title
-    attr_accessor :title
-    # the meaning
-    attr_accessor :meaning
-    # the ordering
-    attr_accessor :ordering
-    # the removed
-    attr_accessor :removed
-
-    # the json hash for this CalendarEventContentGroupItemDto
-    def to_jaxb_json_hash
-      _h = super
-      _h['title'] = title.to_jaxb_json_hash unless title.nil?
-      _h['meaning'] = meaning.to_jaxb_json_hash unless meaning.nil?
-      _h['ordering'] = ordering.to_jaxb_json_hash unless ordering.nil?
-      _h['removed'] = removed.to_jaxb_json_hash unless removed.nil?
-      return _h
-    end
-
-    #initializes this CalendarEventContentGroupItemDto with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      @title = Fi::Mediconsult::Core::Client::Dto::Title::BaseTitleValue.from_json(_o['title']) unless _o['title'].nil?
-      @meaning = Fixnum.from_json(_o['meaning']) unless _o['meaning'].nil?
-      @ordering = Fixnum.from_json(_o['ordering']) unless _o['ordering'].nil?
-      @removed = Boolean.from_json(_o['removed']) unless _o['removed'].nil?
-    end
-
-    # constructs a CalendarEventContentGroupItemDto from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
 module Core
 
 module Client
@@ -12458,69 +13126,6 @@ module Client
 
 module Dto
 
-module Laakitys
-
-  # (no documentation provided)
-  class LaakeTiivistelmaTeksti < Fi::Mediconsult::Core::Client::Dto::AbstractDTO 
-
-    # Returns the part number of the summary text, can be used to order summaries
-    attr_accessor :osa
-    # Returns the header of the
-    attr_accessor :otsikko
-    # Returns the summary text
-    attr_accessor :teksti
-
-    # the json hash for this LaakeTiivistelmaTeksti
-    def to_jaxb_json_hash
-      _h = super
-      _h['osa'] = osa.to_jaxb_json_hash unless osa.nil?
-      _h['otsikko'] = otsikko.to_jaxb_json_hash unless otsikko.nil?
-      _h['teksti'] = teksti.to_jaxb_json_hash unless teksti.nil?
-      return _h
-    end
-
-    #initializes this LaakeTiivistelmaTeksti with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      @osa = Fixnum.from_json(_o['osa']) unless _o['osa'].nil?
-      @otsikko = Fixnum.from_json(_o['otsikko']) unless _o['otsikko'].nil?
-      @teksti = String.from_json(_o['teksti']) unless _o['teksti'].nil?
-    end
-
-    # constructs a LaakeTiivistelmaTeksti from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
 module Riski
 
   # (no documentation provided)
@@ -12543,461 +13148,6 @@ module Riski
   end
 
 end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Mediplan
-
-module Dto
-
-module Setup
-
-  # (no documentation provided)
-  class ReportingGroupDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoNameBase 
-
-    # (no documentation provided)
-    attr_accessor :version
-    # color
-    attr_accessor :color
-    # meaning, cab be AVAILABLE, BYSY_MANDAROTY or BUSY_OPTIONAL
-    attr_accessor :meaning
-    # lomake id
-    attr_accessor :calendarModelFormId
-    # Either WORK or TIME
-    attr_accessor :category
-    # (no documentation provided)
-    attr_accessor :eventModels
-
-    # the json hash for this ReportingGroupDto
-    def to_jaxb_json_hash
-      _h = super
-      _h['version'] = version.to_jaxb_json_hash unless version.nil?
-      _h['color'] = color.to_jaxb_json_hash unless color.nil?
-      _h['meaning'] = meaning.to_jaxb_json_hash unless meaning.nil?
-      _h['calendarModelFormId'] = calendarModelFormId.to_jaxb_json_hash unless calendarModelFormId.nil?
-      _h['category'] = category.to_jaxb_json_hash unless category.nil?
-      if !eventModels.nil?
-        _ha = Array.new
-        eventModels.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['eventModels'] = _ha
-      end
-      return _h
-    end
-
-    #initializes this ReportingGroupDto with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      @version = Fixnum.from_json(_o['version']) unless _o['version'].nil?
-      @color = String.from_json(_o['color']) unless _o['color'].nil?
-      @meaning = String.from_json(_o['meaning']) unless _o['meaning'].nil?
-      @calendarModelFormId = Fixnum.from_json(_o['calendarModelFormId']) unless _o['calendarModelFormId'].nil?
-      @category = String.from_json(_o['category']) unless _o['category'].nil?
-      if !_o['eventModels'].nil?
-        @eventModels = Array.new
-        _oa = _o['eventModels']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @eventModels.push Fi::Mediconsult::Mediplan::Dto::Event::EventModelDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @eventModels.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-    end
-
-    # constructs a ReportingGroupDto from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Mediplan
-
-module Dto
-
-module Event
-
-  # (no documentation provided)
-  class CalendarEventContentGroupDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoNameBase 
-
-    # the items
-    attr_accessor :items
-
-    # the json hash for this CalendarEventContentGroupDto
-    def to_jaxb_json_hash
-      _h = super
-      if !items.nil?
-        _ha = Array.new
-        items.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['items'] = _ha
-      end
-      return _h
-    end
-
-    #initializes this CalendarEventContentGroupDto with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      if !_o['items'].nil?
-        @items = Array.new
-        _oa = _o['items']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @items.push Fi::Mediconsult::Mediplan::Dto::Event::CalendarEventContentGroupItemDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @items.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-    end
-
-    # constructs a CalendarEventContentGroupDto from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Mediplan
-
-module Dto
-
-module Event
-
-  # (no documentation provided)
-  class RequiredEquipmentTypeDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoNameBase 
-
-    # (no documentation provided)
-    attr_accessor :requirement
-    # (no documentation provided)
-    attr_accessor :amount
-
-    # the json hash for this RequiredEquipmentTypeDto
-    def to_jaxb_json_hash
-      _h = super
-      _h['requirement'] = requirement.to_jaxb_json_hash unless requirement.nil?
-      _h['amount'] = amount.to_jaxb_json_hash unless amount.nil?
-      return _h
-    end
-
-    #initializes this RequiredEquipmentTypeDto with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      @requirement = String.from_json(_o['requirement']) unless _o['requirement'].nil?
-      @amount = Fixnum.from_json(_o['amount']) unless _o['amount'].nil?
-    end
-
-    # constructs a RequiredEquipmentTypeDto from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Core
-
-module Client
-
-module Dto
-
-module Title
-
-module Edit
-
-  # (no documentation provided)
-  class EditTitleValue < Fi::Mediconsult::Core::Client::Dto::Title::BaseTitleValue 
-
-
-    # the json hash for this EditTitleValue
-    def to_jaxb_json_hash
-      _h = super
-      return _h
-    end
-
-    #initializes this EditTitleValue with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-    end
-
-    # constructs a EditTitleValue from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-end
-
-module Fi
-
-module Mediconsult
-
-module Mediplan
-
-module Dto
-
-module Event
-
-  # (no documentation provided)
-  class EventModelDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoNameBase 
-
-    # (no documentation provided)
-    attr_accessor :basicData
-    # the reportingGroupId
-    attr_accessor :reportingGroupId
-    # the calendarModelFormId
-    attr_accessor :calendarModelFormId
-    # (no documentation provided)
-    attr_accessor :defaultUnit
-    # (no documentation provided)
-    attr_accessor :internalNote
-    # the defaultDurationInMins
-    attr_accessor :defaultDurationInMins
-    # the startTimeLimit
-    attr_accessor :startTimeLimit
-    # the endTimeLimit
-    attr_accessor :endTimeLimit
-    # the requiredSkills
-    attr_accessor :requiredSkills
-    # the requiredRoomGroups
-    attr_accessor :requiredRoomGroups
-    # the requiredEquipmentTypes
-    attr_accessor :requiredEquipmentTypes
-    # (no documentation provided)
-    attr_accessor :contentGroups
-    # the minParticipants
-    attr_accessor :minParticipants
-    # the maxParticipants
-    attr_accessor :maxParticipants
-    # (no documentation provided)
-    attr_accessor :waitingRoom
-    # (no documentation provided)
-    attr_accessor :serviceClass
-    # (no documentation provided)
-    attr_accessor :serviceClassChangeable
-
-    # the json hash for this EventModelDto
-    def to_jaxb_json_hash
-      _h = super
-      _h['basicData'] = basicData.to_jaxb_json_hash unless basicData.nil?
-      _h['reportingGroupId'] = reportingGroupId.to_jaxb_json_hash unless reportingGroupId.nil?
-      _h['calendarModelFormId'] = calendarModelFormId.to_jaxb_json_hash unless calendarModelFormId.nil?
-      _h['defaultUnit'] = defaultUnit.to_jaxb_json_hash unless defaultUnit.nil?
-      _h['internalNote'] = internalNote.to_jaxb_json_hash unless internalNote.nil?
-      _h['defaultDurationInMins'] = defaultDurationInMins.to_jaxb_json_hash unless defaultDurationInMins.nil?
-      _h['startTimeLimit'] = startTimeLimit.to_jaxb_json_hash unless startTimeLimit.nil?
-      _h['endTimeLimit'] = endTimeLimit.to_jaxb_json_hash unless endTimeLimit.nil?
-      if !requiredSkills.nil?
-        _ha = Array.new
-        requiredSkills.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['requiredSkills'] = _ha
-      end
-      if !requiredRoomGroups.nil?
-        _ha = Array.new
-        requiredRoomGroups.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['requiredRoomGroups'] = _ha
-      end
-      if !requiredEquipmentTypes.nil?
-        _ha = Array.new
-        requiredEquipmentTypes.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['requiredEquipmentTypes'] = _ha
-      end
-      if !contentGroups.nil?
-        _ha = Array.new
-        contentGroups.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['contentGroups'] = _ha
-      end
-      _h['minParticipants'] = minParticipants.to_jaxb_json_hash unless minParticipants.nil?
-      _h['maxParticipants'] = maxParticipants.to_jaxb_json_hash unless maxParticipants.nil?
-      _h['waitingRoom'] = waitingRoom.to_jaxb_json_hash unless waitingRoom.nil?
-      _h['serviceClass'] = serviceClass.to_jaxb_json_hash unless serviceClass.nil?
-      _h['serviceClassChangeable'] = serviceClassChangeable.to_jaxb_json_hash unless serviceClassChangeable.nil?
-      return _h
-    end
-
-    #initializes this EventModelDto with a json hash
-    def init_jaxb_json_hash(_o)
-      super _o
-      @basicData = Hash.from_json(_o['basicData']) unless _o['basicData'].nil?
-      @reportingGroupId = Bignum.from_json(_o['reportingGroupId']) unless _o['reportingGroupId'].nil?
-      @calendarModelFormId = Fixnum.from_json(_o['calendarModelFormId']) unless _o['calendarModelFormId'].nil?
-      @defaultUnit = Fixnum.from_json(_o['defaultUnit']) unless _o['defaultUnit'].nil?
-      @internalNote = String.from_json(_o['internalNote']) unless _o['internalNote'].nil?
-      @defaultDurationInMins = Fixnum.from_json(_o['defaultDurationInMins']) unless _o['defaultDurationInMins'].nil?
-      @startTimeLimit = java.time::LocalTime.from_json(_o['startTimeLimit']) unless _o['startTimeLimit'].nil?
-      @endTimeLimit = java.time::LocalTime.from_json(_o['endTimeLimit']) unless _o['endTimeLimit'].nil?
-      if !_o['requiredSkills'].nil?
-        @requiredSkills = Array.new
-        _oa = _o['requiredSkills']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @requiredSkills.push Fi::Mediconsult::Mediplan::Dto::Worker::SkillDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @requiredSkills.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['requiredRoomGroups'].nil?
-        @requiredRoomGroups = Array.new
-        _oa = _o['requiredRoomGroups']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @requiredRoomGroups.push Fi::Mediconsult::Mediplan::Dto::Setup::RoomGroupDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @requiredRoomGroups.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['requiredEquipmentTypes'].nil?
-        @requiredEquipmentTypes = Array.new
-        _oa = _o['requiredEquipmentTypes']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @requiredEquipmentTypes.push Fi::Mediconsult::Mediplan::Dto::Event::RequiredEquipmentTypeDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @requiredEquipmentTypes.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      if !_o['contentGroups'].nil?
-        @contentGroups = Array.new
-        _oa = _o['contentGroups']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @contentGroups.push Fi::Mediconsult::Mediplan::Dto::Setup::ContentGroupDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @contentGroups.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @minParticipants = Fixnum.from_json(_o['minParticipants']) unless _o['minParticipants'].nil?
-      @maxParticipants = Fixnum.from_json(_o['maxParticipants']) unless _o['maxParticipants'].nil?
-      @waitingRoom = String.from_json(_o['waitingRoom']) unless _o['waitingRoom'].nil?
-      @serviceClass = String.from_json(_o['serviceClass']) unless _o['serviceClass'].nil?
-      @serviceClassChangeable = Boolean.from_json(_o['serviceClassChangeable']) unless _o['serviceClassChangeable'].nil?
-    end
-
-    # constructs a EventModelDto from a (parsed) JSON hash
-    def self.from_json(o)
-      if o.nil?
-        return nil
-      else
-        inst = new
-        inst.init_jaxb_json_hash o
-        return inst
-      end
-    end
-  end
 
 end
 
@@ -13128,54 +13278,83 @@ module Mediplan
 
 module Dto
 
-module Course
+module Contentgroup
 
   # (no documentation provided)
-  class CourseNamedGroupDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoNameBase 
+  class CalendarEventTitleDto < Fi::Mediconsult::Mediplan::Dto::Contentgroup::ContentGroupTitle 
 
-    # (no documentation provided)
-    attr_accessor :removed
-    # (no documentation provided)
-    attr_accessor :members
-    # (no documentation provided)
-    attr_accessor :newNameGroupId
+    # the eventModelContentGroupItemId
+    attr_accessor :eventModelContentGroupItemId
 
-    # the json hash for this CourseNamedGroupDto
+    # the json hash for this CalendarEventTitleDto
     def to_jaxb_json_hash
       _h = super
-      _h['removed'] = removed.to_jaxb_json_hash unless removed.nil?
-      if !members.nil?
-        _ha = Array.new
-        members.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['members'] = _ha
-      end
-      _h['newNameGroupId'] = newNameGroupId.to_jaxb_json_hash unless newNameGroupId.nil?
+      _h['eventModelContentGroupItemId'] = eventModelContentGroupItemId.to_jaxb_json_hash unless eventModelContentGroupItemId.nil?
       return _h
     end
 
-    #initializes this CourseNamedGroupDto with a json hash
+    #initializes this CalendarEventTitleDto with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @removed = Boolean.from_json(_o['removed']) unless _o['removed'].nil?
-      if !_o['members'].nil?
-        @members = Array.new
-        _oa = _o['members']
-        _oa.each { | _item | 
-           if (_item['@class'].nil?)
-             @members.push Fi::Mediconsult::Mediplan::Dto::Course::NamedGroupMemberDto.from_json(_item)
-           else
-             clazz_array_parts = _item['@class'].split('.')
-             short_clazz = clazz_array_parts.pop
-             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
-             clazz = clazz_package + "::" + short_clazz
-             @members.push Object.const_get(clazz).send(:from_json, _item)
-          end
-         }
-      end
-      @newNameGroupId = Bignum.from_json(_o['newNameGroupId']) unless _o['newNameGroupId'].nil?
+      @eventModelContentGroupItemId = Bignum.from_json(_o['eventModelContentGroupItemId']) unless _o['eventModelContentGroupItemId'].nil?
     end
 
-    # constructs a CourseNamedGroupDto from a (parsed) JSON hash
+    # constructs a CalendarEventTitleDto from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Event
+
+  # (no documentation provided)
+  class RequiredEquipmentTypeDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoNameBase 
+
+    # (no documentation provided)
+    attr_accessor :requirement
+    # (no documentation provided)
+    attr_accessor :amount
+
+    # the json hash for this RequiredEquipmentTypeDto
+    def to_jaxb_json_hash
+      _h = super
+      _h['requirement'] = requirement.to_jaxb_json_hash unless requirement.nil?
+      _h['amount'] = amount.to_jaxb_json_hash unless amount.nil?
+      return _h
+    end
+
+    #initializes this RequiredEquipmentTypeDto with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @requirement = String.from_json(_o['requirement']) unless _o['requirement'].nil?
+      @amount = Fixnum.from_json(_o['amount']) unless _o['amount'].nil?
+    end
+
+    # constructs a RequiredEquipmentTypeDto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -13208,59 +13387,335 @@ module Dto
 module Setup
 
   # (no documentation provided)
-  class ContentGroupDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoNameBase 
+  class ReportingGroupDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoNameBase 
 
+    # color
+    attr_accessor :color
+    # meaning, cab be AVAILABLE, BYSY_MANDAROTY or BUSY_OPTIONAL
+    attr_accessor :meaning
+    # lomake id
+    attr_accessor :calendarModelFormId
+    # Either WORK or TIME
+    attr_accessor :category
     # (no documentation provided)
-    attr_accessor :type
-    # (no documentation provided)
-    attr_accessor :visibility
-    # (no documentation provided)
-    attr_accessor :order
-    # (no documentation provided)
-    attr_accessor :removed
-    # (no documentation provided)
-    attr_accessor :freeItems
+    attr_accessor :eventModels
 
-    # the json hash for this ContentGroupDto
+    # the json hash for this ReportingGroupDto
     def to_jaxb_json_hash
       _h = super
-      _h['type'] = type.to_jaxb_json_hash unless type.nil?
-      _h['visibility'] = visibility.to_jaxb_json_hash unless visibility.nil?
-      _h['order'] = order.to_jaxb_json_hash unless order.nil?
-      _h['removed'] = removed.to_jaxb_json_hash unless removed.nil?
-      if !freeItems.nil?
+      _h['color'] = color.to_jaxb_json_hash unless color.nil?
+      _h['meaning'] = meaning.to_jaxb_json_hash unless meaning.nil?
+      _h['calendarModelFormId'] = calendarModelFormId.to_jaxb_json_hash unless calendarModelFormId.nil?
+      _h['category'] = category.to_jaxb_json_hash unless category.nil?
+      if !eventModels.nil?
         _ha = Array.new
-        freeItems.each { | _item | _ha.push _item.to_jaxb_json_hash }
-        _h['freeItems'] = _ha
+        eventModels.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['eventModels'] = _ha
       end
       return _h
     end
 
-    #initializes this ContentGroupDto with a json hash
+    #initializes this ReportingGroupDto with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @type = String.from_json(_o['type']) unless _o['type'].nil?
-      @visibility = String.from_json(_o['visibility']) unless _o['visibility'].nil?
-      @order = Fixnum.from_json(_o['order']) unless _o['order'].nil?
-      @removed = Boolean.from_json(_o['removed']) unless _o['removed'].nil?
-      if !_o['freeItems'].nil?
-        @freeItems = Array.new
-        _oa = _o['freeItems']
+      @color = String.from_json(_o['color']) unless _o['color'].nil?
+      @meaning = String.from_json(_o['meaning']) unless _o['meaning'].nil?
+      @calendarModelFormId = Fixnum.from_json(_o['calendarModelFormId']) unless _o['calendarModelFormId'].nil?
+      @category = String.from_json(_o['category']) unless _o['category'].nil?
+      if !_o['eventModels'].nil?
+        @eventModels = Array.new
+        _oa = _o['eventModels']
         _oa.each { | _item | 
            if (_item['@class'].nil?)
-             @freeItems.push Fi::Mediconsult::Mediplan::Dto::Setup::FreeContentGroupItem.from_json(_item)
+             @eventModels.push Fi::Mediconsult::Mediplan::Dto::Event::EventModelDto.from_json(_item)
            else
              clazz_array_parts = _item['@class'].split('.')
              short_clazz = clazz_array_parts.pop
              clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
              clazz = clazz_package + "::" + short_clazz
-             @freeItems.push Object.const_get(clazz).send(:from_json, _item)
+             @eventModels.push Object.const_get(clazz).send(:from_json, _item)
           end
          }
       end
     end
 
-    # constructs a ContentGroupDto from a (parsed) JSON hash
+    # constructs a ReportingGroupDto from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+module Title
+
+module Edit
+
+  # (no documentation provided)
+  class EditTitleValue < Fi::Mediconsult::Core::Client::Dto::Title::BaseTitleValue 
+
+
+    # the json hash for this EditTitleValue
+    def to_jaxb_json_hash
+      _h = super
+      return _h
+    end
+
+    #initializes this EditTitleValue with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+    end
+
+    # constructs a EditTitleValue from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Event
+
+  # (no documentation provided)
+  class EventModelDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoNameBase 
+
+    # List of content groups of the EventModel
+    attr_accessor :defaultTitleValues
+    # (no documentation provided)
+    attr_accessor :basicData
+    # the reportingGroupId
+    attr_accessor :reportingGroupId
+    # the calendarModelFormId
+    attr_accessor :calendarModelFormId
+    # (no documentation provided)
+    attr_accessor :defaultUnit
+    # (no documentation provided)
+    attr_accessor :internalNote
+    # the defaultDurationInMins
+    attr_accessor :defaultDurationInMins
+    # the startTimeLimit
+    attr_accessor :startTimeLimit
+    # the endTimeLimit
+    attr_accessor :endTimeLimit
+    # the timeLimitChangeable
+    attr_accessor :timeLimitChangeable
+    # the requiredSkills
+    attr_accessor :requiredSkills
+    # the requiredRoomGroups
+    attr_accessor :requiredRoomGroups
+    # the requiredEquipmentTypes
+    attr_accessor :requiredEquipmentTypes
+    # (no documentation provided)
+    attr_accessor :contentGroups
+    # the minParticipants
+    attr_accessor :minParticipants
+    # the maxParticipants
+    attr_accessor :maxParticipants
+    # (no documentation provided)
+    attr_accessor :waitingRoom
+    # (no documentation provided)
+    attr_accessor :serviceClass
+    # (no documentation provided)
+    attr_accessor :serviceClassChangeable
+    # the outdated
+    attr_accessor :outdated
+    # the hasEvents
+    attr_accessor :hasEvents
+
+    # the json hash for this EventModelDto
+    def to_jaxb_json_hash
+      _h = super
+      if !defaultTitleValues.nil?
+        _ha = Array.new
+        defaultTitleValues.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['defaultTitleValues'] = _ha
+      end
+      _h['basicData'] = basicData.to_jaxb_json_hash unless basicData.nil?
+      _h['reportingGroupId'] = reportingGroupId.to_jaxb_json_hash unless reportingGroupId.nil?
+      _h['calendarModelFormId'] = calendarModelFormId.to_jaxb_json_hash unless calendarModelFormId.nil?
+      _h['defaultUnit'] = defaultUnit.to_jaxb_json_hash unless defaultUnit.nil?
+      _h['internalNote'] = internalNote.to_jaxb_json_hash unless internalNote.nil?
+      _h['defaultDurationInMins'] = defaultDurationInMins.to_jaxb_json_hash unless defaultDurationInMins.nil?
+      _h['startTimeLimit'] = startTimeLimit.to_jaxb_json_hash unless startTimeLimit.nil?
+      _h['endTimeLimit'] = endTimeLimit.to_jaxb_json_hash unless endTimeLimit.nil?
+      _h['timeLimitChangeable'] = timeLimitChangeable.to_jaxb_json_hash unless timeLimitChangeable.nil?
+      if !requiredSkills.nil?
+        _ha = Array.new
+        requiredSkills.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['requiredSkills'] = _ha
+      end
+      if !requiredRoomGroups.nil?
+        _ha = Array.new
+        requiredRoomGroups.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['requiredRoomGroups'] = _ha
+      end
+      if !requiredEquipmentTypes.nil?
+        _ha = Array.new
+        requiredEquipmentTypes.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['requiredEquipmentTypes'] = _ha
+      end
+      if !contentGroups.nil?
+        _ha = Array.new
+        contentGroups.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['contentGroups'] = _ha
+      end
+      _h['minParticipants'] = minParticipants.to_jaxb_json_hash unless minParticipants.nil?
+      _h['maxParticipants'] = maxParticipants.to_jaxb_json_hash unless maxParticipants.nil?
+      _h['waitingRoom'] = waitingRoom.to_jaxb_json_hash unless waitingRoom.nil?
+      _h['serviceClass'] = serviceClass.to_jaxb_json_hash unless serviceClass.nil?
+      _h['serviceClassChangeable'] = serviceClassChangeable.to_jaxb_json_hash unless serviceClassChangeable.nil?
+      _h['outdated'] = outdated.to_jaxb_json_hash unless outdated.nil?
+      _h['hasEvents'] = hasEvents.to_jaxb_json_hash unless hasEvents.nil?
+      return _h
+    end
+
+    #initializes this EventModelDto with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      if !_o['defaultTitleValues'].nil?
+        @defaultTitleValues = Array.new
+        _oa = _o['defaultTitleValues']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @defaultTitleValues.push Fi::Mediconsult::Mediplan::Dto::Contentgroup::CalendarEventContentGroupDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @defaultTitleValues.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @basicData = Hash.from_json(_o['basicData']) unless _o['basicData'].nil?
+      @reportingGroupId = Bignum.from_json(_o['reportingGroupId']) unless _o['reportingGroupId'].nil?
+      @calendarModelFormId = Fixnum.from_json(_o['calendarModelFormId']) unless _o['calendarModelFormId'].nil?
+      @defaultUnit = Fixnum.from_json(_o['defaultUnit']) unless _o['defaultUnit'].nil?
+      @internalNote = String.from_json(_o['internalNote']) unless _o['internalNote'].nil?
+      @defaultDurationInMins = Fixnum.from_json(_o['defaultDurationInMins']) unless _o['defaultDurationInMins'].nil?
+      @startTimeLimit = java.time::LocalTime.from_json(_o['startTimeLimit']) unless _o['startTimeLimit'].nil?
+      @endTimeLimit = java.time::LocalTime.from_json(_o['endTimeLimit']) unless _o['endTimeLimit'].nil?
+      @timeLimitChangeable = Boolean.from_json(_o['timeLimitChangeable']) unless _o['timeLimitChangeable'].nil?
+      if !_o['requiredSkills'].nil?
+        @requiredSkills = Array.new
+        _oa = _o['requiredSkills']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @requiredSkills.push Fi::Mediconsult::Mediplan::Dto::Worker::SkillDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @requiredSkills.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['requiredRoomGroups'].nil?
+        @requiredRoomGroups = Array.new
+        _oa = _o['requiredRoomGroups']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @requiredRoomGroups.push Fi::Mediconsult::Mediplan::Dto::Setup::RoomGroupDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @requiredRoomGroups.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['requiredEquipmentTypes'].nil?
+        @requiredEquipmentTypes = Array.new
+        _oa = _o['requiredEquipmentTypes']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @requiredEquipmentTypes.push Fi::Mediconsult::Mediplan::Dto::Event::RequiredEquipmentTypeDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @requiredEquipmentTypes.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      if !_o['contentGroups'].nil?
+        @contentGroups = Array.new
+        _oa = _o['contentGroups']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @contentGroups.push Fi::Mediconsult::Mediplan::Dto::Contentgroup::EventModelContentGroupDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @contentGroups.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @minParticipants = Fixnum.from_json(_o['minParticipants']) unless _o['minParticipants'].nil?
+      @maxParticipants = Fixnum.from_json(_o['maxParticipants']) unless _o['maxParticipants'].nil?
+      @waitingRoom = String.from_json(_o['waitingRoom']) unless _o['waitingRoom'].nil?
+      @serviceClass = String.from_json(_o['serviceClass']) unless _o['serviceClass'].nil?
+      @serviceClassChangeable = Boolean.from_json(_o['serviceClassChangeable']) unless _o['serviceClassChangeable'].nil?
+      @outdated = Boolean.from_json(_o['outdated']) unless _o['outdated'].nil?
+      @hasEvents = Boolean.from_json(_o['hasEvents']) unless _o['hasEvents'].nil?
+    end
+
+    # constructs a EventModelDto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -13355,40 +13810,58 @@ module Fi
 
 module Mediconsult
 
-module Core
-
-module Client
+module Mediplan
 
 module Dto
 
-module Title
-
-module View
+module Course
 
   # (no documentation provided)
-  class ViewTitleValue < Fi::Mediconsult::Core::Client::Dto::Title::BaseTitleValue 
+  class CourseNamedGroupDto < Fi::Mediconsult::Mediplan::Dto::KuhaDtoNameBase 
 
-    # String presentation of the value
-    attr_accessor :presentation
-    # true if value is empty, otherwise false
-    attr_accessor :empty
+    # (no documentation provided)
+    attr_accessor :removed
+    # (no documentation provided)
+    attr_accessor :members
+    # (no documentation provided)
+    attr_accessor :newNameGroupId
 
-    # the json hash for this ViewTitleValue
+    # the json hash for this CourseNamedGroupDto
     def to_jaxb_json_hash
       _h = super
-      _h['presentation'] = presentation.to_jaxb_json_hash unless presentation.nil?
-      _h['empty'] = empty.to_jaxb_json_hash unless empty.nil?
+      _h['removed'] = removed.to_jaxb_json_hash unless removed.nil?
+      if !members.nil?
+        _ha = Array.new
+        members.each { | _item | _ha.push _item.to_jaxb_json_hash }
+        _h['members'] = _ha
+      end
+      _h['newNameGroupId'] = newNameGroupId.to_jaxb_json_hash unless newNameGroupId.nil?
       return _h
     end
 
-    #initializes this ViewTitleValue with a json hash
+    #initializes this CourseNamedGroupDto with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @presentation = String.from_json(_o['presentation']) unless _o['presentation'].nil?
-      @empty = Boolean.from_json(_o['empty']) unless _o['empty'].nil?
+      @removed = Boolean.from_json(_o['removed']) unless _o['removed'].nil?
+      if !_o['members'].nil?
+        @members = Array.new
+        _oa = _o['members']
+        _oa.each { | _item | 
+           if (_item['@class'].nil?)
+             @members.push Fi::Mediconsult::Mediplan::Dto::Course::NamedGroupMemberDto.from_json(_item)
+           else
+             clazz_array_parts = _item['@class'].split('.')
+             short_clazz = clazz_array_parts.pop
+             clazz_package = clazz_array_parts.map do |e| e[0] = e.first.capitalize; e end.join("::")
+             clazz = clazz_package + "::" + short_clazz
+             @members.push Object.const_get(clazz).send(:from_json, _item)
+          end
+         }
+      end
+      @newNameGroupId = Bignum.from_json(_o['newNameGroupId']) unless _o['newNameGroupId'].nil?
     end
 
-    # constructs a ViewTitleValue from a (parsed) JSON hash
+    # constructs a CourseNamedGroupDto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -13399,10 +13872,6 @@ module View
       end
     end
   end
-
-end
-
-end
 
 end
 
@@ -13460,6 +13929,163 @@ module Setup
     end
 
     # constructs a RoomDto from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Core
+
+module Client
+
+module Dto
+
+module Title
+
+module View
+
+  # (no documentation provided)
+  class ViewTitleValue < Fi::Mediconsult::Core::Client::Dto::Title::BaseTitleValue 
+
+    # String presentation of the value
+    attr_accessor :presentation
+
+    # the json hash for this ViewTitleValue
+    def to_jaxb_json_hash
+      _h = super
+      _h['presentation'] = presentation.to_jaxb_json_hash unless presentation.nil?
+      return _h
+    end
+
+    #initializes this ViewTitleValue with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @presentation = String.from_json(_o['presentation']) unless _o['presentation'].nil?
+    end
+
+    # constructs a ViewTitleValue from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Contentgroup
+
+  # (no documentation provided)
+  class EventModelContentGroupDto < Fi::Mediconsult::Mediplan::Dto::Contentgroup::ContentGroup 
+
+
+    # the json hash for this EventModelContentGroupDto
+    def to_jaxb_json_hash
+      _h = super
+      return _h
+    end
+
+    #initializes this EventModelContentGroupDto with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+    end
+
+    # constructs a EventModelContentGroupDto from a (parsed) JSON hash
+    def self.from_json(o)
+      if o.nil?
+        return nil
+      else
+        inst = new
+        inst.init_jaxb_json_hash o
+        return inst
+      end
+    end
+  end
+
+end
+
+end
+
+end
+
+end
+
+end
+
+module Fi
+
+module Mediconsult
+
+module Mediplan
+
+module Dto
+
+module Contentgroup
+
+  # (no documentation provided)
+  class CalendarEventContentGroupDto < Fi::Mediconsult::Mediplan::Dto::Contentgroup::ContentGroup 
+
+    # the eventModelContentGroupId
+    attr_accessor :eventModelContentGroupId
+
+    # the json hash for this CalendarEventContentGroupDto
+    def to_jaxb_json_hash
+      _h = super
+      _h['eventModelContentGroupId'] = eventModelContentGroupId.to_jaxb_json_hash unless eventModelContentGroupId.nil?
+      return _h
+    end
+
+    #initializes this CalendarEventContentGroupDto with a json hash
+    def init_jaxb_json_hash(_o)
+      super _o
+      @eventModelContentGroupId = Bignum.from_json(_o['eventModelContentGroupId']) unless _o['eventModelContentGroupId'].nil?
+    end
+
+    # constructs a CalendarEventContentGroupDto from a (parsed) JSON hash
     def self.from_json(o)
       if o.nil?
         return nil
@@ -13636,47 +14262,59 @@ module View
   class MittausBase < Fi::Mediconsult::Core::Client::Dto::Title::View::ViewTitleValue 
 
     # (no documentation provided)
-    attr_accessor :reportId
-    # (no documentation provided)
-    attr_accessor :id
-    # (no documentation provided)
-    attr_accessor :owner
-    # (no documentation provided)
-    attr_accessor :normal
+    attr_accessor :muutosAika
     # (no documentation provided)
     attr_accessor :formId
     # (no documentation provided)
+    attr_accessor :normal
+    # (no documentation provided)
+    attr_accessor :reportId
+    # (no documentation provided)
+    attr_accessor :owner
+    # (no documentation provided)
     attr_accessor :editable
+    # (no documentation provided)
+    attr_accessor :datetime
+    # (no documentation provided)
+    attr_accessor :responsible
+    # (no documentation provided)
+    attr_accessor :userUnit
     # (no documentation provided)
     attr_accessor :comment
     # (no documentation provided)
-    attr_accessor :datetime
+    attr_accessor :id
 
     # the json hash for this MittausBase
     def to_jaxb_json_hash
       _h = super
-      _h['reportId'] = reportId.to_jaxb_json_hash unless reportId.nil?
-      _h['id'] = id.to_jaxb_json_hash unless id.nil?
-      _h['owner'] = owner.to_jaxb_json_hash unless owner.nil?
-      _h['normal'] = normal.to_jaxb_json_hash unless normal.nil?
+      _h['muutosAika'] = muutosAika.to_jaxb_json_hash unless muutosAika.nil?
       _h['formId'] = formId.to_jaxb_json_hash unless formId.nil?
+      _h['normal'] = normal.to_jaxb_json_hash unless normal.nil?
+      _h['reportId'] = reportId.to_jaxb_json_hash unless reportId.nil?
+      _h['owner'] = owner.to_jaxb_json_hash unless owner.nil?
       _h['editable'] = editable.to_jaxb_json_hash unless editable.nil?
-      _h['comment'] = comment.to_jaxb_json_hash unless comment.nil?
       _h['datetime'] = datetime.to_jaxb_json_hash unless datetime.nil?
+      _h['responsible'] = responsible.to_jaxb_json_hash unless responsible.nil?
+      _h['userUnit'] = userUnit.to_jaxb_json_hash unless userUnit.nil?
+      _h['comment'] = comment.to_jaxb_json_hash unless comment.nil?
+      _h['id'] = id.to_jaxb_json_hash unless id.nil?
       return _h
     end
 
     #initializes this MittausBase with a json hash
     def init_jaxb_json_hash(_o)
       super _o
-      @reportId = Fixnum.from_json(_o['reportId']) unless _o['reportId'].nil?
-      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
-      @owner = Fixnum.from_json(_o['owner']) unless _o['owner'].nil?
-      @normal = Boolean.from_json(_o['normal']) unless _o['normal'].nil?
+      @muutosAika = Bignum.from_json(_o['muutosAika']) unless _o['muutosAika'].nil?
       @formId = Fixnum.from_json(_o['formId']) unless _o['formId'].nil?
+      @normal = Boolean.from_json(_o['normal']) unless _o['normal'].nil?
+      @reportId = Fixnum.from_json(_o['reportId']) unless _o['reportId'].nil?
+      @owner = Fixnum.from_json(_o['owner']) unless _o['owner'].nil?
       @editable = Boolean.from_json(_o['editable']) unless _o['editable'].nil?
-      @comment = String.from_json(_o['comment']) unless _o['comment'].nil?
       @datetime = Bignum.from_json(_o['datetime']) unless _o['datetime'].nil?
+      @responsible = String.from_json(_o['responsible']) unless _o['responsible'].nil?
+      @userUnit = String.from_json(_o['userUnit']) unless _o['userUnit'].nil?
+      @comment = String.from_json(_o['comment']) unless _o['comment'].nil?
+      @id = Fixnum.from_json(_o['id']) unless _o['id'].nil?
     end
 
     # constructs a MittausBase from a (parsed) JSON hash

@@ -68,7 +68,7 @@
 
   <div class="jumbotron">
     <div class="container">
-      <h1>Mediatri REST</h1><p>This is Mediatri REST spesification 2016.05. This is work-in-progress documentation that Mediconsult also uses internally.</p>
+      <h1>Mediatri REST</h1><p>This is Mediatri REST specification 2016.05. This is work-in-progress documentation that Mediconsult also uses internally.</p>
     </div>
   </div>
 
@@ -101,8 +101,10 @@
       <td>  AdminResource
 </td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /admin/clearcache
+</samp></li><li><samp>  /admin/urlmap
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
 </samp></li></ul></td>
       <td>  REST API for various admin tasks like clearing cache onfly.
 </td>
@@ -216,19 +218,27 @@
     <tr class="clickable-row" data-href="resource_LaakitysResource.html">
       <td>  LaakitysResource
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /medicationlist/{id}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /medicationlist/interactions
+</samp></li><li><samp>  /medicationlist/{id}
 </samp></li><li><samp>  /medicationlist/medicine/{code}
+</samp></li><li><samp>  /medicationlist/newmedication/{id}
+</samp></li><li><samp>  /medicationlist/medicine/activeingredient/{activeingredient}
 </samp></li><li><samp>  /medicationlist/medicine/atc/{atc}
 </samp></li><li><samp>  /medicationlist/medicine/name/{name}
 </samp></li><li><samp>  /medicationlist/medicine/therapygroup/{therapygroup}
 </samp></li><li><samp>  /medicationlist/history/{omistaja}/part/{osa}
+</samp></li><li><samp>  /medicationlist/savemedication/{id}/part/{osa}
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
+</samp></li><li><samp>  PUT
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  PUT
 </samp></li></ul></td>
       <td>  REST API for Laakitys component
 </td>
@@ -279,13 +289,17 @@ Osastokartta contains list of osastolistat which are separate maps in different 
     <tr class="clickable-row" data-href="resource_PalvelupaatosResource.html">
       <td>  PalvelupaatosResource
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /palvelupaatos/keskeytyssyyt
-</samp></li><li><samp>  /palvelupaatos/palveluluokat
-</samp></li><li><samp>  /palvelupaatos/patient/{id}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /settings/serviceClasses
+</samp></li><li><samp>  /settings/serviceInterruptReasons
+</samp></li><li><samp>  /patients/{id}/serviceDecisions
+</samp></li><li><samp>  /patients/{id}/serviceDecisions/interruptions
+</samp></li><li><samp>  /patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
+</samp></li><li><samp>  DELETE, POST, PUT
+</samp></li><li><samp>  DELETE
 </samp></li></ul></td>
       <td>  REST API for palvelupaatokses.
 </td>
@@ -294,16 +308,20 @@ Osastokartta contains list of osastolistat which are separate maps in different 
       <td>  PalvelutapahtumaResource
 </td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /palvelutapahtuma
-</samp></li><li><samp>  /palvelutapahtuma/id
-</samp></li><li><samp>  /palvelutapahtuma/listavailableforcarerelation
-</samp></li><li><samp>  /palvelutapahtuma/select
 </samp></li><li><samp>  /palvelutapahtuma/aktiivinen/{id}
 </samp></li><li><samp>  /palvelutapahtuma/hoitojakso/{patientId}
+</samp></li><li><samp>  /patients/{patientId}/careRelation
+</samp></li><li><samp>  /patients/{patientId}/encounters
+</samp></li><li><samp>  /patients/{patientId}/encounters/{encounterId}
+</samp></li><li><samp>  /patients/{patientId}/encounters/filters/forCareRelation
+</samp></li><li><samp>  /patients/{patientId}/encounters/{encounterId}/episodeOfCare
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
-</samp></li><li><samp>  POST
+</samp></li><li><samp>  GET, POST
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li></ul></td>
@@ -316,6 +334,7 @@ Osastokartta contains list of osastolistat which are separate maps in different 
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /patients/list
 </samp></li><li><samp>  /patients/listed
 </samp></li><li><samp>  /patients/search
+</samp></li><li><samp>  /patients/{id}
 </samp></li><li><samp>  /patients/id/{id}
 </samp></li><li><samp>  /patients/ssn/{ssn}
 </samp></li><li><samp>  /patients/id/{id}/basicinfos
@@ -328,6 +347,7 @@ Osastokartta contains list of osastolistat which are separate maps in different 
 </samp></li><li><samp>  /patients/ssn/{ssn}/list/{listId}
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET, PUT
@@ -364,6 +384,16 @@ GET
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
 </samp></li></ul></td>
       <td>  REST API for riskitiedot
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_SettingsResource.html">
+      <td>  SettingsResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /settings/codes/specialReason
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for generic Mediatri settings and codex
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_SeurantaResource.html">
@@ -457,6 +487,16 @@ titles/{title name}/options returns list of available values for the title
       <td>  REST API for users
 </td>
     </tr>
+    <tr class="clickable-row" data-href="resource_UserViewResource.html">
+      <td>  UserViewResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /userview
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET, PUT
+</samp></li></ul></td>
+      <td>  REST API for getting and updating user view information
+</td>
+    </tr>
     </tbody>
   </table>
 
@@ -509,8 +549,8 @@ titles/{title name}/options returns list of available values for the title
 Bound to ViewTitleValue class.
 </td>
     </tr>
-    <tr class="clickable-row" data-href="json_BasicInfoCategory.html">
-      <td>  BasicInfoCategory
+    <tr class="clickable-row" data-href="json_BillingType.html">
+      <td>  BillingType
 </td>
       <td>  
 </td>
@@ -530,19 +570,19 @@ Bound to ViewTitleValue class.
     <tr class="clickable-row" data-href="json_CalendarEventContentGroupDto.html">
       <td>  CalendarEventContentGroupDto
 </td>
-      <td>  Data transfer object class for user defined content groups in calendar events.
-</td>
-    </tr>
-    <tr class="clickable-row" data-href="json_CalendarEventContentGroupItemDto.html">
-      <td>  CalendarEventContentGroupItemDto
-</td>
-      <td>  
+      <td>  Data transfer object for caledar event content groups.
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_CalendarEventDto.html">
       <td>  CalendarEventDto
 </td>
       <td>  Data transfer object for calendar events.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CalendarEventTitleDto.html">
+      <td>  CalendarEventTitleDto
+</td>
+      <td>  DTO for calendar event content group titles.
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_ClientTitleConfig.html">
@@ -555,22 +595,31 @@ The class contains the value as the object of the class derived from  @BaseTitle
 fi.mediconsult.core.internal.titles.presentations package contains the available value for the titles depending from title type.
 </td>
     </tr>
-    <tr class="clickable-row" data-href="json_ContentGroupDto.html">
-      <td>  ContentGroupDto
+    <tr class="clickable-row" data-href="json_ComponentRightDTO.html">
+      <td>  ComponentRightDTO
 </td>
-      <td>  Represents Content Groups in EventModelDto
-
-Example:
-
-<pre>
-<code>
-{
-id: 1,
-name: "Perustiedot",
-type: "SYSTEM_DEFINED"
-}
-</code>
-</pre>
+      <td>  ComponentRightDTO for transfering visible DTO to client
+componentID = component in question (enum)
+visible = is component visible on client side. This is normally the read access, but might be different in special cases
+PermissionDTO = all permissions. Thise can be used on client as right changes during session are not supported
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Components.html">
+      <td>  Components
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ContentGroup.html">
+      <td>  ContentGroup
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ContentGroupTitle.html">
+      <td>  ContentGroupTitle
+</td>
+      <td>  Data transfer object for content groups items.
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_ContentGroupType.html">
@@ -767,10 +816,22 @@ Example:
       <td>  Data transfer object for missing resource information.
 </td>
     </tr>
-    <tr class="clickable-row" data-href="json_EventModelBasicInfo.html">
-      <td>  EventModelBasicInfo
+    <tr class="clickable-row" data-href="json_EventModelContentGroupDto.html">
+      <td>  EventModelContentGroupDto
 </td>
-      <td>  Represents one Perustiedot otsikko, connected to Tapahtuman perustiedot
+      <td>  Represents Content Groups in EventModelDto
+
+Example:
+
+<pre>
+<code>
+{
+id: 1,
+name: "Perustiedot",
+type: "SYSTEM_DEFINED"
+}
+</code>
+</pre>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_EventModelDto.html">
@@ -795,6 +856,18 @@ Example:
       <td>  EventResourceDto
 </td>
       <td>  Data transfer object for event resource information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventServiceDecisionStatus.html">
+      <td>  EventServiceDecisionStatus
+</td>
+      <td>  Flag values for an event's status regarding having a service decision for a customer.
+A service decision may be
+<li/>not relevant for the event at all
+<li/>missing: there is no service decision in required service class for the customer
+<li/>interrupted: there is a decision, but it is interrupted at event time
+<li/>pending: there is a decision under processing ('KESKEN')
+<li/>available: there is a decision ('VALMIS' & 'MYONTEINEN')
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_EventStatus.html">
@@ -833,12 +906,6 @@ This class is not designed to use in Json model and can be built only from ILoma
       <td>  FormTypeInfo
 </td>
       <td>  
-</td>
-    </tr>
-    <tr class="clickable-row" data-href="json_FreeContentGroupItem.html">
-      <td>  FreeContentGroupItem
-</td>
-      <td>  DTO information for one vapaa sis�lt�ryhm�
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_FysiologinenMittaus.html">
@@ -1009,7 +1076,7 @@ koodisto: {
     <tr class="clickable-row" data-href="json_KuhaDtoBase.html">
       <td>  KuhaDtoBase
 </td>
-      <td>  
+      <td>  Base class for MediPlan data transfer objects.
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_KuhaDtoNameBase.html">
@@ -1240,6 +1307,20 @@ Eg: Patient has lazyloaded hoitosuhde
       <td>  Overrider LoginCredentials to provide domain-name
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_MainTitleConfig.html">
+      <td>  MainTitleConfig
+</td>
+      <td>  DTO model to present configuration for main titles used in kertomus configuration DTO KertomusFormConfig.
+This configuration includes two lists:
+<ul>
+<li>Map of titles from Mallikirjaukset. <p>
+Key is the otsikko name from teksti table and value is title's value stored in vapaa and vakio fields.</p>
+Based class from ViewTitleValue presents the default value depending from type of otsikko.
+</li>
+<li>Map of groups with list of titles in every group.</li>
+</ul>
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_Meaning.html">
       <td>  Meaning
 </td>
@@ -1360,6 +1441,12 @@ This is found from paikkahistoria-form "Tilanne".
       <td>  DTO for palvelukeskeytys (related to palvelup��t�kses)
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_PalvelukeskeytysSyy.html">
+      <td>  PalvelukeskeytysSyy
+</td>
+      <td>  
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_Palveluluokka.html">
       <td>  Palveluluokka
 </td>
@@ -1388,7 +1475,7 @@ This is found from paikkahistoria-form "Tilanne".
     <tr class="clickable-row" data-href="json_Palvelupaatos.html">
       <td>  Palvelupaatos
 </td>
-      <td>  Palvelup��t�s DTO.
+      <td>  
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_Palvelutapahtuma.html">
@@ -1566,6 +1653,13 @@ Used to carry the data from database to the client side.
       <td>  Form config for one seuranta lomake.
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_SeurantaTitleEditFlag.html">
+      <td>  SeurantaTitleEditFlag
+</td>
+      <td>  Flag class to present title editiong option configuration for SeurantaFormConfig titles properties.
+It object is required due correct Json mapping model
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_SkillDto.html">
       <td>  SkillDto
 </td>
@@ -1694,6 +1788,18 @@ to units (palveluyksikk�) where users (k�ytt�j�) signs in and works for.
       <td>  
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_UserViewDTO.html">
+      <td>  UserViewDTO
+</td>
+      <td>  DTO to present user view content
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ViewConfiguration.html">
+      <td>  ViewConfiguration
+</td>
+      <td>  DTO object for view configuration
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_ViewTitleValue.html">
       <td>  ViewTitleValue
 </td>
@@ -1717,6 +1823,14 @@ By default these values are included into client Json model.
       <td>  WorkerAvailabilityDto
 </td>
       <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Yhteisvaikutus.html">
+      <td>  Yhteisvaikutus
+</td>
+      <td>  DTO for Yhteisvaikutus
+
+Stores two medicines and the interaction between them
 </td>
     </tr>
     </tbody>
@@ -1772,6 +1886,15 @@ Used to carry the data from database to the client side.
 </table>
 </td>
     </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakitysKayttoaiheView.html">
+      <td>  laakitysKayttoaiheView
+</td>
+      <td>  DTO for LaakitysKayttoaihe
+
+A class to present LAAKITYS_KAYTTOAIHE and KAYTTOAIHE tables in medication functionality
+Used to carry the data from database to the client side.
+</td>
+    </tr>
     <tr class="clickable-row" data-href="xml_ns0_tutkimuspyynto.html">
       <td>  tutkimuspyynto
 </td>
@@ -1815,6 +1938,149 @@ Used to carry the data from database to the client side.
 
 A class to present HOITO table in hoito-ohjeet ja -m��r�ykset functionality.
 Used to carry the data from database to the client side.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laake.html">
+      <td>  laake
+</td>
+      <td>  DTO for Laake, data base table LAAKE_VALMISTE
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeAine.html">
+      <td>  laakeAine
+</td>
+      <td>  DTO for LaakeAine, data base table LAAKE_AINE
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_AINE.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeAnnostus.html">
+      <td>  laakeAnnostus
+</td>
+      <td>  DTO for LaakeAnnostus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeAnnostusSoveltuvuus.html">
+      <td>  laakeAnnostusSoveltuvuus
+</td>
+      <td>  DTO for LaakeAnnostusSoveltuvuus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS_SOVELTUVUUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeAtc.html">
+      <td>  laakeAtc
+</td>
+      <td>  DTO for LaakeAtc, data base table LAAKE_ATC
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeKoostumus.html">
+      <td>  laakeKoostumus
+</td>
+      <td>  DTO for LaakeKoostumus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeSeloste.html">
+      <td>  laakeSeloste
+</td>
+      <td>  DTO for LaakeSeloste
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeSelosteTeksti.html">
+      <td>  laakeSelosteTeksti
+</td>
+      <td>  DTO for LaakeSelosteTeksti
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_TEKSTI.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeTerapiaryhma.html">
+      <td>  laakeTerapiaryhma
+</td>
+      <td>  DTO for LaakeTerapiaryhma
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TERAPIARYHMA.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/TERAPIARYHMA.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeTiivistelma.html">
+      <td>  laakeTiivistelma
+</td>
+      <td>  DTO for LaakeTiivistelma
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeTiivistelmaTeksti.html">
+      <td>  laakeTiivistelmaTeksti
+</td>
+      <td>  DTO for LaakeTiivistelmaTeksti
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_TEKSTI.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeVastaAihe.html">
+      <td>  laakeVastaAihe
+</td>
+      <td>  DTO for LaakeVastaAihe
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakeYhteisvaikutus.html">
+      <td>  laakeYhteisvaikutus
+</td>
+      <td>  DTO for Yhteisvaikutus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_YHTEISVAIKUTUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakitys.html">
+      <td>  laakitys
+</td>
+      <td>  DTO for Laakitys
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakitysKayttoaihe.html">
+      <td>  laakitysKayttoaihe
+</td>
+      <td>  DTO for LAAKITYS_KAYTTOAIHE and KAYTTOAIHE database tables
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KAYTTOAIHE.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/KAYTTOAIHE.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakitysKuittaus.html">
+      <td>  laakitysKuittaus
+</td>
+      <td>  DTO for LaakitysKuittaus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KUITTAUS.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakitysTapa.html">
+      <td>  laakitysTapa
+</td>
+      <td>  DTO for LAAKITYS_TAPA
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAPA.html
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakitysTauko.html">
+      <td>  laakitysTauko
+</td>
+      <td>  DTO for LaakitysTauko
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_date.html">

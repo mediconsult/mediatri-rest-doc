@@ -84,7 +84,7 @@
         <tr>
           <td>  titles
 </td>
-          <td>  object
+          <td>  array of <a href="json_SeurantaTitleEditFlag.html">SeurantaTitleEditFlag</a>
 
 </td>
           <td>  
@@ -105,10 +105,13 @@
       <p class="lead">Example</p>
 
       <pre class="prettyprint lang-js">{
-  &quot;titles&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
-  },
+  &quot;titles&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;edited&quot; : true
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;edited&quot; : true
+  } ],
   &quot;permission&quot; : {
     &quot;view&quot; : true,
     &quot;change&quot; : true,

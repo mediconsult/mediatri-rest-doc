@@ -53,7 +53,8 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_PatientResource_getPatientByMediatriId_GET">GET /patients/id/{id}</a></li>
+          <li><a href="#resource_PatientResource_getPatientByMediatriIdDeprecated_GET">GET /patients/id/{id}</a></li>
+          <li><a href="#resource_PatientResource_getPatientByMediatriId_GET">GET /patients/{id}</a></li>
           <li><a href="#resource_PatientResource_getPatient_GET">GET /patients/ssn/{ssn}</a></li>
           <li><a href="#resource_PatientResource_getPatientBasicInfoByMediatriId_GET"><abbr title="GET /patients/id/{id}/basicinfos">GET /patients/id/{id}/basicinf...</abbr></a></li>
           <li><a href="#resource_PatientResource_getPatientBasicInfo_GET"><abbr title="GET /patients/ssn/{ssn}/basicinfos">GET /patients/ssn/{ssn}/basici...</abbr></a></li>
@@ -83,10 +84,13 @@
 
       <p>REST API for patients</p>
 
-      <div id="resource_PatientResource_getPatientByMediatriId_GET">
+      <div id="resource_PatientResource_getPatientByMediatriIdDeprecated_GET">
         <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id} <a href="../api/v1patients/id/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p></p>
+        <div class="alert alert-danger">This method has been deprecated.  </div>
+
+        <p>This RESOURCE is deprecated because URL-naming change.
+Current valid is patients/{id}</p>
 
         <table class="table">
           <caption>Request Parameters</caption>
@@ -112,6 +116,12 @@
             <td>boolean</td>
           </tr>
           <tr>
+            <td>includeCareRelationPreferenceList</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          <tr>
             <td>includeHoitosuhde</td>
             <td>query</td>
             <td></td>
@@ -122,6 +132,101 @@
             <td>query</td>
             <td></td>
             <td>boolean</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td><a href="json_Patient.html">Patient</a>
+ (JSON)</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_PatientResource_getPatientByMediatriId_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/{id} <a href="../api/v1patients/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>This fetches patient by patient Id.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>id</td>
+            <td>path</td>
+            <td></td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>includeBasicInfo</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          <tr>
+            <td>includeCareRelationPreferenceList</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          <tr>
+            <td>includeHoitosuhde</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          <tr>
+            <td>includeRiskitietoStatus</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>400</td>
+            <td>Bad Request: if values were invalid</td>
+          </tr>
+          <tr>
+            <td>401</td>
+            <td>Unauthenticated: The request requires user authentication. </td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+          </tr>
+          <tr>
+            <td>500</td>
+            <td>Unexpected error</td>
           </tr>
           </tbody>
         </table>
@@ -168,6 +273,12 @@
           </tr>
           <tr>
             <td>includeBasicInfo</td>
+            <td>query</td>
+            <td></td>
+            <td>boolean</td>
+          </tr>
+          <tr>
+            <td>includeCareRelationPreferenceList</td>
             <td>query</td>
             <td></td>
             <td>boolean</td>

@@ -54,6 +54,7 @@
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
           <li><a href="#resource_AdminResource_clearCache_GET">GET /admin/clearcache</a></li>
+          <li><a href="#resource_AdminResource_getURLMap_GET">GET /admin/urlmap</a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -118,6 +119,31 @@
             <td>object
  (JSON)</td>
             <td>String json ok:true</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_AdminResource_getURLMap_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/admin/urlmap <a href="../api/v1admin/urlmap" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>array of string
+ (JSON)</td>
+            <td>Returns list of all registered URL's. This is for admin purposes to see all URL's and changes in URL's in different versions.</td>
           </tr>
           </tbody>
         </table>

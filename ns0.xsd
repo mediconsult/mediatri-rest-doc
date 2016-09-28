@@ -4,11 +4,30 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:element name="laakitysAnto" type="laakitysAnto"/>
+  <xs:element name="laakitysKayttoaiheView" type="laakitysKayttoaiheView"/>
   <xs:element name="tutkimuspyynto" type="tutkimuspyynto"/>
   <xs:element name="tutkimuspyyntoHerkkyys" type="tutkimuspyyntoHerkkyys"/>
   <xs:element name="tutkimuspyyntoMikrobi" type="tutkimuspyyntoMikrobi"/>
   <xs:element name="tutkimuspyyntoTiedot" type="tutkimuspyyntoTiedot"/>
   <xs:element name="hoito" type="hoito"/>
+  <xs:element name="laake" type="laake"/>
+  <xs:element name="laakeAine" type="laakeAine"/>
+  <xs:element name="laakeAnnostus" type="laakeAnnostus"/>
+  <xs:element name="laakeAnnostusSoveltuvuus" type="laakeAnnostusSoveltuvuus"/>
+  <xs:element name="laakeAtc" type="laakeAtc"/>
+  <xs:element name="laakeKoostumus" type="laakeKoostumus"/>
+  <xs:element name="laakeSeloste" type="laakeSeloste"/>
+  <xs:element name="laakeSelosteTeksti" type="laakeSelosteTeksti"/>
+  <xs:element name="laakeTerapiaryhma" type="laakeTerapiaryhma"/>
+  <xs:element name="laakeTiivistelma" type="laakeTiivistelma"/>
+  <xs:element name="laakeTiivistelmaTeksti" type="laakeTiivistelmaTeksti"/>
+  <xs:element name="laakeVastaAihe" type="laakeVastaAihe"/>
+  <xs:element name="laakeYhteisvaikutus" type="laakeYhteisvaikutus"/>
+  <xs:element name="laakitys" type="laakitys"/>
+  <xs:element name="laakitysKayttoaihe" type="laakitysKayttoaihe"/>
+  <xs:element name="laakitysKuittaus" type="laakitysKuittaus"/>
+  <xs:element name="laakitysTapa" type="laakitysTapa"/>
+  <xs:element name="laakitysTauko" type="laakitysTauko"/>
 <xs:complexType name="abstractDTO" abstract="true">
  </xs:complexType>
 
@@ -177,6 +196,41 @@ Used to carry the data from database to the client side.
       </xs:sequence>
     </xs:extension>
   </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakitysKayttoaiheView">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakitysKayttoaihe
+
+A class to present LAAKITYS_KAYTTOAIHE and KAYTTOAIHE tables in medication functionality
+Used to carry the data from database to the client side.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="omistaja" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="osa" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="rivi" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="numero" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="selite" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="reseptiteksti" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="alkupera" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="tyyppi" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:int" minOccurs="1">
+              </xs:element>
+      </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="tutkimuspyynto">
@@ -478,7 +532,7 @@ Used to carry the data from database to the client side.]]>
               <xs:element name="piiri" type="xs:int" minOccurs="0">
               <xs:annotation>
                 <xs:documentation>
-                  <![CDATA[Return the V?est?vastuupiiri]]>
+                  <![CDATA[Return the V�est�vastuupiiri]]>
                 </xs:documentation>
               </xs:annotation>
               </xs:element>
@@ -667,7 +721,7 @@ result. Result is normal, if the value is between the min and max values.]]>
     <xs:documentation>
       <![CDATA[DTO for Hoito
 
-A class to present HOITO table in hoito-ohjeet ja -m??r?ykset functionality.
+A class to present HOITO table in hoito-ohjeet ja -m��r�ykset functionality.
 Used to carry the data from database to the client side.]]>
     </xs:documentation>
   </xs:annotation>
@@ -761,7 +815,7 @@ Used to carry the data from database to the client side.]]>
               <xs:element name="kerta" type="xs:unsignedShort" minOccurs="1">
               <xs:annotation>
                 <xs:documentation>
-                  <![CDATA[Returns the type of Hoito (K = kertaluonteinen, E = pysyv?)]]>
+                  <![CDATA[Returns the type of Hoito (K = kertaluonteinen, E = pysyv�)]]>
                 </xs:documentation>
               </xs:annotation>
               </xs:element>
@@ -802,6 +856,1605 @@ Used to carry the data from database to the client side.]]>
               <xs:element name="lopettajaNimi" type="xs:string" minOccurs="0">
               </xs:element>
               <xs:element name="lomakeNimi" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laake">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for Laake, data base table LAAKE_VALMISTE]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="koodi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="nimi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="valmistaja" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="ehto" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="varoituksia" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="erityispiirre" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="erityisluvallinen" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="laakemuoto" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="vahvuus" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="vahvuusarvo" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="vahvuusyksikko" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="pakkaus" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="pakkauskerroin" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="pakkausarvo" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="pakkausyksikko" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="pakkaustyyppi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="laite" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="hinta" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="reseptiteksti" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="korvattavuus" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="substituutioryhma" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="alkupera" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="tila" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="halytys" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="erityislupaVanhenee" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="vero" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="peruslaakevalikoima" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="kelpoisuusaika" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="sailytys" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="velvoitevarasto" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="varoitusraja" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="kappalevarasto" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="tukkuhinta" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="tarjoushinta" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="sopimustoimittaja" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="huomautuksia" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="suoritelinkki" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="kustannuslinkki" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:short" minOccurs="1">
+              </xs:element>
+              <xs:element name="tilasto1" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tilasto2" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tilasto3" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="laaketietokantaversio" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="koodityyppi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tukkunumero" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="laji" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="myyntiluvanHaltija" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="myyntilupanumero" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="rinnakkaisvalmiste" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="laakemuototunnus" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="substituutiokoodi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="laakevaihto" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="viitehinta" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="hintaputki" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="reseptivalmiste" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="maaraamisehto" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="huume" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="liikennevaara" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="lapsille" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="annosjakelu" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="jakouurre" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="hintamuutos" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="suorakorvauskoodi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="pkv" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="valmistusohje" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="markkinoija" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="veriplasmavalmiste" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="biologinenLaake" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="lisaseurannassa" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="lisatiedot" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="atc" type="laakeAtc" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="annostusSoveltuvuus" type="laakeAnnostusSoveltuvuus" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="yhteisvaikutus" type="laakeYhteisvaikutus" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="vastaAihe" type="laakeVastaAihe" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="terapiaryhma" type="laakeTerapiaryhma" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="koostumus" type="laakeKoostumus" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="tiivistelma" type="laakeTiivistelma" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="seloste" type="laakeSeloste" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="laakeaineet" type="laakeAine" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeAine">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeAine, data base table LAAKE_AINE
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_AINE.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="laake" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Get medicine vnr code]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="aine" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Get medicine ingredient]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="maara" type="xs:float" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Get ingredient amount]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="yksikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Get ingredient amount unit]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="alkupera" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Get the origin
+-'O' if added by organization
+-'A' or 'M' otherwise]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="ainekoodi" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Get the code for the ingredient (l��ketietokannasta)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="atc" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Get the ATC code, if available]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="jarjestys" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Get the order number for the ingredient, if available]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeAnnostus">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeAnnostus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="numero" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the id of the dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="selite" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the explanation of the dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="alaikaraja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the lower age limit]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="ylaikaraja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the upper age limit]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="alapainoraja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the lower weight limit]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="ylapainoraja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the upper weight limit]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="malli" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the model for the prescription text]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="desimaaleja" type="xs:short" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the amount of decimals in prescription text]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="painokerroin" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns 'K' if dosage should be multiplied by patients weight]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="annettavaMaara" type="xs:float" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the size of the single dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="annettavaMaksimi" type="xs:float" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the maximum size of a single dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="annettavaYksikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the unit of the single dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="antotahti" type="xs:float" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the speed of dosing]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="antotahtiYksikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the unit of the dosing speed]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kokonaiskesto" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the total duratio of the dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kokonaismaara" type="xs:float" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the total amount of the dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kokonaismaaraYksikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the unit of total amount of the dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="varmistus" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the confirmation for the dosage
+-'K' if "sic!" should be added to the prescription text
+-'E' otherwise]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kayttotarkoitus" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the use of the dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="ohjeet" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the instructions of the dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="iterointi" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the iteration]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="pysyva" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the permanence of the dosage
+-'K' pysyv�
+-'E' otherwise]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tarvittaessa" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns if the medicine is taken when needed
+-'K' tarvittaessa
+-'E' otherwise]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="perusteluVaaditaan" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns 'K' if Kela wants user to explain the usage of medicine. 'E' otherwise.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="antoreitit" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns "antoreitit" for the medicine]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="antopaikat" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns "antopaikat" for the medicine]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="antovalineet" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns "antov�lineet" for the medicine]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="antotavat" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns "antotavat" for the medicine]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="alkupera" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the origin of the dosage
+-'O' if current organization
+-'A' or 'M' otherwise]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the code of the dosage removal. 'E' - not removed, 'K' = removed]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the actual DB-change time of the dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the organization in which the change has been made]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kenen" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns whose dosage it is]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lyhyesti" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns a summary of the dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="toisto" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the repetition of the dosage]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="toistokuvaus" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the repetition in plain language]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="aikayksikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the time unit used]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeAnnostusSoveltuvuus">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeAnnostusSoveltuvuus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS_SOVELTUVUUS.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="laake" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the vnr code of the medicine]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="alkupera" type="xs:unsignedShort" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the origin of the dosage
+-'O' if current organization
+-'A' or 'M' otherwise]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="annostus" type="laakeAnnostus" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the dosage object]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeAtc">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeAtc, data base table LAAKE_ATC]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="atc" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="alkupera" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeKoostumus">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeKoostumus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="osa" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the part number of the medicine component]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tyyppi" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the type of the medicine component
+-'B' if "pohja-aine"
+-Perusaine, johon lis�aineet sekoitetaan
+-'A' if "lis�aine"
+-Lis�aineet ovat yleens� varsinaisia vaikuttavia aineita]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="komponentinKoodi" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the component code (VNR code)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="komponentti" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the component in text format]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="maara" type="xs:float" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the amount of component]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="yksikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the unit of amount]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="vahvuus" type="xs:float" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the strength of the component]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="vahvuusyksikko" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the unit of strength]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeSeloste">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeSeloste
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="seloste" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the id of the medication description]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="nimi" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the name of the medication]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="ehto" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the preconditions for the medicine
+(m��r�ys-/toimitusehto)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="valmistaja" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the manufacturer of the medicine]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the code of the description removal. 'E' - not removed, 'K' = removed]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the actual DB-change time of the desctription]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:short" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the organization in which the change has been made]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tekstit" type="laakeSelosteTeksti" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns a list of description texts]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeSelosteTeksti">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeSelosteTeksti
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_TEKSTI.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="osa" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the part number of the description, can be used to order descriptions]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="otsikko" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the header of the description]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="teksti" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the text of the description]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeTerapiaryhma">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeTerapiaryhma
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TERAPIARYHMA.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/TERAPIARYHMA.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="terapiaryhma" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the code of the therapy group]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="alkupera" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the origin of the therapy group
+-'O' if therapy group is linked in the current organization
+-'A' or 'M' otherwise]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="nimi" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the name of the therapy group]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="taso" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the level of the therapy group
+-1 is the highest level, lower levels are >1]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the code of the therapy group removal. 'E' - not removed, 'K' = removed]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeTiivistelma">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeTiivistelma
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="tiivistelma" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the id of the summary]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="nimi" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the name of the medicine the summary is about]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="ehto" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the preconditions for the medicine
+(m��r�ys-/toimitusehto)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="valmistaja" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the manufacturer]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="korvattavuus" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the refundability]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the code of the summary removal. 'E' - not removed, 'K' = removed]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the actual DB-change time of the summary]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:short" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the organization in which the change has been made]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tekstit" type="laakeTiivistelmaTeksti" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns a list of summary texts]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeTiivistelmaTeksti">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeTiivistelmaTeksti
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_TEKSTI.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="osa" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the part number of the summary text, can be used to order summaries]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="otsikko" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the header of the]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="teksti" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the summary text]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeVastaAihe">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakeVastaAihe
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="vastaAihe" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the id]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="vastaAiheAlkupera" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the origin of the contraindication]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="selite" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the name of the contraindication in plain language]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="rajoite" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the type of the contraindication
+-'Y' age in years
+-'M' age in months
+-'W' age in weeks
+-'G' weight
+-'P' pregnancy
+-'B' breastfeeding
+-'D' diagnose
+-'1' male
+-'2' female]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="alaraja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the lower limit of the contraindication]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="ylaraja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the upper limit of the contraindication]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="alkupera" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the origin of the contraindication
+-'O' if therapy group is linked in the current organization
+-'A' or 'M' otherwise]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the code of the contraindication removal. 'E' - not removed, 'K' = removed]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the actual DB-change time of the contraindication]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:short" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the organization in which the change has been made]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakeYhteisvaikutus">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for Yhteisvaikutus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_YHTEISVAIKUTUS.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="aine" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the ATC code or the name of the agent (atc tai vaikuttava aine)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="koodisto" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the used code system
+-If getAine returns an ATC code, getKoodisto returns "ATC"]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="alkupera" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the origin of interaction
+-'O' if interaction is linked in the current organization
+-'A' or 'M' otherwise]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakitys">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for Laakitys]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="omistaja" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="osa" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="laakevalmiste" type="laake" minOccurs="0">
+              </xs:element>
+              <xs:element name="laake" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="aloitettu" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="tapahtunut" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="tapahtuma" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="riittoisuus" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="lopetettu" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="lopetussyy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="reseptiteksti" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="malli" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="lyhyesti" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="vaihdettavuus" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="annettavaMaara" type="xs:float" minOccurs="1">
+              </xs:element>
+              <xs:element name="annettavaMaksimi" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="annettavaYksikko" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="kertaAnnos" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="annosteluteksti" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="desimaaleja" type="xs:short" minOccurs="1">
+              </xs:element>
+              <xs:element name="paino" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="lapsenPaino" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="toisto" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="toistokuvaus" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="kellonajat" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="kellonajatString" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="aikayksikko" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="antotahti" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="antotahtiString" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="antotahtiyksikko" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="vrkMaara" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="vrkMaaraYksikko" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="kokonaiskesto" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="kokonaismaara" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="kokonaismaarayksikko" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="pakkauksia" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="kirjaaja" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="kirjaajaString" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="maaraaja" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="maaraajaString" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="maaraysyksikko" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="varmistus" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="kayttotarkoitus" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="ohjeet" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="perustelu" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="iterointi" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="uusittu" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="kuitattava" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="pysyva" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="tarvittaessa" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="terapiaryhma" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="soveltumaton" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="vaikutus" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="huomautuksia" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="reseptityyppi" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="reseptityyppiString" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tulostaja" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="tulostettu" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="oid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tunnistustapa" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tunnistustapaselite" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="annosjakeluperuste" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="iterointivali" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="erillisselvityskoodi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="erillisselvitys" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="apteekkiviesti" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="ereseptikielto" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="hoitolaji" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="uusi" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="lahetetty" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="reseptinLaji" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="muutoksenSyy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="muutoksenPerustelu" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="uusimiskielto" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="uusimiskiellonSyy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="uusimiskiellonPerustelu" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="potilasohjekielto" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="tyonantaja" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="vakuutusyhtio" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="voimassaoloLoppu" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="annostuslinkki" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="hoitojakso" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="alkuperainen" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="palkkio" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="palkkioErikoislaakarina" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="tartuntatautilaake" type="xs:unsignedShort" minOccurs="0">
+              </xs:element>
+              <xs:element name="palvelutapahtuma" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="palvelutapahtumaOid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="sairaalaApteekkiOid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="sairaalaApteekkiNimi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tarkistus" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="poistosyy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:short" minOccurs="1">
+              </xs:element>
+              <xs:element name="pysyvyys" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="nimi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="annostus" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="vaihteleva" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element name="vaihtelevaAnnostus" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="sic" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="kokoNimi" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="laakeaineet" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tauonAloitusPvm" type="xs:long" minOccurs="1">
+              </xs:element>
+              <xs:element name="tauonLopetusPvm" type="xs:long" minOccurs="1">
+              </xs:element>
+              <xs:element name="taukohuomautuksia" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="annettavaMaaraTimesPaino" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="vrkmaara" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="vrkkerratCalc" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="vrkmaaraCalc" type="xs:float" minOccurs="0">
+              </xs:element>
+              <xs:element name="vrkmaaraYksikko" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tauot" type="laakitysTauko" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="annot" type="laakitysAnto" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="tavat" type="laakitysTapa" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="kayttoaiheet" type="laakitysKayttoaihe" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="laakitysKayttoaiheList" type="laakitysKayttoaiheView" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="kuittaukset" type="laakitysKuittaus" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="laakitysKayttoaihe">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LAAKITYS_KAYTTOAIHE and KAYTTOAIHE database tables
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KAYTTOAIHE.html
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/KAYTTOAIHE.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="rivi" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the row number, which arranges the LaakitysKayttoaihe entities in order of importance]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="numero" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the unique id of Kayttoaihe]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="selite" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the name of the Kayttoaihe in plain languate]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="reseptiteksti" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the name of the Kayttoaihe which is printed to the prescription]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="alkupera" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the origin of the Kayttoaihe
+-"O" if added by organization itself
+-"A" or "M" otherwise]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tyyppi" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the type of the Kayttoaihe
+-"C" if Kayttoaihe
+-"G" if group
+-"D" if deleted]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the code of the kayttoaihe removal. 'E' - not removed, 'K' = removed]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the actual DB-change time of the Kayttoaihe]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:short" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the organization in which the change has been made]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakitysKuittaus">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakitysKuittaus
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KUITTAUS.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="rooli" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the role of the user who has made an acknowledgement
+-"H" if user is a nurse]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kuitattu" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the time of the acknowledgement]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="kuittaaja" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the user who made the acknowledgement]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakitysTapa">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LAAKITYS_TAPA
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAPA.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="reittikoodi" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the "antoreitti" in code]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="reittiteksti" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the "antoreitti" in text]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="paikkakoodi" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the "antopaikka" in code]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="paikkateksti" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the "antopaikka" in text]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="valinekoodi" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the "antov�line" in code]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="valineteksti" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the "antov�line" in text]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tapakoodi" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the "antotapa" in code]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tapateksti" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the "antotapa" in text]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laakitysTauko">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[DTO for LaakitysTauko
+
+http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="abstractDTO">
+      <xs:sequence>
+              <xs:element name="alkaa" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the starting time of the medication break]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="loppuu" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the ending time of the medication break]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="huomautuksia" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the notes about the medication break]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="aloittaja" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the id of an user who started the medication break]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lopettaja" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the id of an user who ended the medication break]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="poistettu" type="xs:unsignedShort" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the code of the medication break removal. 'E' - not removed, 'K' = removed]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutosaika" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the actual DB-change time of the medication break]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="muutospaikka" type="xs:short" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the organization in which the change has been made]]>
+                </xs:documentation>
+              </xs:annotation>
               </xs:element>
       </xs:sequence>
     </xs:extension>

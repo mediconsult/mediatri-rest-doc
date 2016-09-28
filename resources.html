@@ -89,8 +89,10 @@
       <td>  AdminResource
 </td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /admin/clearcache
+</samp></li><li><samp>  /admin/urlmap
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
 </samp></li></ul></td>
       <td>  REST API for various admin tasks like clearing cache onfly.
 </td>
@@ -204,19 +206,27 @@
     <tr class="clickable-row" data-href="resource_LaakitysResource.html">
       <td>  LaakitysResource
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /medicationlist/{id}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /medicationlist/interactions
+</samp></li><li><samp>  /medicationlist/{id}
 </samp></li><li><samp>  /medicationlist/medicine/{code}
+</samp></li><li><samp>  /medicationlist/newmedication/{id}
+</samp></li><li><samp>  /medicationlist/medicine/activeingredient/{activeingredient}
 </samp></li><li><samp>  /medicationlist/medicine/atc/{atc}
 </samp></li><li><samp>  /medicationlist/medicine/name/{name}
 </samp></li><li><samp>  /medicationlist/medicine/therapygroup/{therapygroup}
 </samp></li><li><samp>  /medicationlist/history/{omistaja}/part/{osa}
+</samp></li><li><samp>  /medicationlist/savemedication/{id}/part/{osa}
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
+</samp></li><li><samp>  PUT
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  PUT
 </samp></li></ul></td>
       <td>  REST API for Laakitys component
 </td>
@@ -267,13 +277,17 @@ Osastokartta contains list of osastolistat which are separate maps in different 
     <tr class="clickable-row" data-href="resource_PalvelupaatosResource.html">
       <td>  PalvelupaatosResource
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /palvelupaatos/keskeytyssyyt
-</samp></li><li><samp>  /palvelupaatos/palveluluokat
-</samp></li><li><samp>  /palvelupaatos/patient/{id}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /settings/serviceClasses
+</samp></li><li><samp>  /settings/serviceInterruptReasons
+</samp></li><li><samp>  /patients/{id}/serviceDecisions
+</samp></li><li><samp>  /patients/{id}/serviceDecisions/interruptions
+</samp></li><li><samp>  /patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
+</samp></li><li><samp>  DELETE, POST, PUT
+</samp></li><li><samp>  DELETE
 </samp></li></ul></td>
       <td>  REST API for palvelupaatokses.
 </td>
@@ -282,16 +296,20 @@ Osastokartta contains list of osastolistat which are separate maps in different 
       <td>  PalvelutapahtumaResource
 </td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /palvelutapahtuma
-</samp></li><li><samp>  /palvelutapahtuma/id
-</samp></li><li><samp>  /palvelutapahtuma/listavailableforcarerelation
-</samp></li><li><samp>  /palvelutapahtuma/select
 </samp></li><li><samp>  /palvelutapahtuma/aktiivinen/{id}
 </samp></li><li><samp>  /palvelutapahtuma/hoitojakso/{patientId}
+</samp></li><li><samp>  /patients/{patientId}/careRelation
+</samp></li><li><samp>  /patients/{patientId}/encounters
+</samp></li><li><samp>  /patients/{patientId}/encounters/{encounterId}
+</samp></li><li><samp>  /patients/{patientId}/encounters/filters/forCareRelation
+</samp></li><li><samp>  /patients/{patientId}/encounters/{encounterId}/episodeOfCare
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
-</samp></li><li><samp>  POST
+</samp></li><li><samp>  GET, POST
+</samp></li><li><samp>  GET
+</samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li></ul></td>
@@ -304,6 +322,7 @@ Osastokartta contains list of osastolistat which are separate maps in different 
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /patients/list
 </samp></li><li><samp>  /patients/listed
 </samp></li><li><samp>  /patients/search
+</samp></li><li><samp>  /patients/{id}
 </samp></li><li><samp>  /patients/id/{id}
 </samp></li><li><samp>  /patients/ssn/{ssn}
 </samp></li><li><samp>  /patients/id/{id}/basicinfos
@@ -316,6 +335,7 @@ Osastokartta contains list of osastolistat which are separate maps in different 
 </samp></li><li><samp>  /patients/ssn/{ssn}/list/{listId}
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET
 </samp></li><li><samp>  GET, PUT
@@ -352,6 +372,16 @@ GET
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
 </samp></li></ul></td>
       <td>  REST API for riskitiedot
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_SettingsResource.html">
+      <td>  SettingsResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /settings/codes/specialReason
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+</samp></li></ul></td>
+      <td>  REST API for generic Mediatri settings and codex
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_SeurantaResource.html">
@@ -443,6 +473,16 @@ titles/{title name}/options returns list of available values for the title
 </samp></li><li><samp>  DELETE, PUT
 </samp></li></ul></td>
       <td>  REST API for users
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_UserViewResource.html">
+      <td>  UserViewResource
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /userview
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET, PUT
+</samp></li></ul></td>
+      <td>  REST API for getting and updating user view information
 </td>
     </tr>
     </tbody>

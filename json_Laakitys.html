@@ -87,10 +87,7 @@
           <td>  number
 
 </td>
-          <td>  Maps to columns
-<ul>
-<li>LaakitysHistoriaPK#getOmistaja()
-</ul>
+          <td>  
 </td>
         </tr>
         <tr>
@@ -99,26 +96,20 @@
           <td>  number
 
 </td>
-          <td>  Maps to columns
-<ul>
-<li>LaakitysHistoriaPK#getOsa()
-</ul>
+          <td>  
 </td>
         </tr>
         <tr>
-          <td>  nimi
+          <td>  laakevalmiste
 </td>
-          <td>  string
+          <td>  <a href="json_Laake.html">Laake</a>
 
 </td>
-          <td>  Maps to columns
-<ul>
-<li>LaakeValmisteEntity#getNimi()
-</ul>
+          <td>  
 </td>
         </tr>
         <tr>
-          <td>  annostus
+          <td>  laake
 </td>
           <td>  string
 
@@ -127,7 +118,7 @@
 </td>
         </tr>
         <tr>
-          <td>  aloitusPvm
+          <td>  aloitettu
 </td>
           <td>  number
 
@@ -136,7 +127,7 @@
 </td>
         </tr>
         <tr>
-          <td>  lopetusPvm
+          <td>  tapahtunut
 </td>
           <td>  number
 
@@ -145,7 +136,97 @@
 </td>
         </tr>
         <tr>
-          <td>  kokoNimi
+          <td>  tapahtuma
+</td>
+          <td>  object
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  riittoisuus
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  lopetettu
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  lopetussyy
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  reseptiteksti
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  malli
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  lyhyesti
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  vaihdettavuus
+</td>
+          <td>  object
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  annettavaMaara
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  annettavaMaksimi
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  annettavaYksikko
 </td>
           <td>  string
 
@@ -163,43 +244,52 @@
 </td>
         </tr>
         <tr>
+          <td>  annosteluteksti
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  desimaaleja
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  paino
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  lapsenPaino
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  toisto
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
           <td>  toistokuvaus
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  maaraaja
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  kirjaaja
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  huomautuksia
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  ohjeet
 </td>
           <td>  string
 
@@ -217,16 +307,7 @@
 </td>
         </tr>
         <tr>
-          <td>  annosteluteksti
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  kayttotarkoitus
+          <td>  kellonajatString
 </td>
           <td>  string
 
@@ -246,6 +327,672 @@
         <tr>
           <td>  antotahti
 </td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  antotahtiString
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  antotahtiyksikko
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  vrkMaara
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  vrkMaaraYksikko
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kokonaiskesto
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kokonaismaara
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kokonaismaarayksikko
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  pakkauksia
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kirjaaja
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kirjaajaString
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  maaraaja
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  maaraajaString
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  maaraysyksikko
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  varmistus
+</td>
+          <td>  object
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kayttotarkoitus
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  ohjeet
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  perustelu
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  iterointi
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  uusittu
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kuitattava
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  pysyva
+</td>
+          <td>  object
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  tarvittaessa
+</td>
+          <td>  object
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  terapiaryhma
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  soveltumaton
+</td>
+          <td>  object
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  vaikutus
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  huomautuksia
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  reseptityyppi
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  reseptityyppiString
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  tulostaja
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  tulostettu
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  oid
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  tunnistustapa
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  tunnistustapaselite
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  annosjakeluperuste
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  iterointivali
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  erillisselvityskoodi
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  erillisselvitys
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  apteekkiviesti
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  ereseptikielto
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  hoitolaji
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  uusi
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  lahetetty
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  reseptinLaji
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  muutoksenSyy
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  muutoksenPerustelu
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  uusimiskielto
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  uusimiskiellonSyy
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  uusimiskiellonPerustelu
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  potilasohjekielto
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  tyonantaja
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  vakuutusyhtio
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  voimassaoloLoppu
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  annostuslinkki
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  hoitojakso
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  alkuperainen
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  palkkio
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  palkkioErikoislaakarina
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  tartuntatautilaake
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  palvelutapahtuma
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  palvelutapahtumaOid
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  sairaalaApteekkiOid
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  sairaalaApteekkiNimi
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  tarkistus
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  poistosyy
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  poistettu
+</td>
+          <td>  object
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  muutosaika
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  muutospaikka
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  pysyvyys
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  nimi
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  annostus
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  vaihteleva
+</td>
+          <td>  boolean
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  vaihtelevaAnnostus
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  sic
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kokoNimi
+</td>
           <td>  string
 
 </td>
@@ -254,15 +1001,6 @@
         </tr>
         <tr>
           <td>  laakeaineet
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  kuitattava
 </td>
           <td>  string
 
@@ -298,109 +1036,16 @@
 </td>
         </tr>
         <tr>
-          <td>  reseptityyppi
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  laakitysKayttoaiheList
-</td>
-          <td>  array of <a href="json_LaakitysKayttoaiheView.html">LaakitysKayttoaiheView</a>
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  annettavaMaara
+          <td>  annettavaMaaraTimesPaino
 </td>
           <td>  number
 
 </td>
           <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  annettavaMaksimi
-</td>
-          <td>  number
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  annettavaYksikko
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  laake
-</td>
-          <td>  string
-
-</td>
-          <td>  return Medicine VNR Code Maps to columns
-<ul>
-<li>LaakeValmisteEntity#getKoodi()
-</ul>
 </td>
         </tr>
         <tr>
           <td>  vrkmaara
-</td>
-          <td>  number
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  vrkmaaraYksikko
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  vaihtelevaAnnostus
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  vaihteleva
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  paino
-</td>
-          <td>  number
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  annettavaMaaraTimesPaino
 </td>
           <td>  number
 
@@ -421,6 +1066,15 @@
           <td>  vrkmaaraCalc
 </td>
           <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  vrkmaaraYksikko
+</td>
+          <td>  string
 
 </td>
           <td>  
@@ -463,6 +1117,15 @@
 </td>
         </tr>
         <tr>
+          <td>  laakitysKayttoaiheList
+</td>
+          <td>  array of <a href="json_LaakitysKayttoaiheView.html">LaakitysKayttoaiheView</a>
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
           <td>  kuittaukset
 </td>
           <td>  array of <a href="json_LaakitysKuittaus.html">LaakitysKuittaus</a>
@@ -479,65 +1142,327 @@
       <pre class="prettyprint lang-js">{
   &quot;omistaja&quot; : 12345,
   &quot;osa&quot; : 12345,
-  &quot;nimi&quot; : &quot;...&quot;,
-  &quot;annostus&quot; : &quot;...&quot;,
-  &quot;aloitusPvm&quot; : 12345,
-  &quot;lopetusPvm&quot; : 12345,
-  &quot;kokoNimi&quot; : &quot;...&quot;,
-  &quot;kertaAnnos&quot; : &quot;...&quot;,
-  &quot;toistokuvaus&quot; : &quot;...&quot;,
-  &quot;maaraaja&quot; : &quot;...&quot;,
-  &quot;kirjaaja&quot; : &quot;...&quot;,
-  &quot;huomautuksia&quot; : &quot;...&quot;,
-  &quot;ohjeet&quot; : &quot;...&quot;,
-  &quot;kellonajat&quot; : &quot;...&quot;,
-  &quot;annosteluteksti&quot; : &quot;...&quot;,
-  &quot;kayttotarkoitus&quot; : &quot;...&quot;,
-  &quot;aikayksikko&quot; : &quot;...&quot;,
-  &quot;antotahti&quot; : &quot;...&quot;,
-  &quot;laakeaineet&quot; : &quot;...&quot;,
-  &quot;kuitattava&quot; : &quot;...&quot;,
-  &quot;tauonAloitusPvm&quot; : 12345,
-  &quot;tauonLopetusPvm&quot; : 12345,
-  &quot;taukohuomautuksia&quot; : &quot;...&quot;,
-  &quot;reseptityyppi&quot; : &quot;...&quot;,
-  &quot;laakitysKayttoaiheList&quot; : [ {
-    &quot;omistaja&quot; : 12345,
-    &quot;osa&quot; : 12345,
-    &quot;rivi&quot; : 12345,
-    &quot;numero&quot; : 12345,
-    &quot;selite&quot; : &quot;...&quot;,
+  &quot;laakevalmiste&quot; : {
+    &quot;koodi&quot; : &quot;...&quot;,
+    &quot;nimi&quot; : &quot;...&quot;,
+    &quot;valmistaja&quot; : 12345,
+    &quot;ehto&quot; : &quot;...&quot;,
+    &quot;varoituksia&quot; : &quot;...&quot;,
+    &quot;erityispiirre&quot; : &quot;...&quot;,
+    &quot;erityisluvallinen&quot; : { },
+    &quot;laakemuoto&quot; : &quot;...&quot;,
+    &quot;vahvuus&quot; : &quot;...&quot;,
+    &quot;vahvuusarvo&quot; : 12345.0,
+    &quot;vahvuusyksikko&quot; : &quot;...&quot;,
+    &quot;pakkaus&quot; : &quot;...&quot;,
+    &quot;pakkauskerroin&quot; : 12345.0,
+    &quot;pakkausarvo&quot; : 12345.0,
+    &quot;pakkausyksikko&quot; : &quot;...&quot;,
+    &quot;pakkaustyyppi&quot; : &quot;...&quot;,
+    &quot;laite&quot; : &quot;...&quot;,
+    &quot;hinta&quot; : 12345.0,
     &quot;reseptiteksti&quot; : &quot;...&quot;,
+    &quot;korvattavuus&quot; : &quot;...&quot;,
+    &quot;substituutioryhma&quot; : &quot;...&quot;,
     &quot;alkupera&quot; : { },
-    &quot;tyyppi&quot; : { },
+    &quot;tila&quot; : { },
+    &quot;halytys&quot; : &quot;...&quot;,
+    &quot;erityislupaVanhenee&quot; : 12345,
+    &quot;vero&quot; : &quot;...&quot;,
+    &quot;peruslaakevalikoima&quot; : &quot;...&quot;,
+    &quot;kelpoisuusaika&quot; : &quot;...&quot;,
+    &quot;sailytys&quot; : &quot;...&quot;,
+    &quot;velvoitevarasto&quot; : 12345,
+    &quot;varoitusraja&quot; : 12345,
+    &quot;kappalevarasto&quot; : &quot;...&quot;,
+    &quot;tukkuhinta&quot; : 12345.0,
+    &quot;tarjoushinta&quot; : 12345.0,
+    &quot;sopimustoimittaja&quot; : 12345,
+    &quot;huomautuksia&quot; : &quot;...&quot;,
+    &quot;suoritelinkki&quot; : 12345,
+    &quot;kustannuslinkki&quot; : 12345,
     &quot;poistettu&quot; : { },
     &quot;muutosaika&quot; : 12345,
-    &quot;muutospaikka&quot; : 12345
-  }, {
-    &quot;omistaja&quot; : 12345,
-    &quot;osa&quot; : 12345,
-    &quot;rivi&quot; : 12345,
-    &quot;numero&quot; : 12345,
-    &quot;selite&quot; : &quot;...&quot;,
-    &quot;reseptiteksti&quot; : &quot;...&quot;,
-    &quot;alkupera&quot; : { },
-    &quot;tyyppi&quot; : { },
-    &quot;poistettu&quot; : { },
-    &quot;muutosaika&quot; : 12345,
-    &quot;muutospaikka&quot; : 12345
-  } ],
+    &quot;muutospaikka&quot; : 12345,
+    &quot;tilasto1&quot; : &quot;...&quot;,
+    &quot;tilasto2&quot; : &quot;...&quot;,
+    &quot;tilasto3&quot; : &quot;...&quot;,
+    &quot;laaketietokantaversio&quot; : &quot;...&quot;,
+    &quot;koodityyppi&quot; : &quot;...&quot;,
+    &quot;tukkunumero&quot; : &quot;...&quot;,
+    &quot;laji&quot; : &quot;...&quot;,
+    &quot;myyntiluvanHaltija&quot; : &quot;...&quot;,
+    &quot;myyntilupanumero&quot; : &quot;...&quot;,
+    &quot;rinnakkaisvalmiste&quot; : &quot;...&quot;,
+    &quot;laakemuototunnus&quot; : &quot;...&quot;,
+    &quot;substituutiokoodi&quot; : &quot;...&quot;,
+    &quot;laakevaihto&quot; : &quot;...&quot;,
+    &quot;viitehinta&quot; : 12345.0,
+    &quot;hintaputki&quot; : 12345.0,
+    &quot;reseptivalmiste&quot; : &quot;...&quot;,
+    &quot;maaraamisehto&quot; : &quot;...&quot;,
+    &quot;huume&quot; : &quot;...&quot;,
+    &quot;liikennevaara&quot; : &quot;...&quot;,
+    &quot;lapsille&quot; : &quot;...&quot;,
+    &quot;annosjakelu&quot; : &quot;...&quot;,
+    &quot;jakouurre&quot; : &quot;...&quot;,
+    &quot;hintamuutos&quot; : &quot;...&quot;,
+    &quot;suorakorvauskoodi&quot; : &quot;...&quot;,
+    &quot;pkv&quot; : &quot;...&quot;,
+    &quot;valmistusohje&quot; : &quot;...&quot;,
+    &quot;markkinoija&quot; : &quot;...&quot;,
+    &quot;veriplasmavalmiste&quot; : &quot;...&quot;,
+    &quot;biologinenLaake&quot; : &quot;...&quot;,
+    &quot;lisaseurannassa&quot; : &quot;...&quot;,
+    &quot;lisatiedot&quot; : &quot;...&quot;,
+    &quot;atc&quot; : [ {
+      &quot;atc&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : { }
+    }, {
+      &quot;atc&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : { }
+    } ],
+    &quot;annostusSoveltuvuus&quot; : [ {
+      &quot;laake&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : &quot;...&quot;,
+      &quot;annostus&quot; : { }
+    }, {
+      &quot;laake&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : &quot;...&quot;,
+      &quot;annostus&quot; : { }
+    } ],
+    &quot;yhteisvaikutus&quot; : [ {
+      &quot;aine&quot; : &quot;...&quot;,
+      &quot;koodisto&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : { }
+    }, {
+      &quot;aine&quot; : &quot;...&quot;,
+      &quot;koodisto&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : { }
+    } ],
+    &quot;vastaAihe&quot; : [ {
+      &quot;vastaAihe&quot; : 12345,
+      &quot;vastaAiheAlkupera&quot; : { },
+      &quot;selite&quot; : &quot;...&quot;,
+      &quot;rajoite&quot; : { },
+      &quot;alaraja&quot; : 12345,
+      &quot;ylaraja&quot; : 12345,
+      &quot;alkupera&quot; : { },
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345
+    }, {
+      &quot;vastaAihe&quot; : 12345,
+      &quot;vastaAiheAlkupera&quot; : { },
+      &quot;selite&quot; : &quot;...&quot;,
+      &quot;rajoite&quot; : { },
+      &quot;alaraja&quot; : 12345,
+      &quot;ylaraja&quot; : 12345,
+      &quot;alkupera&quot; : { },
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345
+    } ],
+    &quot;terapiaryhma&quot; : [ {
+      &quot;terapiaryhma&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : { },
+      &quot;nimi&quot; : &quot;...&quot;,
+      &quot;taso&quot; : 12345,
+      &quot;poistettu&quot; : { }
+    }, {
+      &quot;terapiaryhma&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : { },
+      &quot;nimi&quot; : &quot;...&quot;,
+      &quot;taso&quot; : 12345,
+      &quot;poistettu&quot; : { }
+    } ],
+    &quot;koostumus&quot; : [ {
+      &quot;osa&quot; : 12345,
+      &quot;tyyppi&quot; : { },
+      &quot;komponentinKoodi&quot; : &quot;...&quot;,
+      &quot;komponentti&quot; : &quot;...&quot;,
+      &quot;maara&quot; : 12345.0,
+      &quot;yksikko&quot; : &quot;...&quot;,
+      &quot;vahvuus&quot; : 12345.0,
+      &quot;vahvuusyksikko&quot; : &quot;...&quot;
+    }, {
+      &quot;osa&quot; : 12345,
+      &quot;tyyppi&quot; : { },
+      &quot;komponentinKoodi&quot; : &quot;...&quot;,
+      &quot;komponentti&quot; : &quot;...&quot;,
+      &quot;maara&quot; : 12345.0,
+      &quot;yksikko&quot; : &quot;...&quot;,
+      &quot;vahvuus&quot; : 12345.0,
+      &quot;vahvuusyksikko&quot; : &quot;...&quot;
+    } ],
+    &quot;tiivistelma&quot; : [ {
+      &quot;tiivistelma&quot; : 12345,
+      &quot;nimi&quot; : &quot;...&quot;,
+      &quot;ehto&quot; : &quot;...&quot;,
+      &quot;valmistaja&quot; : &quot;...&quot;,
+      &quot;korvattavuus&quot; : &quot;...&quot;,
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;tekstit&quot; : [ { }, { } ]
+    }, {
+      &quot;tiivistelma&quot; : 12345,
+      &quot;nimi&quot; : &quot;...&quot;,
+      &quot;ehto&quot; : &quot;...&quot;,
+      &quot;valmistaja&quot; : &quot;...&quot;,
+      &quot;korvattavuus&quot; : &quot;...&quot;,
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;tekstit&quot; : [ { }, { } ]
+    } ],
+    &quot;seloste&quot; : [ {
+      &quot;seloste&quot; : 12345,
+      &quot;nimi&quot; : &quot;...&quot;,
+      &quot;ehto&quot; : &quot;...&quot;,
+      &quot;valmistaja&quot; : &quot;...&quot;,
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;tekstit&quot; : [ { }, { } ]
+    }, {
+      &quot;seloste&quot; : 12345,
+      &quot;nimi&quot; : &quot;...&quot;,
+      &quot;ehto&quot; : &quot;...&quot;,
+      &quot;valmistaja&quot; : &quot;...&quot;,
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;tekstit&quot; : [ { }, { } ]
+    } ],
+    &quot;laakeaineet&quot; : [ {
+      &quot;laake&quot; : &quot;...&quot;,
+      &quot;aine&quot; : &quot;...&quot;,
+      &quot;maara&quot; : 12345.0,
+      &quot;yksikko&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : { },
+      &quot;ainekoodi&quot; : &quot;...&quot;,
+      &quot;atc&quot; : &quot;...&quot;,
+      &quot;jarjestys&quot; : 12345
+    }, {
+      &quot;laake&quot; : &quot;...&quot;,
+      &quot;aine&quot; : &quot;...&quot;,
+      &quot;maara&quot; : 12345.0,
+      &quot;yksikko&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : { },
+      &quot;ainekoodi&quot; : &quot;...&quot;,
+      &quot;atc&quot; : &quot;...&quot;,
+      &quot;jarjestys&quot; : 12345
+    } ]
+  },
+  &quot;laake&quot; : &quot;...&quot;,
+  &quot;aloitettu&quot; : 12345,
+  &quot;tapahtunut&quot; : 12345,
+  &quot;tapahtuma&quot; : { },
+  &quot;riittoisuus&quot; : 12345,
+  &quot;lopetettu&quot; : 12345,
+  &quot;lopetussyy&quot; : &quot;...&quot;,
+  &quot;reseptiteksti&quot; : &quot;...&quot;,
+  &quot;malli&quot; : &quot;...&quot;,
+  &quot;lyhyesti&quot; : &quot;...&quot;,
+  &quot;vaihdettavuus&quot; : { },
   &quot;annettavaMaara&quot; : 12345.0,
   &quot;annettavaMaksimi&quot; : 12345.0,
   &quot;annettavaYksikko&quot; : &quot;...&quot;,
-  &quot;laake&quot; : &quot;...&quot;,
-  &quot;vrkmaara&quot; : 12345.0,
-  &quot;vrkmaaraYksikko&quot; : &quot;...&quot;,
-  &quot;vaihtelevaAnnostus&quot; : &quot;...&quot;,
-  &quot;vaihteleva&quot; : true,
+  &quot;kertaAnnos&quot; : &quot;...&quot;,
+  &quot;annosteluteksti&quot; : &quot;...&quot;,
+  &quot;desimaaleja&quot; : 12345,
   &quot;paino&quot; : 12345.0,
+  &quot;lapsenPaino&quot; : 12345.0,
+  &quot;toisto&quot; : &quot;...&quot;,
+  &quot;toistokuvaus&quot; : &quot;...&quot;,
+  &quot;kellonajat&quot; : &quot;...&quot;,
+  &quot;kellonajatString&quot; : &quot;...&quot;,
+  &quot;aikayksikko&quot; : &quot;...&quot;,
+  &quot;antotahti&quot; : 12345.0,
+  &quot;antotahtiString&quot; : &quot;...&quot;,
+  &quot;antotahtiyksikko&quot; : &quot;...&quot;,
+  &quot;vrkMaara&quot; : 12345.0,
+  &quot;vrkMaaraYksikko&quot; : &quot;...&quot;,
+  &quot;kokonaiskesto&quot; : &quot;...&quot;,
+  &quot;kokonaismaara&quot; : 12345.0,
+  &quot;kokonaismaarayksikko&quot; : &quot;...&quot;,
+  &quot;pakkauksia&quot; : 12345,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;kirjaajaString&quot; : &quot;...&quot;,
+  &quot;maaraaja&quot; : 12345,
+  &quot;maaraajaString&quot; : &quot;...&quot;,
+  &quot;maaraysyksikko&quot; : 12345,
+  &quot;varmistus&quot; : { },
+  &quot;kayttotarkoitus&quot; : &quot;...&quot;,
+  &quot;ohjeet&quot; : &quot;...&quot;,
+  &quot;perustelu&quot; : &quot;...&quot;,
+  &quot;iterointi&quot; : 12345,
+  &quot;uusittu&quot; : 12345,
+  &quot;kuitattava&quot; : &quot;...&quot;,
+  &quot;pysyva&quot; : { },
+  &quot;tarvittaessa&quot; : { },
+  &quot;terapiaryhma&quot; : &quot;...&quot;,
+  &quot;soveltumaton&quot; : { },
+  &quot;vaikutus&quot; : &quot;...&quot;,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;reseptityyppi&quot; : &quot;...&quot;,
+  &quot;reseptityyppiString&quot; : &quot;...&quot;,
+  &quot;tulostaja&quot; : 12345,
+  &quot;tulostettu&quot; : 12345,
+  &quot;oid&quot; : &quot;...&quot;,
+  &quot;tunnistustapa&quot; : &quot;...&quot;,
+  &quot;tunnistustapaselite&quot; : &quot;...&quot;,
+  &quot;annosjakeluperuste&quot; : &quot;...&quot;,
+  &quot;iterointivali&quot; : 12345,
+  &quot;erillisselvityskoodi&quot; : &quot;...&quot;,
+  &quot;erillisselvitys&quot; : &quot;...&quot;,
+  &quot;apteekkiviesti&quot; : &quot;...&quot;,
+  &quot;ereseptikielto&quot; : &quot;...&quot;,
+  &quot;hoitolaji&quot; : &quot;...&quot;,
+  &quot;uusi&quot; : &quot;...&quot;,
+  &quot;lahetetty&quot; : 12345,
+  &quot;reseptinLaji&quot; : &quot;...&quot;,
+  &quot;muutoksenSyy&quot; : &quot;...&quot;,
+  &quot;muutoksenPerustelu&quot; : &quot;...&quot;,
+  &quot;uusimiskielto&quot; : &quot;...&quot;,
+  &quot;uusimiskiellonSyy&quot; : &quot;...&quot;,
+  &quot;uusimiskiellonPerustelu&quot; : &quot;...&quot;,
+  &quot;potilasohjekielto&quot; : &quot;...&quot;,
+  &quot;tyonantaja&quot; : &quot;...&quot;,
+  &quot;vakuutusyhtio&quot; : &quot;...&quot;,
+  &quot;voimassaoloLoppu&quot; : 12345,
+  &quot;annostuslinkki&quot; : 12345,
+  &quot;hoitojakso&quot; : 12345,
+  &quot;alkuperainen&quot; : 12345,
+  &quot;palkkio&quot; : 12345.0,
+  &quot;palkkioErikoislaakarina&quot; : &quot;...&quot;,
+  &quot;tartuntatautilaake&quot; : &quot;...&quot;,
+  &quot;palvelutapahtuma&quot; : 12345,
+  &quot;palvelutapahtumaOid&quot; : &quot;...&quot;,
+  &quot;sairaalaApteekkiOid&quot; : &quot;...&quot;,
+  &quot;sairaalaApteekkiNimi&quot; : &quot;...&quot;,
+  &quot;tarkistus&quot; : 12345,
+  &quot;poistosyy&quot; : &quot;...&quot;,
+  &quot;poistettu&quot; : { },
+  &quot;muutosaika&quot; : 12345,
+  &quot;muutospaikka&quot; : 12345,
+  &quot;pysyvyys&quot; : &quot;...&quot;,
+  &quot;nimi&quot; : &quot;...&quot;,
+  &quot;annostus&quot; : &quot;...&quot;,
+  &quot;vaihteleva&quot; : true,
+  &quot;vaihtelevaAnnostus&quot; : &quot;...&quot;,
+  &quot;sic&quot; : &quot;...&quot;,
+  &quot;kokoNimi&quot; : &quot;...&quot;,
+  &quot;laakeaineet&quot; : &quot;...&quot;,
+  &quot;tauonAloitusPvm&quot; : 12345,
+  &quot;tauonLopetusPvm&quot; : 12345,
+  &quot;taukohuomautuksia&quot; : &quot;...&quot;,
   &quot;annettavaMaaraTimesPaino&quot; : 12345.0,
+  &quot;vrkmaara&quot; : 12345.0,
   &quot;vrkkerratCalc&quot; : 12345,
   &quot;vrkmaaraCalc&quot; : 12345.0,
+  &quot;vrkmaaraYksikko&quot; : &quot;...&quot;,
   &quot;tauot&quot; : [ {
     &quot;alkaa&quot; : 12345,
     &quot;loppuu&quot; : 12345,
@@ -630,6 +1555,31 @@
     &quot;muutosaika&quot; : 12345,
     &quot;muutospaikka&quot; : 12345
   }, {
+    &quot;rivi&quot; : 12345,
+    &quot;numero&quot; : 12345,
+    &quot;selite&quot; : &quot;...&quot;,
+    &quot;reseptiteksti&quot; : &quot;...&quot;,
+    &quot;alkupera&quot; : { },
+    &quot;tyyppi&quot; : { },
+    &quot;poistettu&quot; : { },
+    &quot;muutosaika&quot; : 12345,
+    &quot;muutospaikka&quot; : 12345
+  } ],
+  &quot;laakitysKayttoaiheList&quot; : [ {
+    &quot;omistaja&quot; : 12345,
+    &quot;osa&quot; : 12345,
+    &quot;rivi&quot; : 12345,
+    &quot;numero&quot; : 12345,
+    &quot;selite&quot; : &quot;...&quot;,
+    &quot;reseptiteksti&quot; : &quot;...&quot;,
+    &quot;alkupera&quot; : { },
+    &quot;tyyppi&quot; : { },
+    &quot;poistettu&quot; : { },
+    &quot;muutosaika&quot; : 12345,
+    &quot;muutospaikka&quot; : 12345
+  }, {
+    &quot;omistaja&quot; : 12345,
+    &quot;osa&quot; : 12345,
     &quot;rivi&quot; : 12345,
     &quot;numero&quot; : 12345,
     &quot;selite&quot; : &quot;...&quot;,

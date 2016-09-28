@@ -212,6 +212,161 @@ static int xmlTextWriterWriteNs0LaakitysAntoType(xmlTextWriterPtr writer, struct
 static void freeNs0LaakitysAntoType(struct CoreWEB_ns0_laakitysAnto *_laakitysAnto);
 
 #endif /* DEF_CoreWEB_ns0_laakitysAnto_H */
+#ifndef DEF_CoreWEB_ns0_laakitysKayttoaiheView_H
+#define DEF_CoreWEB_ns0_laakitysKayttoaiheView_H
+
+/**
+ *  DTO for LaakitysKayttoaihe
+ * 
+ *  A class to present LAAKITYS_KAYTTOAIHE and KAYTTOAIHE tables in medication functionality
+ *  Used to carry the data from database to the client side.
+ * 
+ */
+struct CoreWEB_ns0_laakitysKayttoaiheView {
+
+
+  /**
+   * (no documentation provided)
+   */
+  int omistaja;
+
+  /**
+   * (no documentation provided)
+   */
+  int osa;
+
+  /**
+   * (no documentation provided)
+   */
+  int rivi;
+
+  /**
+   * (no documentation provided)
+   */
+  int numero;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *selite;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *reseptiteksti;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short alkupera;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short tyyppi;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short poistettu;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *muutosaika;
+
+  /**
+   * (no documentation provided)
+   */
+  int muutospaikka;
+};
+
+/**
+ * Reads a LaakitysKayttoaiheView element from XML. The element to be read is "laakitysKayttoaiheView", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKayttoaiheView, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKayttoaiheView *xml_read_CoreWEB_ns0_laakitysKayttoaiheView(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysKayttoaiheView to XML under element name "laakitysKayttoaiheView".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakitysKayttoaiheView(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView);
+
+/**
+ * Frees a LaakitysKayttoaiheView.
+ *
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to free.
+ */
+void free_CoreWEB_ns0_laakitysKayttoaiheView(struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView);
+
+/**
+ * Reads a LaakitysKayttoaiheView element from XML. The element to be read is "laakitysKayttoaiheView", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKayttoaiheView, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKayttoaiheView *xmlTextReaderReadNs0LaakitysKayttoaiheViewElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysKayttoaiheView to XML under element name "laakitysKayttoaiheView".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheViewElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView);
+
+/**
+ * Writes a LaakitysKayttoaiheView to XML under element name "laakitysKayttoaiheView".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheViewElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakitysKayttoaiheView.
+ *
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView whose children are to be free.
+ */
+static void freeNs0LaakitysKayttoaiheViewElement(struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView);
+
+/**
+ * Reads a LaakitysKayttoaiheView from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKayttoaiheView, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitysKayttoaiheView *xmlTextReaderReadNs0LaakitysKayttoaiheViewType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysKayttoaiheView to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheViewType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView);
+
+/**
+ * Frees the elements of a LaakitysKayttoaiheView.
+ *
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to free.
+ */
+static void freeNs0LaakitysKayttoaiheViewType(struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView);
+
+#endif /* DEF_CoreWEB_ns0_laakitysKayttoaiheView_H */
 #ifndef DEF_CoreWEB_ns0_tutkimuspyynto_H
 #define DEF_CoreWEB_ns0_tutkimuspyynto_H
 
@@ -1209,6 +1364,3522 @@ static int xmlTextWriterWriteNs0HoitoType(xmlTextWriterPtr writer, struct CoreWE
 static void freeNs0HoitoType(struct CoreWEB_ns0_hoito *_hoito);
 
 #endif /* DEF_CoreWEB_ns0_hoito_H */
+#ifndef DEF_CoreWEB_ns0_laake_H
+#define DEF_CoreWEB_ns0_laake_H
+
+/**
+ *  DTO for Laake, data base table LAAKE_VALMISTE
+ */
+struct CoreWEB_ns0_laake {
+
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *koodi;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *nimi;
+
+  /**
+   * (no documentation provided)
+   */
+  int *valmistaja;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *ehto;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *varoituksia;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *erityispiirre;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short erityisluvallinen;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *laakemuoto;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *vahvuus;
+
+  /**
+   * (no documentation provided)
+   */
+  float *vahvuusarvo;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *vahvuusyksikko;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *pakkaus;
+
+  /**
+   * (no documentation provided)
+   */
+  float *pakkauskerroin;
+
+  /**
+   * (no documentation provided)
+   */
+  float *pakkausarvo;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *pakkausyksikko;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *pakkaustyyppi;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *laite;
+
+  /**
+   * (no documentation provided)
+   */
+  float *hinta;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *reseptiteksti;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *korvattavuus;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *substituutioryhma;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short alkupera;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short tila;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *halytys;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *erityislupaVanhenee;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *vero;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *peruslaakevalikoima;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *kelpoisuusaika;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *sailytys;
+
+  /**
+   * (no documentation provided)
+   */
+  int *velvoitevarasto;
+
+  /**
+   * (no documentation provided)
+   */
+  int *varoitusraja;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *kappalevarasto;
+
+  /**
+   * (no documentation provided)
+   */
+  float *tukkuhinta;
+
+  /**
+   * (no documentation provided)
+   */
+  float *tarjoushinta;
+
+  /**
+   * (no documentation provided)
+   */
+  int *sopimustoimittaja;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *huomautuksia;
+
+  /**
+   * (no documentation provided)
+   */
+  int *suoritelinkki;
+
+  /**
+   * (no documentation provided)
+   */
+  int *kustannuslinkki;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short poistettu;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *muutosaika;
+
+  /**
+   * (no documentation provided)
+   */
+  short muutospaikka;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *tilasto1;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *tilasto2;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *tilasto3;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *laaketietokantaversio;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *koodityyppi;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *tukkunumero;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *laji;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *myyntiluvanHaltija;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *myyntilupanumero;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *rinnakkaisvalmiste;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *laakemuototunnus;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *substituutiokoodi;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *laakevaihto;
+
+  /**
+   * (no documentation provided)
+   */
+  float *viitehinta;
+
+  /**
+   * (no documentation provided)
+   */
+  float *hintaputki;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *reseptivalmiste;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *maaraamisehto;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *huume;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *liikennevaara;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *lapsille;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *annosjakelu;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *jakouurre;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *hintamuutos;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *suorakorvauskoodi;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *pkv;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *valmistusohje;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *markkinoija;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *veriplasmavalmiste;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *biologinenLaake;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *lisaseurannassa;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *lisatiedot;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakeAtc *atc;
+
+  /**
+   * Size of the atc array.
+   */
+  int _sizeof_atc;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *annostusSoveltuvuus;
+
+  /**
+   * Size of the annostusSoveltuvuus array.
+   */
+  int _sizeof_annostusSoveltuvuus;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakeYhteisvaikutus *yhteisvaikutus;
+
+  /**
+   * Size of the yhteisvaikutus array.
+   */
+  int _sizeof_yhteisvaikutus;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakeVastaAihe *vastaAihe;
+
+  /**
+   * Size of the vastaAihe array.
+   */
+  int _sizeof_vastaAihe;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakeTerapiaryhma *terapiaryhma;
+
+  /**
+   * Size of the terapiaryhma array.
+   */
+  int _sizeof_terapiaryhma;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakeKoostumus *koostumus;
+
+  /**
+   * Size of the koostumus array.
+   */
+  int _sizeof_koostumus;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakeTiivistelma *tiivistelma;
+
+  /**
+   * Size of the tiivistelma array.
+   */
+  int _sizeof_tiivistelma;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakeSeloste *seloste;
+
+  /**
+   * Size of the seloste array.
+   */
+  int _sizeof_seloste;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakeAine *laakeaineet;
+
+  /**
+   * Size of the laakeaineet array.
+   */
+  int _sizeof_laakeaineet;
+};
+
+/**
+ * Reads a Laake element from XML. The element to be read is "laake", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The Laake, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laake *xml_read_CoreWEB_ns0_laake(xmlTextReaderPtr reader);
+
+/**
+ * Writes a Laake to XML under element name "laake".
+ *
+ * @param writer The XML writer.
+ * @param _laake The Laake to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laake(xmlTextWriterPtr writer, struct CoreWEB_ns0_laake *_laake);
+
+/**
+ * Frees a Laake.
+ *
+ * @param _laake The Laake to free.
+ */
+void free_CoreWEB_ns0_laake(struct CoreWEB_ns0_laake *_laake);
+
+/**
+ * Reads a Laake element from XML. The element to be read is "laake", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The Laake, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laake *xmlTextReaderReadNs0LaakeElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a Laake to XML under element name "laake".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laake The Laake to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laake *_laake);
+
+/**
+ * Writes a Laake to XML under element name "laake".
+ *
+ * @param writer The XML writer.
+ * @param _laake The Laake to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laake *_laake, int writeNamespaces);
+
+/**
+ * Frees the children of a Laake.
+ *
+ * @param _laake The Laake whose children are to be free.
+ */
+static void freeNs0LaakeElement(struct CoreWEB_ns0_laake *_laake);
+
+/**
+ * Reads a Laake from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The Laake, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laake *xmlTextReaderReadNs0LaakeType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a Laake to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laake The Laake to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laake *_laake);
+
+/**
+ * Frees the elements of a Laake.
+ *
+ * @param _laake The Laake to free.
+ */
+static void freeNs0LaakeType(struct CoreWEB_ns0_laake *_laake);
+
+#endif /* DEF_CoreWEB_ns0_laake_H */
+#ifndef DEF_CoreWEB_ns0_laakeAine_H
+#define DEF_CoreWEB_ns0_laakeAine_H
+
+/**
+ *  DTO for LaakeAine, data base table LAAKE_AINE
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_AINE.html
+ */
+struct CoreWEB_ns0_laakeAine {
+
+
+  /**
+   * Get medicine vnr code
+   */
+  xmlChar *laake;
+
+  /**
+   * Get medicine ingredient
+   */
+  xmlChar *aine;
+
+  /**
+   * Get ingredient amount
+   */
+  float *maara;
+
+  /**
+   * Get ingredient amount unit
+   */
+  xmlChar *yksikko;
+
+  /**
+   * Get the origin
+   * -'O' if added by organization
+   * -'A' or 'M' otherwise
+   */
+  unsigned short alkupera;
+
+  /**
+   * Get the code for the ingredient (l��ketietokannasta)
+   */
+  xmlChar *ainekoodi;
+
+  /**
+   * Get the ATC code, if available
+   */
+  xmlChar *atc;
+
+  /**
+   * Get the order number for the ingredient, if available
+   */
+  int *jarjestys;
+};
+
+/**
+ * Reads a LaakeAine element from XML. The element to be read is "laakeAine", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAine, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAine *xml_read_CoreWEB_ns0_laakeAine(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAine to XML under element name "laakeAine".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAine The LaakeAine to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeAine(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAine *_laakeAine);
+
+/**
+ * Frees a LaakeAine.
+ *
+ * @param _laakeAine The LaakeAine to free.
+ */
+void free_CoreWEB_ns0_laakeAine(struct CoreWEB_ns0_laakeAine *_laakeAine);
+
+/**
+ * Reads a LaakeAine element from XML. The element to be read is "laakeAine", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAine, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAine *xmlTextReaderReadNs0LaakeAineElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAine to XML under element name "laakeAine".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAine The LaakeAine to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAineElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAine *_laakeAine);
+
+/**
+ * Writes a LaakeAine to XML under element name "laakeAine".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAine The LaakeAine to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAineElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAine *_laakeAine, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeAine.
+ *
+ * @param _laakeAine The LaakeAine whose children are to be free.
+ */
+static void freeNs0LaakeAineElement(struct CoreWEB_ns0_laakeAine *_laakeAine);
+
+/**
+ * Reads a LaakeAine from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAine, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeAine *xmlTextReaderReadNs0LaakeAineType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAine to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAine The LaakeAine to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAineType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAine *_laakeAine);
+
+/**
+ * Frees the elements of a LaakeAine.
+ *
+ * @param _laakeAine The LaakeAine to free.
+ */
+static void freeNs0LaakeAineType(struct CoreWEB_ns0_laakeAine *_laakeAine);
+
+#endif /* DEF_CoreWEB_ns0_laakeAine_H */
+#ifndef DEF_CoreWEB_ns0_laakeAnnostus_H
+#define DEF_CoreWEB_ns0_laakeAnnostus_H
+
+/**
+ *  DTO for LaakeAnnostus
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS.html
+ */
+struct CoreWEB_ns0_laakeAnnostus {
+
+
+  /**
+   * Returns the id of the dosage
+   */
+  int numero;
+
+  /**
+   * Returns the explanation of the dosage
+   */
+  xmlChar *selite;
+
+  /**
+   * Returns the lower age limit
+   */
+  int *alaikaraja;
+
+  /**
+   * Returns the upper age limit
+   */
+  int *ylaikaraja;
+
+  /**
+   * Returns the lower weight limit
+   */
+  int *alapainoraja;
+
+  /**
+   * Returns the upper weight limit
+   */
+  int *ylapainoraja;
+
+  /**
+   * Returns the model for the prescription text
+   */
+  xmlChar *malli;
+
+  /**
+   * Returns the amount of decimals in prescription text
+   */
+  short desimaaleja;
+
+  /**
+   * Returns 'K' if dosage should be multiplied by patients weight
+   */
+  unsigned short painokerroin;
+
+  /**
+   * Returns the size of the single dosage
+   */
+  float annettavaMaara;
+
+  /**
+   * Returns the maximum size of a single dosage
+   */
+  float *annettavaMaksimi;
+
+  /**
+   * Returns the unit of the single dosage
+   */
+  xmlChar *annettavaYksikko;
+
+  /**
+   * Returns the speed of dosing
+   */
+  float *antotahti;
+
+  /**
+   * Returns the unit of the dosing speed
+   */
+  xmlChar *antotahtiYksikko;
+
+  /**
+   * Returns the total duratio of the dosage
+   */
+  xmlChar *kokonaiskesto;
+
+  /**
+   * Returns the total amount of the dosage
+   */
+  float *kokonaismaara;
+
+  /**
+   * Returns the unit of total amount of the dosage
+   */
+  xmlChar *kokonaismaaraYksikko;
+
+  /**
+   * Returns the confirmation for the dosage
+   * -'K' if "sic!" should be added to the prescription text
+   * -'E' otherwise
+   */
+  unsigned short varmistus;
+
+  /**
+   * Returns the use of the dosage
+   */
+  xmlChar *kayttotarkoitus;
+
+  /**
+   * Returns the instructions of the dosage
+   */
+  xmlChar *ohjeet;
+
+  /**
+   * Returns the iteration
+   */
+  int *iterointi;
+
+  /**
+   * Returns the permanence of the dosage
+   * -'K' pysyv�
+   * -'E' otherwise
+   */
+  unsigned short pysyva;
+
+  /**
+   * Returns if the medicine is taken when needed
+   * -'K' tarvittaessa
+   * -'E' otherwise
+   */
+  unsigned short tarvittaessa;
+
+  /**
+   * Returns 'K' if Kela wants user to explain the usage of medicine. 'E' otherwise.
+   */
+  unsigned short perusteluVaaditaan;
+
+  /**
+   * Returns "antoreitit" for the medicine
+   */
+  xmlChar *antoreitit;
+
+  /**
+   * Returns "antopaikat" for the medicine
+   */
+  xmlChar *antopaikat;
+
+  /**
+   * Returns "antov�lineet" for the medicine
+   */
+  xmlChar *antovalineet;
+
+  /**
+   * Returns "antotavat" for the medicine
+   */
+  xmlChar *antotavat;
+
+  /**
+   * Returns the origin of the dosage
+   * -'O' if current organization
+   * -'A' or 'M' otherwise
+   */
+  unsigned short alkupera;
+
+  /**
+   * Returns the code of the dosage removal. 'E' - not removed, 'K' = removed
+   */
+  unsigned short poistettu;
+
+  /**
+   * Returns the actual DB-change time of the dosage
+   */
+  struct tm *muutosaika;
+
+  /**
+   * Returns the organization in which the change has been made
+   */
+  int muutospaikka;
+
+  /**
+   * Returns whose dosage it is
+   */
+  int *kenen;
+
+  /**
+   * Returns a summary of the dosage
+   */
+  xmlChar *lyhyesti;
+
+  /**
+   * Returns the repetition of the dosage
+   */
+  xmlChar *toisto;
+
+  /**
+   * Returns the repetition in plain language
+   */
+  xmlChar *toistokuvaus;
+
+  /**
+   * Returns the time unit used
+   */
+  xmlChar *aikayksikko;
+};
+
+/**
+ * Reads a LaakeAnnostus element from XML. The element to be read is "laakeAnnostus", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAnnostus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAnnostus *xml_read_CoreWEB_ns0_laakeAnnostus(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAnnostus to XML under element name "laakeAnnostus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostus The LaakeAnnostus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeAnnostus(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus);
+
+/**
+ * Frees a LaakeAnnostus.
+ *
+ * @param _laakeAnnostus The LaakeAnnostus to free.
+ */
+void free_CoreWEB_ns0_laakeAnnostus(struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus);
+
+/**
+ * Reads a LaakeAnnostus element from XML. The element to be read is "laakeAnnostus", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAnnostus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAnnostus *xmlTextReaderReadNs0LaakeAnnostusElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAnnostus to XML under element name "laakeAnnostus".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostus The LaakeAnnostus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus);
+
+/**
+ * Writes a LaakeAnnostus to XML under element name "laakeAnnostus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostus The LaakeAnnostus to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeAnnostus.
+ *
+ * @param _laakeAnnostus The LaakeAnnostus whose children are to be free.
+ */
+static void freeNs0LaakeAnnostusElement(struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus);
+
+/**
+ * Reads a LaakeAnnostus from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAnnostus, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeAnnostus *xmlTextReaderReadNs0LaakeAnnostusType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAnnostus to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostus The LaakeAnnostus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus);
+
+/**
+ * Frees the elements of a LaakeAnnostus.
+ *
+ * @param _laakeAnnostus The LaakeAnnostus to free.
+ */
+static void freeNs0LaakeAnnostusType(struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus);
+
+#endif /* DEF_CoreWEB_ns0_laakeAnnostus_H */
+#ifndef DEF_CoreWEB_ns0_laakeAnnostusSoveltuvuus_H
+#define DEF_CoreWEB_ns0_laakeAnnostusSoveltuvuus_H
+
+/**
+ *  DTO for LaakeAnnostusSoveltuvuus
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS_SOVELTUVUUS.html
+ */
+struct CoreWEB_ns0_laakeAnnostusSoveltuvuus {
+
+
+  /**
+   * Returns the vnr code of the medicine
+   */
+  xmlChar *laake;
+
+  /**
+   * Returns the origin of the dosage
+   * -'O' if current organization
+   * -'A' or 'M' otherwise
+   */
+  unsigned short *alkupera;
+
+  /**
+   * 
+   */
+  struct CoreWEB_ns0_laakeAnnostus *annostus;
+};
+
+/**
+ * Reads a LaakeAnnostusSoveltuvuus element from XML. The element to be read is "laakeAnnostusSoveltuvuus", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAnnostusSoveltuvuus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *xml_read_CoreWEB_ns0_laakeAnnostusSoveltuvuus(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAnnostusSoveltuvuus to XML under element name "laakeAnnostusSoveltuvuus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeAnnostusSoveltuvuus(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus);
+
+/**
+ * Frees a LaakeAnnostusSoveltuvuus.
+ *
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to free.
+ */
+void free_CoreWEB_ns0_laakeAnnostusSoveltuvuus(struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus);
+
+/**
+ * Reads a LaakeAnnostusSoveltuvuus element from XML. The element to be read is "laakeAnnostusSoveltuvuus", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAnnostusSoveltuvuus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *xmlTextReaderReadNs0LaakeAnnostusSoveltuvuusElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAnnostusSoveltuvuus to XML under element name "laakeAnnostusSoveltuvuus".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusSoveltuvuusElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus);
+
+/**
+ * Writes a LaakeAnnostusSoveltuvuus to XML under element name "laakeAnnostusSoveltuvuus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusSoveltuvuusElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeAnnostusSoveltuvuus.
+ *
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus whose children are to be free.
+ */
+static void freeNs0LaakeAnnostusSoveltuvuusElement(struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus);
+
+/**
+ * Reads a LaakeAnnostusSoveltuvuus from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAnnostusSoveltuvuus, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *xmlTextReaderReadNs0LaakeAnnostusSoveltuvuusType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAnnostusSoveltuvuus to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusSoveltuvuusType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus);
+
+/**
+ * Frees the elements of a LaakeAnnostusSoveltuvuus.
+ *
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to free.
+ */
+static void freeNs0LaakeAnnostusSoveltuvuusType(struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus);
+
+#endif /* DEF_CoreWEB_ns0_laakeAnnostusSoveltuvuus_H */
+#ifndef DEF_CoreWEB_ns0_laakeAtc_H
+#define DEF_CoreWEB_ns0_laakeAtc_H
+
+/**
+ *  DTO for LaakeAtc, data base table LAAKE_ATC
+ */
+struct CoreWEB_ns0_laakeAtc {
+
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *atc;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short alkupera;
+};
+
+/**
+ * Reads a LaakeAtc element from XML. The element to be read is "laakeAtc", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAtc, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAtc *xml_read_CoreWEB_ns0_laakeAtc(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAtc to XML under element name "laakeAtc".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAtc The LaakeAtc to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeAtc(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAtc *_laakeAtc);
+
+/**
+ * Frees a LaakeAtc.
+ *
+ * @param _laakeAtc The LaakeAtc to free.
+ */
+void free_CoreWEB_ns0_laakeAtc(struct CoreWEB_ns0_laakeAtc *_laakeAtc);
+
+/**
+ * Reads a LaakeAtc element from XML. The element to be read is "laakeAtc", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAtc, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAtc *xmlTextReaderReadNs0LaakeAtcElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAtc to XML under element name "laakeAtc".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAtc The LaakeAtc to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAtcElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAtc *_laakeAtc);
+
+/**
+ * Writes a LaakeAtc to XML under element name "laakeAtc".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAtc The LaakeAtc to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAtcElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAtc *_laakeAtc, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeAtc.
+ *
+ * @param _laakeAtc The LaakeAtc whose children are to be free.
+ */
+static void freeNs0LaakeAtcElement(struct CoreWEB_ns0_laakeAtc *_laakeAtc);
+
+/**
+ * Reads a LaakeAtc from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAtc, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeAtc *xmlTextReaderReadNs0LaakeAtcType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeAtc to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAtc The LaakeAtc to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeAtcType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAtc *_laakeAtc);
+
+/**
+ * Frees the elements of a LaakeAtc.
+ *
+ * @param _laakeAtc The LaakeAtc to free.
+ */
+static void freeNs0LaakeAtcType(struct CoreWEB_ns0_laakeAtc *_laakeAtc);
+
+#endif /* DEF_CoreWEB_ns0_laakeAtc_H */
+#ifndef DEF_CoreWEB_ns0_laakeKoostumus_H
+#define DEF_CoreWEB_ns0_laakeKoostumus_H
+
+/**
+ *  DTO for LaakeKoostumus
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html
+ */
+struct CoreWEB_ns0_laakeKoostumus {
+
+
+  /**
+   * Returns the part number of the medicine component
+   */
+  int osa;
+
+  /**
+   * Returns the type of the medicine component
+   * -'B' if "pohja-aine"
+   * -Perusaine, johon lis�aineet sekoitetaan
+   * -'A' if "lis�aine"
+   * -Lis�aineet ovat yleens� varsinaisia vaikuttavia aineita
+   */
+  unsigned short tyyppi;
+
+  /**
+   * Returns the component code (VNR code)
+   */
+  xmlChar *komponentinKoodi;
+
+  /**
+   * Returns the component in text format
+   */
+  xmlChar *komponentti;
+
+  /**
+   * Returns the amount of component
+   */
+  float *maara;
+
+  /**
+   * Returns the unit of amount
+   */
+  xmlChar *yksikko;
+
+  /**
+   * Returns the strength of the component
+   */
+  float *vahvuus;
+
+  /**
+   * Returns the unit of strength
+   */
+  xmlChar *vahvuusyksikko;
+};
+
+/**
+ * Reads a LaakeKoostumus element from XML. The element to be read is "laakeKoostumus", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeKoostumus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeKoostumus *xml_read_CoreWEB_ns0_laakeKoostumus(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeKoostumus to XML under element name "laakeKoostumus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeKoostumus The LaakeKoostumus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeKoostumus(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus);
+
+/**
+ * Frees a LaakeKoostumus.
+ *
+ * @param _laakeKoostumus The LaakeKoostumus to free.
+ */
+void free_CoreWEB_ns0_laakeKoostumus(struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus);
+
+/**
+ * Reads a LaakeKoostumus element from XML. The element to be read is "laakeKoostumus", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeKoostumus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeKoostumus *xmlTextReaderReadNs0LaakeKoostumusElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeKoostumus to XML under element name "laakeKoostumus".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeKoostumus The LaakeKoostumus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeKoostumusElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus);
+
+/**
+ * Writes a LaakeKoostumus to XML under element name "laakeKoostumus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeKoostumus The LaakeKoostumus to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeKoostumusElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeKoostumus.
+ *
+ * @param _laakeKoostumus The LaakeKoostumus whose children are to be free.
+ */
+static void freeNs0LaakeKoostumusElement(struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus);
+
+/**
+ * Reads a LaakeKoostumus from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeKoostumus, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeKoostumus *xmlTextReaderReadNs0LaakeKoostumusType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeKoostumus to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeKoostumus The LaakeKoostumus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeKoostumusType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus);
+
+/**
+ * Frees the elements of a LaakeKoostumus.
+ *
+ * @param _laakeKoostumus The LaakeKoostumus to free.
+ */
+static void freeNs0LaakeKoostumusType(struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus);
+
+#endif /* DEF_CoreWEB_ns0_laakeKoostumus_H */
+#ifndef DEF_CoreWEB_ns0_laakeSeloste_H
+#define DEF_CoreWEB_ns0_laakeSeloste_H
+
+/**
+ *  DTO for LaakeSeloste
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html
+ */
+struct CoreWEB_ns0_laakeSeloste {
+
+
+  /**
+   * Returns the id of the medication description
+   */
+  int seloste;
+
+  /**
+   * Returns the name of the medication
+   */
+  xmlChar *nimi;
+
+  /**
+   * Returns the preconditions for the medicine
+   * (m��r�ys-/toimitusehto)
+   */
+  xmlChar *ehto;
+
+  /**
+   * Returns the manufacturer of the medicine
+   */
+  xmlChar *valmistaja;
+
+  /**
+   * Returns the code of the description removal. 'E' - not removed, 'K' = removed
+   */
+  unsigned short poistettu;
+
+  /**
+   * Returns the actual DB-change time of the desctription
+   */
+  struct tm *muutosaika;
+
+  /**
+   * Returns the organization in which the change has been made
+   */
+  short muutospaikka;
+
+  /**
+   * Returns a list of description texts
+   */
+  struct CoreWEB_ns0_laakeSelosteTeksti *tekstit;
+
+  /**
+   * Size of the tekstit array.
+   */
+  int _sizeof_tekstit;
+};
+
+/**
+ * Reads a LaakeSeloste element from XML. The element to be read is "laakeSeloste", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeSeloste, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeSeloste *xml_read_CoreWEB_ns0_laakeSeloste(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeSeloste to XML under element name "laakeSeloste".
+ *
+ * @param writer The XML writer.
+ * @param _laakeSeloste The LaakeSeloste to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeSeloste(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSeloste *_laakeSeloste);
+
+/**
+ * Frees a LaakeSeloste.
+ *
+ * @param _laakeSeloste The LaakeSeloste to free.
+ */
+void free_CoreWEB_ns0_laakeSeloste(struct CoreWEB_ns0_laakeSeloste *_laakeSeloste);
+
+/**
+ * Reads a LaakeSeloste element from XML. The element to be read is "laakeSeloste", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeSeloste, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeSeloste *xmlTextReaderReadNs0LaakeSelosteElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeSeloste to XML under element name "laakeSeloste".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeSeloste The LaakeSeloste to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSeloste *_laakeSeloste);
+
+/**
+ * Writes a LaakeSeloste to XML under element name "laakeSeloste".
+ *
+ * @param writer The XML writer.
+ * @param _laakeSeloste The LaakeSeloste to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSeloste *_laakeSeloste, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeSeloste.
+ *
+ * @param _laakeSeloste The LaakeSeloste whose children are to be free.
+ */
+static void freeNs0LaakeSelosteElement(struct CoreWEB_ns0_laakeSeloste *_laakeSeloste);
+
+/**
+ * Reads a LaakeSeloste from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeSeloste, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeSeloste *xmlTextReaderReadNs0LaakeSelosteType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeSeloste to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeSeloste The LaakeSeloste to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSeloste *_laakeSeloste);
+
+/**
+ * Frees the elements of a LaakeSeloste.
+ *
+ * @param _laakeSeloste The LaakeSeloste to free.
+ */
+static void freeNs0LaakeSelosteType(struct CoreWEB_ns0_laakeSeloste *_laakeSeloste);
+
+#endif /* DEF_CoreWEB_ns0_laakeSeloste_H */
+#ifndef DEF_CoreWEB_ns0_laakeSelosteTeksti_H
+#define DEF_CoreWEB_ns0_laakeSelosteTeksti_H
+
+/**
+ *  DTO for LaakeSelosteTeksti
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_TEKSTI.html
+ */
+struct CoreWEB_ns0_laakeSelosteTeksti {
+
+
+  /**
+   * Returns the part number of the description, can be used to order descriptions
+   */
+  int osa;
+
+  /**
+   * 
+   */
+  int otsikko;
+
+  /**
+   * Returns the text of the description
+   */
+  xmlChar *teksti;
+};
+
+/**
+ * Reads a LaakeSelosteTeksti element from XML. The element to be read is "laakeSelosteTeksti", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeSelosteTeksti, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeSelosteTeksti *xml_read_CoreWEB_ns0_laakeSelosteTeksti(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeSelosteTeksti to XML under element name "laakeSelosteTeksti".
+ *
+ * @param writer The XML writer.
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeSelosteTeksti(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti);
+
+/**
+ * Frees a LaakeSelosteTeksti.
+ *
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to free.
+ */
+void free_CoreWEB_ns0_laakeSelosteTeksti(struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti);
+
+/**
+ * Reads a LaakeSelosteTeksti element from XML. The element to be read is "laakeSelosteTeksti", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeSelosteTeksti, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeSelosteTeksti *xmlTextReaderReadNs0LaakeSelosteTekstiElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeSelosteTeksti to XML under element name "laakeSelosteTeksti".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteTekstiElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti);
+
+/**
+ * Writes a LaakeSelosteTeksti to XML under element name "laakeSelosteTeksti".
+ *
+ * @param writer The XML writer.
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteTekstiElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeSelosteTeksti.
+ *
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti whose children are to be free.
+ */
+static void freeNs0LaakeSelosteTekstiElement(struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti);
+
+/**
+ * Reads a LaakeSelosteTeksti from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeSelosteTeksti, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeSelosteTeksti *xmlTextReaderReadNs0LaakeSelosteTekstiType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeSelosteTeksti to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteTekstiType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti);
+
+/**
+ * Frees the elements of a LaakeSelosteTeksti.
+ *
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to free.
+ */
+static void freeNs0LaakeSelosteTekstiType(struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti);
+
+#endif /* DEF_CoreWEB_ns0_laakeSelosteTeksti_H */
+#ifndef DEF_CoreWEB_ns0_laakeTerapiaryhma_H
+#define DEF_CoreWEB_ns0_laakeTerapiaryhma_H
+
+/**
+ *  DTO for LaakeTerapiaryhma
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TERAPIARYHMA.html
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/TERAPIARYHMA.html
+ */
+struct CoreWEB_ns0_laakeTerapiaryhma {
+
+
+  /**
+   * Returns the code of the therapy group
+   */
+  xmlChar *terapiaryhma;
+
+  /**
+   * Returns the origin of the therapy group
+   * -'O' if therapy group is linked in the current organization
+   * -'A' or 'M' otherwise
+   */
+  unsigned short alkupera;
+
+  /**
+   * Returns the name of the therapy group
+   */
+  xmlChar *nimi;
+
+  /**
+   * Returns the level of the therapy group
+   * -1 is the highest level, lower levels are >1
+   */
+  int *taso;
+
+  /**
+   * Returns the code of the therapy group removal. 'E' - not removed, 'K' = removed
+   */
+  unsigned short poistettu;
+};
+
+/**
+ * Reads a LaakeTerapiaryhma element from XML. The element to be read is "laakeTerapiaryhma", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTerapiaryhma, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTerapiaryhma *xml_read_CoreWEB_ns0_laakeTerapiaryhma(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeTerapiaryhma to XML under element name "laakeTerapiaryhma".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeTerapiaryhma(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma);
+
+/**
+ * Frees a LaakeTerapiaryhma.
+ *
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to free.
+ */
+void free_CoreWEB_ns0_laakeTerapiaryhma(struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma);
+
+/**
+ * Reads a LaakeTerapiaryhma element from XML. The element to be read is "laakeTerapiaryhma", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTerapiaryhma, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTerapiaryhma *xmlTextReaderReadNs0LaakeTerapiaryhmaElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeTerapiaryhma to XML under element name "laakeTerapiaryhma".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeTerapiaryhmaElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma);
+
+/**
+ * Writes a LaakeTerapiaryhma to XML under element name "laakeTerapiaryhma".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeTerapiaryhmaElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeTerapiaryhma.
+ *
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma whose children are to be free.
+ */
+static void freeNs0LaakeTerapiaryhmaElement(struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma);
+
+/**
+ * Reads a LaakeTerapiaryhma from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTerapiaryhma, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeTerapiaryhma *xmlTextReaderReadNs0LaakeTerapiaryhmaType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeTerapiaryhma to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeTerapiaryhmaType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma);
+
+/**
+ * Frees the elements of a LaakeTerapiaryhma.
+ *
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to free.
+ */
+static void freeNs0LaakeTerapiaryhmaType(struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma);
+
+#endif /* DEF_CoreWEB_ns0_laakeTerapiaryhma_H */
+#ifndef DEF_CoreWEB_ns0_laakeTiivistelma_H
+#define DEF_CoreWEB_ns0_laakeTiivistelma_H
+
+/**
+ *  DTO for LaakeTiivistelma
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html
+ */
+struct CoreWEB_ns0_laakeTiivistelma {
+
+
+  /**
+   * Returns the id of the summary
+   */
+  int tiivistelma;
+
+  /**
+   * Returns the name of the medicine the summary is about
+   */
+  xmlChar *nimi;
+
+  /**
+   * Returns the preconditions for the medicine
+   * (m��r�ys-/toimitusehto)
+   */
+  xmlChar *ehto;
+
+  /**
+   * Returns the manufacturer
+   */
+  xmlChar *valmistaja;
+
+  /**
+   * Returns the refundability
+   */
+  xmlChar *korvattavuus;
+
+  /**
+   * Returns the code of the summary removal. 'E' - not removed, 'K' = removed
+   */
+  unsigned short poistettu;
+
+  /**
+   * Returns the actual DB-change time of the summary
+   */
+  struct tm *muutosaika;
+
+  /**
+   * Returns the organization in which the change has been made
+   */
+  short muutospaikka;
+
+  /**
+   * Returns a list of summary texts
+   */
+  struct CoreWEB_ns0_laakeTiivistelmaTeksti *tekstit;
+
+  /**
+   * Size of the tekstit array.
+   */
+  int _sizeof_tekstit;
+};
+
+/**
+ * Reads a LaakeTiivistelma element from XML. The element to be read is "laakeTiivistelma", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTiivistelma, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTiivistelma *xml_read_CoreWEB_ns0_laakeTiivistelma(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeTiivistelma to XML under element name "laakeTiivistelma".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelma The LaakeTiivistelma to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeTiivistelma(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma);
+
+/**
+ * Frees a LaakeTiivistelma.
+ *
+ * @param _laakeTiivistelma The LaakeTiivistelma to free.
+ */
+void free_CoreWEB_ns0_laakeTiivistelma(struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma);
+
+/**
+ * Reads a LaakeTiivistelma element from XML. The element to be read is "laakeTiivistelma", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTiivistelma, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTiivistelma *xmlTextReaderReadNs0LaakeTiivistelmaElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeTiivistelma to XML under element name "laakeTiivistelma".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelma The LaakeTiivistelma to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma);
+
+/**
+ * Writes a LaakeTiivistelma to XML under element name "laakeTiivistelma".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelma The LaakeTiivistelma to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeTiivistelma.
+ *
+ * @param _laakeTiivistelma The LaakeTiivistelma whose children are to be free.
+ */
+static void freeNs0LaakeTiivistelmaElement(struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma);
+
+/**
+ * Reads a LaakeTiivistelma from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTiivistelma, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeTiivistelma *xmlTextReaderReadNs0LaakeTiivistelmaType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeTiivistelma to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelma The LaakeTiivistelma to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma);
+
+/**
+ * Frees the elements of a LaakeTiivistelma.
+ *
+ * @param _laakeTiivistelma The LaakeTiivistelma to free.
+ */
+static void freeNs0LaakeTiivistelmaType(struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma);
+
+#endif /* DEF_CoreWEB_ns0_laakeTiivistelma_H */
+#ifndef DEF_CoreWEB_ns0_laakeTiivistelmaTeksti_H
+#define DEF_CoreWEB_ns0_laakeTiivistelmaTeksti_H
+
+/**
+ *  DTO for LaakeTiivistelmaTeksti
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_TEKSTI.html
+ */
+struct CoreWEB_ns0_laakeTiivistelmaTeksti {
+
+
+  /**
+   * Returns the part number of the summary text, can be used to order summaries
+   */
+  int osa;
+
+  /**
+   * Returns the header of the
+   */
+  int otsikko;
+
+  /**
+   * Returns the summary text
+   */
+  xmlChar *teksti;
+};
+
+/**
+ * Reads a LaakeTiivistelmaTeksti element from XML. The element to be read is "laakeTiivistelmaTeksti", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTiivistelmaTeksti, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTiivistelmaTeksti *xml_read_CoreWEB_ns0_laakeTiivistelmaTeksti(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeTiivistelmaTeksti to XML under element name "laakeTiivistelmaTeksti".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeTiivistelmaTeksti(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti);
+
+/**
+ * Frees a LaakeTiivistelmaTeksti.
+ *
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to free.
+ */
+void free_CoreWEB_ns0_laakeTiivistelmaTeksti(struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti);
+
+/**
+ * Reads a LaakeTiivistelmaTeksti element from XML. The element to be read is "laakeTiivistelmaTeksti", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTiivistelmaTeksti, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTiivistelmaTeksti *xmlTextReaderReadNs0LaakeTiivistelmaTekstiElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeTiivistelmaTeksti to XML under element name "laakeTiivistelmaTeksti".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaTekstiElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti);
+
+/**
+ * Writes a LaakeTiivistelmaTeksti to XML under element name "laakeTiivistelmaTeksti".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaTekstiElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeTiivistelmaTeksti.
+ *
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti whose children are to be free.
+ */
+static void freeNs0LaakeTiivistelmaTekstiElement(struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti);
+
+/**
+ * Reads a LaakeTiivistelmaTeksti from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTiivistelmaTeksti, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeTiivistelmaTeksti *xmlTextReaderReadNs0LaakeTiivistelmaTekstiType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeTiivistelmaTeksti to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaTekstiType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti);
+
+/**
+ * Frees the elements of a LaakeTiivistelmaTeksti.
+ *
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to free.
+ */
+static void freeNs0LaakeTiivistelmaTekstiType(struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti);
+
+#endif /* DEF_CoreWEB_ns0_laakeTiivistelmaTeksti_H */
+#ifndef DEF_CoreWEB_ns0_laakeVastaAihe_H
+#define DEF_CoreWEB_ns0_laakeVastaAihe_H
+
+/**
+ *  DTO for LaakeVastaAihe
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html
+ */
+struct CoreWEB_ns0_laakeVastaAihe {
+
+
+  /**
+   * Returns the id
+   */
+  int vastaAihe;
+
+  /**
+   * Returns the origin of the contraindication
+   */
+  unsigned short vastaAiheAlkupera;
+
+  /**
+   * Returns the name of the contraindication in plain language
+   */
+  xmlChar *selite;
+
+  /**
+   * Returns the type of the contraindication
+   * -'Y' age in years
+   * -'M' age in months
+   * -'W' age in weeks
+   * -'G' weight
+   * -'P' pregnancy
+   * -'B' breastfeeding
+   * -'D' diagnose
+   * -'1' male
+   * -'2' female
+   */
+  unsigned short rajoite;
+
+  /**
+   * Returns the lower limit of the contraindication
+   */
+  int *alaraja;
+
+  /**
+   * Returns the upper limit of the contraindication
+   */
+  int *ylaraja;
+
+  /**
+   * Returns the origin of the contraindication
+   * -'O' if therapy group is linked in the current organization
+   * -'A' or 'M' otherwise
+   */
+  unsigned short alkupera;
+
+  /**
+   * Returns the code of the contraindication removal. 'E' - not removed, 'K' = removed
+   */
+  unsigned short poistettu;
+
+  /**
+   * Returns the actual DB-change time of the contraindication
+   */
+  struct tm *muutosaika;
+
+  /**
+   * Returns the organization in which the change has been made
+   */
+  short muutospaikka;
+};
+
+/**
+ * Reads a LaakeVastaAihe element from XML. The element to be read is "laakeVastaAihe", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeVastaAihe, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeVastaAihe *xml_read_CoreWEB_ns0_laakeVastaAihe(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeVastaAihe to XML under element name "laakeVastaAihe".
+ *
+ * @param writer The XML writer.
+ * @param _laakeVastaAihe The LaakeVastaAihe to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeVastaAihe(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe);
+
+/**
+ * Frees a LaakeVastaAihe.
+ *
+ * @param _laakeVastaAihe The LaakeVastaAihe to free.
+ */
+void free_CoreWEB_ns0_laakeVastaAihe(struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe);
+
+/**
+ * Reads a LaakeVastaAihe element from XML. The element to be read is "laakeVastaAihe", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeVastaAihe, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeVastaAihe *xmlTextReaderReadNs0LaakeVastaAiheElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeVastaAihe to XML under element name "laakeVastaAihe".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeVastaAihe The LaakeVastaAihe to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeVastaAiheElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe);
+
+/**
+ * Writes a LaakeVastaAihe to XML under element name "laakeVastaAihe".
+ *
+ * @param writer The XML writer.
+ * @param _laakeVastaAihe The LaakeVastaAihe to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeVastaAiheElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeVastaAihe.
+ *
+ * @param _laakeVastaAihe The LaakeVastaAihe whose children are to be free.
+ */
+static void freeNs0LaakeVastaAiheElement(struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe);
+
+/**
+ * Reads a LaakeVastaAihe from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeVastaAihe, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeVastaAihe *xmlTextReaderReadNs0LaakeVastaAiheType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeVastaAihe to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeVastaAihe The LaakeVastaAihe to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeVastaAiheType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe);
+
+/**
+ * Frees the elements of a LaakeVastaAihe.
+ *
+ * @param _laakeVastaAihe The LaakeVastaAihe to free.
+ */
+static void freeNs0LaakeVastaAiheType(struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe);
+
+#endif /* DEF_CoreWEB_ns0_laakeVastaAihe_H */
+#ifndef DEF_CoreWEB_ns0_laakeYhteisvaikutus_H
+#define DEF_CoreWEB_ns0_laakeYhteisvaikutus_H
+
+/**
+ *  DTO for Yhteisvaikutus
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_YHTEISVAIKUTUS.html
+ */
+struct CoreWEB_ns0_laakeYhteisvaikutus {
+
+
+  /**
+   * Returns the ATC code or the name of the agent (atc tai vaikuttava aine)
+   */
+  xmlChar *aine;
+
+  /**
+   * Returns the used code system
+   * -If getAine returns an ATC code, getKoodisto returns "ATC"
+   */
+  xmlChar *koodisto;
+
+  /**
+   * Returns the origin of interaction
+   * -'O' if interaction is linked in the current organization
+   * -'A' or 'M' otherwise
+   */
+  unsigned short alkupera;
+};
+
+/**
+ * Reads a LaakeYhteisvaikutus element from XML. The element to be read is "laakeYhteisvaikutus", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeYhteisvaikutus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeYhteisvaikutus *xml_read_CoreWEB_ns0_laakeYhteisvaikutus(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeYhteisvaikutus to XML under element name "laakeYhteisvaikutus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakeYhteisvaikutus(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus);
+
+/**
+ * Frees a LaakeYhteisvaikutus.
+ *
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to free.
+ */
+void free_CoreWEB_ns0_laakeYhteisvaikutus(struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus);
+
+/**
+ * Reads a LaakeYhteisvaikutus element from XML. The element to be read is "laakeYhteisvaikutus", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeYhteisvaikutus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeYhteisvaikutus *xmlTextReaderReadNs0LaakeYhteisvaikutusElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeYhteisvaikutus to XML under element name "laakeYhteisvaikutus".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeYhteisvaikutusElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus);
+
+/**
+ * Writes a LaakeYhteisvaikutus to XML under element name "laakeYhteisvaikutus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeYhteisvaikutusElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakeYhteisvaikutus.
+ *
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus whose children are to be free.
+ */
+static void freeNs0LaakeYhteisvaikutusElement(struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus);
+
+/**
+ * Reads a LaakeYhteisvaikutus from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeYhteisvaikutus, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeYhteisvaikutus *xmlTextReaderReadNs0LaakeYhteisvaikutusType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakeYhteisvaikutus to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakeYhteisvaikutusType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus);
+
+/**
+ * Frees the elements of a LaakeYhteisvaikutus.
+ *
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to free.
+ */
+static void freeNs0LaakeYhteisvaikutusType(struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus);
+
+#endif /* DEF_CoreWEB_ns0_laakeYhteisvaikutus_H */
+#ifndef DEF_CoreWEB_ns0_laakitys_H
+#define DEF_CoreWEB_ns0_laakitys_H
+
+/**
+ * 
+ *  DTO for Laakitys
+ * 
+ */
+struct CoreWEB_ns0_laakitys {
+
+
+  /**
+   * (no documentation provided)
+   */
+  int omistaja;
+
+  /**
+   * (no documentation provided)
+   */
+  int osa;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laake *laakevalmiste;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *laake;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *aloitettu;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *tapahtunut;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short tapahtuma;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *riittoisuus;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *lopetettu;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *lopetussyy;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *reseptiteksti;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *malli;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *lyhyesti;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short vaihdettavuus;
+
+  /**
+   * (no documentation provided)
+   */
+  float annettavaMaara;
+
+  /**
+   * (no documentation provided)
+   */
+  float *annettavaMaksimi;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *annettavaYksikko;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *kertaAnnos;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *annosteluteksti;
+
+  /**
+   * (no documentation provided)
+   */
+  short desimaaleja;
+
+  /**
+   * (no documentation provided)
+   */
+  float *paino;
+
+  /**
+   * (no documentation provided)
+   */
+  float *lapsenPaino;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *toisto;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *toistokuvaus;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *kellonajat;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *kellonajatString;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *aikayksikko;
+
+  /**
+   * (no documentation provided)
+   */
+  float *antotahti;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *antotahtiString;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *antotahtiyksikko;
+
+  /**
+   * (no documentation provided)
+   */
+  float *vrkMaara;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *vrkMaaraYksikko;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *kokonaiskesto;
+
+  /**
+   * (no documentation provided)
+   */
+  float *kokonaismaara;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *kokonaismaarayksikko;
+
+  /**
+   * (no documentation provided)
+   */
+  int *pakkauksia;
+
+  /**
+   * (no documentation provided)
+   */
+  int kirjaaja;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *kirjaajaString;
+
+  /**
+   * (no documentation provided)
+   */
+  int maaraaja;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *maaraajaString;
+
+  /**
+   * (no documentation provided)
+   */
+  int *maaraysyksikko;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short varmistus;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *kayttotarkoitus;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *ohjeet;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *perustelu;
+
+  /**
+   * (no documentation provided)
+   */
+  int *iterointi;
+
+  /**
+   * (no documentation provided)
+   */
+  int *uusittu;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *kuitattava;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short pysyva;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short tarvittaessa;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *terapiaryhma;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short soveltumaton;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *vaikutus;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *huomautuksia;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *reseptityyppi;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *reseptityyppiString;
+
+  /**
+   * (no documentation provided)
+   */
+  int *tulostaja;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *tulostettu;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *oid;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *tunnistustapa;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *tunnistustapaselite;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *annosjakeluperuste;
+
+  /**
+   * (no documentation provided)
+   */
+  int *iterointivali;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *erillisselvityskoodi;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *erillisselvitys;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *apteekkiviesti;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *ereseptikielto;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *hoitolaji;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *uusi;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *lahetetty;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *reseptinLaji;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *muutoksenSyy;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *muutoksenPerustelu;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *uusimiskielto;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *uusimiskiellonSyy;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *uusimiskiellonPerustelu;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *potilasohjekielto;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *tyonantaja;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *vakuutusyhtio;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *voimassaoloLoppu;
+
+  /**
+   * (no documentation provided)
+   */
+  int *annostuslinkki;
+
+  /**
+   * (no documentation provided)
+   */
+  int *hoitojakso;
+
+  /**
+   * (no documentation provided)
+   */
+  int *alkuperainen;
+
+  /**
+   * (no documentation provided)
+   */
+  float *palkkio;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *palkkioErikoislaakarina;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short *tartuntatautilaake;
+
+  /**
+   * (no documentation provided)
+   */
+  int *palvelutapahtuma;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *palvelutapahtumaOid;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *sairaalaApteekkiOid;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *sairaalaApteekkiNimi;
+
+  /**
+   * (no documentation provided)
+   */
+  int *tarkistus;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *poistosyy;
+
+  /**
+   * (no documentation provided)
+   */
+  unsigned short poistettu;
+
+  /**
+   * (no documentation provided)
+   */
+  struct tm *muutosaika;
+
+  /**
+   * (no documentation provided)
+   */
+  short muutospaikka;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *pysyvyys;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *nimi;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *annostus;
+
+  /**
+   * (no documentation provided)
+   */
+  int vaihteleva;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *vaihtelevaAnnostus;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *sic;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *kokoNimi;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *laakeaineet;
+
+  /**
+   * (no documentation provided)
+   */
+  long long tauonAloitusPvm;
+
+  /**
+   * (no documentation provided)
+   */
+  long long tauonLopetusPvm;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *taukohuomautuksia;
+
+  /**
+   * (no documentation provided)
+   */
+  float *annettavaMaaraTimesPaino;
+
+  /**
+   * (no documentation provided)
+   */
+  float *vrkmaara;
+
+  /**
+   * (no documentation provided)
+   */
+  int vrkkerratCalc;
+
+  /**
+   * (no documentation provided)
+   */
+  float *vrkmaaraCalc;
+
+  /**
+   * (no documentation provided)
+   */
+  xmlChar *vrkmaaraYksikko;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakitysTauko *tauot;
+
+  /**
+   * Size of the tauot array.
+   */
+  int _sizeof_tauot;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakitysAnto *annot;
+
+  /**
+   * Size of the annot array.
+   */
+  int _sizeof_annot;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakitysTapa *tavat;
+
+  /**
+   * Size of the tavat array.
+   */
+  int _sizeof_tavat;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakitysKayttoaihe *kayttoaiheet;
+
+  /**
+   * Size of the kayttoaiheet array.
+   */
+  int _sizeof_kayttoaiheet;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakitysKayttoaiheView *laakitysKayttoaiheList;
+
+  /**
+   * Size of the laakitysKayttoaiheList array.
+   */
+  int _sizeof_laakitysKayttoaiheList;
+
+  /**
+   * (no documentation provided)
+   */
+  struct CoreWEB_ns0_laakitysKuittaus *kuittaukset;
+
+  /**
+   * Size of the kuittaukset array.
+   */
+  int _sizeof_kuittaukset;
+};
+
+/**
+ * Reads a Laakitys element from XML. The element to be read is "laakitys", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The Laakitys, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitys *xml_read_CoreWEB_ns0_laakitys(xmlTextReaderPtr reader);
+
+/**
+ * Writes a Laakitys to XML under element name "laakitys".
+ *
+ * @param writer The XML writer.
+ * @param _laakitys The Laakitys to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakitys(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitys *_laakitys);
+
+/**
+ * Frees a Laakitys.
+ *
+ * @param _laakitys The Laakitys to free.
+ */
+void free_CoreWEB_ns0_laakitys(struct CoreWEB_ns0_laakitys *_laakitys);
+
+/**
+ * Reads a Laakitys element from XML. The element to be read is "laakitys", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The Laakitys, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitys *xmlTextReaderReadNs0LaakitysElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a Laakitys to XML under element name "laakitys".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitys The Laakitys to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitys *_laakitys);
+
+/**
+ * Writes a Laakitys to XML under element name "laakitys".
+ *
+ * @param writer The XML writer.
+ * @param _laakitys The Laakitys to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitys *_laakitys, int writeNamespaces);
+
+/**
+ * Frees the children of a Laakitys.
+ *
+ * @param _laakitys The Laakitys whose children are to be free.
+ */
+static void freeNs0LaakitysElement(struct CoreWEB_ns0_laakitys *_laakitys);
+
+/**
+ * Reads a Laakitys from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The Laakitys, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitys *xmlTextReaderReadNs0LaakitysType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a Laakitys to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitys The Laakitys to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitys *_laakitys);
+
+/**
+ * Frees the elements of a Laakitys.
+ *
+ * @param _laakitys The Laakitys to free.
+ */
+static void freeNs0LaakitysType(struct CoreWEB_ns0_laakitys *_laakitys);
+
+#endif /* DEF_CoreWEB_ns0_laakitys_H */
+#ifndef DEF_CoreWEB_ns0_laakitysKayttoaihe_H
+#define DEF_CoreWEB_ns0_laakitysKayttoaihe_H
+
+/**
+ *  DTO for LAAKITYS_KAYTTOAIHE and KAYTTOAIHE database tables
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KAYTTOAIHE.html
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/KAYTTOAIHE.html
+ */
+struct CoreWEB_ns0_laakitysKayttoaihe {
+
+
+  /**
+   * Returns the row number, which arranges the LaakitysKayttoaihe entities in order of importance
+   */
+  int rivi;
+
+  /**
+   * Returns the unique id of Kayttoaihe
+   */
+  int numero;
+
+  /**
+   * Returns the name of the Kayttoaihe in plain languate
+   */
+  xmlChar *selite;
+
+  /**
+   * Returns the name of the Kayttoaihe which is printed to the prescription
+   */
+  xmlChar *reseptiteksti;
+
+  /**
+   * Returns the origin of the Kayttoaihe
+   * -"O" if added by organization itself
+   * -"A" or "M" otherwise
+   */
+  unsigned short alkupera;
+
+  /**
+   * Returns the type of the Kayttoaihe
+   * -"C" if Kayttoaihe
+   * -"G" if group
+   * -"D" if deleted
+   */
+  unsigned short tyyppi;
+
+  /**
+   * Returns the code of the kayttoaihe removal. 'E' - not removed, 'K' = removed
+   */
+  unsigned short poistettu;
+
+  /**
+   * Returns the actual DB-change time of the Kayttoaihe
+   */
+  struct tm *muutosaika;
+
+  /**
+   * Returns the organization in which the change has been made
+   */
+  short muutospaikka;
+};
+
+/**
+ * Reads a LaakitysKayttoaihe element from XML. The element to be read is "laakitysKayttoaihe", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKayttoaihe, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKayttoaihe *xml_read_CoreWEB_ns0_laakitysKayttoaihe(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysKayttoaihe to XML under element name "laakitysKayttoaihe".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakitysKayttoaihe(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe);
+
+/**
+ * Frees a LaakitysKayttoaihe.
+ *
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to free.
+ */
+void free_CoreWEB_ns0_laakitysKayttoaihe(struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe);
+
+/**
+ * Reads a LaakitysKayttoaihe element from XML. The element to be read is "laakitysKayttoaihe", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKayttoaihe, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKayttoaihe *xmlTextReaderReadNs0LaakitysKayttoaiheElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysKayttoaihe to XML under element name "laakitysKayttoaihe".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe);
+
+/**
+ * Writes a LaakitysKayttoaihe to XML under element name "laakitysKayttoaihe".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakitysKayttoaihe.
+ *
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe whose children are to be free.
+ */
+static void freeNs0LaakitysKayttoaiheElement(struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe);
+
+/**
+ * Reads a LaakitysKayttoaihe from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKayttoaihe, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitysKayttoaihe *xmlTextReaderReadNs0LaakitysKayttoaiheType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysKayttoaihe to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe);
+
+/**
+ * Frees the elements of a LaakitysKayttoaihe.
+ *
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to free.
+ */
+static void freeNs0LaakitysKayttoaiheType(struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe);
+
+#endif /* DEF_CoreWEB_ns0_laakitysKayttoaihe_H */
+#ifndef DEF_CoreWEB_ns0_laakitysKuittaus_H
+#define DEF_CoreWEB_ns0_laakitysKuittaus_H
+
+/**
+ *  DTO for LaakitysKuittaus
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KUITTAUS.html
+ */
+struct CoreWEB_ns0_laakitysKuittaus {
+
+
+  /**
+   * Returns the role of the user who has made an acknowledgement
+   * -"H" if user is a nurse
+   */
+  unsigned short rooli;
+
+  /**
+   * Returns the time of the acknowledgement
+   */
+  struct tm *kuitattu;
+
+  /**
+   * Returns the user who made the acknowledgement
+   */
+  int kuittaaja;
+};
+
+/**
+ * Reads a LaakitysKuittaus element from XML. The element to be read is "laakitysKuittaus", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKuittaus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKuittaus *xml_read_CoreWEB_ns0_laakitysKuittaus(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysKuittaus to XML under element name "laakitysKuittaus".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKuittaus The LaakitysKuittaus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakitysKuittaus(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus);
+
+/**
+ * Frees a LaakitysKuittaus.
+ *
+ * @param _laakitysKuittaus The LaakitysKuittaus to free.
+ */
+void free_CoreWEB_ns0_laakitysKuittaus(struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus);
+
+/**
+ * Reads a LaakitysKuittaus element from XML. The element to be read is "laakitysKuittaus", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKuittaus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKuittaus *xmlTextReaderReadNs0LaakitysKuittausElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysKuittaus to XML under element name "laakitysKuittaus".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKuittaus The LaakitysKuittaus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysKuittausElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus);
+
+/**
+ * Writes a LaakitysKuittaus to XML under element name "laakitysKuittaus".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKuittaus The LaakitysKuittaus to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysKuittausElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakitysKuittaus.
+ *
+ * @param _laakitysKuittaus The LaakitysKuittaus whose children are to be free.
+ */
+static void freeNs0LaakitysKuittausElement(struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus);
+
+/**
+ * Reads a LaakitysKuittaus from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKuittaus, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitysKuittaus *xmlTextReaderReadNs0LaakitysKuittausType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysKuittaus to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKuittaus The LaakitysKuittaus to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysKuittausType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus);
+
+/**
+ * Frees the elements of a LaakitysKuittaus.
+ *
+ * @param _laakitysKuittaus The LaakitysKuittaus to free.
+ */
+static void freeNs0LaakitysKuittausType(struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus);
+
+#endif /* DEF_CoreWEB_ns0_laakitysKuittaus_H */
+#ifndef DEF_CoreWEB_ns0_laakitysTapa_H
+#define DEF_CoreWEB_ns0_laakitysTapa_H
+
+/**
+ *  DTO for LAAKITYS_TAPA
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAPA.html
+ */
+struct CoreWEB_ns0_laakitysTapa {
+
+
+  /**
+   * Returns the "antoreitti" in code
+   */
+  xmlChar *reittikoodi;
+
+  /**
+   * Returns the "antoreitti" in text
+   */
+  xmlChar *reittiteksti;
+
+  /**
+   * Returns the "antopaikka" in code
+   */
+  xmlChar *paikkakoodi;
+
+  /**
+   * Returns the "antopaikka" in text
+   */
+  xmlChar *paikkateksti;
+
+  /**
+   * Returns the "antov�line" in code
+   */
+  xmlChar *valinekoodi;
+
+  /**
+   * Returns the "antov�line" in text
+   */
+  xmlChar *valineteksti;
+
+  /**
+   * Returns the "antotapa" in code
+   */
+  xmlChar *tapakoodi;
+
+  /**
+   * Returns the "antotapa" in text
+   */
+  xmlChar *tapateksti;
+};
+
+/**
+ * Reads a LaakitysTapa element from XML. The element to be read is "laakitysTapa", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysTapa, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysTapa *xml_read_CoreWEB_ns0_laakitysTapa(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysTapa to XML under element name "laakitysTapa".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTapa The LaakitysTapa to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakitysTapa(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTapa *_laakitysTapa);
+
+/**
+ * Frees a LaakitysTapa.
+ *
+ * @param _laakitysTapa The LaakitysTapa to free.
+ */
+void free_CoreWEB_ns0_laakitysTapa(struct CoreWEB_ns0_laakitysTapa *_laakitysTapa);
+
+/**
+ * Reads a LaakitysTapa element from XML. The element to be read is "laakitysTapa", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysTapa, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysTapa *xmlTextReaderReadNs0LaakitysTapaElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysTapa to XML under element name "laakitysTapa".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTapa The LaakitysTapa to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysTapaElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTapa *_laakitysTapa);
+
+/**
+ * Writes a LaakitysTapa to XML under element name "laakitysTapa".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTapa The LaakitysTapa to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysTapaElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTapa *_laakitysTapa, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakitysTapa.
+ *
+ * @param _laakitysTapa The LaakitysTapa whose children are to be free.
+ */
+static void freeNs0LaakitysTapaElement(struct CoreWEB_ns0_laakitysTapa *_laakitysTapa);
+
+/**
+ * Reads a LaakitysTapa from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysTapa, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitysTapa *xmlTextReaderReadNs0LaakitysTapaType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysTapa to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTapa The LaakitysTapa to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysTapaType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTapa *_laakitysTapa);
+
+/**
+ * Frees the elements of a LaakitysTapa.
+ *
+ * @param _laakitysTapa The LaakitysTapa to free.
+ */
+static void freeNs0LaakitysTapaType(struct CoreWEB_ns0_laakitysTapa *_laakitysTapa);
+
+#endif /* DEF_CoreWEB_ns0_laakitysTapa_H */
+#ifndef DEF_CoreWEB_ns0_laakitysTauko_H
+#define DEF_CoreWEB_ns0_laakitysTauko_H
+
+/**
+ *  DTO for LaakitysTauko
+ * 
+ *  http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html
+ */
+struct CoreWEB_ns0_laakitysTauko {
+
+
+  /**
+   * Returns the starting time of the medication break
+   */
+  struct tm *alkaa;
+
+  /**
+   * Returns the ending time of the medication break
+   */
+  struct tm *loppuu;
+
+  /**
+   * Returns the notes about the medication break
+   */
+  xmlChar *huomautuksia;
+
+  /**
+   * Returns the id of an user who started the medication break
+   */
+  int aloittaja;
+
+  /**
+   * Returns the id of an user who ended the medication break
+   */
+  int *lopettaja;
+
+  /**
+   * Returns the code of the medication break removal. 'E' - not removed, 'K' = removed
+   */
+  unsigned short poistettu;
+
+  /**
+   * Returns the actual DB-change time of the medication break
+   */
+  struct tm *muutosaika;
+
+  /**
+   * Returns the organization in which the change has been made
+   */
+  short muutospaikka;
+};
+
+/**
+ * Reads a LaakitysTauko element from XML. The element to be read is "laakitysTauko", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysTauko, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysTauko *xml_read_CoreWEB_ns0_laakitysTauko(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysTauko to XML under element name "laakitysTauko".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTauko The LaakitysTauko to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+int xml_write_CoreWEB_ns0_laakitysTauko(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTauko *_laakitysTauko);
+
+/**
+ * Frees a LaakitysTauko.
+ *
+ * @param _laakitysTauko The LaakitysTauko to free.
+ */
+void free_CoreWEB_ns0_laakitysTauko(struct CoreWEB_ns0_laakitysTauko *_laakitysTauko);
+
+/**
+ * Reads a LaakitysTauko element from XML. The element to be read is "laakitysTauko", and
+ * it is assumed that the reader is already pointing to the element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysTauko, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysTauko *xmlTextReaderReadNs0LaakitysTaukoElement(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysTauko to XML under element name "laakitysTauko".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTauko The LaakitysTauko to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysTaukoElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTauko *_laakitysTauko);
+
+/**
+ * Writes a LaakitysTauko to XML under element name "laakitysTauko".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTauko The LaakitysTauko to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysTaukoElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTauko *_laakitysTauko, int writeNamespaces);
+
+/**
+ * Frees the children of a LaakitysTauko.
+ *
+ * @param _laakitysTauko The LaakitysTauko whose children are to be free.
+ */
+static void freeNs0LaakitysTaukoElement(struct CoreWEB_ns0_laakitysTauko *_laakitysTauko);
+
+/**
+ * Reads a LaakitysTauko from XML. The reader is assumed to be at the start element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysTauko, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitysTauko *xmlTextReaderReadNs0LaakitysTaukoType(xmlTextReaderPtr reader);
+
+/**
+ * Writes a LaakitysTauko to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTauko The LaakitysTauko to write.
+ * @return The bytes written (may be 0 in case of buffering) or -1 in case of error.
+ */
+static int xmlTextWriterWriteNs0LaakitysTaukoType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTauko *_laakitysTauko);
+
+/**
+ * Frees the elements of a LaakitysTauko.
+ *
+ * @param _laakitysTauko The LaakitysTauko to free.
+ */
+static void freeNs0LaakitysTaukoType(struct CoreWEB_ns0_laakitysTauko *_laakitysTauko);
+
+#endif /* DEF_CoreWEB_ns0_laakitysTauko_H */
 #ifndef DEF_CoreWEB_ns0_date_H
 #define DEF_CoreWEB_ns0_date_H
 
@@ -2479,6 +6150,805 @@ static void freeNs0LaakitysAntoType(struct CoreWEB_ns0_laakitysAnto *_laakitysAn
   }
 }
 #endif /* DEF_CoreWEB_ns0_laakitysAnto_M */
+#ifndef DEF_CoreWEB_ns0_laakitysKayttoaiheView_M
+#define DEF_CoreWEB_ns0_laakitysKayttoaiheView_M
+
+/**
+ * Reads a LaakitysKayttoaiheView element from XML. The element to be read is "laakitysKayttoaiheView", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKayttoaiheView, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKayttoaiheView *xml_read_CoreWEB_ns0_laakitysKayttoaiheView(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakitysKayttoaiheViewElement(reader);
+}
+
+/**
+ * Writes a LaakitysKayttoaiheView to XML under element name "laakitysKayttoaiheView".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakitysKayttoaiheView(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView) {
+  return xmlTextWriterWriteNs0LaakitysKayttoaiheViewElementNS(writer, _laakitysKayttoaiheView, 1);
+}
+
+/**
+ * Frees a LaakitysKayttoaiheView.
+ *
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to free.
+ */
+void free_CoreWEB_ns0_laakitysKayttoaiheView(struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView) {
+  freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+  free(_laakitysKayttoaiheView);
+}
+
+/**
+ * Reads a LaakitysKayttoaiheView element from XML. The element to be read is "laakitysKayttoaiheView", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKayttoaiheView, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKayttoaiheView *xmlTextReaderReadNs0LaakitysKayttoaiheViewElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakitysKayttoaiheView", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakitysKayttoaiheView.\n");
+#endif
+    _laakitysKayttoaiheView = xmlTextReaderReadNs0LaakitysKayttoaiheViewType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakitysKayttoaiheView == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakitysKayttoaiheView failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakitysKayttoaiheView failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakitysKayttoaiheView;
+}
+
+/**
+ * Writes a LaakitysKayttoaiheView to XML under element name "laakitysKayttoaiheView".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheViewElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView) {
+  return xmlTextWriterWriteNs0LaakitysKayttoaiheViewElementNS(writer, _laakitysKayttoaiheView, 0);
+}
+
+/**
+ * Writes a LaakitysKayttoaiheView to XML under element name "laakitysKayttoaiheView".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheViewElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakitysKayttoaiheView", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakitysKayttoaiheView. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakitysKayttoaiheView for root element {}laakitysKayttoaiheView...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakitysKayttoaiheViewType(writer, _laakitysKayttoaiheView);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakitysKayttoaiheView. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakitysKayttoaiheView. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakitysKayttoaiheView.
+ *
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView whose children are to be free.
+ */
+static void freeNs0LaakitysKayttoaiheViewElement(struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView) {
+  freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+}
+
+/**
+ * Reads a LaakitysKayttoaiheView from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakitysKayttoaiheView, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitysKayttoaiheView *xmlTextReaderReadNs0LaakitysKayttoaiheViewType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView = calloc(1, sizeof(struct CoreWEB_ns0_laakitysKayttoaiheView));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+        free(_laakitysKayttoaiheView);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "omistaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}omistaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}omistaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->omistaja = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "osa", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}osa of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}osa of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->osa = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "rivi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}rivi of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}rivi of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->rivi = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "numero", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}numero of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}numero of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->numero = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "selite", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}selite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}selite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->selite = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "reseptiteksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}reseptiteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}reseptiteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->reseptiteksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->alkupera = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tyyppi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tyyppi of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tyyppi of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->tyyppi = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->poistettu = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutosaika", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->muutosaika = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutospaikka", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheViewType(_laakitysKayttoaiheView);
+          free(_laakitysKayttoaiheView);
+          return NULL;
+        }
+
+        _laakitysKayttoaiheView->muutospaikka = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakitysKayttoaiheView.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakitysKayttoaiheView. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakitysKayttoaiheView;
+}
+
+/**
+ * Writes a LaakitysKayttoaiheView to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheViewType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "omistaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}omistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}omistaja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitysKayttoaiheView->omistaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}omistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}omistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "osa", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}osa...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitysKayttoaiheView->osa));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "rivi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}rivi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}rivi...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitysKayttoaiheView->rivi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}rivi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}rivi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "numero", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}numero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}numero...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitysKayttoaiheView->numero));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}numero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}numero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysKayttoaiheView->selite != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "selite", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}selite...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysKayttoaiheView->selite));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysKayttoaiheView->reseptiteksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "reseptiteksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}reseptiteksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysKayttoaiheView->reseptiteksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitysKayttoaiheView->alkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tyyppi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tyyppi...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitysKayttoaiheView->tyyppi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitysKayttoaiheView->poistettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysKayttoaiheView->muutosaika != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutosaika", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitysKayttoaiheView->muutosaika));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutospaikka", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}muutospaikka...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitysKayttoaiheView->muutospaikka));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakitysKayttoaiheView.
+ *
+ * @param _laakitysKayttoaiheView The LaakitysKayttoaiheView to free.
+ */
+static void freeNs0LaakitysKayttoaiheViewType(struct CoreWEB_ns0_laakitysKayttoaiheView *_laakitysKayttoaiheView) {
+  int i;
+  if (_laakitysKayttoaiheView->selite != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor selite of type CoreWEB_ns0_laakitysKayttoaiheView...\n");
+#endif
+    freeXsStringType(_laakitysKayttoaiheView->selite);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor selite of type CoreWEB_ns0_laakitysKayttoaiheView...\n");
+#endif
+    free(_laakitysKayttoaiheView->selite);
+  }
+  if (_laakitysKayttoaiheView->reseptiteksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor reseptiteksti of type CoreWEB_ns0_laakitysKayttoaiheView...\n");
+#endif
+    freeXsStringType(_laakitysKayttoaiheView->reseptiteksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor reseptiteksti of type CoreWEB_ns0_laakitysKayttoaiheView...\n");
+#endif
+    free(_laakitysKayttoaiheView->reseptiteksti);
+  }
+  if (_laakitysKayttoaiheView->muutosaika != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutosaika of type CoreWEB_ns0_laakitysKayttoaiheView...\n");
+#endif
+    freeXsDateTimeType(_laakitysKayttoaiheView->muutosaika);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutosaika of type CoreWEB_ns0_laakitysKayttoaiheView...\n");
+#endif
+    free(_laakitysKayttoaiheView->muutosaika);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakitysKayttoaiheView_M */
 #ifndef DEF_CoreWEB_ns0_tutkimuspyynto_M
 #define DEF_CoreWEB_ns0_tutkimuspyynto_M
 
@@ -9239,6 +13709,22887 @@ static void freeNs0HoitoType(struct CoreWEB_ns0_hoito *_hoito) {
   }
 }
 #endif /* DEF_CoreWEB_ns0_hoito_M */
+#ifndef DEF_CoreWEB_ns0_laake_M
+#define DEF_CoreWEB_ns0_laake_M
+
+/**
+ * Reads a Laake element from XML. The element to be read is "laake", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The Laake, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laake *xml_read_CoreWEB_ns0_laake(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeElement(reader);
+}
+
+/**
+ * Writes a Laake to XML under element name "laake".
+ *
+ * @param writer The XML writer.
+ * @param _laake The Laake to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laake(xmlTextWriterPtr writer, struct CoreWEB_ns0_laake *_laake) {
+  return xmlTextWriterWriteNs0LaakeElementNS(writer, _laake, 1);
+}
+
+/**
+ * Frees a Laake.
+ *
+ * @param _laake The Laake to free.
+ */
+void free_CoreWEB_ns0_laake(struct CoreWEB_ns0_laake *_laake) {
+  freeNs0LaakeType(_laake);
+  free(_laake);
+}
+
+/**
+ * Reads a Laake element from XML. The element to be read is "laake", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The Laake, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laake *xmlTextReaderReadNs0LaakeElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laake *_laake = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laake", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laake.\n");
+#endif
+    _laake = xmlTextReaderReadNs0LaakeType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laake == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laake failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laake failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laake;
+}
+
+/**
+ * Writes a Laake to XML under element name "laake".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laake The Laake to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laake *_laake) {
+  return xmlTextWriterWriteNs0LaakeElementNS(writer, _laake, 0);
+}
+
+/**
+ * Writes a Laake to XML under element name "laake".
+ *
+ * @param writer The XML writer.
+ * @param _laake The Laake to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laake *_laake, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laake", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laake. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laake for root element {}laake...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeType(writer, _laake);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laake. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laake. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a Laake.
+ *
+ * @param _laake The Laake whose children are to be free.
+ */
+static void freeNs0LaakeElement(struct CoreWEB_ns0_laake *_laake) {
+  freeNs0LaakeType(_laake);
+}
+
+/**
+ * Reads a Laake from XML. The reader is assumed to be at the start element.
+ *
+ * @return the Laake, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laake *xmlTextReaderReadNs0LaakeType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laake *_laake = calloc(1, sizeof(struct CoreWEB_ns0_laake));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeType(_laake);
+        free(_laake);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "koodi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}koodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}koodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->koodi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "nimi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}nimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}nimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->nimi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "valmistaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}valmistaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}valmistaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->valmistaja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "ehto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}ehto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}ehto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->ehto = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "varoituksia", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}varoituksia of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}varoituksia of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->varoituksia = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "erityispiirre", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}erityispiirre of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}erityispiirre of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->erityispiirre = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "erityisluvallinen", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}erityisluvallinen of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}erityisluvallinen of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->erityisluvallinen = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laakemuoto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laakemuoto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laakemuoto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->laakemuoto = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vahvuus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vahvuus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vahvuus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->vahvuus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vahvuusarvo", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vahvuusarvo of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vahvuusarvo of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->vahvuusarvo = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vahvuusyksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vahvuusyksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vahvuusyksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->vahvuusyksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "pakkaus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}pakkaus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}pakkaus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->pakkaus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "pakkauskerroin", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}pakkauskerroin of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}pakkauskerroin of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->pakkauskerroin = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "pakkausarvo", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}pakkausarvo of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}pakkausarvo of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->pakkausarvo = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "pakkausyksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}pakkausyksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}pakkausyksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->pakkausyksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "pakkaustyyppi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}pakkaustyyppi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}pakkaustyyppi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->pakkaustyyppi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laite", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->laite = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "hinta", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}hinta of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}hinta of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->hinta = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "reseptiteksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}reseptiteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}reseptiteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->reseptiteksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "korvattavuus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}korvattavuus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}korvattavuus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->korvattavuus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "substituutioryhma", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}substituutioryhma of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}substituutioryhma of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->substituutioryhma = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->alkupera = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tila", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tila of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tila of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->tila = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "halytys", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}halytys of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}halytys of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->halytys = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "erityislupaVanhenee", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}erityislupaVanhenee of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}erityislupaVanhenee of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->erityislupaVanhenee = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vero", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vero of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vero of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->vero = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "peruslaakevalikoima", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}peruslaakevalikoima of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}peruslaakevalikoima of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->peruslaakevalikoima = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kelpoisuusaika", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kelpoisuusaika of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kelpoisuusaika of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->kelpoisuusaika = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "sailytys", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}sailytys of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}sailytys of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->sailytys = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "velvoitevarasto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}velvoitevarasto of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}velvoitevarasto of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->velvoitevarasto = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "varoitusraja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}varoitusraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}varoitusraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->varoitusraja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kappalevarasto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kappalevarasto of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kappalevarasto of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->kappalevarasto = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tukkuhinta", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tukkuhinta of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tukkuhinta of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->tukkuhinta = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tarjoushinta", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tarjoushinta of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tarjoushinta of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->tarjoushinta = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "sopimustoimittaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}sopimustoimittaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}sopimustoimittaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->sopimustoimittaja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "huomautuksia", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}huomautuksia of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}huomautuksia of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->huomautuksia = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "suoritelinkki", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}suoritelinkki of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}suoritelinkki of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->suoritelinkki = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kustannuslinkki", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kustannuslinkki of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kustannuslinkki of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->kustannuslinkki = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->poistettu = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutosaika", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->muutosaika = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutospaikka", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->muutospaikka = *((short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tilasto1", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tilasto1 of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tilasto1 of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->tilasto1 = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tilasto2", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tilasto2 of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tilasto2 of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->tilasto2 = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tilasto3", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tilasto3 of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tilasto3 of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->tilasto3 = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laaketietokantaversio", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laaketietokantaversio of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laaketietokantaversio of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->laaketietokantaversio = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "koodityyppi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}koodityyppi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}koodityyppi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->koodityyppi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tukkunumero", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tukkunumero of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tukkunumero of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->tukkunumero = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laji", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laji of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laji of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->laji = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "myyntiluvanHaltija", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}myyntiluvanHaltija of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}myyntiluvanHaltija of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->myyntiluvanHaltija = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "myyntilupanumero", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}myyntilupanumero of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}myyntilupanumero of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->myyntilupanumero = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "rinnakkaisvalmiste", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}rinnakkaisvalmiste of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}rinnakkaisvalmiste of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->rinnakkaisvalmiste = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laakemuototunnus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laakemuototunnus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laakemuototunnus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->laakemuototunnus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "substituutiokoodi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}substituutiokoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}substituutiokoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->substituutiokoodi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laakevaihto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laakevaihto of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laakevaihto of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->laakevaihto = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "viitehinta", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}viitehinta of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}viitehinta of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->viitehinta = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "hintaputki", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}hintaputki of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}hintaputki of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->hintaputki = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "reseptivalmiste", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}reseptivalmiste of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}reseptivalmiste of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->reseptivalmiste = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "maaraamisehto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}maaraamisehto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}maaraamisehto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->maaraamisehto = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "huume", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}huume of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}huume of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->huume = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "liikennevaara", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}liikennevaara of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}liikennevaara of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->liikennevaara = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "lapsille", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}lapsille of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}lapsille of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->lapsille = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annosjakelu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annosjakelu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annosjakelu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->annosjakelu = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "jakouurre", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}jakouurre of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}jakouurre of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->jakouurre = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "hintamuutos", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}hintamuutos of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}hintamuutos of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->hintamuutos = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "suorakorvauskoodi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}suorakorvauskoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}suorakorvauskoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->suorakorvauskoodi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "pkv", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}pkv of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}pkv of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->pkv = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "valmistusohje", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}valmistusohje of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}valmistusohje of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->valmistusohje = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "markkinoija", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}markkinoija of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}markkinoija of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->markkinoija = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "veriplasmavalmiste", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}veriplasmavalmiste of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}veriplasmavalmiste of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->veriplasmavalmiste = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "biologinenLaake", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}biologinenLaake of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}biologinenLaake of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->biologinenLaake = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "lisaseurannassa", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}lisaseurannassa of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}lisaseurannassa of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->lisaseurannassa = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "lisatiedot", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}lisatiedot of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}lisatiedot of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->lisatiedot = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "atc", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}atc of type {}laakeAtc.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeAtcType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}atc of type {}laakeAtc.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->atc = realloc(_laake->atc, (_laake->_sizeof_atc + 1) * sizeof(struct CoreWEB_ns0_laakeAtc));
+        memcpy(&(_laake->atc[_laake->_sizeof_atc++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeAtc));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annostusSoveltuvuus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annostusSoveltuvuus of type {}laakeAnnostusSoveltuvuus.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeAnnostusSoveltuvuusType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annostusSoveltuvuus of type {}laakeAnnostusSoveltuvuus.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->annostusSoveltuvuus = realloc(_laake->annostusSoveltuvuus, (_laake->_sizeof_annostusSoveltuvuus + 1) * sizeof(struct CoreWEB_ns0_laakeAnnostusSoveltuvuus));
+        memcpy(&(_laake->annostusSoveltuvuus[_laake->_sizeof_annostusSoveltuvuus++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeAnnostusSoveltuvuus));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "yhteisvaikutus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}yhteisvaikutus of type {}laakeYhteisvaikutus.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeYhteisvaikutusType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}yhteisvaikutus of type {}laakeYhteisvaikutus.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->yhteisvaikutus = realloc(_laake->yhteisvaikutus, (_laake->_sizeof_yhteisvaikutus + 1) * sizeof(struct CoreWEB_ns0_laakeYhteisvaikutus));
+        memcpy(&(_laake->yhteisvaikutus[_laake->_sizeof_yhteisvaikutus++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeYhteisvaikutus));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vastaAihe", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vastaAihe of type {}laakeVastaAihe.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeVastaAiheType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vastaAihe of type {}laakeVastaAihe.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->vastaAihe = realloc(_laake->vastaAihe, (_laake->_sizeof_vastaAihe + 1) * sizeof(struct CoreWEB_ns0_laakeVastaAihe));
+        memcpy(&(_laake->vastaAihe[_laake->_sizeof_vastaAihe++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeVastaAihe));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "terapiaryhma", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}terapiaryhma of type {}laakeTerapiaryhma.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeTerapiaryhmaType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}terapiaryhma of type {}laakeTerapiaryhma.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->terapiaryhma = realloc(_laake->terapiaryhma, (_laake->_sizeof_terapiaryhma + 1) * sizeof(struct CoreWEB_ns0_laakeTerapiaryhma));
+        memcpy(&(_laake->terapiaryhma[_laake->_sizeof_terapiaryhma++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeTerapiaryhma));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "koostumus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}koostumus of type {}laakeKoostumus.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeKoostumusType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}koostumus of type {}laakeKoostumus.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->koostumus = realloc(_laake->koostumus, (_laake->_sizeof_koostumus + 1) * sizeof(struct CoreWEB_ns0_laakeKoostumus));
+        memcpy(&(_laake->koostumus[_laake->_sizeof_koostumus++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeKoostumus));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tiivistelma", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tiivistelma of type {}laakeTiivistelma.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeTiivistelmaType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tiivistelma of type {}laakeTiivistelma.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->tiivistelma = realloc(_laake->tiivistelma, (_laake->_sizeof_tiivistelma + 1) * sizeof(struct CoreWEB_ns0_laakeTiivistelma));
+        memcpy(&(_laake->tiivistelma[_laake->_sizeof_tiivistelma++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeTiivistelma));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "seloste", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}seloste of type {}laakeSeloste.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeSelosteType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}seloste of type {}laakeSeloste.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->seloste = realloc(_laake->seloste, (_laake->_sizeof_seloste + 1) * sizeof(struct CoreWEB_ns0_laakeSeloste));
+        memcpy(&(_laake->seloste[_laake->_sizeof_seloste++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeSeloste));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laakeaineet", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laakeaineet of type {}laakeAine.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeAineType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laakeaineet of type {}laakeAine.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeType(_laake);
+          free(_laake);
+          return NULL;
+        }
+
+        _laake->laakeaineet = realloc(_laake->laakeaineet, (_laake->_sizeof_laakeaineet + 1) * sizeof(struct CoreWEB_ns0_laakeAine));
+        memcpy(&(_laake->laakeaineet[_laake->_sizeof_laakeaineet++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeAine));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laake.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laake. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laake;
+}
+
+/**
+ * Writes a Laake to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laake The Laake to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laake *_laake) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (_laake->koodi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "koodi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}koodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}koodi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->koodi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}koodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}koodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->nimi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "nimi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}nimi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->nimi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->valmistaja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "valmistaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}valmistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}valmistaja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laake->valmistaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}valmistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}valmistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->ehto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "ehto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}ehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}ehto...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->ehto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}ehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}ehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->varoituksia != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "varoituksia", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}varoituksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}varoituksia...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->varoituksia));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}varoituksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}varoituksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->erityispiirre != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "erityispiirre", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}erityispiirre. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}erityispiirre...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->erityispiirre));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}erityispiirre. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}erityispiirre. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "erityisluvallinen", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}erityisluvallinen. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}erityisluvallinen...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laake->erityisluvallinen));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}erityisluvallinen. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}erityisluvallinen. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->laakemuoto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakemuoto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laakemuoto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}laakemuoto...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->laakemuoto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}laakemuoto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laakemuoto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->vahvuus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vahvuus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vahvuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}vahvuus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->vahvuus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}vahvuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vahvuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->vahvuusarvo != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vahvuusarvo", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vahvuusarvo. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}vahvuusarvo...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laake->vahvuusarvo));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}vahvuusarvo. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vahvuusarvo. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->vahvuusyksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vahvuusyksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vahvuusyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}vahvuusyksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->vahvuusyksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}vahvuusyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vahvuusyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->pakkaus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "pakkaus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}pakkaus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}pakkaus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->pakkaus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}pakkaus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}pakkaus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->pakkauskerroin != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "pakkauskerroin", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}pakkauskerroin. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}pakkauskerroin...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laake->pakkauskerroin));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}pakkauskerroin. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}pakkauskerroin. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->pakkausarvo != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "pakkausarvo", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}pakkausarvo. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}pakkausarvo...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laake->pakkausarvo));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}pakkausarvo. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}pakkausarvo. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->pakkausyksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "pakkausyksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}pakkausyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}pakkausyksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->pakkausyksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}pakkausyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}pakkausyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->pakkaustyyppi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "pakkaustyyppi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}pakkaustyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}pakkaustyyppi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->pakkaustyyppi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}pakkaustyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}pakkaustyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->laite != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laite", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}laite...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->laite));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}laite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->hinta != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "hinta", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}hinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}hinta...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laake->hinta));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}hinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}hinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->reseptiteksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "reseptiteksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}reseptiteksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->reseptiteksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->korvattavuus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "korvattavuus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}korvattavuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}korvattavuus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->korvattavuus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}korvattavuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}korvattavuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->substituutioryhma != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "substituutioryhma", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}substituutioryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}substituutioryhma...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->substituutioryhma));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}substituutioryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}substituutioryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laake->alkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tila", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tila. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tila...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laake->tila));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tila. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tila. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->halytys != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "halytys", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}halytys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}halytys...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->halytys));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}halytys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}halytys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->erityislupaVanhenee != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "erityislupaVanhenee", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}erityislupaVanhenee. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}erityislupaVanhenee...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laake->erityislupaVanhenee));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}erityislupaVanhenee. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}erityislupaVanhenee. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->vero != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vero", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}vero...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->vero));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}vero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->peruslaakevalikoima != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "peruslaakevalikoima", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}peruslaakevalikoima. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}peruslaakevalikoima...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->peruslaakevalikoima));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}peruslaakevalikoima. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}peruslaakevalikoima. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->kelpoisuusaika != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kelpoisuusaika", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kelpoisuusaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kelpoisuusaika...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->kelpoisuusaika));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kelpoisuusaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kelpoisuusaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->sailytys != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "sailytys", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}sailytys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}sailytys...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->sailytys));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}sailytys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}sailytys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->velvoitevarasto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "velvoitevarasto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}velvoitevarasto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}velvoitevarasto...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laake->velvoitevarasto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}velvoitevarasto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}velvoitevarasto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->varoitusraja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "varoitusraja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}varoitusraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}varoitusraja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laake->varoitusraja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}varoitusraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}varoitusraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->kappalevarasto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kappalevarasto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kappalevarasto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}kappalevarasto...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->kappalevarasto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}kappalevarasto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kappalevarasto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->tukkuhinta != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tukkuhinta", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tukkuhinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}tukkuhinta...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laake->tukkuhinta));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}tukkuhinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tukkuhinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->tarjoushinta != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tarjoushinta", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tarjoushinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}tarjoushinta...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laake->tarjoushinta));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}tarjoushinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tarjoushinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->sopimustoimittaja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "sopimustoimittaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}sopimustoimittaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}sopimustoimittaja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laake->sopimustoimittaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}sopimustoimittaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}sopimustoimittaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->huomautuksia != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "huomautuksia", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}huomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}huomautuksia...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->huomautuksia));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}huomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}huomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->suoritelinkki != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "suoritelinkki", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}suoritelinkki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}suoritelinkki...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laake->suoritelinkki));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}suoritelinkki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}suoritelinkki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->kustannuslinkki != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kustannuslinkki", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kustannuslinkki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}kustannuslinkki...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laake->kustannuslinkki));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}kustannuslinkki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kustannuslinkki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laake->poistettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->muutosaika != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutosaika", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laake->muutosaika));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutospaikka", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka...\n");
+#endif
+    status = xmlTextWriterWriteXsShortType(writer, &(_laake->muutospaikka));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->tilasto1 != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tilasto1", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tilasto1. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}tilasto1...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->tilasto1));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}tilasto1. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tilasto1. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->tilasto2 != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tilasto2", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tilasto2. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}tilasto2...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->tilasto2));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}tilasto2. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tilasto2. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->tilasto3 != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tilasto3", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tilasto3. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}tilasto3...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->tilasto3));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}tilasto3. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tilasto3. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->laaketietokantaversio != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laaketietokantaversio", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laaketietokantaversio. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}laaketietokantaversio...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->laaketietokantaversio));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}laaketietokantaversio. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laaketietokantaversio. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->koodityyppi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "koodityyppi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}koodityyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}koodityyppi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->koodityyppi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}koodityyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}koodityyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->tukkunumero != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tukkunumero", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tukkunumero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}tukkunumero...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->tukkunumero));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}tukkunumero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tukkunumero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->laji != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laji", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laji. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}laji...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->laji));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}laji. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laji. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->myyntiluvanHaltija != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "myyntiluvanHaltija", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}myyntiluvanHaltija. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}myyntiluvanHaltija...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->myyntiluvanHaltija));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}myyntiluvanHaltija. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}myyntiluvanHaltija. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->myyntilupanumero != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "myyntilupanumero", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}myyntilupanumero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}myyntilupanumero...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->myyntilupanumero));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}myyntilupanumero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}myyntilupanumero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->rinnakkaisvalmiste != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "rinnakkaisvalmiste", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}rinnakkaisvalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}rinnakkaisvalmiste...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->rinnakkaisvalmiste));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}rinnakkaisvalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}rinnakkaisvalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->laakemuototunnus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakemuototunnus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laakemuototunnus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}laakemuototunnus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->laakemuototunnus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}laakemuototunnus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laakemuototunnus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->substituutiokoodi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "substituutiokoodi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}substituutiokoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}substituutiokoodi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->substituutiokoodi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}substituutiokoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}substituutiokoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->laakevaihto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakevaihto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laakevaihto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}laakevaihto...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->laakevaihto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}laakevaihto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laakevaihto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->viitehinta != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "viitehinta", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}viitehinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}viitehinta...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laake->viitehinta));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}viitehinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}viitehinta. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->hintaputki != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "hintaputki", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}hintaputki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}hintaputki...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laake->hintaputki));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}hintaputki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}hintaputki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->reseptivalmiste != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "reseptivalmiste", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}reseptivalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}reseptivalmiste...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->reseptivalmiste));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}reseptivalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}reseptivalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->maaraamisehto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "maaraamisehto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}maaraamisehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}maaraamisehto...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->maaraamisehto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}maaraamisehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}maaraamisehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->huume != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "huume", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}huume. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}huume...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->huume));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}huume. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}huume. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->liikennevaara != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "liikennevaara", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}liikennevaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}liikennevaara...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->liikennevaara));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}liikennevaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}liikennevaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->lapsille != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "lapsille", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}lapsille. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}lapsille...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->lapsille));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}lapsille. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}lapsille. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->annosjakelu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annosjakelu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annosjakelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}annosjakelu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->annosjakelu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}annosjakelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annosjakelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->jakouurre != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "jakouurre", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}jakouurre. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}jakouurre...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->jakouurre));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}jakouurre. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}jakouurre. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->hintamuutos != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "hintamuutos", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}hintamuutos. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}hintamuutos...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->hintamuutos));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}hintamuutos. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}hintamuutos. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->suorakorvauskoodi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "suorakorvauskoodi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}suorakorvauskoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}suorakorvauskoodi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->suorakorvauskoodi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}suorakorvauskoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}suorakorvauskoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->pkv != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "pkv", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}pkv. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}pkv...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->pkv));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}pkv. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}pkv. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->valmistusohje != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "valmistusohje", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}valmistusohje. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}valmistusohje...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->valmistusohje));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}valmistusohje. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}valmistusohje. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->markkinoija != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "markkinoija", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}markkinoija. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}markkinoija...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->markkinoija));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}markkinoija. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}markkinoija. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->veriplasmavalmiste != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "veriplasmavalmiste", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}veriplasmavalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}veriplasmavalmiste...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->veriplasmavalmiste));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}veriplasmavalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}veriplasmavalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->biologinenLaake != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "biologinenLaake", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}biologinenLaake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}biologinenLaake...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->biologinenLaake));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}biologinenLaake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}biologinenLaake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->lisaseurannassa != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "lisaseurannassa", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}lisaseurannassa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}lisaseurannassa...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laake->lisaseurannassa));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}lisaseurannassa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}lisaseurannassa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laake->lisatiedot != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "lisatiedot", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}lisatiedot. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}lisatiedot...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laake->lisatiedot));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}lisatiedot. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}lisatiedot. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laake->_sizeof_atc; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "atc", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}atc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeAtc for element {}atc...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeAtcType(writer, &(_laake->atc[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeAtc for element {}atc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}atc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laake->_sizeof_annostusSoveltuvuus; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annostusSoveltuvuus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annostusSoveltuvuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeAnnostusSoveltuvuus for element {}annostusSoveltuvuus...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeAnnostusSoveltuvuusType(writer, &(_laake->annostusSoveltuvuus[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeAnnostusSoveltuvuus for element {}annostusSoveltuvuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annostusSoveltuvuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laake->_sizeof_yhteisvaikutus; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "yhteisvaikutus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}yhteisvaikutus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeYhteisvaikutus for element {}yhteisvaikutus...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeYhteisvaikutusType(writer, &(_laake->yhteisvaikutus[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeYhteisvaikutus for element {}yhteisvaikutus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}yhteisvaikutus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laake->_sizeof_vastaAihe; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vastaAihe", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vastaAihe. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeVastaAihe for element {}vastaAihe...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeVastaAiheType(writer, &(_laake->vastaAihe[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeVastaAihe for element {}vastaAihe. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vastaAihe. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laake->_sizeof_terapiaryhma; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "terapiaryhma", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}terapiaryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeTerapiaryhma for element {}terapiaryhma...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeTerapiaryhmaType(writer, &(_laake->terapiaryhma[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeTerapiaryhma for element {}terapiaryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}terapiaryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laake->_sizeof_koostumus; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "koostumus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}koostumus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeKoostumus for element {}koostumus...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeKoostumusType(writer, &(_laake->koostumus[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeKoostumus for element {}koostumus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}koostumus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laake->_sizeof_tiivistelma; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tiivistelma", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tiivistelma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeTiivistelma for element {}tiivistelma...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeTiivistelmaType(writer, &(_laake->tiivistelma[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeTiivistelma for element {}tiivistelma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tiivistelma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laake->_sizeof_seloste; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "seloste", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}seloste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeSeloste for element {}seloste...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeSelosteType(writer, &(_laake->seloste[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeSeloste for element {}seloste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}seloste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laake->_sizeof_laakeaineet; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeaineet", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laakeaineet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeAine for element {}laakeaineet...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeAineType(writer, &(_laake->laakeaineet[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeAine for element {}laakeaineet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laakeaineet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a Laake.
+ *
+ * @param _laake The Laake to free.
+ */
+static void freeNs0LaakeType(struct CoreWEB_ns0_laake *_laake) {
+  int i;
+  if (_laake->koodi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor koodi of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->koodi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor koodi of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->koodi);
+  }
+  if (_laake->nimi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor nimi of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->nimi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor nimi of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->nimi);
+  }
+  if (_laake->valmistaja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor valmistaja of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsIntType(_laake->valmistaja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor valmistaja of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->valmistaja);
+  }
+  if (_laake->ehto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor ehto of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->ehto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor ehto of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->ehto);
+  }
+  if (_laake->varoituksia != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor varoituksia of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->varoituksia);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor varoituksia of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->varoituksia);
+  }
+  if (_laake->erityispiirre != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor erityispiirre of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->erityispiirre);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor erityispiirre of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->erityispiirre);
+  }
+  if (_laake->laakemuoto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laakemuoto of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->laakemuoto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laakemuoto of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->laakemuoto);
+  }
+  if (_laake->vahvuus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vahvuus of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->vahvuus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vahvuus of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->vahvuus);
+  }
+  if (_laake->vahvuusarvo != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vahvuusarvo of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsFloatType(_laake->vahvuusarvo);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vahvuusarvo of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->vahvuusarvo);
+  }
+  if (_laake->vahvuusyksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vahvuusyksikko of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->vahvuusyksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vahvuusyksikko of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->vahvuusyksikko);
+  }
+  if (_laake->pakkaus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor pakkaus of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->pakkaus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor pakkaus of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->pakkaus);
+  }
+  if (_laake->pakkauskerroin != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor pakkauskerroin of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsFloatType(_laake->pakkauskerroin);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor pakkauskerroin of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->pakkauskerroin);
+  }
+  if (_laake->pakkausarvo != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor pakkausarvo of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsFloatType(_laake->pakkausarvo);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor pakkausarvo of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->pakkausarvo);
+  }
+  if (_laake->pakkausyksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor pakkausyksikko of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->pakkausyksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor pakkausyksikko of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->pakkausyksikko);
+  }
+  if (_laake->pakkaustyyppi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor pakkaustyyppi of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->pakkaustyyppi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor pakkaustyyppi of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->pakkaustyyppi);
+  }
+  if (_laake->laite != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laite of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->laite);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laite of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->laite);
+  }
+  if (_laake->hinta != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor hinta of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsFloatType(_laake->hinta);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor hinta of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->hinta);
+  }
+  if (_laake->reseptiteksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor reseptiteksti of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->reseptiteksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor reseptiteksti of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->reseptiteksti);
+  }
+  if (_laake->korvattavuus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor korvattavuus of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->korvattavuus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor korvattavuus of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->korvattavuus);
+  }
+  if (_laake->substituutioryhma != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor substituutioryhma of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->substituutioryhma);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor substituutioryhma of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->substituutioryhma);
+  }
+  if (_laake->halytys != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor halytys of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->halytys);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor halytys of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->halytys);
+  }
+  if (_laake->erityislupaVanhenee != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor erityislupaVanhenee of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsDateTimeType(_laake->erityislupaVanhenee);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor erityislupaVanhenee of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->erityislupaVanhenee);
+  }
+  if (_laake->vero != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vero of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->vero);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vero of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->vero);
+  }
+  if (_laake->peruslaakevalikoima != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor peruslaakevalikoima of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->peruslaakevalikoima);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor peruslaakevalikoima of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->peruslaakevalikoima);
+  }
+  if (_laake->kelpoisuusaika != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kelpoisuusaika of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->kelpoisuusaika);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kelpoisuusaika of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->kelpoisuusaika);
+  }
+  if (_laake->sailytys != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor sailytys of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->sailytys);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor sailytys of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->sailytys);
+  }
+  if (_laake->velvoitevarasto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor velvoitevarasto of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsIntType(_laake->velvoitevarasto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor velvoitevarasto of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->velvoitevarasto);
+  }
+  if (_laake->varoitusraja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor varoitusraja of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsIntType(_laake->varoitusraja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor varoitusraja of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->varoitusraja);
+  }
+  if (_laake->kappalevarasto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kappalevarasto of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->kappalevarasto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kappalevarasto of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->kappalevarasto);
+  }
+  if (_laake->tukkuhinta != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tukkuhinta of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsFloatType(_laake->tukkuhinta);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tukkuhinta of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->tukkuhinta);
+  }
+  if (_laake->tarjoushinta != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tarjoushinta of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsFloatType(_laake->tarjoushinta);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tarjoushinta of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->tarjoushinta);
+  }
+  if (_laake->sopimustoimittaja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor sopimustoimittaja of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsIntType(_laake->sopimustoimittaja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor sopimustoimittaja of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->sopimustoimittaja);
+  }
+  if (_laake->huomautuksia != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor huomautuksia of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->huomautuksia);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor huomautuksia of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->huomautuksia);
+  }
+  if (_laake->suoritelinkki != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor suoritelinkki of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsIntType(_laake->suoritelinkki);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor suoritelinkki of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->suoritelinkki);
+  }
+  if (_laake->kustannuslinkki != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kustannuslinkki of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsIntType(_laake->kustannuslinkki);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kustannuslinkki of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->kustannuslinkki);
+  }
+  if (_laake->muutosaika != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutosaika of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsDateTimeType(_laake->muutosaika);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutosaika of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->muutosaika);
+  }
+  if (_laake->tilasto1 != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tilasto1 of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->tilasto1);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tilasto1 of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->tilasto1);
+  }
+  if (_laake->tilasto2 != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tilasto2 of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->tilasto2);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tilasto2 of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->tilasto2);
+  }
+  if (_laake->tilasto3 != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tilasto3 of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->tilasto3);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tilasto3 of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->tilasto3);
+  }
+  if (_laake->laaketietokantaversio != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laaketietokantaversio of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->laaketietokantaversio);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laaketietokantaversio of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->laaketietokantaversio);
+  }
+  if (_laake->koodityyppi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor koodityyppi of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->koodityyppi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor koodityyppi of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->koodityyppi);
+  }
+  if (_laake->tukkunumero != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tukkunumero of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->tukkunumero);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tukkunumero of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->tukkunumero);
+  }
+  if (_laake->laji != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laji of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->laji);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laji of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->laji);
+  }
+  if (_laake->myyntiluvanHaltija != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor myyntiluvanHaltija of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->myyntiluvanHaltija);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor myyntiluvanHaltija of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->myyntiluvanHaltija);
+  }
+  if (_laake->myyntilupanumero != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor myyntilupanumero of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->myyntilupanumero);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor myyntilupanumero of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->myyntilupanumero);
+  }
+  if (_laake->rinnakkaisvalmiste != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor rinnakkaisvalmiste of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->rinnakkaisvalmiste);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor rinnakkaisvalmiste of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->rinnakkaisvalmiste);
+  }
+  if (_laake->laakemuototunnus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laakemuototunnus of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->laakemuototunnus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laakemuototunnus of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->laakemuototunnus);
+  }
+  if (_laake->substituutiokoodi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor substituutiokoodi of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->substituutiokoodi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor substituutiokoodi of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->substituutiokoodi);
+  }
+  if (_laake->laakevaihto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laakevaihto of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->laakevaihto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laakevaihto of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->laakevaihto);
+  }
+  if (_laake->viitehinta != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor viitehinta of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsFloatType(_laake->viitehinta);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor viitehinta of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->viitehinta);
+  }
+  if (_laake->hintaputki != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor hintaputki of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsFloatType(_laake->hintaputki);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor hintaputki of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->hintaputki);
+  }
+  if (_laake->reseptivalmiste != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor reseptivalmiste of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->reseptivalmiste);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor reseptivalmiste of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->reseptivalmiste);
+  }
+  if (_laake->maaraamisehto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor maaraamisehto of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->maaraamisehto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor maaraamisehto of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->maaraamisehto);
+  }
+  if (_laake->huume != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor huume of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->huume);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor huume of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->huume);
+  }
+  if (_laake->liikennevaara != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor liikennevaara of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->liikennevaara);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor liikennevaara of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->liikennevaara);
+  }
+  if (_laake->lapsille != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor lapsille of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->lapsille);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor lapsille of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->lapsille);
+  }
+  if (_laake->annosjakelu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annosjakelu of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->annosjakelu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annosjakelu of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->annosjakelu);
+  }
+  if (_laake->jakouurre != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor jakouurre of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->jakouurre);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor jakouurre of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->jakouurre);
+  }
+  if (_laake->hintamuutos != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor hintamuutos of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->hintamuutos);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor hintamuutos of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->hintamuutos);
+  }
+  if (_laake->suorakorvauskoodi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor suorakorvauskoodi of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->suorakorvauskoodi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor suorakorvauskoodi of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->suorakorvauskoodi);
+  }
+  if (_laake->pkv != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor pkv of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->pkv);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor pkv of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->pkv);
+  }
+  if (_laake->valmistusohje != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor valmistusohje of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->valmistusohje);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor valmistusohje of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->valmistusohje);
+  }
+  if (_laake->markkinoija != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor markkinoija of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->markkinoija);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor markkinoija of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->markkinoija);
+  }
+  if (_laake->veriplasmavalmiste != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor veriplasmavalmiste of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->veriplasmavalmiste);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor veriplasmavalmiste of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->veriplasmavalmiste);
+  }
+  if (_laake->biologinenLaake != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor biologinenLaake of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->biologinenLaake);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor biologinenLaake of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->biologinenLaake);
+  }
+  if (_laake->lisaseurannassa != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor lisaseurannassa of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsUnsignedShortType(_laake->lisaseurannassa);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor lisaseurannassa of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->lisaseurannassa);
+  }
+  if (_laake->lisatiedot != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor lisatiedot of type CoreWEB_ns0_laake...\n");
+#endif
+    freeXsStringType(_laake->lisatiedot);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor lisatiedot of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->lisatiedot);
+  }
+  if (_laake->atc != NULL) {
+    for (i = 0; i < _laake->_sizeof_atc; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor atc[%i] of type CoreWEB_ns0_laake...\n", i);
+#endif
+      freeNs0LaakeAtcType(&(_laake->atc[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor atc of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->atc);
+  }
+  if (_laake->annostusSoveltuvuus != NULL) {
+    for (i = 0; i < _laake->_sizeof_annostusSoveltuvuus; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor annostusSoveltuvuus[%i] of type CoreWEB_ns0_laake...\n", i);
+#endif
+      freeNs0LaakeAnnostusSoveltuvuusType(&(_laake->annostusSoveltuvuus[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annostusSoveltuvuus of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->annostusSoveltuvuus);
+  }
+  if (_laake->yhteisvaikutus != NULL) {
+    for (i = 0; i < _laake->_sizeof_yhteisvaikutus; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor yhteisvaikutus[%i] of type CoreWEB_ns0_laake...\n", i);
+#endif
+      freeNs0LaakeYhteisvaikutusType(&(_laake->yhteisvaikutus[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor yhteisvaikutus of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->yhteisvaikutus);
+  }
+  if (_laake->vastaAihe != NULL) {
+    for (i = 0; i < _laake->_sizeof_vastaAihe; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor vastaAihe[%i] of type CoreWEB_ns0_laake...\n", i);
+#endif
+      freeNs0LaakeVastaAiheType(&(_laake->vastaAihe[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vastaAihe of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->vastaAihe);
+  }
+  if (_laake->terapiaryhma != NULL) {
+    for (i = 0; i < _laake->_sizeof_terapiaryhma; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor terapiaryhma[%i] of type CoreWEB_ns0_laake...\n", i);
+#endif
+      freeNs0LaakeTerapiaryhmaType(&(_laake->terapiaryhma[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor terapiaryhma of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->terapiaryhma);
+  }
+  if (_laake->koostumus != NULL) {
+    for (i = 0; i < _laake->_sizeof_koostumus; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor koostumus[%i] of type CoreWEB_ns0_laake...\n", i);
+#endif
+      freeNs0LaakeKoostumusType(&(_laake->koostumus[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor koostumus of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->koostumus);
+  }
+  if (_laake->tiivistelma != NULL) {
+    for (i = 0; i < _laake->_sizeof_tiivistelma; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor tiivistelma[%i] of type CoreWEB_ns0_laake...\n", i);
+#endif
+      freeNs0LaakeTiivistelmaType(&(_laake->tiivistelma[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tiivistelma of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->tiivistelma);
+  }
+  if (_laake->seloste != NULL) {
+    for (i = 0; i < _laake->_sizeof_seloste; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor seloste[%i] of type CoreWEB_ns0_laake...\n", i);
+#endif
+      freeNs0LaakeSelosteType(&(_laake->seloste[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor seloste of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->seloste);
+  }
+  if (_laake->laakeaineet != NULL) {
+    for (i = 0; i < _laake->_sizeof_laakeaineet; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor laakeaineet[%i] of type CoreWEB_ns0_laake...\n", i);
+#endif
+      freeNs0LaakeAineType(&(_laake->laakeaineet[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laakeaineet of type CoreWEB_ns0_laake...\n");
+#endif
+    free(_laake->laakeaineet);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laake_M */
+#ifndef DEF_CoreWEB_ns0_laakeAine_M
+#define DEF_CoreWEB_ns0_laakeAine_M
+
+/**
+ * Reads a LaakeAine element from XML. The element to be read is "laakeAine", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAine, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAine *xml_read_CoreWEB_ns0_laakeAine(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeAineElement(reader);
+}
+
+/**
+ * Writes a LaakeAine to XML under element name "laakeAine".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAine The LaakeAine to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeAine(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAine *_laakeAine) {
+  return xmlTextWriterWriteNs0LaakeAineElementNS(writer, _laakeAine, 1);
+}
+
+/**
+ * Frees a LaakeAine.
+ *
+ * @param _laakeAine The LaakeAine to free.
+ */
+void free_CoreWEB_ns0_laakeAine(struct CoreWEB_ns0_laakeAine *_laakeAine) {
+  freeNs0LaakeAineType(_laakeAine);
+  free(_laakeAine);
+}
+
+/**
+ * Reads a LaakeAine element from XML. The element to be read is "laakeAine", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAine, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAine *xmlTextReaderReadNs0LaakeAineElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeAine *_laakeAine = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeAine", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeAine.\n");
+#endif
+    _laakeAine = xmlTextReaderReadNs0LaakeAineType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeAine == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeAine failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeAine failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeAine;
+}
+
+/**
+ * Writes a LaakeAine to XML under element name "laakeAine".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAine The LaakeAine to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeAineElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAine *_laakeAine) {
+  return xmlTextWriterWriteNs0LaakeAineElementNS(writer, _laakeAine, 0);
+}
+
+/**
+ * Writes a LaakeAine to XML under element name "laakeAine".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAine The LaakeAine to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeAineElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAine *_laakeAine, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeAine", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeAine. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeAine for root element {}laakeAine...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeAineType(writer, _laakeAine);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeAine. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeAine. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeAine.
+ *
+ * @param _laakeAine The LaakeAine whose children are to be free.
+ */
+static void freeNs0LaakeAineElement(struct CoreWEB_ns0_laakeAine *_laakeAine) {
+  freeNs0LaakeAineType(_laakeAine);
+}
+
+/**
+ * Reads a LaakeAine from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeAine, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeAine *xmlTextReaderReadNs0LaakeAineType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeAine *_laakeAine = calloc(1, sizeof(struct CoreWEB_ns0_laakeAine));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeAineType(_laakeAine);
+        free(_laakeAine);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laake", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laake of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laake of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAineType(_laakeAine);
+          free(_laakeAine);
+          return NULL;
+        }
+
+        _laakeAine->laake = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "aine", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}aine of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}aine of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAineType(_laakeAine);
+          free(_laakeAine);
+          return NULL;
+        }
+
+        _laakeAine->aine = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "maara", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}maara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}maara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAineType(_laakeAine);
+          free(_laakeAine);
+          return NULL;
+        }
+
+        _laakeAine->maara = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "yksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}yksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}yksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAineType(_laakeAine);
+          free(_laakeAine);
+          return NULL;
+        }
+
+        _laakeAine->yksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAineType(_laakeAine);
+          free(_laakeAine);
+          return NULL;
+        }
+
+        _laakeAine->alkupera = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "ainekoodi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}ainekoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}ainekoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAineType(_laakeAine);
+          free(_laakeAine);
+          return NULL;
+        }
+
+        _laakeAine->ainekoodi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "atc", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}atc of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}atc of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAineType(_laakeAine);
+          free(_laakeAine);
+          return NULL;
+        }
+
+        _laakeAine->atc = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "jarjestys", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}jarjestys of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}jarjestys of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAineType(_laakeAine);
+          free(_laakeAine);
+          return NULL;
+        }
+
+        _laakeAine->jarjestys = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeAine.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeAine. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeAine;
+}
+
+/**
+ * Writes a LaakeAine to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAine The LaakeAine to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeAineType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAine *_laakeAine) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (_laakeAine->laake != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laake", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}laake...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAine->laake));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}laake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAine->aine != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "aine", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}aine. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}aine...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAine->aine));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}aine. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}aine. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAine->maara != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "maara", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}maara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}maara...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakeAine->maara));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}maara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}maara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAine->yksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "yksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}yksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}yksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAine->yksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}yksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}yksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeAine->alkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAine->ainekoodi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "ainekoodi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}ainekoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}ainekoodi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAine->ainekoodi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}ainekoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}ainekoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAine->atc != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "atc", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}atc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}atc...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAine->atc));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}atc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}atc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAine->jarjestys != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "jarjestys", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}jarjestys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}jarjestys...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakeAine->jarjestys));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}jarjestys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}jarjestys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeAine.
+ *
+ * @param _laakeAine The LaakeAine to free.
+ */
+static void freeNs0LaakeAineType(struct CoreWEB_ns0_laakeAine *_laakeAine) {
+  int i;
+  if (_laakeAine->laake != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laake of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    freeXsStringType(_laakeAine->laake);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laake of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    free(_laakeAine->laake);
+  }
+  if (_laakeAine->aine != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor aine of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    freeXsStringType(_laakeAine->aine);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor aine of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    free(_laakeAine->aine);
+  }
+  if (_laakeAine->maara != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor maara of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    freeXsFloatType(_laakeAine->maara);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor maara of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    free(_laakeAine->maara);
+  }
+  if (_laakeAine->yksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor yksikko of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    freeXsStringType(_laakeAine->yksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor yksikko of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    free(_laakeAine->yksikko);
+  }
+  if (_laakeAine->ainekoodi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor ainekoodi of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    freeXsStringType(_laakeAine->ainekoodi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor ainekoodi of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    free(_laakeAine->ainekoodi);
+  }
+  if (_laakeAine->atc != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor atc of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    freeXsStringType(_laakeAine->atc);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor atc of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    free(_laakeAine->atc);
+  }
+  if (_laakeAine->jarjestys != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor jarjestys of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    freeXsIntType(_laakeAine->jarjestys);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor jarjestys of type CoreWEB_ns0_laakeAine...\n");
+#endif
+    free(_laakeAine->jarjestys);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeAine_M */
+#ifndef DEF_CoreWEB_ns0_laakeAnnostus_M
+#define DEF_CoreWEB_ns0_laakeAnnostus_M
+
+/**
+ * Reads a LaakeAnnostus element from XML. The element to be read is "laakeAnnostus", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAnnostus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAnnostus *xml_read_CoreWEB_ns0_laakeAnnostus(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeAnnostusElement(reader);
+}
+
+/**
+ * Writes a LaakeAnnostus to XML under element name "laakeAnnostus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostus The LaakeAnnostus to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeAnnostus(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus) {
+  return xmlTextWriterWriteNs0LaakeAnnostusElementNS(writer, _laakeAnnostus, 1);
+}
+
+/**
+ * Frees a LaakeAnnostus.
+ *
+ * @param _laakeAnnostus The LaakeAnnostus to free.
+ */
+void free_CoreWEB_ns0_laakeAnnostus(struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus) {
+  freeNs0LaakeAnnostusType(_laakeAnnostus);
+  free(_laakeAnnostus);
+}
+
+/**
+ * Reads a LaakeAnnostus element from XML. The element to be read is "laakeAnnostus", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAnnostus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAnnostus *xmlTextReaderReadNs0LaakeAnnostusElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeAnnostus", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeAnnostus.\n");
+#endif
+    _laakeAnnostus = xmlTextReaderReadNs0LaakeAnnostusType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeAnnostus == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeAnnostus failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeAnnostus failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeAnnostus;
+}
+
+/**
+ * Writes a LaakeAnnostus to XML under element name "laakeAnnostus".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostus The LaakeAnnostus to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus) {
+  return xmlTextWriterWriteNs0LaakeAnnostusElementNS(writer, _laakeAnnostus, 0);
+}
+
+/**
+ * Writes a LaakeAnnostus to XML under element name "laakeAnnostus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostus The LaakeAnnostus to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeAnnostus", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeAnnostus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeAnnostus for root element {}laakeAnnostus...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeAnnostusType(writer, _laakeAnnostus);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeAnnostus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeAnnostus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeAnnostus.
+ *
+ * @param _laakeAnnostus The LaakeAnnostus whose children are to be free.
+ */
+static void freeNs0LaakeAnnostusElement(struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus) {
+  freeNs0LaakeAnnostusType(_laakeAnnostus);
+}
+
+/**
+ * Reads a LaakeAnnostus from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeAnnostus, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeAnnostus *xmlTextReaderReadNs0LaakeAnnostusType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus = calloc(1, sizeof(struct CoreWEB_ns0_laakeAnnostus));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeAnnostusType(_laakeAnnostus);
+        free(_laakeAnnostus);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "numero", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}numero of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}numero of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->numero = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "selite", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}selite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}selite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->selite = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alaikaraja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alaikaraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alaikaraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->alaikaraja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "ylaikaraja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}ylaikaraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}ylaikaraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->ylaikaraja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alapainoraja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alapainoraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alapainoraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->alapainoraja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "ylapainoraja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}ylapainoraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}ylapainoraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->ylapainoraja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "malli", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}malli of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}malli of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->malli = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "desimaaleja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}desimaaleja of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}desimaaleja of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->desimaaleja = *((short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "painokerroin", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}painokerroin of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}painokerroin of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->painokerroin = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annettavaMaara", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annettavaMaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annettavaMaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->annettavaMaara = *((float*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annettavaMaksimi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annettavaMaksimi of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annettavaMaksimi of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->annettavaMaksimi = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annettavaYksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annettavaYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annettavaYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->annettavaYksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "antotahti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}antotahti of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}antotahti of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->antotahti = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "antotahtiYksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}antotahtiYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}antotahtiYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->antotahtiYksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kokonaiskesto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kokonaiskesto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kokonaiskesto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->kokonaiskesto = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kokonaismaara", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kokonaismaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kokonaismaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->kokonaismaara = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kokonaismaaraYksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kokonaismaaraYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kokonaismaaraYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->kokonaismaaraYksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "varmistus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}varmistus of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}varmistus of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->varmistus = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kayttotarkoitus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kayttotarkoitus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kayttotarkoitus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->kayttotarkoitus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "ohjeet", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}ohjeet of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}ohjeet of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->ohjeet = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "iterointi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}iterointi of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}iterointi of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->iterointi = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "pysyva", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}pysyva of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}pysyva of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->pysyva = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tarvittaessa", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tarvittaessa of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tarvittaessa of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->tarvittaessa = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "perusteluVaaditaan", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}perusteluVaaditaan of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}perusteluVaaditaan of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->perusteluVaaditaan = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "antoreitit", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}antoreitit of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}antoreitit of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->antoreitit = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "antopaikat", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}antopaikat of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}antopaikat of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->antopaikat = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "antovalineet", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}antovalineet of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}antovalineet of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->antovalineet = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "antotavat", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}antotavat of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}antotavat of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->antotavat = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->alkupera = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->poistettu = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutosaika", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->muutosaika = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutospaikka", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->muutospaikka = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kenen", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kenen of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kenen of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->kenen = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "lyhyesti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}lyhyesti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}lyhyesti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->lyhyesti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "toisto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}toisto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}toisto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->toisto = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "toistokuvaus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}toistokuvaus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}toistokuvaus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->toistokuvaus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "aikayksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}aikayksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}aikayksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusType(_laakeAnnostus);
+          free(_laakeAnnostus);
+          return NULL;
+        }
+
+        _laakeAnnostus->aikayksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeAnnostus.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeAnnostus. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeAnnostus;
+}
+
+/**
+ * Writes a LaakeAnnostus to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostus The LaakeAnnostus to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "numero", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}numero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}numero...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakeAnnostus->numero));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}numero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}numero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->selite != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "selite", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}selite...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->selite));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->alaikaraja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alaikaraja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alaikaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}alaikaraja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakeAnnostus->alaikaraja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}alaikaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alaikaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->ylaikaraja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "ylaikaraja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}ylaikaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}ylaikaraja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakeAnnostus->ylaikaraja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}ylaikaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}ylaikaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->alapainoraja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alapainoraja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alapainoraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}alapainoraja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakeAnnostus->alapainoraja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}alapainoraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alapainoraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->ylapainoraja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "ylapainoraja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}ylapainoraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}ylapainoraja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakeAnnostus->ylapainoraja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}ylapainoraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}ylapainoraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->malli != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "malli", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}malli. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}malli...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->malli));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}malli. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}malli. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "desimaaleja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}desimaaleja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}short for element {}desimaaleja...\n");
+#endif
+    status = xmlTextWriterWriteXsShortType(writer, &(_laakeAnnostus->desimaaleja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}short for element {}desimaaleja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}desimaaleja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "painokerroin", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}painokerroin. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}painokerroin...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeAnnostus->painokerroin));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}painokerroin. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}painokerroin. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annettavaMaara", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annettavaMaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}annettavaMaara...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, &(_laakeAnnostus->annettavaMaara));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}annettavaMaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annettavaMaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->annettavaMaksimi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annettavaMaksimi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annettavaMaksimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}annettavaMaksimi...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakeAnnostus->annettavaMaksimi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}annettavaMaksimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annettavaMaksimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->annettavaYksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annettavaYksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annettavaYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}annettavaYksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->annettavaYksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}annettavaYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annettavaYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->antotahti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "antotahti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}antotahti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}antotahti...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakeAnnostus->antotahti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}antotahti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}antotahti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->antotahtiYksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "antotahtiYksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}antotahtiYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}antotahtiYksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->antotahtiYksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}antotahtiYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}antotahtiYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->kokonaiskesto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kokonaiskesto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kokonaiskesto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kokonaiskesto...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->kokonaiskesto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kokonaiskesto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kokonaiskesto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->kokonaismaara != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kokonaismaara", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kokonaismaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}kokonaismaara...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakeAnnostus->kokonaismaara));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}kokonaismaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kokonaismaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->kokonaismaaraYksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kokonaismaaraYksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kokonaismaaraYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kokonaismaaraYksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->kokonaismaaraYksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kokonaismaaraYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kokonaismaaraYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "varmistus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}varmistus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}varmistus...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeAnnostus->varmistus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}varmistus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}varmistus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->kayttotarkoitus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kayttotarkoitus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kayttotarkoitus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kayttotarkoitus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->kayttotarkoitus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kayttotarkoitus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kayttotarkoitus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->ohjeet != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "ohjeet", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}ohjeet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}ohjeet...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->ohjeet));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}ohjeet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}ohjeet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->iterointi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "iterointi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}iterointi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}iterointi...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakeAnnostus->iterointi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}iterointi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}iterointi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "pysyva", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}pysyva. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}pysyva...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeAnnostus->pysyva));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}pysyva. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}pysyva. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tarvittaessa", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tarvittaessa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tarvittaessa...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeAnnostus->tarvittaessa));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tarvittaessa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tarvittaessa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "perusteluVaaditaan", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}perusteluVaaditaan. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}perusteluVaaditaan...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeAnnostus->perusteluVaaditaan));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}perusteluVaaditaan. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}perusteluVaaditaan. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->antoreitit != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "antoreitit", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}antoreitit. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}antoreitit...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->antoreitit));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}antoreitit. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}antoreitit. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->antopaikat != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "antopaikat", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}antopaikat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}antopaikat...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->antopaikat));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}antopaikat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}antopaikat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->antovalineet != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "antovalineet", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}antovalineet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}antovalineet...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->antovalineet));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}antovalineet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}antovalineet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->antotavat != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "antotavat", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}antotavat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}antotavat...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->antotavat));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}antotavat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}antotavat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeAnnostus->alkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeAnnostus->poistettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->muutosaika != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutosaika", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakeAnnostus->muutosaika));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutospaikka", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}muutospaikka...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakeAnnostus->muutospaikka));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->kenen != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kenen", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kenen. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}kenen...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakeAnnostus->kenen));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}kenen. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kenen. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->lyhyesti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "lyhyesti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}lyhyesti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}lyhyesti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->lyhyesti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}lyhyesti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}lyhyesti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->toisto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "toisto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}toisto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}toisto...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->toisto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}toisto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}toisto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->toistokuvaus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "toistokuvaus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}toistokuvaus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}toistokuvaus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->toistokuvaus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}toistokuvaus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}toistokuvaus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostus->aikayksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "aikayksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}aikayksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}aikayksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostus->aikayksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}aikayksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}aikayksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeAnnostus.
+ *
+ * @param _laakeAnnostus The LaakeAnnostus to free.
+ */
+static void freeNs0LaakeAnnostusType(struct CoreWEB_ns0_laakeAnnostus *_laakeAnnostus) {
+  int i;
+  if (_laakeAnnostus->selite != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor selite of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->selite);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor selite of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->selite);
+  }
+  if (_laakeAnnostus->alaikaraja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor alaikaraja of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsIntType(_laakeAnnostus->alaikaraja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor alaikaraja of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->alaikaraja);
+  }
+  if (_laakeAnnostus->ylaikaraja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor ylaikaraja of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsIntType(_laakeAnnostus->ylaikaraja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor ylaikaraja of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->ylaikaraja);
+  }
+  if (_laakeAnnostus->alapainoraja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor alapainoraja of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsIntType(_laakeAnnostus->alapainoraja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor alapainoraja of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->alapainoraja);
+  }
+  if (_laakeAnnostus->ylapainoraja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor ylapainoraja of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsIntType(_laakeAnnostus->ylapainoraja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor ylapainoraja of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->ylapainoraja);
+  }
+  if (_laakeAnnostus->malli != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor malli of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->malli);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor malli of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->malli);
+  }
+  if (_laakeAnnostus->annettavaMaksimi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annettavaMaksimi of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsFloatType(_laakeAnnostus->annettavaMaksimi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annettavaMaksimi of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->annettavaMaksimi);
+  }
+  if (_laakeAnnostus->annettavaYksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annettavaYksikko of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->annettavaYksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annettavaYksikko of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->annettavaYksikko);
+  }
+  if (_laakeAnnostus->antotahti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor antotahti of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsFloatType(_laakeAnnostus->antotahti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor antotahti of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->antotahti);
+  }
+  if (_laakeAnnostus->antotahtiYksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor antotahtiYksikko of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->antotahtiYksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor antotahtiYksikko of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->antotahtiYksikko);
+  }
+  if (_laakeAnnostus->kokonaiskesto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kokonaiskesto of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->kokonaiskesto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kokonaiskesto of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->kokonaiskesto);
+  }
+  if (_laakeAnnostus->kokonaismaara != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kokonaismaara of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsFloatType(_laakeAnnostus->kokonaismaara);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kokonaismaara of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->kokonaismaara);
+  }
+  if (_laakeAnnostus->kokonaismaaraYksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kokonaismaaraYksikko of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->kokonaismaaraYksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kokonaismaaraYksikko of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->kokonaismaaraYksikko);
+  }
+  if (_laakeAnnostus->kayttotarkoitus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kayttotarkoitus of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->kayttotarkoitus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kayttotarkoitus of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->kayttotarkoitus);
+  }
+  if (_laakeAnnostus->ohjeet != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor ohjeet of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->ohjeet);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor ohjeet of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->ohjeet);
+  }
+  if (_laakeAnnostus->iterointi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor iterointi of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsIntType(_laakeAnnostus->iterointi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor iterointi of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->iterointi);
+  }
+  if (_laakeAnnostus->antoreitit != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor antoreitit of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->antoreitit);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor antoreitit of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->antoreitit);
+  }
+  if (_laakeAnnostus->antopaikat != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor antopaikat of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->antopaikat);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor antopaikat of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->antopaikat);
+  }
+  if (_laakeAnnostus->antovalineet != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor antovalineet of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->antovalineet);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor antovalineet of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->antovalineet);
+  }
+  if (_laakeAnnostus->antotavat != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor antotavat of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->antotavat);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor antotavat of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->antotavat);
+  }
+  if (_laakeAnnostus->muutosaika != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutosaika of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsDateTimeType(_laakeAnnostus->muutosaika);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutosaika of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->muutosaika);
+  }
+  if (_laakeAnnostus->kenen != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kenen of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsIntType(_laakeAnnostus->kenen);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kenen of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->kenen);
+  }
+  if (_laakeAnnostus->lyhyesti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor lyhyesti of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->lyhyesti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor lyhyesti of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->lyhyesti);
+  }
+  if (_laakeAnnostus->toisto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor toisto of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->toisto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor toisto of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->toisto);
+  }
+  if (_laakeAnnostus->toistokuvaus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor toistokuvaus of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->toistokuvaus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor toistokuvaus of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->toistokuvaus);
+  }
+  if (_laakeAnnostus->aikayksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor aikayksikko of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    freeXsStringType(_laakeAnnostus->aikayksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor aikayksikko of type CoreWEB_ns0_laakeAnnostus...\n");
+#endif
+    free(_laakeAnnostus->aikayksikko);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeAnnostus_M */
+#ifndef DEF_CoreWEB_ns0_laakeAnnostusSoveltuvuus_M
+#define DEF_CoreWEB_ns0_laakeAnnostusSoveltuvuus_M
+
+/**
+ * Reads a LaakeAnnostusSoveltuvuus element from XML. The element to be read is "laakeAnnostusSoveltuvuus", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAnnostusSoveltuvuus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *xml_read_CoreWEB_ns0_laakeAnnostusSoveltuvuus(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeAnnostusSoveltuvuusElement(reader);
+}
+
+/**
+ * Writes a LaakeAnnostusSoveltuvuus to XML under element name "laakeAnnostusSoveltuvuus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeAnnostusSoveltuvuus(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus) {
+  return xmlTextWriterWriteNs0LaakeAnnostusSoveltuvuusElementNS(writer, _laakeAnnostusSoveltuvuus, 1);
+}
+
+/**
+ * Frees a LaakeAnnostusSoveltuvuus.
+ *
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to free.
+ */
+void free_CoreWEB_ns0_laakeAnnostusSoveltuvuus(struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus) {
+  freeNs0LaakeAnnostusSoveltuvuusType(_laakeAnnostusSoveltuvuus);
+  free(_laakeAnnostusSoveltuvuus);
+}
+
+/**
+ * Reads a LaakeAnnostusSoveltuvuus element from XML. The element to be read is "laakeAnnostusSoveltuvuus", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAnnostusSoveltuvuus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *xmlTextReaderReadNs0LaakeAnnostusSoveltuvuusElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeAnnostusSoveltuvuus", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeAnnostusSoveltuvuus.\n");
+#endif
+    _laakeAnnostusSoveltuvuus = xmlTextReaderReadNs0LaakeAnnostusSoveltuvuusType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeAnnostusSoveltuvuus == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeAnnostusSoveltuvuus failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeAnnostusSoveltuvuus failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeAnnostusSoveltuvuus;
+}
+
+/**
+ * Writes a LaakeAnnostusSoveltuvuus to XML under element name "laakeAnnostusSoveltuvuus".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusSoveltuvuusElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus) {
+  return xmlTextWriterWriteNs0LaakeAnnostusSoveltuvuusElementNS(writer, _laakeAnnostusSoveltuvuus, 0);
+}
+
+/**
+ * Writes a LaakeAnnostusSoveltuvuus to XML under element name "laakeAnnostusSoveltuvuus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusSoveltuvuusElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeAnnostusSoveltuvuus", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeAnnostusSoveltuvuus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeAnnostusSoveltuvuus for root element {}laakeAnnostusSoveltuvuus...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeAnnostusSoveltuvuusType(writer, _laakeAnnostusSoveltuvuus);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeAnnostusSoveltuvuus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeAnnostusSoveltuvuus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeAnnostusSoveltuvuus.
+ *
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus whose children are to be free.
+ */
+static void freeNs0LaakeAnnostusSoveltuvuusElement(struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus) {
+  freeNs0LaakeAnnostusSoveltuvuusType(_laakeAnnostusSoveltuvuus);
+}
+
+/**
+ * Reads a LaakeAnnostusSoveltuvuus from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeAnnostusSoveltuvuus, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *xmlTextReaderReadNs0LaakeAnnostusSoveltuvuusType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus = calloc(1, sizeof(struct CoreWEB_ns0_laakeAnnostusSoveltuvuus));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeAnnostusSoveltuvuusType(_laakeAnnostusSoveltuvuus);
+        free(_laakeAnnostusSoveltuvuus);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laake", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laake of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laake of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusSoveltuvuusType(_laakeAnnostusSoveltuvuus);
+          free(_laakeAnnostusSoveltuvuus);
+          return NULL;
+        }
+
+        _laakeAnnostusSoveltuvuus->laake = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusSoveltuvuusType(_laakeAnnostusSoveltuvuus);
+          free(_laakeAnnostusSoveltuvuus);
+          return NULL;
+        }
+
+        _laakeAnnostusSoveltuvuus->alkupera = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annostus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annostus of type {}laakeAnnostus.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeAnnostusType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annostus of type {}laakeAnnostus.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAnnostusSoveltuvuusType(_laakeAnnostusSoveltuvuus);
+          free(_laakeAnnostusSoveltuvuus);
+          return NULL;
+        }
+
+        _laakeAnnostusSoveltuvuus->annostus = ((struct CoreWEB_ns0_laakeAnnostus*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeAnnostusSoveltuvuus.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeAnnostusSoveltuvuus. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeAnnostusSoveltuvuus;
+}
+
+/**
+ * Writes a LaakeAnnostusSoveltuvuus to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeAnnostusSoveltuvuusType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (_laakeAnnostusSoveltuvuus->laake != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laake", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}laake...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAnnostusSoveltuvuus->laake));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}laake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostusSoveltuvuus->alkupera != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laakeAnnostusSoveltuvuus->alkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeAnnostusSoveltuvuus->annostus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annostus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annostus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeAnnostus for element {}annostus...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeAnnostusType(writer, (_laakeAnnostusSoveltuvuus->annostus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeAnnostus for element {}annostus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annostus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeAnnostusSoveltuvuus.
+ *
+ * @param _laakeAnnostusSoveltuvuus The LaakeAnnostusSoveltuvuus to free.
+ */
+static void freeNs0LaakeAnnostusSoveltuvuusType(struct CoreWEB_ns0_laakeAnnostusSoveltuvuus *_laakeAnnostusSoveltuvuus) {
+  int i;
+  if (_laakeAnnostusSoveltuvuus->laake != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laake of type CoreWEB_ns0_laakeAnnostusSoveltuvuus...\n");
+#endif
+    freeXsStringType(_laakeAnnostusSoveltuvuus->laake);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laake of type CoreWEB_ns0_laakeAnnostusSoveltuvuus...\n");
+#endif
+    free(_laakeAnnostusSoveltuvuus->laake);
+  }
+  if (_laakeAnnostusSoveltuvuus->alkupera != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor alkupera of type CoreWEB_ns0_laakeAnnostusSoveltuvuus...\n");
+#endif
+    freeXsUnsignedShortType(_laakeAnnostusSoveltuvuus->alkupera);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor alkupera of type CoreWEB_ns0_laakeAnnostusSoveltuvuus...\n");
+#endif
+    free(_laakeAnnostusSoveltuvuus->alkupera);
+  }
+  if (_laakeAnnostusSoveltuvuus->annostus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annostus of type CoreWEB_ns0_laakeAnnostusSoveltuvuus...\n");
+#endif
+    freeNs0LaakeAnnostusType(_laakeAnnostusSoveltuvuus->annostus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annostus of type CoreWEB_ns0_laakeAnnostusSoveltuvuus...\n");
+#endif
+    free(_laakeAnnostusSoveltuvuus->annostus);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeAnnostusSoveltuvuus_M */
+#ifndef DEF_CoreWEB_ns0_laakeAtc_M
+#define DEF_CoreWEB_ns0_laakeAtc_M
+
+/**
+ * Reads a LaakeAtc element from XML. The element to be read is "laakeAtc", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAtc, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAtc *xml_read_CoreWEB_ns0_laakeAtc(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeAtcElement(reader);
+}
+
+/**
+ * Writes a LaakeAtc to XML under element name "laakeAtc".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAtc The LaakeAtc to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeAtc(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAtc *_laakeAtc) {
+  return xmlTextWriterWriteNs0LaakeAtcElementNS(writer, _laakeAtc, 1);
+}
+
+/**
+ * Frees a LaakeAtc.
+ *
+ * @param _laakeAtc The LaakeAtc to free.
+ */
+void free_CoreWEB_ns0_laakeAtc(struct CoreWEB_ns0_laakeAtc *_laakeAtc) {
+  freeNs0LaakeAtcType(_laakeAtc);
+  free(_laakeAtc);
+}
+
+/**
+ * Reads a LaakeAtc element from XML. The element to be read is "laakeAtc", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeAtc, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeAtc *xmlTextReaderReadNs0LaakeAtcElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeAtc *_laakeAtc = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeAtc", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeAtc.\n");
+#endif
+    _laakeAtc = xmlTextReaderReadNs0LaakeAtcType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeAtc == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeAtc failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeAtc failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeAtc;
+}
+
+/**
+ * Writes a LaakeAtc to XML under element name "laakeAtc".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAtc The LaakeAtc to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeAtcElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAtc *_laakeAtc) {
+  return xmlTextWriterWriteNs0LaakeAtcElementNS(writer, _laakeAtc, 0);
+}
+
+/**
+ * Writes a LaakeAtc to XML under element name "laakeAtc".
+ *
+ * @param writer The XML writer.
+ * @param _laakeAtc The LaakeAtc to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeAtcElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAtc *_laakeAtc, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeAtc", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeAtc. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeAtc for root element {}laakeAtc...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeAtcType(writer, _laakeAtc);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeAtc. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeAtc. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeAtc.
+ *
+ * @param _laakeAtc The LaakeAtc whose children are to be free.
+ */
+static void freeNs0LaakeAtcElement(struct CoreWEB_ns0_laakeAtc *_laakeAtc) {
+  freeNs0LaakeAtcType(_laakeAtc);
+}
+
+/**
+ * Reads a LaakeAtc from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeAtc, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeAtc *xmlTextReaderReadNs0LaakeAtcType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeAtc *_laakeAtc = calloc(1, sizeof(struct CoreWEB_ns0_laakeAtc));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeAtcType(_laakeAtc);
+        free(_laakeAtc);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "atc", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}atc of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}atc of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAtcType(_laakeAtc);
+          free(_laakeAtc);
+          return NULL;
+        }
+
+        _laakeAtc->atc = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeAtcType(_laakeAtc);
+          free(_laakeAtc);
+          return NULL;
+        }
+
+        _laakeAtc->alkupera = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeAtc.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeAtc. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeAtc;
+}
+
+/**
+ * Writes a LaakeAtc to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeAtc The LaakeAtc to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeAtcType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeAtc *_laakeAtc) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (_laakeAtc->atc != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "atc", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}atc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}atc...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeAtc->atc));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}atc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}atc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeAtc->alkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeAtc.
+ *
+ * @param _laakeAtc The LaakeAtc to free.
+ */
+static void freeNs0LaakeAtcType(struct CoreWEB_ns0_laakeAtc *_laakeAtc) {
+  int i;
+  if (_laakeAtc->atc != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor atc of type CoreWEB_ns0_laakeAtc...\n");
+#endif
+    freeXsStringType(_laakeAtc->atc);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor atc of type CoreWEB_ns0_laakeAtc...\n");
+#endif
+    free(_laakeAtc->atc);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeAtc_M */
+#ifndef DEF_CoreWEB_ns0_laakeKoostumus_M
+#define DEF_CoreWEB_ns0_laakeKoostumus_M
+
+/**
+ * Reads a LaakeKoostumus element from XML. The element to be read is "laakeKoostumus", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeKoostumus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeKoostumus *xml_read_CoreWEB_ns0_laakeKoostumus(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeKoostumusElement(reader);
+}
+
+/**
+ * Writes a LaakeKoostumus to XML under element name "laakeKoostumus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeKoostumus The LaakeKoostumus to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeKoostumus(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus) {
+  return xmlTextWriterWriteNs0LaakeKoostumusElementNS(writer, _laakeKoostumus, 1);
+}
+
+/**
+ * Frees a LaakeKoostumus.
+ *
+ * @param _laakeKoostumus The LaakeKoostumus to free.
+ */
+void free_CoreWEB_ns0_laakeKoostumus(struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus) {
+  freeNs0LaakeKoostumusType(_laakeKoostumus);
+  free(_laakeKoostumus);
+}
+
+/**
+ * Reads a LaakeKoostumus element from XML. The element to be read is "laakeKoostumus", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeKoostumus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeKoostumus *xmlTextReaderReadNs0LaakeKoostumusElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeKoostumus", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeKoostumus.\n");
+#endif
+    _laakeKoostumus = xmlTextReaderReadNs0LaakeKoostumusType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeKoostumus == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeKoostumus failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeKoostumus failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeKoostumus;
+}
+
+/**
+ * Writes a LaakeKoostumus to XML under element name "laakeKoostumus".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeKoostumus The LaakeKoostumus to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeKoostumusElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus) {
+  return xmlTextWriterWriteNs0LaakeKoostumusElementNS(writer, _laakeKoostumus, 0);
+}
+
+/**
+ * Writes a LaakeKoostumus to XML under element name "laakeKoostumus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeKoostumus The LaakeKoostumus to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeKoostumusElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeKoostumus", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeKoostumus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeKoostumus for root element {}laakeKoostumus...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeKoostumusType(writer, _laakeKoostumus);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeKoostumus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeKoostumus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeKoostumus.
+ *
+ * @param _laakeKoostumus The LaakeKoostumus whose children are to be free.
+ */
+static void freeNs0LaakeKoostumusElement(struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus) {
+  freeNs0LaakeKoostumusType(_laakeKoostumus);
+}
+
+/**
+ * Reads a LaakeKoostumus from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeKoostumus, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeKoostumus *xmlTextReaderReadNs0LaakeKoostumusType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus = calloc(1, sizeof(struct CoreWEB_ns0_laakeKoostumus));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeKoostumusType(_laakeKoostumus);
+        free(_laakeKoostumus);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "osa", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}osa of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}osa of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeKoostumusType(_laakeKoostumus);
+          free(_laakeKoostumus);
+          return NULL;
+        }
+
+        _laakeKoostumus->osa = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tyyppi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tyyppi of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tyyppi of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeKoostumusType(_laakeKoostumus);
+          free(_laakeKoostumus);
+          return NULL;
+        }
+
+        _laakeKoostumus->tyyppi = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "komponentinKoodi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}komponentinKoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}komponentinKoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeKoostumusType(_laakeKoostumus);
+          free(_laakeKoostumus);
+          return NULL;
+        }
+
+        _laakeKoostumus->komponentinKoodi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "komponentti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}komponentti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}komponentti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeKoostumusType(_laakeKoostumus);
+          free(_laakeKoostumus);
+          return NULL;
+        }
+
+        _laakeKoostumus->komponentti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "maara", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}maara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}maara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeKoostumusType(_laakeKoostumus);
+          free(_laakeKoostumus);
+          return NULL;
+        }
+
+        _laakeKoostumus->maara = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "yksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}yksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}yksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeKoostumusType(_laakeKoostumus);
+          free(_laakeKoostumus);
+          return NULL;
+        }
+
+        _laakeKoostumus->yksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vahvuus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vahvuus of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vahvuus of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeKoostumusType(_laakeKoostumus);
+          free(_laakeKoostumus);
+          return NULL;
+        }
+
+        _laakeKoostumus->vahvuus = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vahvuusyksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vahvuusyksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vahvuusyksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeKoostumusType(_laakeKoostumus);
+          free(_laakeKoostumus);
+          return NULL;
+        }
+
+        _laakeKoostumus->vahvuusyksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeKoostumus.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeKoostumus. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeKoostumus;
+}
+
+/**
+ * Writes a LaakeKoostumus to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeKoostumus The LaakeKoostumus to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeKoostumusType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "osa", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}osa...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakeKoostumus->osa));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tyyppi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tyyppi...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeKoostumus->tyyppi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeKoostumus->komponentinKoodi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "komponentinKoodi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}komponentinKoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}komponentinKoodi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeKoostumus->komponentinKoodi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}komponentinKoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}komponentinKoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeKoostumus->komponentti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "komponentti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}komponentti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}komponentti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeKoostumus->komponentti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}komponentti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}komponentti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeKoostumus->maara != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "maara", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}maara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}maara...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakeKoostumus->maara));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}maara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}maara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeKoostumus->yksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "yksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}yksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}yksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeKoostumus->yksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}yksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}yksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeKoostumus->vahvuus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vahvuus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vahvuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}vahvuus...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakeKoostumus->vahvuus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}vahvuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vahvuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeKoostumus->vahvuusyksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vahvuusyksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vahvuusyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}vahvuusyksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeKoostumus->vahvuusyksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}vahvuusyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vahvuusyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeKoostumus.
+ *
+ * @param _laakeKoostumus The LaakeKoostumus to free.
+ */
+static void freeNs0LaakeKoostumusType(struct CoreWEB_ns0_laakeKoostumus *_laakeKoostumus) {
+  int i;
+  if (_laakeKoostumus->komponentinKoodi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor komponentinKoodi of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    freeXsStringType(_laakeKoostumus->komponentinKoodi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor komponentinKoodi of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    free(_laakeKoostumus->komponentinKoodi);
+  }
+  if (_laakeKoostumus->komponentti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor komponentti of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    freeXsStringType(_laakeKoostumus->komponentti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor komponentti of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    free(_laakeKoostumus->komponentti);
+  }
+  if (_laakeKoostumus->maara != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor maara of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    freeXsFloatType(_laakeKoostumus->maara);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor maara of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    free(_laakeKoostumus->maara);
+  }
+  if (_laakeKoostumus->yksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor yksikko of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    freeXsStringType(_laakeKoostumus->yksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor yksikko of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    free(_laakeKoostumus->yksikko);
+  }
+  if (_laakeKoostumus->vahvuus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vahvuus of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    freeXsFloatType(_laakeKoostumus->vahvuus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vahvuus of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    free(_laakeKoostumus->vahvuus);
+  }
+  if (_laakeKoostumus->vahvuusyksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vahvuusyksikko of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    freeXsStringType(_laakeKoostumus->vahvuusyksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vahvuusyksikko of type CoreWEB_ns0_laakeKoostumus...\n");
+#endif
+    free(_laakeKoostumus->vahvuusyksikko);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeKoostumus_M */
+#ifndef DEF_CoreWEB_ns0_laakeSeloste_M
+#define DEF_CoreWEB_ns0_laakeSeloste_M
+
+/**
+ * Reads a LaakeSeloste element from XML. The element to be read is "laakeSeloste", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeSeloste, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeSeloste *xml_read_CoreWEB_ns0_laakeSeloste(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeSelosteElement(reader);
+}
+
+/**
+ * Writes a LaakeSeloste to XML under element name "laakeSeloste".
+ *
+ * @param writer The XML writer.
+ * @param _laakeSeloste The LaakeSeloste to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeSeloste(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSeloste *_laakeSeloste) {
+  return xmlTextWriterWriteNs0LaakeSelosteElementNS(writer, _laakeSeloste, 1);
+}
+
+/**
+ * Frees a LaakeSeloste.
+ *
+ * @param _laakeSeloste The LaakeSeloste to free.
+ */
+void free_CoreWEB_ns0_laakeSeloste(struct CoreWEB_ns0_laakeSeloste *_laakeSeloste) {
+  freeNs0LaakeSelosteType(_laakeSeloste);
+  free(_laakeSeloste);
+}
+
+/**
+ * Reads a LaakeSeloste element from XML. The element to be read is "laakeSeloste", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeSeloste, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeSeloste *xmlTextReaderReadNs0LaakeSelosteElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeSeloste *_laakeSeloste = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeSeloste", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeSeloste.\n");
+#endif
+    _laakeSeloste = xmlTextReaderReadNs0LaakeSelosteType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeSeloste == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeSeloste failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeSeloste failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeSeloste;
+}
+
+/**
+ * Writes a LaakeSeloste to XML under element name "laakeSeloste".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeSeloste The LaakeSeloste to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSeloste *_laakeSeloste) {
+  return xmlTextWriterWriteNs0LaakeSelosteElementNS(writer, _laakeSeloste, 0);
+}
+
+/**
+ * Writes a LaakeSeloste to XML under element name "laakeSeloste".
+ *
+ * @param writer The XML writer.
+ * @param _laakeSeloste The LaakeSeloste to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSeloste *_laakeSeloste, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeSeloste", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeSeloste. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeSeloste for root element {}laakeSeloste...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeSelosteType(writer, _laakeSeloste);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeSeloste. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeSeloste. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeSeloste.
+ *
+ * @param _laakeSeloste The LaakeSeloste whose children are to be free.
+ */
+static void freeNs0LaakeSelosteElement(struct CoreWEB_ns0_laakeSeloste *_laakeSeloste) {
+  freeNs0LaakeSelosteType(_laakeSeloste);
+}
+
+/**
+ * Reads a LaakeSeloste from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeSeloste, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeSeloste *xmlTextReaderReadNs0LaakeSelosteType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeSeloste *_laakeSeloste = calloc(1, sizeof(struct CoreWEB_ns0_laakeSeloste));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeSelosteType(_laakeSeloste);
+        free(_laakeSeloste);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "seloste", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}seloste of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}seloste of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteType(_laakeSeloste);
+          free(_laakeSeloste);
+          return NULL;
+        }
+
+        _laakeSeloste->seloste = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "nimi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}nimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}nimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteType(_laakeSeloste);
+          free(_laakeSeloste);
+          return NULL;
+        }
+
+        _laakeSeloste->nimi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "ehto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}ehto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}ehto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteType(_laakeSeloste);
+          free(_laakeSeloste);
+          return NULL;
+        }
+
+        _laakeSeloste->ehto = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "valmistaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}valmistaja of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}valmistaja of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteType(_laakeSeloste);
+          free(_laakeSeloste);
+          return NULL;
+        }
+
+        _laakeSeloste->valmistaja = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteType(_laakeSeloste);
+          free(_laakeSeloste);
+          return NULL;
+        }
+
+        _laakeSeloste->poistettu = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutosaika", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteType(_laakeSeloste);
+          free(_laakeSeloste);
+          return NULL;
+        }
+
+        _laakeSeloste->muutosaika = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutospaikka", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteType(_laakeSeloste);
+          free(_laakeSeloste);
+          return NULL;
+        }
+
+        _laakeSeloste->muutospaikka = *((short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tekstit", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tekstit of type {}laakeSelosteTeksti.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeSelosteTekstiType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tekstit of type {}laakeSelosteTeksti.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteType(_laakeSeloste);
+          free(_laakeSeloste);
+          return NULL;
+        }
+
+        _laakeSeloste->tekstit = realloc(_laakeSeloste->tekstit, (_laakeSeloste->_sizeof_tekstit + 1) * sizeof(struct CoreWEB_ns0_laakeSelosteTeksti));
+        memcpy(&(_laakeSeloste->tekstit[_laakeSeloste->_sizeof_tekstit++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeSelosteTeksti));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeSeloste.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeSeloste. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeSeloste;
+}
+
+/**
+ * Writes a LaakeSeloste to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeSeloste The LaakeSeloste to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSeloste *_laakeSeloste) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "seloste", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}seloste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}seloste...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakeSeloste->seloste));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}seloste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}seloste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeSeloste->nimi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "nimi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}nimi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeSeloste->nimi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeSeloste->ehto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "ehto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}ehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}ehto...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeSeloste->ehto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}ehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}ehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeSeloste->valmistaja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "valmistaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}valmistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}valmistaja...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeSeloste->valmistaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}valmistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}valmistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeSeloste->poistettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeSeloste->muutosaika != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutosaika", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakeSeloste->muutosaika));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutospaikka", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka...\n");
+#endif
+    status = xmlTextWriterWriteXsShortType(writer, &(_laakeSeloste->muutospaikka));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laakeSeloste->_sizeof_tekstit; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tekstit", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tekstit. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeSelosteTeksti for element {}tekstit...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeSelosteTekstiType(writer, &(_laakeSeloste->tekstit[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeSelosteTeksti for element {}tekstit. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tekstit. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeSeloste.
+ *
+ * @param _laakeSeloste The LaakeSeloste to free.
+ */
+static void freeNs0LaakeSelosteType(struct CoreWEB_ns0_laakeSeloste *_laakeSeloste) {
+  int i;
+  if (_laakeSeloste->nimi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor nimi of type CoreWEB_ns0_laakeSeloste...\n");
+#endif
+    freeXsStringType(_laakeSeloste->nimi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor nimi of type CoreWEB_ns0_laakeSeloste...\n");
+#endif
+    free(_laakeSeloste->nimi);
+  }
+  if (_laakeSeloste->ehto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor ehto of type CoreWEB_ns0_laakeSeloste...\n");
+#endif
+    freeXsStringType(_laakeSeloste->ehto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor ehto of type CoreWEB_ns0_laakeSeloste...\n");
+#endif
+    free(_laakeSeloste->ehto);
+  }
+  if (_laakeSeloste->valmistaja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor valmistaja of type CoreWEB_ns0_laakeSeloste...\n");
+#endif
+    freeXsStringType(_laakeSeloste->valmistaja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor valmistaja of type CoreWEB_ns0_laakeSeloste...\n");
+#endif
+    free(_laakeSeloste->valmistaja);
+  }
+  if (_laakeSeloste->muutosaika != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutosaika of type CoreWEB_ns0_laakeSeloste...\n");
+#endif
+    freeXsDateTimeType(_laakeSeloste->muutosaika);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutosaika of type CoreWEB_ns0_laakeSeloste...\n");
+#endif
+    free(_laakeSeloste->muutosaika);
+  }
+  if (_laakeSeloste->tekstit != NULL) {
+    for (i = 0; i < _laakeSeloste->_sizeof_tekstit; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor tekstit[%i] of type CoreWEB_ns0_laakeSeloste...\n", i);
+#endif
+      freeNs0LaakeSelosteTekstiType(&(_laakeSeloste->tekstit[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tekstit of type CoreWEB_ns0_laakeSeloste...\n");
+#endif
+    free(_laakeSeloste->tekstit);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeSeloste_M */
+#ifndef DEF_CoreWEB_ns0_laakeSelosteTeksti_M
+#define DEF_CoreWEB_ns0_laakeSelosteTeksti_M
+
+/**
+ * Reads a LaakeSelosteTeksti element from XML. The element to be read is "laakeSelosteTeksti", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeSelosteTeksti, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeSelosteTeksti *xml_read_CoreWEB_ns0_laakeSelosteTeksti(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeSelosteTekstiElement(reader);
+}
+
+/**
+ * Writes a LaakeSelosteTeksti to XML under element name "laakeSelosteTeksti".
+ *
+ * @param writer The XML writer.
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeSelosteTeksti(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti) {
+  return xmlTextWriterWriteNs0LaakeSelosteTekstiElementNS(writer, _laakeSelosteTeksti, 1);
+}
+
+/**
+ * Frees a LaakeSelosteTeksti.
+ *
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to free.
+ */
+void free_CoreWEB_ns0_laakeSelosteTeksti(struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti) {
+  freeNs0LaakeSelosteTekstiType(_laakeSelosteTeksti);
+  free(_laakeSelosteTeksti);
+}
+
+/**
+ * Reads a LaakeSelosteTeksti element from XML. The element to be read is "laakeSelosteTeksti", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeSelosteTeksti, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeSelosteTeksti *xmlTextReaderReadNs0LaakeSelosteTekstiElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeSelosteTeksti", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeSelosteTeksti.\n");
+#endif
+    _laakeSelosteTeksti = xmlTextReaderReadNs0LaakeSelosteTekstiType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeSelosteTeksti == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeSelosteTeksti failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeSelosteTeksti failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeSelosteTeksti;
+}
+
+/**
+ * Writes a LaakeSelosteTeksti to XML under element name "laakeSelosteTeksti".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteTekstiElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti) {
+  return xmlTextWriterWriteNs0LaakeSelosteTekstiElementNS(writer, _laakeSelosteTeksti, 0);
+}
+
+/**
+ * Writes a LaakeSelosteTeksti to XML under element name "laakeSelosteTeksti".
+ *
+ * @param writer The XML writer.
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteTekstiElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeSelosteTeksti", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeSelosteTeksti. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeSelosteTeksti for root element {}laakeSelosteTeksti...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeSelosteTekstiType(writer, _laakeSelosteTeksti);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeSelosteTeksti. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeSelosteTeksti. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeSelosteTeksti.
+ *
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti whose children are to be free.
+ */
+static void freeNs0LaakeSelosteTekstiElement(struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti) {
+  freeNs0LaakeSelosteTekstiType(_laakeSelosteTeksti);
+}
+
+/**
+ * Reads a LaakeSelosteTeksti from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeSelosteTeksti, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeSelosteTeksti *xmlTextReaderReadNs0LaakeSelosteTekstiType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti = calloc(1, sizeof(struct CoreWEB_ns0_laakeSelosteTeksti));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeSelosteTekstiType(_laakeSelosteTeksti);
+        free(_laakeSelosteTeksti);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "osa", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}osa of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}osa of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteTekstiType(_laakeSelosteTeksti);
+          free(_laakeSelosteTeksti);
+          return NULL;
+        }
+
+        _laakeSelosteTeksti->osa = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "otsikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}otsikko of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}otsikko of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteTekstiType(_laakeSelosteTeksti);
+          free(_laakeSelosteTeksti);
+          return NULL;
+        }
+
+        _laakeSelosteTeksti->otsikko = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "teksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}teksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}teksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeSelosteTekstiType(_laakeSelosteTeksti);
+          free(_laakeSelosteTeksti);
+          return NULL;
+        }
+
+        _laakeSelosteTeksti->teksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeSelosteTeksti.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeSelosteTeksti. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeSelosteTeksti;
+}
+
+/**
+ * Writes a LaakeSelosteTeksti to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeSelosteTekstiType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "osa", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}osa...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakeSelosteTeksti->osa));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "otsikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}otsikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}otsikko...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakeSelosteTeksti->otsikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}otsikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}otsikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeSelosteTeksti->teksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "teksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}teksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}teksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeSelosteTeksti->teksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}teksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}teksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeSelosteTeksti.
+ *
+ * @param _laakeSelosteTeksti The LaakeSelosteTeksti to free.
+ */
+static void freeNs0LaakeSelosteTekstiType(struct CoreWEB_ns0_laakeSelosteTeksti *_laakeSelosteTeksti) {
+  int i;
+  if (_laakeSelosteTeksti->teksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor teksti of type CoreWEB_ns0_laakeSelosteTeksti...\n");
+#endif
+    freeXsStringType(_laakeSelosteTeksti->teksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor teksti of type CoreWEB_ns0_laakeSelosteTeksti...\n");
+#endif
+    free(_laakeSelosteTeksti->teksti);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeSelosteTeksti_M */
+#ifndef DEF_CoreWEB_ns0_laakeTerapiaryhma_M
+#define DEF_CoreWEB_ns0_laakeTerapiaryhma_M
+
+/**
+ * Reads a LaakeTerapiaryhma element from XML. The element to be read is "laakeTerapiaryhma", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTerapiaryhma, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTerapiaryhma *xml_read_CoreWEB_ns0_laakeTerapiaryhma(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeTerapiaryhmaElement(reader);
+}
+
+/**
+ * Writes a LaakeTerapiaryhma to XML under element name "laakeTerapiaryhma".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeTerapiaryhma(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma) {
+  return xmlTextWriterWriteNs0LaakeTerapiaryhmaElementNS(writer, _laakeTerapiaryhma, 1);
+}
+
+/**
+ * Frees a LaakeTerapiaryhma.
+ *
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to free.
+ */
+void free_CoreWEB_ns0_laakeTerapiaryhma(struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma) {
+  freeNs0LaakeTerapiaryhmaType(_laakeTerapiaryhma);
+  free(_laakeTerapiaryhma);
+}
+
+/**
+ * Reads a LaakeTerapiaryhma element from XML. The element to be read is "laakeTerapiaryhma", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTerapiaryhma, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTerapiaryhma *xmlTextReaderReadNs0LaakeTerapiaryhmaElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeTerapiaryhma", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeTerapiaryhma.\n");
+#endif
+    _laakeTerapiaryhma = xmlTextReaderReadNs0LaakeTerapiaryhmaType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeTerapiaryhma == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeTerapiaryhma failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeTerapiaryhma failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeTerapiaryhma;
+}
+
+/**
+ * Writes a LaakeTerapiaryhma to XML under element name "laakeTerapiaryhma".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeTerapiaryhmaElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma) {
+  return xmlTextWriterWriteNs0LaakeTerapiaryhmaElementNS(writer, _laakeTerapiaryhma, 0);
+}
+
+/**
+ * Writes a LaakeTerapiaryhma to XML under element name "laakeTerapiaryhma".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeTerapiaryhmaElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeTerapiaryhma", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeTerapiaryhma. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeTerapiaryhma for root element {}laakeTerapiaryhma...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeTerapiaryhmaType(writer, _laakeTerapiaryhma);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeTerapiaryhma. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeTerapiaryhma. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeTerapiaryhma.
+ *
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma whose children are to be free.
+ */
+static void freeNs0LaakeTerapiaryhmaElement(struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma) {
+  freeNs0LaakeTerapiaryhmaType(_laakeTerapiaryhma);
+}
+
+/**
+ * Reads a LaakeTerapiaryhma from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeTerapiaryhma, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeTerapiaryhma *xmlTextReaderReadNs0LaakeTerapiaryhmaType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma = calloc(1, sizeof(struct CoreWEB_ns0_laakeTerapiaryhma));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeTerapiaryhmaType(_laakeTerapiaryhma);
+        free(_laakeTerapiaryhma);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "terapiaryhma", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}terapiaryhma of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}terapiaryhma of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTerapiaryhmaType(_laakeTerapiaryhma);
+          free(_laakeTerapiaryhma);
+          return NULL;
+        }
+
+        _laakeTerapiaryhma->terapiaryhma = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTerapiaryhmaType(_laakeTerapiaryhma);
+          free(_laakeTerapiaryhma);
+          return NULL;
+        }
+
+        _laakeTerapiaryhma->alkupera = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "nimi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}nimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}nimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTerapiaryhmaType(_laakeTerapiaryhma);
+          free(_laakeTerapiaryhma);
+          return NULL;
+        }
+
+        _laakeTerapiaryhma->nimi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "taso", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}taso of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}taso of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTerapiaryhmaType(_laakeTerapiaryhma);
+          free(_laakeTerapiaryhma);
+          return NULL;
+        }
+
+        _laakeTerapiaryhma->taso = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTerapiaryhmaType(_laakeTerapiaryhma);
+          free(_laakeTerapiaryhma);
+          return NULL;
+        }
+
+        _laakeTerapiaryhma->poistettu = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeTerapiaryhma.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeTerapiaryhma. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeTerapiaryhma;
+}
+
+/**
+ * Writes a LaakeTerapiaryhma to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeTerapiaryhmaType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (_laakeTerapiaryhma->terapiaryhma != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "terapiaryhma", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}terapiaryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}terapiaryhma...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeTerapiaryhma->terapiaryhma));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}terapiaryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}terapiaryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeTerapiaryhma->alkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeTerapiaryhma->nimi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "nimi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}nimi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeTerapiaryhma->nimi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeTerapiaryhma->taso != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "taso", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}taso. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}taso...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakeTerapiaryhma->taso));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}taso. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}taso. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeTerapiaryhma->poistettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeTerapiaryhma.
+ *
+ * @param _laakeTerapiaryhma The LaakeTerapiaryhma to free.
+ */
+static void freeNs0LaakeTerapiaryhmaType(struct CoreWEB_ns0_laakeTerapiaryhma *_laakeTerapiaryhma) {
+  int i;
+  if (_laakeTerapiaryhma->terapiaryhma != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor terapiaryhma of type CoreWEB_ns0_laakeTerapiaryhma...\n");
+#endif
+    freeXsStringType(_laakeTerapiaryhma->terapiaryhma);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor terapiaryhma of type CoreWEB_ns0_laakeTerapiaryhma...\n");
+#endif
+    free(_laakeTerapiaryhma->terapiaryhma);
+  }
+  if (_laakeTerapiaryhma->nimi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor nimi of type CoreWEB_ns0_laakeTerapiaryhma...\n");
+#endif
+    freeXsStringType(_laakeTerapiaryhma->nimi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor nimi of type CoreWEB_ns0_laakeTerapiaryhma...\n");
+#endif
+    free(_laakeTerapiaryhma->nimi);
+  }
+  if (_laakeTerapiaryhma->taso != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor taso of type CoreWEB_ns0_laakeTerapiaryhma...\n");
+#endif
+    freeXsIntType(_laakeTerapiaryhma->taso);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor taso of type CoreWEB_ns0_laakeTerapiaryhma...\n");
+#endif
+    free(_laakeTerapiaryhma->taso);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeTerapiaryhma_M */
+#ifndef DEF_CoreWEB_ns0_laakeTiivistelma_M
+#define DEF_CoreWEB_ns0_laakeTiivistelma_M
+
+/**
+ * Reads a LaakeTiivistelma element from XML. The element to be read is "laakeTiivistelma", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTiivistelma, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTiivistelma *xml_read_CoreWEB_ns0_laakeTiivistelma(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeTiivistelmaElement(reader);
+}
+
+/**
+ * Writes a LaakeTiivistelma to XML under element name "laakeTiivistelma".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelma The LaakeTiivistelma to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeTiivistelma(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma) {
+  return xmlTextWriterWriteNs0LaakeTiivistelmaElementNS(writer, _laakeTiivistelma, 1);
+}
+
+/**
+ * Frees a LaakeTiivistelma.
+ *
+ * @param _laakeTiivistelma The LaakeTiivistelma to free.
+ */
+void free_CoreWEB_ns0_laakeTiivistelma(struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma) {
+  freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+  free(_laakeTiivistelma);
+}
+
+/**
+ * Reads a LaakeTiivistelma element from XML. The element to be read is "laakeTiivistelma", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTiivistelma, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTiivistelma *xmlTextReaderReadNs0LaakeTiivistelmaElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeTiivistelma", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeTiivistelma.\n");
+#endif
+    _laakeTiivistelma = xmlTextReaderReadNs0LaakeTiivistelmaType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeTiivistelma == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeTiivistelma failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeTiivistelma failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeTiivistelma;
+}
+
+/**
+ * Writes a LaakeTiivistelma to XML under element name "laakeTiivistelma".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelma The LaakeTiivistelma to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma) {
+  return xmlTextWriterWriteNs0LaakeTiivistelmaElementNS(writer, _laakeTiivistelma, 0);
+}
+
+/**
+ * Writes a LaakeTiivistelma to XML under element name "laakeTiivistelma".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelma The LaakeTiivistelma to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeTiivistelma", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeTiivistelma. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeTiivistelma for root element {}laakeTiivistelma...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeTiivistelmaType(writer, _laakeTiivistelma);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeTiivistelma. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeTiivistelma. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeTiivistelma.
+ *
+ * @param _laakeTiivistelma The LaakeTiivistelma whose children are to be free.
+ */
+static void freeNs0LaakeTiivistelmaElement(struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma) {
+  freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+}
+
+/**
+ * Reads a LaakeTiivistelma from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeTiivistelma, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeTiivistelma *xmlTextReaderReadNs0LaakeTiivistelmaType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma = calloc(1, sizeof(struct CoreWEB_ns0_laakeTiivistelma));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+        free(_laakeTiivistelma);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tiivistelma", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tiivistelma of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tiivistelma of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+          free(_laakeTiivistelma);
+          return NULL;
+        }
+
+        _laakeTiivistelma->tiivistelma = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "nimi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}nimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}nimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+          free(_laakeTiivistelma);
+          return NULL;
+        }
+
+        _laakeTiivistelma->nimi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "ehto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}ehto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}ehto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+          free(_laakeTiivistelma);
+          return NULL;
+        }
+
+        _laakeTiivistelma->ehto = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "valmistaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}valmistaja of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}valmistaja of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+          free(_laakeTiivistelma);
+          return NULL;
+        }
+
+        _laakeTiivistelma->valmistaja = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "korvattavuus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}korvattavuus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}korvattavuus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+          free(_laakeTiivistelma);
+          return NULL;
+        }
+
+        _laakeTiivistelma->korvattavuus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+          free(_laakeTiivistelma);
+          return NULL;
+        }
+
+        _laakeTiivistelma->poistettu = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutosaika", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+          free(_laakeTiivistelma);
+          return NULL;
+        }
+
+        _laakeTiivistelma->muutosaika = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutospaikka", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+          free(_laakeTiivistelma);
+          return NULL;
+        }
+
+        _laakeTiivistelma->muutospaikka = *((short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tekstit", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tekstit of type {}laakeTiivistelmaTeksti.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeTiivistelmaTekstiType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tekstit of type {}laakeTiivistelmaTeksti.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaType(_laakeTiivistelma);
+          free(_laakeTiivistelma);
+          return NULL;
+        }
+
+        _laakeTiivistelma->tekstit = realloc(_laakeTiivistelma->tekstit, (_laakeTiivistelma->_sizeof_tekstit + 1) * sizeof(struct CoreWEB_ns0_laakeTiivistelmaTeksti));
+        memcpy(&(_laakeTiivistelma->tekstit[_laakeTiivistelma->_sizeof_tekstit++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakeTiivistelmaTeksti));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeTiivistelma.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeTiivistelma. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeTiivistelma;
+}
+
+/**
+ * Writes a LaakeTiivistelma to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelma The LaakeTiivistelma to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tiivistelma", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tiivistelma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}tiivistelma...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakeTiivistelma->tiivistelma));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}tiivistelma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tiivistelma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeTiivistelma->nimi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "nimi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}nimi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeTiivistelma->nimi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeTiivistelma->ehto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "ehto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}ehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}ehto...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeTiivistelma->ehto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}ehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}ehto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeTiivistelma->valmistaja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "valmistaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}valmistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}valmistaja...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeTiivistelma->valmistaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}valmistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}valmistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeTiivistelma->korvattavuus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "korvattavuus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}korvattavuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}korvattavuus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeTiivistelma->korvattavuus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}korvattavuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}korvattavuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeTiivistelma->poistettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeTiivistelma->muutosaika != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutosaika", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakeTiivistelma->muutosaika));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutospaikka", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka...\n");
+#endif
+    status = xmlTextWriterWriteXsShortType(writer, &(_laakeTiivistelma->muutospaikka));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laakeTiivistelma->_sizeof_tekstit; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tekstit", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tekstit. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakeTiivistelmaTeksti for element {}tekstit...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeTiivistelmaTekstiType(writer, &(_laakeTiivistelma->tekstit[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakeTiivistelmaTeksti for element {}tekstit. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tekstit. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeTiivistelma.
+ *
+ * @param _laakeTiivistelma The LaakeTiivistelma to free.
+ */
+static void freeNs0LaakeTiivistelmaType(struct CoreWEB_ns0_laakeTiivistelma *_laakeTiivistelma) {
+  int i;
+  if (_laakeTiivistelma->nimi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor nimi of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    freeXsStringType(_laakeTiivistelma->nimi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor nimi of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    free(_laakeTiivistelma->nimi);
+  }
+  if (_laakeTiivistelma->ehto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor ehto of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    freeXsStringType(_laakeTiivistelma->ehto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor ehto of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    free(_laakeTiivistelma->ehto);
+  }
+  if (_laakeTiivistelma->valmistaja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor valmistaja of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    freeXsStringType(_laakeTiivistelma->valmistaja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor valmistaja of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    free(_laakeTiivistelma->valmistaja);
+  }
+  if (_laakeTiivistelma->korvattavuus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor korvattavuus of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    freeXsStringType(_laakeTiivistelma->korvattavuus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor korvattavuus of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    free(_laakeTiivistelma->korvattavuus);
+  }
+  if (_laakeTiivistelma->muutosaika != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutosaika of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    freeXsDateTimeType(_laakeTiivistelma->muutosaika);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutosaika of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    free(_laakeTiivistelma->muutosaika);
+  }
+  if (_laakeTiivistelma->tekstit != NULL) {
+    for (i = 0; i < _laakeTiivistelma->_sizeof_tekstit; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor tekstit[%i] of type CoreWEB_ns0_laakeTiivistelma...\n", i);
+#endif
+      freeNs0LaakeTiivistelmaTekstiType(&(_laakeTiivistelma->tekstit[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tekstit of type CoreWEB_ns0_laakeTiivistelma...\n");
+#endif
+    free(_laakeTiivistelma->tekstit);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeTiivistelma_M */
+#ifndef DEF_CoreWEB_ns0_laakeTiivistelmaTeksti_M
+#define DEF_CoreWEB_ns0_laakeTiivistelmaTeksti_M
+
+/**
+ * Reads a LaakeTiivistelmaTeksti element from XML. The element to be read is "laakeTiivistelmaTeksti", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTiivistelmaTeksti, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTiivistelmaTeksti *xml_read_CoreWEB_ns0_laakeTiivistelmaTeksti(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeTiivistelmaTekstiElement(reader);
+}
+
+/**
+ * Writes a LaakeTiivistelmaTeksti to XML under element name "laakeTiivistelmaTeksti".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeTiivistelmaTeksti(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti) {
+  return xmlTextWriterWriteNs0LaakeTiivistelmaTekstiElementNS(writer, _laakeTiivistelmaTeksti, 1);
+}
+
+/**
+ * Frees a LaakeTiivistelmaTeksti.
+ *
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to free.
+ */
+void free_CoreWEB_ns0_laakeTiivistelmaTeksti(struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti) {
+  freeNs0LaakeTiivistelmaTekstiType(_laakeTiivistelmaTeksti);
+  free(_laakeTiivistelmaTeksti);
+}
+
+/**
+ * Reads a LaakeTiivistelmaTeksti element from XML. The element to be read is "laakeTiivistelmaTeksti", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeTiivistelmaTeksti, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeTiivistelmaTeksti *xmlTextReaderReadNs0LaakeTiivistelmaTekstiElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeTiivistelmaTeksti", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeTiivistelmaTeksti.\n");
+#endif
+    _laakeTiivistelmaTeksti = xmlTextReaderReadNs0LaakeTiivistelmaTekstiType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeTiivistelmaTeksti == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeTiivistelmaTeksti failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeTiivistelmaTeksti failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeTiivistelmaTeksti;
+}
+
+/**
+ * Writes a LaakeTiivistelmaTeksti to XML under element name "laakeTiivistelmaTeksti".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaTekstiElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti) {
+  return xmlTextWriterWriteNs0LaakeTiivistelmaTekstiElementNS(writer, _laakeTiivistelmaTeksti, 0);
+}
+
+/**
+ * Writes a LaakeTiivistelmaTeksti to XML under element name "laakeTiivistelmaTeksti".
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaTekstiElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeTiivistelmaTeksti", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeTiivistelmaTeksti. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeTiivistelmaTeksti for root element {}laakeTiivistelmaTeksti...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeTiivistelmaTekstiType(writer, _laakeTiivistelmaTeksti);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeTiivistelmaTeksti. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeTiivistelmaTeksti. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeTiivistelmaTeksti.
+ *
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti whose children are to be free.
+ */
+static void freeNs0LaakeTiivistelmaTekstiElement(struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti) {
+  freeNs0LaakeTiivistelmaTekstiType(_laakeTiivistelmaTeksti);
+}
+
+/**
+ * Reads a LaakeTiivistelmaTeksti from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeTiivistelmaTeksti, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeTiivistelmaTeksti *xmlTextReaderReadNs0LaakeTiivistelmaTekstiType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti = calloc(1, sizeof(struct CoreWEB_ns0_laakeTiivistelmaTeksti));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeTiivistelmaTekstiType(_laakeTiivistelmaTeksti);
+        free(_laakeTiivistelmaTeksti);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "osa", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}osa of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}osa of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaTekstiType(_laakeTiivistelmaTeksti);
+          free(_laakeTiivistelmaTeksti);
+          return NULL;
+        }
+
+        _laakeTiivistelmaTeksti->osa = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "otsikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}otsikko of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}otsikko of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaTekstiType(_laakeTiivistelmaTeksti);
+          free(_laakeTiivistelmaTeksti);
+          return NULL;
+        }
+
+        _laakeTiivistelmaTeksti->otsikko = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "teksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}teksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}teksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeTiivistelmaTekstiType(_laakeTiivistelmaTeksti);
+          free(_laakeTiivistelmaTeksti);
+          return NULL;
+        }
+
+        _laakeTiivistelmaTeksti->teksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeTiivistelmaTeksti.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeTiivistelmaTeksti. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeTiivistelmaTeksti;
+}
+
+/**
+ * Writes a LaakeTiivistelmaTeksti to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeTiivistelmaTekstiType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "osa", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}osa...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakeTiivistelmaTeksti->osa));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "otsikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}otsikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}otsikko...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakeTiivistelmaTeksti->otsikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}otsikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}otsikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeTiivistelmaTeksti->teksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "teksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}teksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}teksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeTiivistelmaTeksti->teksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}teksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}teksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeTiivistelmaTeksti.
+ *
+ * @param _laakeTiivistelmaTeksti The LaakeTiivistelmaTeksti to free.
+ */
+static void freeNs0LaakeTiivistelmaTekstiType(struct CoreWEB_ns0_laakeTiivistelmaTeksti *_laakeTiivistelmaTeksti) {
+  int i;
+  if (_laakeTiivistelmaTeksti->teksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor teksti of type CoreWEB_ns0_laakeTiivistelmaTeksti...\n");
+#endif
+    freeXsStringType(_laakeTiivistelmaTeksti->teksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor teksti of type CoreWEB_ns0_laakeTiivistelmaTeksti...\n");
+#endif
+    free(_laakeTiivistelmaTeksti->teksti);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeTiivistelmaTeksti_M */
+#ifndef DEF_CoreWEB_ns0_laakeVastaAihe_M
+#define DEF_CoreWEB_ns0_laakeVastaAihe_M
+
+/**
+ * Reads a LaakeVastaAihe element from XML. The element to be read is "laakeVastaAihe", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeVastaAihe, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeVastaAihe *xml_read_CoreWEB_ns0_laakeVastaAihe(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeVastaAiheElement(reader);
+}
+
+/**
+ * Writes a LaakeVastaAihe to XML under element name "laakeVastaAihe".
+ *
+ * @param writer The XML writer.
+ * @param _laakeVastaAihe The LaakeVastaAihe to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeVastaAihe(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe) {
+  return xmlTextWriterWriteNs0LaakeVastaAiheElementNS(writer, _laakeVastaAihe, 1);
+}
+
+/**
+ * Frees a LaakeVastaAihe.
+ *
+ * @param _laakeVastaAihe The LaakeVastaAihe to free.
+ */
+void free_CoreWEB_ns0_laakeVastaAihe(struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe) {
+  freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+  free(_laakeVastaAihe);
+}
+
+/**
+ * Reads a LaakeVastaAihe element from XML. The element to be read is "laakeVastaAihe", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeVastaAihe, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeVastaAihe *xmlTextReaderReadNs0LaakeVastaAiheElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeVastaAihe", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeVastaAihe.\n");
+#endif
+    _laakeVastaAihe = xmlTextReaderReadNs0LaakeVastaAiheType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeVastaAihe == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeVastaAihe failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeVastaAihe failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeVastaAihe;
+}
+
+/**
+ * Writes a LaakeVastaAihe to XML under element name "laakeVastaAihe".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeVastaAihe The LaakeVastaAihe to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeVastaAiheElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe) {
+  return xmlTextWriterWriteNs0LaakeVastaAiheElementNS(writer, _laakeVastaAihe, 0);
+}
+
+/**
+ * Writes a LaakeVastaAihe to XML under element name "laakeVastaAihe".
+ *
+ * @param writer The XML writer.
+ * @param _laakeVastaAihe The LaakeVastaAihe to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeVastaAiheElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeVastaAihe", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeVastaAihe. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeVastaAihe for root element {}laakeVastaAihe...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeVastaAiheType(writer, _laakeVastaAihe);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeVastaAihe. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeVastaAihe. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeVastaAihe.
+ *
+ * @param _laakeVastaAihe The LaakeVastaAihe whose children are to be free.
+ */
+static void freeNs0LaakeVastaAiheElement(struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe) {
+  freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+}
+
+/**
+ * Reads a LaakeVastaAihe from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeVastaAihe, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeVastaAihe *xmlTextReaderReadNs0LaakeVastaAiheType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe = calloc(1, sizeof(struct CoreWEB_ns0_laakeVastaAihe));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+        free(_laakeVastaAihe);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vastaAihe", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vastaAihe of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vastaAihe of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+          free(_laakeVastaAihe);
+          return NULL;
+        }
+
+        _laakeVastaAihe->vastaAihe = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vastaAiheAlkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vastaAiheAlkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vastaAiheAlkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+          free(_laakeVastaAihe);
+          return NULL;
+        }
+
+        _laakeVastaAihe->vastaAiheAlkupera = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "selite", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}selite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}selite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+          free(_laakeVastaAihe);
+          return NULL;
+        }
+
+        _laakeVastaAihe->selite = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "rajoite", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}rajoite of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}rajoite of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+          free(_laakeVastaAihe);
+          return NULL;
+        }
+
+        _laakeVastaAihe->rajoite = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alaraja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alaraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alaraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+          free(_laakeVastaAihe);
+          return NULL;
+        }
+
+        _laakeVastaAihe->alaraja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "ylaraja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}ylaraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}ylaraja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+          free(_laakeVastaAihe);
+          return NULL;
+        }
+
+        _laakeVastaAihe->ylaraja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+          free(_laakeVastaAihe);
+          return NULL;
+        }
+
+        _laakeVastaAihe->alkupera = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+          free(_laakeVastaAihe);
+          return NULL;
+        }
+
+        _laakeVastaAihe->poistettu = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutosaika", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+          free(_laakeVastaAihe);
+          return NULL;
+        }
+
+        _laakeVastaAihe->muutosaika = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutospaikka", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeVastaAiheType(_laakeVastaAihe);
+          free(_laakeVastaAihe);
+          return NULL;
+        }
+
+        _laakeVastaAihe->muutospaikka = *((short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeVastaAihe.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeVastaAihe. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeVastaAihe;
+}
+
+/**
+ * Writes a LaakeVastaAihe to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeVastaAihe The LaakeVastaAihe to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeVastaAiheType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vastaAihe", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vastaAihe. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}vastaAihe...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakeVastaAihe->vastaAihe));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}vastaAihe. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vastaAihe. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vastaAiheAlkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vastaAiheAlkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}vastaAiheAlkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeVastaAihe->vastaAiheAlkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}vastaAiheAlkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vastaAiheAlkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeVastaAihe->selite != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "selite", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}selite...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeVastaAihe->selite));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "rajoite", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}rajoite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}rajoite...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeVastaAihe->rajoite));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}rajoite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}rajoite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeVastaAihe->alaraja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alaraja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}alaraja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakeVastaAihe->alaraja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}alaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeVastaAihe->ylaraja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "ylaraja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}ylaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}ylaraja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakeVastaAihe->ylaraja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}ylaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}ylaraja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeVastaAihe->alkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeVastaAihe->poistettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeVastaAihe->muutosaika != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutosaika", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakeVastaAihe->muutosaika));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutospaikka", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka...\n");
+#endif
+    status = xmlTextWriterWriteXsShortType(writer, &(_laakeVastaAihe->muutospaikka));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeVastaAihe.
+ *
+ * @param _laakeVastaAihe The LaakeVastaAihe to free.
+ */
+static void freeNs0LaakeVastaAiheType(struct CoreWEB_ns0_laakeVastaAihe *_laakeVastaAihe) {
+  int i;
+  if (_laakeVastaAihe->selite != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor selite of type CoreWEB_ns0_laakeVastaAihe...\n");
+#endif
+    freeXsStringType(_laakeVastaAihe->selite);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor selite of type CoreWEB_ns0_laakeVastaAihe...\n");
+#endif
+    free(_laakeVastaAihe->selite);
+  }
+  if (_laakeVastaAihe->alaraja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor alaraja of type CoreWEB_ns0_laakeVastaAihe...\n");
+#endif
+    freeXsIntType(_laakeVastaAihe->alaraja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor alaraja of type CoreWEB_ns0_laakeVastaAihe...\n");
+#endif
+    free(_laakeVastaAihe->alaraja);
+  }
+  if (_laakeVastaAihe->ylaraja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor ylaraja of type CoreWEB_ns0_laakeVastaAihe...\n");
+#endif
+    freeXsIntType(_laakeVastaAihe->ylaraja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor ylaraja of type CoreWEB_ns0_laakeVastaAihe...\n");
+#endif
+    free(_laakeVastaAihe->ylaraja);
+  }
+  if (_laakeVastaAihe->muutosaika != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutosaika of type CoreWEB_ns0_laakeVastaAihe...\n");
+#endif
+    freeXsDateTimeType(_laakeVastaAihe->muutosaika);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutosaika of type CoreWEB_ns0_laakeVastaAihe...\n");
+#endif
+    free(_laakeVastaAihe->muutosaika);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeVastaAihe_M */
+#ifndef DEF_CoreWEB_ns0_laakeYhteisvaikutus_M
+#define DEF_CoreWEB_ns0_laakeYhteisvaikutus_M
+
+/**
+ * Reads a LaakeYhteisvaikutus element from XML. The element to be read is "laakeYhteisvaikutus", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakeYhteisvaikutus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeYhteisvaikutus *xml_read_CoreWEB_ns0_laakeYhteisvaikutus(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakeYhteisvaikutusElement(reader);
+}
+
+/**
+ * Writes a LaakeYhteisvaikutus to XML under element name "laakeYhteisvaikutus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakeYhteisvaikutus(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus) {
+  return xmlTextWriterWriteNs0LaakeYhteisvaikutusElementNS(writer, _laakeYhteisvaikutus, 1);
+}
+
+/**
+ * Frees a LaakeYhteisvaikutus.
+ *
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to free.
+ */
+void free_CoreWEB_ns0_laakeYhteisvaikutus(struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus) {
+  freeNs0LaakeYhteisvaikutusType(_laakeYhteisvaikutus);
+  free(_laakeYhteisvaikutus);
+}
+
+/**
+ * Reads a LaakeYhteisvaikutus element from XML. The element to be read is "laakeYhteisvaikutus", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakeYhteisvaikutus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakeYhteisvaikutus *xmlTextReaderReadNs0LaakeYhteisvaikutusElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakeYhteisvaikutus", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakeYhteisvaikutus.\n");
+#endif
+    _laakeYhteisvaikutus = xmlTextReaderReadNs0LaakeYhteisvaikutusType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakeYhteisvaikutus == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakeYhteisvaikutus failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakeYhteisvaikutus failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakeYhteisvaikutus;
+}
+
+/**
+ * Writes a LaakeYhteisvaikutus to XML under element name "laakeYhteisvaikutus".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeYhteisvaikutusElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus) {
+  return xmlTextWriterWriteNs0LaakeYhteisvaikutusElementNS(writer, _laakeYhteisvaikutus, 0);
+}
+
+/**
+ * Writes a LaakeYhteisvaikutus to XML under element name "laakeYhteisvaikutus".
+ *
+ * @param writer The XML writer.
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakeYhteisvaikutusElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeYhteisvaikutus", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakeYhteisvaikutus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakeYhteisvaikutus for root element {}laakeYhteisvaikutus...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakeYhteisvaikutusType(writer, _laakeYhteisvaikutus);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakeYhteisvaikutus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakeYhteisvaikutus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakeYhteisvaikutus.
+ *
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus whose children are to be free.
+ */
+static void freeNs0LaakeYhteisvaikutusElement(struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus) {
+  freeNs0LaakeYhteisvaikutusType(_laakeYhteisvaikutus);
+}
+
+/**
+ * Reads a LaakeYhteisvaikutus from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakeYhteisvaikutus, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakeYhteisvaikutus *xmlTextReaderReadNs0LaakeYhteisvaikutusType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus = calloc(1, sizeof(struct CoreWEB_ns0_laakeYhteisvaikutus));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakeYhteisvaikutusType(_laakeYhteisvaikutus);
+        free(_laakeYhteisvaikutus);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "aine", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}aine of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}aine of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeYhteisvaikutusType(_laakeYhteisvaikutus);
+          free(_laakeYhteisvaikutus);
+          return NULL;
+        }
+
+        _laakeYhteisvaikutus->aine = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "koodisto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}koodisto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}koodisto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeYhteisvaikutusType(_laakeYhteisvaikutus);
+          free(_laakeYhteisvaikutus);
+          return NULL;
+        }
+
+        _laakeYhteisvaikutus->koodisto = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakeYhteisvaikutusType(_laakeYhteisvaikutus);
+          free(_laakeYhteisvaikutus);
+          return NULL;
+        }
+
+        _laakeYhteisvaikutus->alkupera = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakeYhteisvaikutus.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakeYhteisvaikutus. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakeYhteisvaikutus;
+}
+
+/**
+ * Writes a LaakeYhteisvaikutus to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakeYhteisvaikutusType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (_laakeYhteisvaikutus->aine != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "aine", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}aine. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}aine...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeYhteisvaikutus->aine));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}aine. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}aine. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakeYhteisvaikutus->koodisto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "koodisto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}koodisto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}koodisto...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakeYhteisvaikutus->koodisto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}koodisto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}koodisto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakeYhteisvaikutus->alkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakeYhteisvaikutus.
+ *
+ * @param _laakeYhteisvaikutus The LaakeYhteisvaikutus to free.
+ */
+static void freeNs0LaakeYhteisvaikutusType(struct CoreWEB_ns0_laakeYhteisvaikutus *_laakeYhteisvaikutus) {
+  int i;
+  if (_laakeYhteisvaikutus->aine != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor aine of type CoreWEB_ns0_laakeYhteisvaikutus...\n");
+#endif
+    freeXsStringType(_laakeYhteisvaikutus->aine);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor aine of type CoreWEB_ns0_laakeYhteisvaikutus...\n");
+#endif
+    free(_laakeYhteisvaikutus->aine);
+  }
+  if (_laakeYhteisvaikutus->koodisto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor koodisto of type CoreWEB_ns0_laakeYhteisvaikutus...\n");
+#endif
+    freeXsStringType(_laakeYhteisvaikutus->koodisto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor koodisto of type CoreWEB_ns0_laakeYhteisvaikutus...\n");
+#endif
+    free(_laakeYhteisvaikutus->koodisto);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakeYhteisvaikutus_M */
+#ifndef DEF_CoreWEB_ns0_laakitys_M
+#define DEF_CoreWEB_ns0_laakitys_M
+
+/**
+ * Reads a Laakitys element from XML. The element to be read is "laakitys", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The Laakitys, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitys *xml_read_CoreWEB_ns0_laakitys(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakitysElement(reader);
+}
+
+/**
+ * Writes a Laakitys to XML under element name "laakitys".
+ *
+ * @param writer The XML writer.
+ * @param _laakitys The Laakitys to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakitys(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitys *_laakitys) {
+  return xmlTextWriterWriteNs0LaakitysElementNS(writer, _laakitys, 1);
+}
+
+/**
+ * Frees a Laakitys.
+ *
+ * @param _laakitys The Laakitys to free.
+ */
+void free_CoreWEB_ns0_laakitys(struct CoreWEB_ns0_laakitys *_laakitys) {
+  freeNs0LaakitysType(_laakitys);
+  free(_laakitys);
+}
+
+/**
+ * Reads a Laakitys element from XML. The element to be read is "laakitys", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The Laakitys, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitys *xmlTextReaderReadNs0LaakitysElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakitys *_laakitys = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakitys", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakitys.\n");
+#endif
+    _laakitys = xmlTextReaderReadNs0LaakitysType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakitys == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakitys failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakitys failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakitys;
+}
+
+/**
+ * Writes a Laakitys to XML under element name "laakitys".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitys The Laakitys to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitys *_laakitys) {
+  return xmlTextWriterWriteNs0LaakitysElementNS(writer, _laakitys, 0);
+}
+
+/**
+ * Writes a Laakitys to XML under element name "laakitys".
+ *
+ * @param writer The XML writer.
+ * @param _laakitys The Laakitys to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitys *_laakitys, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakitys", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakitys. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakitys for root element {}laakitys...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakitysType(writer, _laakitys);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakitys. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakitys. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a Laakitys.
+ *
+ * @param _laakitys The Laakitys whose children are to be free.
+ */
+static void freeNs0LaakitysElement(struct CoreWEB_ns0_laakitys *_laakitys) {
+  freeNs0LaakitysType(_laakitys);
+}
+
+/**
+ * Reads a Laakitys from XML. The reader is assumed to be at the start element.
+ *
+ * @return the Laakitys, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitys *xmlTextReaderReadNs0LaakitysType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakitys *_laakitys = calloc(1, sizeof(struct CoreWEB_ns0_laakitys));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakitysType(_laakitys);
+        free(_laakitys);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "omistaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}omistaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}omistaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->omistaja = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "osa", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}osa of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}osa of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->osa = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laakevalmiste", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laakevalmiste of type {}laake.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laakevalmiste of type {}laake.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->laakevalmiste = ((struct CoreWEB_ns0_laake*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laake", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laake of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laake of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->laake = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "aloitettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}aloitettu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}aloitettu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->aloitettu = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tapahtunut", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tapahtunut of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tapahtunut of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tapahtunut = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tapahtuma", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tapahtuma of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tapahtuma of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tapahtuma = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "riittoisuus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}riittoisuus of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}riittoisuus of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->riittoisuus = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "lopetettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}lopetettu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}lopetettu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->lopetettu = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "lopetussyy", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}lopetussyy of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}lopetussyy of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->lopetussyy = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "reseptiteksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}reseptiteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}reseptiteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->reseptiteksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "malli", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}malli of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}malli of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->malli = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "lyhyesti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}lyhyesti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}lyhyesti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->lyhyesti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vaihdettavuus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vaihdettavuus of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vaihdettavuus of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vaihdettavuus = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annettavaMaara", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annettavaMaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annettavaMaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->annettavaMaara = *((float*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annettavaMaksimi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annettavaMaksimi of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annettavaMaksimi of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->annettavaMaksimi = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annettavaYksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annettavaYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annettavaYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->annettavaYksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kertaAnnos", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kertaAnnos of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kertaAnnos of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kertaAnnos = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annosteluteksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annosteluteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annosteluteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->annosteluteksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "desimaaleja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}desimaaleja of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}desimaaleja of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->desimaaleja = *((short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "paino", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}paino of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}paino of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->paino = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "lapsenPaino", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}lapsenPaino of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}lapsenPaino of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->lapsenPaino = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "toisto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}toisto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}toisto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->toisto = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "toistokuvaus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}toistokuvaus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}toistokuvaus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->toistokuvaus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kellonajat", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kellonajat of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kellonajat of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kellonajat = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kellonajatString", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kellonajatString of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kellonajatString of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kellonajatString = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "aikayksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}aikayksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}aikayksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->aikayksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "antotahti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}antotahti of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}antotahti of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->antotahti = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "antotahtiString", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}antotahtiString of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}antotahtiString of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->antotahtiString = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "antotahtiyksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}antotahtiyksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}antotahtiyksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->antotahtiyksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vrkMaara", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vrkMaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vrkMaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vrkMaara = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vrkMaaraYksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vrkMaaraYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vrkMaaraYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vrkMaaraYksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kokonaiskesto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kokonaiskesto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kokonaiskesto of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kokonaiskesto = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kokonaismaara", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kokonaismaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kokonaismaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kokonaismaara = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kokonaismaarayksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kokonaismaarayksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kokonaismaarayksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kokonaismaarayksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "pakkauksia", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}pakkauksia of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}pakkauksia of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->pakkauksia = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kirjaaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kirjaaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kirjaaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kirjaaja = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kirjaajaString", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kirjaajaString of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kirjaajaString of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kirjaajaString = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "maaraaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}maaraaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}maaraaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->maaraaja = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "maaraajaString", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}maaraajaString of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}maaraajaString of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->maaraajaString = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "maaraysyksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}maaraysyksikko of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}maaraysyksikko of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->maaraysyksikko = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "varmistus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}varmistus of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}varmistus of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->varmistus = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kayttotarkoitus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kayttotarkoitus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kayttotarkoitus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kayttotarkoitus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "ohjeet", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}ohjeet of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}ohjeet of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->ohjeet = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "perustelu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}perustelu of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}perustelu of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->perustelu = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "iterointi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}iterointi of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}iterointi of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->iterointi = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "uusittu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}uusittu of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}uusittu of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->uusittu = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kuitattava", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kuitattava of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kuitattava of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kuitattava = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "pysyva", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}pysyva of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}pysyva of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->pysyva = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tarvittaessa", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tarvittaessa of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tarvittaessa of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tarvittaessa = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "terapiaryhma", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}terapiaryhma of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}terapiaryhma of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->terapiaryhma = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "soveltumaton", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}soveltumaton of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}soveltumaton of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->soveltumaton = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vaikutus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vaikutus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vaikutus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vaikutus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "huomautuksia", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}huomautuksia of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}huomautuksia of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->huomautuksia = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "reseptityyppi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}reseptityyppi of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}reseptityyppi of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->reseptityyppi = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "reseptityyppiString", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}reseptityyppiString of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}reseptityyppiString of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->reseptityyppiString = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tulostaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tulostaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tulostaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tulostaja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tulostettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tulostettu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tulostettu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tulostettu = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "oid", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}oid of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}oid of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->oid = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tunnistustapa", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tunnistustapa of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tunnistustapa of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tunnistustapa = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tunnistustapaselite", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tunnistustapaselite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tunnistustapaselite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tunnistustapaselite = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annosjakeluperuste", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annosjakeluperuste of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annosjakeluperuste of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->annosjakeluperuste = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "iterointivali", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}iterointivali of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}iterointivali of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->iterointivali = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "erillisselvityskoodi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}erillisselvityskoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}erillisselvityskoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->erillisselvityskoodi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "erillisselvitys", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}erillisselvitys of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}erillisselvitys of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->erillisselvitys = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "apteekkiviesti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}apteekkiviesti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}apteekkiviesti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->apteekkiviesti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "ereseptikielto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}ereseptikielto of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}ereseptikielto of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->ereseptikielto = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "hoitolaji", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}hoitolaji of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}hoitolaji of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->hoitolaji = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "uusi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}uusi of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}uusi of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->uusi = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "lahetetty", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}lahetetty of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}lahetetty of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->lahetetty = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "reseptinLaji", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}reseptinLaji of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}reseptinLaji of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->reseptinLaji = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutoksenSyy", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutoksenSyy of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutoksenSyy of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->muutoksenSyy = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutoksenPerustelu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutoksenPerustelu of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutoksenPerustelu of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->muutoksenPerustelu = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "uusimiskielto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}uusimiskielto of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}uusimiskielto of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->uusimiskielto = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "uusimiskiellonSyy", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}uusimiskiellonSyy of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}uusimiskiellonSyy of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->uusimiskiellonSyy = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "uusimiskiellonPerustelu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}uusimiskiellonPerustelu of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}uusimiskiellonPerustelu of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->uusimiskiellonPerustelu = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "potilasohjekielto", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}potilasohjekielto of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}potilasohjekielto of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->potilasohjekielto = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tyonantaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tyonantaja of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tyonantaja of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tyonantaja = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vakuutusyhtio", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vakuutusyhtio of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vakuutusyhtio of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vakuutusyhtio = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "voimassaoloLoppu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}voimassaoloLoppu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}voimassaoloLoppu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->voimassaoloLoppu = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annostuslinkki", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annostuslinkki of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annostuslinkki of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->annostuslinkki = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "hoitojakso", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}hoitojakso of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}hoitojakso of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->hoitojakso = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkuperainen", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkuperainen of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkuperainen of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->alkuperainen = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "palkkio", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}palkkio of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}palkkio of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->palkkio = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "palkkioErikoislaakarina", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}palkkioErikoislaakarina of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}palkkioErikoislaakarina of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->palkkioErikoislaakarina = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tartuntatautilaake", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tartuntatautilaake of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tartuntatautilaake of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tartuntatautilaake = ((unsigned short*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "palvelutapahtuma", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}palvelutapahtuma of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}palvelutapahtuma of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->palvelutapahtuma = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "palvelutapahtumaOid", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}palvelutapahtumaOid of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}palvelutapahtumaOid of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->palvelutapahtumaOid = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "sairaalaApteekkiOid", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}sairaalaApteekkiOid of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}sairaalaApteekkiOid of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->sairaalaApteekkiOid = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "sairaalaApteekkiNimi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}sairaalaApteekkiNimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}sairaalaApteekkiNimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->sairaalaApteekkiNimi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tarkistus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tarkistus of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tarkistus of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tarkistus = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistosyy", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistosyy of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistosyy of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->poistosyy = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->poistettu = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutosaika", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->muutosaika = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutospaikka", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->muutospaikka = *((short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "pysyvyys", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}pysyvyys of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}pysyvyys of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->pysyvyys = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "nimi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}nimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}nimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->nimi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annostus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annostus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annostus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->annostus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vaihteleva", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vaihteleva of type {http://www.w3.org/2001/XMLSchema}boolean.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsBooleanType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vaihteleva of type {http://www.w3.org/2001/XMLSchema}boolean.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vaihteleva = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vaihtelevaAnnostus", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vaihtelevaAnnostus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vaihtelevaAnnostus of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vaihtelevaAnnostus = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "sic", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}sic of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}sic of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->sic = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kokoNimi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kokoNimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kokoNimi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kokoNimi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laakeaineet", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laakeaineet of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laakeaineet of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->laakeaineet = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tauonAloitusPvm", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tauonAloitusPvm of type {http://www.w3.org/2001/XMLSchema}long.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsLongType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tauonAloitusPvm of type {http://www.w3.org/2001/XMLSchema}long.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tauonAloitusPvm = *((long long*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tauonLopetusPvm", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tauonLopetusPvm of type {http://www.w3.org/2001/XMLSchema}long.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsLongType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tauonLopetusPvm of type {http://www.w3.org/2001/XMLSchema}long.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tauonLopetusPvm = *((long long*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "taukohuomautuksia", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}taukohuomautuksia of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}taukohuomautuksia of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->taukohuomautuksia = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annettavaMaaraTimesPaino", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annettavaMaaraTimesPaino of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annettavaMaaraTimesPaino of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->annettavaMaaraTimesPaino = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vrkmaara", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vrkmaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vrkmaara of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vrkmaara = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vrkkerratCalc", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vrkkerratCalc of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vrkkerratCalc of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vrkkerratCalc = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vrkmaaraCalc", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vrkmaaraCalc of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsFloatType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vrkmaaraCalc of type {http://www.w3.org/2001/XMLSchema}float.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vrkmaaraCalc = ((float*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "vrkmaaraYksikko", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}vrkmaaraYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}vrkmaaraYksikko of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->vrkmaaraYksikko = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tauot", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tauot of type {}laakitysTauko.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakitysTaukoType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tauot of type {}laakitysTauko.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tauot = realloc(_laakitys->tauot, (_laakitys->_sizeof_tauot + 1) * sizeof(struct CoreWEB_ns0_laakitysTauko));
+        memcpy(&(_laakitys->tauot[_laakitys->_sizeof_tauot++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakitysTauko));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "annot", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}annot of type {}laakitysAnto.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakitysAntoType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}annot of type {}laakitysAnto.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->annot = realloc(_laakitys->annot, (_laakitys->_sizeof_annot + 1) * sizeof(struct CoreWEB_ns0_laakitysAnto));
+        memcpy(&(_laakitys->annot[_laakitys->_sizeof_annot++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakitysAnto));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tavat", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tavat of type {}laakitysTapa.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakitysTapaType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tavat of type {}laakitysTapa.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->tavat = realloc(_laakitys->tavat, (_laakitys->_sizeof_tavat + 1) * sizeof(struct CoreWEB_ns0_laakitysTapa));
+        memcpy(&(_laakitys->tavat[_laakitys->_sizeof_tavat++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakitysTapa));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kayttoaiheet", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kayttoaiheet of type {}laakitysKayttoaihe.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakitysKayttoaiheType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kayttoaiheet of type {}laakitysKayttoaihe.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kayttoaiheet = realloc(_laakitys->kayttoaiheet, (_laakitys->_sizeof_kayttoaiheet + 1) * sizeof(struct CoreWEB_ns0_laakitysKayttoaihe));
+        memcpy(&(_laakitys->kayttoaiheet[_laakitys->_sizeof_kayttoaiheet++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakitysKayttoaihe));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "laakitysKayttoaiheList", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}laakitysKayttoaiheList of type {}laakitysKayttoaiheView.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakitysKayttoaiheViewType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}laakitysKayttoaiheList of type {}laakitysKayttoaiheView.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->laakitysKayttoaiheList = realloc(_laakitys->laakitysKayttoaiheList, (_laakitys->_sizeof_laakitysKayttoaiheList + 1) * sizeof(struct CoreWEB_ns0_laakitysKayttoaiheView));
+        memcpy(&(_laakitys->laakitysKayttoaiheList[_laakitys->_sizeof_laakitysKayttoaiheList++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakitysKayttoaiheView));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kuittaukset", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kuittaukset of type {}laakitysKuittaus.\n");
+#endif
+        _child_accessor = xmlTextReaderReadNs0LaakitysKuittausType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kuittaukset of type {}laakitysKuittaus.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysType(_laakitys);
+          free(_laakitys);
+          return NULL;
+        }
+
+        _laakitys->kuittaukset = realloc(_laakitys->kuittaukset, (_laakitys->_sizeof_kuittaukset + 1) * sizeof(struct CoreWEB_ns0_laakitysKuittaus));
+        memcpy(&(_laakitys->kuittaukset[_laakitys->_sizeof_kuittaukset++]), _child_accessor, sizeof(struct CoreWEB_ns0_laakitysKuittaus));
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakitys.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakitys. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakitys;
+}
+
+/**
+ * Writes a Laakitys to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitys The Laakitys to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakitysType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitys *_laakitys) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "omistaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}omistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}omistaja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitys->omistaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}omistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}omistaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "osa", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}osa...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitys->osa));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}osa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->laakevalmiste != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakevalmiste", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laakevalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laake for element {}laakevalmiste...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakeType(writer, (_laakitys->laakevalmiste));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laake for element {}laakevalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laakevalmiste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->laake != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laake", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}laake...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->laake));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}laake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->aloitettu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "aloitettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}aloitettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}aloitettu...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitys->aloitettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}aloitettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}aloitettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->tapahtunut != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tapahtunut", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tapahtunut. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}tapahtunut...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitys->tapahtunut));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}tapahtunut. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tapahtunut. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tapahtuma", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tapahtuma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tapahtuma...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitys->tapahtuma));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tapahtuma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tapahtuma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->riittoisuus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "riittoisuus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}riittoisuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}riittoisuus...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitys->riittoisuus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}riittoisuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}riittoisuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->lopetettu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "lopetettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}lopetettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}lopetettu...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitys->lopetettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}lopetettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}lopetettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->lopetussyy != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "lopetussyy", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}lopetussyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}lopetussyy...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->lopetussyy));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}lopetussyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}lopetussyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->reseptiteksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "reseptiteksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}reseptiteksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->reseptiteksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->malli != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "malli", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}malli. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}malli...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->malli));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}malli. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}malli. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->lyhyesti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "lyhyesti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}lyhyesti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}lyhyesti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->lyhyesti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}lyhyesti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}lyhyesti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vaihdettavuus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vaihdettavuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}vaihdettavuus...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitys->vaihdettavuus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}vaihdettavuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vaihdettavuus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annettavaMaara", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annettavaMaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}annettavaMaara...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, &(_laakitys->annettavaMaara));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}annettavaMaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annettavaMaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->annettavaMaksimi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annettavaMaksimi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annettavaMaksimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}annettavaMaksimi...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakitys->annettavaMaksimi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}annettavaMaksimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annettavaMaksimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->annettavaYksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annettavaYksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annettavaYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}annettavaYksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->annettavaYksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}annettavaYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annettavaYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->kertaAnnos != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kertaAnnos", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kertaAnnos. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kertaAnnos...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->kertaAnnos));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kertaAnnos. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kertaAnnos. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->annosteluteksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annosteluteksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annosteluteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}annosteluteksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->annosteluteksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}annosteluteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annosteluteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "desimaaleja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}desimaaleja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}short for element {}desimaaleja...\n");
+#endif
+    status = xmlTextWriterWriteXsShortType(writer, &(_laakitys->desimaaleja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}short for element {}desimaaleja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}desimaaleja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->paino != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "paino", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}paino. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}paino...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakitys->paino));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}paino. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}paino. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->lapsenPaino != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "lapsenPaino", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}lapsenPaino. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}lapsenPaino...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakitys->lapsenPaino));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}lapsenPaino. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}lapsenPaino. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->toisto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "toisto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}toisto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}toisto...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->toisto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}toisto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}toisto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->toistokuvaus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "toistokuvaus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}toistokuvaus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}toistokuvaus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->toistokuvaus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}toistokuvaus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}toistokuvaus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->kellonajat != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kellonajat", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kellonajat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kellonajat...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->kellonajat));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kellonajat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kellonajat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->kellonajatString != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kellonajatString", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kellonajatString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kellonajatString...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->kellonajatString));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kellonajatString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kellonajatString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->aikayksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "aikayksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}aikayksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}aikayksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->aikayksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}aikayksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}aikayksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->antotahti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "antotahti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}antotahti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}antotahti...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakitys->antotahti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}antotahti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}antotahti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->antotahtiString != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "antotahtiString", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}antotahtiString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}antotahtiString...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->antotahtiString));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}antotahtiString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}antotahtiString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->antotahtiyksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "antotahtiyksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}antotahtiyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}antotahtiyksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->antotahtiyksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}antotahtiyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}antotahtiyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->vrkMaara != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vrkMaara", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vrkMaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}vrkMaara...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakitys->vrkMaara));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}vrkMaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vrkMaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->vrkMaaraYksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vrkMaaraYksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vrkMaaraYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}vrkMaaraYksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->vrkMaaraYksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}vrkMaaraYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vrkMaaraYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->kokonaiskesto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kokonaiskesto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kokonaiskesto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kokonaiskesto...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->kokonaiskesto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kokonaiskesto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kokonaiskesto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->kokonaismaara != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kokonaismaara", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kokonaismaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}kokonaismaara...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakitys->kokonaismaara));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}kokonaismaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kokonaismaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->kokonaismaarayksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kokonaismaarayksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kokonaismaarayksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kokonaismaarayksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->kokonaismaarayksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kokonaismaarayksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kokonaismaarayksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->pakkauksia != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "pakkauksia", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}pakkauksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}pakkauksia...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->pakkauksia));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}pakkauksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}pakkauksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kirjaaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kirjaaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}kirjaaja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitys->kirjaaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}kirjaaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kirjaaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->kirjaajaString != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kirjaajaString", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kirjaajaString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kirjaajaString...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->kirjaajaString));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kirjaajaString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kirjaajaString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "maaraaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}maaraaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}maaraaja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitys->maaraaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}maaraaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}maaraaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->maaraajaString != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "maaraajaString", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}maaraajaString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}maaraajaString...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->maaraajaString));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}maaraajaString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}maaraajaString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->maaraysyksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "maaraysyksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}maaraysyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}maaraysyksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->maaraysyksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}maaraysyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}maaraysyksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "varmistus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}varmistus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}varmistus...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitys->varmistus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}varmistus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}varmistus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->kayttotarkoitus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kayttotarkoitus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kayttotarkoitus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kayttotarkoitus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->kayttotarkoitus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kayttotarkoitus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kayttotarkoitus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->ohjeet != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "ohjeet", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}ohjeet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}ohjeet...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->ohjeet));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}ohjeet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}ohjeet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->perustelu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "perustelu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}perustelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}perustelu...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->perustelu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}perustelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}perustelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->iterointi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "iterointi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}iterointi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}iterointi...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->iterointi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}iterointi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}iterointi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->uusittu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "uusittu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}uusittu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}uusittu...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->uusittu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}uusittu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}uusittu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->kuitattava != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kuitattava", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kuitattava. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}kuitattava...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laakitys->kuitattava));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}kuitattava. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kuitattava. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "pysyva", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}pysyva. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}pysyva...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitys->pysyva));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}pysyva. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}pysyva. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tarvittaessa", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tarvittaessa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tarvittaessa...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitys->tarvittaessa));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tarvittaessa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tarvittaessa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->terapiaryhma != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "terapiaryhma", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}terapiaryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}terapiaryhma...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->terapiaryhma));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}terapiaryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}terapiaryhma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "soveltumaton", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}soveltumaton. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}soveltumaton...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitys->soveltumaton));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}soveltumaton. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}soveltumaton. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->vaikutus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vaikutus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vaikutus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}vaikutus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->vaikutus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}vaikutus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vaikutus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->huomautuksia != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "huomautuksia", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}huomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}huomautuksia...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->huomautuksia));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}huomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}huomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->reseptityyppi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "reseptityyppi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}reseptityyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}reseptityyppi...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laakitys->reseptityyppi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}reseptityyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}reseptityyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->reseptityyppiString != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "reseptityyppiString", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}reseptityyppiString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}reseptityyppiString...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->reseptityyppiString));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}reseptityyppiString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}reseptityyppiString. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->tulostaja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tulostaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tulostaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}tulostaja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->tulostaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}tulostaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tulostaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->tulostettu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tulostettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tulostettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}tulostettu...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitys->tulostettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}tulostettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tulostettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->oid != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "oid", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}oid. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}oid...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->oid));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}oid. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}oid. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->tunnistustapa != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tunnistustapa", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tunnistustapa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}tunnistustapa...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->tunnistustapa));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}tunnistustapa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tunnistustapa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->tunnistustapaselite != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tunnistustapaselite", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tunnistustapaselite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}tunnistustapaselite...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->tunnistustapaselite));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}tunnistustapaselite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tunnistustapaselite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->annosjakeluperuste != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annosjakeluperuste", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annosjakeluperuste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}annosjakeluperuste...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->annosjakeluperuste));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}annosjakeluperuste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annosjakeluperuste. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->iterointivali != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "iterointivali", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}iterointivali. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}iterointivali...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->iterointivali));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}iterointivali. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}iterointivali. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->erillisselvityskoodi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "erillisselvityskoodi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}erillisselvityskoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}erillisselvityskoodi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->erillisselvityskoodi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}erillisselvityskoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}erillisselvityskoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->erillisselvitys != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "erillisselvitys", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}erillisselvitys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}erillisselvitys...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->erillisselvitys));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}erillisselvitys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}erillisselvitys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->apteekkiviesti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "apteekkiviesti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}apteekkiviesti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}apteekkiviesti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->apteekkiviesti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}apteekkiviesti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}apteekkiviesti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->ereseptikielto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "ereseptikielto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}ereseptikielto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}ereseptikielto...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laakitys->ereseptikielto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}ereseptikielto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}ereseptikielto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->hoitolaji != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "hoitolaji", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}hoitolaji. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}hoitolaji...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->hoitolaji));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}hoitolaji. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}hoitolaji. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->uusi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "uusi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}uusi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}uusi...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laakitys->uusi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}uusi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}uusi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->lahetetty != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "lahetetty", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}lahetetty. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}lahetetty...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitys->lahetetty));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}lahetetty. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}lahetetty. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->reseptinLaji != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "reseptinLaji", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}reseptinLaji. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}reseptinLaji...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->reseptinLaji));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}reseptinLaji. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}reseptinLaji. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->muutoksenSyy != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutoksenSyy", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutoksenSyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}muutoksenSyy...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->muutoksenSyy));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}muutoksenSyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutoksenSyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->muutoksenPerustelu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutoksenPerustelu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutoksenPerustelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}muutoksenPerustelu...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->muutoksenPerustelu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}muutoksenPerustelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutoksenPerustelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->uusimiskielto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "uusimiskielto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}uusimiskielto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}uusimiskielto...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laakitys->uusimiskielto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}uusimiskielto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}uusimiskielto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->uusimiskiellonSyy != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "uusimiskiellonSyy", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}uusimiskiellonSyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}uusimiskiellonSyy...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->uusimiskiellonSyy));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}uusimiskiellonSyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}uusimiskiellonSyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->uusimiskiellonPerustelu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "uusimiskiellonPerustelu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}uusimiskiellonPerustelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}uusimiskiellonPerustelu...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->uusimiskiellonPerustelu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}uusimiskiellonPerustelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}uusimiskiellonPerustelu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->potilasohjekielto != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "potilasohjekielto", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}potilasohjekielto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}potilasohjekielto...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laakitys->potilasohjekielto));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}potilasohjekielto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}potilasohjekielto. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->tyonantaja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tyonantaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tyonantaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}tyonantaja...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->tyonantaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}tyonantaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tyonantaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->vakuutusyhtio != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vakuutusyhtio", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vakuutusyhtio. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}vakuutusyhtio...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->vakuutusyhtio));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}vakuutusyhtio. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vakuutusyhtio. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->voimassaoloLoppu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "voimassaoloLoppu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}voimassaoloLoppu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}voimassaoloLoppu...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitys->voimassaoloLoppu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}voimassaoloLoppu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}voimassaoloLoppu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->annostuslinkki != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annostuslinkki", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annostuslinkki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}annostuslinkki...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->annostuslinkki));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}annostuslinkki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annostuslinkki. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->hoitojakso != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "hoitojakso", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}hoitojakso. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}hoitojakso...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->hoitojakso));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}hoitojakso. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}hoitojakso. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->alkuperainen != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkuperainen", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkuperainen. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}alkuperainen...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->alkuperainen));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}alkuperainen. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkuperainen. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->palkkio != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "palkkio", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}palkkio. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}palkkio...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakitys->palkkio));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}palkkio. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}palkkio. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->palkkioErikoislaakarina != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "palkkioErikoislaakarina", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}palkkioErikoislaakarina. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}palkkioErikoislaakarina...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laakitys->palkkioErikoislaakarina));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}palkkioErikoislaakarina. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}palkkioErikoislaakarina. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->tartuntatautilaake != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tartuntatautilaake", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tartuntatautilaake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tartuntatautilaake...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, (_laakitys->tartuntatautilaake));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tartuntatautilaake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tartuntatautilaake. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->palvelutapahtuma != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "palvelutapahtuma", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}palvelutapahtuma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}palvelutapahtuma...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->palvelutapahtuma));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}palvelutapahtuma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}palvelutapahtuma. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->palvelutapahtumaOid != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "palvelutapahtumaOid", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}palvelutapahtumaOid. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}palvelutapahtumaOid...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->palvelutapahtumaOid));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}palvelutapahtumaOid. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}palvelutapahtumaOid. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->sairaalaApteekkiOid != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "sairaalaApteekkiOid", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}sairaalaApteekkiOid. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}sairaalaApteekkiOid...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->sairaalaApteekkiOid));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}sairaalaApteekkiOid. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}sairaalaApteekkiOid. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->sairaalaApteekkiNimi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "sairaalaApteekkiNimi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}sairaalaApteekkiNimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}sairaalaApteekkiNimi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->sairaalaApteekkiNimi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}sairaalaApteekkiNimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}sairaalaApteekkiNimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->tarkistus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tarkistus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tarkistus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}tarkistus...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitys->tarkistus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}tarkistus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tarkistus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->poistosyy != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistosyy", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistosyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}poistosyy...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->poistosyy));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}poistosyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistosyy. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitys->poistettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->muutosaika != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutosaika", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitys->muutosaika));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutospaikka", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka...\n");
+#endif
+    status = xmlTextWriterWriteXsShortType(writer, &(_laakitys->muutospaikka));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->pysyvyys != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "pysyvyys", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}pysyvyys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}pysyvyys...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->pysyvyys));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}pysyvyys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}pysyvyys. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->nimi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "nimi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}nimi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->nimi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}nimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->annostus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annostus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annostus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}annostus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->annostus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}annostus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annostus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vaihteleva", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vaihteleva. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}boolean for element {}vaihteleva...\n");
+#endif
+    status = xmlTextWriterWriteXsBooleanType(writer, &(_laakitys->vaihteleva));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}boolean for element {}vaihteleva. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vaihteleva. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->vaihtelevaAnnostus != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vaihtelevaAnnostus", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vaihtelevaAnnostus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}vaihtelevaAnnostus...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->vaihtelevaAnnostus));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}vaihtelevaAnnostus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vaihtelevaAnnostus. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->sic != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "sic", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}sic. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}sic...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->sic));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}sic. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}sic. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->kokoNimi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kokoNimi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kokoNimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}kokoNimi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->kokoNimi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}kokoNimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kokoNimi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->laakeaineet != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakeaineet", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laakeaineet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}laakeaineet...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->laakeaineet));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}laakeaineet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laakeaineet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tauonAloitusPvm", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tauonAloitusPvm. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}long for element {}tauonAloitusPvm...\n");
+#endif
+    status = xmlTextWriterWriteXsLongType(writer, &(_laakitys->tauonAloitusPvm));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}long for element {}tauonAloitusPvm. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tauonAloitusPvm. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tauonLopetusPvm", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tauonLopetusPvm. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}long for element {}tauonLopetusPvm...\n");
+#endif
+    status = xmlTextWriterWriteXsLongType(writer, &(_laakitys->tauonLopetusPvm));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}long for element {}tauonLopetusPvm. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tauonLopetusPvm. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->taukohuomautuksia != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "taukohuomautuksia", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}taukohuomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}taukohuomautuksia...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->taukohuomautuksia));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}taukohuomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}taukohuomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->annettavaMaaraTimesPaino != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annettavaMaaraTimesPaino", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annettavaMaaraTimesPaino. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}annettavaMaaraTimesPaino...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakitys->annettavaMaaraTimesPaino));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}annettavaMaaraTimesPaino. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annettavaMaaraTimesPaino. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->vrkmaara != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vrkmaara", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vrkmaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}vrkmaara...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakitys->vrkmaara));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}vrkmaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vrkmaara. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vrkkerratCalc", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vrkkerratCalc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}vrkkerratCalc...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitys->vrkkerratCalc));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}vrkkerratCalc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vrkkerratCalc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->vrkmaaraCalc != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vrkmaaraCalc", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vrkmaaraCalc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}float for element {}vrkmaaraCalc...\n");
+#endif
+    status = xmlTextWriterWriteXsFloatType(writer, (_laakitys->vrkmaaraCalc));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}float for element {}vrkmaaraCalc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vrkmaaraCalc. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitys->vrkmaaraYksikko != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "vrkmaaraYksikko", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}vrkmaaraYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}vrkmaaraYksikko...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitys->vrkmaaraYksikko));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}vrkmaaraYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}vrkmaaraYksikko. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laakitys->_sizeof_tauot; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tauot", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tauot. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakitysTauko for element {}tauot...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakitysTaukoType(writer, &(_laakitys->tauot[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakitysTauko for element {}tauot. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tauot. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laakitys->_sizeof_annot; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "annot", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}annot. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakitysAnto for element {}annot...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakitysAntoType(writer, &(_laakitys->annot[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakitysAnto for element {}annot. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}annot. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laakitys->_sizeof_tavat; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tavat", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tavat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakitysTapa for element {}tavat...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakitysTapaType(writer, &(_laakitys->tavat[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakitysTapa for element {}tavat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tavat. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laakitys->_sizeof_kayttoaiheet; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kayttoaiheet", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kayttoaiheet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakitysKayttoaihe for element {}kayttoaiheet...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakitysKayttoaiheType(writer, &(_laakitys->kayttoaiheet[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakitysKayttoaihe for element {}kayttoaiheet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kayttoaiheet. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laakitys->_sizeof_laakitysKayttoaiheList; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakitysKayttoaiheList", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}laakitysKayttoaiheList. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakitysKayttoaiheView for element {}laakitysKayttoaiheList...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakitysKayttoaiheViewType(writer, &(_laakitys->laakitysKayttoaiheList[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakitysKayttoaiheView for element {}laakitysKayttoaiheList. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}laakitysKayttoaiheList. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  for (i = 0; i < _laakitys->_sizeof_kuittaukset; i++) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kuittaukset", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kuittaukset. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {}laakitysKuittaus for element {}kuittaukset...\n");
+#endif
+    status = xmlTextWriterWriteNs0LaakitysKuittausType(writer, &(_laakitys->kuittaukset[i]));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {}laakitysKuittaus for element {}kuittaukset. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kuittaukset. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a Laakitys.
+ *
+ * @param _laakitys The Laakitys to free.
+ */
+static void freeNs0LaakitysType(struct CoreWEB_ns0_laakitys *_laakitys) {
+  int i;
+  if (_laakitys->laakevalmiste != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laakevalmiste of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeNs0LaakeType(_laakitys->laakevalmiste);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laakevalmiste of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->laakevalmiste);
+  }
+  if (_laakitys->laake != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laake of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->laake);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laake of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->laake);
+  }
+  if (_laakitys->aloitettu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor aloitettu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsDateTimeType(_laakitys->aloitettu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor aloitettu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->aloitettu);
+  }
+  if (_laakitys->tapahtunut != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tapahtunut of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsDateTimeType(_laakitys->tapahtunut);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tapahtunut of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->tapahtunut);
+  }
+  if (_laakitys->riittoisuus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor riittoisuus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsDateTimeType(_laakitys->riittoisuus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor riittoisuus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->riittoisuus);
+  }
+  if (_laakitys->lopetettu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor lopetettu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsDateTimeType(_laakitys->lopetettu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor lopetettu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->lopetettu);
+  }
+  if (_laakitys->lopetussyy != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor lopetussyy of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->lopetussyy);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor lopetussyy of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->lopetussyy);
+  }
+  if (_laakitys->reseptiteksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor reseptiteksti of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->reseptiteksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor reseptiteksti of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->reseptiteksti);
+  }
+  if (_laakitys->malli != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor malli of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->malli);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor malli of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->malli);
+  }
+  if (_laakitys->lyhyesti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor lyhyesti of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->lyhyesti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor lyhyesti of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->lyhyesti);
+  }
+  if (_laakitys->annettavaMaksimi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annettavaMaksimi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsFloatType(_laakitys->annettavaMaksimi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annettavaMaksimi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->annettavaMaksimi);
+  }
+  if (_laakitys->annettavaYksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annettavaYksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->annettavaYksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annettavaYksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->annettavaYksikko);
+  }
+  if (_laakitys->kertaAnnos != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kertaAnnos of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->kertaAnnos);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kertaAnnos of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kertaAnnos);
+  }
+  if (_laakitys->annosteluteksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annosteluteksti of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->annosteluteksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annosteluteksti of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->annosteluteksti);
+  }
+  if (_laakitys->paino != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor paino of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsFloatType(_laakitys->paino);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor paino of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->paino);
+  }
+  if (_laakitys->lapsenPaino != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor lapsenPaino of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsFloatType(_laakitys->lapsenPaino);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor lapsenPaino of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->lapsenPaino);
+  }
+  if (_laakitys->toisto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor toisto of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->toisto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor toisto of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->toisto);
+  }
+  if (_laakitys->toistokuvaus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor toistokuvaus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->toistokuvaus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor toistokuvaus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->toistokuvaus);
+  }
+  if (_laakitys->kellonajat != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kellonajat of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->kellonajat);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kellonajat of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kellonajat);
+  }
+  if (_laakitys->kellonajatString != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kellonajatString of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->kellonajatString);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kellonajatString of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kellonajatString);
+  }
+  if (_laakitys->aikayksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor aikayksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->aikayksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor aikayksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->aikayksikko);
+  }
+  if (_laakitys->antotahti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor antotahti of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsFloatType(_laakitys->antotahti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor antotahti of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->antotahti);
+  }
+  if (_laakitys->antotahtiString != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor antotahtiString of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->antotahtiString);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor antotahtiString of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->antotahtiString);
+  }
+  if (_laakitys->antotahtiyksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor antotahtiyksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->antotahtiyksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor antotahtiyksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->antotahtiyksikko);
+  }
+  if (_laakitys->vrkMaara != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vrkMaara of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsFloatType(_laakitys->vrkMaara);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vrkMaara of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->vrkMaara);
+  }
+  if (_laakitys->vrkMaaraYksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vrkMaaraYksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->vrkMaaraYksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vrkMaaraYksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->vrkMaaraYksikko);
+  }
+  if (_laakitys->kokonaiskesto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kokonaiskesto of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->kokonaiskesto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kokonaiskesto of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kokonaiskesto);
+  }
+  if (_laakitys->kokonaismaara != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kokonaismaara of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsFloatType(_laakitys->kokonaismaara);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kokonaismaara of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kokonaismaara);
+  }
+  if (_laakitys->kokonaismaarayksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kokonaismaarayksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->kokonaismaarayksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kokonaismaarayksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kokonaismaarayksikko);
+  }
+  if (_laakitys->pakkauksia != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor pakkauksia of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->pakkauksia);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor pakkauksia of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->pakkauksia);
+  }
+  if (_laakitys->kirjaajaString != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kirjaajaString of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->kirjaajaString);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kirjaajaString of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kirjaajaString);
+  }
+  if (_laakitys->maaraajaString != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor maaraajaString of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->maaraajaString);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor maaraajaString of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->maaraajaString);
+  }
+  if (_laakitys->maaraysyksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor maaraysyksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->maaraysyksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor maaraysyksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->maaraysyksikko);
+  }
+  if (_laakitys->kayttotarkoitus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kayttotarkoitus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->kayttotarkoitus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kayttotarkoitus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kayttotarkoitus);
+  }
+  if (_laakitys->ohjeet != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor ohjeet of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->ohjeet);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor ohjeet of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->ohjeet);
+  }
+  if (_laakitys->perustelu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor perustelu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->perustelu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor perustelu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->perustelu);
+  }
+  if (_laakitys->iterointi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor iterointi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->iterointi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor iterointi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->iterointi);
+  }
+  if (_laakitys->uusittu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor uusittu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->uusittu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor uusittu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->uusittu);
+  }
+  if (_laakitys->kuitattava != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kuitattava of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsUnsignedShortType(_laakitys->kuitattava);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kuitattava of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kuitattava);
+  }
+  if (_laakitys->terapiaryhma != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor terapiaryhma of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->terapiaryhma);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor terapiaryhma of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->terapiaryhma);
+  }
+  if (_laakitys->vaikutus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vaikutus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->vaikutus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vaikutus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->vaikutus);
+  }
+  if (_laakitys->huomautuksia != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor huomautuksia of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->huomautuksia);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor huomautuksia of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->huomautuksia);
+  }
+  if (_laakitys->reseptityyppi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor reseptityyppi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsUnsignedShortType(_laakitys->reseptityyppi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor reseptityyppi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->reseptityyppi);
+  }
+  if (_laakitys->reseptityyppiString != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor reseptityyppiString of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->reseptityyppiString);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor reseptityyppiString of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->reseptityyppiString);
+  }
+  if (_laakitys->tulostaja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tulostaja of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->tulostaja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tulostaja of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->tulostaja);
+  }
+  if (_laakitys->tulostettu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tulostettu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsDateTimeType(_laakitys->tulostettu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tulostettu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->tulostettu);
+  }
+  if (_laakitys->oid != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor oid of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->oid);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor oid of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->oid);
+  }
+  if (_laakitys->tunnistustapa != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tunnistustapa of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->tunnistustapa);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tunnistustapa of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->tunnistustapa);
+  }
+  if (_laakitys->tunnistustapaselite != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tunnistustapaselite of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->tunnistustapaselite);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tunnistustapaselite of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->tunnistustapaselite);
+  }
+  if (_laakitys->annosjakeluperuste != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annosjakeluperuste of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->annosjakeluperuste);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annosjakeluperuste of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->annosjakeluperuste);
+  }
+  if (_laakitys->iterointivali != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor iterointivali of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->iterointivali);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor iterointivali of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->iterointivali);
+  }
+  if (_laakitys->erillisselvityskoodi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor erillisselvityskoodi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->erillisselvityskoodi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor erillisselvityskoodi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->erillisselvityskoodi);
+  }
+  if (_laakitys->erillisselvitys != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor erillisselvitys of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->erillisselvitys);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor erillisselvitys of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->erillisselvitys);
+  }
+  if (_laakitys->apteekkiviesti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor apteekkiviesti of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->apteekkiviesti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor apteekkiviesti of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->apteekkiviesti);
+  }
+  if (_laakitys->ereseptikielto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor ereseptikielto of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsUnsignedShortType(_laakitys->ereseptikielto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor ereseptikielto of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->ereseptikielto);
+  }
+  if (_laakitys->hoitolaji != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor hoitolaji of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->hoitolaji);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor hoitolaji of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->hoitolaji);
+  }
+  if (_laakitys->uusi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor uusi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsUnsignedShortType(_laakitys->uusi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor uusi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->uusi);
+  }
+  if (_laakitys->lahetetty != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor lahetetty of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsDateTimeType(_laakitys->lahetetty);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor lahetetty of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->lahetetty);
+  }
+  if (_laakitys->reseptinLaji != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor reseptinLaji of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->reseptinLaji);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor reseptinLaji of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->reseptinLaji);
+  }
+  if (_laakitys->muutoksenSyy != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutoksenSyy of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->muutoksenSyy);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutoksenSyy of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->muutoksenSyy);
+  }
+  if (_laakitys->muutoksenPerustelu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutoksenPerustelu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->muutoksenPerustelu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutoksenPerustelu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->muutoksenPerustelu);
+  }
+  if (_laakitys->uusimiskielto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor uusimiskielto of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsUnsignedShortType(_laakitys->uusimiskielto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor uusimiskielto of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->uusimiskielto);
+  }
+  if (_laakitys->uusimiskiellonSyy != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor uusimiskiellonSyy of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->uusimiskiellonSyy);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor uusimiskiellonSyy of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->uusimiskiellonSyy);
+  }
+  if (_laakitys->uusimiskiellonPerustelu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor uusimiskiellonPerustelu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->uusimiskiellonPerustelu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor uusimiskiellonPerustelu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->uusimiskiellonPerustelu);
+  }
+  if (_laakitys->potilasohjekielto != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor potilasohjekielto of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsUnsignedShortType(_laakitys->potilasohjekielto);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor potilasohjekielto of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->potilasohjekielto);
+  }
+  if (_laakitys->tyonantaja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tyonantaja of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->tyonantaja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tyonantaja of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->tyonantaja);
+  }
+  if (_laakitys->vakuutusyhtio != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vakuutusyhtio of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->vakuutusyhtio);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vakuutusyhtio of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->vakuutusyhtio);
+  }
+  if (_laakitys->voimassaoloLoppu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor voimassaoloLoppu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsDateTimeType(_laakitys->voimassaoloLoppu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor voimassaoloLoppu of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->voimassaoloLoppu);
+  }
+  if (_laakitys->annostuslinkki != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annostuslinkki of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->annostuslinkki);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annostuslinkki of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->annostuslinkki);
+  }
+  if (_laakitys->hoitojakso != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor hoitojakso of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->hoitojakso);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor hoitojakso of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->hoitojakso);
+  }
+  if (_laakitys->alkuperainen != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor alkuperainen of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->alkuperainen);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor alkuperainen of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->alkuperainen);
+  }
+  if (_laakitys->palkkio != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor palkkio of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsFloatType(_laakitys->palkkio);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor palkkio of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->palkkio);
+  }
+  if (_laakitys->palkkioErikoislaakarina != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor palkkioErikoislaakarina of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsUnsignedShortType(_laakitys->palkkioErikoislaakarina);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor palkkioErikoislaakarina of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->palkkioErikoislaakarina);
+  }
+  if (_laakitys->tartuntatautilaake != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tartuntatautilaake of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsUnsignedShortType(_laakitys->tartuntatautilaake);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tartuntatautilaake of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->tartuntatautilaake);
+  }
+  if (_laakitys->palvelutapahtuma != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor palvelutapahtuma of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->palvelutapahtuma);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor palvelutapahtuma of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->palvelutapahtuma);
+  }
+  if (_laakitys->palvelutapahtumaOid != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor palvelutapahtumaOid of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->palvelutapahtumaOid);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor palvelutapahtumaOid of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->palvelutapahtumaOid);
+  }
+  if (_laakitys->sairaalaApteekkiOid != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor sairaalaApteekkiOid of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->sairaalaApteekkiOid);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor sairaalaApteekkiOid of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->sairaalaApteekkiOid);
+  }
+  if (_laakitys->sairaalaApteekkiNimi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor sairaalaApteekkiNimi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->sairaalaApteekkiNimi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor sairaalaApteekkiNimi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->sairaalaApteekkiNimi);
+  }
+  if (_laakitys->tarkistus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tarkistus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsIntType(_laakitys->tarkistus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tarkistus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->tarkistus);
+  }
+  if (_laakitys->poistosyy != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor poistosyy of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->poistosyy);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor poistosyy of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->poistosyy);
+  }
+  if (_laakitys->muutosaika != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutosaika of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsDateTimeType(_laakitys->muutosaika);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutosaika of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->muutosaika);
+  }
+  if (_laakitys->pysyvyys != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor pysyvyys of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->pysyvyys);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor pysyvyys of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->pysyvyys);
+  }
+  if (_laakitys->nimi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor nimi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->nimi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor nimi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->nimi);
+  }
+  if (_laakitys->annostus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annostus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->annostus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annostus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->annostus);
+  }
+  if (_laakitys->vaihtelevaAnnostus != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vaihtelevaAnnostus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->vaihtelevaAnnostus);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vaihtelevaAnnostus of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->vaihtelevaAnnostus);
+  }
+  if (_laakitys->sic != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor sic of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->sic);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor sic of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->sic);
+  }
+  if (_laakitys->kokoNimi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kokoNimi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->kokoNimi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kokoNimi of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kokoNimi);
+  }
+  if (_laakitys->laakeaineet != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor laakeaineet of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->laakeaineet);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laakeaineet of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->laakeaineet);
+  }
+  if (_laakitys->taukohuomautuksia != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor taukohuomautuksia of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->taukohuomautuksia);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor taukohuomautuksia of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->taukohuomautuksia);
+  }
+  if (_laakitys->annettavaMaaraTimesPaino != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor annettavaMaaraTimesPaino of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsFloatType(_laakitys->annettavaMaaraTimesPaino);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annettavaMaaraTimesPaino of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->annettavaMaaraTimesPaino);
+  }
+  if (_laakitys->vrkmaara != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vrkmaara of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsFloatType(_laakitys->vrkmaara);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vrkmaara of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->vrkmaara);
+  }
+  if (_laakitys->vrkmaaraCalc != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vrkmaaraCalc of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsFloatType(_laakitys->vrkmaaraCalc);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vrkmaaraCalc of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->vrkmaaraCalc);
+  }
+  if (_laakitys->vrkmaaraYksikko != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor vrkmaaraYksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    freeXsStringType(_laakitys->vrkmaaraYksikko);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor vrkmaaraYksikko of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->vrkmaaraYksikko);
+  }
+  if (_laakitys->tauot != NULL) {
+    for (i = 0; i < _laakitys->_sizeof_tauot; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor tauot[%i] of type CoreWEB_ns0_laakitys...\n", i);
+#endif
+      freeNs0LaakitysTaukoType(&(_laakitys->tauot[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tauot of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->tauot);
+  }
+  if (_laakitys->annot != NULL) {
+    for (i = 0; i < _laakitys->_sizeof_annot; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor annot[%i] of type CoreWEB_ns0_laakitys...\n", i);
+#endif
+      freeNs0LaakitysAntoType(&(_laakitys->annot[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor annot of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->annot);
+  }
+  if (_laakitys->tavat != NULL) {
+    for (i = 0; i < _laakitys->_sizeof_tavat; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor tavat[%i] of type CoreWEB_ns0_laakitys...\n", i);
+#endif
+      freeNs0LaakitysTapaType(&(_laakitys->tavat[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tavat of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->tavat);
+  }
+  if (_laakitys->kayttoaiheet != NULL) {
+    for (i = 0; i < _laakitys->_sizeof_kayttoaiheet; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor kayttoaiheet[%i] of type CoreWEB_ns0_laakitys...\n", i);
+#endif
+      freeNs0LaakitysKayttoaiheType(&(_laakitys->kayttoaiheet[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kayttoaiheet of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kayttoaiheet);
+  }
+  if (_laakitys->laakitysKayttoaiheList != NULL) {
+    for (i = 0; i < _laakitys->_sizeof_laakitysKayttoaiheList; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor laakitysKayttoaiheList[%i] of type CoreWEB_ns0_laakitys...\n", i);
+#endif
+      freeNs0LaakitysKayttoaiheViewType(&(_laakitys->laakitysKayttoaiheList[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor laakitysKayttoaiheList of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->laakitysKayttoaiheList);
+  }
+  if (_laakitys->kuittaukset != NULL) {
+    for (i = 0; i < _laakitys->_sizeof_kuittaukset; i++) {
+#if DEBUG_ENUNCIATE > 1
+      printf("Freeing accessor kuittaukset[%i] of type CoreWEB_ns0_laakitys...\n", i);
+#endif
+      freeNs0LaakitysKuittausType(&(_laakitys->kuittaukset[i]));
+    }
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kuittaukset of type CoreWEB_ns0_laakitys...\n");
+#endif
+    free(_laakitys->kuittaukset);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakitys_M */
+#ifndef DEF_CoreWEB_ns0_laakitysKayttoaihe_M
+#define DEF_CoreWEB_ns0_laakitysKayttoaihe_M
+
+/**
+ * Reads a LaakitysKayttoaihe element from XML. The element to be read is "laakitysKayttoaihe", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKayttoaihe, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKayttoaihe *xml_read_CoreWEB_ns0_laakitysKayttoaihe(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakitysKayttoaiheElement(reader);
+}
+
+/**
+ * Writes a LaakitysKayttoaihe to XML under element name "laakitysKayttoaihe".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakitysKayttoaihe(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe) {
+  return xmlTextWriterWriteNs0LaakitysKayttoaiheElementNS(writer, _laakitysKayttoaihe, 1);
+}
+
+/**
+ * Frees a LaakitysKayttoaihe.
+ *
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to free.
+ */
+void free_CoreWEB_ns0_laakitysKayttoaihe(struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe) {
+  freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+  free(_laakitysKayttoaihe);
+}
+
+/**
+ * Reads a LaakitysKayttoaihe element from XML. The element to be read is "laakitysKayttoaihe", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKayttoaihe, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKayttoaihe *xmlTextReaderReadNs0LaakitysKayttoaiheElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakitysKayttoaihe", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakitysKayttoaihe.\n");
+#endif
+    _laakitysKayttoaihe = xmlTextReaderReadNs0LaakitysKayttoaiheType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakitysKayttoaihe == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakitysKayttoaihe failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakitysKayttoaihe failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakitysKayttoaihe;
+}
+
+/**
+ * Writes a LaakitysKayttoaihe to XML under element name "laakitysKayttoaihe".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe) {
+  return xmlTextWriterWriteNs0LaakitysKayttoaiheElementNS(writer, _laakitysKayttoaihe, 0);
+}
+
+/**
+ * Writes a LaakitysKayttoaihe to XML under element name "laakitysKayttoaihe".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakitysKayttoaihe", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakitysKayttoaihe. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakitysKayttoaihe for root element {}laakitysKayttoaihe...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakitysKayttoaiheType(writer, _laakitysKayttoaihe);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakitysKayttoaihe. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakitysKayttoaihe. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakitysKayttoaihe.
+ *
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe whose children are to be free.
+ */
+static void freeNs0LaakitysKayttoaiheElement(struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe) {
+  freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+}
+
+/**
+ * Reads a LaakitysKayttoaihe from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakitysKayttoaihe, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitysKayttoaihe *xmlTextReaderReadNs0LaakitysKayttoaiheType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe = calloc(1, sizeof(struct CoreWEB_ns0_laakitysKayttoaihe));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+        free(_laakitysKayttoaihe);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "rivi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}rivi of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}rivi of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+          free(_laakitysKayttoaihe);
+          return NULL;
+        }
+
+        _laakitysKayttoaihe->rivi = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "numero", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}numero of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}numero of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+          free(_laakitysKayttoaihe);
+          return NULL;
+        }
+
+        _laakitysKayttoaihe->numero = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "selite", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}selite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}selite of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+          free(_laakitysKayttoaihe);
+          return NULL;
+        }
+
+        _laakitysKayttoaihe->selite = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "reseptiteksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}reseptiteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}reseptiteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+          free(_laakitysKayttoaihe);
+          return NULL;
+        }
+
+        _laakitysKayttoaihe->reseptiteksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkupera", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkupera of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+          free(_laakitysKayttoaihe);
+          return NULL;
+        }
+
+        _laakitysKayttoaihe->alkupera = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tyyppi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tyyppi of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tyyppi of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+          free(_laakitysKayttoaihe);
+          return NULL;
+        }
+
+        _laakitysKayttoaihe->tyyppi = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+          free(_laakitysKayttoaihe);
+          return NULL;
+        }
+
+        _laakitysKayttoaihe->poistettu = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutosaika", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+          free(_laakitysKayttoaihe);
+          return NULL;
+        }
+
+        _laakitysKayttoaihe->muutosaika = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutospaikka", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKayttoaiheType(_laakitysKayttoaihe);
+          free(_laakitysKayttoaihe);
+          return NULL;
+        }
+
+        _laakitysKayttoaihe->muutospaikka = *((short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakitysKayttoaihe.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakitysKayttoaihe. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakitysKayttoaihe;
+}
+
+/**
+ * Writes a LaakitysKayttoaihe to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakitysKayttoaiheType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "rivi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}rivi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}rivi...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitysKayttoaihe->rivi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}rivi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}rivi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "numero", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}numero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}numero...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitysKayttoaihe->numero));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}numero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}numero. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysKayttoaihe->selite != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "selite", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}selite...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysKayttoaihe->selite));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}selite. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysKayttoaihe->reseptiteksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "reseptiteksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}reseptiteksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysKayttoaihe->reseptiteksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}reseptiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkupera", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitysKayttoaihe->alkupera));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkupera. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tyyppi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tyyppi...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitysKayttoaihe->tyyppi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}tyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tyyppi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitysKayttoaihe->poistettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysKayttoaihe->muutosaika != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutosaika", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitysKayttoaihe->muutosaika));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutospaikka", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka...\n");
+#endif
+    status = xmlTextWriterWriteXsShortType(writer, &(_laakitysKayttoaihe->muutospaikka));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakitysKayttoaihe.
+ *
+ * @param _laakitysKayttoaihe The LaakitysKayttoaihe to free.
+ */
+static void freeNs0LaakitysKayttoaiheType(struct CoreWEB_ns0_laakitysKayttoaihe *_laakitysKayttoaihe) {
+  int i;
+  if (_laakitysKayttoaihe->selite != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor selite of type CoreWEB_ns0_laakitysKayttoaihe...\n");
+#endif
+    freeXsStringType(_laakitysKayttoaihe->selite);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor selite of type CoreWEB_ns0_laakitysKayttoaihe...\n");
+#endif
+    free(_laakitysKayttoaihe->selite);
+  }
+  if (_laakitysKayttoaihe->reseptiteksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor reseptiteksti of type CoreWEB_ns0_laakitysKayttoaihe...\n");
+#endif
+    freeXsStringType(_laakitysKayttoaihe->reseptiteksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor reseptiteksti of type CoreWEB_ns0_laakitysKayttoaihe...\n");
+#endif
+    free(_laakitysKayttoaihe->reseptiteksti);
+  }
+  if (_laakitysKayttoaihe->muutosaika != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutosaika of type CoreWEB_ns0_laakitysKayttoaihe...\n");
+#endif
+    freeXsDateTimeType(_laakitysKayttoaihe->muutosaika);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutosaika of type CoreWEB_ns0_laakitysKayttoaihe...\n");
+#endif
+    free(_laakitysKayttoaihe->muutosaika);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakitysKayttoaihe_M */
+#ifndef DEF_CoreWEB_ns0_laakitysKuittaus_M
+#define DEF_CoreWEB_ns0_laakitysKuittaus_M
+
+/**
+ * Reads a LaakitysKuittaus element from XML. The element to be read is "laakitysKuittaus", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKuittaus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKuittaus *xml_read_CoreWEB_ns0_laakitysKuittaus(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakitysKuittausElement(reader);
+}
+
+/**
+ * Writes a LaakitysKuittaus to XML under element name "laakitysKuittaus".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKuittaus The LaakitysKuittaus to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakitysKuittaus(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus) {
+  return xmlTextWriterWriteNs0LaakitysKuittausElementNS(writer, _laakitysKuittaus, 1);
+}
+
+/**
+ * Frees a LaakitysKuittaus.
+ *
+ * @param _laakitysKuittaus The LaakitysKuittaus to free.
+ */
+void free_CoreWEB_ns0_laakitysKuittaus(struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus) {
+  freeNs0LaakitysKuittausType(_laakitysKuittaus);
+  free(_laakitysKuittaus);
+}
+
+/**
+ * Reads a LaakitysKuittaus element from XML. The element to be read is "laakitysKuittaus", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysKuittaus, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysKuittaus *xmlTextReaderReadNs0LaakitysKuittausElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakitysKuittaus", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakitysKuittaus.\n");
+#endif
+    _laakitysKuittaus = xmlTextReaderReadNs0LaakitysKuittausType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakitysKuittaus == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakitysKuittaus failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakitysKuittaus failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakitysKuittaus;
+}
+
+/**
+ * Writes a LaakitysKuittaus to XML under element name "laakitysKuittaus".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKuittaus The LaakitysKuittaus to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysKuittausElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus) {
+  return xmlTextWriterWriteNs0LaakitysKuittausElementNS(writer, _laakitysKuittaus, 0);
+}
+
+/**
+ * Writes a LaakitysKuittaus to XML under element name "laakitysKuittaus".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKuittaus The LaakitysKuittaus to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysKuittausElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakitysKuittaus", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakitysKuittaus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakitysKuittaus for root element {}laakitysKuittaus...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakitysKuittausType(writer, _laakitysKuittaus);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakitysKuittaus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakitysKuittaus. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakitysKuittaus.
+ *
+ * @param _laakitysKuittaus The LaakitysKuittaus whose children are to be free.
+ */
+static void freeNs0LaakitysKuittausElement(struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus) {
+  freeNs0LaakitysKuittausType(_laakitysKuittaus);
+}
+
+/**
+ * Reads a LaakitysKuittaus from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakitysKuittaus, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitysKuittaus *xmlTextReaderReadNs0LaakitysKuittausType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus = calloc(1, sizeof(struct CoreWEB_ns0_laakitysKuittaus));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakitysKuittausType(_laakitysKuittaus);
+        free(_laakitysKuittaus);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "rooli", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}rooli of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}rooli of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKuittausType(_laakitysKuittaus);
+          free(_laakitysKuittaus);
+          return NULL;
+        }
+
+        _laakitysKuittaus->rooli = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kuitattu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kuitattu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kuitattu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKuittausType(_laakitysKuittaus);
+          free(_laakitysKuittaus);
+          return NULL;
+        }
+
+        _laakitysKuittaus->kuitattu = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "kuittaaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}kuittaaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}kuittaaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysKuittausType(_laakitysKuittaus);
+          free(_laakitysKuittaus);
+          return NULL;
+        }
+
+        _laakitysKuittaus->kuittaaja = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakitysKuittaus.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakitysKuittaus. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakitysKuittaus;
+}
+
+/**
+ * Writes a LaakitysKuittaus to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysKuittaus The LaakitysKuittaus to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakitysKuittausType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "rooli", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}rooli. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}rooli...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitysKuittaus->rooli));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}rooli. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}rooli. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysKuittaus->kuitattu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kuitattu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kuitattu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}kuitattu...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitysKuittaus->kuitattu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}kuitattu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kuitattu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "kuittaaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}kuittaaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}kuittaaja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitysKuittaus->kuittaaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}kuittaaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}kuittaaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakitysKuittaus.
+ *
+ * @param _laakitysKuittaus The LaakitysKuittaus to free.
+ */
+static void freeNs0LaakitysKuittausType(struct CoreWEB_ns0_laakitysKuittaus *_laakitysKuittaus) {
+  int i;
+  if (_laakitysKuittaus->kuitattu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor kuitattu of type CoreWEB_ns0_laakitysKuittaus...\n");
+#endif
+    freeXsDateTimeType(_laakitysKuittaus->kuitattu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor kuitattu of type CoreWEB_ns0_laakitysKuittaus...\n");
+#endif
+    free(_laakitysKuittaus->kuitattu);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakitysKuittaus_M */
+#ifndef DEF_CoreWEB_ns0_laakitysTapa_M
+#define DEF_CoreWEB_ns0_laakitysTapa_M
+
+/**
+ * Reads a LaakitysTapa element from XML. The element to be read is "laakitysTapa", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysTapa, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysTapa *xml_read_CoreWEB_ns0_laakitysTapa(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakitysTapaElement(reader);
+}
+
+/**
+ * Writes a LaakitysTapa to XML under element name "laakitysTapa".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTapa The LaakitysTapa to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakitysTapa(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTapa *_laakitysTapa) {
+  return xmlTextWriterWriteNs0LaakitysTapaElementNS(writer, _laakitysTapa, 1);
+}
+
+/**
+ * Frees a LaakitysTapa.
+ *
+ * @param _laakitysTapa The LaakitysTapa to free.
+ */
+void free_CoreWEB_ns0_laakitysTapa(struct CoreWEB_ns0_laakitysTapa *_laakitysTapa) {
+  freeNs0LaakitysTapaType(_laakitysTapa);
+  free(_laakitysTapa);
+}
+
+/**
+ * Reads a LaakitysTapa element from XML. The element to be read is "laakitysTapa", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysTapa, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysTapa *xmlTextReaderReadNs0LaakitysTapaElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakitysTapa *_laakitysTapa = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakitysTapa", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakitysTapa.\n");
+#endif
+    _laakitysTapa = xmlTextReaderReadNs0LaakitysTapaType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakitysTapa == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakitysTapa failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakitysTapa failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakitysTapa;
+}
+
+/**
+ * Writes a LaakitysTapa to XML under element name "laakitysTapa".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTapa The LaakitysTapa to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysTapaElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTapa *_laakitysTapa) {
+  return xmlTextWriterWriteNs0LaakitysTapaElementNS(writer, _laakitysTapa, 0);
+}
+
+/**
+ * Writes a LaakitysTapa to XML under element name "laakitysTapa".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTapa The LaakitysTapa to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysTapaElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTapa *_laakitysTapa, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakitysTapa", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakitysTapa. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakitysTapa for root element {}laakitysTapa...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakitysTapaType(writer, _laakitysTapa);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakitysTapa. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakitysTapa. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakitysTapa.
+ *
+ * @param _laakitysTapa The LaakitysTapa whose children are to be free.
+ */
+static void freeNs0LaakitysTapaElement(struct CoreWEB_ns0_laakitysTapa *_laakitysTapa) {
+  freeNs0LaakitysTapaType(_laakitysTapa);
+}
+
+/**
+ * Reads a LaakitysTapa from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakitysTapa, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitysTapa *xmlTextReaderReadNs0LaakitysTapaType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakitysTapa *_laakitysTapa = calloc(1, sizeof(struct CoreWEB_ns0_laakitysTapa));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakitysTapaType(_laakitysTapa);
+        free(_laakitysTapa);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "reittikoodi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}reittikoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}reittikoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTapaType(_laakitysTapa);
+          free(_laakitysTapa);
+          return NULL;
+        }
+
+        _laakitysTapa->reittikoodi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "reittiteksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}reittiteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}reittiteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTapaType(_laakitysTapa);
+          free(_laakitysTapa);
+          return NULL;
+        }
+
+        _laakitysTapa->reittiteksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "paikkakoodi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}paikkakoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}paikkakoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTapaType(_laakitysTapa);
+          free(_laakitysTapa);
+          return NULL;
+        }
+
+        _laakitysTapa->paikkakoodi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "paikkateksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}paikkateksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}paikkateksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTapaType(_laakitysTapa);
+          free(_laakitysTapa);
+          return NULL;
+        }
+
+        _laakitysTapa->paikkateksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "valinekoodi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}valinekoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}valinekoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTapaType(_laakitysTapa);
+          free(_laakitysTapa);
+          return NULL;
+        }
+
+        _laakitysTapa->valinekoodi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "valineteksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}valineteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}valineteksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTapaType(_laakitysTapa);
+          free(_laakitysTapa);
+          return NULL;
+        }
+
+        _laakitysTapa->valineteksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tapakoodi", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tapakoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tapakoodi of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTapaType(_laakitysTapa);
+          free(_laakitysTapa);
+          return NULL;
+        }
+
+        _laakitysTapa->tapakoodi = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "tapateksti", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}tapateksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}tapateksti of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTapaType(_laakitysTapa);
+          free(_laakitysTapa);
+          return NULL;
+        }
+
+        _laakitysTapa->tapateksti = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakitysTapa.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakitysTapa. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakitysTapa;
+}
+
+/**
+ * Writes a LaakitysTapa to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTapa The LaakitysTapa to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakitysTapaType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTapa *_laakitysTapa) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (_laakitysTapa->reittikoodi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "reittikoodi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}reittikoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}reittikoodi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysTapa->reittikoodi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}reittikoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}reittikoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTapa->reittiteksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "reittiteksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}reittiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}reittiteksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysTapa->reittiteksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}reittiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}reittiteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTapa->paikkakoodi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "paikkakoodi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}paikkakoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}paikkakoodi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysTapa->paikkakoodi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}paikkakoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}paikkakoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTapa->paikkateksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "paikkateksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}paikkateksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}paikkateksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysTapa->paikkateksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}paikkateksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}paikkateksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTapa->valinekoodi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "valinekoodi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}valinekoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}valinekoodi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysTapa->valinekoodi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}valinekoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}valinekoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTapa->valineteksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "valineteksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}valineteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}valineteksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysTapa->valineteksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}valineteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}valineteksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTapa->tapakoodi != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tapakoodi", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tapakoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}tapakoodi...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysTapa->tapakoodi));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}tapakoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tapakoodi. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTapa->tapateksti != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "tapateksti", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}tapateksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}tapateksti...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysTapa->tapateksti));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}tapateksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}tapateksti. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakitysTapa.
+ *
+ * @param _laakitysTapa The LaakitysTapa to free.
+ */
+static void freeNs0LaakitysTapaType(struct CoreWEB_ns0_laakitysTapa *_laakitysTapa) {
+  int i;
+  if (_laakitysTapa->reittikoodi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor reittikoodi of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    freeXsStringType(_laakitysTapa->reittikoodi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor reittikoodi of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    free(_laakitysTapa->reittikoodi);
+  }
+  if (_laakitysTapa->reittiteksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor reittiteksti of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    freeXsStringType(_laakitysTapa->reittiteksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor reittiteksti of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    free(_laakitysTapa->reittiteksti);
+  }
+  if (_laakitysTapa->paikkakoodi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor paikkakoodi of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    freeXsStringType(_laakitysTapa->paikkakoodi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor paikkakoodi of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    free(_laakitysTapa->paikkakoodi);
+  }
+  if (_laakitysTapa->paikkateksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor paikkateksti of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    freeXsStringType(_laakitysTapa->paikkateksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor paikkateksti of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    free(_laakitysTapa->paikkateksti);
+  }
+  if (_laakitysTapa->valinekoodi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor valinekoodi of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    freeXsStringType(_laakitysTapa->valinekoodi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor valinekoodi of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    free(_laakitysTapa->valinekoodi);
+  }
+  if (_laakitysTapa->valineteksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor valineteksti of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    freeXsStringType(_laakitysTapa->valineteksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor valineteksti of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    free(_laakitysTapa->valineteksti);
+  }
+  if (_laakitysTapa->tapakoodi != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tapakoodi of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    freeXsStringType(_laakitysTapa->tapakoodi);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tapakoodi of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    free(_laakitysTapa->tapakoodi);
+  }
+  if (_laakitysTapa->tapateksti != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor tapateksti of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    freeXsStringType(_laakitysTapa->tapateksti);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor tapateksti of type CoreWEB_ns0_laakitysTapa...\n");
+#endif
+    free(_laakitysTapa->tapateksti);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakitysTapa_M */
+#ifndef DEF_CoreWEB_ns0_laakitysTauko_M
+#define DEF_CoreWEB_ns0_laakitysTauko_M
+
+/**
+ * Reads a LaakitysTauko element from XML. The element to be read is "laakitysTauko", and
+ * it is assumed that the reader is pointing to the XML document (not the element).
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysTauko, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysTauko *xml_read_CoreWEB_ns0_laakitysTauko(xmlTextReaderPtr reader) {
+  int status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+  return xmlTextReaderReadNs0LaakitysTaukoElement(reader);
+}
+
+/**
+ * Writes a LaakitysTauko to XML under element name "laakitysTauko".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTauko The LaakitysTauko to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+int xml_write_CoreWEB_ns0_laakitysTauko(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTauko *_laakitysTauko) {
+  return xmlTextWriterWriteNs0LaakitysTaukoElementNS(writer, _laakitysTauko, 1);
+}
+
+/**
+ * Frees a LaakitysTauko.
+ *
+ * @param _laakitysTauko The LaakitysTauko to free.
+ */
+void free_CoreWEB_ns0_laakitysTauko(struct CoreWEB_ns0_laakitysTauko *_laakitysTauko) {
+  freeNs0LaakitysTaukoType(_laakitysTauko);
+  free(_laakitysTauko);
+}
+
+/**
+ * Reads a LaakitysTauko element from XML. The element to be read is "laakitysTauko", and
+ * it is assumed that the reader is pointing to that element.
+ *
+ * @param reader The XML reader.
+ * @return The LaakitysTauko, or NULL in case of error.
+ */
+struct CoreWEB_ns0_laakitysTauko *xmlTextReaderReadNs0LaakitysTaukoElement(xmlTextReaderPtr reader) {
+  struct CoreWEB_ns0_laakitysTauko *_laakitysTauko = NULL;
+
+  if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+    && xmlStrcmp(BAD_CAST "laakitysTauko", xmlTextReaderConstLocalName(reader)) == 0
+    && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Attempting to read root element {}laakitysTauko.\n");
+#endif
+    _laakitysTauko = xmlTextReaderReadNs0LaakitysTaukoType(reader);
+  }
+#if DEBUG_ENUNCIATE
+  if (_laakitysTauko == NULL) {
+    if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+      printf("attempt to read {}laakitysTauko failed. current element: {}%s\n",  xmlTextReaderConstLocalName(reader));
+    }
+    else {
+      printf("attempt to read {}laakitysTauko failed. current element: {%s}%s\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+    }
+  }
+#endif
+
+  return _laakitysTauko;
+}
+
+/**
+ * Writes a LaakitysTauko to XML under element name "laakitysTauko".
+ * Does NOT write the namespace prefixes.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTauko The LaakitysTauko to write.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysTaukoElement(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTauko *_laakitysTauko) {
+  return xmlTextWriterWriteNs0LaakitysTaukoElementNS(writer, _laakitysTauko, 0);
+}
+
+/**
+ * Writes a LaakitysTauko to XML under element name "laakitysTauko".
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTauko The LaakitysTauko to write.
+ * @param writeNamespaces Whether to write the namespace prefixes.
+ * @return 1 if successful, 0 otherwise.
+ */
+static int xmlTextWriterWriteNs0LaakitysTaukoElementNS(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTauko *_laakitysTauko, int writeNamespaces) {
+  int totalBytes = 0;
+  int status;
+
+  status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "laakitysTauko", NULL);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write start element {}laakitysTauko. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+#if DEBUG_ENUNCIATE > 1
+  printf("writing type {}laakitysTauko for root element {}laakitysTauko...\n");
+#endif
+  status = xmlTextWriterWriteNs0LaakitysTaukoType(writer, _laakitysTauko);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to write type for start element {}laakitysTauko. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  status = xmlTextWriterEndElement(writer);
+  if (status < 0) {
+#if DEBUG_ENUNCIATE
+    printf("unable to end element {}laakitysTauko. status: %i\n", status);
+#endif
+    return status;
+  }
+  totalBytes += status;
+
+  return totalBytes;
+}
+
+/**
+ * Frees the children of a LaakitysTauko.
+ *
+ * @param _laakitysTauko The LaakitysTauko whose children are to be free.
+ */
+static void freeNs0LaakitysTaukoElement(struct CoreWEB_ns0_laakitysTauko *_laakitysTauko) {
+  freeNs0LaakitysTaukoType(_laakitysTauko);
+}
+
+/**
+ * Reads a LaakitysTauko from XML. The reader is assumed to be at the start element.
+ *
+ * @return the LaakitysTauko, or NULL in case of error.
+ */
+static struct CoreWEB_ns0_laakitysTauko *xmlTextReaderReadNs0LaakitysTaukoType(xmlTextReaderPtr reader) {
+  int status, depth;
+  void *_child_accessor;
+  struct CoreWEB_ns0_laakitysTauko *_laakitysTauko = calloc(1, sizeof(struct CoreWEB_ns0_laakitysTauko));
+
+
+
+  if (xmlTextReaderIsEmptyElement(reader) == 0) {
+    depth = xmlTextReaderDepth(reader);//track the depth.
+    status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+
+    while (xmlTextReaderDepth(reader) > depth) {
+      if (status < 1) {
+        //panic: XML read error.
+#if DEBUG_ENUNCIATE
+        printf("Failure to advance to next child element.\n");
+#endif
+        freeNs0LaakitysTaukoType(_laakitysTauko);
+        free(_laakitysTauko);
+        return NULL;
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "alkaa", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}alkaa of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}alkaa of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTaukoType(_laakitysTauko);
+          free(_laakitysTauko);
+          return NULL;
+        }
+
+        _laakitysTauko->alkaa = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "loppuu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}loppuu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}loppuu of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTaukoType(_laakitysTauko);
+          free(_laakitysTauko);
+          return NULL;
+        }
+
+        _laakitysTauko->loppuu = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "huomautuksia", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}huomautuksia of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsStringType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}huomautuksia of type {http://www.w3.org/2001/XMLSchema}string.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTaukoType(_laakitysTauko);
+          free(_laakitysTauko);
+          return NULL;
+        }
+
+        _laakitysTauko->huomautuksia = ((xmlChar*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "aloittaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}aloittaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}aloittaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTaukoType(_laakitysTauko);
+          free(_laakitysTauko);
+          return NULL;
+        }
+
+        _laakitysTauko->aloittaja = *((int*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "lopettaja", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}lopettaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsIntType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}lopettaja of type {http://www.w3.org/2001/XMLSchema}int.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTaukoType(_laakitysTauko);
+          free(_laakitysTauko);
+          return NULL;
+        }
+
+        _laakitysTauko->lopettaja = ((int*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "poistettu", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsUnsignedShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}poistettu of type {http://www.w3.org/2001/XMLSchema}unsignedShort.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTaukoType(_laakitysTauko);
+          free(_laakitysTauko);
+          return NULL;
+        }
+
+        _laakitysTauko->poistettu = *((unsigned short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutosaika", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsDateTimeType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutosaika of type {http://www.w3.org/2001/XMLSchema}dateTime.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTaukoType(_laakitysTauko);
+          free(_laakitysTauko);
+          return NULL;
+        }
+
+        _laakitysTauko->muutosaika = ((struct tm*)_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT
+        && xmlStrcmp(BAD_CAST "muutospaikka", xmlTextReaderConstLocalName(reader)) == 0
+        && xmlTextReaderConstNamespaceUri(reader) == NULL) {
+
+#if DEBUG_ENUNCIATE > 1
+        printf("Attempting to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+        _child_accessor = xmlTextReaderReadXsShortType(reader);
+        if (_child_accessor == NULL) {
+#if DEBUG_ENUNCIATE
+          printf("Failed to read choice {}muutospaikka of type {http://www.w3.org/2001/XMLSchema}short.\n");
+#endif
+          //panic: unable to read the child element for some reason.
+          freeNs0LaakitysTaukoType(_laakitysTauko);
+          free(_laakitysTauko);
+          return NULL;
+        }
+
+        _laakitysTauko->muutospaikka = *((short*)_child_accessor);
+        free(_child_accessor);
+        status = xmlTextReaderAdvanceToNextStartOrEndElement(reader);
+      }
+      else {
+#if DEBUG_ENUNCIATE > 1
+        if (xmlTextReaderConstNamespaceUri(reader) == NULL) {
+          printf("unknown child element {}%s for type {}laakitysTauko.  Skipping...\n",  xmlTextReaderConstLocalName(reader));
+        }
+        else {
+          printf("unknown child element {%s}%s for type {}laakitysTauko. Skipping...\n", xmlTextReaderConstNamespaceUri(reader), xmlTextReaderConstLocalName(reader));
+        }
+#endif
+        status = xmlTextReaderSkipElement(reader);
+      }
+    }
+  }
+
+  return _laakitysTauko;
+}
+
+/**
+ * Writes a LaakitysTauko to XML.
+ *
+ * @param writer The XML writer.
+ * @param _laakitysTauko The LaakitysTauko to write.
+ * @return The total bytes written, or -1 on error;
+ */
+static int xmlTextWriterWriteNs0LaakitysTaukoType(xmlTextWriterPtr writer, struct CoreWEB_ns0_laakitysTauko *_laakitysTauko) {
+  int status, totalBytes = 0, i;
+  xmlChar *binaryData;
+  if (_laakitysTauko->alkaa != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "alkaa", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}alkaa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}alkaa...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitysTauko->alkaa));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}alkaa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}alkaa. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTauko->loppuu != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "loppuu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}loppuu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}loppuu...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitysTauko->loppuu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}loppuu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}loppuu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTauko->huomautuksia != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "huomautuksia", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}huomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}string for element {}huomautuksia...\n");
+#endif
+    status = xmlTextWriterWriteXsStringType(writer, (_laakitysTauko->huomautuksia));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}string for element {}huomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}huomautuksia. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "aloittaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}aloittaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}aloittaja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, &(_laakitysTauko->aloittaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}aloittaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}aloittaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTauko->lopettaja != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "lopettaja", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}lopettaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}int for element {}lopettaja...\n");
+#endif
+    status = xmlTextWriterWriteXsIntType(writer, (_laakitysTauko->lopettaja));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}int for element {}lopettaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}lopettaja. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "poistettu", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu...\n");
+#endif
+    status = xmlTextWriterWriteXsUnsignedShortType(writer, &(_laakitysTauko->poistettu));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}unsignedShort for element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}poistettu. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (_laakitysTauko->muutosaika != NULL) {
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutosaika", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika...\n");
+#endif
+    status = xmlTextWriterWriteXsDateTimeType(writer, (_laakitysTauko->muutosaika));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}dateTime for element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutosaika. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+  if (1) { //always write the primitive element.
+    status = xmlTextWriterStartElementNS(writer, NULL, BAD_CAST "muutospaikka", NULL);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write start element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+#if DEBUG_ENUNCIATE > 1
+    printf("writing type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka...\n");
+#endif
+    status = xmlTextWriterWriteXsShortType(writer, &(_laakitysTauko->muutospaikka));
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write type {http://www.w3.org/2001/XMLSchema}short for element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+
+    status = xmlTextWriterEndElement(writer);
+    if (status < 0) {
+#if DEBUG_ENUNCIATE
+      printf("Failed to write end element {}muutospaikka. status: %i\n", status);
+#endif
+      return status;
+    }
+    totalBytes += status;
+  }
+
+  return totalBytes;
+}
+
+/**
+ * Frees the elements of a LaakitysTauko.
+ *
+ * @param _laakitysTauko The LaakitysTauko to free.
+ */
+static void freeNs0LaakitysTaukoType(struct CoreWEB_ns0_laakitysTauko *_laakitysTauko) {
+  int i;
+  if (_laakitysTauko->alkaa != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor alkaa of type CoreWEB_ns0_laakitysTauko...\n");
+#endif
+    freeXsDateTimeType(_laakitysTauko->alkaa);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor alkaa of type CoreWEB_ns0_laakitysTauko...\n");
+#endif
+    free(_laakitysTauko->alkaa);
+  }
+  if (_laakitysTauko->loppuu != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor loppuu of type CoreWEB_ns0_laakitysTauko...\n");
+#endif
+    freeXsDateTimeType(_laakitysTauko->loppuu);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor loppuu of type CoreWEB_ns0_laakitysTauko...\n");
+#endif
+    free(_laakitysTauko->loppuu);
+  }
+  if (_laakitysTauko->huomautuksia != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor huomautuksia of type CoreWEB_ns0_laakitysTauko...\n");
+#endif
+    freeXsStringType(_laakitysTauko->huomautuksia);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor huomautuksia of type CoreWEB_ns0_laakitysTauko...\n");
+#endif
+    free(_laakitysTauko->huomautuksia);
+  }
+  if (_laakitysTauko->lopettaja != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor lopettaja of type CoreWEB_ns0_laakitysTauko...\n");
+#endif
+    freeXsIntType(_laakitysTauko->lopettaja);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor lopettaja of type CoreWEB_ns0_laakitysTauko...\n");
+#endif
+    free(_laakitysTauko->lopettaja);
+  }
+  if (_laakitysTauko->muutosaika != NULL) {
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing type of accessor muutosaika of type CoreWEB_ns0_laakitysTauko...\n");
+#endif
+    freeXsDateTimeType(_laakitysTauko->muutosaika);
+#if DEBUG_ENUNCIATE > 1
+    printf("Freeing accessor muutosaika of type CoreWEB_ns0_laakitysTauko...\n");
+#endif
+    free(_laakitysTauko->muutosaika);
+  }
+}
+#endif /* DEF_CoreWEB_ns0_laakitysTauko_M */
 #ifndef DEF_CoreWEB_ns0_date_M
 #define DEF_CoreWEB_ns0_date_M
 

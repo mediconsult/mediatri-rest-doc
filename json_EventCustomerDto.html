@@ -100,9 +100,27 @@
 </td>
         </tr>
         <tr>
+          <td>  serviceDecisionStatus
+</td>
+          <td>  <a href="json_EventServiceDecisionStatus.html">EventServiceDecisionStatus</a>
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
           <td>  serviceDecision
 </td>
           <td>  <a href="json_Palvelupaatos.html">Palvelupaatos</a>
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  homeAddress
+</td>
+          <td>  string
 
 </td>
           <td>  
@@ -179,12 +197,6 @@
 </td>
           <td></td>
         </tr>
-        <tr>
-          <td>removed</td>
-          <td>boolean
-</td>
-          <td></td>
-        </tr>
         </tbody>
       </table>
 
@@ -193,7 +205,16 @@
       <pre class="prettyprint lang-js">{
   &quot;amount&quot; : 12345,
   &quot;coursePeriodId&quot; : 12345,
+  &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
   &quot;serviceDecision&quot; : {
+    &quot;permissions&quot; : {
+      &quot;view&quot; : true,
+      &quot;change&quot; : true,
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;remove&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
     &quot;paatos&quot; : 12345,
     &quot;palveluluokkaTunnus&quot; : &quot;...&quot;,
     &quot;palveluluokka&quot; : {
@@ -215,29 +236,29 @@
       &quot;tapahtumamalli&quot; : &quot;...&quot;,
       &quot;laskettavatTilat&quot; : [ &quot;SUUNNITELTU&quot;, &quot;SUUNNITELTU&quot; ]
     },
-    &quot;alkaa&quot; : { },
+    &quot;alkaa&quot; : 12345,
     &quot;diaarinumero&quot; : &quot;...&quot;,
-    &quot;haettu&quot; : { },
+    &quot;haettu&quot; : 12345,
     &quot;huomautuksia&quot; : &quot;...&quot;,
     &quot;kayttajaryhma&quot; : 12345,
     &quot;kustannuspaikka&quot; : 12345,
     &quot;kuukausimaksu&quot; : 12345.0,
     &quot;laki&quot; : &quot;...&quot;,
-    &quot;laskutusalkaa&quot; : { },
-    &quot;loppuu&quot; : { },
+    &quot;laskutusalkaa&quot; : 12345,
+    &quot;loppuu&quot; : 12345,
     &quot;luokittelu1&quot; : &quot;...&quot;,
     &quot;luokittelu2&quot; : &quot;...&quot;,
     &quot;maara&quot; : 12345,
     &quot;maksuperuste&quot; : &quot;...&quot;,
     &quot;mitatoija&quot; : 12345,
     &quot;mitatoijaUser&quot; : {
-      &quot;skills&quot; : { },
       &quot;lastName&quot; : &quot;...&quot;,
       &quot;startTime&quot; : 12345,
-      &quot;basicInfo&quot; : { },
       &quot;endTime&quot; : 12345,
       &quot;userName&quot; : &quot;...&quot;,
       &quot;firstName&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;skills&quot; : { },
       &quot;name&quot; : &quot;...&quot;,
       &quot;nameExtension&quot; : &quot;...&quot;,
       &quot;editTime&quot; : 12345,
@@ -248,7 +269,7 @@
     &quot;mitatoity&quot; : 12345,
     &quot;muutosaika&quot; : 12345,
     &quot;muutospaikka&quot; : 12345,
-    &quot;paatetty&quot; : { },
+    &quot;paatetty&quot; : 12345,
     &quot;paatosyksikko&quot; : 12345,
     &quot;paatosyksikkoUnit&quot; : {
       &quot;abbreviation&quot; : &quot;...&quot;,
@@ -261,13 +282,13 @@
     },
     &quot;paattaja&quot; : 12345,
     &quot;paattajaUser&quot; : {
-      &quot;skills&quot; : { },
       &quot;lastName&quot; : &quot;...&quot;,
       &quot;startTime&quot; : 12345,
-      &quot;basicInfo&quot; : { },
       &quot;endTime&quot; : 12345,
       &quot;userName&quot; : &quot;...&quot;,
       &quot;firstName&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;skills&quot; : { },
       &quot;name&quot; : &quot;...&quot;,
       &quot;nameExtension&quot; : &quot;...&quot;,
       &quot;editTime&quot; : 12345,
@@ -283,16 +304,16 @@
     &quot;tilasto2&quot; : &quot;...&quot;,
     &quot;tilasto3&quot; : &quot;...&quot;,
     &quot;tulot&quot; : 12345.0,
-    &quot;valitettu&quot; : { },
+    &quot;valitettu&quot; : 12345,
     &quot;valmistelija&quot; : 12345,
     &quot;valmistelijaUser&quot; : {
-      &quot;skills&quot; : { },
       &quot;lastName&quot; : &quot;...&quot;,
       &quot;startTime&quot; : 12345,
-      &quot;basicInfo&quot; : { },
       &quot;endTime&quot; : 12345,
       &quot;userName&quot; : &quot;...&quot;,
       &quot;firstName&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;skills&quot; : { },
       &quot;name&quot; : &quot;...&quot;,
       &quot;nameExtension&quot; : &quot;...&quot;,
       &quot;editTime&quot; : 12345,
@@ -316,24 +337,49 @@
       &quot;property2&quot; : &quot;...&quot;
     },
     &quot;palvelukeskeytykset&quot; : [ {
-      &quot;alkaa&quot; : { },
+      &quot;alkaa&quot; : 12345,
       &quot;paatos&quot; : 12345,
       &quot;syy&quot; : &quot;...&quot;,
-      &quot;loppuu&quot; : { },
-      &quot;alkuaika&quot; : { },
-      &quot;loppuaika&quot; : { },
+      &quot;loppuu&quot; : 12345,
+      &quot;alkuaika&quot; : &quot;...&quot;,
+      &quot;loppuaika&quot; : &quot;...&quot;,
       &quot;alusta&quot; : true,
       &quot;laskutetaan&quot; : 12345,
       &quot;huomautuksia&quot; : &quot;...&quot;,
       &quot;muutosaika&quot; : 12345,
       &quot;poistettu&quot; : true
     }, {
-      &quot;alkaa&quot; : { },
+      &quot;alkaa&quot; : 12345,
       &quot;paatos&quot; : 12345,
       &quot;syy&quot; : &quot;...&quot;,
-      &quot;loppuu&quot; : { },
-      &quot;alkuaika&quot; : { },
-      &quot;loppuaika&quot; : { },
+      &quot;loppuu&quot; : 12345,
+      &quot;alkuaika&quot; : &quot;...&quot;,
+      &quot;loppuaika&quot; : &quot;...&quot;,
+      &quot;alusta&quot; : true,
+      &quot;laskutetaan&quot; : 12345,
+      &quot;huomautuksia&quot; : &quot;...&quot;,
+      &quot;muutosaika&quot; : 12345,
+      &quot;poistettu&quot; : true
+    } ],
+    &quot;effectivePalvelukeskeytykset&quot; : [ {
+      &quot;alkaa&quot; : 12345,
+      &quot;paatos&quot; : 12345,
+      &quot;syy&quot; : &quot;...&quot;,
+      &quot;loppuu&quot; : 12345,
+      &quot;alkuaika&quot; : &quot;...&quot;,
+      &quot;loppuaika&quot; : &quot;...&quot;,
+      &quot;alusta&quot; : true,
+      &quot;laskutetaan&quot; : 12345,
+      &quot;huomautuksia&quot; : &quot;...&quot;,
+      &quot;muutosaika&quot; : 12345,
+      &quot;poistettu&quot; : true
+    }, {
+      &quot;alkaa&quot; : 12345,
+      &quot;paatos&quot; : 12345,
+      &quot;syy&quot; : &quot;...&quot;,
+      &quot;loppuu&quot; : 12345,
+      &quot;alkuaika&quot; : &quot;...&quot;,
+      &quot;loppuaika&quot; : &quot;...&quot;,
       &quot;alusta&quot; : true,
       &quot;laskutetaan&quot; : 12345,
       &quot;huomautuksia&quot; : &quot;...&quot;,
@@ -341,6 +387,7 @@
       &quot;poistettu&quot; : true
     } ]
   },
+  &quot;homeAddress&quot; : &quot;...&quot;,
   &quot;id&quot; : 12345,
   &quot;unit&quot; : 12345,
   &quot;name&quot; : &quot;...&quot;,
@@ -359,20 +406,21 @@
     &quot;eventName&quot; : &quot;...&quot;
   } ],
   &quot;basicInfoTitles&quot; : [ {
-    &quot;vakio&quot; : &quot;...&quot;,
-    &quot;editModel&quot; : true,
-    &quot;type&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
-    &quot;vapaa&quot; : &quot;...&quot;
+    &quot;vapaa&quot; : &quot;...&quot;,
+    &quot;emptyValue&quot; : true,
+    &quot;type&quot; : 12345,
+    &quot;vakio&quot; : &quot;...&quot;,
+    &quot;editModel&quot; : true
   }, {
-    &quot;vakio&quot; : &quot;...&quot;,
-    &quot;editModel&quot; : true,
-    &quot;type&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
-    &quot;vapaa&quot; : &quot;...&quot;
+    &quot;vapaa&quot; : &quot;...&quot;,
+    &quot;emptyValue&quot; : true,
+    &quot;type&quot; : 12345,
+    &quot;vakio&quot; : &quot;...&quot;,
+    &quot;editModel&quot; : true
   } ],
-  &quot;participantId&quot; : 12345,
-  &quot;removed&quot; : true
+  &quot;participantId&quot; : 12345
 }</pre>
 
         <footer class="footer">

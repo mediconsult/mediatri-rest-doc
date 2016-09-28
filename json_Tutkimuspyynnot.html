@@ -82,9 +82,9 @@
         </thead>
         <tbody>
         <tr>
-          <td>  patientId
+          <td>  permissionDTO
 </td>
-          <td>  number
+          <td>  <a href="json_Permission.html">Permission</a>
 
 </td>
           <td>  
@@ -100,9 +100,9 @@
 </td>
         </tr>
         <tr>
-          <td>  permissionDTO
+          <td>  patientId
 </td>
-          <td>  <a href="json_Permission.html">Permission</a>
+          <td>  number
 
 </td>
           <td>  
@@ -114,7 +114,12 @@
       <p class="lead">Example</p>
 
       <pre class="prettyprint lang-js">{
-  &quot;patientId&quot; : 12345,
+  &quot;permissionDTO&quot; : {
+    &quot;permissions&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    }
+  },
   &quot;tutkimuspyyntoList&quot; : [ {
     &quot;tutkimus&quot; : &quot;...&quot;,
     &quot;tutkimuspyyntoTiedotList&quot; : [ {
@@ -342,12 +347,7 @@
     &quot;kategoria&quot; : &quot;...&quot;,
     &quot;latestTime&quot; : 12345
   } ],
-  &quot;permissionDTO&quot; : {
-    &quot;permissions&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
-    }
-  }
+  &quot;patientId&quot; : 12345
 }</pre>
 
         <footer class="footer">

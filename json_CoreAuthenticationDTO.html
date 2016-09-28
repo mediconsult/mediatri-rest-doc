@@ -189,6 +189,24 @@
           <td>  
 </td>
         </tr>
+        <tr>
+          <td>  componentRights
+</td>
+          <td>  array of <a href="json_ComponentRightDTO.html">ComponentRightDTO</a>
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  viewConfiguration
+</td>
+          <td>  <a href="json_ViewConfiguration.html">ViewConfiguration</a>
+
+</td>
+          <td>  
+</td>
+        </tr>
         </tbody>
       </table>
 
@@ -241,7 +259,39 @@
   &quot;message&quot; : &quot;Could not join context&quot;,
   &quot;patient&quot; : true,
   &quot;userId&quot; : 12345,
-  &quot;developer&quot; : true
+  &quot;developer&quot; : true,
+  &quot;componentRights&quot; : [ {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;BASIC_INFORMATION&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;view&quot; : true,
+      &quot;change&quot; : true,
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;remove&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    }
+  }, {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;BASIC_INFORMATION&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;view&quot; : true,
+      &quot;change&quot; : true,
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;remove&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    }
+  } ],
+  &quot;viewConfiguration&quot; : {
+    &quot;landingPage&quot; : &quot;BASIC_INFORMATION&quot;,
+    &quot;landingPageWithOwner&quot; : &quot;BASIC_INFORMATION&quot;,
+    &quot;components&quot; : [ &quot;BASIC_INFORMATION&quot;, &quot;BASIC_INFORMATION&quot; ]
+  }
 }</pre>
 
         <footer class="footer">

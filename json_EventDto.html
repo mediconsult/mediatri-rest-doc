@@ -181,6 +181,15 @@
 </td>
         </tr>
         <tr>
+          <td>  eventModel
+</td>
+          <td>  <a href="json_EventModelDto.html">EventModelDto</a>
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
           <td>  unitBasicInfoTitles
 </td>
           <td>  array of <a href="json_BaseTitleValue.html">BaseTitleValue</a>
@@ -194,6 +203,12 @@
           <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_KuhaDtoBase.html">KuhaDtoBase</a></h5></td>
         </tr>
         <tbody>
+        <tr>
+          <td>version</td>
+          <td>number
+</td>
+          <td></td>
+        </tr>
         <tr>
           <td>id</td>
           <td>number
@@ -232,12 +247,12 @@
   },
   &quot;excludedDays&quot; : [ &quot;...&quot;, &quot;...&quot; ],
   &quot;reportingGroup&quot; : {
-    &quot;version&quot; : 12345,
     &quot;color&quot; : &quot;...&quot;,
     &quot;meaning&quot; : &quot;AVAILABLE&quot;,
     &quot;calendarModelFormId&quot; : 12345,
     &quot;category&quot; : &quot;WORK&quot;,
     &quot;eventModels&quot; : [ {
+      &quot;defaultTitleValues&quot; : [ { }, { } ],
       &quot;basicData&quot; : {
         &quot;property1&quot; : &quot;...&quot;,
         &quot;property2&quot; : &quot;...&quot;
@@ -249,6 +264,7 @@
       &quot;defaultDurationInMins&quot; : 12345,
       &quot;startTimeLimit&quot; : &quot;...&quot;,
       &quot;endTimeLimit&quot; : &quot;...&quot;,
+      &quot;timeLimitChangeable&quot; : true,
       &quot;requiredSkills&quot; : [ { }, { } ],
       &quot;requiredRoomGroups&quot; : [ { }, { } ],
       &quot;requiredEquipmentTypes&quot; : [ { }, { } ],
@@ -258,13 +274,17 @@
       &quot;waitingRoom&quot; : &quot;...&quot;,
       &quot;serviceClass&quot; : &quot;...&quot;,
       &quot;serviceClassChangeable&quot; : true,
+      &quot;outdated&quot; : true,
+      &quot;hasEvents&quot; : true,
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
+      &quot;defaultTitleValues&quot; : [ { }, { } ],
       &quot;basicData&quot; : {
         &quot;property1&quot; : &quot;...&quot;,
         &quot;property2&quot; : &quot;...&quot;
@@ -276,6 +296,7 @@
       &quot;defaultDurationInMins&quot; : 12345,
       &quot;startTimeLimit&quot; : &quot;...&quot;,
       &quot;endTimeLimit&quot; : &quot;...&quot;,
+      &quot;timeLimitChangeable&quot; : true,
       &quot;requiredSkills&quot; : [ { }, { } ],
       &quot;requiredRoomGroups&quot; : [ { }, { } ],
       &quot;requiredEquipmentTypes&quot; : [ { }, { } ],
@@ -285,9 +306,12 @@
       &quot;waitingRoom&quot; : &quot;...&quot;,
       &quot;serviceClass&quot; : &quot;...&quot;,
       &quot;serviceClassChangeable&quot; : true,
+      &quot;outdated&quot; : true,
+      &quot;hasEvents&quot; : true,
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -295,23 +319,162 @@
     &quot;name&quot; : &quot;...&quot;,
     &quot;abbr&quot; : &quot;...&quot;,
     &quot;description&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
+  },
+  &quot;eventModel&quot; : {
+    &quot;defaultTitleValues&quot; : [ {
+      &quot;eventModelContentGroupId&quot; : 12345,
+      &quot;freeItems&quot; : [ { }, { } ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;eventModelContentGroupId&quot; : 12345,
+      &quot;freeItems&quot; : [ { }, { } ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;basicData&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;reportingGroupId&quot; : 12345,
+    &quot;calendarModelFormId&quot; : 12345,
+    &quot;defaultUnit&quot; : 12345,
+    &quot;internalNote&quot; : &quot;...&quot;,
+    &quot;defaultDurationInMins&quot; : 12345,
+    &quot;startTimeLimit&quot; : &quot;...&quot;,
+    &quot;endTimeLimit&quot; : &quot;...&quot;,
+    &quot;timeLimitChangeable&quot; : true,
+    &quot;requiredSkills&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;requiredRoomGroups&quot; : [ {
+      &quot;roomDtos&quot; : [ { }, { } ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;roomDtos&quot; : [ { }, { } ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;requiredEquipmentTypes&quot; : [ {
+      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER&quot;,
+      &quot;amount&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER&quot;,
+      &quot;amount&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;contentGroups&quot; : [ {
+      &quot;freeItems&quot; : [ { }, { } ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;freeItems&quot; : [ { }, { } ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;order&quot; : 12345,
+      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;minParticipants&quot; : 12345,
+    &quot;maxParticipants&quot; : 12345,
+    &quot;waitingRoom&quot; : &quot;...&quot;,
+    &quot;serviceClass&quot; : &quot;...&quot;,
+    &quot;serviceClassChangeable&quot; : true,
+    &quot;outdated&quot; : true,
+    &quot;hasEvents&quot; : true,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;abbr&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   },
   &quot;unitBasicInfoTitles&quot; : [ {
-    &quot;vakio&quot; : &quot;...&quot;,
-    &quot;editModel&quot; : true,
-    &quot;type&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
-    &quot;vapaa&quot; : &quot;...&quot;
+    &quot;vapaa&quot; : &quot;...&quot;,
+    &quot;emptyValue&quot; : true,
+    &quot;type&quot; : 12345,
+    &quot;vakio&quot; : &quot;...&quot;,
+    &quot;editModel&quot; : true
   }, {
-    &quot;vakio&quot; : &quot;...&quot;,
-    &quot;editModel&quot; : true,
-    &quot;type&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
-    &quot;vapaa&quot; : &quot;...&quot;
+    &quot;vapaa&quot; : &quot;...&quot;,
+    &quot;emptyValue&quot; : true,
+    &quot;type&quot; : 12345,
+    &quot;vakio&quot; : &quot;...&quot;,
+    &quot;editModel&quot; : true
   } ],
+  &quot;version&quot; : 12345,
   &quot;id&quot; : 12345,
   &quot;created&quot; : 12345,
   &quot;modified&quot; : 12345

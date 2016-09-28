@@ -66,7 +66,7 @@
 
       <h1 class="page-header">CalendarEventContentGroupDto <small>Data Type</small></h1>
 
-      <p>Data transfer object class for user defined content groups in calendar events.</p>
+      <p>Data transfer object for caledar event content groups.</p>
 
       <dl class="dl-horizontal">
       </dl>
@@ -82,9 +82,9 @@
         </thead>
         <tbody>
         <tr>
-          <td>  items
+          <td>  eventModelContentGroupId
 </td>
-          <td>  array of <a href="json_CalendarEventContentGroupItemDto.html">CalendarEventContentGroupItemDto</a>
+          <td>  number
 
 </td>
           <td>  
@@ -92,9 +92,15 @@
         </tr>
         </tbody>
         <tr>
-          <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_KuhaDtoNameBase.html">KuhaDtoNameBase</a></h5></td>
+          <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_ContentGroup.html">ContentGroup</a></h5></td>
         </tr>
         <tbody>
+        <tr>
+          <td>freeItems</td>
+          <td>array of <a href="json_ContentGroupTitle.html">ContentGroupTitle</a>
+</td>
+          <td></td>
+        </tr>
         <tr>
           <td>name</td>
           <td>string
@@ -102,14 +108,26 @@
           <td></td>
         </tr>
         <tr>
-          <td>abbr</td>
-          <td>string
+          <td>removed</td>
+          <td>boolean
 </td>
-          <td>Note: in CourseDto and CoursePeriodDto this is used as a field tunniste. (Unique and Mandatory)</td>
+          <td></td>
         </tr>
         <tr>
-          <td>description</td>
-          <td>string
+          <td>visibility</td>
+          <td><a href="json_ContentGroupVisibility.html">ContentGroupVisibility</a>
+</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>order</td>
+          <td>number
+</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td><a href="json_ContentGroupType.html">ContentGroupType</a>
 </td>
           <td></td>
         </tr>
@@ -118,6 +136,12 @@
           <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_KuhaDtoBase.html">KuhaDtoBase</a></h5></td>
         </tr>
         <tbody>
+        <tr>
+          <td>version</td>
+          <td>number
+</td>
+          <td></td>
+        </tr>
         <tr>
           <td>id</td>
           <td>number
@@ -142,38 +166,50 @@
       <p class="lead">Example</p>
 
       <pre class="prettyprint lang-js">{
-  &quot;items&quot; : [ {
+  &quot;eventModelContentGroupId&quot; : 12345,
+  &quot;freeItems&quot; : [ {
     &quot;title&quot; : {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     },
-    &quot;meaning&quot; : 12345,
+    &quot;meaningId&quot; : 12345,
+    &quot;meaningChangeable&quot; : true,
     &quot;ordering&quot; : 12345,
-    &quot;removed&quot; : true,
+    &quot;mandatory&quot; : true,
+    &quot;changeable&quot; : true,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   }, {
     &quot;title&quot; : {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     },
-    &quot;meaning&quot; : 12345,
+    &quot;meaningId&quot; : 12345,
+    &quot;meaningChangeable&quot; : true,
     &quot;ordering&quot; : 12345,
-    &quot;removed&quot; : true,
+    &quot;mandatory&quot; : true,
+    &quot;changeable&quot; : true,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   } ],
   &quot;name&quot; : &quot;...&quot;,
-  &quot;abbr&quot; : &quot;...&quot;,
-  &quot;description&quot; : &quot;...&quot;,
+  &quot;removed&quot; : true,
+  &quot;visibility&quot; : &quot;VISIBLE&quot;,
+  &quot;order&quot; : 12345,
+  &quot;type&quot; : &quot;USER_DEFINED&quot;,
+  &quot;version&quot; : 12345,
   &quot;id&quot; : 12345,
   &quot;created&quot; : 12345,
   &quot;modified&quot; : 12345

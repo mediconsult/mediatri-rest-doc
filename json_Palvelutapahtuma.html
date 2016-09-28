@@ -82,27 +82,27 @@
         </thead>
         <tbody>
         <tr>
-          <td>  tyonantaja
+          <td>  peruuntumisSyyKoodi
 </td>
-          <td>  number
+          <td>  string
 
 </td>
           <td>  
 </td>
         </tr>
         <tr>
-          <td>  kirjaaja
+          <td>  rekisteri
 </td>
-          <td>  number
+          <td>  string
 
 </td>
           <td>  
 </td>
         </tr>
         <tr>
-          <td>  kirjausyksikko
+          <td>  alkuaika
 </td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
+          <td>  number
 
 </td>
           <td>  
@@ -118,7 +118,7 @@
 </td>
         </tr>
         <tr>
-          <td>  oid
+          <td>  palveluntuottaja
 </td>
           <td>  string
 
@@ -136,18 +136,18 @@
 </td>
         </tr>
         <tr>
-          <td>  id
+          <td>  luovutusHaunPalvelutapahtuma
 </td>
-          <td>  number
+          <td>  boolean
 
 </td>
           <td>  
 </td>
         </tr>
         <tr>
-          <td>  luovutusHaunPalvelutapahtuma
+          <td>  oid
 </td>
-          <td>  boolean
+          <td>  string
 
 </td>
           <td>  
@@ -163,25 +163,7 @@
 </td>
         </tr>
         <tr>
-          <td>  palveluntuottaja
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  aktiivinen
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  alkuaika
+          <td>  loppuaika
 </td>
           <td>  number
 
@@ -190,9 +172,18 @@
 </td>
         </tr>
         <tr>
-          <td>  rekisteri
+          <td>  tyonantaja
 </td>
-          <td>  string
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kirjausyksikko
+</td>
+          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
 
 </td>
           <td>  
@@ -208,9 +199,36 @@
 </td>
         </tr>
         <tr>
-          <td>  peruuntumisSyyKoodi
+          <td>  kirjaaja
 </td>
-          <td>  string
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  kirjausaika
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  aktiivinen
+</td>
+          <td>  boolean
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  id
+</td>
+          <td>  number
 
 </td>
           <td>  
@@ -225,53 +243,35 @@
           <td>  
 </td>
         </tr>
-        <tr>
-          <td>  kirjausAika
-</td>
-          <td>  number
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  loppuaika
-</td>
-          <td>  number
-
-</td>
-          <td>  
-</td>
-        </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
 
       <pre class="prettyprint lang-js">{
+  &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+  &quot;rekisteri&quot; : &quot;...&quot;,
+  &quot;alkuaika&quot; : 12345,
+  &quot;tyyppi&quot; : &quot;VUODEOSASTOHOITOJAKSO&quot;,
+  &quot;palveluntuottaja&quot; : &quot;...&quot;,
+  &quot;kirjausyksikkoId&quot; : 12345,
+  &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+  &quot;oid&quot; : &quot;...&quot;,
+  &quot;palvelunantaja&quot; : &quot;...&quot;,
+  &quot;loppuaika&quot; : 12345,
   &quot;tyonantaja&quot; : 12345,
-  &quot;kirjaaja&quot; : 12345,
   &quot;kirjausyksikko&quot; : {
     &quot;object&quot; : { },
     &quot;loaded&quot; : true,
     &quot;loadUrl&quot; : &quot;...&quot;,
     &quot;type&quot; : &quot;...&quot;
   },
-  &quot;tyyppi&quot; : &quot;VUODEOSASTOHOITOJAKSO&quot;,
-  &quot;oid&quot; : &quot;...&quot;,
-  &quot;kirjausyksikkoId&quot; : 12345,
-  &quot;id&quot; : 12345,
-  &quot;luovutusHaunPalvelutapahtuma&quot; : true,
-  &quot;palvelunantaja&quot; : &quot;...&quot;,
-  &quot;palveluntuottaja&quot; : &quot;...&quot;,
-  &quot;aktiivinen&quot; : true,
-  &quot;alkuaika&quot; : 12345,
-  &quot;rekisteri&quot; : &quot;...&quot;,
   &quot;tapahtumalaji&quot; : &quot;JONO&quot;,
-  &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
-  &quot;omistaja&quot; : 12345,
-  &quot;kirjausAika&quot; : 12345,
-  &quot;loppuaika&quot; : 12345
+  &quot;kirjaaja&quot; : 12345,
+  &quot;kirjausaika&quot; : 12345,
+  &quot;aktiivinen&quot; : true,
+  &quot;id&quot; : 12345,
+  &quot;omistaja&quot; : 12345
 }</pre>
 
         <footer class="footer">

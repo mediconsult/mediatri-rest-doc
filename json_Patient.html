@@ -82,52 +82,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  basicInfo
-</td>
-          <td>  <a href="json_BasicInfo.html">BasicInfo</a>
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  gender
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
           <td>  hoitosuhde
-</td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  realmId
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  domainId
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  hoitojakso
 </td>
           <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
 
@@ -145,7 +100,7 @@
 </td>
         </tr>
         <tr>
-          <td>  lastName
+          <td>  realmId
 </td>
           <td>  string
 
@@ -163,6 +118,51 @@
 </td>
         </tr>
         <tr>
+          <td>  basicInfo
+</td>
+          <td>  <a href="json_BasicInfo.html">BasicInfo</a>
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  riskitietoStatus
+</td>
+          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  gender
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  lastName
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  domainId
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
           <td>  age
 </td>
           <td>  number
@@ -172,7 +172,7 @@
 </td>
         </tr>
         <tr>
-          <td>  riskitietoStatus
+          <td>  hoitojakso
 </td>
           <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
 
@@ -230,47 +230,47 @@
       <p class="lead">Example</p>
 
       <pre class="prettyprint lang-js">{
-  &quot;basicInfo&quot; : {
-    &quot;dataLoaded&quot; : true,
-    &quot;href&quot; : &quot;...&quot;,
-    &quot;titles&quot; : [ {
-      &quot;presentation&quot; : &quot;...&quot;,
-      &quot;empty&quot; : true,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
-    }, {
-      &quot;presentation&quot; : &quot;...&quot;,
-      &quot;empty&quot; : true,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
-    } ]
-  },
-  &quot;gender&quot; : &quot;...&quot;,
   &quot;hoitosuhde&quot; : {
     &quot;object&quot; : { },
     &quot;loaded&quot; : true,
     &quot;loadUrl&quot; : &quot;...&quot;,
     &quot;type&quot; : &quot;...&quot;
   },
+  &quot;uuid&quot; : &quot;...&quot;,
   &quot;realmId&quot; : &quot;...&quot;,
-  &quot;domainId&quot; : &quot;...&quot;,
-  &quot;hoitojakso&quot; : {
+  &quot;firstName&quot; : &quot;...&quot;,
+  &quot;basicInfo&quot; : {
+    &quot;dataLoaded&quot; : true,
+    &quot;href&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
+    }, {
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
+    } ]
+  },
+  &quot;riskitietoStatus&quot; : {
     &quot;object&quot; : { },
     &quot;loaded&quot; : true,
     &quot;loadUrl&quot; : &quot;...&quot;,
     &quot;type&quot; : &quot;...&quot;
   },
-  &quot;uuid&quot; : &quot;...&quot;,
+  &quot;gender&quot; : &quot;...&quot;,
   &quot;lastName&quot; : &quot;...&quot;,
-  &quot;firstName&quot; : &quot;...&quot;,
+  &quot;domainId&quot; : &quot;...&quot;,
   &quot;age&quot; : 12345,
-  &quot;riskitietoStatus&quot; : {
+  &quot;hoitojakso&quot; : {
     &quot;object&quot; : { },
     &quot;loaded&quot; : true,
     &quot;loadUrl&quot; : &quot;...&quot;,

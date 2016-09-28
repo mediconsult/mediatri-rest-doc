@@ -58,7 +58,11 @@
           <li><a href="#resource_LaakitysResource_getMedicineWithATC_GET"><abbr title="GET /medicationlist/medicine/atc/{atc}">GET /medicationlist/medicine/a...</abbr></a></li>
           <li><a href="#resource_LaakitysResource_getMedicineWithName_GET"><abbr title="GET /medicationlist/medicine/name/{name}">GET /medicationlist/medicine/n...</abbr></a></li>
           <li><a href="#resource_LaakitysResource_getMedicineWithTherapyGroup_GET"><abbr title="GET /medicationlist/medicine/therapygroup/{therapygroup}">GET /medicationlist/medicine/t...</abbr></a></li>
+          <li><a href="#resource_LaakitysResource_getMedicineWithActiveIngredient_GET"><abbr title="GET /medicationlist/medicine/activeingredient/{activeingredient}">GET /medicationlist/medicine/a...</abbr></a></li>
           <li><a href="#resource_LaakitysResource_getMedicationHistory_GET"><abbr title="GET /medicationlist/history/{omistaja}/part/{osa}">GET /medicationlist/history/{o...</abbr></a></li>
+          <li><a href="#resource_LaakitysResource_solveIntearctions_GET"><abbr title="GET /medicationlist/interactions">GET /medicationlist/interactio...</abbr></a></li>
+          <li><a href="#resource_LaakitysResource_createMedication_PUT"><abbr title="PUT /medicationlist/newmedication/{id}">PUT /medicationlist/newmedicat...</abbr></a></li>
+          <li><a href="#resource_LaakitysResource_saveMedication_PUT"><abbr title="PUT /medicationlist/savemedication/{id}/part/{osa}">PUT /medicationlist/savemedica...</abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -292,6 +296,49 @@
         </table>
       </div>
 
+      <div id="resource_LaakitysResource_getMedicineWithActiveIngredient_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/medicationlist/medicine/activeingredient/{activeingredient} <a href="../api/v1medicationlist/medicine/activeingredient/{activeingredient}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Returns a list of Laake objects with the given active ingredient</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>activeingredient</td>
+            <td>path</td>
+            <td>Active ingredient</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>array of <a href="json_Laake.html">Laake</a>
+ (JSON)</td>
+            <td>List of Laake objects</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div id="resource_LaakitysResource_getMedicationHistory_GET">
         <h3><span class="resource-method">GET</span> <span class="resource-path">/medicationlist/history/{omistaja}/part/{osa} <a href="../api/v1medicationlist/history/{omistaja}/part/{osa}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
@@ -338,6 +385,193 @@
             <td>array of <a href="json_Laakitys.html">Laakitys</a>
  (JSON)</td>
             <td>List of Laakitys objects</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_LaakitysResource_solveIntearctions_GET">
+        <h3><span class="resource-method">GET</span> <span class="resource-path">/medicationlist/interactions <a href="../api/v1medicationlist/interactions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Returns a list of interactions between medicines given in parameters</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>multivalued</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>id</td>
+            <td>query</td>
+            <td>List of medicines (VNR codes)</td>
+            <td>yes</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>array of <a href="json_Yhteisvaikutus.html">Yhteisvaikutus</a>
+ (JSON)</td>
+            <td>List of interaction objects</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_LaakitysResource_createMedication_PUT">
+        <h3><span class="resource-method">PUT</span> <span class="resource-path">/medicationlist/newmedication/{id} <a href="../api/v1medicationlist/newmedication/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Create a new medication</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>id</td>
+            <td>path</td>
+            <td>Omistaja id</td>
+            <td>int</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
+            <td><a href="json_Laakitys.html">Laakitys</a>
+ (JSON)</td>
+            <td rowspan="2" class="multi-row-description">Laakitys object</td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server.">application/xml</abbr></td>
+            <td><a href="xml_ns0_laakitys.html">laakitys</a>
+ (XML)</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>object
+ (JSON)</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="resource_LaakitysResource_saveMedication_PUT">
+        <h3><span class="resource-method">PUT</span> <span class="resource-path">/medicationlist/savemedication/{id}/part/{osa} <a href="../api/v1medicationlist/savemedication/{id}/part/{osa}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Saves a modified medication</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>id</td>
+            <td>path</td>
+            <td>Omistaja id</td>
+            <td>int</td>
+          </tr>
+          <tr>
+            <td>osa</td>
+            <td>path</td>
+            <td>Part number</td>
+            <td>int</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
+            <td><a href="json_Laakitys.html">Laakitys</a>
+ (JSON)</td>
+            <td rowspan="2" class="multi-row-description">Medication</td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server.">application/xml</abbr></td>
+            <td><a href="xml_ns0_laakitys.html">laakitys</a>
+ (XML)</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
+            <td>object
+ (JSON)</td>
+            <td>Response</td>
           </tr>
           </tbody>
         </table>

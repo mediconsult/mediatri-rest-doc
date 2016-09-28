@@ -96,25 +96,25 @@
         </tr>
         <tbody>
         <tr>
-          <td>pageIndex</td>
-          <td>number
-</td>
-          <td></td>
-        </tr>
-        <tr>
           <td>pageItemsCount</td>
           <td>number
 </td>
           <td></td>
         </tr>
         <tr>
-          <td>allItemsCount</td>
+          <td>pageSize</td>
           <td>number
 </td>
           <td></td>
         </tr>
         <tr>
-          <td>pageSize</td>
+          <td>pageIndex</td>
+          <td>number
+</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>allItemsCount</td>
           <td>number
 </td>
           <td></td>
@@ -126,21 +126,21 @@
 
       <pre class="prettyprint lang-js">{
   &quot;users&quot; : [ {
-    &quot;skills&quot; : {
-      &quot;dataLoaded&quot; : true,
-      &quot;href&quot; : &quot;...&quot;,
-      &quot;skills&quot; : [ { }, { } ]
-    },
     &quot;lastName&quot; : &quot;...&quot;,
     &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
     &quot;basicInfo&quot; : {
       &quot;dataLoaded&quot; : true,
       &quot;href&quot; : &quot;...&quot;,
       &quot;titles&quot; : [ { }, { } ]
     },
-    &quot;endTime&quot; : 12345,
-    &quot;userName&quot; : &quot;...&quot;,
-    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;skills&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;skills&quot; : [ { }, { } ]
+    },
     &quot;name&quot; : &quot;...&quot;,
     &quot;nameExtension&quot; : &quot;...&quot;,
     &quot;editTime&quot; : 12345,
@@ -150,21 +150,21 @@
       &quot;endTime&quot; : 12345
     }
   }, {
-    &quot;skills&quot; : {
-      &quot;dataLoaded&quot; : true,
-      &quot;href&quot; : &quot;...&quot;,
-      &quot;skills&quot; : [ { }, { } ]
-    },
     &quot;lastName&quot; : &quot;...&quot;,
     &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
     &quot;basicInfo&quot; : {
       &quot;dataLoaded&quot; : true,
       &quot;href&quot; : &quot;...&quot;,
       &quot;titles&quot; : [ { }, { } ]
     },
-    &quot;endTime&quot; : 12345,
-    &quot;userName&quot; : &quot;...&quot;,
-    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;skills&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;skills&quot; : [ { }, { } ]
+    },
     &quot;name&quot; : &quot;...&quot;,
     &quot;nameExtension&quot; : &quot;...&quot;,
     &quot;editTime&quot; : 12345,
@@ -174,10 +174,10 @@
       &quot;endTime&quot; : 12345
     }
   } ],
-  &quot;pageIndex&quot; : 12345,
   &quot;pageItemsCount&quot; : 12345,
-  &quot;allItemsCount&quot; : 12345,
-  &quot;pageSize&quot; : 12345
+  &quot;pageSize&quot; : 12345,
+  &quot;pageIndex&quot; : 12345,
+  &quot;allItemsCount&quot; : 12345
 }</pre>
 
         <footer class="footer">

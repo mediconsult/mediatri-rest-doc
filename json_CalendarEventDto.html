@@ -136,6 +136,33 @@
 </td>
         </tr>
         <tr>
+          <td>  startTimeLimit
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  endTimeLimit
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  internalNote
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
           <td>  event
 </td>
           <td>  <a href="json_EventDto.html">EventDto</a>
@@ -249,6 +276,12 @@
         </tr>
         <tbody>
         <tr>
+          <td>version</td>
+          <td>number
+</td>
+          <td></td>
+        </tr>
+        <tr>
           <td>id</td>
           <td>number
 </td>
@@ -278,6 +311,9 @@
   &quot;description&quot; : &quot;...&quot;,
   &quot;durationInMinutes&quot; : 12345,
   &quot;serviceClass&quot; : &quot;...&quot;,
+  &quot;startTimeLimit&quot; : &quot;...&quot;,
+  &quot;endTimeLimit&quot; : &quot;...&quot;,
+  &quot;internalNote&quot; : &quot;...&quot;,
   &quot;event&quot; : {
     &quot;startTime&quot; : 12345,
     &quot;durationInMinutes&quot; : 12345,
@@ -293,7 +329,6 @@
     },
     &quot;excludedDays&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;reportingGroup&quot; : {
-      &quot;version&quot; : 12345,
       &quot;color&quot; : &quot;...&quot;,
       &quot;meaning&quot; : &quot;AVAILABLE&quot;,
       &quot;calendarModelFormId&quot; : 12345,
@@ -302,23 +337,60 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    },
+    &quot;eventModel&quot; : {
+      &quot;defaultTitleValues&quot; : [ { }, { } ],
+      &quot;basicData&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;reportingGroupId&quot; : 12345,
+      &quot;calendarModelFormId&quot; : 12345,
+      &quot;defaultUnit&quot; : 12345,
+      &quot;internalNote&quot; : &quot;...&quot;,
+      &quot;defaultDurationInMins&quot; : 12345,
+      &quot;startTimeLimit&quot; : &quot;...&quot;,
+      &quot;endTimeLimit&quot; : &quot;...&quot;,
+      &quot;timeLimitChangeable&quot; : true,
+      &quot;requiredSkills&quot; : [ { }, { } ],
+      &quot;requiredRoomGroups&quot; : [ { }, { } ],
+      &quot;requiredEquipmentTypes&quot; : [ { }, { } ],
+      &quot;contentGroups&quot; : [ { }, { } ],
+      &quot;minParticipants&quot; : 12345,
+      &quot;maxParticipants&quot; : 12345,
+      &quot;waitingRoom&quot; : &quot;...&quot;,
+      &quot;serviceClass&quot; : &quot;...&quot;,
+      &quot;serviceClassChangeable&quot; : true,
+      &quot;outdated&quot; : true,
+      &quot;hasEvents&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     },
     &quot;unitBasicInfoTitles&quot; : [ {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     }, {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     } ],
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -345,20 +417,21 @@
       &quot;eventName&quot; : &quot;...&quot;
     } ],
     &quot;basicInfoTitles&quot; : [ {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     }, {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     } ],
-    &quot;participantId&quot; : 12345,
-    &quot;removed&quot; : true
+    &quot;participantId&quot; : 12345
   }, {
     &quot;skillid&quot; : 12345,
     &quot;workingHoursConflict&quot; : true,
@@ -381,38 +454,41 @@
       &quot;eventName&quot; : &quot;...&quot;
     } ],
     &quot;basicInfoTitles&quot; : [ {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     }, {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     } ],
-    &quot;participantId&quot; : 12345,
-    &quot;removed&quot; : true
+    &quot;participantId&quot; : 12345
   } ],
   &quot;customers&quot; : [ {
     &quot;amount&quot; : 12345,
     &quot;coursePeriodId&quot; : 12345,
+    &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
     &quot;serviceDecision&quot; : {
+      &quot;permissions&quot; : { },
       &quot;paatos&quot; : 12345,
       &quot;palveluluokkaTunnus&quot; : &quot;...&quot;,
       &quot;palveluluokka&quot; : { },
-      &quot;alkaa&quot; : { },
+      &quot;alkaa&quot; : 12345,
       &quot;diaarinumero&quot; : &quot;...&quot;,
-      &quot;haettu&quot; : { },
+      &quot;haettu&quot; : 12345,
       &quot;huomautuksia&quot; : &quot;...&quot;,
       &quot;kayttajaryhma&quot; : 12345,
       &quot;kustannuspaikka&quot; : 12345,
       &quot;kuukausimaksu&quot; : 12345.0,
       &quot;laki&quot; : &quot;...&quot;,
-      &quot;laskutusalkaa&quot; : { },
-      &quot;loppuu&quot; : { },
+      &quot;laskutusalkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
       &quot;luokittelu1&quot; : &quot;...&quot;,
       &quot;luokittelu2&quot; : &quot;...&quot;,
       &quot;maara&quot; : 12345,
@@ -423,7 +499,7 @@
       &quot;mitatoity&quot; : 12345,
       &quot;muutosaika&quot; : 12345,
       &quot;muutospaikka&quot; : 12345,
-      &quot;paatetty&quot; : { },
+      &quot;paatetty&quot; : 12345,
       &quot;paatosyksikko&quot; : 12345,
       &quot;paatosyksikkoUnit&quot; : { },
       &quot;paattaja&quot; : 12345,
@@ -437,7 +513,7 @@
       &quot;tilasto2&quot; : &quot;...&quot;,
       &quot;tilasto3&quot; : &quot;...&quot;,
       &quot;tulot&quot; : 12345.0,
-      &quot;valitettu&quot; : { },
+      &quot;valitettu&quot; : 12345,
       &quot;valmistelija&quot; : 12345,
       &quot;valmistelijaUser&quot; : { },
       &quot;valmisteluyksikko&quot; : 12345,
@@ -448,8 +524,10 @@
         &quot;property1&quot; : &quot;...&quot;,
         &quot;property2&quot; : &quot;...&quot;
       },
-      &quot;palvelukeskeytykset&quot; : [ { }, { } ]
+      &quot;palvelukeskeytykset&quot; : [ { }, { } ],
+      &quot;effectivePalvelukeskeytykset&quot; : [ { }, { } ]
     },
+    &quot;homeAddress&quot; : &quot;...&quot;,
     &quot;id&quot; : 12345,
     &quot;unit&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
@@ -468,37 +546,40 @@
       &quot;eventName&quot; : &quot;...&quot;
     } ],
     &quot;basicInfoTitles&quot; : [ {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     }, {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     } ],
-    &quot;participantId&quot; : 12345,
-    &quot;removed&quot; : true
+    &quot;participantId&quot; : 12345
   }, {
     &quot;amount&quot; : 12345,
     &quot;coursePeriodId&quot; : 12345,
+    &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
     &quot;serviceDecision&quot; : {
+      &quot;permissions&quot; : { },
       &quot;paatos&quot; : 12345,
       &quot;palveluluokkaTunnus&quot; : &quot;...&quot;,
       &quot;palveluluokka&quot; : { },
-      &quot;alkaa&quot; : { },
+      &quot;alkaa&quot; : 12345,
       &quot;diaarinumero&quot; : &quot;...&quot;,
-      &quot;haettu&quot; : { },
+      &quot;haettu&quot; : 12345,
       &quot;huomautuksia&quot; : &quot;...&quot;,
       &quot;kayttajaryhma&quot; : 12345,
       &quot;kustannuspaikka&quot; : 12345,
       &quot;kuukausimaksu&quot; : 12345.0,
       &quot;laki&quot; : &quot;...&quot;,
-      &quot;laskutusalkaa&quot; : { },
-      &quot;loppuu&quot; : { },
+      &quot;laskutusalkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
       &quot;luokittelu1&quot; : &quot;...&quot;,
       &quot;luokittelu2&quot; : &quot;...&quot;,
       &quot;maara&quot; : 12345,
@@ -509,7 +590,7 @@
       &quot;mitatoity&quot; : 12345,
       &quot;muutosaika&quot; : 12345,
       &quot;muutospaikka&quot; : 12345,
-      &quot;paatetty&quot; : { },
+      &quot;paatetty&quot; : 12345,
       &quot;paatosyksikko&quot; : 12345,
       &quot;paatosyksikkoUnit&quot; : { },
       &quot;paattaja&quot; : 12345,
@@ -523,7 +604,7 @@
       &quot;tilasto2&quot; : &quot;...&quot;,
       &quot;tilasto3&quot; : &quot;...&quot;,
       &quot;tulot&quot; : 12345.0,
-      &quot;valitettu&quot; : { },
+      &quot;valitettu&quot; : 12345,
       &quot;valmistelija&quot; : 12345,
       &quot;valmistelijaUser&quot; : { },
       &quot;valmisteluyksikko&quot; : 12345,
@@ -534,8 +615,10 @@
         &quot;property1&quot; : &quot;...&quot;,
         &quot;property2&quot; : &quot;...&quot;
       },
-      &quot;palvelukeskeytykset&quot; : [ { }, { } ]
+      &quot;palvelukeskeytykset&quot; : [ { }, { } ],
+      &quot;effectivePalvelukeskeytykset&quot; : [ { }, { } ]
     },
+    &quot;homeAddress&quot; : &quot;...&quot;,
     &quot;id&quot; : 12345,
     &quot;unit&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
@@ -554,54 +637,67 @@
       &quot;eventName&quot; : &quot;...&quot;
     } ],
     &quot;basicInfoTitles&quot; : [ {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     }, {
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true,
-      &quot;type&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;type&quot; : 12345,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;editModel&quot; : true
     } ],
-    &quot;participantId&quot; : 12345,
-    &quot;removed&quot; : true
+    &quot;participantId&quot; : 12345
   } ],
   &quot;rooms&quot; : [ {
-    &quot;id&quot; : 12345,
     &quot;typeid&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;delay&quot; : 12345,
     &quot;duration&quot; : 12345,
     &quot;amount&quot; : 12345,
-    &quot;required&quot; : true
+    &quot;required&quot; : true,
+    &quot;version&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
   }, {
-    &quot;id&quot; : 12345,
     &quot;typeid&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;delay&quot; : 12345,
     &quot;duration&quot; : 12345,
     &quot;amount&quot; : 12345,
-    &quot;required&quot; : true
+    &quot;required&quot; : true,
+    &quot;version&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
   } ],
   &quot;equipmentTypes&quot; : [ {
-    &quot;id&quot; : 12345,
     &quot;typeid&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;delay&quot; : 12345,
     &quot;duration&quot; : 12345,
     &quot;amount&quot; : 12345,
-    &quot;required&quot; : true
+    &quot;required&quot; : true,
+    &quot;version&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
   }, {
-    &quot;id&quot; : 12345,
     &quot;typeid&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;delay&quot; : 12345,
     &quot;duration&quot; : 12345,
     &quot;amount&quot; : 12345,
-    &quot;required&quot; : true
+    &quot;required&quot; : true,
+    &quot;version&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
   } ],
   &quot;coursePeriods&quot; : [ {
     &quot;coursePeriodId&quot; : 12345,
@@ -620,57 +716,78 @@
   } ],
   &quot;locked&quot; : true,
   &quot;lock&quot; : {
-    &quot;reason&quot; : &quot;...&quot;,
     &quot;user&quot; : 12345,
+    &quot;reason&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   },
   &quot;contentGroups&quot; : [ {
-    &quot;items&quot; : [ {
+    &quot;eventModelContentGroupId&quot; : 12345,
+    &quot;freeItems&quot; : [ {
       &quot;title&quot; : { },
-      &quot;meaning&quot; : 12345,
+      &quot;meaningId&quot; : 12345,
+      &quot;meaningChangeable&quot; : true,
       &quot;ordering&quot; : 12345,
-      &quot;removed&quot; : true,
+      &quot;mandatory&quot; : true,
+      &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
       &quot;title&quot; : { },
-      &quot;meaning&quot; : 12345,
+      &quot;meaningId&quot; : 12345,
+      &quot;meaningChangeable&quot; : true,
       &quot;ordering&quot; : 12345,
-      &quot;removed&quot; : true,
+      &quot;mandatory&quot; : true,
+      &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
     &quot;name&quot; : &quot;...&quot;,
-    &quot;abbr&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
+    &quot;removed&quot; : true,
+    &quot;visibility&quot; : &quot;VISIBLE&quot;,
+    &quot;order&quot; : 12345,
+    &quot;type&quot; : &quot;USER_DEFINED&quot;,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   }, {
-    &quot;items&quot; : [ {
+    &quot;eventModelContentGroupId&quot; : 12345,
+    &quot;freeItems&quot; : [ {
       &quot;title&quot; : { },
-      &quot;meaning&quot; : 12345,
+      &quot;meaningId&quot; : 12345,
+      &quot;meaningChangeable&quot; : true,
       &quot;ordering&quot; : 12345,
-      &quot;removed&quot; : true,
+      &quot;mandatory&quot; : true,
+      &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
       &quot;title&quot; : { },
-      &quot;meaning&quot; : 12345,
+      &quot;meaningId&quot; : 12345,
+      &quot;meaningChangeable&quot; : true,
       &quot;ordering&quot; : 12345,
-      &quot;removed&quot; : true,
+      &quot;mandatory&quot; : true,
+      &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
     &quot;name&quot; : &quot;...&quot;,
-    &quot;abbr&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
+    &quot;removed&quot; : true,
+    &quot;visibility&quot; : &quot;VISIBLE&quot;,
+    &quot;order&quot; : 12345,
+    &quot;type&quot; : &quot;USER_DEFINED&quot;,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -687,6 +804,7 @@
     &quot;numOfMissingRoomGroups&quot; : 12345,
     &quot;missingRoomGroup&quot; : 12345
   },
+  &quot;version&quot; : 12345,
   &quot;id&quot; : 12345,
   &quot;created&quot; : 12345,
   &quot;modified&quot; : 12345

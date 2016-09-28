@@ -82,6 +82,16 @@
         </thead>
         <tbody>
         <tr>
+          <td>  defaultTitleValues
+</td>
+          <td>  array of <a href="json_CalendarEventContentGroupDto.html">CalendarEventContentGroupDto</a>
+
+</td>
+          <td>  Returns user defined content groups of the event model. This method can be used when CalendarEventDto or EventInputDto is initialized.
+At the moment (Sep 2016) it's only used in tests.
+</td>
+        </tr>
+        <tr>
           <td>  basicData
 </td>
           <td>  object
@@ -154,6 +164,15 @@
 </td>
         </tr>
         <tr>
+          <td>  timeLimitChangeable
+</td>
+          <td>  boolean
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
           <td>  requiredSkills
 </td>
           <td>  array of <a href="json_SkillDto.html">SkillDto</a>
@@ -183,7 +202,7 @@
         <tr>
           <td>  contentGroups
 </td>
-          <td>  array of <a href="json_ContentGroupDto.html">ContentGroupDto</a>
+          <td>  array of <a href="json_EventModelContentGroupDto.html">EventModelContentGroupDto</a>
 
 </td>
           <td>  
@@ -234,6 +253,24 @@
           <td>  
 </td>
         </tr>
+        <tr>
+          <td>  outdated
+</td>
+          <td>  boolean
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  hasEvents
+</td>
+          <td>  boolean
+
+</td>
+          <td>  
+</td>
+        </tr>
         </tbody>
         <tr>
           <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_KuhaDtoNameBase.html">KuhaDtoNameBase</a></h5></td>
@@ -263,6 +300,12 @@
         </tr>
         <tbody>
         <tr>
+          <td>version</td>
+          <td>number
+</td>
+          <td></td>
+        </tr>
+        <tr>
           <td>id</td>
           <td>number
 </td>
@@ -286,6 +329,75 @@
       <p class="lead">Example</p>
 
       <pre class="prettyprint lang-js">{
+  &quot;defaultTitleValues&quot; : [ {
+    &quot;eventModelContentGroupId&quot; : 12345,
+    &quot;freeItems&quot; : [ {
+      &quot;title&quot; : { },
+      &quot;meaningId&quot; : 12345,
+      &quot;meaningChangeable&quot; : true,
+      &quot;ordering&quot; : 12345,
+      &quot;mandatory&quot; : true,
+      &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;title&quot; : { },
+      &quot;meaningId&quot; : 12345,
+      &quot;meaningChangeable&quot; : true,
+      &quot;ordering&quot; : 12345,
+      &quot;mandatory&quot; : true,
+      &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;removed&quot; : true,
+    &quot;visibility&quot; : &quot;VISIBLE&quot;,
+    &quot;order&quot; : 12345,
+    &quot;type&quot; : &quot;USER_DEFINED&quot;,
+    &quot;version&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
+  }, {
+    &quot;eventModelContentGroupId&quot; : 12345,
+    &quot;freeItems&quot; : [ {
+      &quot;title&quot; : { },
+      &quot;meaningId&quot; : 12345,
+      &quot;meaningChangeable&quot; : true,
+      &quot;ordering&quot; : 12345,
+      &quot;mandatory&quot; : true,
+      &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;title&quot; : { },
+      &quot;meaningId&quot; : 12345,
+      &quot;meaningChangeable&quot; : true,
+      &quot;ordering&quot; : 12345,
+      &quot;mandatory&quot; : true,
+      &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;removed&quot; : true,
+    &quot;visibility&quot; : &quot;VISIBLE&quot;,
+    &quot;order&quot; : 12345,
+    &quot;type&quot; : &quot;USER_DEFINED&quot;,
+    &quot;version&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
+  } ],
   &quot;basicData&quot; : {
     &quot;property1&quot; : &quot;...&quot;,
     &quot;property2&quot; : &quot;...&quot;
@@ -297,11 +409,13 @@
   &quot;defaultDurationInMins&quot; : 12345,
   &quot;startTimeLimit&quot; : &quot;...&quot;,
   &quot;endTimeLimit&quot; : &quot;...&quot;,
+  &quot;timeLimitChangeable&quot; : true,
   &quot;requiredSkills&quot; : [ {
     &quot;name&quot; : &quot;...&quot;,
     &quot;abbr&quot; : &quot;...&quot;,
     &quot;removed&quot; : true,
     &quot;changeable&quot; : true,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -310,6 +424,7 @@
     &quot;abbr&quot; : &quot;...&quot;,
     &quot;removed&quot; : true,
     &quot;changeable&quot; : true,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -324,6 +439,7 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -336,6 +452,7 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -343,6 +460,7 @@
     &quot;name&quot; : &quot;...&quot;,
     &quot;abbr&quot; : &quot;...&quot;,
     &quot;description&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -356,6 +474,7 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -368,6 +487,7 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -375,6 +495,7 @@
     &quot;name&quot; : &quot;...&quot;,
     &quot;abbr&quot; : &quot;...&quot;,
     &quot;description&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -385,6 +506,7 @@
     &quot;name&quot; : &quot;...&quot;,
     &quot;abbr&quot; : &quot;...&quot;,
     &quot;description&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -394,15 +516,12 @@
     &quot;name&quot; : &quot;...&quot;,
     &quot;abbr&quot; : &quot;...&quot;,
     &quot;description&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   } ],
   &quot;contentGroups&quot; : [ {
-    &quot;type&quot; : &quot;USER_DEFINED&quot;,
-    &quot;visibility&quot; : &quot;VISIBLE&quot;,
-    &quot;order&quot; : 12345,
-    &quot;removed&quot; : true,
     &quot;freeItems&quot; : [ {
       &quot;title&quot; : { },
       &quot;meaningId&quot; : 12345,
@@ -410,6 +529,7 @@
       &quot;ordering&quot; : 12345,
       &quot;mandatory&quot; : true,
       &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -420,21 +540,21 @@
       &quot;ordering&quot; : 12345,
       &quot;mandatory&quot; : true,
       &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
     &quot;name&quot; : &quot;...&quot;,
-    &quot;abbr&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
+    &quot;removed&quot; : true,
+    &quot;visibility&quot; : &quot;VISIBLE&quot;,
+    &quot;order&quot; : 12345,
+    &quot;type&quot; : &quot;USER_DEFINED&quot;,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   }, {
-    &quot;type&quot; : &quot;USER_DEFINED&quot;,
-    &quot;visibility&quot; : &quot;VISIBLE&quot;,
-    &quot;order&quot; : 12345,
-    &quot;removed&quot; : true,
     &quot;freeItems&quot; : [ {
       &quot;title&quot; : { },
       &quot;meaningId&quot; : 12345,
@@ -442,6 +562,7 @@
       &quot;ordering&quot; : 12345,
       &quot;mandatory&quot; : true,
       &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
@@ -452,13 +573,17 @@
       &quot;ordering&quot; : 12345,
       &quot;mandatory&quot; : true,
       &quot;changeable&quot; : true,
+      &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
     &quot;name&quot; : &quot;...&quot;,
-    &quot;abbr&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
+    &quot;removed&quot; : true,
+    &quot;visibility&quot; : &quot;VISIBLE&quot;,
+    &quot;order&quot; : 12345,
+    &quot;type&quot; : &quot;USER_DEFINED&quot;,
+    &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
@@ -468,9 +593,12 @@
   &quot;waitingRoom&quot; : &quot;...&quot;,
   &quot;serviceClass&quot; : &quot;...&quot;,
   &quot;serviceClassChangeable&quot; : true,
+  &quot;outdated&quot; : true,
+  &quot;hasEvents&quot; : true,
   &quot;name&quot; : &quot;...&quot;,
   &quot;abbr&quot; : &quot;...&quot;,
   &quot;description&quot; : &quot;...&quot;,
+  &quot;version&quot; : 12345,
   &quot;id&quot; : 12345,
   &quot;created&quot; : 12345,
   &quot;modified&quot; : 12345

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info" : {
-    "description" : "<h1>Mediatri REST<\/h1><p>This is Mediatri REST spesification 2016.05. This is work-in-progress documentation that Mediconsult also uses internally.<\/p>",
+    "description" : "<h1>Mediatri REST<\/h1><p>This is Mediatri REST specification 2016.05. This is work-in-progress documentation that Mediconsult also uses internally.<\/p>",
     "version" : "1.0.0-SNAPSHOT",
     "title" : "Mediatri REST"
   },
@@ -93,6 +93,11 @@
     }
     ,
     {
+      "name" : "SettingsResource",
+      "description" : "REST API for generic Mediatri settings and codex"
+    }
+    ,
+    {
       "name" : "SeurantaResource",
       "description" : "REST API for seuranta"
     }
@@ -115,6 +120,11 @@
     {
       "name" : "UserResource",
       "description" : "REST API for users"
+    }
+    ,
+    {
+      "name" : "UserViewResource",
+      "description" : "REST API for getting and updating user view information"
     }
   ],
   "definitions" : {
@@ -207,18 +217,6 @@
         },
         {
           "properties" : {
-            "vakio" : {
-"description" : "",
-"type" : "string"
-            },
-            "editModel" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "type" : {
-"description" : "",
-"type" : "number"
-            },
             "name" : {
 "description" : "",
 "type" : "string"
@@ -226,6 +224,22 @@
             "vapaa" : {
 "description" : "",
 "type" : "string"
+            },
+            "emptyValue" : {
+"description" : "",
+"type" : "boolean"
+            },
+            "type" : {
+"description" : "",
+"type" : "number"
+            },
+            "vakio" : {
+"description" : "",
+"type" : "string"
+            },
+            "editModel" : {
+"description" : "",
+"type" : "boolean"
             }
           }
         }
@@ -256,13 +270,12 @@
       "description" : "DTO for BasicInfo (Perustieto).\nBound to ViewTitleValue class."
     }
     ,
-    "json_BasicInfoCategory" : {
+    "json_BillingType" : {
       "type" : "string",
-      "title" : "BasicInfoCategory",
+      "title" : "BillingType",
           "enum" : [
-            "YKSIKKO",
-            "TYONTEKIJA",
-            "ASIAKAS"
+            "FROM_START_OF_PERIOD",
+            "FROM_END_OF_PERIOD"
           ],
       "description" : ""
     }
@@ -334,52 +347,18 @@
           "$ref" : "#/definitions/json_KuhaDtoBase"
         },
         {
-          "$ref" : "#/definitions/json_KuhaDtoNameBase"
+          "$ref" : "#/definitions/json_ContentGroup"
         },
         {
           "properties" : {
-            "items" : {
+            "eventModelContentGroupId" : {
 "description" : "",
-"type" : "array",
-"items" : {
-  "$ref" : "#/definitions/json_CalendarEventContentGroupItemDto"
-}
+"type" : "number"
             }
           }
         }
       ],
-      "description" : "Data transfer object class for user defined content groups in calendar events."
-    }
-    ,
-    "json_CalendarEventContentGroupItemDto" : {
-      "type" : "object",
-      "title" : "CalendarEventContentGroupItemDto",
-      "allOf" : [
-        {
-          "$ref" : "#/definitions/json_KuhaDtoBase"
-        },
-        {
-          "properties" : {
-            "title" : {
-"description" : "",
-"$ref" : "#/definitions/json_BaseTitleValue"
-            },
-            "meaning" : {
-"description" : "",
-"type" : "number"
-            },
-            "ordering" : {
-"description" : "",
-"type" : "number"
-            },
-            "removed" : {
-"description" : "",
-"type" : "boolean"
-            }
-          }
-        }
-      ],
-      "description" : ""
+      "description" : "Data transfer object for caledar event content groups."
     }
     ,
     "json_CalendarEventDto" : {
@@ -412,6 +391,18 @@
 "type" : "number"
             },
             "serviceClass" : {
+"description" : "",
+"type" : "string"
+            },
+            "startTimeLimit" : {
+"description" : "",
+"type" : "string"
+            },
+            "endTimeLimit" : {
+"description" : "",
+"type" : "string"
+            },
+            "internalNote" : {
 "description" : "",
 "type" : "string"
             },
@@ -487,6 +478,28 @@
       "description" : "Data transfer object for calendar events."
     }
     ,
+    "json_CalendarEventTitleDto" : {
+      "type" : "object",
+      "title" : "CalendarEventTitleDto",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_KuhaDtoBase"
+        },
+        {
+          "$ref" : "#/definitions/json_ContentGroupTitle"
+        },
+        {
+          "properties" : {
+            "eventModelContentGroupItemId" : {
+"description" : "",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for calendar event content group titles."
+    }
+    ,
     "json_ClientTitleConfig" : {
       "type" : "object",
       "title" : "ClientTitleConfig",
@@ -530,21 +543,80 @@
       "description" : "Title class is used in edit and view models to represent a title for different components.\nAlso this class is used as title configuration in different component config\nlike KertomusComponentConfig or FysiologinenMittaus.\nThe class contains the value as the object of the class derived from  @BaseTitleValue.\nfi.mediconsult.core.internal.titles.presentations package contains the available value for the titles depending from title type."
     }
     ,
-    "json_ContentGroupDto" : {
+    "json_ComponentRightDTO" : {
       "type" : "object",
-      "title" : "ContentGroupDto",
+      "title" : "ComponentRightDTO",
+          "properties" : {
+            "serialversionuid" : {
+"description" : "",
+"type" : "number"
+            },
+            "component" : {
+"description" : "",
+"$ref" : "#/definitions/json_Components"
+            },
+            "inDevelopment" : {
+"description" : "",
+"type" : "boolean"
+            },
+            "requiresTarget" : {
+"description" : "",
+"type" : "boolean"
+            },
+            "permissionDTO" : {
+"description" : "",
+"$ref" : "#/definitions/json_PermissionDTO"
+            }
+          },
+      "description" : "ComponentRightDTO for transfering visible DTO to client\ncomponentID = component in question (enum)\nvisible = is component visible on client side. This is normally the read access, but might be different in special cases\nPermissionDTO = all permissions. Thise can be used on client as right changes during session are not supported"
+    }
+    ,
+    "json_Components" : {
+      "type" : "string",
+      "title" : "Components",
+          "enum" : [
+            "BASIC_INFORMATION",
+            "MEDICAL_RECORDS_READ",
+            "MEDICAL_RECORDS_WRITE",
+            "MEDICATION",
+            "LABORATORY_EXAMINATIONS",
+            "CARE_ORDERS",
+            "SERVICE_DECISIONS",
+            "RISK_INFORMATION",
+            "CARE_RECORDS",
+            "MEASUREMENTS",
+            "WARD_LIST",
+            "CALENDAR",
+            "CALENDAR_EVENT",
+            "SUMMARY_VIEW",
+            "WIDGETS"
+          ],
+      "description" : ""
+    }
+    ,
+    "json_ContentGroup" : {
+      "type" : "object",
+      "title" : "ContentGroup",
       "allOf" : [
         {
           "$ref" : "#/definitions/json_KuhaDtoBase"
         },
         {
-          "$ref" : "#/definitions/json_KuhaDtoNameBase"
-        },
-        {
           "properties" : {
-            "type" : {
+            "freeItems" : {
 "description" : "",
-"$ref" : "#/definitions/json_ContentGroupType"
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_ContentGroupTitle"
+}
+            },
+            "name" : {
+"description" : "",
+"type" : "string"
+            },
+            "removed" : {
+"description" : "",
+"type" : "boolean"
             },
             "visibility" : {
 "description" : "",
@@ -554,21 +626,53 @@
 "description" : "",
 "type" : "number"
             },
-            "removed" : {
+            "type" : {
 "description" : "",
-"type" : "boolean"
-            },
-            "freeItems" : {
-"description" : "",
-"type" : "array",
-"items" : {
-  "$ref" : "#/definitions/json_FreeContentGroupItem"
-}
+"$ref" : "#/definitions/json_ContentGroupType"
             }
           }
         }
       ],
-      "description" : "Represents Content Groups in EventModelDto\n\nExample:\n\n<pre>\n<code>\n{\nid: 1,\nname: \"Perustiedot\",\ntype: \"SYSTEM_DEFINED\"\n}\n<\/code>\n<\/pre>"
+      "description" : ""
+    }
+    ,
+    "json_ContentGroupTitle" : {
+      "type" : "object",
+      "title" : "ContentGroupTitle",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_KuhaDtoBase"
+        },
+        {
+          "properties" : {
+            "title" : {
+"description" : "",
+"$ref" : "#/definitions/json_BaseTitleValue"
+            },
+            "meaningId" : {
+"description" : "",
+"type" : "number"
+            },
+            "meaningChangeable" : {
+"description" : "",
+"type" : "boolean"
+            },
+            "ordering" : {
+"description" : "",
+"type" : "number"
+            },
+            "mandatory" : {
+"description" : "",
+"type" : "boolean"
+            },
+            "changeable" : {
+"description" : "",
+"type" : "boolean"
+            }
+          }
+        }
+      ],
+      "description" : "Data transfer object for content groups items."
     }
     ,
     "json_ContentGroupType" : {
@@ -593,7 +697,6 @@
           "enum" : [
             "VISIBLE",
             "COLLAPSED",
-            "HIDDEN",
             "EXCLUDED"
           ],
       "description" : ""
@@ -653,6 +756,17 @@
             "developer" : {
 "description" : "",
 "type" : "boolean"
+            },
+            "componentRights" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_ComponentRightDTO"
+}
+            },
+            "viewConfiguration" : {
+"description" : "",
+"$ref" : "#/definitions/json_ViewConfiguration"
             }
           },
       "description" : "DTO object for authentication purposes. This DTO is returned when logging in with REST."
@@ -968,9 +1082,17 @@
 "description" : "",
 "type" : "number"
             },
+            "serviceDecisionStatus" : {
+"description" : "",
+"$ref" : "#/definitions/json_EventServiceDecisionStatus"
+            },
             "serviceDecision" : {
 "description" : "",
 "$ref" : "#/definitions/json_Palvelupaatos"
+            },
+            "homeAddress" : {
+"description" : "",
+"type" : "string"
             }
           }
         }
@@ -1034,6 +1156,10 @@
 "description" : "",
 "$ref" : "#/definitions/json_ReportingGroupDto"
             },
+            "eventModel" : {
+"description" : "",
+"$ref" : "#/definitions/json_EventModelDto"
+            },
             "unitBasicInfoTitles" : {
 "description" : "",
 "type" : "array",
@@ -1087,20 +1213,20 @@
       "description" : "Data transfer object for missing resource information."
     }
     ,
-    "json_EventModelBasicInfo" : {
+    "json_EventModelContentGroupDto" : {
       "type" : "object",
-      "title" : "EventModelBasicInfo",
-          "properties" : {
-            "title" : {
-"description" : "",
-"$ref" : "#/definitions/json_BaseTitleValue"
-            },
-            "displayOrder" : {
-"description" : "",
-"type" : "number"
-            }
-          },
-      "description" : "Represents one Perustiedot otsikko, connected to Tapahtuman perustiedot"
+      "title" : "EventModelContentGroupDto",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_KuhaDtoBase"
+        },
+        {
+          "$ref" : "#/definitions/json_ContentGroup"
+        },
+        {
+        }
+      ],
+      "description" : "Represents Content Groups in EventModelDto\n\nExample:\n\n<pre>\n<code>\n{\nid: 1,\nname: \"Perustiedot\",\ntype: \"SYSTEM_DEFINED\"\n}\n<\/code>\n<\/pre>"
     }
     ,
     "json_EventModelDto" : {
@@ -1115,6 +1241,13 @@
         },
         {
           "properties" : {
+            "defaultTitleValues" : {
+"description" : "Returns user defined content groups of the event model. This method can be used when CalendarEventDto or EventInputDto is initialized.\nAt the moment (Sep 2016) it's only used in tests.",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_CalendarEventContentGroupDto"
+}
+            },
             "basicData" : {
 "description" : "",
 "type" : "object"
@@ -1147,6 +1280,10 @@
 "description" : "",
 "type" : "string"
             },
+            "timeLimitChangeable" : {
+"description" : "",
+"type" : "boolean"
+            },
             "requiredSkills" : {
 "description" : "",
 "type" : "array",
@@ -1172,7 +1309,7 @@
 "description" : "",
 "type" : "array",
 "items" : {
-  "$ref" : "#/definitions/json_ContentGroupDto"
+  "$ref" : "#/definitions/json_EventModelContentGroupDto"
 }
             },
             "minParticipants" : {
@@ -1192,6 +1329,14 @@
 "type" : "string"
             },
             "serviceClassChangeable" : {
+"description" : "",
+"type" : "boolean"
+            },
+            "outdated" : {
+"description" : "",
+"type" : "boolean"
+            },
+            "hasEvents" : {
 "description" : "",
 "type" : "boolean"
             }
@@ -1274,10 +1419,6 @@
             "participantId" : {
 "description" : "",
 "type" : "number"
-            },
-            "removed" : {
-"description" : "",
-"type" : "boolean"
             }
           },
       "description" : "Data transfer object for event participant information (worker and customer base)."
@@ -1286,11 +1427,12 @@
     "json_EventResourceDto" : {
       "type" : "object",
       "title" : "EventResourceDto",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_KuhaDtoBase"
+        },
+        {
           "properties" : {
-            "id" : {
-"description" : "",
-"type" : "number"
-            },
             "typeid" : {
 "description" : "",
 "type" : "number"
@@ -1315,8 +1457,23 @@
 "description" : "",
 "type" : "boolean"
             }
-          },
+          }
+        }
+      ],
       "description" : "Data transfer object for event resource information."
+    }
+    ,
+    "json_EventServiceDecisionStatus" : {
+      "type" : "string",
+      "title" : "EventServiceDecisionStatus",
+          "enum" : [
+            "NOT_REQUIRED",
+            "MISSING",
+            "INTERRUPTED",
+            "PENDING",
+            "AVAILABLE"
+          ],
+      "description" : "Flag values for an event's status regarding having a service decision for a customer.\nA service decision may be\n<li/>not relevant for the event at all\n<li/>missing: there is no service decision in required service class for the customer\n<li/>interrupted: there is a decision, but it is interrupted at event time\n<li/>pending: there is a decision under processing ('KESKEN')\n<li/>available: there is a decision ('VALMIS' & 'MYONTEINEN')"
     }
     ,
     "json_EventStatus" : {
@@ -1458,65 +1615,22 @@
 "description" : "",
 "type" : "string"
             },
-            "id" : {
-"description" : "",
-"type" : "number"
-            },
             "description" : {
 "description" : "",
 "type" : "string"
+            },
+            "id" : {
+"description" : "",
+"type" : "number"
             }
           },
       "description" : ""
-    }
-    ,
-    "json_FreeContentGroupItem" : {
-      "type" : "object",
-      "title" : "FreeContentGroupItem",
-      "allOf" : [
-        {
-          "$ref" : "#/definitions/json_KuhaDtoBase"
-        },
-        {
-          "properties" : {
-            "title" : {
-"description" : "",
-"$ref" : "#/definitions/json_BaseTitleValue"
-            },
-            "meaningId" : {
-"description" : "",
-"type" : "number"
-            },
-            "meaningChangeable" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "ordering" : {
-"description" : "",
-"type" : "number"
-            },
-            "mandatory" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "changeable" : {
-"description" : "",
-"type" : "boolean"
-            }
-          }
-        }
-      ],
-      "description" : "DTO information for one vapaa sis�lt�ryhm�"
     }
     ,
     "json_FysiologinenMittaus" : {
       "type" : "object",
       "title" : "FysiologinenMittaus",
           "properties" : {
-            "name" : {
-"description" : "",
-"type" : "string"
-            },
             "type" : {
 "description" : "",
 "type" : "number"
@@ -1527,6 +1641,10 @@
 "items" : {
   "$ref" : "#/definitions/json_MittausBase"
 }
+            },
+            "name" : {
+"description" : "",
+"type" : "string"
             }
           },
       "description" : ""
@@ -1590,16 +1708,16 @@
   "$ref" : "#/definitions/json_Hoito"
 }
             },
+            "omistaja" : {
+"description" : "",
+"type" : "number"
+            },
             "permissions" : {
 "description" : "",
 "type" : "array",
 "items" : {
   "$ref" : "#/definitions/json_PermissionDTO"
 }
-            },
-            "omistaja" : {
-"description" : "",
-"type" : "number"
             }
           },
       "description" : ""
@@ -1929,6 +2047,14 @@
       "type" : "object",
       "title" : "Hoitotyoasetukset",
           "properties" : {
+            "toimintoluokitusKoodisto" : {
+"description" : "",
+"$ref" : "#/definitions/json_Koodisto"
+            },
+            "hoitoprosessinVaiheKoodisto" : {
+"description" : "",
+"$ref" : "#/definitions/json_Koodisto"
+            },
             "tarveluokitusKoodisto" : {
 "description" : "",
 "$ref" : "#/definitions/json_Koodisto"
@@ -1938,14 +2064,6 @@
 "$ref" : "#/definitions/json_Koodisto"
             },
             "otsikkoKoodisto" : {
-"description" : "",
-"$ref" : "#/definitions/json_Koodisto"
-            },
-            "toimintoluokitusKoodisto" : {
-"description" : "",
-"$ref" : "#/definitions/json_Koodisto"
-            },
-            "hoitoprosessinVaiheKoodisto" : {
 "description" : "",
 "$ref" : "#/definitions/json_Koodisto"
             }
@@ -2017,13 +2135,13 @@
       "type" : "object",
       "title" : "IdNamePair",
           "properties" : {
-            "name" : {
-"description" : "",
-"type" : "string"
-            },
             "id" : {
 "description" : "",
 "type" : "number"
+            },
+            "name" : {
+"description" : "",
+"type" : "string"
             }
           },
       "description" : ""
@@ -2049,7 +2167,7 @@
 "description" : "",
 "type" : "boolean"
             },
-            "currentRecord" : {
+            "currentPage" : {
 "description" : "",
 "type" : "number"
             },
@@ -2270,19 +2388,19 @@
       "type" : "object",
       "title" : "KertomusID",
           "properties" : {
-            "formId" : {
-"description" : "",
-"type" : "number"
-            },
             "aika" : {
 "description" : "",
 "type" : "number"
             },
-            "ownerId" : {
+            "formId" : {
 "description" : "",
 "type" : "number"
             },
             "reportId" : {
+"description" : "",
+"type" : "number"
+            },
+            "ownerId" : {
 "description" : "",
 "type" : "number"
             }
@@ -2339,6 +2457,10 @@
       "type" : "object",
       "title" : "KuhaDtoBase",
           "properties" : {
+            "version" : {
+"description" : "",
+"type" : "number"
+            },
             "id" : {
 "description" : "",
 "type" : "number"
@@ -2352,7 +2474,7 @@
 "type" : "number"
             }
           },
-      "description" : ""
+      "description" : "Base class for MediPlan data transfer objects."
     }
     ,
     "json_KuhaDtoNameBase" : {
@@ -2656,6 +2778,22 @@
 "type" : "string"
             },
             "valmistusohje" : {
+"description" : "",
+"type" : "string"
+            },
+            "markkinoija" : {
+"description" : "",
+"type" : "string"
+            },
+            "veriplasmavalmiste" : {
+"description" : "",
+"type" : "string"
+            },
+            "biologinenLaake" : {
+"description" : "",
+"type" : "string"
+            },
+            "lisaseurannassa" : {
 "description" : "",
 "type" : "string"
             },
@@ -3319,30 +3457,70 @@
       "title" : "Laakitys",
           "properties" : {
             "omistaja" : {
-"description" : "Maps to columns\n<ul>\n<li>LaakitysHistoriaPK#getOmistaja()\n<\/ul>",
+"description" : "",
 "type" : "number"
             },
             "osa" : {
-"description" : "Maps to columns\n<ul>\n<li>LaakitysHistoriaPK#getOsa()\n<\/ul>",
+"description" : "",
 "type" : "number"
             },
-            "nimi" : {
-"description" : "Maps to columns\n<ul>\n<li>LaakeValmisteEntity#getNimi()\n<\/ul>",
-"type" : "string"
+            "laakevalmiste" : {
+"description" : "",
+"$ref" : "#/definitions/json_Laake"
             },
-            "annostus" : {
+            "laake" : {
 "description" : "",
 "type" : "string"
             },
-            "aloitusPvm" : {
+            "aloitettu" : {
 "description" : "",
 "type" : "number"
             },
-            "lopetusPvm" : {
+            "tapahtunut" : {
 "description" : "",
 "type" : "number"
             },
-            "kokoNimi" : {
+            "tapahtuma" : {
+"description" : "",
+"type" : "object"
+            },
+            "riittoisuus" : {
+"description" : "",
+"type" : "number"
+            },
+            "lopetettu" : {
+"description" : "",
+"type" : "number"
+            },
+            "lopetussyy" : {
+"description" : "",
+"type" : "string"
+            },
+            "reseptiteksti" : {
+"description" : "",
+"type" : "string"
+            },
+            "malli" : {
+"description" : "",
+"type" : "string"
+            },
+            "lyhyesti" : {
+"description" : "",
+"type" : "string"
+            },
+            "vaihdettavuus" : {
+"description" : "",
+"type" : "object"
+            },
+            "annettavaMaara" : {
+"description" : "",
+"type" : "number"
+            },
+            "annettavaMaksimi" : {
+"description" : "",
+"type" : "number"
+            },
+            "annettavaYksikko" : {
 "description" : "",
 "type" : "string"
             },
@@ -3350,23 +3528,27 @@
 "description" : "",
 "type" : "string"
             },
+            "annosteluteksti" : {
+"description" : "",
+"type" : "string"
+            },
+            "desimaaleja" : {
+"description" : "",
+"type" : "number"
+            },
+            "paino" : {
+"description" : "",
+"type" : "number"
+            },
+            "lapsenPaino" : {
+"description" : "",
+"type" : "number"
+            },
+            "toisto" : {
+"description" : "",
+"type" : "string"
+            },
             "toistokuvaus" : {
-"description" : "",
-"type" : "string"
-            },
-            "maaraaja" : {
-"description" : "",
-"type" : "string"
-            },
-            "kirjaaja" : {
-"description" : "",
-"type" : "string"
-            },
-            "huomautuksia" : {
-"description" : "",
-"type" : "string"
-            },
-            "ohjeet" : {
 "description" : "",
 "type" : "string"
             },
@@ -3374,11 +3556,7 @@
 "description" : "",
 "type" : "string"
             },
-            "annosteluteksti" : {
-"description" : "",
-"type" : "string"
-            },
-            "kayttotarkoitus" : {
+            "kellonajatString" : {
 "description" : "",
 "type" : "string"
             },
@@ -3388,13 +3566,305 @@
             },
             "antotahti" : {
 "description" : "",
-"type" : "string"
+"type" : "number"
             },
-            "laakeaineet" : {
+            "antotahtiString" : {
 "description" : "",
 "type" : "string"
             },
+            "antotahtiyksikko" : {
+"description" : "",
+"type" : "string"
+            },
+            "vrkMaara" : {
+"description" : "",
+"type" : "number"
+            },
+            "vrkMaaraYksikko" : {
+"description" : "",
+"type" : "string"
+            },
+            "kokonaiskesto" : {
+"description" : "",
+"type" : "string"
+            },
+            "kokonaismaara" : {
+"description" : "",
+"type" : "number"
+            },
+            "kokonaismaarayksikko" : {
+"description" : "",
+"type" : "string"
+            },
+            "pakkauksia" : {
+"description" : "",
+"type" : "number"
+            },
+            "kirjaaja" : {
+"description" : "",
+"type" : "number"
+            },
+            "kirjaajaString" : {
+"description" : "",
+"type" : "string"
+            },
+            "maaraaja" : {
+"description" : "",
+"type" : "number"
+            },
+            "maaraajaString" : {
+"description" : "",
+"type" : "string"
+            },
+            "maaraysyksikko" : {
+"description" : "",
+"type" : "number"
+            },
+            "varmistus" : {
+"description" : "",
+"type" : "object"
+            },
+            "kayttotarkoitus" : {
+"description" : "",
+"type" : "string"
+            },
+            "ohjeet" : {
+"description" : "",
+"type" : "string"
+            },
+            "perustelu" : {
+"description" : "",
+"type" : "string"
+            },
+            "iterointi" : {
+"description" : "",
+"type" : "number"
+            },
+            "uusittu" : {
+"description" : "",
+"type" : "number"
+            },
             "kuitattava" : {
+"description" : "",
+"type" : "string"
+            },
+            "pysyva" : {
+"description" : "",
+"type" : "object"
+            },
+            "tarvittaessa" : {
+"description" : "",
+"type" : "object"
+            },
+            "terapiaryhma" : {
+"description" : "",
+"type" : "string"
+            },
+            "soveltumaton" : {
+"description" : "",
+"type" : "object"
+            },
+            "vaikutus" : {
+"description" : "",
+"type" : "string"
+            },
+            "huomautuksia" : {
+"description" : "",
+"type" : "string"
+            },
+            "reseptityyppi" : {
+"description" : "",
+"type" : "string"
+            },
+            "reseptityyppiString" : {
+"description" : "",
+"type" : "string"
+            },
+            "tulostaja" : {
+"description" : "",
+"type" : "number"
+            },
+            "tulostettu" : {
+"description" : "",
+"type" : "number"
+            },
+            "oid" : {
+"description" : "",
+"type" : "string"
+            },
+            "tunnistustapa" : {
+"description" : "",
+"type" : "string"
+            },
+            "tunnistustapaselite" : {
+"description" : "",
+"type" : "string"
+            },
+            "annosjakeluperuste" : {
+"description" : "",
+"type" : "string"
+            },
+            "iterointivali" : {
+"description" : "",
+"type" : "number"
+            },
+            "erillisselvityskoodi" : {
+"description" : "",
+"type" : "string"
+            },
+            "erillisselvitys" : {
+"description" : "",
+"type" : "string"
+            },
+            "apteekkiviesti" : {
+"description" : "",
+"type" : "string"
+            },
+            "ereseptikielto" : {
+"description" : "",
+"type" : "string"
+            },
+            "hoitolaji" : {
+"description" : "",
+"type" : "string"
+            },
+            "uusi" : {
+"description" : "",
+"type" : "string"
+            },
+            "lahetetty" : {
+"description" : "",
+"type" : "number"
+            },
+            "reseptinLaji" : {
+"description" : "",
+"type" : "string"
+            },
+            "muutoksenSyy" : {
+"description" : "",
+"type" : "string"
+            },
+            "muutoksenPerustelu" : {
+"description" : "",
+"type" : "string"
+            },
+            "uusimiskielto" : {
+"description" : "",
+"type" : "string"
+            },
+            "uusimiskiellonSyy" : {
+"description" : "",
+"type" : "string"
+            },
+            "uusimiskiellonPerustelu" : {
+"description" : "",
+"type" : "string"
+            },
+            "potilasohjekielto" : {
+"description" : "",
+"type" : "string"
+            },
+            "tyonantaja" : {
+"description" : "",
+"type" : "string"
+            },
+            "vakuutusyhtio" : {
+"description" : "",
+"type" : "string"
+            },
+            "voimassaoloLoppu" : {
+"description" : "",
+"type" : "number"
+            },
+            "annostuslinkki" : {
+"description" : "",
+"type" : "number"
+            },
+            "hoitojakso" : {
+"description" : "",
+"type" : "number"
+            },
+            "alkuperainen" : {
+"description" : "",
+"type" : "number"
+            },
+            "palkkio" : {
+"description" : "",
+"type" : "number"
+            },
+            "palkkioErikoislaakarina" : {
+"description" : "",
+"type" : "string"
+            },
+            "tartuntatautilaake" : {
+"description" : "",
+"type" : "string"
+            },
+            "palvelutapahtuma" : {
+"description" : "",
+"type" : "number"
+            },
+            "palvelutapahtumaOid" : {
+"description" : "",
+"type" : "string"
+            },
+            "sairaalaApteekkiOid" : {
+"description" : "",
+"type" : "string"
+            },
+            "sairaalaApteekkiNimi" : {
+"description" : "",
+"type" : "string"
+            },
+            "tarkistus" : {
+"description" : "",
+"type" : "number"
+            },
+            "poistosyy" : {
+"description" : "",
+"type" : "string"
+            },
+            "poistettu" : {
+"description" : "",
+"type" : "object"
+            },
+            "muutosaika" : {
+"description" : "",
+"type" : "number"
+            },
+            "muutospaikka" : {
+"description" : "",
+"type" : "number"
+            },
+            "pysyvyys" : {
+"description" : "",
+"type" : "string"
+            },
+            "nimi" : {
+"description" : "",
+"type" : "string"
+            },
+            "annostus" : {
+"description" : "",
+"type" : "string"
+            },
+            "vaihteleva" : {
+"description" : "",
+"type" : "boolean"
+            },
+            "vaihtelevaAnnostus" : {
+"description" : "",
+"type" : "string"
+            },
+            "sic" : {
+"description" : "",
+"type" : "string"
+            },
+            "kokoNimi" : {
+"description" : "",
+"type" : "string"
+            },
+            "laakeaineet" : {
 "description" : "",
 "type" : "string"
             },
@@ -3410,54 +3880,11 @@
 "description" : "",
 "type" : "string"
             },
-            "reseptityyppi" : {
-"description" : "",
-"type" : "string"
-            },
-            "laakitysKayttoaiheList" : {
-"description" : "",
-"type" : "array",
-"items" : {
-  "$ref" : "#/definitions/json_LaakitysKayttoaiheView"
-}
-            },
-            "annettavaMaara" : {
+            "annettavaMaaraTimesPaino" : {
 "description" : "",
 "type" : "number"
-            },
-            "annettavaMaksimi" : {
-"description" : "",
-"type" : "number"
-            },
-            "annettavaYksikko" : {
-"description" : "",
-"type" : "string"
-            },
-            "laake" : {
-"description" : "return Medicine VNR Code Maps to columns\n<ul>\n<li>LaakeValmisteEntity#getKoodi()\n<\/ul>",
-"type" : "string"
             },
             "vrkmaara" : {
-"description" : "",
-"type" : "number"
-            },
-            "vrkmaaraYksikko" : {
-"description" : "",
-"type" : "string"
-            },
-            "vaihtelevaAnnostus" : {
-"description" : "",
-"type" : "string"
-            },
-            "vaihteleva" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "paino" : {
-"description" : "",
-"type" : "number"
-            },
-            "annettavaMaaraTimesPaino" : {
 "description" : "",
 "type" : "number"
             },
@@ -3468,6 +3895,10 @@
             "vrkmaaraCalc" : {
 "description" : "",
 "type" : "number"
+            },
+            "vrkmaaraYksikko" : {
+"description" : "",
+"type" : "string"
             },
             "tauot" : {
 "description" : "",
@@ -3495,6 +3926,13 @@
 "type" : "array",
 "items" : {
   "$ref" : "#/definitions/json_LaakitysKayttoaihe"
+}
+            },
+            "laakitysKayttoaiheList" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_LaakitysKayttoaiheView"
 }
             },
             "kuittaukset" : {
@@ -3742,9 +4180,12 @@
         },
         {
           "properties" : {
-            "laakityskategoria" : {
-"description" : "Returns the laakityskategoria. Map of laakitysKategorias. Laakityskategoria type as key",
-"type" : "object"
+            "laakityslista" : {
+"description" : "Returns a list of Laakitys objects",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_Laakitys"
+}
             },
             "permissionDTO" : {
 "description" : "Returns the permissionDTO object.",
@@ -3917,13 +4358,13 @@
         },
         {
           "properties" : {
-            "reason" : {
-"description" : "",
-"type" : "string"
-            },
             "user" : {
 "description" : "",
 "type" : "number"
+            },
+            "reason" : {
+"description" : "",
+"type" : "string"
             }
           }
         }
@@ -3949,6 +4390,30 @@
             }
           },
       "description" : "Overrider LoginCredentials to provide domain-name"
+    }
+    ,
+    "json_MainTitleConfig" : {
+      "type" : "object",
+      "title" : "MainTitleConfig",
+          "properties" : {
+            "templateTitles" : {
+"description" : "",
+"type" : "object"
+            },
+            "groupTitles" : {
+"description" : "",
+"type" : "object"
+            },
+            "name" : {
+"description" : "",
+"type" : "string"
+            },
+            "paanakyma" : {
+"description" : "",
+"type" : "string"
+            }
+          },
+      "description" : "DTO model to present configuration for main titles used in kertomus configuration DTO KertomusFormConfig.\nThis configuration includes two lists:\n<ul>\n<li>Map of titles from Mallikirjaukset. <p>\nKey is the otsikko name from teksti table and value is title's value stored in vapaa and vakio fields.<\/p>\nBased class from ViewTitleValue presents the default value depending from type of otsikko.\n<\/li>\n<li>Map of groups with list of titles in every group.<\/li>\n<\/ul>"
     }
     ,
     "json_Meaning" : {
@@ -4044,23 +4509,7 @@
         },
         {
           "properties" : {
-            "comment" : {
-"description" : "",
-"type" : "string"
-            },
-            "normal" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "editable" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "owner" : {
-"description" : "",
-"type" : "number"
-            },
-            "datetime" : {
+            "muutosAika" : {
 "description" : "",
 "type" : "number"
             },
@@ -4068,9 +4517,37 @@
 "description" : "",
 "type" : "number"
             },
+            "normal" : {
+"description" : "",
+"type" : "boolean"
+            },
             "reportId" : {
 "description" : "",
 "type" : "number"
+            },
+            "owner" : {
+"description" : "",
+"type" : "number"
+            },
+            "editable" : {
+"description" : "",
+"type" : "boolean"
+            },
+            "datetime" : {
+"description" : "",
+"type" : "number"
+            },
+            "responsible" : {
+"description" : "",
+"type" : "string"
+            },
+            "userUnit" : {
+"description" : "",
+"type" : "string"
+            },
+            "comment" : {
+"description" : "",
+"type" : "string"
             },
             "id" : {
 "description" : "",
@@ -4156,19 +4633,19 @@
       "type" : "object",
       "title" : "OmistajaList",
           "properties" : {
-            "pageIndex" : {
-"description" : "",
-"type" : "number"
-            },
             "pageItemsCount" : {
 "description" : "",
 "type" : "number"
             },
-            "allItemsCount" : {
+            "pageSize" : {
 "description" : "",
 "type" : "number"
             },
-            "pageSize" : {
+            "pageIndex" : {
+"description" : "",
+"type" : "number"
+            },
+            "allItemsCount" : {
 "description" : "",
 "type" : "number"
             }
@@ -4180,16 +4657,16 @@
       "type" : "object",
       "title" : "OmistajaListConfig",
           "properties" : {
+            "listId" : {
+"description" : "",
+"type" : "number"
+            },
             "basicInfoTitles" : {
 "description" : "",
 "type" : "array",
 "items" : {
   "type" : "string"
 }
-            },
-            "listId" : {
-"description" : "",
-"type" : "number"
             },
             "listOwnerId" : {
 "description" : "",
@@ -4423,7 +4900,7 @@
           "properties" : {
             "alkaa" : {
 "description" : "",
-"$ref" : "#/definitions/json_Date"
+"type" : "number"
             },
             "paatos" : {
 "description" : "",
@@ -4435,15 +4912,15 @@
             },
             "loppuu" : {
 "description" : "",
-"$ref" : "#/definitions/json_Date"
+"type" : "number"
             },
             "alkuaika" : {
 "description" : "",
-"$ref" : "#/definitions/json_Time"
+"type" : "string"
             },
             "loppuaika" : {
 "description" : "",
-"$ref" : "#/definitions/json_Time"
+"type" : "string"
             },
             "alusta" : {
 "description" : "",
@@ -4469,6 +4946,26 @@
         }
       ],
       "description" : "DTO for palvelukeskeytys (related to palvelup��t�kses)"
+    }
+    ,
+    "json_PalvelukeskeytysSyy" : {
+      "type" : "object",
+      "title" : "PalvelukeskeytysSyy",
+          "properties" : {
+            "syyDescription" : {
+"description" : "",
+"type" : "string"
+            },
+            "billingType" : {
+"description" : "",
+"$ref" : "#/definitions/json_BillingType"
+            },
+            "maxBillingDays" : {
+"description" : "",
+"type" : "number"
+            }
+          },
+      "description" : ""
     }
     ,
     "json_Palveluluokka" : {
@@ -4557,6 +5054,10 @@
       "type" : "object",
       "title" : "Palvelupaatos",
           "properties" : {
+            "permissions" : {
+"description" : "",
+"$ref" : "#/definitions/json_PermissionDTO"
+            },
             "paatos" : {
 "description" : "",
 "type" : "number"
@@ -4571,7 +5072,7 @@
             },
             "alkaa" : {
 "description" : "",
-"$ref" : "#/definitions/json_Date"
+"type" : "number"
             },
             "diaarinumero" : {
 "description" : "",
@@ -4579,7 +5080,7 @@
             },
             "haettu" : {
 "description" : "",
-"$ref" : "#/definitions/json_Date"
+"type" : "number"
             },
             "huomautuksia" : {
 "description" : "",
@@ -4603,11 +5104,11 @@
             },
             "laskutusalkaa" : {
 "description" : "",
-"$ref" : "#/definitions/json_Date"
+"type" : "number"
             },
             "loppuu" : {
 "description" : "",
-"$ref" : "#/definitions/json_Date"
+"type" : "number"
             },
             "luokittelu1" : {
 "description" : "",
@@ -4651,7 +5152,7 @@
             },
             "paatetty" : {
 "description" : "",
-"$ref" : "#/definitions/json_Date"
+"type" : "number"
             },
             "paatosyksikko" : {
 "description" : "",
@@ -4707,7 +5208,7 @@
             },
             "valitettu" : {
 "description" : "",
-"$ref" : "#/definitions/json_Date"
+"type" : "number"
             },
             "valmistelija" : {
 "description" : "",
@@ -4743,32 +5244,39 @@
 "items" : {
   "$ref" : "#/definitions/json_Palvelukeskeytys"
 }
+            },
+            "effectivePalvelukeskeytykset" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_Palvelukeskeytys"
+}
             }
           },
-      "description" : "Palvelup��t�s DTO."
+      "description" : ""
     }
     ,
     "json_Palvelutapahtuma" : {
       "type" : "object",
       "title" : "Palvelutapahtuma",
           "properties" : {
-            "tyonantaja" : {
+            "peruuntumisSyyKoodi" : {
+"description" : "",
+"type" : "string"
+            },
+            "rekisteri" : {
+"description" : "",
+"type" : "string"
+            },
+            "alkuaika" : {
 "description" : "",
 "type" : "number"
-            },
-            "kirjaaja" : {
-"description" : "",
-"type" : "number"
-            },
-            "kirjausyksikko" : {
-"description" : "",
-"$ref" : "#/definitions/json_LazyLoadedDto"
             },
             "tyyppi" : {
 "description" : "",
 "$ref" : "#/definitions/json_Palvelutapahtumaluokitus"
             },
-            "oid" : {
+            "palveluntuottaja" : {
 "description" : "",
 "type" : "string"
             },
@@ -4776,51 +5284,51 @@
 "description" : "",
 "type" : "number"
             },
-            "id" : {
-"description" : "",
-"type" : "number"
-            },
             "luovutusHaunPalvelutapahtuma" : {
 "description" : "",
 "type" : "boolean"
+            },
+            "oid" : {
+"description" : "",
+"type" : "string"
             },
             "palvelunantaja" : {
 "description" : "",
 "type" : "string"
             },
-            "palveluntuottaja" : {
-"description" : "",
-"type" : "string"
-            },
-            "aktiivinen" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "alkuaika" : {
+            "loppuaika" : {
 "description" : "",
 "type" : "number"
             },
-            "rekisteri" : {
+            "tyonantaja" : {
 "description" : "",
-"type" : "string"
+"type" : "number"
+            },
+            "kirjausyksikko" : {
+"description" : "",
+"$ref" : "#/definitions/json_LazyLoadedDto"
             },
             "tapahtumalaji" : {
 "description" : "",
 "$ref" : "#/definitions/json_Tapahtumalaji"
             },
-            "peruuntumisSyyKoodi" : {
+            "kirjaaja" : {
 "description" : "",
-"type" : "string"
+"type" : "number"
+            },
+            "kirjausaika" : {
+"description" : "",
+"type" : "number"
+            },
+            "aktiivinen" : {
+"description" : "",
+"type" : "boolean"
+            },
+            "id" : {
+"description" : "",
+"type" : "number"
             },
             "omistaja" : {
-"description" : "",
-"type" : "number"
-            },
-            "kirjausAika" : {
-"description" : "",
-"type" : "number"
-            },
-            "loppuaika" : {
 "description" : "",
 "type" : "number"
             }
@@ -4869,7 +5377,8 @@
             "KONSULTAATIO",
             "ASIAKKAAN_ASIOIDEN_HOITO_ILMAN_ASIAKASKONTAKTIA",
             "MUU_LAITOSHOITOJAKSO",
-            "SARJAHOITO"
+            "SARJAHOITO",
+            "ASIA"
           ],
       "description" : ""
     }
@@ -4883,27 +5392,7 @@
         },
         {
           "properties" : {
-            "basicInfo" : {
-"description" : "",
-"$ref" : "#/definitions/json_BasicInfo"
-            },
-            "gender" : {
-"description" : "",
-"type" : "string"
-            },
             "hoitosuhde" : {
-"description" : "",
-"$ref" : "#/definitions/json_LazyLoadedDto"
-            },
-            "realmId" : {
-"description" : "",
-"type" : "string"
-            },
-            "domainId" : {
-"description" : "",
-"type" : "string"
-            },
-            "hoitojakso" : {
 "description" : "",
 "$ref" : "#/definitions/json_LazyLoadedDto"
             },
@@ -4911,7 +5400,7 @@
 "description" : "",
 "type" : "string"
             },
-            "lastName" : {
+            "realmId" : {
 "description" : "",
 "type" : "string"
             },
@@ -4919,11 +5408,31 @@
 "description" : "",
 "type" : "string"
             },
+            "basicInfo" : {
+"description" : "",
+"$ref" : "#/definitions/json_BasicInfo"
+            },
+            "riskitietoStatus" : {
+"description" : "",
+"$ref" : "#/definitions/json_LazyLoadedDto"
+            },
+            "gender" : {
+"description" : "",
+"type" : "string"
+            },
+            "lastName" : {
+"description" : "",
+"type" : "string"
+            },
+            "domainId" : {
+"description" : "",
+"type" : "string"
+            },
             "age" : {
 "description" : "",
 "type" : "number"
             },
-            "riskitietoStatus" : {
+            "hoitojakso" : {
 "description" : "",
 "$ref" : "#/definitions/json_LazyLoadedDto"
             },
@@ -5106,10 +5615,6 @@
         },
         {
           "properties" : {
-            "version" : {
-"description" : "",
-"type" : "number"
-            },
             "color" : {
 "description" : "Color in hex color format eg. \"#1f2f3f\" (regexp =  #([A-Fa-f0-9]{6}) )",
 "type" : "string"
@@ -5169,16 +5674,16 @@
       "type" : "object",
       "title" : "Riskitiedot",
           "properties" : {
+            "omistaja" : {
+"description" : "",
+"type" : "number"
+            },
             "riskitiedotList" : {
 "description" : "",
 "type" : "array",
 "items" : {
   "$ref" : "#/definitions/json_Riskitieto"
 }
-            },
-            "omistaja" : {
-"description" : "",
-"type" : "number"
             },
             "permissionDTO" : {
 "description" : "",
@@ -5530,7 +6035,10 @@
           "properties" : {
             "titles" : {
 "description" : "",
-"type" : "object"
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_SeurantaTitleEditFlag"
+}
             },
             "permission" : {
 "description" : "",
@@ -5538,6 +6046,22 @@
             }
           },
       "description" : "Form config for one seuranta lomake."
+    }
+    ,
+    "json_SeurantaTitleEditFlag" : {
+      "type" : "object",
+      "title" : "SeurantaTitleEditFlag",
+          "properties" : {
+            "name" : {
+"description" : "",
+"type" : "string"
+            },
+            "edited" : {
+"description" : "",
+"type" : "boolean"
+            }
+          },
+      "description" : "Flag class to present title editiong option configuration for SeurantaFormConfig titles properties.\nIt object is required due correct Json mapping model"
     }
     ,
     "json_SkillDto" : {
@@ -5663,7 +6187,9 @@
             "ASSIGNED",
             "TEMPLATE",
             "COMMON",
-            "TRANSITION"
+            "TRANSITION",
+            "ANCHOR",
+            "WORKING_TIME"
           ],
       "description" : ""
     }
@@ -5779,9 +6305,9 @@
       "type" : "object",
       "title" : "Tutkimuspyynnot",
           "properties" : {
-            "patientId" : {
+            "permissionDTO" : {
 "description" : "",
-"type" : "number"
+"$ref" : "#/definitions/json_Permission"
             },
             "tutkimuspyyntoList" : {
 "description" : "",
@@ -5790,9 +6316,9 @@
   "$ref" : "#/definitions/json_Tutkimuspyynto"
 }
             },
-            "permissionDTO" : {
+            "patientId" : {
 "description" : "",
-"$ref" : "#/definitions/json_Permission"
+"type" : "number"
             }
           },
       "description" : ""
@@ -6195,10 +6721,6 @@
         },
         {
           "properties" : {
-            "skills" : {
-"description" : "",
-"$ref" : "#/definitions/json_SkillsInfo"
-            },
             "lastName" : {
 "description" : "",
 "type" : "string"
@@ -6206,10 +6728,6 @@
             "startTime" : {
 "description" : "",
 "type" : "number"
-            },
-            "basicInfo" : {
-"description" : "",
-"$ref" : "#/definitions/json_BasicInfo"
             },
             "endTime" : {
 "description" : "",
@@ -6222,6 +6740,14 @@
             "firstName" : {
 "description" : "",
 "type" : "string"
+            },
+            "basicInfo" : {
+"description" : "",
+"$ref" : "#/definitions/json_BasicInfo"
+            },
+            "skills" : {
+"description" : "",
+"$ref" : "#/definitions/json_SkillsInfo"
             }
           }
         }
@@ -6267,6 +6793,53 @@
       "description" : ""
     }
     ,
+    "json_UserViewDTO" : {
+      "type" : "object",
+      "title" : "UserViewDTO",
+          "properties" : {
+            "mediatriId" : {
+"description" : "",
+"type" : "number"
+            },
+            "loginName" : {
+"description" : "",
+"type" : "string"
+            },
+            "applName" : {
+"description" : "",
+"type" : "string"
+            },
+            "viewJson" : {
+"description" : "",
+"type" : "string"
+            }
+          },
+      "description" : "DTO to present user view content"
+    }
+    ,
+    "json_ViewConfiguration" : {
+      "type" : "object",
+      "title" : "ViewConfiguration",
+          "properties" : {
+            "landingPage" : {
+"description" : "",
+"$ref" : "#/definitions/json_Components"
+            },
+            "landingPageWithOwner" : {
+"description" : "",
+"$ref" : "#/definitions/json_Components"
+            },
+            "components" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_Components"
+}
+            }
+          },
+      "description" : "DTO object for view configuration"
+    }
+    ,
     "json_ViewTitleValue" : {
       "type" : "object",
       "title" : "ViewTitleValue",
@@ -6282,10 +6855,6 @@
             "presentation" : {
 "description" : "Create Json presentation property for the title value",
 "type" : "string"
-            },
-            "empty" : {
-"description" : "Function to check if title value is empty.\nDefault implementation assume that value always contains some data.\nDerived classes can override this method.",
-"type" : "boolean"
             }
           }
         }
@@ -6307,6 +6876,33 @@
             }
           },
       "description" : ""
+    }
+    ,
+    "json_Yhteisvaikutus" : {
+      "type" : "object",
+      "title" : "Yhteisvaikutus",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AbstractDTO"
+        },
+        {
+          "properties" : {
+            "laake1" : {
+"description" : "",
+"type" : "string"
+            },
+            "laake2" : {
+"description" : "",
+"type" : "string"
+            },
+            "interaktio" : {
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for Yhteisvaikutus\n\nStores two medicines and the interaction between them"
     }
     ,
     "xml_ns0_abstractDTO" : {
@@ -6458,6 +7054,95 @@
         }
       ],
       "description" : "DTO for LaakitysAnto.\n\n* A class to present LAAKITYS_ANTO table in medication functionality.\nUsed to carry the data from database to the client side.\n\n<table style=\"border: 1px solid black;\">\n<tr><th>property<\/th><th>only for frontend<\/th><th>obligatory from api<\/th><th>editable<\/th><th>must be same as laakityshistorias<\/th><\/tr>\n<tr><td>antaja<\/td><td>no<\/td><td>yes<\/td><td>yes<\/td><td>no<\/td><\/tr>\n<tr><td>huomautuksia<\/td><td>no<\/td><td>no<\/td><td>yes<\/td><td>no<\/td><\/tr>\n<tr><td>kello<\/td><td>no<\/td><td>yes (in planned)<\/td><td>yes<\/td><td>yes (all in one field)<\/td><\/tr>\n<tr><td>kirjaaja<\/td><td>no<\/td><td>no (added by api)<\/td><td>no<\/td><td>no<\/td><\/tr>\n<tr><td>laake<\/td><td>yes<\/td><td>no (added by api)<\/td><td>no<\/td><td>yes<\/td><\/tr>\n<tr><td>maara<\/td><td>no<\/td><td>yes<\/td><td>yes<\/td><td>no<\/td><\/tr>\n<tr><td>muutosAika<\/td><td>no<\/td><td>no (added by api)<\/td><td>no<\/td><td>no<\/td><\/tr>\n<tr><td>omistaja<\/td><td>no<\/td><td>yes (doublechecked)<\/td><td>no<\/td><td>yes<\/td><\/tr>\n<tr><td>osa<\/td><td>no<\/td><td>yes (doublechecked)<\/td><td>no<\/td><td>yes<\/td><\/tr>\n<tr><td>poistettu<\/td><td>no<\/td><td>no (added by api)<\/td><td>no<\/td><td>no<\/td><\/tr>\n<tr><td>toteutunutAika<\/td><td>no<\/td><td>yes<\/td><td>yes<\/td><td>no<\/td><\/tr>\n<tr><td>toteutunutAikaOriginal<\/td><td>no<\/td><td>yes (only for editing)<\/td><td>no<\/td><td>no<\/td><\/tr>\n<tr><td>toteutunutAikaLoppu<\/td><td>no<\/td><td>no<\/td><td>yes<\/td><td>no<\/td><\/tr>\n<tr><td>tyyppi<\/td><td>no<\/td><td>yes<\/td><td>no<\/td><td>no<\/td><\/tr>\n<tr><td>yksikko<\/td><td>no<\/td><td>yes (doublechecked)<\/td><td>no<\/td><td>yes<\/td><\/tr>\n<tr><td>kirjaajaName<\/td><td>yes<\/td><td>no<\/td><td>no<\/td><td>no<\/td><\/tr>\n<tr><td>antajaName<\/td><td>yes<\/td><td>no<\/td><td>no<\/td><td>no<\/td><\/tr>\n<tr><td>annettavaMaara<\/td><td>yes<\/td><td>no<\/td><td>no<\/td><td>no<\/td><\/tr>\n<tr><td>annettavaYksikko<\/td><td>yes<\/td><td>no<\/td><td>no<\/td><td>no<\/td><\/tr>\n<tr><td>annettavaMaksimi<\/td><td>yes<\/td><td>no<\/td><td>no<\/td><td>no<\/td><\/tr>\n<\/table>"
+    }
+    ,
+    "xml_ns0_laakitysKayttoaiheView" : {
+      "type" : "object",
+      "title" : "laakitysKayttoaiheView",
+      "allOf" : [
+        {
+          "properties" : {
+            "alkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "muutosaika" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "muutospaikka" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "numero" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "omistaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "osa" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "poistettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "reseptiteksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "rivi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "selite" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "tyyppi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakitysKayttoaihe\n\nA class to present LAAKITYS_KAYTTOAIHE and KAYTTOAIHE tables in medication functionality\nUsed to carry the data from database to the client side."
     }
     ,
     "xml_ns0_tutkimuspyynto" : {
@@ -7207,6 +7892,2548 @@
       "description" : "DTO for Hoito\n\nA class to present HOITO table in hoito-ohjeet ja -m��r�ykset functionality.\nUsed to carry the data from database to the client side."
     }
     ,
+    "xml_ns0_laake" : {
+      "type" : "object",
+      "title" : "laake",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "alkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "annosjakelu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "annostusSoveltuvuus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakeAnnostusSoveltuvuus"
+            },
+            "atc" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakeAtc"
+            },
+            "biologinenLaake" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "ehto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "erityislupaVanhenee" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "erityisluvallinen" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "erityispiirre" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "halytys" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "hinta" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "hintamuutos" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "hintaputki" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "huomautuksia" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "huume" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "jakouurre" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "kappalevarasto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "kelpoisuusaika" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "koodi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "koodityyppi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "koostumus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakeKoostumus"
+            },
+            "korvattavuus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "kustannuslinkki" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "laakeaineet" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakeAine"
+            },
+            "laakemuoto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "laakemuototunnus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "laaketietokantaversio" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "laakevaihto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "laite" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "laji" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "lapsille" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "liikennevaara" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "lisaseurannassa" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "lisatiedot" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "maaraamisehto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "markkinoija" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "muutosaika" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "muutospaikka" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "myyntilupanumero" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "myyntiluvanHaltija" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "nimi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "pakkaus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "pakkausarvo" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "pakkauskerroin" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "pakkaustyyppi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "pakkausyksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "peruslaakevalikoima" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "pkv" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "poistettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "reseptiteksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "reseptivalmiste" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "rinnakkaisvalmiste" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "sailytys" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "seloste" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakeSeloste"
+            },
+            "sopimustoimittaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "substituutiokoodi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "substituutioryhma" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "suorakorvauskoodi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "suoritelinkki" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "tarjoushinta" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "terapiaryhma" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakeTerapiaryhma"
+            },
+            "tiivistelma" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakeTiivistelma"
+            },
+            "tila" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "tilasto1" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "tilasto2" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "tilasto3" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "tukkuhinta" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "tukkunumero" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "vahvuus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "vahvuusarvo" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "vahvuusyksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "valmistaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "valmistusohje" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "varoituksia" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "varoitusraja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "vastaAihe" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakeVastaAihe"
+            },
+            "velvoitevarasto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "veriplasmavalmiste" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "vero" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "viitehinta" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "yhteisvaikutus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakeYhteisvaikutus"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for Laake, data base table LAAKE_VALMISTE"
+    }
+    ,
+    "xml_ns0_laakeAine" : {
+      "type" : "object",
+      "title" : "laakeAine",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "aine" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Get medicine ingredient",
+"type" : "string"
+            },
+            "ainekoodi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Get the code for the ingredient (l��ketietokannasta)",
+"type" : "string"
+            },
+            "alkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Get the origin\n-'O' if added by organization\n-'A' or 'M' otherwise",
+"type" : "number"
+            },
+            "atc" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Get the ATC code, if available",
+"type" : "string"
+            },
+            "jarjestys" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Get the order number for the ingredient, if available",
+"type" : "number"
+            },
+            "laake" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Get medicine vnr code",
+"type" : "string"
+            },
+            "maara" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Get ingredient amount",
+"type" : "number"
+            },
+            "yksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Get ingredient amount unit",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeAine, data base table LAAKE_AINE\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_AINE.html"
+    }
+    ,
+    "xml_ns0_laakeAnnostus" : {
+      "type" : "object",
+      "title" : "laakeAnnostus",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "aikayksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the time unit used",
+"type" : "string"
+            },
+            "alaikaraja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the lower age limit",
+"type" : "number"
+            },
+            "alapainoraja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the lower weight limit",
+"type" : "number"
+            },
+            "alkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the origin of the dosage\n-'O' if current organization\n-'A' or 'M' otherwise",
+"type" : "number"
+            },
+            "annettavaMaara" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the size of the single dosage",
+"type" : "number"
+            },
+            "annettavaMaksimi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the maximum size of a single dosage",
+"type" : "number"
+            },
+            "annettavaYksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the unit of the single dosage",
+"type" : "string"
+            },
+            "antopaikat" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns \"antopaikat\" for the medicine",
+"type" : "string"
+            },
+            "antoreitit" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns \"antoreitit\" for the medicine",
+"type" : "string"
+            },
+            "antotahti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the speed of dosing",
+"type" : "number"
+            },
+            "antotahtiYksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the unit of the dosing speed",
+"type" : "string"
+            },
+            "antotavat" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns \"antotavat\" for the medicine",
+"type" : "string"
+            },
+            "antovalineet" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns \"antov�lineet\" for the medicine",
+"type" : "string"
+            },
+            "desimaaleja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the amount of decimals in prescription text",
+"type" : "number"
+            },
+            "iterointi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the iteration",
+"type" : "number"
+            },
+            "kayttotarkoitus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the use of the dosage",
+"type" : "string"
+            },
+            "kenen" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns whose dosage it is",
+"type" : "number"
+            },
+            "kokonaiskesto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the total duratio of the dosage",
+"type" : "string"
+            },
+            "kokonaismaara" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the total amount of the dosage",
+"type" : "number"
+            },
+            "kokonaismaaraYksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the unit of total amount of the dosage",
+"type" : "string"
+            },
+            "lyhyesti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns a summary of the dosage",
+"type" : "string"
+            },
+            "malli" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the model for the prescription text",
+"type" : "string"
+            },
+            "muutosaika" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the actual DB-change time of the dosage",
+"type" : "string"
+            },
+            "muutospaikka" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the organization in which the change has been made",
+"type" : "number"
+            },
+            "numero" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the id of the dosage",
+"type" : "number"
+            },
+            "ohjeet" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the instructions of the dosage",
+"type" : "string"
+            },
+            "painokerroin" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns 'K' if dosage should be multiplied by patients weight",
+"type" : "number"
+            },
+            "perusteluVaaditaan" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns 'K' if Kela wants user to explain the usage of medicine. 'E' otherwise.",
+"type" : "number"
+            },
+            "poistettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the code of the dosage removal. 'E' - not removed, 'K' = removed",
+"type" : "number"
+            },
+            "pysyva" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the permanence of the dosage\n-'K' pysyv�\n-'E' otherwise",
+"type" : "number"
+            },
+            "selite" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the explanation of the dosage",
+"type" : "string"
+            },
+            "tarvittaessa" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns if the medicine is taken when needed\n-'K' tarvittaessa\n-'E' otherwise",
+"type" : "number"
+            },
+            "toisto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the repetition of the dosage",
+"type" : "string"
+            },
+            "toistokuvaus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the repetition in plain language",
+"type" : "string"
+            },
+            "varmistus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the confirmation for the dosage\n-'K' if \"sic!\" should be added to the prescription text\n-'E' otherwise",
+"type" : "number"
+            },
+            "ylaikaraja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the upper age limit",
+"type" : "number"
+            },
+            "ylapainoraja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the upper weight limit",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeAnnostus\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS.html"
+    }
+    ,
+    "xml_ns0_laakeAnnostusSoveltuvuus" : {
+      "type" : "object",
+      "title" : "laakeAnnostusSoveltuvuus",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "alkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the origin of the dosage\n-'O' if current organization\n-'A' or 'M' otherwise",
+"type" : "number"
+            },
+            "annostus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the dosage object",
+"$ref" : "#/definitions/xml_ns0_laakeAnnostus"
+            },
+            "laake" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the vnr code of the medicine",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeAnnostusSoveltuvuus\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS_SOVELTUVUUS.html"
+    }
+    ,
+    "xml_ns0_laakeAtc" : {
+      "type" : "object",
+      "title" : "laakeAtc",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "alkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "atc" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeAtc, data base table LAAKE_ATC"
+    }
+    ,
+    "xml_ns0_laakeKoostumus" : {
+      "type" : "object",
+      "title" : "laakeKoostumus",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "komponentinKoodi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the component code (VNR code)",
+"type" : "string"
+            },
+            "komponentti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the component in text format",
+"type" : "string"
+            },
+            "maara" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the amount of component",
+"type" : "number"
+            },
+            "osa" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the part number of the medicine component",
+"type" : "number"
+            },
+            "tyyppi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the type of the medicine component\n-'B' if \"pohja-aine\"\n-Perusaine, johon lis�aineet sekoitetaan\n-'A' if \"lis�aine\"\n-Lis�aineet ovat yleens� varsinaisia vaikuttavia aineita",
+"type" : "number"
+            },
+            "vahvuus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the strength of the component",
+"type" : "number"
+            },
+            "vahvuusyksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the unit of strength",
+"type" : "string"
+            },
+            "yksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the unit of amount",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeKoostumus\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html"
+    }
+    ,
+    "xml_ns0_laakeSeloste" : {
+      "type" : "object",
+      "title" : "laakeSeloste",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "ehto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the preconditions for the medicine\n(m��r�ys-/toimitusehto)",
+"type" : "string"
+            },
+            "muutosaika" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the actual DB-change time of the desctription",
+"type" : "string"
+            },
+            "muutospaikka" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the organization in which the change has been made",
+"type" : "number"
+            },
+            "nimi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the name of the medication",
+"type" : "string"
+            },
+            "poistettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the code of the description removal. 'E' - not removed, 'K' = removed",
+"type" : "number"
+            },
+            "seloste" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the id of the medication description",
+"type" : "number"
+            },
+            "tekstit" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns a list of description texts",
+"$ref" : "#/definitions/xml_ns0_laakeSelosteTeksti"
+            },
+            "valmistaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the manufacturer of the medicine",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeSeloste\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html"
+    }
+    ,
+    "xml_ns0_laakeSelosteTeksti" : {
+      "type" : "object",
+      "title" : "laakeSelosteTeksti",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "osa" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the part number of the description, can be used to order descriptions",
+"type" : "number"
+            },
+            "otsikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the header of the description",
+"type" : "number"
+            },
+            "teksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the text of the description",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeSelosteTeksti\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_TEKSTI.html"
+    }
+    ,
+    "xml_ns0_laakeTerapiaryhma" : {
+      "type" : "object",
+      "title" : "laakeTerapiaryhma",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "alkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the origin of the therapy group\n-'O' if therapy group is linked in the current organization\n-'A' or 'M' otherwise",
+"type" : "number"
+            },
+            "nimi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the name of the therapy group",
+"type" : "string"
+            },
+            "poistettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the code of the therapy group removal. 'E' - not removed, 'K' = removed",
+"type" : "number"
+            },
+            "taso" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the level of the therapy group\n-1 is the highest level, lower levels are >1",
+"type" : "number"
+            },
+            "terapiaryhma" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the code of the therapy group",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeTerapiaryhma\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TERAPIARYHMA.html\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/TERAPIARYHMA.html"
+    }
+    ,
+    "xml_ns0_laakeTiivistelma" : {
+      "type" : "object",
+      "title" : "laakeTiivistelma",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "ehto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the preconditions for the medicine\n(m��r�ys-/toimitusehto)",
+"type" : "string"
+            },
+            "korvattavuus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the refundability",
+"type" : "string"
+            },
+            "muutosaika" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the actual DB-change time of the summary",
+"type" : "string"
+            },
+            "muutospaikka" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the organization in which the change has been made",
+"type" : "number"
+            },
+            "nimi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the name of the medicine the summary is about",
+"type" : "string"
+            },
+            "poistettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the code of the summary removal. 'E' - not removed, 'K' = removed",
+"type" : "number"
+            },
+            "tekstit" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns a list of summary texts",
+"$ref" : "#/definitions/xml_ns0_laakeTiivistelmaTeksti"
+            },
+            "tiivistelma" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the id of the summary",
+"type" : "number"
+            },
+            "valmistaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the manufacturer",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeTiivistelma\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html"
+    }
+    ,
+    "xml_ns0_laakeTiivistelmaTeksti" : {
+      "type" : "object",
+      "title" : "laakeTiivistelmaTeksti",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "osa" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the part number of the summary text, can be used to order summaries",
+"type" : "number"
+            },
+            "otsikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the header of the",
+"type" : "number"
+            },
+            "teksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the summary text",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeTiivistelmaTeksti\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_TEKSTI.html"
+    }
+    ,
+    "xml_ns0_laakeVastaAihe" : {
+      "type" : "object",
+      "title" : "laakeVastaAihe",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "alaraja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the lower limit of the contraindication",
+"type" : "number"
+            },
+            "alkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the origin of the contraindication\n-'O' if therapy group is linked in the current organization\n-'A' or 'M' otherwise",
+"type" : "number"
+            },
+            "muutosaika" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the actual DB-change time of the contraindication",
+"type" : "string"
+            },
+            "muutospaikka" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the organization in which the change has been made",
+"type" : "number"
+            },
+            "poistettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the code of the contraindication removal. 'E' - not removed, 'K' = removed",
+"type" : "number"
+            },
+            "rajoite" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the type of the contraindication\n-'Y' age in years\n-'M' age in months\n-'W' age in weeks\n-'G' weight\n-'P' pregnancy\n-'B' breastfeeding\n-'D' diagnose\n-'1' male\n-'2' female",
+"type" : "number"
+            },
+            "selite" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the name of the contraindication in plain language",
+"type" : "string"
+            },
+            "vastaAihe" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the id",
+"type" : "number"
+            },
+            "vastaAiheAlkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the origin of the contraindication",
+"type" : "number"
+            },
+            "ylaraja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the upper limit of the contraindication",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakeVastaAihe\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html"
+    }
+    ,
+    "xml_ns0_laakeYhteisvaikutus" : {
+      "type" : "object",
+      "title" : "laakeYhteisvaikutus",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "aine" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the ATC code or the name of the agent (atc tai vaikuttava aine)",
+"type" : "string"
+            },
+            "alkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the origin of interaction\n-'O' if interaction is linked in the current organization\n-'A' or 'M' otherwise",
+"type" : "number"
+            },
+            "koodisto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the used code system\n-If getAine returns an ATC code, getKoodisto returns \"ATC\"",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for Yhteisvaikutus\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_YHTEISVAIKUTUS.html"
+    }
+    ,
+    "xml_ns0_laakitys" : {
+      "type" : "object",
+      "title" : "laakitys",
+      "allOf" : [
+        {
+          "properties" : {
+            "aikayksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "alkuperainen" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "aloitettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "annettavaMaara" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "annettavaMaaraTimesPaino" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "annettavaMaksimi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "annettavaYksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "annosjakeluperuste" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "annosteluteksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "annostus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "annostuslinkki" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "annot" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakitysAnto"
+            },
+            "antotahti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "antotahtiString" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "antotahtiyksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "apteekkiviesti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "desimaaleja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "ereseptikielto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "erillisselvitys" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "erillisselvityskoodi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "hoitojakso" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "hoitolaji" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "huomautuksia" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "iterointi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "iterointivali" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "kayttoaiheet" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakitysKayttoaihe"
+            },
+            "kayttotarkoitus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "kellonajat" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "kellonajatString" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "kertaAnnos" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "kirjaaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "kirjaajaString" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "kokoNimi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "kokonaiskesto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "kokonaismaara" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "kokonaismaarayksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "kuitattava" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "kuittaukset" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakitysKuittaus"
+            },
+            "laake" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "laakeaineet" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "laakevalmiste" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laake"
+            },
+            "laakitysKayttoaiheList" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakitysKayttoaiheView"
+            },
+            "lahetetty" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "lapsenPaino" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "lopetettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "lopetussyy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "lyhyesti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "maaraaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "maaraajaString" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "maaraysyksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "malli" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "muutoksenPerustelu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "muutoksenSyy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "muutosaika" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "muutospaikka" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "nimi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "ohjeet" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "oid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "omistaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "osa" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "paino" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "pakkauksia" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "palkkio" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "palkkioErikoislaakarina" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "palvelutapahtuma" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "palvelutapahtumaOid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "perustelu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "poistettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "poistosyy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "potilasohjekielto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "pysyva" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "pysyvyys" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "reseptinLaji" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "reseptiteksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "reseptityyppi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "reseptityyppiString" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "riittoisuus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "sairaalaApteekkiNimi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "sairaalaApteekkiOid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "sic" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "soveltumaton" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "tapahtuma" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "tapahtunut" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "tarkistus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "tartuntatautilaake" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "tarvittaessa" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "taukohuomautuksia" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "tauonAloitusPvm" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "tauonLopetusPvm" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "tauot" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakitysTauko"
+            },
+            "tavat" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_laakitysTapa"
+            },
+            "terapiaryhma" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "toisto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "toistokuvaus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "tulostaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "tulostettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "tunnistustapa" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "tunnistustapaselite" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "tyonantaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "uusi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "uusimiskiellonPerustelu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "uusimiskiellonSyy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "uusimiskielto" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "uusittu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "vaihdettavuus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "vaihteleva" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "boolean"
+            },
+            "vaihtelevaAnnostus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "vaikutus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "vakuutusyhtio" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "varmistus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "voimassaoloLoppu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "vrkMaara" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "vrkMaaraYksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "vrkkerratCalc" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "vrkmaara" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "vrkmaaraCalc" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "vrkmaaraYksikko" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for Laakitys"
+    }
+    ,
+    "xml_ns0_laakitysKayttoaihe" : {
+      "type" : "object",
+      "title" : "laakitysKayttoaihe",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "alkupera" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the origin of the Kayttoaihe\n-\"O\" if added by organization itself\n-\"A\" or \"M\" otherwise",
+"type" : "number"
+            },
+            "muutosaika" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the actual DB-change time of the Kayttoaihe",
+"type" : "string"
+            },
+            "muutospaikka" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the organization in which the change has been made",
+"type" : "number"
+            },
+            "numero" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the unique id of Kayttoaihe",
+"type" : "number"
+            },
+            "poistettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the code of the kayttoaihe removal. 'E' - not removed, 'K' = removed",
+"type" : "number"
+            },
+            "reseptiteksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the name of the Kayttoaihe which is printed to the prescription",
+"type" : "string"
+            },
+            "rivi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the row number, which arranges the LaakitysKayttoaihe entities in order of importance",
+"type" : "number"
+            },
+            "selite" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the name of the Kayttoaihe in plain languate",
+"type" : "string"
+            },
+            "tyyppi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the type of the Kayttoaihe\n-\"C\" if Kayttoaihe\n-\"G\" if group\n-\"D\" if deleted",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LAAKITYS_KAYTTOAIHE and KAYTTOAIHE database tables\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KAYTTOAIHE.html\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/KAYTTOAIHE.html"
+    }
+    ,
+    "xml_ns0_laakitysKuittaus" : {
+      "type" : "object",
+      "title" : "laakitysKuittaus",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "kuitattu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the time of the acknowledgement",
+"type" : "string"
+            },
+            "kuittaaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the user who made the acknowledgement",
+"type" : "number"
+            },
+            "rooli" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the role of the user who has made an acknowledgement\n-\"H\" if user is a nurse",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakitysKuittaus\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KUITTAUS.html"
+    }
+    ,
+    "xml_ns0_laakitysTapa" : {
+      "type" : "object",
+      "title" : "laakitysTapa",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "paikkakoodi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the \"antopaikka\" in code",
+"type" : "string"
+            },
+            "paikkateksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the \"antopaikka\" in text",
+"type" : "string"
+            },
+            "reittikoodi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the \"antoreitti\" in code",
+"type" : "string"
+            },
+            "reittiteksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the \"antoreitti\" in text",
+"type" : "string"
+            },
+            "tapakoodi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the \"antotapa\" in code",
+"type" : "string"
+            },
+            "tapateksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the \"antotapa\" in text",
+"type" : "string"
+            },
+            "valinekoodi" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the \"antov�line\" in code",
+"type" : "string"
+            },
+            "valineteksti" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the \"antov�line\" in text",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LAAKITYS_TAPA\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAPA.html"
+    }
+    ,
+    "xml_ns0_laakitysTauko" : {
+      "type" : "object",
+      "title" : "laakitysTauko",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_abstractDTO"
+        },
+        {
+          "properties" : {
+            "alkaa" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the starting time of the medication break",
+"type" : "string"
+            },
+            "aloittaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the id of an user who started the medication break",
+"type" : "number"
+            },
+            "huomautuksia" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the notes about the medication break",
+"type" : "string"
+            },
+            "lopettaja" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the id of an user who ended the medication break",
+"type" : "number"
+            },
+            "loppuu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the ending time of the medication break",
+"type" : "string"
+            },
+            "muutosaika" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the actual DB-change time of the medication break",
+"type" : "string"
+            },
+            "muutospaikka" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the organization in which the change has been made",
+"type" : "number"
+            },
+            "poistettu" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Returns the code of the medication break removal. 'E' - not removed, 'K' = removed",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : "DTO for LaakitysTauko\n\nhttp://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html"
+    }
+    ,
     "xml_ns0_date" : {
       "type" : "object",
       "title" : "date",
@@ -7271,6 +10498,34 @@
             "headers" : {
             },
             "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/admin/urlmap" : {
+      "get" : {
+        "tags" : [ "AdminResource" ],
+        "description" : "",
+        "operationId" : "resource_AdminResource_getURLMap_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "headers" : {
+            },
+            "description" : "Success"
           },
           "default" : {
             "description" : "Unexpected error."
@@ -8671,6 +11926,43 @@
       }
     }
     ,
+    "\/medicationlist/interactions" : {
+      "get" : {
+        "tags" : [ "LaakitysResource" ],
+        "description" : "Returns a list of interactions between medicines given in parameters",
+        "operationId" : "resource_LaakitysResource_solveIntearctions_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "query",
+            "type" : "array",
+            "items" : {
+            "type" : "string"
+            },
+            "description" : "List of medicines (VNR codes)"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_Yhteisvaikutus"
+}
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
     "\/medicationlist/{id}" : {
       "get" : {
         "tags" : [ "LaakitysResource" ],
@@ -8721,6 +12013,81 @@
             "schema" : {
 "description" : "",
 "$ref" : "#/definitions/json_Laake"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/medicationlist/newmedication/{id}" : {
+      "put" : {
+        "tags" : [ "LaakitysResource" ],
+        "description" : "Create a new medication",
+        "operationId" : "resource_LaakitysResource_createMedication_PUT",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "type" : "string",
+            "description" : "Omistaja id"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Laakitys"
+            },
+            "description" : "Laakitys object"
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/medicationlist/medicine/activeingredient/{activeingredient}" : {
+      "get" : {
+        "tags" : [ "LaakitysResource" ],
+        "description" : "Returns a list of Laake objects with the given active ingredient",
+        "operationId" : "resource_LaakitysResource_getMedicineWithActiveIngredient_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "activeingredient",
+            "in" : "path",
+            "type" : "string",
+            "description" : "Active ingredient"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_Laake"
+}
             },
             "headers" : {
             },
@@ -8863,6 +12230,53 @@
 "items" : {
   "$ref" : "#/definitions/json_Laakitys"
 }
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/medicationlist/savemedication/{id}/part/{osa}" : {
+      "put" : {
+        "tags" : [ "LaakitysResource" ],
+        "description" : "Saves a modified medication",
+        "operationId" : "resource_LaakitysResource_saveMedication_PUT",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "type" : "string",
+            "description" : "Omistaja id"
+          },
+          {
+            "name" : "osa",
+            "in" : "path",
+            "type" : "string",
+            "description" : "Part number"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Laakitys"
+            },
+            "description" : "Medication"
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
             },
             "headers" : {
             },
@@ -9434,87 +12848,11 @@
       }
     }
     ,
-    "\/palvelupaatos/keskeytyssyyt" : {
+    "\/settings/serviceClasses" : {
       "get" : {
         "tags" : [ "PalvelupaatosResource" ],
-        "description" : "Gets keskeytys syyt (service interruption descriptions) configured to the currently accessed Mediatri database in Palvelup��t�kset-form.",
-        "operationId" : "resource_PalvelupaatosResource_getKeskeytysSyyt_GET",
-        "produces" : [ "application/json" ],
-        "parameters" : [
-        ],
-        "responses" : {
-          "200" : {
-            "schema" : {
-"description" : "",
-"type" : "array",
-"items" : {
-  "type" : "string"
-}
-            },
-            "headers" : {
-            },
-            "description" : "Success"
-          },
-          "400" : {
-            "schema" : {
-"description" : "",
-"type" : "array",
-"items" : {
-  "type" : "string"
-}
-            },
-            "headers" : {
-            },
-            "description" : "Bad Request: if values were invalid"
-          },
-          "401" : {
-            "schema" : {
-"description" : "",
-"type" : "array",
-"items" : {
-  "type" : "string"
-}
-            },
-            "headers" : {
-            },
-            "description" : "Unauthenticated: The request requires user authentication. "
-          },
-          "403" : {
-            "schema" : {
-"description" : "",
-"type" : "array",
-"items" : {
-  "type" : "string"
-}
-            },
-            "headers" : {
-            },
-            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
-          },
-          "500" : {
-            "schema" : {
-"description" : "",
-"type" : "array",
-"items" : {
-  "type" : "string"
-}
-            },
-            "headers" : {
-            },
-            "description" : "Unexpected error"
-          },
-          "default" : {
-            "description" : "Unexpected error."
-          }
-        }
-      }
-    }
-    ,
-    "\/palvelupaatos/palveluluokat" : {
-      "get" : {
-        "tags" : [ "PalvelupaatosResource" ],
-        "description" : "Gets palveluluokkas configured to the currently accessed Mediatri database in Palvelup��t�kset-form.",
-        "operationId" : "resource_PalvelupaatosResource_getPalveluluokat_GET",
+        "description" : "Gets service classes configured to the currently accessed Mediatri database in Palvelup��t�kset-form.",
+        "operationId" : "resource_PalvelupaatosResource_getServiceClasses_GET",
         "produces" : [ "application/json" ],
         "parameters" : [
         ],
@@ -9586,11 +12924,87 @@
       }
     }
     ,
-    "\/palvelupaatos/patient/{id}" : {
+    "\/settings/serviceInterruptReasons" : {
       "get" : {
         "tags" : [ "PalvelupaatosResource" ],
-        "description" : "Gets palvelup��t�kset for given patient, with given time interval restrictions..",
-        "operationId" : "resource_PalvelupaatosResource_getPalvelupaatoksetForPatient_GET",
+        "description" : "Gets service interruption descriptions with related settings configured to the currently accessed Mediatri database in Palvelup��t�kset-form.",
+        "operationId" : "resource_PalvelupaatosResource_getInterruptionReasons_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_PalvelukeskeytysSyy"
+}
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "400" : {
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_PalvelukeskeytysSyy"
+}
+            },
+            "headers" : {
+            },
+            "description" : "Bad Request: if values were invalid"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_PalvelukeskeytysSyy"
+}
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "403" : {
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_PalvelukeskeytysSyy"
+}
+            },
+            "headers" : {
+            },
+            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_PalvelukeskeytysSyy"
+}
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/patients/{id}/serviceDecisions" : {
+      "get" : {
+        "tags" : [ "PalvelupaatosResource" ],
+        "description" : "Gets service decisions for given patient, with given time interval restrictions..",
+        "operationId" : "resource_PalvelupaatosResource_getServiceDecisionsForPatient_GET",
         "produces" : [ "application/json" ],
         "parameters" : [
           {
@@ -9603,13 +13017,25 @@
             "name" : "endTime",
             "in" : "query",
             "type" : "string",
-            "description" : "end time for narrowing the returned result set (optional)"
+            "description" : "end time (yyyy-MM-dd) for narrowing the returned result set (optional). Also more detailed timestamp allowed (yyyy-MM-dd'T'HH:mm:ss), but decisions are timestamped only at day-level."
+          },
+          {
+            "name" : "onlyValid",
+            "in" : "query",
+            "type" : "string",
+            "description" : "if set to <code>true<\/code>, returns only valid palvelup��t�kses (optional)\ni.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=K && PAATOSLAATU=NULL || TILA=K && PAATOSLAATU=M)"
+          },
+          {
+            "name" : "serviceClass",
+            "in" : "query",
+            "type" : "string",
+            "description" : "if set with non-empty/valid value (i.e. configured/recognized valid service class abbreviation), returns only service decisions matching given service class (optional)"
           },
           {
             "name" : "startTime",
             "in" : "query",
             "type" : "string",
-            "description" : "start time for narrowing the returned result set (optional)"
+            "description" : "start time (yyyy-MM-dd) for narrowing the returned result set (optional). Also more detailed timestamp allowed (yyyy-MM-dd'T'HH:mm:ss), but decisions are timestamped only at day-level."
           }
         ],
         "responses" : {
@@ -9668,6 +13094,318 @@
 "items" : {
   "$ref" : "#/definitions/json_Palvelupaatos"
 }
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/patients/{id}/serviceDecisions/interruptions" : {
+      "post" : {
+        "tags" : [ "PalvelupaatosResource" ],
+        "description" : "Adds service decision interruption.",
+        "operationId" : "resource_PalvelupaatosResource_addServiceInterruption_POST",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "type" : "string",
+            "description" : "patient id"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Palvelukeskeytys"
+            },
+            "description" : "interruption DTO"
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "400" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Bad Request: if values were invalid"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "403" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "PalvelupaatosResource" ],
+        "description" : "Updates service decision interruption.",
+        "operationId" : "resource_PalvelupaatosResource_updateServiceInterruption_PUT",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "type" : "string",
+            "description" : "patient id"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Palvelukeskeytys"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "400" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Bad Request: if values were invalid"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "403" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+      ,
+      "delete" : {
+        "tags" : [ "PalvelupaatosResource" ],
+        "description" : "Deletes service decision interruption.",
+        "operationId" : "resource_PalvelupaatosResource_deleteServiceInterruption_DELETE",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "type" : "string",
+            "description" : "patient id"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Palvelukeskeytys"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "400" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Bad Request: if values were invalid"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "403" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}" : {
+      "delete" : {
+        "tags" : [ "PalvelupaatosResource" ],
+        "description" : "Deletes service decision interruption from database matching given identifying data.",
+        "operationId" : "resource_PalvelupaatosResource_deleteServiceInterruptionWithIdData_DELETE",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [
+          {
+            "name" : "decisionId",
+            "in" : "path",
+            "type" : "string",
+            "description" : "service decision id"
+          },
+          {
+            "name" : "id",
+            "in" : "path",
+            "type" : "string",
+            "description" : "patient id"
+          },
+          {
+            "name" : "reasonDescription",
+            "in" : "path",
+            "type" : "string",
+            "description" : "service interruption description"
+          },
+          {
+            "name" : "startDate",
+            "in" : "path",
+            "type" : "string",
+            "description" : "start date for service decision"
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "400" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Bad Request: if values were invalid"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "403" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"type" : "object"
             },
             "headers" : {
             },
@@ -9682,6 +13420,7 @@
     ,
     "\/palvelutapahtuma" : {
       "get" : {
+        "deprecated":true,
         "tags" : [ "PalvelutapahtumaResource" ],
         "description" : "Method returns list of palvelutapahtumas from all registries. Accessing this API requires selected palvelutapahtuma.",
         "operationId" : "resource_PalvelutapahtumaResource_getAllPalvelutapahtumas_GET",
@@ -9777,40 +13516,35 @@
       }
     }
     ,
-    "\/palvelutapahtuma/id" : {
+    "\/palvelutapahtuma/aktiivinen/{id}" : {
       "get" : {
+        "deprecated":true,
         "tags" : [ "PalvelutapahtumaResource" ],
-        "description" : "For fetching one palvelutapahtuma. Eg medicaldocs response contains only pt-id and they can be fetched seperately.",
-        "operationId" : "resource_PalvelutapahtumaResource_getPalvelutapahtumaById_GET",
+        "description" : "This method returns hoitosuhde for given patient for current logged in user.",
+        "operationId" : "resource_PalvelutapahtumaResource_getAktiivinenHoitosuhdeOld_GET",
         "produces" : [ "application/json" ],
         "parameters" : [
           {
-            "name" : "palvelutapahtumaId",
-            "in" : "query",
-            "type" : "string",
-            "description" : "palvelutapahtumaId"
-          },
-          {
-            "name" : "patientId",
-            "in" : "query",
+            "name" : "id",
+            "in" : "path",
             "type" : "string",
             "description" : "patient id"
           }
         ],
         "responses" : {
-          "200" : {
+          "204" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_Palvelutapahtuma"
+"$ref" : "#/definitions/json_Hoitosuhde"
             },
             "headers" : {
             },
-            "description" : "Success"
+            "description" : "No content: OK request but no active hoitosuhde"
           },
           "400" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_Palvelutapahtuma"
+"$ref" : "#/definitions/json_Hoitosuhde"
             },
             "headers" : {
             },
@@ -9819,7 +13553,7 @@
           "401" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_Palvelutapahtuma"
+"$ref" : "#/definitions/json_Hoitosuhde"
             },
             "headers" : {
             },
@@ -9828,25 +13562,16 @@
           "403" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_Palvelutapahtuma"
+"$ref" : "#/definitions/json_Hoitosuhde"
             },
             "headers" : {
             },
             "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
           },
-          "410" : {
-            "schema" : {
-"description" : "",
-"$ref" : "#/definitions/json_Palvelutapahtuma"
-            },
-            "headers" : {
-            },
-            "description" : "Gone: Patient has been removed OR palvelutapahtuma has been removed"
-          },
           "500" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_Palvelutapahtuma"
+"$ref" : "#/definitions/json_Hoitosuhde"
             },
             "headers" : {
             },
@@ -9859,25 +13584,26 @@
       }
     }
     ,
-    "\/palvelutapahtuma/listavailableforcarerelation" : {
+    "\/palvelutapahtuma/hoitojakso/{patientId}" : {
       "get" : {
+        "deprecated":true,
         "tags" : [ "PalvelutapahtumaResource" ],
-        "description" : "Method returns list of palvelutapahtumas from units own registry that are suitable for care-relation.\nPalvelutapahtumaList contains",
-        "operationId" : "resource_PalvelutapahtumaResource_getPalvelutapahtumasForCareRelationSelection_GET",
+        "description" : "Gets currently active hoitojakso for patient (based on current hoitosuhde, if available)",
+        "operationId" : "resource_PalvelutapahtumaResource_getAktiivinenHoitojakso_GET",
         "produces" : [ "application/json" ],
         "parameters" : [
           {
             "name" : "patientId",
-            "in" : "query",
+            "in" : "path",
             "type" : "string",
-            "description" : "patient id"
+            "description" : "patient omistaja id"
           }
         ],
         "responses" : {
           "200" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_PalvelutapahtumaList"
+"$ref" : "#/definitions/json_Hoitojakso"
             },
             "headers" : {
             },
@@ -9886,7 +13612,7 @@
           "400" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_PalvelutapahtumaList"
+"$ref" : "#/definitions/json_Hoitojakso"
             },
             "headers" : {
             },
@@ -9895,7 +13621,7 @@
           "401" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_PalvelutapahtumaList"
+"$ref" : "#/definitions/json_Hoitojakso"
             },
             "headers" : {
             },
@@ -9904,25 +13630,16 @@
           "403" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_PalvelutapahtumaList"
+"$ref" : "#/definitions/json_Hoitojakso"
             },
             "headers" : {
             },
             "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
           },
-          "410" : {
-            "schema" : {
-"description" : "",
-"$ref" : "#/definitions/json_PalvelutapahtumaList"
-            },
-            "headers" : {
-            },
-            "description" : "Gone: Patient has been removed OR palvelutapahtuma has been removed"
-          },
           "500" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_PalvelutapahtumaList"
+"$ref" : "#/definitions/json_Hoitojakso"
             },
             "headers" : {
             },
@@ -9935,7 +13652,72 @@
       }
     }
     ,
-    "\/palvelutapahtuma/select" : {
+    "\/patients/{patientId}/careRelation" : {
+      "get" : {
+        "tags" : [ "PalvelutapahtumaResource" ],
+        "description" : "This method returns care-relation information for given patient for current logged in user.",
+        "operationId" : "resource_PalvelutapahtumaResource_getAktiivinenHoitosuhde_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "patientId",
+            "in" : "path",
+            "type" : "string",
+            "description" : "patient id"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Hoitosuhde"
+            },
+            "headers" : {
+            },
+            "description" : "No content: OK request but no active hoitosuhde"
+          },
+          "400" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Hoitosuhde"
+            },
+            "headers" : {
+            },
+            "description" : "Bad Request: if values were invalid"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Hoitosuhde"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "403" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Hoitosuhde"
+            },
+            "headers" : {
+            },
+            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Hoitosuhde"
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+      ,
       "post" : {
         "tags" : [ "PalvelutapahtumaResource" ],
         "description" : "Selects this palvelutapahtuma for proper care-relation to patient. This is logged and added to session, each request requiring palvelutapahtuma should use this Id.\n\nResponse is text/plain since there is nothing more to respond that http-status 200.",
@@ -9949,8 +13731,20 @@
             "description" : "palvelutapahtumaId"
           },
           {
-            "name" : "patientId",
+            "name" : "specialReasonCode",
             "in" : "formData",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "specialReasonText",
+            "in" : "formData",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "patientId",
+            "in" : "path",
             "type" : "string",
             "description" : "patient id"
           }
@@ -10026,34 +13820,46 @@
       }
     }
     ,
-    "\/palvelutapahtuma/aktiivinen/{id}" : {
+    "\/patients/{patientId}/encounters" : {
       "get" : {
         "tags" : [ "PalvelutapahtumaResource" ],
-        "description" : "This method returns hoitosuhde for given patient for current logged in user.",
-        "operationId" : "resource_PalvelutapahtumaResource_getAktiivinenHoitosuhde_GET",
+        "description" : "Method returns list of palvelutapahtumas from all registries. Accessing this API requires selected palvelutapahtuma.",
+        "operationId" : "resource_PalvelutapahtumaResource_getAllPalvelutapahtumasNew_GET",
         "produces" : [ "application/json" ],
         "parameters" : [
           {
-            "name" : "id",
+            "name" : "patientId",
             "in" : "path",
             "type" : "string",
             "description" : "patient id"
+          },
+          {
+            "name" : "count",
+            "in" : "query",
+            "type" : "string",
+            "description" : "count"
+          },
+          {
+            "name" : "lastSeen",
+            "in" : "query",
+            "type" : "string",
+            "description" : "lastSeen"
           }
         ],
         "responses" : {
-          "204" : {
+          "200" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_Hoitosuhde"
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
             },
             "headers" : {
             },
-            "description" : "No content: OK request but no active hoitosuhde"
+            "description" : "Success"
           },
           "400" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_Hoitosuhde"
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
             },
             "headers" : {
             },
@@ -10062,7 +13868,7 @@
           "401" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_Hoitosuhde"
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
             },
             "headers" : {
             },
@@ -10071,16 +13877,34 @@
           "403" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_Hoitosuhde"
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
             },
             "headers" : {
             },
             "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
           },
+          "410" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
+            },
+            "headers" : {
+            },
+            "description" : "Gone: Patient has been removed OR palvelutapahtuma has been removed"
+          },
+          "412" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
+            },
+            "headers" : {
+            },
+            "description" : "Precondition failed: Authenticated user must pick proper encounter event before accessing this API"
+          },
           "500" : {
             "schema" : {
 "description" : "",
-"$ref" : "#/definitions/json_Hoitosuhde"
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
             },
             "headers" : {
             },
@@ -10093,18 +13917,194 @@
       }
     }
     ,
-    "\/palvelutapahtuma/hoitojakso/{patientId}" : {
+    "\/patients/{patientId}/encounters/{encounterId}" : {
       "get" : {
         "tags" : [ "PalvelutapahtumaResource" ],
-        "description" : "Gets currently active hoitojakso for patient (based on current hoitosuhde, if available)",
-        "operationId" : "resource_PalvelutapahtumaResource_getAktiivinenHoitojakso_GET",
+        "description" : "For fetching one encounter event. Eg medicaldocs response contains only encounter-id and they can be fetched seperately.",
+        "operationId" : "resource_PalvelutapahtumaResource_getPalvelutapahtumaById_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "encounterId",
+            "in" : "path",
+            "type" : "string",
+            "description" : "palvelutapahtumaId"
+          },
+          {
+            "name" : "patientId",
+            "in" : "path",
+            "type" : "string",
+            "description" : "patient id"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Palvelutapahtuma"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "400" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Palvelutapahtuma"
+            },
+            "headers" : {
+            },
+            "description" : "Bad Request: if values were invalid"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Palvelutapahtuma"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "403" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Palvelutapahtuma"
+            },
+            "headers" : {
+            },
+            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
+          },
+          "410" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Palvelutapahtuma"
+            },
+            "headers" : {
+            },
+            "description" : "Gone: Patient has been removed OR palvelutapahtuma has been removed"
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Palvelutapahtuma"
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/patients/{patientId}/encounters/filters/forCareRelation" : {
+      "get" : {
+        "tags" : [ "PalvelutapahtumaResource" ],
+        "description" : "Method returns list of encounter events from units own registry that are suitable for care-relation.\nPalvelutapahtumaList contains",
+        "operationId" : "resource_PalvelutapahtumaResource_getPalvelutapahtumasForCareRelationSelectionFilter_GET",
         "produces" : [ "application/json" ],
         "parameters" : [
           {
             "name" : "patientId",
             "in" : "path",
             "type" : "string",
-            "description" : "patient omistaja id"
+            "description" : "patient id"
+          },
+          {
+            "name" : "includeHoitosuhdeInformation",
+            "in" : "query",
+            "type" : "string",
+            "description" : "prefetch hoitosuhde to palvelutapahtuma"
+          },
+          {
+            "name" : "includeUnits",
+            "in" : "query",
+            "type" : "string",
+            "description" : "prefetch units to palvelutapahtuma"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "400" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
+            },
+            "headers" : {
+            },
+            "description" : "Bad Request: if values were invalid"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "403" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
+            },
+            "headers" : {
+            },
+            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
+          },
+          "410" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
+            },
+            "headers" : {
+            },
+            "description" : "Gone: Patient has been removed OR palvelutapahtuma has been removed"
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_PalvelutapahtumaList"
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/patients/{patientId}/encounters/{encounterId}/episodeOfCare" : {
+      "get" : {
+        "tags" : [ "PalvelutapahtumaResource" ],
+        "description" : "Returns the episodeOfCare for given encounter.\nOne episodeOfCare can contain multiple encounters but single encounter is mapped to ONE or ZERO episodeOfCares.",
+        "operationId" : "resource_PalvelutapahtumaResource_getEpisodeOfCareForEncounter_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "encounterId",
+            "in" : "path",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "patientId",
+            "in" : "path",
+            "type" : "string",
+            "description" : "patient identifier"
           }
         ],
         "responses" : {
@@ -10325,10 +14325,10 @@
       }
     }
     ,
-    "\/patients/id/{id}" : {
+    "\/patients/{id}" : {
       "get" : {
         "tags" : [ "PatientResource" ],
-        "description" : "",
+        "description" : "This fetches patient by patient Id.",
         "operationId" : "resource_PatientResource_getPatientByMediatriId_GET",
         "produces" : [ "application/json" ],
         "parameters" : [
@@ -10340,6 +14340,104 @@
           },
           {
             "name" : "includeBasicInfo",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "includeCareRelationPreferenceList",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "includeHoitosuhde",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "includeRiskitietoStatus",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Patient"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "400" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Patient"
+            },
+            "headers" : {
+            },
+            "description" : "Bad Request: if values were invalid"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Patient"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "403" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Patient"
+            },
+            "headers" : {
+            },
+            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Patient"
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/patients/id/{id}" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "PatientResource" ],
+        "description" : "This RESOURCE is deprecated because URL-naming change.\nCurrent valid is patients/{id}",
+        "operationId" : "resource_PatientResource_getPatientByMediatriIdDeprecated_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "includeBasicInfo",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "includeCareRelationPreferenceList",
             "in" : "query",
             "type" : "string",
             "description" : ""
@@ -10418,6 +14516,12 @@
           },
           {
             "name" : "includeBasicInfo",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "includeCareRelationPreferenceList",
             "in" : "query",
             "type" : "string",
             "description" : ""
@@ -10780,6 +14884,58 @@
       }
     }
     ,
+    "\/settings/codes/specialReason" : {
+      "get" : {
+        "tags" : [ "SettingsResource" ],
+        "description" : "This method returns hoitosuhde for given patient for current logged in user.",
+        "operationId" : "resource_SettingsResource_getCareRelationSpecialReasonCodes_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Koodisto"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Koodisto"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "403" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Koodisto"
+            },
+            "headers" : {
+            },
+            "description" : "Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated."
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_Koodisto"
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
     "\/seuranta/config" : {
       "get" : {
         "tags" : [ "SeurantaResource" ],
@@ -11022,7 +15178,7 @@
     "\/titles/component/{id}" : {
       "get" : {
         "tags" : [ "TitleResource" ],
-        "description" : "Return titles' configurations by component.",
+        "description" : "Return titles' configurations by component.\nComponentIdEnum enum decribes available cpomponent in the system.",
         "operationId" : "resource_TitleResource_getTitlesConfigurations_GET",
         "produces" : [ "application/json" ],
         "parameters" : [
@@ -13022,6 +17178,106 @@
             "schema" : {
 "description" : "",
 "type" : "object"
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+    }
+    ,
+    "\/userview" : {
+      "get" : {
+        "tags" : [ "UserViewResource" ],
+        "description" : "This method returns user view information for currently logged in user.",
+        "operationId" : "resource_UserViewResource_getUserViewForApplication_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "applName",
+            "in" : "query",
+            "type" : "string",
+            "description" : "application name (e.g. MEDIPLAN)"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_UserViewDTO"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_UserViewDTO"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_UserViewDTO"
+            },
+            "headers" : {
+            },
+            "description" : "Unexpected error"
+          },
+          "default" : {
+            "description" : "Unexpected error."
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "UserViewResource" ],
+        "description" : "This method updates user view information for currently logged in user.",
+        "operationId" : "resource_UserViewResource_editUserViewForApplication_PUT",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_UserViewDTO"
+            },
+            "description" : "user view information"
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_UserViewDTO"
+            },
+            "headers" : {
+            },
+            "description" : "Success"
+          },
+          "401" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_UserViewDTO"
+            },
+            "headers" : {
+            },
+            "description" : "Unauthenticated: The request requires user authentication. "
+          },
+          "500" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_UserViewDTO"
             },
             "headers" : {
             },

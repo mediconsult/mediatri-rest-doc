@@ -69,11 +69,51 @@
       </wadl:method>
     </wadl:resource>
 
+    <wadl:resource path="api/v1/userview">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[This method returns user view information for currently logged in user.]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="applName" style="query">
+            <wadl:doc><![CDATA[application name (e.g. MEDIPLAN)]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[UserViewDTO user view information]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/userview">
+      <wadl:method name="PUT">
+        <wadl:doc><![CDATA[This method updates user view information for currently logged in user.]]></wadl:doc>
+        <wadl:request>
+          <wadl:doc><![CDATA[user view information]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[UserViewDTO updated user view information]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
     <wadl:resource path="api/v1/admin/clearcache">
       <wadl:method name="GET">
         <wadl:doc><![CDATA[Api for clearing cache. This ensures that all configuration is refetched from mediatri.]]></wadl:doc>
         <wadl:response>
           <wadl:doc><![CDATA[String json ok:true]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/admin/urlmap">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:response>
+          <wadl:doc><![CDATA[Returns list of all registered URL's. This is for admin purposes to see all URL's and changes in URL's in different versions.]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -434,6 +474,21 @@ The measurements are grouped by title first. Titles are returned in alphabetical
       </wadl:method>
     </wadl:resource>
 
+    <wadl:resource path="api/v1/medicationlist/interactions">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Returns a list of interactions between medicines given in parameters]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="id" style="query">
+            <wadl:doc><![CDATA[List of medicines (VNR codes)]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[List of interaction objects]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
     <wadl:resource path="api/v1/medicationlist/{id}">
       <wadl:method name="GET">
         <wadl:doc><![CDATA[Lists all Medication information for the patient]]></wadl:doc>
@@ -459,74 +514,6 @@ The measurements are grouped by title first. Titles are returned in alphabetical
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[Metadata group identified by ID]]></wadl:doc>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-
-    <wadl:resource path="api/v1/palvelupaatos/keskeytyssyyt">
-      <wadl:method name="GET">
-        <wadl:doc><![CDATA[Gets keskeytys syyt (service interruption descriptions) configured to the currently accessed Mediatri database in Palvelup??t?kset-form.]]></wadl:doc>
-        <wadl:response>
-          <wadl:doc><![CDATA[keskeytys syyt (service interruption descriptions) configured to the currently accessed Mediatri database in Palvelup??t?kset-form]]></wadl:doc>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-
-    <wadl:resource path="api/v1/palvelupaatos/palveluluokat">
-      <wadl:method name="GET">
-        <wadl:doc><![CDATA[Gets palveluluokkas configured to the currently accessed Mediatri database in Palvelup??t?kset-form.]]></wadl:doc>
-        <wadl:response>
-          <wadl:doc><![CDATA[palveluluokkas configured to the currently accessed Mediatri database in Palvelup??t?kset-form]]></wadl:doc>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-
-    <wadl:resource path="api/v1/palvelutapahtuma/id">
-      <wadl:method name="GET">
-        <wadl:doc><![CDATA[For fetching one palvelutapahtuma. Eg medicaldocs response contains only pt-id and they can be fetched seperately.]]></wadl:doc>
-        <wadl:request>
-          <wadl:param name="palvelutapahtumaId" style="query">
-            <wadl:doc><![CDATA[palvelutapahtumaId]]></wadl:doc>
-          </wadl:param>
-          <wadl:param name="patientId" style="query">
-            <wadl:doc><![CDATA[patient id]]></wadl:doc>
-          </wadl:param>
-        </wadl:request>
-        <wadl:response>
-          <wadl:doc><![CDATA[Palvelutapahtuma instance]]></wadl:doc>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-
-    <wadl:resource path="api/v1/palvelutapahtuma/listavailableforcarerelation">
-      <wadl:method name="GET">
-        <wadl:doc><![CDATA[Method returns list of palvelutapahtumas from units own registry that are suitable for care-relation.
-PalvelutapahtumaList contains]]></wadl:doc>
-        <wadl:request>
-          <wadl:param name="patientId" style="query">
-            <wadl:doc><![CDATA[patient id]]></wadl:doc>
-          </wadl:param>
-        </wadl:request>
-        <wadl:response>
-          <wadl:doc><![CDATA[PalvelutapahtumaList instance]]></wadl:doc>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-
-    <wadl:resource path="api/v1/palvelutapahtuma/select">
-      <wadl:method name="POST">
-        <wadl:doc><![CDATA[Selects this palvelutapahtuma for proper care-relation to patient. This is logged and added to session, each request requiring palvelutapahtuma should use this Id.
-
-Response is text/plain since there is nothing more to respond that http-status 200.]]></wadl:doc>
-        <wadl:request>
-        </wadl:request>
-        <wadl:response>
-          <wadl:doc><![CDATA[Palvelutapahtuma instance]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -616,6 +603,29 @@ matching given conditions.]]></wadl:doc>
       </wadl:method>
     </wadl:resource>
 
+    <wadl:resource path="api/v1/patients/{id}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[This fetches patient by patient Id.]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="includeBasicInfo" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="includeCareRelationPreferenceList" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="includeHoitosuhde" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="includeRiskitietoStatus" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
     <wadl:resource path="api/v1/riskit/{id}">
       <wadl:method name="GET">
         <wadl:doc><![CDATA[Fetch Riskitiedot with patient id]]></wadl:doc>
@@ -623,6 +633,26 @@ matching given conditions.]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[Riskitiedot List of Riskitieto objects]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/settings/serviceClasses">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Gets service classes configured to the currently accessed Mediatri database in Palvelup��t�kset-form.]]></wadl:doc>
+        <wadl:response>
+          <wadl:doc><![CDATA[service classes configured to the currently accessed Mediatri database in Palvelup��t�kset-form]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/settings/serviceInterruptReasons">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Gets service interruption descriptions with related settings configured to the currently accessed Mediatri database in Palvelup��t�kset-form.]]></wadl:doc>
+        <wadl:response>
+          <wadl:doc><![CDATA[service interruption descriptions with related settings configured to the currently accessed Mediatri database in Palvelup��t�kset-form]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -961,14 +991,14 @@ This will be deprecated in few builds.]]></wadl:doc>
 
     <wadl:resource path="api/v1/hoitotyo/{id}/current">
       <wadl:method name="GET">
-        <wadl:doc><![CDATA[This method returns current hoitoty?n merkinn?t entry. Or 404- if current hoitoty?n merkinnat is missing (new must be created in mediatri).]]></wadl:doc>
+        <wadl:doc><![CDATA[This method returns current hoitoty�n merkinn�t entry. Or 404- if current hoitoty�n merkinnat is missing (new must be created in mediatri).]]></wadl:doc>
         <wadl:request>
           <wadl:param name="includeHoitotyoasetukset" style="query">
             <wadl:doc><![CDATA[preload hoitotyoasetukset to response. Hoitotyoasetukset contains koodisto required to display this record.]]></wadl:doc>
           </wadl:param>
         </wadl:request>
         <wadl:response>
-          <wadl:doc><![CDATA[current hoitoty?n merkinn?t entry]]></wadl:doc>
+          <wadl:doc><![CDATA[current hoitoty�n merkinn�t entry]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -976,11 +1006,11 @@ This will be deprecated in few builds.]]></wadl:doc>
 
     <wadl:resource path="api/v1/hoitotyo/{patientOmistajaId}/{osaId}">
       <wadl:method name="GET">
-        <wadl:doc><![CDATA[This method returns hoitoty?n merkint? entry by OSA numbery. Or 404- if hoitoty?merkint? is missing.]]></wadl:doc>
+        <wadl:doc><![CDATA[This method returns hoitoty�n merkint� entry by OSA numbery. Or 404- if hoitoty�merkint� is missing.]]></wadl:doc>
         <wadl:request>
         </wadl:request>
         <wadl:response>
-          <wadl:doc><![CDATA[returns hoitoty?n merkint? entry
+          <wadl:doc><![CDATA[returns hoitoty�n merkint� entry
 includeHoitotyoasetukset preload hoitotyoasetukset to response. Hoitotyoasetukset contains koodisto required to display this record.]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -1025,6 +1055,28 @@ the current user, AccessDeniedException is thrown.]]></wadl:doc>
       </wadl:method>
     </wadl:resource>
 
+    <wadl:resource path="api/v1/medicationlist/newmedication/{id}">
+      <wadl:method name="PUT">
+        <wadl:doc><![CDATA[Create a new medication]]></wadl:doc>
+        <wadl:request>
+          <wadl:doc><![CDATA[Laakitys object]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+            <wadl:param name="id" style="path">
+              <wadl:doc><![CDATA[Omistaja id]]></wadl:doc>
+            </wadl:param>
+          </wadl:representation>
+          <wadl:representation mediaType="application/xml" element="laakitys">
+            <wadl:param name="id" style="path">
+              <wadl:doc><![CDATA[Omistaja id]]></wadl:doc>
+            </wadl:param>
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
     <wadl:resource path="api/v1/metadata/{groupID}/{metadataID}">
       <wadl:method name="GET">
         <wadl:doc><![CDATA[Return specific metadata with provided ID in provided group]]></wadl:doc>
@@ -1032,24 +1084,6 @@ the current user, AccessDeniedException is thrown.]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[Metadata identified by IDs]]></wadl:doc>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-
-    <wadl:resource path="api/v1/palvelupaatos/patient/{id}">
-      <wadl:method name="GET">
-        <wadl:doc><![CDATA[Gets palvelup??t?kset for given patient, with given time interval restrictions..]]></wadl:doc>
-        <wadl:request>
-          <wadl:param name="endTime" style="query">
-            <wadl:doc><![CDATA[end time for narrowing the returned result set (optional)]]></wadl:doc>
-          </wadl:param>
-          <wadl:param name="startTime" style="query">
-            <wadl:doc><![CDATA[start time for narrowing the returned result set (optional)]]></wadl:doc>
-          </wadl:param>
-        </wadl:request>
-        <wadl:response>
-          <wadl:doc><![CDATA[list of palvelup??t?kset]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1073,7 +1107,7 @@ the current user, AccessDeniedException is thrown.]]></wadl:doc>
         <wadl:request>
         </wadl:request>
         <wadl:response>
-          <wadl:doc><![CDATA[Aktiivinen hoitojaksi for given patient]]></wadl:doc>
+          <wadl:doc><![CDATA[Aktiivinen hoitojakso for given patient]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1081,9 +1115,13 @@ the current user, AccessDeniedException is thrown.]]></wadl:doc>
 
     <wadl:resource path="api/v1/patients/id/{id}">
       <wadl:method name="GET">
-        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:doc><![CDATA[This RESOURCE is deprecated because URL-naming change.
+Current valid is patients/{id}]]></wadl:doc>
         <wadl:request>
           <wadl:param name="includeBasicInfo" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="includeCareRelationPreferenceList" style="query">
             <wadl:doc><![CDATA[]]></wadl:doc>
           </wadl:param>
           <wadl:param name="includeHoitosuhde" style="query">
@@ -1117,6 +1155,9 @@ the current user, AccessDeniedException is thrown.]]></wadl:doc>
           <wadl:param name="includeBasicInfo" style="query">
             <wadl:doc><![CDATA[]]></wadl:doc>
           </wadl:param>
+          <wadl:param name="includeCareRelationPreferenceList" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
           <wadl:param name="includeHoitosuhde" style="query">
             <wadl:doc><![CDATA[]]></wadl:doc>
           </wadl:param>
@@ -1130,9 +1171,89 @@ the current user, AccessDeniedException is thrown.]]></wadl:doc>
       </wadl:method>
     </wadl:resource>
 
+    <wadl:resource path="api/v1/patients/{id}/serviceDecisions">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Gets service decisions for given patient, with given time interval restrictions..]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="endTime" style="query">
+            <wadl:doc><![CDATA[end time (yyyy-MM-dd) for narrowing the returned result set (optional). Also more detailed timestamp allowed (yyyy-MM-dd'T'HH:mm:ss), but decisions are timestamped only at day-level.]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="onlyValid" style="query">
+            <wadl:doc><![CDATA[if set to <code>true</code>, returns only valid palvelup��t�kses (optional)
+i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=K && PAATOSLAATU=NULL || TILA=K && PAATOSLAATU=M)]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="serviceClass" style="query">
+            <wadl:doc><![CDATA[if set with non-empty/valid value (i.e. configured/recognized valid service class abbreviation), returns only service decisions matching given service class (optional)]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="startTime" style="query">
+            <wadl:doc><![CDATA[start time (yyyy-MM-dd) for narrowing the returned result set (optional). Also more detailed timestamp allowed (yyyy-MM-dd'T'HH:mm:ss), but decisions are timestamped only at day-level.]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[list of service decisions]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/patients/{patientId}/careRelation">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[This method returns care-relation information for given patient for current logged in user.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[care-relation information]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/patients/{patientId}/careRelation">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[Selects this palvelutapahtuma for proper care-relation to patient. This is logged and added to session, each request requiring palvelutapahtuma should use this Id.
+
+Response is text/plain since there is nothing more to respond that http-status 200.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[Palvelutapahtuma instance]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/patients/{patientId}/encounters">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Method returns list of palvelutapahtumas from all registries. Accessing this API requires selected palvelutapahtuma.]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="count" style="query">
+            <wadl:doc><![CDATA[count]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="lastSeen" style="query">
+            <wadl:doc><![CDATA[lastSeen]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[PalvelutapahtumaList instance]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/settings/codes/specialReason">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[This method returns hoitosuhde for given patient for current logged in user.]]></wadl:doc>
+        <wadl:response>
+          <wadl:doc><![CDATA[Aktiivinen hoitosuhde for given patient]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
     <wadl:resource path="api/v1/titles/component/{id}">
       <wadl:method name="GET">
-        <wadl:doc><![CDATA[Return titles' configurations by component.]]></wadl:doc>
+        <wadl:doc><![CDATA[Return titles' configurations by component.
+ComponentIdEnum enum decribes available cpomponent in the system.]]></wadl:doc>
         <wadl:request>
         </wadl:request>
         <wadl:response>
@@ -1266,7 +1387,7 @@ Otherwise it is necessary to create ows serializer for ViewTitleValue class.]]><
             <wadl:doc><![CDATA[return only rules that are valid after this time, optional parameter]]></wadl:doc>
           </wadl:param>
           <wadl:param name="unit" style="query">
-            <wadl:doc><![CDATA[list of units ('yksikk?'), the working hour rules linked to which should be returned.
+            <wadl:doc><![CDATA[list of units ('yksikk�'), the working hour rules linked to which should be returned.
 If no units are given, working hour rules for all units the user has access to are returned]]></wadl:doc>
           </wadl:param>
         </wadl:request>
@@ -1323,6 +1444,18 @@ If no units are given, working hour rules for all units the user has access to a
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[New stored Hoitotyomerkinta entry]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/medicationlist/medicine/activeingredient/{activeingredient}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Returns a list of Laake objects with the given active ingredient]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[List of Laake objects]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1431,6 +1564,73 @@ If no units are given, working hour rules for all units the user has access to a
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[all patient's lists]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/patients/{id}/serviceDecisions/interruptions">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[Adds service decision interruption.]]></wadl:doc>
+        <wadl:request>
+          <wadl:doc><![CDATA[interruption DTO]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+            <wadl:param name="id" style="path">
+              <wadl:doc><![CDATA[patient id]]></wadl:doc>
+            </wadl:param>
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[HTTP 204="No Content" on success, otherwise HTTP error response code.]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/patients/{id}/serviceDecisions/interruptions">
+      <wadl:method name="PUT">
+        <wadl:doc><![CDATA[Updates service decision interruption.]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+            <wadl:param name="id" style="path">
+              <wadl:doc><![CDATA[patient id]]></wadl:doc>
+            </wadl:param>
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[HTTP 204="No Content" on success, otherwise HTTP error response code.]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/patients/{id}/serviceDecisions/interruptions">
+      <wadl:method name="DELETE">
+        <wadl:doc><![CDATA[Deletes service decision interruption.]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+            <wadl:param name="id" style="path">
+              <wadl:doc><![CDATA[patient id]]></wadl:doc>
+            </wadl:param>
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[HTTP 204="No Content" on success, otherwise HTTP error response code.]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/patients/{patientId}/encounters/{encounterId}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[For fetching one encounter event. Eg medicaldocs response contains only encounter-id and they can be fetched seperately.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[Palvelutapahtuma instance]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1618,6 +1818,35 @@ Posts eg:  {"teksti":"new teksti", "tilanne":"PA"}  {"teksti":"new teksti"} are 
       </wadl:method>
     </wadl:resource>
 
+    <wadl:resource path="api/v1/medicationlist/savemedication/{id}/part/{osa}">
+      <wadl:method name="PUT">
+        <wadl:doc><![CDATA[Saves a modified medication]]></wadl:doc>
+        <wadl:request>
+          <wadl:doc><![CDATA[Medication]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+            <wadl:param name="id" style="path">
+              <wadl:doc><![CDATA[Omistaja id]]></wadl:doc>
+            </wadl:param>
+            <wadl:param name="osa" style="path">
+              <wadl:doc><![CDATA[Part number]]></wadl:doc>
+            </wadl:param>
+          </wadl:representation>
+          <wadl:representation mediaType="application/xml" element="laakitys">
+            <wadl:param name="id" style="path">
+              <wadl:doc><![CDATA[Omistaja id]]></wadl:doc>
+            </wadl:param>
+            <wadl:param name="osa" style="path">
+              <wadl:doc><![CDATA[Part number]]></wadl:doc>
+            </wadl:param>
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[Response]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
     <wadl:resource path="api/v1/patients/id/{omistajaId}/list/{listId}">
       <wadl:method name="GET">
         <wadl:doc><![CDATA[Gets omistajas for given list owned by the given owner (=form owner).]]></wadl:doc>
@@ -1637,6 +1866,38 @@ Posts eg:  {"teksti":"new teksti", "tilanne":"PA"}  {"teksti":"new teksti"} are 
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[omistajas belonging to the list]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/patients/{patientId}/encounters/filters/forCareRelation">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Method returns list of encounter events from units own registry that are suitable for care-relation.
+PalvelutapahtumaList contains]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="includeHoitosuhdeInformation" style="query">
+            <wadl:doc><![CDATA[prefetch hoitosuhde to palvelutapahtuma]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="includeUnits" style="query">
+            <wadl:doc><![CDATA[prefetch units to palvelutapahtuma]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[PalvelutapahtumaList instance]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/patients/{patientId}/encounters/{encounterId}/episodeOfCare">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Returns the episodeOfCare for given encounter.
+One episodeOfCare can contain multiple encounters but single encounter is mapped to ONE or ZERO episodeOfCares.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[episodeOfCare for given patient linked to given encounter]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1673,6 +1934,19 @@ Posts eg:  {"teksti":"new teksti", "tilanne":"PA"}  {"teksti":"new teksti"} are 
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[response]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="api/v1/patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}">
+      <wadl:method name="DELETE">
+        <wadl:doc><![CDATA[Deletes service decision interruption from database matching given identifying data.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[HTTP 204="No Content" on success, otherwise HTTP error response code.]]></wadl:doc>
           <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/xml"/>
         </wadl:response>

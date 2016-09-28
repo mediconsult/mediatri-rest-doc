@@ -82,43 +82,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  comment
-</td>
-          <td>  string
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  normal
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  editable
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  owner
-</td>
-          <td>  number
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  datetime
+          <td>  muutosAika
 </td>
           <td>  number
 
@@ -136,9 +100,72 @@
 </td>
         </tr>
         <tr>
+          <td>  normal
+</td>
+          <td>  boolean
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
           <td>  reportId
 </td>
           <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  owner
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  editable
+</td>
+          <td>  boolean
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  datetime
+</td>
+          <td>  number
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  responsible
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  userUnit
+</td>
+          <td>  string
+
+</td>
+          <td>  
+</td>
+        </tr>
+        <tr>
+          <td>  comment
+</td>
+          <td>  string
 
 </td>
           <td>  
@@ -164,37 +191,11 @@
 </td>
           <td>Create Json presentation property for the title value</td>
         </tr>
-        <tr>
-          <td>empty</td>
-          <td>boolean
-</td>
-          <td>Function to check if title value is empty.
-Default implementation assume that value always contains some data.
-Derived classes can override this method.</td>
-        </tr>
         </tbody>
         <tr>
           <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_BaseTitleValue.html">BaseTitleValue</a></h5></td>
         </tr>
         <tbody>
-        <tr>
-          <td>vakio</td>
-          <td>string
-</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>editModel</td>
-          <td>boolean
-</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>type</td>
-          <td>number
-</td>
-          <td></td>
-        </tr>
         <tr>
           <td>name</td>
           <td>string
@@ -207,27 +208,54 @@ Derived classes can override this method.</td>
 </td>
           <td></td>
         </tr>
+        <tr>
+          <td>emptyValue</td>
+          <td>boolean
+</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>number
+</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>vakio</td>
+          <td>string
+</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>editModel</td>
+          <td>boolean
+</td>
+          <td></td>
+        </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
 
       <pre class="prettyprint lang-js">{
-  &quot;comment&quot; : &quot;...&quot;,
-  &quot;normal&quot; : true,
-  &quot;editable&quot; : true,
-  &quot;owner&quot; : 12345,
-  &quot;datetime&quot; : 12345,
+  &quot;muutosAika&quot; : 12345,
   &quot;formId&quot; : 12345,
+  &quot;normal&quot; : true,
   &quot;reportId&quot; : 12345,
+  &quot;owner&quot; : 12345,
+  &quot;editable&quot; : true,
+  &quot;datetime&quot; : 12345,
+  &quot;responsible&quot; : &quot;...&quot;,
+  &quot;userUnit&quot; : &quot;...&quot;,
+  &quot;comment&quot; : &quot;...&quot;,
   &quot;id&quot; : 12345,
   &quot;presentation&quot; : &quot;...&quot;,
-  &quot;empty&quot; : true,
-  &quot;vakio&quot; : &quot;...&quot;,
-  &quot;editModel&quot; : true,
-  &quot;type&quot; : 12345,
   &quot;name&quot; : &quot;...&quot;,
-  &quot;vapaa&quot; : &quot;...&quot;
+  &quot;vapaa&quot; : &quot;...&quot;,
+  &quot;emptyValue&quot; : true,
+  &quot;type&quot; : 12345,
+  &quot;vakio&quot; : &quot;...&quot;,
+  &quot;editModel&quot; : true
 }</pre>
 
         <footer class="footer">

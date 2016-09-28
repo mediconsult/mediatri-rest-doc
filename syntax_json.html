@@ -110,8 +110,8 @@
 Bound to ViewTitleValue class.
 </td>
     </tr>
-    <tr class="clickable-row" data-href="json_BasicInfoCategory.html">
-      <td>  BasicInfoCategory
+    <tr class="clickable-row" data-href="json_BillingType.html">
+      <td>  BillingType
 </td>
       <td>  
 </td>
@@ -131,19 +131,19 @@ Bound to ViewTitleValue class.
     <tr class="clickable-row" data-href="json_CalendarEventContentGroupDto.html">
       <td>  CalendarEventContentGroupDto
 </td>
-      <td>  Data transfer object class for user defined content groups in calendar events.
-</td>
-    </tr>
-    <tr class="clickable-row" data-href="json_CalendarEventContentGroupItemDto.html">
-      <td>  CalendarEventContentGroupItemDto
-</td>
-      <td>  
+      <td>  Data transfer object for caledar event content groups.
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_CalendarEventDto.html">
       <td>  CalendarEventDto
 </td>
       <td>  Data transfer object for calendar events.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_CalendarEventTitleDto.html">
+      <td>  CalendarEventTitleDto
+</td>
+      <td>  DTO for calendar event content group titles.
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_ClientTitleConfig.html">
@@ -156,22 +156,31 @@ The class contains the value as the object of the class derived from  @BaseTitle
 fi.mediconsult.core.internal.titles.presentations package contains the available value for the titles depending from title type.
 </td>
     </tr>
-    <tr class="clickable-row" data-href="json_ContentGroupDto.html">
-      <td>  ContentGroupDto
+    <tr class="clickable-row" data-href="json_ComponentRightDTO.html">
+      <td>  ComponentRightDTO
 </td>
-      <td>  Represents Content Groups in EventModelDto
-
-Example:
-
-<pre>
-<code>
-{
-id: 1,
-name: "Perustiedot",
-type: "SYSTEM_DEFINED"
-}
-</code>
-</pre>
+      <td>  ComponentRightDTO for transfering visible DTO to client
+componentID = component in question (enum)
+visible = is component visible on client side. This is normally the read access, but might be different in special cases
+PermissionDTO = all permissions. Thise can be used on client as right changes during session are not supported
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Components.html">
+      <td>  Components
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ContentGroup.html">
+      <td>  ContentGroup
+</td>
+      <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ContentGroupTitle.html">
+      <td>  ContentGroupTitle
+</td>
+      <td>  Data transfer object for content groups items.
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_ContentGroupType.html">
@@ -368,10 +377,22 @@ Example:
       <td>  Data transfer object for missing resource information.
 </td>
     </tr>
-    <tr class="clickable-row" data-href="json_EventModelBasicInfo.html">
-      <td>  EventModelBasicInfo
+    <tr class="clickable-row" data-href="json_EventModelContentGroupDto.html">
+      <td>  EventModelContentGroupDto
 </td>
-      <td>  Represents one Perustiedot otsikko, connected to Tapahtuman perustiedot
+      <td>  Represents Content Groups in EventModelDto
+
+Example:
+
+<pre>
+<code>
+{
+id: 1,
+name: "Perustiedot",
+type: "SYSTEM_DEFINED"
+}
+</code>
+</pre>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_EventModelDto.html">
@@ -396,6 +417,18 @@ Example:
       <td>  EventResourceDto
 </td>
       <td>  Data transfer object for event resource information.
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_EventServiceDecisionStatus.html">
+      <td>  EventServiceDecisionStatus
+</td>
+      <td>  Flag values for an event's status regarding having a service decision for a customer.
+A service decision may be
+<li/>not relevant for the event at all
+<li/>missing: there is no service decision in required service class for the customer
+<li/>interrupted: there is a decision, but it is interrupted at event time
+<li/>pending: there is a decision under processing ('KESKEN')
+<li/>available: there is a decision ('VALMIS' & 'MYONTEINEN')
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_EventStatus.html">
@@ -434,12 +467,6 @@ This class is not designed to use in Json model and can be built only from ILoma
       <td>  FormTypeInfo
 </td>
       <td>  
-</td>
-    </tr>
-    <tr class="clickable-row" data-href="json_FreeContentGroupItem.html">
-      <td>  FreeContentGroupItem
-</td>
-      <td>  DTO information for one vapaa sis�lt�ryhm�
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_FysiologinenMittaus.html">
@@ -610,7 +637,7 @@ koodisto: {
     <tr class="clickable-row" data-href="json_KuhaDtoBase.html">
       <td>  KuhaDtoBase
 </td>
-      <td>  
+      <td>  Base class for MediPlan data transfer objects.
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_KuhaDtoNameBase.html">
@@ -841,6 +868,20 @@ Eg: Patient has lazyloaded hoitosuhde
       <td>  Overrider LoginCredentials to provide domain-name
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_MainTitleConfig.html">
+      <td>  MainTitleConfig
+</td>
+      <td>  DTO model to present configuration for main titles used in kertomus configuration DTO KertomusFormConfig.
+This configuration includes two lists:
+<ul>
+<li>Map of titles from Mallikirjaukset. <p>
+Key is the otsikko name from teksti table and value is title's value stored in vapaa and vakio fields.</p>
+Based class from ViewTitleValue presents the default value depending from type of otsikko.
+</li>
+<li>Map of groups with list of titles in every group.</li>
+</ul>
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_Meaning.html">
       <td>  Meaning
 </td>
@@ -961,6 +1002,12 @@ This is found from paikkahistoria-form "Tilanne".
       <td>  DTO for palvelukeskeytys (related to palvelup��t�kses)
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_PalvelukeskeytysSyy.html">
+      <td>  PalvelukeskeytysSyy
+</td>
+      <td>  
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_Palveluluokka.html">
       <td>  Palveluluokka
 </td>
@@ -989,7 +1036,7 @@ This is found from paikkahistoria-form "Tilanne".
     <tr class="clickable-row" data-href="json_Palvelupaatos.html">
       <td>  Palvelupaatos
 </td>
-      <td>  Palvelup��t�s DTO.
+      <td>  
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_Palvelutapahtuma.html">
@@ -1167,6 +1214,13 @@ Used to carry the data from database to the client side.
       <td>  Form config for one seuranta lomake.
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_SeurantaTitleEditFlag.html">
+      <td>  SeurantaTitleEditFlag
+</td>
+      <td>  Flag class to present title editiong option configuration for SeurantaFormConfig titles properties.
+It object is required due correct Json mapping model
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_SkillDto.html">
       <td>  SkillDto
 </td>
@@ -1295,6 +1349,18 @@ to units (palveluyksikk�) where users (k�ytt�j�) signs in and works for.
       <td>  
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_UserViewDTO.html">
+      <td>  UserViewDTO
+</td>
+      <td>  DTO to present user view content
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ViewConfiguration.html">
+      <td>  ViewConfiguration
+</td>
+      <td>  DTO object for view configuration
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_ViewTitleValue.html">
       <td>  ViewTitleValue
 </td>
@@ -1318,6 +1384,14 @@ By default these values are included into client Json model.
       <td>  WorkerAvailabilityDto
 </td>
       <td>  
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Yhteisvaikutus.html">
+      <td>  Yhteisvaikutus
+</td>
+      <td>  DTO for Yhteisvaikutus
+
+Stores two medicines and the interaction between them
 </td>
     </tr>
   </tbody>
