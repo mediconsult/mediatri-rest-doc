@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,15 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#SUUNNITELTU"><abbr title="SUUNNITELTU"><span class="sideoverflow">SUUNNITELTU</span></abbr></a></li>
+          <li><a href="#MUUTETTU"><abbr title="MUUTETTU"><span class="sideoverflow">MUUTETTU</span></abbr></a></li>
+          <li><a href="#KESKEYTETTY"><abbr title="KESKEYTETTY"><span class="sideoverflow">KESKEYTETTY</span></abbr></a></li>
+          <li><a href="#KESKEN"><abbr title="KESKEN"><span class="sideoverflow">KESKEN</span></abbr></a></li>
+          <li><a href="#TOTEUTUNUT"><abbr title="TOTEUTUNUT"><span class="sideoverflow">TOTEUTUNUT</span></abbr></a></li>
+          <li><a href="#ITSE_PERUNUT"><abbr title="ITSE_PERUNUT"><span class="sideoverflow">ITSE_PERUNUT</span></abbr></a></li>
+          <li><a href="#PERUUTETTU"><abbr title="PERUUTETTU"><span class="sideoverflow">PERUUTETTU</span></abbr></a></li>
+          <li><a href="#EI_TOTEUTUNUT"><abbr title="EI_TOTEUTUNUT"><span class="sideoverflow">EI_TOTEUTUNUT</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -66,12 +73,12 @@
 
       <h1 class="page-header">Palvelukeskeytys <small>Data Type</small></h1>
 
-      <p>DTO for palvelukeskeytys (related to palvelup��t�kses)</p>
+      <p>DTO for palvelukeskeytys (related to palvelupäätökses)</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,110 +89,110 @@
         </thead>
         <tbody>
         <tr>
-          <td>  alkaa
+          <td>  <span class="property-name">alkaa</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  paatos
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  syy
+          <td>  <span class="property-name">paatos</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  loppuu
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  alkuaika
+          <td>  <span class="property-name">syy</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  loppuaika
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  alusta
+          <td>  <span class="property-name">loppuu</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  laskutetaan
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  huomautuksia
+          <td>  <span class="property-name">alkuaika</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  muutosaika
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  poistettu
+          <td>  <span class="property-name">loppuaika</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">alusta</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">laskutetaan</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">huomautuksia</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">muutosaika</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">poistettu</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;alkaa&quot; : 12345,
   &quot;paatos&quot; : 12345,
   &quot;syy&quot; : &quot;...&quot;,
@@ -211,14 +218,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

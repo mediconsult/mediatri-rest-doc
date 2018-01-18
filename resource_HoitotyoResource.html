@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,13 +51,19 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_HoitotyoResource_getHoitotyonmerkintaById_GET"><abbr title="GET /hoitotyo/{patientOmistajaId}/{osaId}">GET /hoitotyo/{patientOmistaja...</abbr></a></li>
-          <li><a href="#resource_HoitotyoResource_postHoitotyomerkintaCreateNewVersion_POST"><abbr title="POST /hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion">POST /hoitotyo/{patientOmistaj...</abbr></a></li>
-          <li><a href="#resource_HoitotyoResource_postAddHoitotyomerkinta_POST"><abbr title="POST /hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta">POST /hoitotyo/{patientOmistaj...</abbr></a></li>
-          <li><a href="#resource_HoitotyoResource_getHoitotyonmerkintaByIdDeprecated_GET"><abbr title="GET /hoitotyo/{patientOmistajaId}/merkinta/{osaId}">GET /hoitotyo/{patientOmistaja...</abbr></a></li>
-          <li><a href="#resource_HoitotyoResource_getCurrentHoitotyonmerkinta_GET">GET /hoitotyo/{id}/current</a></li>
-          <li><a href="#resource_HoitotyoResource_getHoitotyoasetukset_GET">GET /hoitotyo/{id}/asetukset</a></li>
-          <li><a href="#resource_HoitotyoResource_getHoitotyoasetukset_GET">GET /hoitotyo/asetukset</a></li>
+          <li><a href="#resource_HoitotyoResource_getHoitotyoasetukset_GET"><abbr title="GET /hoitotyo/asetukset"><span class="sideoverflow">GET /hoitotyo/asetukset</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_getHoitotyoasetukset_GET"><abbr title="GET /hoitotyo/{id}/asetukset"><span class="sideoverflow">GET /hoitotyo/{id}/asetukset</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_getCurrentHoitotyonmerkinta_GET"><abbr title="GET /hoitotyo/{id}/current"><span class="sideoverflow">GET /hoitotyo/{id}/current</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_startShift_GET"><abbr title="GET /hoitotyo/{id}/startShift"><span class="sideoverflow">GET /hoitotyo/{id}/startShift</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_getHoitotyonmerkintaById_GET"><abbr title="GET /hoitotyo/{patientOmistajaId}/{osaId}"><span class="sideoverflow">GET /hoitotyo/{patientOmistajaId}/{osaId}</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_endShift_GET"><abbr title="GET /hoitotyo/{id}/endShift/{shiftId}"><span class="sideoverflow">GET /hoitotyo/{id}/endShift/{shiftId}</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_startShiftDataEdit_GET"><abbr title="GET /hoitotyo/{id}/startShiftDataEdit/{shiftId}"><span class="sideoverflow">GET /hoitotyo/{id}/startShiftDataEdit/{shiftId}</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_unlockShift_GET"><abbr title="GET /hoitotyo/{id}/unlockShift/{shiftId}"><span class="sideoverflow">GET /hoitotyo/{id}/unlockShift/{shiftId}</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_updateShiftData_POST"><abbr title="POST /hoitotyo/{id}/{shiftId}/update"><span class="sideoverflow">POST /hoitotyo/{id}/{shiftId}/update</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_getHoitotyonmerkintaByIdDeprecated_GET"><abbr title="GET /hoitotyo/{patientOmistajaId}/merkinta/{osaId}"><span class="sideoverflow">GET /hoitotyo/{patientOmistajaId}/merkinta/{osaId}</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_postAddHoitotyomerkinta_POST"><abbr title="POST /hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta"><span class="sideoverflow">POST /hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_endShiftDataEdit_GET"><abbr title="GET /hoitotyo/{id}/endShiftDataEdit/{shiftId}/{started}"><span class="sideoverflow">GET /hoitotyo/{id}/endShiftDataEdit/{shiftId}/{started}</span></abbr></a></li>
+          <li><a href="#resource_HoitotyoResource_postHoitotyomerkintaCreateNewVersion_POST"><abbr title="POST /hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion"><span class="sideoverflow">POST /hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -76,337 +80,12 @@
 
       <p>API for hoitotyonmerkinnat</p>
 
-      <div id="resource_HoitotyoResource_getHoitotyonmerkintaById_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/hoitotyo/{patientOmistajaId}/{osaId} <a href="../api/v1hoitotyo/{patientOmistajaId}/{osaId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>This method returns hoitoty�n merkint� entry by OSA numbery. Or 404- if hoitoty�merkint� is missing.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>osaId</td>
-            <td>path</td>
-            <td>OSA number</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>patientOmistajaId</td>
-            <td>path</td>
-            <td>patientId</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>404</td>
-            <td>Not found: there is no current hoitoty�nmerkinn�t entry</td>
-          </tr>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitotyo.html">Hoitotyo</a>
- (JSON)</td>
-            <td>returns hoitoty�n merkint� entry
-includeHoitotyoasetukset preload hoitotyoasetukset to response. Hoitotyoasetukset contains koodisto required to display this record.</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_HoitotyoResource_postHoitotyomerkintaCreateNewVersion_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion <a href="../api/v1hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Creates new version for given Hoitotyomerkinta.
-Post can be partial as most fields are set by server (time, kirjaaja etc.) anyways.
-
-Posts eg:  {"teksti":"new teksti", "tilanne":"PA"}  {"teksti":"new teksti"} are valid posts.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>hoitotyoId</td>
-            <td>path</td>
-            <td>Hoitotyo ID</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>merkintaId</td>
-            <td>path</td>
-            <td>Hoitotyomerkinta ID</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>patientOmistajaId</td>
-            <td>path</td>
-            <td>PatientID</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_Hoitotyomerkinta.html">Hoitotyomerkinta</a>
- (JSON)</td>
-            <td>Hoitotyomerkinta in json format</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>404</td>
-            <td>Not found: there is no current hoitoty�nmerkinn�t entry</td>
-          </tr>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitotyomerkinta.html">Hoitotyomerkinta</a>
- (JSON)</td>
-            <td>new stored Hoitotyomerkinta entry</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_HoitotyoResource_postAddHoitotyomerkinta_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta <a href="../api/v1hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Adds new record to hoitotyo. This can be anything but it is validated for correct code-usages and searches for duplicates within one hoitotyo.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>hoitotyoId</td>
-            <td>path</td>
-            <td>Hoitotyo ID</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>patientOmistajaId</td>
-            <td>path</td>
-            <td>patient Id</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_Hoitotyomerkinta.html">Hoitotyomerkinta</a>
- (JSON)</td>
-            <td>record to add (merkinta Id will be genereated)</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>404</td>
-            <td>Not found: there is no current Hoitotyo entry</td>
-          </tr>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitotyomerkinta.html">Hoitotyomerkinta</a>
- (JSON)</td>
-            <td>New stored Hoitotyomerkinta entry</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_HoitotyoResource_getHoitotyonmerkintaByIdDeprecated_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/hoitotyo/{patientOmistajaId}/merkinta/{osaId} <a href="../api/v1hoitotyo/{patientOmistajaId}/merkinta/{osaId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <div class="alert alert-danger">This method has been deprecated.  Use /{patientOmistajaId}/{osaId}</div>
+      <div id="resource_HoitotyoResource_getHoitotyoasetukset_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoitotyo/asetukset <a href="../api/v1/hoitotyo/asetukset" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p></p>
 
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>osaId</td>
-            <td>path</td>
-            <td>OSA</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>patientOmistajaId</td>
-            <td>path</td>
-            <td>patient Id</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -417,107 +96,114 @@ Posts eg:  {"teksti":"new teksti", "tilanne":"PA"}  {"teksti":"new teksti"} are 
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitotyo.html">Hoitotyo</a>
- (JSON)</td>
-            <td>hoitotyo</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyoasetukset.html">Hoitotyoasetukset</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Hoitotyoaet</span></td>
           </tr>
           </tbody>
         </table>
-      </div>
+        <h4>Example</h4>
 
-      <div id="resource_HoitotyoResource_getCurrentHoitotyonmerkinta_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/hoitotyo/{id}/current <a href="../api/v1hoitotyo/{id}/current" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoitotyo/asetukset
+Accept: application/json
 
-        <p>This method returns current hoitoty�n merkinn�t entry. Or 404- if current hoitoty�n merkinnat is missing (new must be created in mediatri).</p>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>patientId</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>includeHoitotyoasetukset</td>
-            <td>query</td>
-            <td>preload hoitotyoasetukset to response. Hoitotyoasetukset contains koodisto required to display this record.</td>
-            <td>boolean</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>204</td>
-            <td>Request OK but no content for patient</td>
-          </tr>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitotyo.html">Hoitotyo</a>
- (JSON)</td>
-            <td>current hoitoty�n merkinn�t entry</td>
-          </tr>
-          </tbody>
-        </table>
+                <code class="prettyprint language-js">
+{
+  &quot;hoitoprosessinVaiheKoodisto&quot; : {
+    &quot;headers&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;koodisto&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;key&quot; : &quot;...&quot;
+  },
+  &quot;permissions&quot; : {
+    &quot;add&quot; : true,
+    &quot;data&quot; : {
+      &quot;lomakeId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;hoitosuhdevaatimus&quot; : true,
+      &quot;vastuuyksikko&quot; : 12345,
+      &quot;pohjavari&quot; : 12345,
+      &quot;fullFormTypeId&quot; : 12345,
+      &quot;formTypeInfo&quot; : { },
+      &quot;ownerTypeInfo&quot; : { },
+      &quot;formOwnerId&quot; : 12345
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;change&quot; : true,
+    &quot;view&quot; : true,
+    &quot;remove&quot; : true
+  },
+  &quot;toimintoluokitusKoodisto&quot; : {
+    &quot;headers&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;koodisto&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;key&quot; : &quot;...&quot;
+  },
+  &quot;otsikkoKoodisto&quot; : {
+    &quot;headers&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;koodisto&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;key&quot; : &quot;...&quot;
+  },
+  &quot;recordReleaseAdminPermission&quot; : true,
+  &quot;tarveluokitusKoodisto&quot; : {
+    &quot;headers&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;koodisto&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;key&quot; : &quot;...&quot;
+  },
+  &quot;tulosluokitus&quot; : {
+    &quot;headers&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;koodisto&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;key&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_HoitotyoResource_getHoitotyoasetukset_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/hoitotyo/{id}/asetukset <a href="../api/v1hoitotyo/{id}/asetukset" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoitotyo/{id}/asetukset <a href="../api/v1/hoitotyo/{id}/asetukset" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <div class="alert alert-danger">This method has been deprecated.  </div>
 
         <p>This was done in first phase and MDS UI uses this. getHoitotyAsetukset without patientId is preferred method.
 This will be deprecated in few builds.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -529,15 +215,15 @@ This will be deprecated in few builds.</p>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>patient Id</td>
-            <td>int</td>
+            <td><span class="parameter-description">patient Id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -548,21 +234,2982 @@ This will be deprecated in few builds.</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitotyoasetukset.html">Hoitotyoasetukset</a>
- (JSON)</td>
-            <td>hoitotyoasetukset</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyoasetukset.html">Hoitotyoasetukset</a>
+ (JSON)</span></td>
+            <td><span class="response-description">hoitotyoasetukset</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoitotyo/{id}/asetukset
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;hoitoprosessinVaiheKoodisto&quot; : {
+    &quot;headers&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;koodisto&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;key&quot; : &quot;...&quot;
+  },
+  &quot;permissions&quot; : {
+    &quot;add&quot; : true,
+    &quot;data&quot; : {
+      &quot;lomakeId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;hoitosuhdevaatimus&quot; : true,
+      &quot;vastuuyksikko&quot; : 12345,
+      &quot;pohjavari&quot; : 12345,
+      &quot;fullFormTypeId&quot; : 12345,
+      &quot;formTypeInfo&quot; : { },
+      &quot;ownerTypeInfo&quot; : { },
+      &quot;formOwnerId&quot; : 12345
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;change&quot; : true,
+    &quot;view&quot; : true,
+    &quot;remove&quot; : true
+  },
+  &quot;toimintoluokitusKoodisto&quot; : {
+    &quot;headers&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;koodisto&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;key&quot; : &quot;...&quot;
+  },
+  &quot;otsikkoKoodisto&quot; : {
+    &quot;headers&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;koodisto&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;key&quot; : &quot;...&quot;
+  },
+  &quot;recordReleaseAdminPermission&quot; : true,
+  &quot;tarveluokitusKoodisto&quot; : {
+    &quot;headers&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;koodisto&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;key&quot; : &quot;...&quot;
+  },
+  &quot;tulosluokitus&quot; : {
+    &quot;headers&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;koodisto&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;key&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_HoitotyoResource_getHoitotyoasetukset_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/hoitotyo/asetukset <a href="../api/v1hoitotyo/asetukset" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_HoitotyoResource_getCurrentHoitotyonmerkinta_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoitotyo/{id}/current <a href="../api/v1/hoitotyo/{id}/current" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>This method returns current hoitotyön merkinnät entry. Or 404- if current hoitotyön merkinnat is missing (new must be created in mediatri).</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patientId</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeHoitotyoasetukset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">preload hoitotyoasetukset to response. Hoitotyoasetukset contains koodisto required to display this record.</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">204</span></td>
+            <td><span class="response-condition">Request OK but no content for patient</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyo.html">Hoitotyo</a>
+ (JSON)</span></td>
+            <td><span class="response-description">current hoitotyön merkinnät entry</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoitotyo/{id}/current
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;id&quot; : 12345,
+  &quot;patientId&quot; : 12345,
+  &quot;locked&quot; : true,
+  &quot;lukitsija&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;vastuullinen&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;muutosaika&quot; : 12345,
+  &quot;alkaa&quot; : 12345,
+  &quot;loppuu&quot; : 12345,
+  &quot;lastEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;firstEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;previousEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;asetukset&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;hoitoprosessinVaiheKoodisto&quot; : { },
+      &quot;permissions&quot; : { },
+      &quot;toimintoluokitusKoodisto&quot; : { },
+      &quot;otsikkoKoodisto&quot; : { },
+      &quot;recordReleaseAdminPermission&quot; : true,
+      &quot;tarveluokitusKoodisto&quot; : { },
+      &quot;tulosluokitus&quot; : { }
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;merkinnat&quot; : [ {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  }, {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  } ],
+  &quot;previousVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;readTime&quot; : &quot;...&quot;,
+  &quot;lockedDate&quot; : &quot;...&quot;,
+  &quot;unit&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_HoitotyoResource_startShift_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoitotyo/{id}/startShift <a href="../api/v1/hoitotyo/{id}/startShift" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Starts shift by creating a new hoitotyo shift instance.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">copyPermanentRecors</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">referenceTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">reference time we want to start shift for. Parameter is optional and if omitted
+then current time is used. Reference time can be set to past, but not to the future.
+Time format without offset '2010-06-30T01:20' and with offset '2010-06-30T01:20+02:00'.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid e.g. in case trying to start shift in future time, or time format was invalid.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">409</span></td>
+            <td><span class="response-condition">Conflict, shift has been already started.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyo.html">Hoitotyo</a>
+ (JSON)</span></td>
+            <td><span class="response-description">hoitotyo dto for the created hoitotyo shift instance</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoitotyo/{id}/startShift
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;id&quot; : 12345,
+  &quot;patientId&quot; : 12345,
+  &quot;locked&quot; : true,
+  &quot;lukitsija&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;vastuullinen&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;muutosaika&quot; : 12345,
+  &quot;alkaa&quot; : 12345,
+  &quot;loppuu&quot; : 12345,
+  &quot;lastEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;firstEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;previousEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;asetukset&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;hoitoprosessinVaiheKoodisto&quot; : { },
+      &quot;permissions&quot; : { },
+      &quot;toimintoluokitusKoodisto&quot; : { },
+      &quot;otsikkoKoodisto&quot; : { },
+      &quot;recordReleaseAdminPermission&quot; : true,
+      &quot;tarveluokitusKoodisto&quot; : { },
+      &quot;tulosluokitus&quot; : { }
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;merkinnat&quot; : [ {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  }, {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  } ],
+  &quot;previousVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;readTime&quot; : &quot;...&quot;,
+  &quot;lockedDate&quot; : &quot;...&quot;,
+  &quot;unit&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_HoitotyoResource_getHoitotyonmerkintaById_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoitotyo/{patientOmistajaId}/{osaId} <a href="../api/v1/hoitotyo/{patientOmistajaId}/{osaId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>This method returns hoitotyön merkintä entry by OSA number. Or 404, if hoitotyön merkintä is missing.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">osaId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">OSA number</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">patientOmistajaId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patientId</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: there is no current hoitotyönmerkinnät entry</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyo.html">Hoitotyo</a>
+ (JSON)</span></td>
+            <td><span class="response-description">returns hoitotyön merkintä entry</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoitotyo/{patientOmistajaId}/{osaId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;id&quot; : 12345,
+  &quot;patientId&quot; : 12345,
+  &quot;locked&quot; : true,
+  &quot;lukitsija&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;vastuullinen&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;muutosaika&quot; : 12345,
+  &quot;alkaa&quot; : 12345,
+  &quot;loppuu&quot; : 12345,
+  &quot;lastEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;firstEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;previousEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;asetukset&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;hoitoprosessinVaiheKoodisto&quot; : { },
+      &quot;permissions&quot; : { },
+      &quot;toimintoluokitusKoodisto&quot; : { },
+      &quot;otsikkoKoodisto&quot; : { },
+      &quot;recordReleaseAdminPermission&quot; : true,
+      &quot;tarveluokitusKoodisto&quot; : { },
+      &quot;tulosluokitus&quot; : { }
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;merkinnat&quot; : [ {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  }, {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  } ],
+  &quot;previousVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;readTime&quot; : &quot;...&quot;,
+  &quot;lockedDate&quot; : &quot;...&quot;,
+  &quot;unit&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_HoitotyoResource_endShift_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoitotyo/{id}/endShift/{shiftId} <a href="../api/v1/hoitotyo/{id}/endShift/{shiftId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Ends shift by marking shift data as locked.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">shiftId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">shift id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">lastReadTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">time of latest read by client (used to detect if there are newer changes).
+Optional parameter, so no edit in-between checks made, if <code>null</code>.
+Timestamp is of format "yyyy-MM-ddTHH:mm:ss.SSS", optionally complemented with time zone information.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid e.g. no shift with given id was found.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">409</span></td>
+            <td><span class="response-condition">Conflict: Shift has been already ended, or some other user has edited data, so there is newer data available.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">423</span></td>
+            <td><span class="response-condition">Failure to end shift and lock the shift data, because some other user is editing the data.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyo.html">Hoitotyo</a>
+ (JSON)</span></td>
+            <td><span class="response-description">hoitotyo dto for the ended hoitotyo shift instance</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoitotyo/{id}/endShift/{shiftId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;id&quot; : 12345,
+  &quot;patientId&quot; : 12345,
+  &quot;locked&quot; : true,
+  &quot;lukitsija&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;vastuullinen&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;muutosaika&quot; : 12345,
+  &quot;alkaa&quot; : 12345,
+  &quot;loppuu&quot; : 12345,
+  &quot;lastEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;firstEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;previousEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;asetukset&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;hoitoprosessinVaiheKoodisto&quot; : { },
+      &quot;permissions&quot; : { },
+      &quot;toimintoluokitusKoodisto&quot; : { },
+      &quot;otsikkoKoodisto&quot; : { },
+      &quot;recordReleaseAdminPermission&quot; : true,
+      &quot;tarveluokitusKoodisto&quot; : { },
+      &quot;tulosluokitus&quot; : { }
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;merkinnat&quot; : [ {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  }, {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  } ],
+  &quot;previousVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;readTime&quot; : &quot;...&quot;,
+  &quot;lockedDate&quot; : &quot;...&quot;,
+  &quot;unit&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_HoitotyoResource_startShiftDataEdit_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoitotyo/{id}/startShiftDataEdit/{shiftId} <a href="../api/v1/hoitotyo/{id}/startShiftDataEdit/{shiftId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Locks a given shift data row for editing.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">shiftId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">shift id to be locked.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">lastReadTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">time of latest read by client (used to detect if there are newer changes).
+Optional parameter, so no edit in-between checks made, if <code>null</code>.
+Timestamp is of format "yyyy-MM-ddTHH:mm:ss.SSS", optionally complemented with time zone information.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid e.g. no shift with given id was found.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">409</span></td>
+            <td><span class="response-condition">Conflict: Some other user has edited data, so there is newer data available.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">423</span></td>
+            <td><span class="response-condition">Data is locked already by some other user.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_LockInfo.html">LockInfo</a>
+ (JSON)</span></td>
+            <td><span class="response-description">timestamp in string format ("yyyy-MM-ddTHH:mm:ss.SSS", optionally complemented with time zone information)
+identifying lock object (together with omistaja and shift id).</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoitotyo/{id}/startShiftDataEdit/{shiftId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;lockingTimeStamp&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_HoitotyoResource_unlockShift_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoitotyo/{id}/unlockShift/{shiftId} <a href="../api/v1/hoitotyo/{id}/unlockShift/{shiftId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Unlocks shift data (enabling user to edits data again).</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">shiftId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">shift id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid e.g. no shift with given id was found.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">409</span></td>
+            <td><span class="response-condition">Conflict, shift has been already unlocked.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyo.html">Hoitotyo</a>
+ (JSON)</span></td>
+            <td><span class="response-description">hoitotyo dto for the unlocked hoitotyo shift instance</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoitotyo/{id}/unlockShift/{shiftId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;id&quot; : 12345,
+  &quot;patientId&quot; : 12345,
+  &quot;locked&quot; : true,
+  &quot;lukitsija&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;vastuullinen&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;muutosaika&quot; : 12345,
+  &quot;alkaa&quot; : 12345,
+  &quot;loppuu&quot; : 12345,
+  &quot;lastEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;firstEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;previousEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;asetukset&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;hoitoprosessinVaiheKoodisto&quot; : { },
+      &quot;permissions&quot; : { },
+      &quot;toimintoluokitusKoodisto&quot; : { },
+      &quot;otsikkoKoodisto&quot; : { },
+      &quot;recordReleaseAdminPermission&quot; : true,
+      &quot;tarveluokitusKoodisto&quot; : { },
+      &quot;tulosluokitus&quot; : { }
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;merkinnat&quot; : [ {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  }, {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  } ],
+  &quot;previousVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;readTime&quot; : &quot;...&quot;,
+  &quot;lockedDate&quot; : &quot;...&quot;,
+  &quot;unit&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <dl class="dl-horizontal">
+        <dt>See Also</dt>
+        <dd>#startShiftDataEdit(int, int, String)</dd>
+      </dl>
+
+      <div id="resource_HoitotyoResource_updateShiftData_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/hoitotyo/{id}/{shiftId}/update <a href="../api/v1/hoitotyo/{id}/{shiftId}/update" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Updates hoitotyö shift data into the database.
+
+Client must mark all edited hoitotyömerkintas with
+
+Hoitotyomerkinta.isModified() : boolean
+
+flag, therefore only changed data rows are updated into database by creating new version on them.
+
+Note 1: #startShiftDataEdit(int, int, String) must be called prior calling this method.
+
+Note 2: This method only updates shift data i.e. hoitotyön merkintäs, not metadata for shift itself.</p>
+
+        <dl class="dl-horizontal">
+          <dt>See Also</dt>
+          <dd>#startShiftDataEdit(int, int, String)</dd>
+        </dl>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">PatientID</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">shiftId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">Hoitotyo ID</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">lockAcquireTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">optional parameter, if given identifies edit lock to be automatically released
+after shift data is updated to database.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyo.html">Hoitotyo</a>
+ (JSON)</span></td>
+            <td><span class="request-description">Hoitotyo DTO in json format</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: Given hoitotyo object match not found, or there is no match found for some of the edited hoitotyönmerkinnät entries</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyo.html">Hoitotyo</a>
+ (JSON)</span></td>
+            <td><span class="response-description">updated and stored Hoitotyo entry</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /hoitotyo/{id}/{shiftId}/update
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;id&quot; : 12345,
+  &quot;patientId&quot; : 12345,
+  &quot;locked&quot; : true,
+  &quot;lukitsija&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;vastuullinen&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;muutosaika&quot; : 12345,
+  &quot;alkaa&quot; : 12345,
+  &quot;loppuu&quot; : 12345,
+  &quot;lastEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;firstEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;previousEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;asetukset&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;hoitoprosessinVaiheKoodisto&quot; : { },
+      &quot;permissions&quot; : { },
+      &quot;toimintoluokitusKoodisto&quot; : { },
+      &quot;otsikkoKoodisto&quot; : { },
+      &quot;recordReleaseAdminPermission&quot; : true,
+      &quot;tarveluokitusKoodisto&quot; : { },
+      &quot;tulosluokitus&quot; : { }
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;merkinnat&quot; : [ {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  }, {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  } ],
+  &quot;previousVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;readTime&quot; : &quot;...&quot;,
+  &quot;lockedDate&quot; : &quot;...&quot;,
+  &quot;unit&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;id&quot; : 12345,
+  &quot;patientId&quot; : 12345,
+  &quot;locked&quot; : true,
+  &quot;lukitsija&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;vastuullinen&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;muutosaika&quot; : 12345,
+  &quot;alkaa&quot; : 12345,
+  &quot;loppuu&quot; : 12345,
+  &quot;lastEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;firstEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;previousEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;asetukset&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;hoitoprosessinVaiheKoodisto&quot; : { },
+      &quot;permissions&quot; : { },
+      &quot;toimintoluokitusKoodisto&quot; : { },
+      &quot;otsikkoKoodisto&quot; : { },
+      &quot;recordReleaseAdminPermission&quot; : true,
+      &quot;tarveluokitusKoodisto&quot; : { },
+      &quot;tulosluokitus&quot; : { }
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;merkinnat&quot; : [ {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  }, {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  } ],
+  &quot;previousVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;readTime&quot; : &quot;...&quot;,
+  &quot;lockedDate&quot; : &quot;...&quot;,
+  &quot;unit&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_HoitotyoResource_getHoitotyonmerkintaByIdDeprecated_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoitotyo/{patientOmistajaId}/merkinta/{osaId} <a href="../api/v1/hoitotyo/{patientOmistajaId}/merkinta/{osaId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <div class="alert alert-danger">This method has been deprecated.  Use /{patientOmistajaId}/{osaId}</div>
 
         <p></p>
 
-        <table class="table">
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">osaId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">OSA</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">patientOmistajaId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient Id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -573,13 +3220,889 @@ This will be deprecated in few builds.</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitotyoasetukset.html">Hoitotyoasetukset</a>
- (JSON)</td>
-            <td>Hoitotyoaet</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyo.html">Hoitotyo</a>
+ (JSON)</span></td>
+            <td><span class="response-description">hoitotyo</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoitotyo/{patientOmistajaId}/merkinta/{osaId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;id&quot; : 12345,
+  &quot;patientId&quot; : 12345,
+  &quot;locked&quot; : true,
+  &quot;lukitsija&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;vastuullinen&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;muutosaika&quot; : 12345,
+  &quot;alkaa&quot; : 12345,
+  &quot;loppuu&quot; : 12345,
+  &quot;lastEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;firstEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;previousEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;asetukset&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;hoitoprosessinVaiheKoodisto&quot; : { },
+      &quot;permissions&quot; : { },
+      &quot;toimintoluokitusKoodisto&quot; : { },
+      &quot;otsikkoKoodisto&quot; : { },
+      &quot;recordReleaseAdminPermission&quot; : true,
+      &quot;tarveluokitusKoodisto&quot; : { },
+      &quot;tulosluokitus&quot; : { }
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextEntry&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;merkinnat&quot; : [ {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  }, {
+    &quot;merkinta&quot; : 12345,
+    &quot;vaihe&quot; : &quot;...&quot;,
+    &quot;otsikkokoodi&quot; : &quot;...&quot;,
+    &quot;komponentti&quot; : &quot;...&quot;,
+    &quot;luokka&quot; : &quot;...&quot;,
+    &quot;jarjestys&quot; : 12345.0,
+    &quot;teksti&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausaika&quot; : 12345,
+    &quot;varmuus&quot; : &quot;...&quot;,
+    &quot;tilanne&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
+  } ],
+  &quot;previousVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;nextVersion&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;readTime&quot; : &quot;...&quot;,
+  &quot;lockedDate&quot; : &quot;...&quot;,
+  &quot;unit&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_HoitotyoResource_postAddHoitotyomerkinta_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta <a href="../api/v1/hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Adds new record to hoitotyo. This can be anything but it is validated for correct code-usages and searches for duplicates within one hoitotyo.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">hoitotyoId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">Hoitotyo ID</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">patientOmistajaId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient Id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">lockAcquireTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">optional parameter, if given identifies lock to be automatically released
+after new version is created.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyomerkinta.html">Hoitotyomerkinta</a>
+ (JSON)</span></td>
+            <td><span class="request-description">record to add (merkinta Id will be generated)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: there is no current Hoitotyo entry</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyomerkinta.html">Hoitotyomerkinta</a>
+ (JSON)</span></td>
+            <td><span class="response-description">New stored Hoitotyomerkinta entry</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;merkinta&quot; : 12345,
+  &quot;vaihe&quot; : &quot;...&quot;,
+  &quot;otsikkokoodi&quot; : &quot;...&quot;,
+  &quot;komponentti&quot; : &quot;...&quot;,
+  &quot;luokka&quot; : &quot;...&quot;,
+  &quot;jarjestys&quot; : 12345.0,
+  &quot;teksti&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;kirjausaika&quot; : 12345,
+  &quot;varmuus&quot; : &quot;...&quot;,
+  &quot;tilanne&quot; : &quot;...&quot;,
+  &quot;pysyvyys&quot; : &quot;...&quot;,
+  &quot;readTime&quot; : 12345,
+  &quot;modified&quot; : true
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;merkinta&quot; : 12345,
+  &quot;vaihe&quot; : &quot;...&quot;,
+  &quot;otsikkokoodi&quot; : &quot;...&quot;,
+  &quot;komponentti&quot; : &quot;...&quot;,
+  &quot;luokka&quot; : &quot;...&quot;,
+  &quot;jarjestys&quot; : 12345.0,
+  &quot;teksti&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;kirjausaika&quot; : 12345,
+  &quot;varmuus&quot; : &quot;...&quot;,
+  &quot;tilanne&quot; : &quot;...&quot;,
+  &quot;pysyvyys&quot; : &quot;...&quot;,
+  &quot;readTime&quot; : 12345,
+  &quot;modified&quot; : true
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_HoitotyoResource_endShiftDataEdit_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoitotyo/{id}/endShiftDataEdit/{shiftId}/{started} <a href="../api/v1/hoitotyo/{id}/endShiftDataEdit/{shiftId}/{started}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Unlocks a given shift data row after editing.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">shiftId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">shift id to be locked.</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">started</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">time when edit shift session was started (part of primary key HISTORIA.ALKOI) and
+which is used to identify correct lock to be released.
+This timestamp string is provided by corresponding #startShiftDataEdit(int, int) call.
+Timestamp is of format "yyyy-MM-ddTHH:mm:ss.SSS", optionally complemented with time zone information.</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">isDataChanged</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"><code>true</code> if data was actually changed during locking, otherwise <code>false</code>.
+If this optinal parameter is omitted, then assuming <code>true</code>.</span></td>
+            <td><span class="parameter-default-value">true</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid e.g. no shift with given id was found.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_UnlockInfo.html">UnlockInfo</a>
+ (JSON)</span></td>
+            <td><span class="response-description"><code>UnlockInfo</code> DTO containing info about lock release success.</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoitotyo/{id}/endShiftDataEdit/{shiftId}/{started}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;historiaLockReleaseSuccessful&quot; : true,
+  &quot;osahistoriaLockReleaseSuccessful&quot; : true
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_HoitotyoResource_postHoitotyomerkintaCreateNewVersion_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion <a href="../api/v1/hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Creates new version for given Hoitotyomerkinta.
+Post can be partial as most fields are set by server (time, kirjaaja etc.) anyways.
+
+Posts eg:  {"teksti":"new teksti", "tilanne":"PA"}  {"teksti":"new teksti"} are valid posts.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">hoitotyoId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">Hoitotyo ID</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">merkintaId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">Hoitotyomerkinta ID</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">patientOmistajaId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">PatientID</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">lockAcquireTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">optional parameter, if given identifies lock to be automatically released
+after new version is created.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyomerkinta.html">Hoitotyomerkinta</a>
+ (JSON)</span></td>
+            <td><span class="request-description">Hoitotyomerkinta in json format</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: there is no current hoitotyönmerkinnät entry</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitotyomerkinta.html">Hoitotyomerkinta</a>
+ (JSON)</span></td>
+            <td><span class="response-description">new stored Hoitotyomerkinta entry</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;merkinta&quot; : 12345,
+  &quot;vaihe&quot; : &quot;...&quot;,
+  &quot;otsikkokoodi&quot; : &quot;...&quot;,
+  &quot;komponentti&quot; : &quot;...&quot;,
+  &quot;luokka&quot; : &quot;...&quot;,
+  &quot;jarjestys&quot; : 12345.0,
+  &quot;teksti&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;kirjausaika&quot; : 12345,
+  &quot;varmuus&quot; : &quot;...&quot;,
+  &quot;tilanne&quot; : &quot;...&quot;,
+  &quot;pysyvyys&quot; : &quot;...&quot;,
+  &quot;readTime&quot; : 12345,
+  &quot;modified&quot; : true
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;merkinta&quot; : 12345,
+  &quot;vaihe&quot; : &quot;...&quot;,
+  &quot;otsikkokoodi&quot; : &quot;...&quot;,
+  &quot;komponentti&quot; : &quot;...&quot;,
+  &quot;luokka&quot; : &quot;...&quot;,
+  &quot;jarjestys&quot; : 12345.0,
+  &quot;teksti&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;kirjausaika&quot; : 12345,
+  &quot;varmuus&quot; : &quot;...&quot;,
+  &quot;tilanne&quot; : &quot;...&quot;,
+  &quot;pysyvyys&quot; : &quot;...&quot;,
+  &quot;readTime&quot; : 12345,
+  &quot;modified&quot; : true
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -594,14 +4117,14 @@ This will be deprecated in few builds.</p>
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

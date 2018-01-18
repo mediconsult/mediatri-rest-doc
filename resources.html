@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -73,9 +71,12 @@
     There is a <a href="application.wadl">WADL document</a> available that describes the resources API.
   </p>
   <p>
-    You may also enjoy the <a href="ui/index.html">Swagger UI</a> provided for this API.
+    You may also enjoy the <a href="ui/index.html">interactive interface</a> provided for this API by <a href="http://swagger.io">Swagger</a>.
   </p>
-  <table class="table table-hover">
+  <p>
+    <a href="ui/index.html" class="btn btn-default">Try it out!</a>
+  </p>
+  <table class="table table-hover resources">
     <thead>
     <tr>
       <th align="center">name</th>
@@ -86,403 +87,912 @@
     </thead>
     <tbody data-link="row" class="rowlink">
     <tr class="clickable-row" data-href="resource_AdminResource.html">
-      <td>  AdminResource
+      <td>  <span class="resource-name">AdminResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /admin/clearcache
-</samp></li><li><samp>  /admin/urlmap
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/admin/clearcache</span>
+</samp></li><li><samp>  <span class="resource-path">/admin/l2content</span>
+</samp></li><li><samp>  <span class="resource-path">/admin/systemProperty</span>
+</samp></li><li><samp>  <span class="resource-path">/admin/urlmap</span>
+</samp></li><li><samp>  <span class="resource-path">/admin/evictL2cache/{region}</span>
+</samp></li><li><samp>  <span class="resource-path">/admin/systemProperty/{key}</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for various admin tasks like clearing cache onfly.
+      <td>  <span class="resource-description">REST API for various admin tasks like clearing cache onfly.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_AsiaResource.html">
+      <td>  <span class="resource-name">AsiaResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/asia</span>
+</samp></li><li><samp>  <span class="resource-path">/asia/asiakas</span>
+</samp></li><li><samp>  <span class="resource-path">/asia/asiakysely</span>
+</samp></li><li><samp>  <span class="resource-path">/asia/asiaviittaus</span>
+</samp></li><li><samp>  <span class="resource-path">/asia/asiaviittauspoisto</span>
+</samp></li><li><samp>  <span class="resource-path">/asia/deletelock</span>
+</samp></li><li><samp>  <span class="resource-path">/asia/editmode</span>
+</samp></li><li><samp>  <span class="resource-path">/asia/suostumus</span>
+</samp></li><li><samp>  <span class="resource-path">/asia/asiahistoria/{asiaId}</span>
+</samp></li><li><samp>  <span class="resource-path">/asia/asiaid/{asiaId}</span>
+</samp></li><li><samp>  <span class="resource-path">/asia/asiatiivistelmat/{asiakasnumero}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for Asia.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_AsiakirjaResource.html">
+      <td>  <span class="resource-name">AsiakirjaResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/asiakirja</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/asiakirjakytkenta</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/asiakirjakytkentapoisto</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/asiakirjapoisto</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/asiakirjat</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/asiakirjatiedot</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/asiakirjaviittaus</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/asiakirjaviittauspoisto</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/editmode</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/kytkemattomatasiakirjat</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/liiteasiakirja</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/liiteasiakirjadata</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/liiteasiakirjakytkentapoisto</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/liiteasiakirjapoisto</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/liiteasiakirjaviittaus</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/luovutettu</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/sosiaalipalvelut</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/suostumus</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/templaatti</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/tulostus</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/asiakirjatiivistelmat/{asiakasnumero}</span>
+</samp></li><li><samp>  <span class="resource-path">/asiakirja/liiteasiakirja/asiakirjakytkenta</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for Asiakirja.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_AuthenticationResource.html">
-      <td>  AuthenticationResource
+      <td>  <span class="resource-name">AuthenticationResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /authentication/contextLogin
-</samp></li><li><samp>  /authentication/identity
-</samp></li><li><samp>  /authentication/login
-</samp></li><li><samp>  /authentication/logout
-</samp></li><li><samp>  /authentication/ping
-</samp></li><li><samp>  /authentication/plannerRights
-</samp></li><li><samp>  /authentication/role
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/authentication/contextLogin</span>
+</samp></li><li><samp>  <span class="resource-path">/authentication/contextLoginWithPatientId</span>
+</samp></li><li><samp>  <span class="resource-path">/authentication/identity</span>
+</samp></li><li><samp>  <span class="resource-path">/authentication/login</span>
+</samp></li><li><samp>  <span class="resource-path">/authentication/logout</span>
+</samp></li><li><samp>  <span class="resource-path">/authentication/logoutfromrole</span>
+</samp></li><li><samp>  <span class="resource-path">/authentication/ping</span>
+</samp></li><li><samp>  <span class="resource-path">/authentication/plannerRights</span>
+</samp></li><li><samp>  <span class="resource-path">/authentication/role</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  POST
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET, POST
-</samp></li><li><samp>  GET, POST
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  POST
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li></ul></td>
-      <td>  Service for authentication
+      <td>  <span class="resource-description">Service for authentication</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_ClientLogResource.html">
-      <td>  ClientLogResource
+      <td>  <span class="resource-name">ClientLogResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /log/error
-</samp></li><li><samp>  /log/info
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/log/error</span>
+</samp></li><li><samp>  <span class="resource-path">/log/info</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  POST
-</samp></li><li><samp>  POST
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li></ul></td>
-      <td>  Service for client logs
+      <td>  <span class="resource-description">Service for client logs</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_CodeResource.html">
+      <td>  <span class="resource-name">CodeResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/code</span>
+</samp></li><li><samp>  <span class="resource-path">/codex</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for Codex.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_DiagnoseResource.html">
+      <td>  <span class="resource-name">DiagnoseResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/diagnoses/codes</span>
+</samp></li><li><samp>  <span class="resource-path">/diagnoses/codeslist</span>
+</samp></li><li><samp>  <span class="resource-path">/diagnoses/{patientId}/active</span>
+</samp></li><li><samp>  <span class="resource-path">/diagnoses/{patientId}/{diagnoseId}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">REST API for diagnoses</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_DocumentResource.html">
+      <td>  <span class="resource-name">DocumentResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/document</span>
+</samp></li><li><samp>  <span class="resource-path">/document/deletelock</span>
+</samp></li><li><samp>  <span class="resource-path">/document/displaymode</span>
+</samp></li><li><samp>  <span class="resource-path">/document/documentinfo</span>
+</samp></li><li><samp>  <span class="resource-path">/document/documents</span>
+</samp></li><li><samp>  <span class="resource-path">/document/editmode</span>
+</samp></li><li><samp>  <span class="resource-path">/document/suostumus</span>
+</samp></li><li><samp>  <span class="resource-path">/document/fieldsummary/{asiakasnumero}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for Documents.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_DocumentTemplateResource.html">
+      <td>  <span class="resource-name">DocumentTemplateResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/document_template</span>
+</samp></li><li><samp>  <span class="resource-path">/document_template/deletelock</span>
+</samp></li><li><samp>  <span class="resource-path">/document_template/edit</span>
+</samp></li><li><samp>  <span class="resource-path">/document_template/favourites</span>
+</samp></li><li><samp>  <span class="resource-path">/document_template/history</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for Document templates.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_ExtKurssiResource.html">
-      <td>  ExtKurssiResource
+      <td>  <span class="resource-name">ExtKurssiResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /ext/kurssit/list
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/ext/kurssit/list</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  Rest service for ExtKurssiService for getting kurssi-information for patients
+      <td>  <span class="resource-description">Rest service for ExtKurssiService for getting kurssi-information for patients</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_FysiologisetMittauksetResource.html">
-      <td>  FysiologisetMittauksetResource
+      <td>  <span class="resource-name">FysiologisetMittauksetResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /measurements/config
-</samp></li><li><samp>  /measurements/{id}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/measurements/config</span>
+</samp></li><li><samp>  <span class="resource-path">/measurements/{id}</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for measurements (Fysiologiset mittaukset)
+      <td>  <span class="resource-description">REST API for measurements (Fysiologiset mittaukset)</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_GroupResource.html">
+      <td>  <span class="resource-name">GroupResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/group</span>
+</samp></li><li><samp>  <span class="resource-path">/group/group</span>
+</samp></li><li><samp>  <span class="resource-path">/group/removerole</span>
+</samp></li><li><samp>  <span class="resource-path">/group/role</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for family group concept</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_HoitoResource.html">
-      <td>  HoitoResource
+      <td>  <span class="resource-name">HoitoResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /hoidot/{id}
-</samp></li><li><samp>  /hoidot/{id}/done
-</samp></li><li><samp>  /hoidot/{id}/end
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/hoidot/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/hoidot/{id}/done</span>
+</samp></li><li><samp>  <span class="resource-path">/hoidot/{id}/end</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  PUT
-</samp></li><li><samp>  PUT
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
 </samp></li></ul></td>
-      <td>  REST API for Hoito (Hoito-ohjeet ja m��r�ykset)
+      <td>  <span class="resource-description">REST API for Hoito (Hoito-ohjeet ja määräykset)</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_HoitojaksoResource.html">
+      <td>  <span class="resource-name">HoitojaksoResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/palvelutapahtuma/hoitojakso/{patientId}</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{id}/wardTreatment/{treatmentId}</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{patientId}/encounters/filters/episodeOfCare</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{patientId}/encounters/{encounterId}/episodeOfCare</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">REST API for hoitojakso related functionalities.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_HoitotyoResource.html">
-      <td>  HoitotyoResource
+      <td>  <span class="resource-name">HoitotyoResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /hoitotyo/asetukset
-</samp></li><li><samp>  /hoitotyo/{id}/asetukset
-</samp></li><li><samp>  /hoitotyo/{id}/current
-</samp></li><li><samp>  /hoitotyo/{patientOmistajaId}/{osaId}
-</samp></li><li><samp>  /hoitotyo/{patientOmistajaId}/merkinta/{osaId}
-</samp></li><li><samp>  /hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta
-</samp></li><li><samp>  /hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/hoitotyo/asetukset</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{id}/asetukset</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{id}/current</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{id}/startShift</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{patientOmistajaId}/{osaId}</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{id}/endShift/{shiftId}</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{id}/startShiftDataEdit/{shiftId}</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{id}/unlockShift/{shiftId}</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{id}/{shiftId}/update</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{patientOmistajaId}/merkinta/{osaId}</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{patientOmistajaId}/{hoitotyoId}/addMerkinta</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{id}/endShiftDataEdit/{shiftId}/{started}</span>
+</samp></li><li><samp>  <span class="resource-path">/hoitotyo/{patientOmistajaId}/{hoitotyoId}/{merkintaId}/createVersion</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  POST
-</samp></li><li><samp>  POST
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li></ul></td>
-      <td>  API for hoitotyonmerkinnat
+      <td>  <span class="resource-description">API for hoitotyonmerkinnat</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_KantaResource.html">
+      <td>  <span class="resource-name">KantaResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/kantaservices/pdfhelper</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/willtextvalidation</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/elinluovutus/{patientId}</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/hoitotahto/{patientId}</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/luovutustarkistus/{patientId}</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/prescriptiondenial/getPdfDenial</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/tahdonilmaisut/{patientId}</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/elinluovutus/{ownerId}/invalidate</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/elinluovutus/{ownerId}/save</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/elinluovutus/{patientId}/foredit</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/hoitotahto/{ownerId}/invalidate</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/hoitotahto/{ownerId}/save</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/hoitotahto/{patientId}/allversions</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/hoitotahto/{patientId}/foredit</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/lomakepalvelu/lomakkeet/{lomakeId}</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/lomakepalvelu/{ownerId}/create</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/lomakepalvelu/{ownerId}/deliver</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/lomakepalvelu/{ownerId}/save</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/lomakepalvelu/{patientId}/lomakkeet</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/prescriptiondenial/fetchprescriptions/{patientId}</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/prescriptiondenial/{patientId}/saveDenials</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/suostumuksenhallinta/consent/{patientId}</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/suostumuksenhallinta/informations/{patientId}</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/suostumuksenhallinta/refusals/{patientId}</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/lomakepalvelu/{ownerId}/create/invalidation</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/lomakepalvelu/{ownerId}/save/invalidation</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/suostumuksenhallinta/consent/{ownerId}/getPdfConsent</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/suostumuksenhallinta/consent/{ownerId}/save</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/suostumuksenhallinta/informations/{ownerId}/save</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/suostumuksenhallinta/refusals/{ownerId}/getPdfRefusals</span>
+</samp></li><li><samp>  <span class="resource-path">/kantaservices/suostumuksenhallinta/refusals/{patientId}/save</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">REST API for Kanta services</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_LaakitysHistoriaResource.html">
-      <td>  LaakitysHistoriaResource
+      <td>  <span class="resource-name">LaakitysHistoriaResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /medication/{id}
-</samp></li><li><samp>  /medication/{id}/part/{osa}/time
-</samp></li><li><samp>  /medication/{id}/part/{osa}/times
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/medication/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/medication/{id}/part/{osa}/time</span>
+</samp></li><li><samp>  <span class="resource-path">/medication/{id}/part/{osa}/times</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  DELETE, POST, PUT
-</samp></li><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for medication
+      <td>  <span class="resource-description">REST API for medication</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_LaakitysResource.html">
-      <td>  LaakitysResource
+      <td>  <span class="resource-name">LaakitysResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /medicationlist/interactions
-</samp></li><li><samp>  /medicationlist/{id}
-</samp></li><li><samp>  /medicationlist/medicine/{code}
-</samp></li><li><samp>  /medicationlist/newmedication/{id}
-</samp></li><li><samp>  /medicationlist/medicine/activeingredient/{activeingredient}
-</samp></li><li><samp>  /medicationlist/medicine/atc/{atc}
-</samp></li><li><samp>  /medicationlist/medicine/name/{name}
-</samp></li><li><samp>  /medicationlist/medicine/therapygroup/{therapygroup}
-</samp></li><li><samp>  /medicationlist/history/{omistaja}/part/{osa}
-</samp></li><li><samp>  /medicationlist/savemedication/{id}/part/{osa}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/medicationlist/interactions</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/medicine/{code}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/newmedication/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/savemedication/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/medicine/activeingredient/{activeingredient}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/medicine/atc/{atc}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/medicine/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/medicine/therapygroup/{therapygroup}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/history/{omistaja}/part/{osa}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/savemedicationbreak/{id}/part/{osa}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/{id}/part/{osa}/time</span>
+</samp></li><li><samp>  <span class="resource-path">/medicationlist/{id}/part/{osa}/times</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  PUT
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  PUT
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for Laakitys component
+      <td>  <span class="resource-description">REST API for Laakitys component</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_LaskuResource.html">
+      <td>  <span class="resource-name">LaskuResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/laskut</span>
+</samp></li><li><samp>  <span class="resource-path">/laskut/{laskuid}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for social lasku</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_MedicalRecordsResource.html">
-      <td>  MedicalRecordsResource
+      <td>  <span class="resource-name">MedicalRecordsResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /medicalreports/config
-</samp></li><li><samp>  /medicalreports/lock
-</samp></li><li><samp>  /medicalreports/unlock
-</samp></li><li><samp>  /medicalreports/{id}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/medicalreports/config</span>
+</samp></li><li><samp>  <span class="resource-path">/medicalreports/lock</span>
+</samp></li><li><samp>  <span class="resource-path">/medicalreports/unlock</span>
+</samp></li><li><samp>  <span class="resource-path">/medicalreports/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/medicalreports/{id}/protected</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  PUT
-</samp></li><li><samp>  PUT
-</samp></li><li><samp>  GET, POST, PUT
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li></ul></td>
-      <td>  REST API for kertomukset
+      <td>  <span class="resource-description">REST API for kertomukset</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_MetadataResource.html">
-      <td>  MetadataResource
+      <td>  <span class="resource-name">MetadataResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /metadata
-</samp></li><li><samp>  /metadata/{groupID}
-</samp></li><li><samp>  /metadata/{groupID}/{metadataID}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/metadata</span>
+</samp></li><li><samp>  <span class="resource-path">/metadata/{groupID}</span>
+</samp></li><li><samp>  <span class="resource-path">/metadata/{groupID}/{metadataID}</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for metadata
+      <td>  <span class="resource-description">REST API for metadata</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_OperationLogResource.html">
+      <td>  <span class="resource-name">OperationLogResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/operationLogs/{operation}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">REST API for fetching operation logs.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_OrganizationResource.html">
+      <td>  <span class="resource-name">OrganizationResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/organizations</span>
+</samp></li><li><samp>  <span class="resource-path">/organizations/{identifier}</span>
+</samp></li><li><samp>  <span class="resource-path">/organizations/info/{identifier}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">REST API for interacting with organizations as a whole,
+such as responsible parties, units and registers.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_OsastokarttaResource.html">
-      <td>  OsastokarttaResource
+      <td>  <span class="resource-name">OsastokarttaResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /osastokartta
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/osastokartta</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for osastokartta.
+      <td>  <span class="resource-description">REST API for osastokartta.
 
 There is only one osastokartta-configuration in Mediatri for logged in user and thus this resource has only one GET accesspoint without any parameters.
-Osastokartta contains list of osastolistat which are separate maps in different osasto.
+Osastokartta contains list of osastolistat which are separate maps in different osasto.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PaatoksentukiResource.html">
+      <td>  <span class="resource-name">PaatoksentukiResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/paatoksentuki/{id}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">REST API for Paatoksentuki component</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_PalvelupaatosResource.html">
-      <td>  PalvelupaatosResource
+      <td>  <span class="resource-name">PalvelupaatosResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /settings/serviceClasses
-</samp></li><li><samp>  /settings/serviceInterruptReasons
-</samp></li><li><samp>  /patients/{id}/serviceDecisions
-</samp></li><li><samp>  /patients/{id}/serviceDecisions/interruptions
-</samp></li><li><samp>  /patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/settings/serviceClasses</span>
+</samp></li><li><samp>  <span class="resource-path">/settings/serviceInterruptReasons</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{id}/serviceDecisions</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{id}/serviceDecisions/interruptions</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  DELETE, POST, PUT
-</samp></li><li><samp>  DELETE
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
 </samp></li></ul></td>
-      <td>  REST API for palvelupaatokses.
+      <td>  <span class="resource-description">REST API for palvelupaatokses.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_PalvelutapahtumaResource.html">
-      <td>  PalvelutapahtumaResource
+      <td>  <span class="resource-name">PalvelutapahtumaResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /palvelutapahtuma
-</samp></li><li><samp>  /palvelutapahtuma/aktiivinen/{id}
-</samp></li><li><samp>  /palvelutapahtuma/hoitojakso/{patientId}
-</samp></li><li><samp>  /patients/{patientId}/careRelation
-</samp></li><li><samp>  /patients/{patientId}/encounters
-</samp></li><li><samp>  /patients/{patientId}/encounters/{encounterId}
-</samp></li><li><samp>  /patients/{patientId}/encounters/filters/forCareRelation
-</samp></li><li><samp>  /patients/{patientId}/encounters/{encounterId}/episodeOfCare
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/palvelutapahtuma</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutapahtuma/aktiivinen/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{patientId}/careRelation</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{patientId}/encounters</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{patientId}/careRelation/generate</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{patientId}/encounters/{encounterId}</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{patientId}/encounters/filters/forCareRelation</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET, POST
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for patients
+      <td>  <span class="resource-description">REST API for patients</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PalvelutehtavanAsiakkuusResource.html">
+      <td>  <span class="resource-name">PalvelutehtavanAsiakkuusResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus/asiakkaanmaksut</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus/asiakkuudet</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus/asiakkuushistory</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus/asiat</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus/kysely</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus/paattyneet_asiat</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus/suostumus</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus/asiakkuudet/{asiakasnumero}</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus/poisto/{palvelutehtavanasiakkuusid}</span>
+</samp></li><li><samp>  <span class="resource-path">/palvelutehtavanasiakkuus/vastuutyontekijanasiakkaat/{vastuutyontekijanumero}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for palvelutehtävän asiakkuus</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PalveluyksikkoAsiakkuusResource.html">
+      <td>  <span class="resource-name">PalveluyksikkoAsiakkuusResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/palveluyksikkoasiakkuus</span>
+</samp></li><li><samp>  <span class="resource-path">/palveluyksikkoasiakkuus/historia</span>
+</samp></li><li><samp>  <span class="resource-path">/palveluyksikkoasiakkuus/kysely</span>
+</samp></li><li><samp>  <span class="resource-path">/palveluyksikkoasiakkuus/suostumus</span>
+</samp></li><li><samp>  <span class="resource-path">/palveluyksikkoasiakkuus/{yksikkonumero}</span>
+</samp></li><li><samp>  <span class="resource-path">/palveluyksikkoasiakkuus/ended/{asiakasnumero}</span>
+</samp></li><li><samp>  <span class="resource-path">/palveluyksikkoasiakkuus/{yksikkonumero}/{asiakasnumero}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for Palveluyksikkö asiakkuus</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_PatientResource.html">
-      <td>  PatientResource
+      <td>  <span class="resource-name">PatientResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /patients/list
-</samp></li><li><samp>  /patients/listed
-</samp></li><li><samp>  /patients/search
-</samp></li><li><samp>  /patients/{id}
-</samp></li><li><samp>  /patients/id/{id}
-</samp></li><li><samp>  /patients/ssn/{ssn}
-</samp></li><li><samp>  /patients/id/{id}/basicinfos
-</samp></li><li><samp>  /patients/id/{id}/courses
-</samp></li><li><samp>  /patients/id/{id}/lists
-</samp></li><li><samp>  /patients/id/{id}/riskistatus
-</samp></li><li><samp>  /patients/ssn/{ssn}/basicinfos
-</samp></li><li><samp>  /patients/ssn/{ssn}/lists
-</samp></li><li><samp>  /patients/id/{omistajaId}/list/{listId}
-</samp></li><li><samp>  /patients/ssn/{ssn}/list/{listId}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/patients</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/config</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/listed</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/search</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/id/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{id}/lock</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{id}/unlock</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/id/{id}/basicinfos</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/id/{id}/courses</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/id/{id}/lists</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/id/{id}/riskistatus</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/id/{id}/wardcarestatus</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/id/{id}/list/{listId}</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET, PUT
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for patients
+      <td>  <span class="resource-description">REST API for patients</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PhraseResource.html">
+      <td>  <span class="resource-name">PhraseResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/phrase</span>
+</samp></li><li><samp>  <span class="resource-path">/phrase/historia</span>
+</samp></li><li><samp>  <span class="resource-path">/phrase/removephrase</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for Phrases.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_PingResource.html">
-      <td>  PingResource
+      <td>  <span class="resource-name">PingResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /ping
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/ping</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  Simple server ping resource that mobile applications can use for heartbeat. Mobile applications can enable "offline mode" when connection to this resource is lost.
+      <td>  <span class="resource-description">Simple server ping resource that mobile applications can use for heartbeat. Mobile applications can enable "offline mode" when connection to this resource is lost.
 GET
-/ping returns String "OK"
+/ping returns String "OK"</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_ProcessResource.html">
+      <td>  <span class="resource-name">ProcessResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/process/{id}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">REST API for Process</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_RiskitietoResource.html">
-      <td>  RiskitietoResource
+      <td>  <span class="resource-name">RiskitietoResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /riskit/{id}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/riskit/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{patientId}/risks/{riskId}</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for riskitiedot
+      <td>  <span class="resource-description">REST API for riskitiedot</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_SessionResource.html">
+      <td>  <span class="resource-name">SessionResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/session/currentPatient</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/id/{id}/setCurrent</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Session resource stores information for current login.
+
+Example currentPatient api updates information to context-server</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_SettingsResource.html">
-      <td>  SettingsResource
+      <td>  <span class="resource-name">SettingsResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /settings/codes/specialReason
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/settings/productConfiguration</span>
+</samp></li><li><samp>  <span class="resource-path">/settings/codes/specialReason</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for generic Mediatri settings and codex
+      <td>  <span class="resource-description">REST API for generic Mediatri settings and codex</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_SeurantaResource.html">
-      <td>  SeurantaResource
+      <td>  <span class="resource-name">SeurantaResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /seuranta/config
-</samp></li><li><samp>  /seuranta/{id}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/seuranta/config</span>
+</samp></li><li><samp>  <span class="resource-path">/seuranta/{id}</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET, POST
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li></ul></td>
-      <td>  REST API for seuranta
+      <td>  <span class="resource-description">REST API for seuranta</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_SocialConfigurationResource.html">
+      <td>  <span class="resource-name">SocialConfigurationResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/socialconfiguration</span>
+</samp></li><li><samp>  <span class="resource-path">/socialconfiguration/{configurationTag}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for social configuration REST API.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_SosiaalihuollonAsiakkuusResource.html">
+      <td>  <span class="resource-name">SosiaalihuollonAsiakkuusResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/sosiaalihuollonasiakkuus</span>
+</samp></li><li><samp>  <span class="resource-path">/sosiaalihuollonasiakkuus/asiakkuudet</span>
+</samp></li><li><samp>  <span class="resource-path">/sosiaalihuollonasiakkuus/kysely</span>
+</samp></li><li><samp>  <span class="resource-path">/sosiaalihuollonasiakkuus/palvelutehtavanasiakkuudet</span>
+</samp></li><li><samp>  <span class="resource-path">/sosiaalihuollonasiakkuus/suostumus</span>
+</samp></li><li><samp>  <span class="resource-path">/sosiaalihuollonasiakkuus/asiakkuudet/historia</span>
+</samp></li><li><samp>  <span class="resource-path">/sosiaalihuollonasiakkuus/omatyontekijanasiakkaat/{ammattihenkilonumero}</span>
+</samp></li><li><samp>  <span class="resource-path">/sosiaalihuollonasiakkuus/omatyontekijat/muokkaus</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for sosiaalihuollon asiakkuus</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_TeamResource.html">
+      <td>  <span class="resource-name">TeamResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/teams</span>
+</samp></li><li><samp>  <span class="resource-path">/teams/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/patients/{id}/teams</span>
+</samp></li><li><samp>  <span class="resource-path">/teams/configs/{form}</span>
+</samp></li><li><samp>  <span class="resource-path">/units/{id}/teams</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{id}/teams</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">REST API for omistaja teams.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_TilitapahtumaResource.html">
+      <td>  <span class="resource-name">TilitapahtumaResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/tilitapahtuma/asiakkaanKayttovarat</span>
+</samp></li><li><samp>  <span class="resource-path">/tilitapahtuma/osastonKassa</span>
+</samp></li><li><samp>  <span class="resource-path">/tilitapahtuma/asiakkaanKayttovarat/{omistajaId}</span>
+</samp></li><li><samp>  <span class="resource-path">/tilitapahtuma/osastonKassa/{omistajaId}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource for Tilitapahtuma.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_TitleResource.html">
-      <td>  TitleResource
+      <td>  <span class="resource-name">TitleResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /titles/component/{id}
-</samp></li><li><samp>  /titles/{name}/config
-</samp></li><li><samp>  /titles/{name}/options
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/titles/mtconfigs</span>
+</samp></li><li><samp>  <span class="resource-path">/titles/component/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/titles/{name}/comments</span>
+</samp></li><li><samp>  <span class="resource-path">/titles/{name}/config</span>
+</samp></li><li><samp>  <span class="resource-path">/titles/{name}/mtconfig</span>
+</samp></li><li><samp>  <span class="resource-path">/titles/{name}/options</span>
+</samp></li><li><samp>  <span class="resource-path">/titles/component/{id}/mtconfigs</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
-      <td>  REST API for title resource. Supported operations:
+      <td>  <span class="resource-description">REST API for title resource. Supported operations:
 GET
 titles/{title name}/config returns configuration for the titles
-titles/{title name}/options returns list of available values for the title
+titles/{title name}/options returns list of available values for the title</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_TutkimuspyyntoResource.html">
-      <td>  TutkimuspyyntoResource
+      <td>  <span class="resource-name">TutkimuspyyntoResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /labs/{id}
-</samp></li><li><samp>  /labs/{id}/acknowledge
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/labs/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/labs/{id}/acknowledge</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  PUT
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
 </samp></li></ul></td>
-      <td>  REST API for laboratory examinations
+      <td>  <span class="resource-description">REST API for laboratory examinations</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_UnitResource.html">
-      <td>  UnitResource
+      <td>  <span class="resource-name">UnitResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /units/{id}
-</samp></li><li><samp>  /units/{id}/basicinfos
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/units/list</span>
+</samp></li><li><samp>  <span class="resource-path">/units/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/units/config/personlists</span>
+</samp></li><li><samp>  <span class="resource-path">/units/config/userlists</span>
+</samp></li><li><samp>  <span class="resource-path">/units/{id}/basicinfos</span>
+</samp></li><li><samp>  <span class="resource-path">/units/{unitId}/users/{userId}</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li></ul></td>
-      <td>  REST API for users
+      <td>  <span class="resource-description">REST API for units.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_UserResource.html">
-      <td>  UserResource
+      <td>  <span class="resource-name">UserResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /users/availability
-</samp></li><li><samp>  /users/groups
-</samp></li><li><samp>  /users/list
-</samp></li><li><samp>  /users/listed
-</samp></li><li><samp>  /users/listedWithAvailability
-</samp></li><li><samp>  /users/search
-</samp></li><li><samp>  /users/{id}
-</samp></li><li><samp>  /users/{id}/availability
-</samp></li><li><samp>  /users/{id}/basicinfos
-</samp></li><li><samp>  /users/{id}/lists
-</samp></li><li><samp>  /users/{id}/skills
-</samp></li><li><samp>  /users/{id}/timeRules
-</samp></li><li><samp>  /users/{id}/timeRules/{ruleId}
-</samp></li><li><samp>  /users/{omistajaId}/list/{listId}
-</samp></li><li><samp>  /users/{id}/timeRules/{ruleId}/instances/{instanceId}
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/users/groups</span>
+</samp></li><li><samp>  <span class="resource-path">/users/listed</span>
+</samp></li><li><samp>  <span class="resource-path">/users/listedWithAvailability</span>
+</samp></li><li><samp>  <span class="resource-path">/users/search</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{id}/availability</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{id}/basicinfos</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{id}/lists</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{id}/skills</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{id}/timeRules</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{id}/timeRules/{ruleId}</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{omistajaId}/list/{listId}</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{id}/timeRules/{ruleId}/instances/{instanceId}</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  GET, PUT
-</samp></li><li><samp>  GET, POST
-</samp></li><li><samp>  DELETE, PUT
-</samp></li><li><samp>  GET
-</samp></li><li><samp>  DELETE, PUT
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li></ul></td>
-      <td>  REST API for users
+      <td>  <span class="resource-description">REST API for users</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_UserViewResource.html">
-      <td>  UserViewResource
+      <td>  <span class="resource-name">UserViewResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  /userview
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/userviews/{applName}</span>
 </samp></li></ul></td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  GET, PUT
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li></ul></td>
-      <td>  REST API for getting and updating user view information
+      <td>  <span class="resource-description">REST API for getting and updating user view information</span>
 </td>
     </tr>
     </tbody>
@@ -500,14 +1010,14 @@ titles/{title name}/options returns list of available values for the title
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

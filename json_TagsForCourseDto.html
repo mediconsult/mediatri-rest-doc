@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,30 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#BY_NIMI"><abbr title="BY_NIMI"><span class="sideoverflow">BY_NIMI</span></abbr></a></li>
+          <li><a href="#BY_AVAUSAIKA"><abbr title="BY_AVAUSAIKA"><span class="sideoverflow">BY_AVAUSAIKA</span></abbr></a></li>
+          <li><a href="#BY_PAATTYMISAIKA"><abbr title="BY_PAATTYMISAIKA"><span class="sideoverflow">BY_PAATTYMISAIKA</span></abbr></a></li>
+          <li><a href="#BY_TILA"><abbr title="BY_TILA"><span class="sideoverflow">BY_TILA</span></abbr></a></li>
+          <li><a href="#BY_YHTEENKUULUVUUS"><abbr title="BY_YHTEENKUULUVUUS"><span class="sideoverflow">BY_YHTEENKUULUVUUS</span></abbr></a></li>
+          <li><a href="#BY_LAATIJANIMI"><abbr title="BY_LAATIJANIMI"><span class="sideoverflow">BY_LAATIJANIMI</span></abbr></a></li>
+          <li><a href="#BY_LAATIJANUMERO"><abbr title="BY_LAATIJANUMERO"><span class="sideoverflow">BY_LAATIJANUMERO</span></abbr></a></li>
+          <li><a href="#BY_MUUTTAJANIMI"><abbr title="BY_MUUTTAJANIMI"><span class="sideoverflow">BY_MUUTTAJANIMI</span></abbr></a></li>
+          <li><a href="#BY_MUUTTAJANUMERO"><abbr title="BY_MUUTTAJANUMERO"><span class="sideoverflow">BY_MUUTTAJANUMERO</span></abbr></a></li>
+          <li><a href="#BY_PALVELUYKSIKKO"><abbr title="BY_PALVELUYKSIKKO"><span class="sideoverflow">BY_PALVELUYKSIKKO</span></abbr></a></li>
+          <li><a href="#BY_ID"><abbr title="BY_ID"><span class="sideoverflow">BY_ID</span></abbr></a></li>
+          <li><a href="#BY_TYYPPI"><abbr title="BY_TYYPPI"><span class="sideoverflow">BY_TYYPPI</span></abbr></a></li>
+          <li><a href="#BY_MUOKKAUSAIKA"><abbr title="BY_MUOKKAUSAIKA"><span class="sideoverflow">BY_MUOKKAUSAIKA</span></abbr></a></li>
+          <li><a href="#BY_LAATIMISAIKA"><abbr title="BY_LAATIMISAIKA"><span class="sideoverflow">BY_LAATIMISAIKA</span></abbr></a></li>
+          <li><a href="#BY_PALVELUTEHTAVA"><abbr title="BY_PALVELUTEHTAVA"><span class="sideoverflow">BY_PALVELUTEHTAVA</span></abbr></a></li>
+          <li><a href="#BY_SOSIAALIPALVELU"><abbr title="BY_SOSIAALIPALVELU"><span class="sideoverflow">BY_SOSIAALIPALVELU</span></abbr></a></li>
+          <li><a href="#BY_PROSESSINVAIHE"><abbr title="BY_PROSESSINVAIHE"><span class="sideoverflow">BY_PROSESSINVAIHE</span></abbr></a></li>
+          <li><a href="#BY_PAATOKSENTEKIJA"><abbr title="BY_PAATOKSENTEKIJA"><span class="sideoverflow">BY_PAATOKSENTEKIJA</span></abbr></a></li>
+          <li><a href="#BY_ASIAKAS"><abbr title="BY_ASIAKAS"><span class="sideoverflow">BY_ASIAKAS</span></abbr></a></li>
+          <li><a href="#BY_OMATYONTEKIJA"><abbr title="BY_OMATYONTEKIJA"><span class="sideoverflow">BY_OMATYONTEKIJA</span></abbr></a></li>
+          <li><a href="#BY_ASIAKKUUSTYYPPI"><abbr title="BY_ASIAKKUUSTYYPPI"><span class="sideoverflow">BY_ASIAKKUUSTYYPPI</span></abbr></a></li>
+          <li><a href="#BY_VASTUUTYONTEKIJA"><abbr title="BY_VASTUUTYONTEKIJA"><span class="sideoverflow">BY_VASTUUTYONTEKIJA</span></abbr></a></li>
+          <li><a href="#BY_LAHITYONTEKIJA"><abbr title="BY_LAHITYONTEKIJA"><span class="sideoverflow">BY_LAHITYONTEKIJA</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -66,12 +88,12 @@
 
       <h1 class="page-header">TagsForCourseDto <small>Data Type</small></h1>
 
-      <p></p>
+      <p>Data transfer object for course tag data</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,39 +104,48 @@
         </thead>
         <tbody>
         <tr>
-          <td>  name
+          <td>  <span class="property-name">name</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  removed
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  courseTagId
+          <td>  <span class="property-name">removed</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tagId
+          <td>  <span class="property-name">courseTagId</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">id</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tagId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -123,41 +154,41 @@
         </tr>
         <tbody>
         <tr>
-          <td>version</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>id</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>created</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">created</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>modified</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">modified</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;name&quot; : &quot;...&quot;,
   &quot;removed&quot; : true,
   &quot;courseTagId&quot; : 12345,
+  &quot;id&quot; : 12345,
   &quot;tagId&quot; : 12345,
   &quot;version&quot; : 12345,
-  &quot;id&quot; : 12345,
   &quot;created&quot; : 12345,
   &quot;modified&quot; : 12345
 }</pre>
@@ -174,14 +205,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

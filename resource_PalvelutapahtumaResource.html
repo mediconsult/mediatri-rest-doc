@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,15 +51,15 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_PalvelutapahtumaResource_getAktiivinenHoitosuhdeOld_GET"><abbr title="GET /palvelutapahtuma/aktiivinen/{id}">GET /palvelutapahtuma/aktiivin...</abbr></a></li>
-          <li><a href="#resource_PalvelutapahtumaResource_getAktiivinenHoitosuhde_GET"><abbr title="GET /patients/{patientId}/careRelation">GET /patients/{patientId}/care...</abbr></a></li>
-          <li><a href="#resource_PalvelutapahtumaResource_createHoitosuhde_POST"><abbr title="POST /patients/{patientId}/careRelation">POST /patients/{patientId}/car...</abbr></a></li>
-          <li><a href="#resource_PalvelutapahtumaResource_getPalvelutapahtumaById_GET"><abbr title="GET /patients/{patientId}/encounters/{encounterId}">GET /patients/{patientId}/enco...</abbr></a></li>
-          <li><a href="#resource_PalvelutapahtumaResource_getPalvelutapahtumasForCareRelationSelectionFilter_GET"><abbr title="GET /patients/{patientId}/encounters/filters/forCareRelation">GET /patients/{patientId}/enco...</abbr></a></li>
-          <li><a href="#resource_PalvelutapahtumaResource_getAllPalvelutapahtumas_GET">GET /palvelutapahtuma</a></li>
-          <li><a href="#resource_PalvelutapahtumaResource_getAllPalvelutapahtumasNew_GET"><abbr title="GET /patients/{patientId}/encounters">GET /patients/{patientId}/enco...</abbr></a></li>
-          <li><a href="#resource_PalvelutapahtumaResource_getAktiivinenHoitojakso_GET"><abbr title="GET /palvelutapahtuma/hoitojakso/{patientId}">GET /palvelutapahtuma/hoitojak...</abbr></a></li>
-          <li><a href="#resource_PalvelutapahtumaResource_getEpisodeOfCareForEncounter_GET"><abbr title="GET /patients/{patientId}/encounters/{encounterId}/episodeOfCare">GET /patients/{patientId}/enco...</abbr></a></li>
+          <li><a href="#resource_PalvelutapahtumaResource_getAllPalvelutapahtumas_GET"><abbr title="GET /palvelutapahtuma"><span class="sideoverflow">GET /palvelutapahtuma</span></abbr></a></li>
+          <li><a href="#resource_PalvelutapahtumaResource_getAktiivinenHoitosuhdeOld_GET"><abbr title="GET /palvelutapahtuma/aktiivinen/{id}"><span class="sideoverflow">GET /palvelutapahtuma/aktiivinen/{id}</span></abbr></a></li>
+          <li><a href="#resource_PalvelutapahtumaResource_getAktiivinenHoitosuhde_GET"><abbr title="GET /patients/{patientId}/careRelation"><span class="sideoverflow">GET /patients/{patientId}/careRelation</span></abbr></a></li>
+          <li><a href="#resource_PalvelutapahtumaResource_createHoitosuhde_POST"><abbr title="POST /patients/{patientId}/careRelation"><span class="sideoverflow">POST /patients/{patientId}/careRelation</span></abbr></a></li>
+          <li><a href="#resource_PalvelutapahtumaResource_getAllPalvelutapahtumasNew_GET"><abbr title="GET /patients/{patientId}/encounters"><span class="sideoverflow">GET /patients/{patientId}/encounters</span></abbr></a></li>
+          <li><a href="#resource_PalvelutapahtumaResource_createPalvelutapahtumaId_POST"><abbr title="POST /patients/{patientId}/encounters"><span class="sideoverflow">POST /patients/{patientId}/encounters</span></abbr></a></li>
+          <li><a href="#resource_PalvelutapahtumaResource_checkCareRelationToOwner_GET"><abbr title="GET /patients/{patientId}/careRelation/generate"><span class="sideoverflow">GET /patients/{patientId}/careRelation/generate</span></abbr></a></li>
+          <li><a href="#resource_PalvelutapahtumaResource_getEncounterEvent_GET"><abbr title="GET /patients/{patientId}/encounters/{encounterId}"><span class="sideoverflow">GET /patients/{patientId}/encounters/{encounterId}</span></abbr></a></li>
+          <li><a href="#resource_PalvelutapahtumaResource_getPalvelutapahtumasForCareRelationSelectionFilter_GET"><abbr title="GET /patients/{patientId}/encounters/filters/forCareRelation"><span class="sideoverflow">GET /patients/{patientId}/encounters/filters/forCareRelation</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -78,14 +76,201 @@
 
       <p>REST API for patients</p>
 
+      <div id="resource_PalvelutapahtumaResource_getAllPalvelutapahtumas_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/palvelutapahtuma <a href="../api/v1/palvelutapahtuma" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <div class="alert alert-danger">This method has been deprecated.  </div>
+
+        <p>Method returns list of palvelutapahtumas from all registries. Accessing this API requires selected palvelutapahtuma.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">count</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">count</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">lastSeen</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">lastSeen</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">patientId</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">410</span></td>
+            <td><span class="response-condition">Gone: Patient has been removed OR palvelutapahtuma has been removed</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">412</span></td>
+            <td><span class="response-condition">Precondition failed: Authenticated user must pick proper encounter event before accessing this API</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_PalvelutapahtumaList.html">PalvelutapahtumaList</a>
+ (JSON)</span></td>
+            <td><span class="response-description">PalvelutapahtumaList instance</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /palvelutapahtuma
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;allItemsCount&quot; : 12345,
+  &quot;entries&quot; : [ {
+    &quot;palvelunantaja&quot; : &quot;...&quot;,
+    &quot;kirjausaika&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;ANESTESIA&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;VUODEOSASTOHOITOJAKSO&quot;
+  }, {
+    &quot;palvelunantaja&quot; : &quot;...&quot;,
+    &quot;kirjausaika&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;LABORATORIO&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;ASIAKASKONTAKTI_ILMAN_KAYNTIA&quot;
+  } ],
+  &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ],
+  &quot;preferredPalvelutapahtumaSelectStatus&quot; : &quot;USER_SELECTED&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="resource_PalvelutapahtumaResource_getAktiivinenHoitosuhdeOld_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/palvelutapahtuma/aktiivinen/{id} <a href="../api/v1palvelutapahtuma/aktiivinen/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/palvelutapahtuma/aktiivinen/{id} <a href="../api/v1/palvelutapahtuma/aktiivinen/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <div class="alert alert-danger">This method has been deprecated.  </div>
 
         <p>This method returns hoitosuhde for given patient for current logged in user.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -97,15 +282,15 @@
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -115,29 +300,29 @@
           </thead>
           <tbody>
           <tr>
-            <td>204</td>
-            <td>No content: OK request but no active hoitosuhde</td>
+            <td><span class="label label-success response-code">204</span></td>
+            <td><span class="response-condition">No content: OK request but no active hoitosuhde</span></td>
           </tr>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -148,21 +333,86 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitosuhde.html">Hoitosuhde</a>
- (JSON)</td>
-            <td>Aktiivinen hoitosuhde for given patient</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitosuhde.html">Hoitosuhde</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Aktiivinen hoitosuhde for given patient</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /palvelutapahtuma/aktiivinen/{id}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;date&quot; : 12345,
+  &quot;unit&quot; : 12345,
+  &quot;patient&quot; : 12345,
+  &quot;palvelutapahtuma&quot; : {
+    &quot;palvelunantaja&quot; : &quot;...&quot;,
+    &quot;kirjausaika&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;TOIMENPIDE&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;MUU_LAITOSHOITOJAKSO&quot;
+  },
+  &quot;katselunErityinenSyy&quot; : &quot;...&quot;,
+  &quot;erityissuojausperustelu&quot; : &quot;...&quot;,
+  &quot;user&quot; : 12345,
+  &quot;sallitutErityissuojausryhmat&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_PalvelutapahtumaResource_getAktiivinenHoitosuhde_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/{patientId}/careRelation <a href="../api/v1patients/{patientId}/careRelation" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/{patientId}/careRelation <a href="../api/v1/patients/{patientId}/careRelation" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>This method returns care-relation information for given patient for current logged in user.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -174,15 +424,15 @@
           </thead>
           <tbody>
           <tr>
-            <td>patientId</td>
+            <td><span class="parameter-name">patientId</span></td>
             <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -192,29 +442,29 @@
           </thead>
           <tbody>
           <tr>
-            <td>204</td>
-            <td>No content: OK request but no active hoitosuhde</td>
+            <td><span class="label label-success response-code">204</span></td>
+            <td><span class="response-condition">No content: OK request but no active hoitosuhde</span></td>
           </tr>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -225,23 +475,90 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitosuhde.html">Hoitosuhde</a>
- (JSON)</td>
-            <td>care-relation information</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitosuhde.html">Hoitosuhde</a>
+ (JSON)</span></td>
+            <td><span class="response-description">care-relation information</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/{patientId}/careRelation
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;date&quot; : 12345,
+  &quot;unit&quot; : 12345,
+  &quot;patient&quot; : 12345,
+  &quot;palvelutapahtuma&quot; : {
+    &quot;palvelunantaja&quot; : &quot;...&quot;,
+    &quot;kirjausaika&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;RADIOLOGIA&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;AMMATTIHENKILON_KAYNTI_ASIKKAAN_LUONA&quot;
+  },
+  &quot;katselunErityinenSyy&quot; : &quot;...&quot;,
+  &quot;erityissuojausperustelu&quot; : &quot;...&quot;,
+  &quot;user&quot; : 12345,
+  &quot;sallitutErityissuojausryhmat&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_PalvelutapahtumaResource_createHoitosuhde_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/patients/{patientId}/careRelation <a href="../api/v1patients/{patientId}/careRelation" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/patients/{patientId}/careRelation <a href="../api/v1/patients/{patientId}/careRelation" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Selects this palvelutapahtuma for proper care-relation to patient. This is logged and added to session, each request requiring palvelutapahtuma should use this Id.
 
-Response is text/plain since there is nothing more to respond that http-status 200.</p>
+Response is text/plain since there is nothing more to respond that <a target="_blank" href="http-status">http-status</a> 200.
 
-        <table class="table">
+This also creates new hoitosuhde for patient using given palvelutapahtuma, or updates exising hoitosuhde data, if hoitosuhde was already existing.</p>
+
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -253,33 +570,38 @@ Response is text/plain since there is nothing more to respond that http-status 2
           </thead>
           <tbody>
           <tr>
-            <td>palvelutapahtumaId</td>
+            <td><span class="parameter-name">palvelutapahtumaId</span></td>
             <td>form</td>
-            <td>palvelutapahtumaId</td>
-            <td>int</td>
+            <td><span class="parameter-description">palvelutapahtuma id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>specialReasonCode</td>
+            <td><span class="parameter-name">specialReasonCode</span></td>
             <td>form</td>
-            <td></td>
-            <td>&nbsp;</td>
+            <td><span class="parameter-description">"Special reason" must be specified when care relation is made with users self-created encounter event.
+Code comes from 'THL- Asiakastietojen katselun erityinen syy" versiosta "1.2.246.537.6.240.2012' code system,
+but only a subset of those codes are used (listed in PalvelutapahtumaService#specialReasonCodes).
+The related <code>optionalReasonText</code> reason text parameter, coming from a client, does not one-to-one
+match with national code system descriptions. Therefore internal arrays PalvelutapahtumaService#specialReasonCodes
+and @see PalvelutapahtumaService#specialReasonTexts are used to validate texts.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
-            <td>specialReasonText</td>
+            <td><span class="parameter-name">specialReasonText</span></td>
             <td>form</td>
-            <td></td>
-            <td>&nbsp;</td>
+            <td><span class="parameter-description">One of the texts from pre-defined set of @see PalvelutapahtumaService#specialReasonTexts.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
-            <td>patientId</td>
+            <td><span class="parameter-name">patientId</span></td>
             <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -289,33 +611,33 @@ Response is text/plain since there is nothing more to respond that http-status 2
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>410</td>
-            <td>Gone: Patient has been removed OR palvelutapahtuma has been removed</td>
+            <td><span class="label label-warning response-code">410</span></td>
+            <td><span class="response-condition">Gone: Patient has been removed OR palvelutapahtuma has been removed</span></td>
           </tr>
           <tr>
-            <td>412</td>
-            <td>palvelutapahtuma is not suitable for care relation.</td>
+            <td><span class="label label-warning response-code">412</span></td>
+            <td><span class="response-condition">palvelutapahtuma is not suitable for care relation.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -326,21 +648,86 @@ Response is text/plain since there is nothing more to respond that http-status 2
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitosuhde.html">Hoitosuhde</a>
- (JSON)</td>
-            <td>Palvelutapahtuma instance</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoitosuhde.html">Hoitosuhde</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Hoitosuhde dto with information about current hoitosuhde</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /patients/{patientId}/careRelation
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;date&quot; : 12345,
+  &quot;unit&quot; : 12345,
+  &quot;patient&quot; : 12345,
+  &quot;palvelutapahtuma&quot; : {
+    &quot;palvelunantaja&quot; : &quot;...&quot;,
+    &quot;kirjausaika&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;ERITYINEN_SYY&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;MUU&quot;
+  },
+  &quot;katselunErityinenSyy&quot; : &quot;...&quot;,
+  &quot;erityissuojausperustelu&quot; : &quot;...&quot;,
+  &quot;user&quot; : 12345,
+  &quot;sallitutErityissuojausryhmat&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_PalvelutapahtumaResource_getPalvelutapahtumaById_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/{patientId}/encounters/{encounterId} <a href="../api/v1patients/{patientId}/encounters/{encounterId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_PalvelutapahtumaResource_getAllPalvelutapahtumasNew_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/{patientId}/encounters <a href="../api/v1/patients/{patientId}/encounters" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>For fetching one encounter event. Eg medicaldocs response contains only encounter-id and they can be fetched seperately.</p>
+        <p>Method returns list of palvelutapahtumas from all registries. Accessing this API requires selected palvelutapahtuma.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -352,21 +739,27 @@ Response is text/plain since there is nothing more to respond that http-status 2
           </thead>
           <tbody>
           <tr>
-            <td>encounterId</td>
+            <td><span class="parameter-name">patientId</span></td>
             <td>path</td>
-            <td>palvelutapahtumaId</td>
-            <td>int</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>patientId</td>
-            <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
+            <td><span class="parameter-name">count</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">count</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">lastSeen</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">lastSeen</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -376,29 +769,33 @@ Response is text/plain since there is nothing more to respond that http-status 2
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>410</td>
-            <td>Gone: Patient has been removed OR palvelutapahtuma has been removed</td>
+            <td><span class="label label-warning response-code">410</span></td>
+            <td><span class="response-condition">Gone: Patient has been removed OR palvelutapahtuma has been removed</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-warning response-code">412</span></td>
+            <td><span class="response-condition">Precondition failed: Authenticated user must pick proper encounter event before accessing this API</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -409,22 +806,625 @@ Response is text/plain since there is nothing more to respond that http-status 2
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Palvelutapahtuma.html">Palvelutapahtuma</a>
- (JSON)</td>
-            <td>Palvelutapahtuma instance</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_PalvelutapahtumaList.html">PalvelutapahtumaList</a>
+ (JSON)</span></td>
+            <td><span class="response-description">PalvelutapahtumaList instance</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/{patientId}/encounters
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;allItemsCount&quot; : 12345,
+  &quot;entries&quot; : [ {
+    &quot;palvelunantaja&quot; : &quot;...&quot;,
+    &quot;kirjausaika&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;PALVELUASUMINEN&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;KONSULTAATIO&quot;
+  }, {
+    &quot;palvelunantaja&quot; : &quot;...&quot;,
+    &quot;kirjausaika&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;LABORATORIO&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;ASIAKKAAN_ASIOIDEN_HOITO_ILMAN_ASIAKASKONTAKTIA&quot;
+  } ],
+  &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ],
+  &quot;preferredPalvelutapahtumaSelectStatus&quot; : &quot;HEURISTIC_MULTIPLE_MATCHES&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PalvelutapahtumaResource_createPalvelutapahtumaId_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/patients/{patientId}/encounters <a href="../api/v1/patients/{patientId}/encounters" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">patientId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Palvelutapahtuma.html">Palvelutapahtuma</a>
+ (JSON)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Palvelutapahtuma.html">Palvelutapahtuma</a>
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /patients/{patientId}/encounters
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;palvelunantaja&quot; : &quot;...&quot;,
+  &quot;kirjausaika&quot; : 12345,
+  &quot;tyonantaja&quot; : 12345,
+  &quot;tapahtumalaji&quot; : &quot;JONO&quot;,
+  &quot;rekisteri&quot; : &quot;...&quot;,
+  &quot;palveluntuottaja&quot; : &quot;...&quot;,
+  &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+  &quot;kirjaajaInfo&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;kirjausyksikko&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  },
+  &quot;aktiivinen&quot; : true,
+  &quot;loppuaika&quot; : 12345,
+  &quot;kirjausyksikkoId&quot; : 12345,
+  &quot;oid&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
+  &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+  &quot;writeUsed&quot; : true,
+  &quot;alkuaika&quot; : 12345,
+  &quot;omistaja&quot; : 12345,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;tyyppi&quot; : &quot;ASIAKASKONTAKTI_ILMAN_KAYNTIA&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;palvelunantaja&quot; : &quot;...&quot;,
+  &quot;kirjausaika&quot; : 12345,
+  &quot;tyonantaja&quot; : 12345,
+  &quot;tapahtumalaji&quot; : &quot;PALVELUASUMINEN&quot;,
+  &quot;rekisteri&quot; : &quot;...&quot;,
+  &quot;palveluntuottaja&quot; : &quot;...&quot;,
+  &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+  &quot;kirjaajaInfo&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;kirjausyksikko&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  },
+  &quot;aktiivinen&quot; : true,
+  &quot;loppuaika&quot; : 12345,
+  &quot;kirjausyksikkoId&quot; : 12345,
+  &quot;oid&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
+  &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+  &quot;writeUsed&quot; : true,
+  &quot;alkuaika&quot; : 12345,
+  &quot;omistaja&quot; : 12345,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;tyyppi&quot; : &quot;SARJAHOITO&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PalvelutapahtumaResource_checkCareRelationToOwner_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/{patientId}/careRelation/generate <a href="../api/v1/patients/{patientId}/careRelation/generate" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>This method checks if user has a care relation to given patient.
+If not one will be generated automatically with the current service encounter</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">patientId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">412</span></td>
+            <td><span class="response-condition">No care releationship for this owner</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">boolean
+ (JSON)</span></td>
+            <td><span class="response-description">true</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/{patientId}/careRelation/generate
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PalvelutapahtumaResource_getEncounterEvent_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/{patientId}/encounters/{encounterId} <a href="../api/v1/patients/{patientId}/encounters/{encounterId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>For fetching one encounter event.
+
+E.g. medicaldocs response contains only encounter-id and encounter events can be fetched then seperately.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">encounterId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">patientId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: event encounter is not found e.g. if values were invalid. E.g. on non-existing encounterId, in case of non-existing encounterId, or if encounterId id is in different registry that can be accessed by logged in user.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Palvelutapahtuma.html">Palvelutapahtuma</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Palvelutapahtuma instance</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/{patientId}/encounters/{encounterId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;palvelunantaja&quot; : &quot;...&quot;,
+  &quot;kirjausaika&quot; : 12345,
+  &quot;tyonantaja&quot; : 12345,
+  &quot;tapahtumalaji&quot; : &quot;AVOHOITO&quot;,
+  &quot;rekisteri&quot; : &quot;...&quot;,
+  &quot;palveluntuottaja&quot; : &quot;...&quot;,
+  &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+  &quot;kirjaajaInfo&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;kirjausyksikko&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  },
+  &quot;aktiivinen&quot; : true,
+  &quot;loppuaika&quot; : 12345,
+  &quot;kirjausyksikkoId&quot; : 12345,
+  &quot;oid&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
+  &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+  &quot;writeUsed&quot; : true,
+  &quot;alkuaika&quot; : 12345,
+  &quot;omistaja&quot; : 12345,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;tyyppi&quot; : &quot;SARJAHOITO&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_PalvelutapahtumaResource_getPalvelutapahtumasForCareRelationSelectionFilter_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/{patientId}/encounters/filters/forCareRelation <a href="../api/v1patients/{patientId}/encounters/filters/forCareRelation" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/{patientId}/encounters/filters/forCareRelation <a href="../api/v1/patients/{patientId}/encounters/filters/forCareRelation" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Method returns list of encounter events from units own registry that are suitable for care-relation.
 PalvelutapahtumaList contains</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -436,27 +1436,27 @@ PalvelutapahtumaList contains</p>
           </thead>
           <tbody>
           <tr>
-            <td>patientId</td>
+            <td><span class="parameter-name">patientId</span></td>
             <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>includeHoitosuhdeInformation</td>
+            <td><span class="parameter-name">includeHoitosuhdeInformation</span></td>
             <td>query</td>
-            <td>prefetch hoitosuhde to palvelutapahtuma</td>
-            <td>boolean</td>
+            <td><span class="parameter-description">prefetch hoitosuhde to palvelutapahtuma</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           <tr>
-            <td>includeUnits</td>
+            <td><span class="parameter-name">includeUnits</span></td>
             <td>query</td>
-            <td>prefetch units to palvelutapahtuma</td>
-            <td>boolean</td>
+            <td><span class="parameter-description">prefetch units to palvelutapahtuma</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -466,29 +1466,29 @@ PalvelutapahtumaList contains</p>
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>410</td>
-            <td>Gone: Patient has been removed OR palvelutapahtuma has been removed</td>
+            <td><span class="label label-warning response-code">410</span></td>
+            <td><span class="response-condition">Gone: Patient has been removed OR palvelutapahtuma has been removed</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -499,356 +1499,105 @@ PalvelutapahtumaList contains</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_PalvelutapahtumaList.html">PalvelutapahtumaList</a>
- (JSON)</td>
-            <td>PalvelutapahtumaList instance</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_PalvelutapahtumaList.html">PalvelutapahtumaList</a>
+ (JSON)</span></td>
+            <td><span class="response-description">PalvelutapahtumaList instance</span></td>
           </tr>
           </tbody>
         </table>
-      </div>
+        <h4>Example</h4>
 
-      <div id="resource_PalvelutapahtumaResource_getAllPalvelutapahtumas_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/palvelutapahtuma <a href="../api/v1palvelutapahtuma" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/{patientId}/encounters/filters/forCareRelation
+Accept: application/json
 
-        <div class="alert alert-danger">This method has been deprecated.  </div>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-        <p>Method returns list of palvelutapahtumas from all registries. Accessing this API requires selected palvelutapahtuma.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>count</td>
-            <td>query</td>
-            <td>count</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>lastSeen</td>
-            <td>query</td>
-            <td>lastSeen</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>patientId</td>
-            <td>query</td>
-            <td>patient id</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>410</td>
-            <td>Gone: Patient has been removed OR palvelutapahtuma has been removed</td>
-          </tr>
-          <tr>
-            <td>412</td>
-            <td>Precondition failed: Authenticated user must pick proper encounter event before accessing this API</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_PalvelutapahtumaList.html">PalvelutapahtumaList</a>
- (JSON)</td>
-            <td>PalvelutapahtumaList instance</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_PalvelutapahtumaResource_getAllPalvelutapahtumasNew_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/{patientId}/encounters <a href="../api/v1patients/{patientId}/encounters" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Method returns list of palvelutapahtumas from all registries. Accessing this API requires selected palvelutapahtuma.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>patientId</td>
-            <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>count</td>
-            <td>query</td>
-            <td>count</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>lastSeen</td>
-            <td>query</td>
-            <td>lastSeen</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>410</td>
-            <td>Gone: Patient has been removed OR palvelutapahtuma has been removed</td>
-          </tr>
-          <tr>
-            <td>412</td>
-            <td>Precondition failed: Authenticated user must pick proper encounter event before accessing this API</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_PalvelutapahtumaList.html">PalvelutapahtumaList</a>
- (JSON)</td>
-            <td>PalvelutapahtumaList instance</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_PalvelutapahtumaResource_getAktiivinenHoitojakso_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/palvelutapahtuma/hoitojakso/{patientId} <a href="../api/v1palvelutapahtuma/hoitojakso/{patientId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <div class="alert alert-danger">This method has been deprecated.  </div>
-
-        <p>Gets currently active hoitojakso for patient (based on current hoitosuhde, if available)</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>patientId</td>
-            <td>path</td>
-            <td>patient omistaja id</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitojakso.html">Hoitojakso</a>
- (JSON)</td>
-            <td>Aktiivinen hoitojakso for given patient</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_PalvelutapahtumaResource_getEpisodeOfCareForEncounter_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/{patientId}/encounters/{encounterId}/episodeOfCare <a href="../api/v1patients/{patientId}/encounters/{encounterId}/episodeOfCare" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Returns the episodeOfCare for given encounter.
-One episodeOfCare can contain multiple encounters but single encounter is mapped to ONE or ZERO episodeOfCares.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>encounterId</td>
-            <td>path</td>
-            <td></td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>patientId</td>
-            <td>path</td>
-            <td>patient identifier</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoitojakso.html">Hoitojakso</a>
- (JSON)</td>
-            <td>episodeOfCare for given patient linked to given encounter</td>
-          </tr>
-          </tbody>
-        </table>
+                <code class="prettyprint language-js">
+{
+  &quot;allItemsCount&quot; : 12345,
+  &quot;entries&quot; : [ {
+    &quot;palvelunantaja&quot; : &quot;...&quot;,
+    &quot;kirjausaika&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;LABORATORIO&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;KONSULTAATIO&quot;
+  }, {
+    &quot;palvelunantaja&quot; : &quot;...&quot;,
+    &quot;kirjausaika&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;LAHETE_JA_HOITOPALAUTE&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;VUODEOSASTOHOITOJAKSO&quot;
+  } ],
+  &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ],
+  &quot;preferredPalvelutapahtumaSelectStatus&quot; : &quot;USER_SELECTED&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -863,14 +1612,14 @@ One episodeOfCare can contain multiple encounters but single encounter is mapped
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

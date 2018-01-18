@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#WORK"><abbr title="WORK"><span class="sideoverflow">WORK</span></abbr></a></li>
+          <li><a href="#TIME"><abbr title="TIME"><span class="sideoverflow">TIME</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -69,9 +70,13 @@
       <p>Data transfer object for event participant information (worker and customer base).</p>
 
       <dl class="dl-horizontal">
+        <dt>Abstract Type</dt>
+        <dd></dd>
+        <dt>Subtypes</dt>
+        <dd><a href="json_EventCustomerDto.html">EventCustomerDto</a>, <a href="json_EventWorkerDto.html">EventWorkerDto</a></dd>
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,102 +87,147 @@
         </thead>
         <tbody>
         <tr>
-          <td>  id
+          <td>  <span class="property-name">id</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  unit
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  name
+          <td>  <span class="property-name">unit</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  delay
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  duration
+          <td>  <span class="property-name">unitName</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  canceled
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  cancellationReason
+          <td>  <span class="property-name">unitAbbreviation</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  conflicting
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  overlapConflicts
+          <td>  <span class="property-name">name</span>
 </td>
-          <td>  array of <a href="json_EventOverlapConflictDto.html">EventOverlapConflictDto</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  basicInfoTitles
-</td>
-          <td>  array of <a href="json_BaseTitleValue.html">BaseTitleValue</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  participantId
+          <td>  <span class="property-name">firstName</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">lastName</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">delay</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">duration</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">required</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">canceled</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">cancellationReason</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">conflicting</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description">Does participant have any conflicts</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">overlapConflicts</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_EventOverlapConflictDto.html">EventOverlapConflictDto</a>
+</span>
+</td>
+          <td>  <span class="property-description">List of participant overlapping reservation conflicts</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">basicInfoTitles</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_TitleSettings.html">TitleSettings</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">participantId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -185,12 +235,19 @@
 
       <p class="lead">Example</p>
 
-      <pre class="prettyprint lang-js">{
+      <div class="alert alert-warning">This data type is abstract. The example below may be incomplete. More accurate examples can be found in subtypes pages.</div>
+      
+      <pre class="prettyprint language-js example">{
   &quot;id&quot; : 12345,
   &quot;unit&quot; : 12345,
+  &quot;unitName&quot; : &quot;...&quot;,
+  &quot;unitAbbreviation&quot; : &quot;...&quot;,
   &quot;name&quot; : &quot;...&quot;,
+  &quot;firstName&quot; : &quot;...&quot;,
+  &quot;lastName&quot; : &quot;...&quot;,
   &quot;delay&quot; : 12345,
   &quot;duration&quot; : 12345,
+  &quot;required&quot; : true,
   &quot;canceled&quot; : true,
   &quot;cancellationReason&quot; : &quot;...&quot;,
   &quot;conflicting&quot; : true,
@@ -205,18 +262,66 @@
   } ],
   &quot;basicInfoTitles&quot; : [ {
     &quot;name&quot; : &quot;...&quot;,
-    &quot;vapaa&quot; : &quot;...&quot;,
-    &quot;emptyValue&quot; : true,
     &quot;type&quot; : 12345,
-    &quot;vakio&quot; : &quot;...&quot;,
-    &quot;editModel&quot; : true
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
   }, {
     &quot;name&quot; : &quot;...&quot;,
-    &quot;vapaa&quot; : &quot;...&quot;,
-    &quot;emptyValue&quot; : true,
     &quot;type&quot; : 12345,
-    &quot;vakio&quot; : &quot;...&quot;,
-    &quot;editModel&quot; : true
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
   } ],
   &quot;participantId&quot; : 12345
 }</pre>
@@ -233,14 +338,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#KERTOMUS_LUONNOS"><abbr title="KERTOMUS_LUONNOS"><span class="sideoverflow">KERTOMUS_LUONNOS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_KESKEN"><abbr title="KERTOMUS_KESKEN"><span class="sideoverflow">KERTOMUS_KESKEN</span></abbr></a></li>
+          <li><a href="#KERTOMUS_VALMIS"><abbr title="KERTOMUS_VALMIS"><span class="sideoverflow">KERTOMUS_VALMIS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_UNDEFIND"><abbr title="KERTOMUS_UNDEFIND"><span class="sideoverflow">KERTOMUS_UNDEFIND</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -67,14 +70,12 @@
       <h1 class="page-header">LaakeSeloste <small>Data Type</small></h1>
 
       <p>DTO for LaakeSeloste
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html</p>
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html</a> <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html</a></p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -85,84 +86,84 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVU
         </thead>
         <tbody>
         <tr>
-          <td>  seloste
+          <td>  <span class="property-name">seloste</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Returns the id of the medication description
-</td>
-        </tr>
-        <tr>
-          <td>  nimi
-</td>
-          <td>  string
-
-</td>
-          <td>  Returns the name of the medication
+          <td>  <span class="property-description">Returns the id of the medication description</span>
 </td>
         </tr>
         <tr>
-          <td>  ehto
+          <td>  <span class="property-name">nimi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the preconditions for the medicine
-(m��r�ys-/toimitusehto)
-</td>
-        </tr>
-        <tr>
-          <td>  valmistaja
-</td>
-          <td>  string
-
-</td>
-          <td>  Returns the manufacturer of the medicine
+          <td>  <span class="property-description">Returns the name of the medication</span>
 </td>
         </tr>
         <tr>
-          <td>  poistettu
+          <td>  <span class="property-name">ehto</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the code of the description removal. 'E' - not removed, 'K' = removed
-</td>
-        </tr>
-        <tr>
-          <td>  muutosaika
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the actual DB-change time of the desctription
+          <td>  <span class="property-description">Returns the preconditions for the medicine
+(määräys-/toimitusehto)</span>
 </td>
         </tr>
         <tr>
-          <td>  muutospaikka
+          <td>  <span class="property-name">valmistaja</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the organization in which the change has been made
+          <td>  <span class="property-description">Returns the manufacturer of the medicine</span>
 </td>
         </tr>
         <tr>
-          <td>  tekstit
+          <td>  <span class="property-name">poistettu</span>
 </td>
-          <td>  array of <a href="json_LaakeSelosteTeksti.html">LaakeSelosteTeksti</a>
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  Returns a list of description texts
+          <td>  <span class="property-description">Returns the code of the description removal. 'E' - not removed, 'K' = removed</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">muutosaika</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the actual DB-change time of the desctription</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">muutospaikka</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the organization in which the change has been made</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tekstit</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_LaakeSelosteTeksti.html">LaakeSelosteTeksti</a>
+</span>
+</td>
+          <td>  <span class="property-description">Returns a list of description texts</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;seloste&quot; : 12345,
   &quot;nimi&quot; : &quot;...&quot;,
   &quot;ehto&quot; : &quot;...&quot;,
@@ -193,14 +194,14 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVU
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

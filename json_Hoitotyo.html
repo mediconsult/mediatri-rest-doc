@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#WOMAN"><abbr title="WOMAN"><span class="sideoverflow">WOMAN</span></abbr></a></li>
+          <li><a href="#MAN"><abbr title="MAN"><span class="sideoverflow">MAN</span></abbr></a></li>
+          <li><a href="#OTHER"><abbr title="OTHER"><span class="sideoverflow">OTHER</span></abbr></a></li>
+          <li><a href="#UNKNOWN"><abbr title="UNKNOWN"><span class="sideoverflow">UNKNOWN</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -66,12 +69,12 @@
 
       <h1 class="page-header">Hoitotyo <small>Data Type</small></h1>
 
-      <p>This DTO contains information about one hoitotyon merkint� record</p>
+      <p></p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,211 +85,353 @@
         </thead>
         <tbody>
         <tr>
-          <td>  id
+          <td>  <span class="property-name">id</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  patientId
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  locked
+          <td>  <span class="property-name">patientId</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  lukitsija
-</td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vastuullinen
+          <td>  <span class="property-name">locked</span>
 </td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  muutosaika
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  alkaa
+          <td>  <span class="property-name">lukitsija</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfUser.html">LazyLoadedDtoOfUser</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  loppuu
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  lastEntry
+          <td>  <span class="property-name">vastuullinen</span>
 </td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfUser.html">LazyLoadedDtoOfUser</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  firstEntry
-</td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  previousEntry
+          <td>  <span class="property-name">muutosaika</span>
 </td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  asetukset
-</td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  nextEntry
+          <td>  <span class="property-name">alkaa</span>
 </td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  merkinnat
-</td>
-          <td>  array of <a href="json_Hoitotyomerkinta.html">Hoitotyomerkinta</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  previousVersion
+          <td>  <span class="property-name">loppuu</span>
 </td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  nextVersion
-</td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  readTime
+          <td>  <span class="property-name">lastEntry</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfHoitotyo.html">LazyLoadedDtoOfHoitotyo</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">firstEntry</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfHoitotyo.html">LazyLoadedDtoOfHoitotyo</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">previousEntry</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfHoitotyo.html">LazyLoadedDtoOfHoitotyo</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">asetukset</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfHoitotyoasetukset.html">LazyLoadedDtoOfHoitotyoasetukset</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">nextEntry</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfHoitotyo.html">LazyLoadedDtoOfHoitotyo</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">merkinnat</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_Hoitotyomerkinta.html">Hoitotyomerkinta</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">previousVersion</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfHoitotyo.html">LazyLoadedDtoOfHoitotyo</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">nextVersion</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfHoitotyo.html">LazyLoadedDtoOfHoitotyo</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">readTime</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Gets time of read is crucial for checking the concurrent changes.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">lockedDate</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">unit</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfUnit.html">LazyLoadedDtoOfUnit</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;id&quot; : 12345,
   &quot;patientId&quot; : 12345,
   &quot;locked&quot; : true,
   &quot;lukitsija&quot; : {
-    &quot;object&quot; : { },
-    &quot;loaded&quot; : true,
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
     &quot;loadUrl&quot; : &quot;...&quot;,
-    &quot;type&quot; : &quot;...&quot;
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
   },
   &quot;vastuullinen&quot; : {
-    &quot;object&quot; : { },
-    &quot;loaded&quot; : true,
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
     &quot;loadUrl&quot; : &quot;...&quot;,
-    &quot;type&quot; : &quot;...&quot;
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
   },
   &quot;muutosaika&quot; : 12345,
   &quot;alkaa&quot; : 12345,
   &quot;loppuu&quot; : 12345,
   &quot;lastEntry&quot; : {
-    &quot;object&quot; : { },
-    &quot;loaded&quot; : true,
     &quot;loadUrl&quot; : &quot;...&quot;,
-    &quot;type&quot; : &quot;...&quot;
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
   },
   &quot;firstEntry&quot; : {
-    &quot;object&quot; : { },
-    &quot;loaded&quot; : true,
     &quot;loadUrl&quot; : &quot;...&quot;,
-    &quot;type&quot; : &quot;...&quot;
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
   },
   &quot;previousEntry&quot; : {
-    &quot;object&quot; : { },
-    &quot;loaded&quot; : true,
     &quot;loadUrl&quot; : &quot;...&quot;,
-    &quot;type&quot; : &quot;...&quot;
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
   },
   &quot;asetukset&quot; : {
-    &quot;object&quot; : { },
-    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;hoitoprosessinVaiheKoodisto&quot; : { },
+      &quot;permissions&quot; : { },
+      &quot;toimintoluokitusKoodisto&quot; : { },
+      &quot;otsikkoKoodisto&quot; : { },
+      &quot;recordReleaseAdminPermission&quot; : true,
+      &quot;tarveluokitusKoodisto&quot; : { },
+      &quot;tulosluokitus&quot; : { }
+    },
     &quot;loadUrl&quot; : &quot;...&quot;,
-    &quot;type&quot; : &quot;...&quot;
+    &quot;loaded&quot; : true
   },
   &quot;nextEntry&quot; : {
-    &quot;object&quot; : { },
-    &quot;loaded&quot; : true,
     &quot;loadUrl&quot; : &quot;...&quot;,
-    &quot;type&quot; : &quot;...&quot;
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
   },
   &quot;merkinnat&quot; : [ {
     &quot;merkinta&quot; : 12345,
@@ -298,15 +443,16 @@
     &quot;teksti&quot; : &quot;...&quot;,
     &quot;kirjaaja&quot; : {
       &quot;object&quot; : { },
-      &quot;loaded&quot; : true,
       &quot;loadUrl&quot; : &quot;...&quot;,
-      &quot;type&quot; : &quot;...&quot;
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
     },
     &quot;kirjausaika&quot; : 12345,
     &quot;varmuus&quot; : &quot;...&quot;,
     &quot;tilanne&quot; : &quot;...&quot;,
     &quot;pysyvyys&quot; : &quot;...&quot;,
-    &quot;readTime&quot; : 12345
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
   }, {
     &quot;merkinta&quot; : 12345,
     &quot;vaihe&quot; : &quot;...&quot;,
@@ -317,29 +463,89 @@
     &quot;teksti&quot; : &quot;...&quot;,
     &quot;kirjaaja&quot; : {
       &quot;object&quot; : { },
-      &quot;loaded&quot; : true,
       &quot;loadUrl&quot; : &quot;...&quot;,
-      &quot;type&quot; : &quot;...&quot;
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
     },
     &quot;kirjausaika&quot; : 12345,
     &quot;varmuus&quot; : &quot;...&quot;,
     &quot;tilanne&quot; : &quot;...&quot;,
     &quot;pysyvyys&quot; : &quot;...&quot;,
-    &quot;readTime&quot; : 12345
+    &quot;readTime&quot; : 12345,
+    &quot;modified&quot; : true
   } ],
   &quot;previousVersion&quot; : {
-    &quot;object&quot; : { },
-    &quot;loaded&quot; : true,
     &quot;loadUrl&quot; : &quot;...&quot;,
-    &quot;type&quot; : &quot;...&quot;
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
   },
   &quot;nextVersion&quot; : {
-    &quot;object&quot; : { },
-    &quot;loaded&quot; : true,
     &quot;loadUrl&quot; : &quot;...&quot;,
-    &quot;type&quot; : &quot;...&quot;
+    &quot;object&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;patientId&quot; : 12345,
+      &quot;locked&quot; : true,
+      &quot;lukitsija&quot; : { },
+      &quot;vastuullinen&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;alkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;lastEntry&quot; : { },
+      &quot;firstEntry&quot; : { },
+      &quot;previousEntry&quot; : { },
+      &quot;asetukset&quot; : { },
+      &quot;nextEntry&quot; : { },
+      &quot;merkinnat&quot; : [ { }, { } ],
+      &quot;previousVersion&quot; : { },
+      &quot;nextVersion&quot; : { },
+      &quot;readTime&quot; : &quot;...&quot;,
+      &quot;lockedDate&quot; : &quot;...&quot;,
+      &quot;unit&quot; : { }
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
   },
-  &quot;readTime&quot; : 12345
+  &quot;readTime&quot; : &quot;...&quot;,
+  &quot;lockedDate&quot; : &quot;...&quot;,
+  &quot;unit&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
+    &quot;type&quot; : &quot;...&quot;
+  }
 }</pre>
 
         <footer class="footer">
@@ -354,14 +560,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

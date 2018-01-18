@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,9 +51,13 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_TitleResource_getTitleConfig_GET">GET /titles/{name}/config</a></li>
-          <li><a href="#resource_TitleResource_getTitlesConfigurations_GET">GET /titles/component/{id}</a></li>
-          <li><a href="#resource_TitleResource_getOptions_GET">GET /titles/{name}/options</a></li>
+          <li><a href="#resource_TitleResource_getMainTitlesConfigurationsByList_GET"><abbr title="GET /titles/mtconfigs"><span class="sideoverflow">GET /titles/mtconfigs</span></abbr></a></li>
+          <li><a href="#resource_TitleResource_getTitlesConfigurations_GET"><abbr title="GET /titles/component/{id}"><span class="sideoverflow">GET /titles/component/{id}</span></abbr></a></li>
+          <li><a href="#resource_TitleResource_getComments_GET"><abbr title="GET /titles/{name}/comments"><span class="sideoverflow">GET /titles/{name}/comments</span></abbr></a></li>
+          <li><a href="#resource_TitleResource_getTitleConfig_GET"><abbr title="GET /titles/{name}/config"><span class="sideoverflow">GET /titles/{name}/config</span></abbr></a></li>
+          <li><a href="#resource_TitleResource_getMainTitleConfig_GET"><abbr title="GET /titles/{name}/mtconfig"><span class="sideoverflow">GET /titles/{name}/mtconfig</span></abbr></a></li>
+          <li><a href="#resource_TitleResource_getOptions_GET"><abbr title="GET /titles/{name}/options"><span class="sideoverflow">GET /titles/{name}/options</span></abbr></a></li>
+          <li><a href="#resource_TitleResource_getMainTitlesConfigurationsByComponent_GET"><abbr title="GET /titles/component/{id}/mtconfigs"><span class="sideoverflow">GET /titles/component/{id}/mtconfigs</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -75,30 +77,34 @@ GET
 titles/{title name}/config returns configuration for the titles
 titles/{title name}/options returns list of available values for the title</p>
 
-      <div id="resource_TitleResource_getTitleConfig_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/titles/{name}/config <a href="../api/v1titles/{name}/config" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_TitleResource_getMainTitlesConfigurationsByList_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/titles/mtconfigs <a href="../api/v1/titles/mtconfigs" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Returns title configuration for the title by name.</p>
+        <p>Return main titles' configurations by list of main titles as parameter of the request.
+List is returned in alphabetical order.
+The list includes only main titles which configured in the system and contain the configured titles.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
             <th>name</th>
             <th>type</th>
             <th>description</th>
+            <th>multivalued</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>name</td>
-            <td>path</td>
-            <td>encoded title in the url using UTF-8 code page. Implementation should decode name at first.</td>
+            <td><span class="parameter-name">titles</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">list of main titles. It can be null. In this case all main titles will be returned.</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -108,25 +114,25 @@ titles/{title name}/options returns list of available values for the title</p>
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -137,22 +143,150 @@ titles/{title name}/options returns list of available values for the title</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_ClientTitleConfig.html">ClientTitleConfig</a>
- (JSON)</td>
-            <td>title configuration or generate not found exception if configuration can not be found or created in correct way.</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_MainTitleConfig.html">MainTitleConfig</a>
+ (JSON)</span></td>
+            <td><span class="response-description">main titles titles' configurations by component</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /titles/mtconfigs
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;templateTitles&quot; : {
+    &quot;property1&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      }, {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      } ],
+      &quot;data&quot; : {
+        &quot;valueAsString&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345,
+        &quot;link&quot; : 12345,
+        &quot;emptyValue&quot; : true,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;vapaa&quot; : &quot;...&quot;
+      },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    },
+    &quot;property2&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      }, {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      } ],
+      &quot;data&quot; : {
+        &quot;valueAsString&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345,
+        &quot;link&quot; : 12345,
+        &quot;emptyValue&quot; : true,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;vapaa&quot; : &quot;...&quot;
+      },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }
+  },
+  &quot;groupTitles&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    }, {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    } ],
+    &quot;empty&quot; : true
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    }, {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    } ],
+    &quot;empty&quot; : true
+  } ],
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;paanakyma&quot; : &quot;...&quot;,
+  &quot;deleteEmptyTitle&quot; : true,
+  &quot;userGroup&quot; : 12345,
+  &quot;signTitle&quot; : &quot;...&quot;,
+  &quot;lisanakyma&quot; : &quot;...&quot;,
+  &quot;lisanakymat&quot; : [ {
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;
+  }, {
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;
+  } ]
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_TitleResource_getTitlesConfigurations_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/titles/component/{id} <a href="../api/v1titles/component/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/titles/component/{id} <a href="../api/v1/titles/component/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Return titles' configurations by component.
-ComponentIdEnum enum decribes available cpomponent in the system.</p>
+ComponentIdEnum enum describes available component in the system.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -164,15 +298,15 @@ ComponentIdEnum enum decribes available cpomponent in the system.</p>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>component</td>
-            <td>int</td>
+            <td><span class="parameter-description">component</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -182,25 +316,25 @@ ComponentIdEnum enum decribes available cpomponent in the system.</p>
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -211,23 +345,57 @@ ComponentIdEnum enum decribes available cpomponent in the system.</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_ClientTitleConfig.html">ClientTitleConfig</a>
- (JSON)</td>
-            <td>titles' configurations by component</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_ClientTitleConfig.html">ClientTitleConfig</a>
+ (JSON)</span></td>
+            <td><span class="response-description">titles' configurations by component</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /titles/component/{id}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;type&quot; : 12345,
+  &quot;valueMandatory&quot; : true,
+  &quot;onlyFromList&quot; : true,
+  &quot;optionsUrl&quot; : &quot;...&quot;,
+  &quot;editableByConfig&quot; : true,
+  &quot;editableByUserRights&quot; : true,
+  &quot;editable&quot; : true,
+  &quot;attribute&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_TitleResource_getOptions_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/titles/{name}/options <a href="../api/v1titles/{name}/options" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_TitleResource_getComments_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/titles/{name}/comments <a href="../api/v1/titles/{name}/comments" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Returns the list of possible values for the title.
-Method return the list of options as list of Object instances to allow correctly serialize derived classes of ViewTitleValue.
-Otherwise it is necessary to create ows serializer for ViewTitleValue class.</p>
+        <p>Returns the list of possible comments for the title.
+Method return the list of title's as list of VakioVapaaValue instances.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -238,14 +406,14 @@ Otherwise it is necessary to create ows serializer for ViewTitleValue class.</p>
           </thead>
           <tbody>
           <tr>
-            <td>name</td>
+            <td><span class="parameter-name">name</span></td>
             <td>path</td>
-            <td>encoded title in the url using UTF-8 code page. Implementation should decode name at first.</td>
+            <td><span class="parameter-description">encoded title in the url using UTF-8 code page. Implementation should decode name at first.</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -255,25 +423,25 @@ Otherwise it is necessary to create ows serializer for ViewTitleValue class.</p>
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -284,13 +452,652 @@ Otherwise it is necessary to create ows serializer for ViewTitleValue class.</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of object
- (JSON)</td>
-            <td>List of available values(options) for the title. List can be empty.</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_TitleComment.html">TitleComment</a>
+ (JSON)</span></td>
+            <td><span class="response-description">List of available values(options) for the title. List can be empty.</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /titles/{name}/comments
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;value&quot; : &quot;...&quot;,
+  &quot;annotation&quot; : &quot;...&quot;,
+  &quot;vakio&quot; : &quot;...&quot;,
+  &quot;emptyValue&quot; : true,
+  &quot;link&quot; : 12345,
+  &quot;vapaa&quot; : &quot;...&quot;,
+  &quot;row&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_TitleResource_getTitleConfig_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/titles/{name}/config <a href="../api/v1/titles/{name}/config" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Returns title configuration for the title by name.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">name</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">encoded title in the url using UTF-8 code page. Implementation should decode name at first.</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_ClientTitleConfig.html">ClientTitleConfig</a>
+ (JSON)</span></td>
+            <td><span class="response-description">title configuration or generate not found exception if configuration can not be found or created in correct way.</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /titles/{name}/config
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;type&quot; : 12345,
+  &quot;valueMandatory&quot; : true,
+  &quot;onlyFromList&quot; : true,
+  &quot;optionsUrl&quot; : &quot;...&quot;,
+  &quot;editableByConfig&quot; : true,
+  &quot;editableByUserRights&quot; : true,
+  &quot;editable&quot; : true,
+  &quot;attribute&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_TitleResource_getMainTitleConfig_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/titles/{name}/mtconfig <a href="../api/v1/titles/{name}/mtconfig" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Returns title configuration for the title by name.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">name</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_MainTitleConfig.html">MainTitleConfig</a>
+ (JSON)</span></td>
+            <td><span class="response-description">title configuration or generate not found exception if configuration can not be found or created in correct way.</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /titles/{name}/mtconfig
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;templateTitles&quot; : {
+    &quot;property1&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      }, {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      } ],
+      &quot;data&quot; : {
+        &quot;valueAsString&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345,
+        &quot;link&quot; : 12345,
+        &quot;emptyValue&quot; : true,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;vapaa&quot; : &quot;...&quot;
+      },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    },
+    &quot;property2&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      }, {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      } ],
+      &quot;data&quot; : {
+        &quot;valueAsString&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345,
+        &quot;link&quot; : 12345,
+        &quot;emptyValue&quot; : true,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;vapaa&quot; : &quot;...&quot;
+      },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }
+  },
+  &quot;groupTitles&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    }, {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    } ],
+    &quot;empty&quot; : true
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    }, {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    } ],
+    &quot;empty&quot; : true
+  } ],
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;paanakyma&quot; : &quot;...&quot;,
+  &quot;deleteEmptyTitle&quot; : true,
+  &quot;userGroup&quot; : 12345,
+  &quot;signTitle&quot; : &quot;...&quot;,
+  &quot;lisanakyma&quot; : &quot;...&quot;,
+  &quot;lisanakymat&quot; : [ {
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;
+  }, {
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;
+  } ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_TitleResource_getOptions_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/titles/{name}/options <a href="../api/v1/titles/{name}/options" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Returns the list of possible values for the title.
+Method return the list of options as list of Object instances to allow correctly serialize derived classes of ViewTitleValue.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">name</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">encoded title in the url using UTF-8 code page. Implementation should decode name at first.</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of object
+ (JSON)</span></td>
+            <td><span class="response-description">List of available values(options) for the title. List can be empty.</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /titles/{name}/options
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_TitleResource_getMainTitlesConfigurationsByComponent_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/titles/component/{id}/mtconfigs <a href="../api/v1/titles/component/{id}/mtconfigs" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Return main titles' configurations by component available for the current user.
+List is returned in alphabetical order.
+The list includes only main titles which are configured in the system and contain the configured titles.
+ComponentIdEnum enum describes available component in the system.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">component</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_MainTitleConfig.html">MainTitleConfig</a>
+ (JSON)</span></td>
+            <td><span class="response-description">main titles titles' configurations by component</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /titles/component/{id}/mtconfigs
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;templateTitles&quot; : {
+    &quot;property1&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      }, {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      } ],
+      &quot;data&quot; : {
+        &quot;valueAsString&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345,
+        &quot;link&quot; : 12345,
+        &quot;emptyValue&quot; : true,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;vapaa&quot; : &quot;...&quot;
+      },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    },
+    &quot;property2&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      }, {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      } ],
+      &quot;data&quot; : {
+        &quot;valueAsString&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345,
+        &quot;link&quot; : 12345,
+        &quot;emptyValue&quot; : true,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;vapaa&quot; : &quot;...&quot;
+      },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }
+  },
+  &quot;groupTitles&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    }, {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    } ],
+    &quot;empty&quot; : true
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    }, {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    } ],
+    &quot;empty&quot; : true
+  } ],
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;paanakyma&quot; : &quot;...&quot;,
+  &quot;deleteEmptyTitle&quot; : true,
+  &quot;userGroup&quot; : 12345,
+  &quot;signTitle&quot; : &quot;...&quot;,
+  &quot;lisanakyma&quot; : &quot;...&quot;,
+  &quot;lisanakymat&quot; : [ {
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;
+  }, {
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;
+  } ]
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -305,14 +1112,14 @@ Otherwise it is necessary to create ows serializer for ViewTitleValue class.</p>
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

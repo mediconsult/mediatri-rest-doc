@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#KERTOMUS_LUONNOS"><abbr title="KERTOMUS_LUONNOS"><span class="sideoverflow">KERTOMUS_LUONNOS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_KESKEN"><abbr title="KERTOMUS_KESKEN"><span class="sideoverflow">KERTOMUS_KESKEN</span></abbr></a></li>
+          <li><a href="#KERTOMUS_VALMIS"><abbr title="KERTOMUS_VALMIS"><span class="sideoverflow">KERTOMUS_VALMIS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_UNDEFIND"><abbr title="KERTOMUS_UNDEFIND"><span class="sideoverflow">KERTOMUS_UNDEFIND</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -69,9 +72,11 @@
       <p>Base class for MediPlan data transfer objects.</p>
 
       <dl class="dl-horizontal">
+        <dt>Subtypes</dt>
+        <dd><a href="json_TagsForCourseDto.html">TagsForCourseDto</a>, <a href="json_CalendarEventContentGroupDto.html">CalendarEventContentGroupDto</a>, <a href="json_CourseTagDto.html">CourseTagDto</a>, <a href="json_EventOptimizationStatusDto.html">EventOptimizationStatusDto</a>, <a href="json_CourseNamedGroupDto.html">CourseNamedGroupDto</a>, <a href="json_EventOptimizationChangeDataDto.html">EventOptimizationChangeDataDto</a>, <a href="json_RoomGroupDto.html">RoomGroupDto</a>, <a href="json_LockDto.html">LockDto</a>, <a href="json_EventModelDto.html">EventModelDto</a>, <a href="json_NamedGroupMemberDto.html">NamedGroupMemberDto</a>, <a href="json_KuhaDtoNameBase.html">KuhaDtoNameBase</a>, <a href="json_CourseResourceDtoBase.html">CourseResourceDtoBase</a>, <a href="json_EventModelContentGroupDto.html">EventModelContentGroupDto</a>, <a href="json_TimeRuleDto.html">TimeRuleDto</a>, <a href="json_EventReAssignTaskDetailsDto.html">EventReAssignTaskDetailsDto</a>, <a href="json_ReportingGroupDto.html">ReportingGroupDto</a>, <a href="json_PeriodCancellationDto.html">PeriodCancellationDto</a>, <a href="json_ExampleDto.html">ExampleDto</a>, <a href="json_SkillDto.html">SkillDto</a>, <a href="json_EventSkillDto.html">EventSkillDto</a>, <a href="json_RoomDto.html">RoomDto</a>, <a href="json_EventDto.html">EventDto</a>, <a href="json_TagsForPeriodDto.html">TagsForPeriodDto</a>, <a href="json_EquipmentDto.html">EquipmentDto</a>, <a href="json_EventOptimizationTaskBaseDto.html">EventOptimizationTaskBaseDto</a>, <a href="json_EventOptimizationDataDto.html">EventOptimizationDataDto</a>, <a href="json_ContentGroup.html">ContentGroup</a>, <a href="json_ExampleItemDto.html">ExampleItemDto</a>, <a href="json_CourseDto.html">CourseDto</a>, <a href="json_EventOptimizationTaskDetailsDto.html">EventOptimizationTaskDetailsDto</a>, <a href="json_CourseCopyDto.html">CourseCopyDto</a>, <a href="json_CourseCustomerDto.html">CourseCustomerDto</a>, <a href="json_ContentGroupTitle.html">ContentGroupTitle</a>, <a href="json_EventResourceDto.html">EventResourceDto</a>, <a href="json_RequiredEquipmentTypeDto.html">RequiredEquipmentTypeDto</a>, <a href="json_EventModelSkillDto.html">EventModelSkillDto</a>, <a href="json_CoursePeriodDto.html">CoursePeriodDto</a>, <a href="json_EventOptimizationConflictDto.html">EventOptimizationConflictDto</a>, <a href="json_CalendarEventTitleDto.html">CalendarEventTitleDto</a>, <a href="json_CalendarEventDto.html">CalendarEventDto</a></dd>
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,47 +87,47 @@
         </thead>
         <tbody>
         <tr>
-          <td>  version
+          <td>  <span class="property-name">version</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  id
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  created
+          <td>  <span class="property-name">id</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  modified
+          <td>  <span class="property-name">created</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">modified</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;version&quot; : 12345,
   &quot;id&quot; : 12345,
   &quot;created&quot; : 12345,
@@ -141,14 +146,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

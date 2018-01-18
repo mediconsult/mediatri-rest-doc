@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,7 +51,8 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_RiskitietoResource_getRiskitiedot_GET">GET /riskit/{id}</a></li>
+          <li><a href="#resource_RiskitietoResource_getRiskitiedot_GET"><abbr title="GET /riskit/{id}"><span class="sideoverflow">GET /riskit/{id}</span></abbr></a></li>
+          <li><a href="#resource_RiskitietoResource_getRiskForPatient_GET"><abbr title="GET /patients/{patientId}/risks/{riskId}"><span class="sideoverflow">GET /patients/{patientId}/risks/{riskId}</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -71,11 +70,11 @@
       <p>REST API for riskitiedot</p>
 
       <div id="resource_RiskitietoResource_getRiskitiedot_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/riskit/{id} <a href="../api/v1riskit/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/riskit/{id} <a href="../api/v1/riskit/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Fetch Riskitiedot with patient id</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -87,15 +86,15 @@
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>Patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">Patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -106,13 +105,294 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Riskitiedot.html">Riskitiedot</a>
- (JSON)</td>
-            <td>Riskitiedot List of Riskitieto objects</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Riskitiedot.html">Riskitiedot</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Riskitiedot List of Riskitieto objects</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /riskit/{id}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;riskitiedotList&quot; : [ {
+    &quot;osa&quot; : 12345,
+    &quot;aste&quot; : &quot;...&quot;,
+    &quot;tyyppi&quot; : &quot;...&quot;,
+    &quot;koodi&quot; : &quot;...&quot;,
+    &quot;selite&quot; : &quot;...&quot;,
+    &quot;koodisto&quot; : &quot;...&quot;,
+    &quot;versio&quot; : &quot;...&quot;,
+    &quot;lisakoodi&quot; : &quot;...&quot;,
+    &quot;lisaselite&quot; : &quot;...&quot;,
+    &quot;lisakoodisto&quot; : &quot;...&quot;,
+    &quot;lisaversio&quot; : &quot;...&quot;,
+    &quot;kuvaus&quot; : &quot;...&quot;,
+    &quot;huomiointi&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;varmuusaste&quot; : &quot;...&quot;,
+    &quot;vakavuus&quot; : &quot;...&quot;,
+    &quot;lomakelinkki&quot; : 12345,
+    &quot;osalinkki&quot; : 12345,
+    &quot;lahdetyyppi&quot; : &quot;...&quot;,
+    &quot;lahde&quot; : 12345,
+    &quot;alkaa&quot; : 12345,
+    &quot;aloittaja&quot; : 12345,
+    &quot;aloitusyksikko&quot; : 12345,
+    &quot;lopetusyksikko&quot; : 12345,
+    &quot;loppuu&quot; : 12345,
+    &quot;lopettaja&quot; : 12345,
+    &quot;poistettu&quot; : &quot;...&quot;,
+    &quot;muutosaika&quot; : 12345,
+    &quot;muutospaikka&quot; : 12345,
+    &quot;paattymissyy&quot; : &quot;...&quot;,
+    &quot;paattymistarkenne&quot; : &quot;...&quot;,
+    &quot;viivastys&quot; : { },
+    &quot;kestoarvio&quot; : { },
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;vanha&quot; : 12345,
+    &quot;kirjausyksikko&quot; : 12345,
+    &quot;lomake&quot; : 12345,
+    &quot;tyyppiString&quot; : &quot;...&quot;,
+    &quot;kirjaajaNimi&quot; : &quot;...&quot;,
+    &quot;aloitusyksikkoNimi&quot; : &quot;...&quot;,
+    &quot;aloittajaNimi&quot; : &quot;...&quot;,
+    &quot;kirjausyksikkoNimi&quot; : &quot;...&quot;
+  }, {
+    &quot;osa&quot; : 12345,
+    &quot;aste&quot; : &quot;...&quot;,
+    &quot;tyyppi&quot; : &quot;...&quot;,
+    &quot;koodi&quot; : &quot;...&quot;,
+    &quot;selite&quot; : &quot;...&quot;,
+    &quot;koodisto&quot; : &quot;...&quot;,
+    &quot;versio&quot; : &quot;...&quot;,
+    &quot;lisakoodi&quot; : &quot;...&quot;,
+    &quot;lisaselite&quot; : &quot;...&quot;,
+    &quot;lisakoodisto&quot; : &quot;...&quot;,
+    &quot;lisaversio&quot; : &quot;...&quot;,
+    &quot;kuvaus&quot; : &quot;...&quot;,
+    &quot;huomiointi&quot; : &quot;...&quot;,
+    &quot;pysyvyys&quot; : &quot;...&quot;,
+    &quot;varmuusaste&quot; : &quot;...&quot;,
+    &quot;vakavuus&quot; : &quot;...&quot;,
+    &quot;lomakelinkki&quot; : 12345,
+    &quot;osalinkki&quot; : 12345,
+    &quot;lahdetyyppi&quot; : &quot;...&quot;,
+    &quot;lahde&quot; : 12345,
+    &quot;alkaa&quot; : 12345,
+    &quot;aloittaja&quot; : 12345,
+    &quot;aloitusyksikko&quot; : 12345,
+    &quot;lopetusyksikko&quot; : 12345,
+    &quot;loppuu&quot; : 12345,
+    &quot;lopettaja&quot; : 12345,
+    &quot;poistettu&quot; : &quot;...&quot;,
+    &quot;muutosaika&quot; : 12345,
+    &quot;muutospaikka&quot; : 12345,
+    &quot;paattymissyy&quot; : &quot;...&quot;,
+    &quot;paattymistarkenne&quot; : &quot;...&quot;,
+    &quot;viivastys&quot; : { },
+    &quot;kestoarvio&quot; : { },
+    &quot;oid&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;vanha&quot; : 12345,
+    &quot;kirjausyksikko&quot; : 12345,
+    &quot;lomake&quot; : 12345,
+    &quot;tyyppiString&quot; : &quot;...&quot;,
+    &quot;kirjaajaNimi&quot; : &quot;...&quot;,
+    &quot;aloitusyksikkoNimi&quot; : &quot;...&quot;,
+    &quot;aloittajaNimi&quot; : &quot;...&quot;,
+    &quot;kirjausyksikkoNimi&quot; : &quot;...&quot;
+  } ],
+  &quot;permissionDTO&quot; : {
+    &quot;permissions&quot; : {
+      &quot;property1&quot; : true,
+      &quot;property2&quot; : true
+    }
+  },
+  &quot;omistaja&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_RiskitietoResource_getRiskForPatient_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/{patientId}/risks/{riskId} <a href="../api/v1/patients/{patientId}/risks/{riskId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">patientId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">riskId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_RiskData.html">RiskData</a>
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/{patientId}/risks/{riskId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;endDate&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;additionalCodexVersion&quot; : &quot;...&quot;,
+  &quot;endReason&quot; : &quot;OTHER&quot;,
+  &quot;riskCertainty&quot; : &quot;FIXED&quot;,
+  &quot;medicalgroupName&quot; : &quot;...&quot;,
+  &quot;startAuthor&quot; : {
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;skills&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;skills&quot; : [ { }, { } ]
+    },
+    &quot;startTime&quot; : 12345,
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  },
+  &quot;endReasonLabel&quot; : &quot;...&quot;,
+  &quot;riskLevel&quot; : &quot;AFFECT_TREATMENT&quot;,
+  &quot;additionalInformation&quot; : &quot;...&quot;,
+  &quot;sourceType&quot; : &quot;MOTHER&quot;,
+  &quot;endAuthor&quot; : 12345,
+  &quot;medicalgroup&quot; : &quot;...&quot;,
+  &quot;riskLevelLabel&quot; : &quot;...&quot;,
+  &quot;startUnit&quot; : {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  },
+  &quot;source&quot; : &quot;DIAGNOSE&quot;,
+  &quot;delayedPermanently&quot; : true,
+  &quot;delayed&quot; : &quot;...&quot;,
+  &quot;endReasonText&quot; : &quot;...&quot;,
+  &quot;text&quot; : &quot;...&quot;,
+  &quot;additionalCodex&quot; : &quot;...&quot;,
+  &quot;code&quot; : &quot;...&quot;,
+  &quot;sourceId&quot; : 12345,
+  &quot;startDate&quot; : 12345,
+  &quot;careInfo&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;riskPermanencyLabel&quot; : &quot;...&quot;,
+  &quot;riskPermanency&quot; : &quot;PRELIMINARY&quot;,
+  &quot;url&quot; : &quot;...&quot;,
+  &quot;codex&quot; : &quot;...&quot;,
+  &quot;endUnit&quot; : 12345,
+  &quot;additionalCode&quot; : &quot;...&quot;,
+  &quot;codexVersion&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -127,14 +407,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,10 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#UNDEFINED"><abbr title="UNDEFINED"><span class="sideoverflow">UNDEFINED</span></abbr></a></li>
+          <li><a href="#PUUTTEELLINEN"><abbr title="PUUTTEELLINEN"><span class="sideoverflow">PUUTTEELLINEN</span></abbr></a></li>
+          <li><a href="#OK"><abbr title="OK"><span class="sideoverflow">OK</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -102,7 +104,7 @@ Used to carry the data from database to the client side.
         <dd><a href="ns0.xsd">ns0.xsd</a></dd>
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -116,340 +118,377 @@ Used to carry the data from database to the client side.
         </thead>
         <tbody>
         <tr>
-          <td>  annettavaMaara
+          <td>  <span class="property-name">annettavaMaara</span>
 </td>
-          <td>  decimal
-
+          <td>  <span class="datatype-reference">decimal
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the base amount that is given if swiped. Also the lower border of the amount.
-</td>
-        </tr>
-        <tr>
-          <td>  annettavaMaksimi
-</td>
-          <td>  decimal
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the uuper border of the amount.
+          <td>  <span class="property-description">Returns the base amount that is given if swiped. Also the lower border of the amount.</span>
 </td>
         </tr>
         <tr>
-          <td>  annettavaYksikko
+          <td>  <span class="property-name">annettavaMaksimi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">decimal
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the base unit that is described by laakityshistoria.
-</td>
-        </tr>
-        <tr>
-          <td>  antaja
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  1/1
-
-</td>
-          <td>  Returns the id of the medication giver
+          <td>  <span class="property-description">Returns the uuper border of the amount.</span>
 </td>
         </tr>
         <tr>
-          <td>  antajaName
+          <td>  <span class="property-name">annettavaYksikko</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the name of the medication giver
-</td>
-        </tr>
-        <tr>
-          <td>  huomautuksia
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the observetion comments related to the medication giving
+          <td>  <span class="property-description">Returns the base unit that is described by laakityshistoria.</span>
 </td>
         </tr>
         <tr>
-          <td>  kirjaaja
+          <td>  <span class="property-name">antaja</span>
 </td>
-          <td>  int
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
 </td>
-          <td>  Returns the id of the actual person that fed this info to the DB/system
-</td>
-        </tr>
-        <tr>
-          <td>  kirjaajaName
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the name of the actual person that fed this info to the DB/system
+          <td>  <span class="property-description">Returns the id of the medication giver</span>
 </td>
         </tr>
         <tr>
-          <td>  laake
+          <td>  <span class="property-name">antajaName</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the laake VNR. VNR is a code that is used to identify the medication. @see http://www.laaketietokeskus.fi/vnr
-</td>
-        </tr>
-        <tr>
-          <td>  maara
-</td>
-          <td>  float
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  1/1
-
-</td>
-          <td>  Returns the medication amount
+          <td>  <span class="property-description">Returns the name of the medication giver</span>
 </td>
         </tr>
         <tr>
-          <td>  omistaja
+          <td>  <span class="property-name">huomautuksia</span>
 </td>
-          <td>  int
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the owner ie. patients mediatri id.
-</td>
-        </tr>
-        <tr>
-          <td>  osa
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  1/1
-
-</td>
-          <td>  Retuns the part number that is the id of the medication together with alku and omistaja
+          <td>  <span class="property-description">Returns the observetion comments related to the medication giving</span>
 </td>
         </tr>
         <tr>
-          <td>  poistettu
+          <td>  <span class="property-name">kello</span>
 </td>
-          <td>  unsignedShort
-
+          <td>  <span class="datatype-reference">dateTime
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the code of the medication time removal. 'E' - not removed, 'K' = removed
-</td>
-        </tr>
-        <tr>
-          <td>  suunniteltuAika
-</td>
-          <td>  dateTime
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the planned time for medication. Tells which time the medication should be given
+          <td>  <span class="property-description">&nbsp;</span>
 </td>
         </tr>
         <tr>
-          <td>  toteutunutAika
+          <td>  <span class="property-name">kirjaaja</span>
 </td>
-          <td>  dateTime
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
 </td>
-          <td>  Returns the actual time of medication. Mapped from PK id ALKU
-</td>
-        </tr>
-        <tr>
-          <td>  toteutunutAikaOriginal
-</td>
-          <td>  dateTime
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Original time of medication. mapped from PK id ALKU. This PK is modified so to find the modifiable row the old row must be also given.
+          <td>  <span class="property-description">Returns the id of the actual person that fed this info to the DB/system</span>
 </td>
         </tr>
         <tr>
-          <td>  tyyppi
+          <td>  <span class="property-name">kirjaajaName</span>
 </td>
-          <td>  int
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the type of LaakitysAnto object, 1 = planned and given, 2 = planned but not yet given, 3 = extra
+          <td>  <span class="property-description">Returns the name of the actual person that fed this info to the DB/system</span>
 </td>
         </tr>
         <tr>
-          <td>  yksikko
+          <td>  <span class="property-name">laake</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the used unit. ml, l, etc.
+          <td>  <span class="property-description">Returns the laake VNR. VNR is a code that is used to identify the medication. @see <a target="_blank" href="http://www.laaketietokeskus.fi/vnr">http://www.laaketietokeskus.fi/vnr</a></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">maara</span>
+</td>
+          <td>  <span class="datatype-reference">float
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the medication amount</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">muutosAika</span>
+</td>
+          <td>  <span class="datatype-reference">dateTime
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the actual DB-change time of the medication giving</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">omistaja</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the owner ie. patients mediatri id.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">osa</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Retuns the part number that is the id of the medication together with alku and omistaja</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">poistettu</span>
+</td>
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the code of the medication time removal. 'E' - not removed, 'K' = removed</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">suunniteltuAika</span>
+</td>
+          <td>  <span class="datatype-reference">dateTime
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the planned time for medication. Tells which time the medication should be given</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">toteutunutAika</span>
+</td>
+          <td>  <span class="datatype-reference">dateTime
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the actual time of medication. Mapped from PK id ALKU</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">toteutunutAikaOriginal</span>
+</td>
+          <td>  <span class="datatype-reference">dateTime
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Original time of medication. mapped from PK id ALKU. This PK is modified so to find the modifiable row the old row must be also given.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tyyppi</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the type of LaakitysAnto object, 1 = planned and given, 2 = planned but not yet given, 3 = extra</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">yksikko</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the used unit. ml, l, etc.</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-xml">&lt;laakitysAnto&gt;
+      
+      <pre class="prettyprint language-xml example">&lt;laakitysAnto&gt;
   &lt;antaja&gt;...&lt;/antaja&gt;
   &lt;huomautuksia&gt;...&lt;/huomautuksia&gt;
   &lt;kirjaaja&gt;...&lt;/kirjaaja&gt;
   &lt;laake&gt;...&lt;/laake&gt;
   &lt;maara&gt;...&lt;/maara&gt;
+  &lt;muutosAika&gt;...&lt;/muutosAika&gt;
   &lt;omistaja&gt;...&lt;/omistaja&gt;
   &lt;osa&gt;...&lt;/osa&gt;
   &lt;poistettu&gt;...&lt;/poistettu&gt;
@@ -463,6 +502,7 @@ Used to carry the data from database to the client side.
   &lt;annettavaYksikko&gt;...&lt;/annettavaYksikko&gt;
   &lt;annettavaMaksimi&gt;...&lt;/annettavaMaksimi&gt;
   &lt;toteutunutAikaOriginal&gt;...&lt;/toteutunutAikaOriginal&gt;
+  &lt;kello&gt;...&lt;/kello&gt;
 &lt;/laakitysAnto&gt;
 </pre>
 
@@ -478,14 +518,14 @@ Used to carry the data from database to the client side.
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

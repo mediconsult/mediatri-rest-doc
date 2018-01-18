@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,10 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#ALL_WORKERS_COPIED"><abbr title="ALL_WORKERS_COPIED"><span class="sideoverflow">ALL_WORKERS_COPIED</span></abbr></a></li>
+          <li><a href="#ONLY_WORKERS_IN_NAMED_GROUP_COPIED"><abbr title="ONLY_WORKERS_IN_NAMED_GROUP_COPIED"><span class="sideoverflow">ONLY_WORKERS_IN_NAMED_GROUP_COPIED</span></abbr></a></li>
+          <li><a href="#NO_WORKERS_COPIED"><abbr title="NO_WORKERS_COPIED"><span class="sideoverflow">NO_WORKERS_COPIED</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -143,7 +145,7 @@ Example:
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -154,66 +156,143 @@ Example:
         </thead>
         <tbody>
         <tr>
-          <td>  status
+          <td>  <span class="property-name">id</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  minAttendees
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  maxAttendees
+          <td>  <span class="property-name">status</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference"><a href="json_CourseStatus.html">CourseStatus</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  startTime
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  endTime
+          <td>  <span class="property-name">name</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Period end date and time in Unix timestamp format
-</td>
-        </tr>
-        <tr>
-          <td>  customers
-</td>
-          <td>  array of <a href="json_CourseCustomerDto.html">CourseCustomerDto</a>
-
-</td>
-          <td>  Customers attending this course period
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  periodTags
+          <td>  <span class="property-name">abbr</span>
 </td>
-          <td>  array of <a href="json_TagsForPeriodDto.html">TagsForPeriodDto</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description">Note: in CourseDto and CoursePeriodDto this is used as a field tunniste. (Unique and Mandatory)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">description</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">minAttendees</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">maxAttendees</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">startTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">startDate</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Get start date of a course period. Convenience method since the time component of
+start time does not have any actual meaning.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">endTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Period end date and time in Unix timestamp format</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">endDate</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Get end date of a course period. Convenience method since the time component of
+end time does not have any actual meaning.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">customerCanceled</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description">if customer is canceled attendance for period.
+Note return values is Boolean, there fore it might be null as well
+This field is only used for specific Medinet rest api respnses, otherwise it's null and not used
+and not visible in Json</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">customers</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_CourseCustomerDto.html">CourseCustomerDto</a>
+</span>
+</td>
+          <td>  <span class="property-description">Customers attending this course period</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">periodTags</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_TagsForPeriodDto.html">TagsForPeriodDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">courseId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -222,22 +301,22 @@ Example:
         </tr>
         <tbody>
         <tr>
-          <td>name</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">name</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>abbr</td>
-          <td>string
-</td>
-          <td>Note: in CourseDto and CoursePeriodDto this is used as a field tunniste. (Unique and Mandatory)</td>
+          <td><span class="property-name">abbr</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description">Note: in CourseDto and CoursePeriodDto this is used as a field tunniste. (Unique and Mandatory)</span></td>
         </tr>
         <tr>
-          <td>description</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">description</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
         <tr>
@@ -245,62 +324,119 @@ Example:
         </tr>
         <tbody>
         <tr>
-          <td>version</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>id</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>created</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">created</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>modified</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">modified</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
-  &quot;status&quot; : &quot;...&quot;,
+      
+      <pre class="prettyprint language-js example">{
+  &quot;id&quot; : 12345,
+  &quot;status&quot; : &quot;PLANNED&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;abbr&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
   &quot;minAttendees&quot; : 12345,
   &quot;maxAttendees&quot; : 12345,
   &quot;startTime&quot; : 12345,
+  &quot;startDate&quot; : &quot;...&quot;,
   &quot;endTime&quot; : 12345,
+  &quot;endDate&quot; : &quot;...&quot;,
+  &quot;customerCanceled&quot; : true,
   &quot;customers&quot; : [ {
     &quot;customerId&quot; : 12345,
-    &quot;removed&quot; : true,
-    &quot;canceled&quot; : true,
-    &quot;assignedCoach&quot; : {
-      &quot;id&quot; : 12345,
+    &quot;customer&quot; : {
       &quot;name&quot; : &quot;...&quot;,
+      &quot;id&quot; : 12345,
       &quot;data&quot; : { }
     },
+    &quot;canceled&quot; : true,
+    &quot;cancellation&quot; : {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    },
+    &quot;cancellations&quot; : [ {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   }, {
     &quot;customerId&quot; : 12345,
-    &quot;removed&quot; : true,
-    &quot;canceled&quot; : true,
-    &quot;assignedCoach&quot; : {
-      &quot;id&quot; : 12345,
+    &quot;customer&quot; : {
       &quot;name&quot; : &quot;...&quot;,
+      &quot;id&quot; : 12345,
       &quot;data&quot; : { }
     },
+    &quot;canceled&quot; : true,
+    &quot;cancellation&quot; : {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    },
+    &quot;cancellations&quot; : [ {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
@@ -310,26 +446,23 @@ Example:
     &quot;name&quot; : &quot;...&quot;,
     &quot;removed&quot; : true,
     &quot;periodTagId&quot; : 12345,
+    &quot;id&quot; : 12345,
     &quot;tagId&quot; : 12345,
     &quot;version&quot; : 12345,
-    &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   }, {
     &quot;name&quot; : &quot;...&quot;,
     &quot;removed&quot; : true,
     &quot;periodTagId&quot; : 12345,
+    &quot;id&quot; : 12345,
     &quot;tagId&quot; : 12345,
     &quot;version&quot; : 12345,
-    &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   } ],
-  &quot;name&quot; : &quot;...&quot;,
-  &quot;abbr&quot; : &quot;...&quot;,
-  &quot;description&quot; : &quot;...&quot;,
+  &quot;courseId&quot; : 12345,
   &quot;version&quot; : 12345,
-  &quot;id&quot; : 12345,
   &quot;created&quot; : 12345,
   &quot;modified&quot; : 12345
 }</pre>
@@ -346,14 +479,14 @@ Example:
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#WOMAN"><abbr title="WOMAN"><span class="sideoverflow">WOMAN</span></abbr></a></li>
+          <li><a href="#MAN"><abbr title="MAN"><span class="sideoverflow">MAN</span></abbr></a></li>
+          <li><a href="#OTHER"><abbr title="OTHER"><span class="sideoverflow">OTHER</span></abbr></a></li>
+          <li><a href="#UNKNOWN"><abbr title="UNKNOWN"><span class="sideoverflow">UNKNOWN</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +74,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,202 +85,258 @@
         </thead>
         <tbody>
         <tr>
-          <td>  id
+          <td>  <span class="property-name">id</span>
 </td>
-          <td>  <a href="json_KertomusID.html">KertomusID</a>
-
+          <td>  <span class="datatype-reference"><a href="json_KertomusID.html">KertomusID</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  mainTitle
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  unit
+          <td>  <span class="property-name">mainTitle</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  formName
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  responsible
+          <td>  <span class="property-name">unit</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  titles
-</td>
-          <td>  array of <a href="json_ViewTitleValue.html">ViewTitleValue</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kirjaaja
+          <td>  <span class="property-name">formName</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  suorittaja
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  color
+          <td>  <span class="property-name">responsible</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  vanha
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  status
+          <td>  <span class="property-name">titles</span>
 </td>
-          <td>  <a href="json_KertomusTilaEnum.html">KertomusTilaEnum</a>
-
+          <td>  <span class="datatype-reference">array of <a href="json_TitleSettings.html">TitleSettings</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  kirjaajaName
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  nakyma
+          <td>  <span class="property-name">kirjaaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  unitId
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kayttajaRyhma
+          <td>  <span class="property-name">suorittaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  kayttajaRyhmaId
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  lockTime
+          <td>  <span class="property-name">color</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">vanha</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">status</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_KertomusTilaEnum.html">KertomusTilaEnum</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">kirjaajaName</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">nakyma</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">unitId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">kayttajaRyhma</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">kayttajaRyhmaId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">lockTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">editable</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;id&quot; : {
+    &quot;ownerId&quot; : 12345,
     &quot;aika&quot; : 12345,
     &quot;formId&quot; : 12345,
-    &quot;reportId&quot; : 12345,
-    &quot;ownerId&quot; : 12345
+    &quot;reportId&quot; : 12345
   },
   &quot;mainTitle&quot; : &quot;...&quot;,
   &quot;unit&quot; : &quot;...&quot;,
   &quot;formName&quot; : &quot;...&quot;,
   &quot;responsible&quot; : &quot;...&quot;,
   &quot;titles&quot; : [ {
-    &quot;presentation&quot; : &quot;...&quot;,
     &quot;name&quot; : &quot;...&quot;,
-    &quot;vapaa&quot; : &quot;...&quot;,
-    &quot;emptyValue&quot; : true,
     &quot;type&quot; : 12345,
-    &quot;vakio&quot; : &quot;...&quot;,
-    &quot;editModel&quot; : true
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
   }, {
-    &quot;presentation&quot; : &quot;...&quot;,
     &quot;name&quot; : &quot;...&quot;,
-    &quot;vapaa&quot; : &quot;...&quot;,
-    &quot;emptyValue&quot; : true,
     &quot;type&quot; : 12345,
-    &quot;vakio&quot; : &quot;...&quot;,
-    &quot;editModel&quot; : true
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
   } ],
   &quot;kirjaaja&quot; : 12345,
   &quot;suorittaja&quot; : 12345,
   &quot;color&quot; : &quot;...&quot;,
   &quot;vanha&quot; : true,
-  &quot;status&quot; : &quot;KERTOMUS_LUONNOS&quot;,
+  &quot;status&quot; : &quot;KERTOMUS_KESKEN&quot;,
   &quot;kirjaajaName&quot; : &quot;...&quot;,
   &quot;nakyma&quot; : &quot;...&quot;,
   &quot;unitId&quot; : 12345,
   &quot;kayttajaRyhma&quot; : &quot;...&quot;,
   &quot;kayttajaRyhmaId&quot; : 12345,
-  &quot;lockTime&quot; : 12345
+  &quot;lockTime&quot; : 12345,
+  &quot;editable&quot; : true
 }</pre>
 
         <footer class="footer">
@@ -292,14 +351,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#Undefined"><abbr title="Undefined"><span class="sideoverflow">Undefined</span></abbr></a></li>
+          <li><a href="#Kokonaisluku"><abbr title="Kokonaisluku"><span class="sideoverflow">Kokonaisluku</span></abbr></a></li>
+          <li><a href="#Numeromuotoinen"><abbr title="Numeromuotoinen"><span class="sideoverflow">Numeromuotoinen</span></abbr></a></li>
+          <li><a href="#Teksti"><abbr title="Teksti"><span class="sideoverflow">Teksti</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -69,9 +72,11 @@
       <p></p>
 
       <dl class="dl-horizontal">
+        <dt>Subtypes</dt>
+        <dd><a href="json_PatientList.html">PatientList</a>, <a href="json_UnitList.html">UnitList</a>, <a href="json_UserList.html">UserList</a></dd>
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,50 +87,50 @@
         </thead>
         <tbody>
         <tr>
-          <td>  pageItemsCount
+          <td>  <span class="property-name">pageIndex</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  pageSize
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  pageIndex
+          <td>  <span class="property-name">pageItemsCount</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  allItemsCount
+          <td>  <span class="property-name">pageSize</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">allItemsCount</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
+  &quot;pageIndex&quot; : 12345,
   &quot;pageItemsCount&quot; : 12345,
   &quot;pageSize&quot; : 12345,
-  &quot;pageIndex&quot; : 12345,
   &quot;allItemsCount&quot; : 12345
 }</pre>
 
@@ -141,14 +146,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#KERTOMUS_LUONNOS"><abbr title="KERTOMUS_LUONNOS"><span class="sideoverflow">KERTOMUS_LUONNOS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_KESKEN"><abbr title="KERTOMUS_KESKEN"><span class="sideoverflow">KERTOMUS_KESKEN</span></abbr></a></li>
+          <li><a href="#KERTOMUS_VALMIS"><abbr title="KERTOMUS_VALMIS"><span class="sideoverflow">KERTOMUS_VALMIS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_UNDEFIND"><abbr title="KERTOMUS_UNDEFIND"><span class="sideoverflow">KERTOMUS_UNDEFIND</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -67,9 +70,7 @@
       <h1 class="page-header">laakeTiivistelma <small>Data Type</small></h1>
 
       <p>DTO for LaakeTiivistelma
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html</p>
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html</a> <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html</a></p>
 
       <dl class="dl-horizontal">
         <dt>Namespace</dt>
@@ -78,7 +79,7 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVEL
         <dd><a href="ns0.xsd">ns0.xsd</a></dd>
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -92,174 +93,174 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVEL
         </thead>
         <tbody>
         <tr>
-          <td>  ehto
+          <td>  <span class="property-name">ehto</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the preconditions for the medicine
-(m��r�ys-/toimitusehto)
-</td>
-        </tr>
-        <tr>
-          <td>  korvattavuus
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the refundability
+          <td>  <span class="property-description">Returns the preconditions for the medicine
+(määräys-/toimitusehto)</span>
 </td>
         </tr>
         <tr>
-          <td>  muutosaika
+          <td>  <span class="property-name">korvattavuus</span>
 </td>
-          <td>  dateTime
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the actual DB-change time of the summary
-</td>
-        </tr>
-        <tr>
-          <td>  muutospaikka
-</td>
-          <td>  short
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  1/1
-
-</td>
-          <td>  Returns the organization in which the change has been made
+          <td>  <span class="property-description">Returns the refundability</span>
 </td>
         </tr>
         <tr>
-          <td>  nimi
+          <td>  <span class="property-name">muutosaika</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">dateTime
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the name of the medicine the summary is about
-</td>
-        </tr>
-        <tr>
-          <td>  poistettu
-</td>
-          <td>  unsignedShort
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  1/1
-
-</td>
-          <td>  Returns the code of the summary removal. 'E' - not removed, 'K' = removed
+          <td>  <span class="property-description">Returns the actual DB-change time of the summary</span>
 </td>
         </tr>
         <tr>
-          <td>  tekstit
+          <td>  <span class="property-name">muutospaikka</span>
 </td>
-          <td>  <a href="xml_ns0_laakeTiivistelmaTeksti.html">laakeTiivistelmaTeksti</a>
-
+          <td>  <span class="datatype-reference">short
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/unbounded
-
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
 </td>
-          <td>  Returns a list of summary texts
-</td>
-        </tr>
-        <tr>
-          <td>  tiivistelma
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  1/1
-
-</td>
-          <td>  Returns the id of the summary
+          <td>  <span class="property-description">Returns the organization in which the change has been made</span>
 </td>
         </tr>
         <tr>
-          <td>  valmistaja
+          <td>  <span class="property-name">nimi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the manufacturer
+          <td>  <span class="property-description">Returns the name of the medicine the summary is about</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">poistettu</span>
+</td>
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the code of the summary removal. 'E' - not removed, 'K' = removed</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tekstit</span>
+</td>
+          <td>  <span class="datatype-reference">list of <a href="xml_ns0_laakeTiivistelmaTeksti.html">laakeTiivistelmaTeksti</a>
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/unbounded
+</span>
+</td>
+          <td>  <span class="property-description">Returns a list of summary texts</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tiivistelma</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the id of the summary</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">valmistaja</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the manufacturer</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-xml">&lt;laakeTiivistelma&gt;
+      
+      <pre class="prettyprint language-xml example">&lt;laakeTiivistelma&gt;
   &lt;tiivistelma&gt;...&lt;/tiivistelma&gt;
   &lt;nimi&gt;...&lt;/nimi&gt;
   &lt;ehto&gt;...&lt;/ehto&gt;
@@ -288,14 +289,14 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVEL
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

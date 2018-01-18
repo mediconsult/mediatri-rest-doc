@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#WOMAN"><abbr title="WOMAN"><span class="sideoverflow">WOMAN</span></abbr></a></li>
+          <li><a href="#MAN"><abbr title="MAN"><span class="sideoverflow">MAN</span></abbr></a></li>
+          <li><a href="#OTHER"><abbr title="OTHER"><span class="sideoverflow">OTHER</span></abbr></a></li>
+          <li><a href="#UNKNOWN"><abbr title="UNKNOWN"><span class="sideoverflow">UNKNOWN</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -68,13 +71,13 @@
 
       <p>DTO for Hoito
 
-A class to present HOITO table in hoito-ohjeet ja -m��r�ykset functionality.
+A class to present HOITO table in hoito-ohjeet ja -määräykset functionality.
 Used to carry the data from database to the client side.</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -85,209 +88,209 @@ Used to carry the data from database to the client side.</p>
         </thead>
         <tbody>
         <tr>
-          <td>  alkaa
+          <td>  <span class="property-name">alkaa</span>
 </td>
-          <td>  <a href="json_Date.html">Date</a>
-
+          <td>  <span class="datatype-reference"><a href="json_Date.html">Date</a>
+</span>
 </td>
-          <td>  Returns the alkaa date
-</td>
-        </tr>
-        <tr>
-          <td>  loppuu
-</td>
-          <td>  <a href="json_Date.html">Date</a>
-
-</td>
-          <td>  Returns the loppuu date
+          <td>  <span class="property-description">Returns the alkaa date</span>
 </td>
         </tr>
         <tr>
-          <td>  maaraaja
+          <td>  <span class="property-name">loppuu</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference"><a href="json_Date.html">Date</a>
+</span>
 </td>
-          <td>  Returns the maaraaja id
-</td>
-        </tr>
-        <tr>
-          <td>  tekija
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the tekija id
+          <td>  <span class="property-description">Returns the loppuu date</span>
 </td>
         </tr>
         <tr>
-          <td>  otsikko
+          <td>  <span class="property-name">maaraaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Returns the header (otsikko)
-</td>
-        </tr>
-        <tr>
-          <td>  vakio
-</td>
-          <td>  string
-
-</td>
-          <td>  Returns the constant string (vakio)
+          <td>  <span class="property-description">Returns the maaraaja id</span>
 </td>
         </tr>
         <tr>
-          <td>  vapaa
+          <td>  <span class="property-name">tekija</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Returns the free string (vapaa)
-</td>
-        </tr>
-        <tr>
-          <td>  huomautuksia
-</td>
-          <td>  string
-
-</td>
-          <td>  Returns the notifications (huomautuksia)
+          <td>  <span class="property-description">Returns the tekija id</span>
 </td>
         </tr>
         <tr>
-          <td>  kellonajat
+          <td>  <span class="property-name">otsikko</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the times as a string
-</td>
-        </tr>
-        <tr>
-          <td>  kirjaaja
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the recorder (kirjaaja)
+          <td>  <span class="property-description">Returns the header (otsikko)</span>
 </td>
         </tr>
         <tr>
-          <td>  lopettaja
+          <td>  <span class="property-name">vakio</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the ender (lopettaja)
-</td>
-        </tr>
-        <tr>
-          <td>  lopetettu
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the time of ending (lopetettu)
+          <td>  <span class="property-description">Returns the constant string (vakio)</span>
 </td>
         </tr>
         <tr>
-          <td>  kerta
+          <td>  <span class="property-name">vapaa</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the type of Hoito (K = kertaluonteinen, E = pysyv�)
-</td>
-        </tr>
-        <tr>
-          <td>  tehty
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the time when Hoito is done
+          <td>  <span class="property-description">Returns the free string (vapaa)</span>
 </td>
         </tr>
         <tr>
-          <td>  lomake
+          <td>  <span class="property-name">huomautuksia</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the used form (lomake)
-</td>
-        </tr>
-        <tr>
-          <td>  rivi
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the row number (rivi)
+          <td>  <span class="property-description">Returns the notifications (huomautuksia)</span>
 </td>
         </tr>
         <tr>
-          <td>  muutosaika
+          <td>  <span class="property-name">kellonajat</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the time of change
-</td>
-        </tr>
-        <tr>
-          <td>  maaraajaNimi
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description">Returns the times as a string</span>
 </td>
         </tr>
         <tr>
-          <td>  kirjaajaNimi
+          <td>  <span class="property-name">kirjaaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  tekijaNimi
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description">Returns the recorder (kirjaaja)</span>
 </td>
         </tr>
         <tr>
-          <td>  lopettajaNimi
+          <td>  <span class="property-name">lopettaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description">Returns the ender (lopettaja)</span>
 </td>
         </tr>
         <tr>
-          <td>  lomakeNimi
+          <td>  <span class="property-name">lopetettu</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description">Returns the time of ending (lopetettu)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">kerta</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the type of Hoito (K = kertaluonteinen, E = pysyvä)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tehty</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the time when Hoito is done</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">lomake</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the used form (lomake)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">rivi</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the row number (rivi)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">muutosaika</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the time of change</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">maaraajaNimi</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">kirjaajaNimi</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tekijaNimi</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">lopettajaNimi</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">lomakeNimi</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;alkaa&quot; : { },
   &quot;loppuu&quot; : { },
   &quot;maaraaja&quot; : 12345,
@@ -300,7 +303,7 @@ Used to carry the data from database to the client side.</p>
   &quot;kirjaaja&quot; : 12345,
   &quot;lopettaja&quot; : 12345,
   &quot;lopetettu&quot; : 12345,
-  &quot;kerta&quot; : { },
+  &quot;kerta&quot; : &quot;...&quot;,
   &quot;tehty&quot; : 12345,
   &quot;lomake&quot; : 12345,
   &quot;rivi&quot; : 12345,
@@ -324,14 +327,14 @@ Used to carry the data from database to the client side.</p>
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

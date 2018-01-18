@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,23 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#JONO"><abbr title="JONO"><span class="sideoverflow">JONO</span></abbr></a></li>
+          <li><a href="#PALVELUJEN_OSTO"><abbr title="PALVELUJEN_OSTO"><span class="sideoverflow">PALVELUJEN_OSTO</span></abbr></a></li>
+          <li><a href="#KOTIHOITO"><abbr title="KOTIHOITO"><span class="sideoverflow">KOTIHOITO</span></abbr></a></li>
+          <li><a href="#PALVELUASUMINEN"><abbr title="PALVELUASUMINEN"><span class="sideoverflow">PALVELUASUMINEN</span></abbr></a></li>
+          <li><a href="#LAHETE_JA_HOITOPALAUTE"><abbr title="LAHETE_JA_HOITOPALAUTE"><span class="sideoverflow">LAHETE_JA_HOITOPALAUTE</span></abbr></a></li>
+          <li><a href="#YHTEYDENOTTO_HOIDON_TARPEEN_ARVIOIMISEKSI"><abbr title="YHTEYDENOTTO_HOIDON_TARPEEN_ARVIOIMISEKSI"><span class="sideoverflow">YHTEYDENOTTO_HOIDON_TARPEEN_ARVIOIMISEKSI</span></abbr></a></li>
+          <li><a href="#LAAKEMAARAYKSEN_UUDISTAMISPYYNTO"><abbr title="LAAKEMAARAYKSEN_UUDISTAMISPYYNTO"><span class="sideoverflow">LAAKEMAARAYKSEN_UUDISTAMISPYYNTO</span></abbr></a></li>
+          <li><a href="#ERITYINEN_SYY"><abbr title="ERITYINEN_SYY"><span class="sideoverflow">ERITYINEN_SYY</span></abbr></a></li>
+          <li><a href="#AJANVARAUS"><abbr title="AJANVARAUS"><span class="sideoverflow">AJANVARAUS</span></abbr></a></li>
+          <li><a href="#AVOHOITO"><abbr title="AVOHOITO"><span class="sideoverflow">AVOHOITO</span></abbr></a></li>
+          <li><a href="#OSASTOHOITO"><abbr title="OSASTOHOITO"><span class="sideoverflow">OSASTOHOITO</span></abbr></a></li>
+          <li><a href="#KONSULTAATIO"><abbr title="KONSULTAATIO"><span class="sideoverflow">KONSULTAATIO</span></abbr></a></li>
+          <li><a href="#TOIMENPIDE"><abbr title="TOIMENPIDE"><span class="sideoverflow">TOIMENPIDE</span></abbr></a></li>
+          <li><a href="#ANESTESIA"><abbr title="ANESTESIA"><span class="sideoverflow">ANESTESIA</span></abbr></a></li>
+          <li><a href="#LABORATORIO"><abbr title="LABORATORIO"><span class="sideoverflow">LABORATORIO</span></abbr></a></li>
+          <li><a href="#RADIOLOGIA"><abbr title="RADIOLOGIA"><span class="sideoverflow">RADIOLOGIA</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -78,7 +93,7 @@ Used to carry the data from database to the client side.</p>
         <dd><a href="ns0.xsd">ns0.xsd</a></dd>
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -92,966 +107,966 @@ Used to carry the data from database to the client side.</p>
         </thead>
         <tbody>
         <tr>
-          <td>  hajautettu
+          <td>  <span class="property-name">hajautettu</span>
 </td>
-          <td>  unsignedShort
-
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the char value for Hajautettu
-</td>
-        </tr>
-        <tr>
-          <td>  hoitojakso
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the Hoitojakso
+          <td>  <span class="property-description">Returns the char value for Hajautettu</span>
 </td>
         </tr>
         <tr>
-          <td>  huomautuksia
+          <td>  <span class="property-name">hoitojakso</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the notifications
-</td>
-        </tr>
-        <tr>
-          <td>  kirjaaja
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the recorder of the result
+          <td>  <span class="property-description">Returns the Hoitojakso</span>
 </td>
         </tr>
         <tr>
-          <td>  kontrolloitava
+          <td>  <span class="property-name">huomautuksia</span>
 </td>
-          <td>  <a href="xml_ns0_date.html">date</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the possible control date
-</td>
-        </tr>
-        <tr>
-          <td>  korvausluokka
-</td>
-          <td>  unsignedShort
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the korvausluokka
+          <td>  <span class="property-description">Returns the notifications</span>
 </td>
         </tr>
         <tr>
-          <td>  kunta
+          <td>  <span class="property-name">kirjaaja</span>
 </td>
-          <td>  int
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the county council
-</td>
-        </tr>
-        <tr>
-          <td>  kustannuslinkki
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the Kustannuslinkki
+          <td>  <span class="property-description">Return the recorder of the result</span>
 </td>
         </tr>
         <tr>
-          <td>  lisatietoja
+          <td>  <span class="property-name">kontrolloitava</span>
 </td>
-          <td>  unsignedShort
-
+          <td>  <span class="datatype-reference"><a href="xml_ns0_date.html">date</a>
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the info about if there is some extra information
-</td>
-        </tr>
-        <tr>
-          <td>  lomakelinkki
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the Lomakelinkki
+          <td>  <span class="property-description">Returns the possible control date</span>
 </td>
         </tr>
         <tr>
-          <td>  maksaja
+          <td>  <span class="property-name">korvausluokka</span>
 </td>
-          <td>  int
-
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the payer
-</td>
-        </tr>
-        <tr>
-          <td>  mikrobit
-</td>
-          <td>  <a href="xml_ns0_tutkimuspyyntoMikrobi.html">tutkimuspyyntoMikrobi</a>
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/unbounded
-
-</td>
-          <td>  &nbsp;
+          <td>  <span class="property-description">Returns the korvausluokka</span>
 </td>
         </tr>
         <tr>
-          <td>  mikrobitietoja
+          <td>  <span class="property-name">kunta</span>
 </td>
-          <td>  unsignedShort
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the info about if there is Mikrobitietoja available
-</td>
-        </tr>
-        <tr>
-          <td>  muutosaika
-</td>
-          <td>  dateTime
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the time of change
+          <td>  <span class="property-description">Returns the county council</span>
 </td>
         </tr>
         <tr>
-          <td>  muutospaikka
+          <td>  <span class="property-name">kustannuslinkki</span>
 </td>
-          <td>  short
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the place of change
-</td>
-        </tr>
-        <tr>
-          <td>  nayte
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the sample
+          <td>  <span class="property-description">Returns the Kustannuslinkki</span>
 </td>
         </tr>
         <tr>
-          <td>  naytetietoja
+          <td>  <span class="property-name">lisatietoja</span>
 </td>
-          <td>  unsignedShort
-
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the info about if there is sample information
-</td>
-        </tr>
-        <tr>
-          <td>  numerotulos
-</td>
-          <td>  double
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the result in numeric format
+          <td>  <span class="property-description">Return the info about if there is some extra information</span>
 </td>
         </tr>
         <tr>
-          <td>  numeroyksikko
+          <td>  <span class="property-name">lomakelinkki</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the unit of the result
-</td>
-        </tr>
-        <tr>
-          <td>  osalinkki
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the Osalinkki
+          <td>  <span class="property-description">Return the Lomakelinkki</span>
 </td>
         </tr>
         <tr>
-          <td>  osasto
+          <td>  <span class="property-name">maksaja</span>
 </td>
-          <td>  int
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the department
-</td>
-        </tr>
-        <tr>
-          <td>  ottoaika
-</td>
-          <td>  dateTime
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the time when the lab examination is done
+          <td>  <span class="property-description">Return the payer</span>
 </td>
         </tr>
         <tr>
-          <td>  paketti
+          <td>  <span class="property-name">mikrobit</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">list of <a href="xml_ns0_tutkimuspyyntoMikrobi.html">tutkimuspyyntoMikrobi</a>
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/unbounded
+</span>
 </td>
-          <td>  Return the package
-</td>
-        </tr>
-        <tr>
-          <td>  piiri
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the V�est�vastuupiiri
+          <td>  <span class="property-description">&nbsp;</span>
 </td>
         </tr>
         <tr>
-          <td>  poikkeava
+          <td>  <span class="property-name">mikrobitietoja</span>
 </td>
-          <td>  int
-
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  &nbsp;
-</td>
-        </tr>
-        <tr>
-          <td>  poistettu
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the info about if the result is removed
+          <td>  <span class="property-description">Return the info about if there is Mikrobitietoja available</span>
 </td>
         </tr>
         <tr>
-          <td>  pyydetty
+          <td>  <span class="property-name">muutosaika</span>
 </td>
-          <td>  dateTime
-
+          <td>  <span class="datatype-reference">dateTime
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the time when the lab examination is ordered
-</td>
-        </tr>
-        <tr>
-          <td>  pyynto
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  1/1
-
-</td>
-          <td>  Returns the pyynto id
+          <td>  <span class="property-description">Return the time of change</span>
 </td>
         </tr>
         <tr>
-          <td>  rivi
+          <td>  <span class="property-name">muutospaikka</span>
 </td>
-          <td>  short
-
+          <td>  <span class="datatype-reference">short
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
 </td>
-          <td>  Returns the row number
-</td>
-        </tr>
-        <tr>
-          <td>  sanallinenvastaus
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the verbal result
+          <td>  <span class="property-description">Return the place of change</span>
 </td>
         </tr>
         <tr>
-          <td>  sijaintiosasto
+          <td>  <span class="property-name">nayte</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the location (department)
-</td>
-        </tr>
-        <tr>
-          <td>  sijaintipaikka
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the location (place)
+          <td>  <span class="property-description">Return the sample</span>
 </td>
         </tr>
         <tr>
-          <td>  sisainenMaksaja
+          <td>  <span class="property-name">naytetietoja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the internal payer
-</td>
-        </tr>
-        <tr>
-          <td>  suoritelinkki
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the Suoritelinkki
+          <td>  <span class="property-description">Return the info about if there is sample information</span>
 </td>
         </tr>
         <tr>
-          <td>  tehty
+          <td>  <span class="property-name">numerotulos</span>
 </td>
-          <td>  dateTime
-
+          <td>  <span class="datatype-reference">double
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the time when lab examination is done
-</td>
-        </tr>
-        <tr>
-          <td>  tekopaikka
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the place where lab examination is done
+          <td>  <span class="property-description">Return the result in numeric format</span>
 </td>
         </tr>
         <tr>
-          <td>  tekstitulos
+          <td>  <span class="property-name">numeroyksikko</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the result in textual format
-</td>
-        </tr>
-        <tr>
-          <td>  tekstiviesti
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the SMS
+          <td>  <span class="property-description">Return the unit of the result</span>
 </td>
         </tr>
         <tr>
-          <td>  tila
+          <td>  <span class="property-name">osalinkki</span>
 </td>
-          <td>  unsignedShort
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the state
-</td>
-        </tr>
-        <tr>
-          <td>  tilaKoodi
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  &nbsp;
+          <td>  <span class="property-description">Return the Osalinkki</span>
 </td>
         </tr>
         <tr>
-          <td>  tilaaja
+          <td>  <span class="property-name">osasto</span>
 </td>
-          <td>  int
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the orderer
-</td>
-        </tr>
-        <tr>
-          <td>  tilaajaNimi
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the name of the orderer
+          <td>  <span class="property-description">Return the department</span>
 </td>
         </tr>
         <tr>
-          <td>  tilaajayksikko
+          <td>  <span class="property-name">ottoaika</span>
 </td>
-          <td>  int
-
+          <td>  <span class="datatype-reference">dateTime
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the unit of the orderer
-</td>
-        </tr>
-        <tr>
-          <td>  tilaustunnus
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the identifier of the order
+          <td>  <span class="property-description">Return the time when the lab examination is done</span>
 </td>
         </tr>
         <tr>
-          <td>  toistoloppuu
+          <td>  <span class="property-name">paketti</span>
 </td>
-          <td>  <a href="xml_ns0_date.html">date</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the date when the repetition ends
-</td>
-        </tr>
-        <tr>
-          <td>  toistovali
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the interval of the repetition
+          <td>  <span class="property-description">Return the package</span>
 </td>
         </tr>
         <tr>
-          <td>  tulkinta
+          <td>  <span class="property-name">piiri</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the interpretation
-</td>
-        </tr>
-        <tr>
-          <td>  tuottaja
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the producer
+          <td>  <span class="property-description">Return the Väestövastuupiiri</span>
 </td>
         </tr>
         <tr>
-          <td>  tutkimus
+          <td>  <span class="property-name">poikkeava</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the Tutkimus name
-</td>
-        </tr>
-        <tr>
-          <td>  tyonantaja
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Return the employer
+          <td>  <span class="property-description">&nbsp;</span>
 </td>
         </tr>
         <tr>
-          <td>  vastaustietoja
+          <td>  <span class="property-name">poistettu</span>
 </td>
-          <td>  unsignedShort
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the info about if there is Vastaustietoja available
-</td>
-        </tr>
-        <tr>
-          <td>  versio
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the version
+          <td>  <span class="property-description">Return the info about if the result is removed</span>
 </td>
         </tr>
         <tr>
-          <td>  viitearvot
+          <td>  <span class="property-name">pyydetty</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">dateTime
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Return the Viitearvot, which contains min and max values for the
-result. Result is normal, if the value is between the min and max values.
+          <td>  <span class="property-description">Return the time when the lab examination is ordered</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">pyynto</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the pyynto id</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">rivi</span>
+</td>
+          <td>  <span class="datatype-reference">short
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the row number</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">sanallinenvastaus</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the verbal result</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">sijaintiosasto</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the location (department)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">sijaintipaikka</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the location (place)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">sisainenMaksaja</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the internal payer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">suoritelinkki</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the Suoritelinkki</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tehty</span>
+</td>
+          <td>  <span class="datatype-reference">dateTime
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the time when lab examination is done</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tekopaikka</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the place where lab examination is done</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tekstitulos</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the result in textual format</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tekstiviesti</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the SMS</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tila</span>
+</td>
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the state</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tilaKoodi</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">&nbsp;</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tilaaja</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the orderer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tilaajaNimi</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the name of the orderer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tilaajayksikko</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the unit of the orderer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tilaustunnus</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the identifier of the order</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">toistoloppuu</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="xml_ns0_date.html">date</a>
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the date when the repetition ends</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">toistovali</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the interval of the repetition</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tulkinta</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the interpretation</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tuottaja</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the producer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tutkimus</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the Tutkimus name</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tyonantaja</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the employer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">vastaustietoja</span>
+</td>
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the info about if there is Vastaustietoja available</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">versio</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the version</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">viitearvot</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Return the Viitearvot, which contains min and max values for the
+result. Result is normal, if the value is between the min and max values.</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-xml">&lt;tutkimuspyyntoTiedot&gt;
+      
+      <pre class="prettyprint language-xml example">&lt;tutkimuspyyntoTiedot&gt;
   &lt;pyynto&gt;...&lt;/pyynto&gt;
   &lt;rivi&gt;...&lt;/rivi&gt;
   &lt;tutkimus&gt;...&lt;/tutkimus&gt;
@@ -1139,14 +1154,14 @@ result. Result is normal, if the value is between the min and max values.
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

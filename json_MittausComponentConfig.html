@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#Undefined"><abbr title="Undefined"><span class="sideoverflow">Undefined</span></abbr></a></li>
+          <li><a href="#Kokonaisluku"><abbr title="Kokonaisluku"><span class="sideoverflow">Kokonaisluku</span></abbr></a></li>
+          <li><a href="#Numeromuotoinen"><abbr title="Numeromuotoinen"><span class="sideoverflow">Numeromuotoinen</span></abbr></a></li>
+          <li><a href="#Teksti"><abbr title="Teksti"><span class="sideoverflow">Teksti</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -73,7 +76,7 @@ Kertomus lomake type is Lomakeluokka#KERTOMUSTEKSTI.</p>
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -84,49 +87,49 @@ Kertomus lomake type is Lomakeluokka#KERTOMUSTEKSTI.</p>
         </thead>
         <tbody>
         <tr>
-          <td>  kertomusConfigs
+          <td>  <span class="property-name">kertomusConfigs</span>
 </td>
-          <td>  array of <a href="json_MittausFormConfig.html">MittausFormConfig</a>
-
+          <td>  <span class="datatype-reference">array of <a href="json_MittausFormConfig.html">MittausFormConfig</a>
+</span>
 </td>
-          <td>  Method returns all Mediatri kertomus forms configuration.
+          <td>  <span class="property-description">Method returns all Mediatri kertomus forms configuration.</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;kertomusConfigs&quot; : [ {
     &quot;mainTitles&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
     },
     &quot;kayttajaRyhmaId&quot; : 12345,
     &quot;editable&quot; : true,
     &quot;permission&quot; : {
-      &quot;view&quot; : true,
-      &quot;change&quot; : true,
       &quot;add&quot; : true,
       &quot;data&quot; : { },
-      &quot;remove&quot; : true,
-      &quot;type&quot; : &quot;...&quot;
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
     }
   }, {
     &quot;mainTitles&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
     },
     &quot;kayttajaRyhmaId&quot; : 12345,
     &quot;editable&quot; : true,
     &quot;permission&quot; : {
-      &quot;view&quot; : true,
-      &quot;change&quot; : true,
       &quot;add&quot; : true,
       &quot;data&quot; : { },
-      &quot;remove&quot; : true,
-      &quot;type&quot; : &quot;...&quot;
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
     }
   } ]
 }</pre>
@@ -143,14 +146,14 @@ Kertomus lomake type is Lomakeluokka#KERTOMUSTEKSTI.</p>
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

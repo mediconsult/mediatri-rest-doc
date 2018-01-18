@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,15 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#SUUNNITELTU"><abbr title="SUUNNITELTU"><span class="sideoverflow">SUUNNITELTU</span></abbr></a></li>
+          <li><a href="#MUUTETTU"><abbr title="MUUTETTU"><span class="sideoverflow">MUUTETTU</span></abbr></a></li>
+          <li><a href="#KESKEYTETTY"><abbr title="KESKEYTETTY"><span class="sideoverflow">KESKEYTETTY</span></abbr></a></li>
+          <li><a href="#KESKEN"><abbr title="KESKEN"><span class="sideoverflow">KESKEN</span></abbr></a></li>
+          <li><a href="#TOTEUTUNUT"><abbr title="TOTEUTUNUT"><span class="sideoverflow">TOTEUTUNUT</span></abbr></a></li>
+          <li><a href="#ITSE_PERUNUT"><abbr title="ITSE_PERUNUT"><span class="sideoverflow">ITSE_PERUNUT</span></abbr></a></li>
+          <li><a href="#PERUUTETTU"><abbr title="PERUUTETTU"><span class="sideoverflow">PERUUTETTU</span></abbr></a></li>
+          <li><a href="#EI_TOTEUTUNUT"><abbr title="EI_TOTEUTUNUT"><span class="sideoverflow">EI_TOTEUTUNUT</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -69,28 +76,28 @@
       <p>Stores the information of the following ASETUS-table fields configured for Palveluluokkas:
 
 0.  Nimi (Yleiset tab)
-1.  K�ytt�j�ryhm� (Yleiset tab)
+1.  Käyttäjäryhmä (Yleiset tab)
 2.  Palvelun tarve-otsikko (Yleiset tab)
-3.  P��t�stekstin otsikko (Yleiset tab)
-4.  Lakipyk�l�t (Yleiset tab)
+3.  Päätöstekstin otsikko (Yleiset tab)
+4.  Lakipykälät (Yleiset tab)
 5.  Suoritekoodi (parsed, but not added Core DTO)
 6.  Diaarinumerosarja (Yleiset tab)
-7.  P��t�s avoin (K/E, Yleiset tab)
+7.  Päätös avoin (K/E, Yleiset tab)
 8.  Riviotsikko (Maksuperusteet tab)
 9.  Sarakeotsikko (Maksuperusteet tab)
 10. (not used currently in Mediatri)
 11. Laskutus tapahtumien mukaisesti (K/E, Seuranta tab)
 12. Tukipalvelu  (K/E, Yleiset tab)
 13. (a field related to Suorite-handling, parsed, but not added Core DTO))
-14. P��tt�j�ryhm�n otsikko (Yleiset tab)
+14. Päättäjäryhmän otsikko (Yleiset tab)
 15. (not used currently in Mediatri)
-16. Palvelunimikkeist� ((Yleiset tab)
+16. Palvelunimikkeistö ((Yleiset tab)
 17. Tapahtumamalli (Yleiset tab)</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -101,164 +108,164 @@
         </thead>
         <tbody>
         <tr>
-          <td>  tunnus
+          <td>  <span class="property-name">tunnus</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  nimi
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kayttajaryhma
+          <td>  <span class="property-name">nimi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  palvelunTarveOtsikko
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  paatostekstinOtsikko
+          <td>  <span class="property-name">kayttajaryhma</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  lakipykalat
-</td>
-          <td>  array of string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  suoritekoodi
+          <td>  <span class="property-name">palvelunTarveOtsikko</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  diaarinumerosarja
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  paatosAvoin
+          <td>  <span class="property-name">paatostekstinOtsikko</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  riviotsikko
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  sarakeotsikko
+          <td>  <span class="property-name">lakipykalat</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">array of string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  laskutusTapahtumienMukaisesti
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tukipalvelu
+          <td>  <span class="property-name">suoritekoodi</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  paattajaryhmanOtsikko
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  palvelunimikkeisto
+          <td>  <span class="property-name">diaarinumerosarja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  tapahtumamalli
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  laskettavatTilat
+          <td>  <span class="property-name">paatosAvoin</span>
 </td>
-          <td>  array of <a href="json_PaatosSeurantaTilaCodes.html">PaatosSeurantaTilaCodes</a>
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">riviotsikko</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">sarakeotsikko</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">laskutusTapahtumienMukaisesti</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tukipalvelu</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">paattajaryhmanOtsikko</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">palvelunimikkeisto</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tapahtumamalli</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">laskettavatTilat</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_PaatosSeurantaTilaCodes.html">PaatosSeurantaTilaCodes</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;tunnus&quot; : &quot;...&quot;,
   &quot;nimi&quot; : &quot;...&quot;,
   &quot;kayttajaryhma&quot; : &quot;...&quot;,
@@ -275,7 +282,7 @@
   &quot;paattajaryhmanOtsikko&quot; : &quot;...&quot;,
   &quot;palvelunimikkeisto&quot; : &quot;...&quot;,
   &quot;tapahtumamalli&quot; : &quot;...&quot;,
-  &quot;laskettavatTilat&quot; : [ &quot;SUUNNITELTU&quot;, &quot;SUUNNITELTU&quot; ]
+  &quot;laskettavatTilat&quot; : [ &quot;SUUNNITELTU&quot;, &quot;EI_TOTEUTUNUT&quot; ]
 }</pre>
 
         <footer class="footer">
@@ -290,14 +297,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

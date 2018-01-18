@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,23 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#JONO"><abbr title="JONO"><span class="sideoverflow">JONO</span></abbr></a></li>
+          <li><a href="#PALVELUJEN_OSTO"><abbr title="PALVELUJEN_OSTO"><span class="sideoverflow">PALVELUJEN_OSTO</span></abbr></a></li>
+          <li><a href="#KOTIHOITO"><abbr title="KOTIHOITO"><span class="sideoverflow">KOTIHOITO</span></abbr></a></li>
+          <li><a href="#PALVELUASUMINEN"><abbr title="PALVELUASUMINEN"><span class="sideoverflow">PALVELUASUMINEN</span></abbr></a></li>
+          <li><a href="#LAHETE_JA_HOITOPALAUTE"><abbr title="LAHETE_JA_HOITOPALAUTE"><span class="sideoverflow">LAHETE_JA_HOITOPALAUTE</span></abbr></a></li>
+          <li><a href="#YHTEYDENOTTO_HOIDON_TARPEEN_ARVIOIMISEKSI"><abbr title="YHTEYDENOTTO_HOIDON_TARPEEN_ARVIOIMISEKSI"><span class="sideoverflow">YHTEYDENOTTO_HOIDON_TARPEEN_ARVIOIMISEKSI</span></abbr></a></li>
+          <li><a href="#LAAKEMAARAYKSEN_UUDISTAMISPYYNTO"><abbr title="LAAKEMAARAYKSEN_UUDISTAMISPYYNTO"><span class="sideoverflow">LAAKEMAARAYKSEN_UUDISTAMISPYYNTO</span></abbr></a></li>
+          <li><a href="#ERITYINEN_SYY"><abbr title="ERITYINEN_SYY"><span class="sideoverflow">ERITYINEN_SYY</span></abbr></a></li>
+          <li><a href="#AJANVARAUS"><abbr title="AJANVARAUS"><span class="sideoverflow">AJANVARAUS</span></abbr></a></li>
+          <li><a href="#AVOHOITO"><abbr title="AVOHOITO"><span class="sideoverflow">AVOHOITO</span></abbr></a></li>
+          <li><a href="#OSASTOHOITO"><abbr title="OSASTOHOITO"><span class="sideoverflow">OSASTOHOITO</span></abbr></a></li>
+          <li><a href="#KONSULTAATIO"><abbr title="KONSULTAATIO"><span class="sideoverflow">KONSULTAATIO</span></abbr></a></li>
+          <li><a href="#TOIMENPIDE"><abbr title="TOIMENPIDE"><span class="sideoverflow">TOIMENPIDE</span></abbr></a></li>
+          <li><a href="#ANESTESIA"><abbr title="ANESTESIA"><span class="sideoverflow">ANESTESIA</span></abbr></a></li>
+          <li><a href="#LABORATORIO"><abbr title="LABORATORIO"><span class="sideoverflow">LABORATORIO</span></abbr></a></li>
+          <li><a href="#RADIOLOGIA"><abbr title="RADIOLOGIA"><span class="sideoverflow">RADIOLOGIA</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -78,7 +93,7 @@ Used to carry the data from database to the client side.</p>
         <dd><a href="ns0.xsd">ns0.xsd</a></dd>
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -92,84 +107,84 @@ Used to carry the data from database to the client side.</p>
         </thead>
         <tbody>
         <tr>
-          <td>  kategoria
+          <td>  <span class="property-name">kategoria</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the category of the tutkimus. Category could be
-"tilattu", "kuittaamaton" or "tulos"
-</td>
-        </tr>
-        <tr>
-          <td>  latestTime
-</td>
-          <td>  dateTime
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  &nbsp;
+          <td>  <span class="property-description">Returns the category of the tutkimus. Category could be
+"tilattu", "kuittaamaton" or "tulos"</span>
 </td>
         </tr>
         <tr>
-          <td>  tutkimus
+          <td>  <span class="property-name">latestTime</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">dateTime
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the name of the Tutkimus
+          <td>  <span class="property-description">&nbsp;</span>
 </td>
         </tr>
         <tr>
-          <td>  tutkimuspyyntoTiedotList
+          <td>  <span class="property-name">tutkimus</span>
 </td>
-          <td>  <a href="xml_ns0_tutkimuspyyntoTiedot.html">tutkimuspyyntoTiedot</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/unbounded
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns a list of Tutkimus details under the same tutkimus name
+          <td>  <span class="property-description">Returns the name of the Tutkimus</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tutkimuspyyntoTiedotList</span>
+</td>
+          <td>  <span class="datatype-reference">list of <a href="xml_ns0_tutkimuspyyntoTiedot.html">tutkimuspyyntoTiedot</a>
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/unbounded
+</span>
+</td>
+          <td>  <span class="property-description">Returns a list of Tutkimus details under the same tutkimus name</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-xml">&lt;tutkimuspyynto&gt;
+      
+      <pre class="prettyprint language-xml example">&lt;tutkimuspyynto&gt;
   &lt;tutkimus&gt;...&lt;/tutkimus&gt;
   &lt;tutkimuspyyntoTiedotList&gt;
     &lt;pyynto&gt;...&lt;/pyynto&gt;
@@ -254,14 +269,14 @@ Used to carry the data from database to the client side.</p>
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

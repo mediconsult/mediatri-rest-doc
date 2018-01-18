@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,10 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#KESKEN"><abbr title="KESKEN"><span class="sideoverflow">KESKEN</span></abbr></a></li>
+          <li><a href="#VALMIS"><abbr title="VALMIS"><span class="sideoverflow">VALMIS</span></abbr></a></li>
+          <li><a href="#MITATOITY"><abbr title="MITATOITY"><span class="sideoverflow">MITATOITY</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +73,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,71 +84,71 @@
         </thead>
         <tbody>
         <tr>
-          <td>  start
+          <td>  <span class="property-name">start</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Get the start time of the rule in Unix time
-</td>
-        </tr>
-        <tr>
-          <td>  durationInMinutes
-</td>
-          <td>  number
-
-</td>
-          <td>  Get the duration of the rule in minutes
+          <td>  <span class="property-description">Get the start time of the rule in Unix time</span>
 </td>
         </tr>
         <tr>
-          <td>  recurrenceEnd
+          <td>  <span class="property-name">durationInMinutes</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Get the end time of a recurring rule in Unix time
+          <td>  <span class="property-description">Get the duration of the rule in minutes</span>
 </td>
         </tr>
         <tr>
-          <td>  recurrenceCode
+          <td>  <span class="property-name">recurrenceEnd</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Get the recurrence rule. The string is in a HL7 specified format.
+          <td>  <span class="property-description">Get the end time of a recurring rule in Unix time</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">recurrenceCode</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Get the recurrence rule. The string is in a HL7 specified format.
 For example: Q6H indicates that the event is performed at least once every 6 hours around the clock.
 QJ1 indicates that the event is performed at least every week on Mondays.
 QAM~QPM indicates that the event is performed at least once every morning and every evening.
 QJ1~QJ3~QJ5 indicates that the event is performed at least every week on Mondays, Wednesdays, and Fridays.
-C indicates that the event is performed continuously, 7 days per week.
+C indicates that the event is performed continuously, 7 days per week.</span>
 </td>
         </tr>
         <tr>
-          <td>  calendarContext
+          <td>  <span class="property-name">calendarContext</span>
 </td>
-          <td>  <a href="json_CalendarContextDto.html">CalendarContextDto</a>
-
+          <td>  <span class="datatype-reference"><a href="json_CalendarContextDto.html">CalendarContextDto</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  calendarEventIds
-</td>
-          <td>  array of number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  eventModelId
+          <td>  <span class="property-name">calendarEventIds</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">array of number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">eventModelId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -155,41 +157,43 @@ C indicates that the event is performed continuously, 7 days per week.
         </tr>
         <tbody>
         <tr>
-          <td>version</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>id</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>created</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">created</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>modified</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">modified</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;start&quot; : 12345,
   &quot;durationInMinutes&quot; : 12345,
   &quot;recurrenceEnd&quot; : 12345,
   &quot;recurrenceCode&quot; : &quot;...&quot;,
   &quot;calendarContext&quot; : {
     &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
     &quot;form&quot; : 12345
   },
   &quot;calendarEventIds&quot; : [ 12345, 12345 ],
@@ -212,14 +216,14 @@ C indicates that the event is performed continuously, 7 days per week.
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

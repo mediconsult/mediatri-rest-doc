@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#VIEW"><abbr title="VIEW"><span class="sideoverflow">VIEW</span></abbr></a></li>
+          <li><a href="#ADD"><abbr title="ADD"><span class="sideoverflow">ADD</span></abbr></a></li>
+          <li><a href="#CHANGE"><abbr title="CHANGE"><span class="sideoverflow">CHANGE</span></abbr></a></li>
+          <li><a href="#REMOVE"><abbr title="REMOVE"><span class="sideoverflow">REMOVE</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -69,9 +72,13 @@
       <p></p>
 
       <dl class="dl-horizontal">
+        <dt>Abstract Type</dt>
+        <dd></dd>
+        <dt>Subtypes</dt>
+        <dd><a href="json_SeurantaStringData.html">SeurantaStringData</a>, <a href="json_NimikeGroupData.html">NimikeGroupData</a>, <a href="json_SeurantaOptionsData.html">SeurantaOptionsData</a>, <a href="json_SuggestedAction.html">SuggestedAction</a>, <a href="json_LaakeTerapiaryhma.html">LaakeTerapiaryhma</a>, <a href="json_KertomusEntryEdit.html">KertomusEntryEdit</a>, <a href="json_TitleBaseData.html">TitleBaseData</a>, <a href="json_SeurantaEntry.html">SeurantaEntry</a>, <a href="json_LaakeVastaAihe.html">LaakeVastaAihe</a>, <a href="json_Osastokartta.html">Osastokartta</a>, <a href="json_LaakeKoostumus.html">LaakeKoostumus</a>, <a href="json_GuidelineLink.html">GuidelineLink</a>, <a href="json_LaakeSelosteTeksti.html">LaakeSelosteTeksti</a>, <a href="json_TutkimuspyyntoTiedot.html">TutkimuspyyntoTiedot</a>, <a href="json_Riskitieto.html">Riskitieto</a>, <a href="json_RiskData.html">RiskData</a>, <a href="json_LaakitysKuittaus.html">LaakitysKuittaus</a>, <a href="json_LaakeTiivistelmaTeksti.html">LaakeTiivistelmaTeksti</a>, <a href="json_OptionsData.html">OptionsData</a>, <a href="json_DiagnoseData.html">DiagnoseData</a>, <a href="json_LaakitysKayttoaihe.html">LaakitysKayttoaihe</a>, <a href="json_Tutkimuspyynto.html">Tutkimuspyynto</a>, <a href="json_TutkimuspyyntoMikrobi.html">TutkimuspyyntoMikrobi</a>, <a href="json_LaakitysTauko.html">LaakitysTauko</a>, <a href="json_Diagnosis.html">Diagnosis</a>, <a href="json_PtukiResponse.html">PtukiResponse</a>, <a href="json_TitleSettings.html">TitleSettings</a>, <a href="json_TitleComment.html">TitleComment</a>, <a href="json_ValueDescriptionData.html">ValueDescriptionData</a>, <a href="json_Palvelukeskeytys.html">Palvelukeskeytys</a>, <a href="json_System.html">System</a>, <a href="json_LaakeSeloste.html">LaakeSeloste</a>, <a href="json_Antoreitti.html">Antoreitti</a>, <a href="json_DrugsAndPregnancyOrLactation.html">DrugsAndPregnancyOrLactation</a>, <a href="json_MittausBaseData.html">MittausBaseData</a>, <a href="json_OsastolistaTilannekoodi.html">OsastolistaTilannekoodi</a>, <a href="json_LaakeAnnostus.html">LaakeAnnostus</a>, <a href="json_Reminder.html">Reminder</a>, <a href="json_LaakeAnnostusSoveltuvuus.html">LaakeAnnostusSoveltuvuus</a>, <a href="json_Yhteisvaikutus.html">Yhteisvaikutus</a>, <a href="json_Contraindication.html">Contraindication</a>, <a href="json_DrugsAndRenalFunctions.html">DrugsAndRenalFunctions</a>, <a href="json_Interaction.html">Interaction</a>, <a href="json_Laake.html">Laake</a>, <a href="json_LaakitysAnto.html">LaakitysAnto</a>, <a href="json_Hoito.html">Hoito</a>, <a href="json_ExperimentalDataSet.html">ExperimentalDataSet</a>, <a href="json_LaakeTiivistelma.html">LaakeTiivistelma</a>, <a href="json_ReseptiTiedot.html">ReseptiTiedot</a>, <a href="json_LaakeAine.html">LaakeAine</a>, <a href="json_RelevantBreakPoint.html">RelevantBreakPoint</a>, <a href="json_LaakeYhteisvaikutus.html">LaakeYhteisvaikutus</a>, <a href="json_LaakitysTapa.html">LaakitysTapa</a>, <a href="json_SeurantaValueDescriptionData.html">SeurantaValueDescriptionData</a>, <a href="json_DrugsAndRenalFunction.html">DrugsAndRenalFunction</a>, <a href="json_SimpleValueData.html">SimpleValueData</a>, <a href="json_TutkimuspyyntoHerkkyys.html">TutkimuspyyntoHerkkyys</a>, <a href="json_Potilasryhma.html">Potilasryhma</a>, <a href="json_Indication.html">Indication</a>, <a href="json_Annostelu.html">Annostelu</a>, <a href="json_LaakePakkaus.html">LaakePakkaus</a>, <a href="json_Uusimispyynto.html">Uusimispyynto</a>, <a href="json_MittausData.html">MittausData</a>, <a href="json_Drug.html">Drug</a>, <a href="json_LaakeAtc.html">LaakeAtc</a></dd>
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -86,7 +93,9 @@
 
       <p class="lead">Example</p>
 
-      <pre class="prettyprint lang-js">{ }</pre>
+      <div class="alert alert-warning">This data type is abstract. The example below may be incomplete. More accurate examples can be found in subtypes pages.</div>
+      
+      <pre class="prettyprint language-js example">{ }</pre>
 
         <footer class="footer">
           <div class="container">
@@ -100,14 +109,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

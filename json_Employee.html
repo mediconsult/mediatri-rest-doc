@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,12 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#Basic"><abbr title="Basic"><span class="sideoverflow">Basic</span></abbr></a></li>
+          <li><a href="#Additional"><abbr title="Additional"><span class="sideoverflow">Additional</span></abbr></a></li>
+          <li><a href="#Adverse"><abbr title="Adverse"><span class="sideoverflow">Adverse</span></abbr></a></li>
+          <li><a href="#External"><abbr title="External"><span class="sideoverflow">External</span></abbr></a></li>
+          <li><a href="#Accident"><abbr title="Accident"><span class="sideoverflow">Accident</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -66,12 +70,12 @@
 
       <h1 class="page-header">Employee <small>Data Type</small></h1>
 
-      <p></p>
+      <p>Data transfer object for employee data</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,64 +86,51 @@
         </thead>
         <tbody>
         <tr>
-          <td>  id
+          <td>  <span class="property-name">name</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  name
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
+        </tbody>
         <tr>
-          <td>  data
-</td>
-          <td>  <a href="json_User.html">User</a>
-
-</td>
-          <td>  
-</td>
+          <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_Person.html">Person</a></h5></td>
+        </tr>
+        <tbody>
+        <tr>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">data</span></td>
+          <td><span class="datatype-reference"><a href="json_GenericOmistaja.html">GenericOmistaja</a>
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
-  &quot;id&quot; : 12345,
+      
+      <pre class="prettyprint language-js example">{
   &quot;name&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
   &quot;data&quot; : {
-    &quot;lastName&quot; : &quot;...&quot;,
-    &quot;startTime&quot; : 12345,
-    &quot;endTime&quot; : 12345,
-    &quot;userName&quot; : &quot;...&quot;,
-    &quot;firstName&quot; : &quot;...&quot;,
-    &quot;basicInfo&quot; : {
-      &quot;dataLoaded&quot; : true,
-      &quot;href&quot; : &quot;...&quot;,
-      &quot;titles&quot; : [ { }, { } ]
-    },
-    &quot;skills&quot; : {
-      &quot;dataLoaded&quot; : true,
-      &quot;href&quot; : &quot;...&quot;,
-      &quot;skills&quot; : [ { }, { } ]
-    },
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;nameExtension&quot; : &quot;...&quot;,
     &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
     &quot;omistajaId&quot; : 12345,
     &quot;omistajaListAvailability&quot; : {
       &quot;startTime&quot; : 12345,
       &quot;endTime&quot; : 12345
-    }
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
   }
 }</pre>
 
@@ -155,14 +146,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

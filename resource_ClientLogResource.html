@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,8 +51,8 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_ClientLogResource_error_POST">POST /log/error</a></li>
-          <li><a href="#resource_ClientLogResource_info_POST">POST /log/info</a></li>
+          <li><a href="#resource_ClientLogResource_error_POST"><abbr title="POST /log/error"><span class="sideoverflow">POST /log/error</span></abbr></a></li>
+          <li><a href="#resource_ClientLogResource_info_POST"><abbr title="POST /log/info"><span class="sideoverflow">POST /log/info</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -72,11 +70,11 @@
       <p>Service for client logs</p>
 
       <div id="resource_ClientLogResource_error_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/log/error <a href="../api/v1log/error" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/log/error <a href="../api/v1/log/error" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Write given error to log</p>
 
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -87,20 +85,20 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td>string
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">message to be logged as error</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">string
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">message to be logged as error</span></td>
           </tr>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server.">application/xml</abbr></td>
-            <td>string
- (XML)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">string
+ (XML)</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -111,21 +109,50 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td>OK response</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">OK response</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /log/error
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_ClientLogResource_info_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/log/info <a href="../api/v1log/info" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/log/info <a href="../api/v1/log/info" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Write given info text to log</p>
 
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -136,20 +163,20 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td>string
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">message to be logged as info</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">string
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">message to be logged as info</span></td>
           </tr>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server.">application/xml</abbr></td>
-            <td>string
- (XML)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">string
+ (XML)</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -160,13 +187,42 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td>OK response</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">OK response</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /log/info
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -181,14 +237,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

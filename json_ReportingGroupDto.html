@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#JULKINEN_TERVEYDENHUOLTO"><abbr title="JULKINEN_TERVEYDENHUOLTO"><span class="sideoverflow">JULKINEN_TERVEYDENHUOLTO</span></abbr></a></li>
+          <li><a href="#YKSITYINEN_TERVEYDENHUOLTO"><abbr title="YKSITYINEN_TERVEYDENHUOLTO"><span class="sideoverflow">YKSITYINEN_TERVEYDENHUOLTO</span></abbr></a></li>
+          <li><a href="#TYOTERVEYSHUOLTO"><abbr title="TYOTERVEYSHUOLTO"><span class="sideoverflow">TYOTERVEYSHUOLTO</span></abbr></a></li>
+          <li><a href="#AMMATINHARJOITTAJAT"><abbr title="AMMATINHARJOITTAJAT"><span class="sideoverflow">AMMATINHARJOITTAJAT</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -66,12 +69,12 @@
 
       <h1 class="page-header">ReportingGroupDto <small>Data Type</small></h1>
 
-      <p>This DTO pass ReportingGroup (Raportointiryhm�) information</p>
+      <p>This DTO pass ReportingGroup (Raportointiryhmä) information</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,48 +85,48 @@
         </thead>
         <tbody>
         <tr>
-          <td>  color
+          <td>  <span class="property-name">color</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Color in hex color format eg. "#1f2f3f" (regexp =  #([A-Fa-f0-9]{6}) )
-</td>
-        </tr>
-        <tr>
-          <td>  meaning
-</td>
-          <td>  <a href="json_Meaning.html">Meaning</a>
-
-</td>
-          <td>  Meaning can be AVAILABLE, BYSY_MANDAROTY or BUSY_OPTIONAL
+          <td>  <span class="property-description">Color in hex color format eg. "#1f2f3f" (regexp =  #([A-Fa-f0-9]{6}) )</span>
 </td>
         </tr>
         <tr>
-          <td>  calendarModelFormId
+          <td>  <span class="property-name">meaning</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference"><a href="json_Meaning.html">Meaning</a>
+</span>
 </td>
-          <td>  Mediatri lomake id of Kalenterimallilomake used here
-</td>
-        </tr>
-        <tr>
-          <td>  category
-</td>
-          <td>  <a href="json_EventCategory.html">EventCategory</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description">Meaning can be AVAILABLE, BYSY_MANDAROTY or BUSY_OPTIONAL</span>
 </td>
         </tr>
         <tr>
-          <td>  eventModels
+          <td>  <span class="property-name">calendarModelFormId</span>
 </td>
-          <td>  array of <a href="json_EventModelDto.html">EventModelDto</a>
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description">Mediatri lomake id of Kalenterimallilomake used here</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">category</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_EventCategory.html">EventCategory</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">eventModels</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_EventModelDto.html">EventModelDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -132,22 +135,22 @@
         </tr>
         <tbody>
         <tr>
-          <td>name</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">name</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>abbr</td>
-          <td>string
-</td>
-          <td>Note: in CourseDto and CoursePeriodDto this is used as a field tunniste. (Unique and Mandatory)</td>
+          <td><span class="property-name">abbr</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description">Note: in CourseDto and CoursePeriodDto this is used as a field tunniste. (Unique and Mandatory)</span></td>
         </tr>
         <tr>
-          <td>description</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">description</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
         <tr>
@@ -155,90 +158,101 @@
         </tr>
         <tbody>
         <tr>
-          <td>version</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>id</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>created</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">created</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>modified</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">modified</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;color&quot; : &quot;...&quot;,
   &quot;meaning&quot; : &quot;AVAILABLE&quot;,
   &quot;calendarModelFormId&quot; : 12345,
-  &quot;category&quot; : &quot;WORK&quot;,
+  &quot;category&quot; : &quot;TIME&quot;,
   &quot;eventModels&quot; : [ {
     &quot;defaultTitleValues&quot; : [ {
       &quot;eventModelContentGroupId&quot; : 12345,
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;EXCLUDED&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_ROOM&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
       &quot;eventModelContentGroupId&quot; : 12345,
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_PLANNING_SETTINGS&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;abbr&quot; : &quot;...&quot;,
     &quot;basicData&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
+      &quot;property1&quot; : [ {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      }, {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      } ],
+      &quot;property2&quot; : [ {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      }, {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      } ]
     },
     &quot;reportingGroupId&quot; : 12345,
     &quot;calendarModelFormId&quot; : 12345,
     &quot;defaultUnit&quot; : 12345,
     &quot;internalNote&quot; : &quot;...&quot;,
     &quot;defaultDurationInMins&quot; : 12345,
-    &quot;startTimeLimit&quot; : &quot;...&quot;,
-    &quot;endTimeLimit&quot; : &quot;...&quot;,
-    &quot;timeLimitChangeable&quot; : true,
     &quot;requiredSkills&quot; : [ {
+      &quot;role&quot; : &quot;...&quot;,
+      &quot;eventModelSkillId&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;removed&quot; : true,
       &quot;changeable&quot; : true,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
+      &quot;role&quot; : &quot;...&quot;,
+      &quot;eventModelSkillId&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;removed&quot; : true,
       &quot;changeable&quot; : true,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
@@ -265,8 +279,8 @@
       &quot;modified&quot; : 12345
     } ],
     &quot;requiredEquipmentTypes&quot; : [ {
-      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER&quot;,
       &quot;amount&quot; : 12345,
+      &quot;requirement&quot; : &quot;FIXED_AMOUNT&quot;,
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -275,8 +289,8 @@
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
-      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER&quot;,
       &quot;amount&quot; : 12345,
+      &quot;requirement&quot; : &quot;FIXED_AMOUNT&quot;,
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -286,37 +300,52 @@
       &quot;modified&quot; : 12345
     } ],
     &quot;contentGroups&quot; : [ {
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;COLLAPSED&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_EQUIPMENT&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_BASIC_INFORMATION&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
-    &quot;minParticipants&quot; : 12345,
-    &quot;maxParticipants&quot; : 12345,
+    &quot;customerEvent&quot; : true,
+    &quot;participantAmount&quot; : {
+      &quot;min&quot; : 12345,
+      &quot;max&quot; : 12345,
+      &quot;minMandatoryInCreation&quot; : true,
+      &quot;minMandatoryWhenDone&quot; : true,
+      &quot;maxLimited&quot; : true
+    },
     &quot;waitingRoom&quot; : &quot;...&quot;,
     &quot;serviceClass&quot; : &quot;...&quot;,
     &quot;serviceClassChangeable&quot; : true,
     &quot;outdated&quot; : true,
     &quot;hasEvents&quot; : true,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;abbr&quot; : &quot;...&quot;,
+    &quot;planningSettingsChangeable&quot; : {
+      &quot;timeLimitChangeable&quot; : true,
+      &quot;optimizationInUseChangeable&quot; : true,
+      &quot;keepResourcesInOptimizationChangeable&quot; : true,
+      &quot;customerVisitChangeable&quot; : true,
+      &quot;startTimeLimit&quot; : &quot;...&quot;,
+      &quot;endTimeLimit&quot; : &quot;...&quot;,
+      &quot;keepResourcesInOptimization&quot; : true,
+      &quot;customerVisit&quot; : true,
+      &quot;optimizationInUse&quot; : true
+    },
     &quot;description&quot; : &quot;...&quot;,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
@@ -325,54 +354,65 @@
   }, {
     &quot;defaultTitleValues&quot; : [ {
       &quot;eventModelContentGroupId&quot; : 12345,
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;COLLAPSED&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_PLANNING_SETTINGS&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
       &quot;eventModelContentGroupId&quot; : 12345,
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_ROOM&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;abbr&quot; : &quot;...&quot;,
     &quot;basicData&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
+      &quot;property1&quot; : [ {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      }, {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      } ],
+      &quot;property2&quot; : [ {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      }, {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      } ]
     },
     &quot;reportingGroupId&quot; : 12345,
     &quot;calendarModelFormId&quot; : 12345,
     &quot;defaultUnit&quot; : 12345,
     &quot;internalNote&quot; : &quot;...&quot;,
     &quot;defaultDurationInMins&quot; : 12345,
-    &quot;startTimeLimit&quot; : &quot;...&quot;,
-    &quot;endTimeLimit&quot; : &quot;...&quot;,
-    &quot;timeLimitChangeable&quot; : true,
     &quot;requiredSkills&quot; : [ {
+      &quot;role&quot; : &quot;...&quot;,
+      &quot;eventModelSkillId&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;removed&quot; : true,
       &quot;changeable&quot; : true,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
+      &quot;role&quot; : &quot;...&quot;,
+      &quot;eventModelSkillId&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;removed&quot; : true,
       &quot;changeable&quot; : true,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
@@ -399,8 +439,8 @@
       &quot;modified&quot; : 12345
     } ],
     &quot;requiredEquipmentTypes&quot; : [ {
-      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER&quot;,
       &quot;amount&quot; : 12345,
+      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER&quot;,
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -409,8 +449,8 @@
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
-      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER&quot;,
       &quot;amount&quot; : 12345,
+      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER_AND_WORKER&quot;,
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -420,37 +460,52 @@
       &quot;modified&quot; : 12345
     } ],
     &quot;contentGroups&quot; : [ {
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;EXCLUDED&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_GENERAL&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_EQUIPMENT&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
-    &quot;minParticipants&quot; : 12345,
-    &quot;maxParticipants&quot; : 12345,
+    &quot;customerEvent&quot; : true,
+    &quot;participantAmount&quot; : {
+      &quot;min&quot; : 12345,
+      &quot;max&quot; : 12345,
+      &quot;minMandatoryInCreation&quot; : true,
+      &quot;minMandatoryWhenDone&quot; : true,
+      &quot;maxLimited&quot; : true
+    },
     &quot;waitingRoom&quot; : &quot;...&quot;,
     &quot;serviceClass&quot; : &quot;...&quot;,
     &quot;serviceClassChangeable&quot; : true,
     &quot;outdated&quot; : true,
     &quot;hasEvents&quot; : true,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;abbr&quot; : &quot;...&quot;,
+    &quot;planningSettingsChangeable&quot; : {
+      &quot;timeLimitChangeable&quot; : true,
+      &quot;optimizationInUseChangeable&quot; : true,
+      &quot;keepResourcesInOptimizationChangeable&quot; : true,
+      &quot;customerVisitChangeable&quot; : true,
+      &quot;startTimeLimit&quot; : &quot;...&quot;,
+      &quot;endTimeLimit&quot; : &quot;...&quot;,
+      &quot;keepResourcesInOptimization&quot; : true,
+      &quot;customerVisit&quot; : true,
+      &quot;optimizationInUse&quot; : true
+    },
     &quot;description&quot; : &quot;...&quot;,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
@@ -478,14 +533,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

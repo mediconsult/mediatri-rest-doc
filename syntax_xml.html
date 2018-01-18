@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -65,7 +63,7 @@
 
   <h1 class="page-header">XML</h1>
 
-  <table class="table table-hover">
+  <table class="table table-hover datatypes">
   <caption>Default Namespace  (<a href="ns0.xsd">schema</a>)</caption>
   <thead>
     <tr>
@@ -75,15 +73,74 @@
   </thead>
   <tbody data-link="row" class="rowlink">
     <tr class="clickable-row" data-href="xml_ns0_abstractDTO.html">
-      <td>  abstractDTO
+      <td>  <span class="datatype-name">abstractDTO</span>
 </td>
-      <td>  
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_baseModel.html">
+      <td>  <span class="datatype-name">baseModel</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_extendFormInfo.html">
+      <td>  <span class="datatype-name">extendFormInfo</span>
+</td>
+      <td>  <span class="datatype-description">DTO class to present information about lomake from Lomake table.
+This class extends <a href="json_FormInfo.html">FormInfo</a>.
+This class is not designed to use in Json model and can be built only from ILomakeGetters class using build method</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_formInfo.html">
+      <td>  <span class="datatype-name">formInfo</span>
+</td>
+      <td>  <span class="datatype-description">DTO for representing Mediatri form related information</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_formTypeInfo.html">
+      <td>  <span class="datatype-name">formTypeInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_hoitojakso.html">
+      <td>  <span class="datatype-name">hoitojakso</span>
+</td>
+      <td>  <span class="datatype-description">Hoitojakso DTO</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_poistettuStatus.html">
+      <td>  <span class="datatype-name">poistettuStatus</span>
+</td>
+      <td>  <span class="datatype-description">Status possibilities for poistettu-field.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_puutteellinenStatus.html">
+      <td>  <span class="datatype-name">puutteellinenStatus</span>
+</td>
+      <td>  <span class="datatype-description">Status possibilities for puutteellinen-field.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_hoitosuhde.html">
+      <td>  <span class="datatype-name">hoitosuhde</span>
+</td>
+      <td>  <span class="datatype-description">This DTO contains information about user&lt;-&gt;patient hoitosuhde</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_kayttoaiheView.html">
+      <td>  <span class="datatype-name">kayttoaiheView</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Kayttoaihe
+
+A class to present KAYTTOAIHE table in medication functionality
+Used to carry the data from database to the client side.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakitysAnto.html">
-      <td>  laakitysAnto
+      <td>  <span class="datatype-name">laakitysAnto</span>
 </td>
-      <td>  DTO for LaakitysAnto.
+      <td>  <span class="datatype-description">DTO for LaakitysAnto.
 
 * A class to present LAAKITYS_ANTO table in medication functionality.
 Used to carry the data from database to the client side.
@@ -110,210 +167,1946 @@ Used to carry the data from database to the client side.
 <tr><td>annettavaMaara</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
 <tr><td>annettavaYksikko</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
 <tr><td>annettavaMaksimi</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr>
-</table>
+</table></span>
 </td>
     </tr>
-    <tr class="clickable-row" data-href="xml_ns0_laakitysKayttoaiheView.html">
-      <td>  laakitysKayttoaiheView
+    <tr class="clickable-row" data-href="xml_ns0_laakitysView.html">
+      <td>  <span class="datatype-name">laakitysView</span>
 </td>
-      <td>  DTO for LaakitysKayttoaihe
+      <td>  <span class="datatype-description">DTO for Medicine</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_osastokartta.html">
+      <td>  <span class="datatype-name">osastokartta</span>
+</td>
+      <td>  <span class="datatype-description">This is the configuration for all paikka's.
+Contains ASETUKSET from paikkahistoria.
+Each Osastokartta consist of multiple different Osastolista</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_potilasryhma.html">
+      <td>  <span class="datatype-name">potilasryhma</span>
+</td>
+      <td>  <span class="datatype-description">Dto for ryhma in Paikkakartta</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_osastolista.html">
+      <td>  <span class="datatype-name">osastolista</span>
+</td>
+      <td>  <span class="datatype-description">This is one item inside Osastolista</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_osastolistaPaikkatieto.html">
+      <td>  <span class="datatype-name">osastolistaPaikkatieto</span>
+</td>
+      <td>  <span class="datatype-description">This is one paikka inside Osastolista</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_osastolistaTilannekoodi.html">
+      <td>  <span class="datatype-name">osastolistaTilannekoodi</span>
+</td>
+      <td>  <span class="datatype-description">Dto for Tilanne in osastolista.
+This is found from paikkahistoria-form "Tilanne".</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palvelutapahtuma.html">
+      <td>  <span class="datatype-name">palvelutapahtuma</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palvelutapahtumaList.html">
+      <td>  <span class="datatype-name">palvelutapahtumaList</span>
+</td>
+      <td>  <span class="datatype-description">This class is dto for transferring multiple different palvelutapahtumas in single query.
+This has:<br>
+<ul>
+<li>list of palvelutapahtumas</li>
+<li>reference to preferred palvelutapahtuma from list (Care relation requires this)</li>
+</ul></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palvelutapahtumaSelectType.html">
+      <td>  <span class="datatype-name">palvelutapahtumaSelectType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palvelutapahtumaluokitus.html">
+      <td>  <span class="datatype-name">palvelutapahtumaluokitus</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_permission.html">
+      <td>  <span class="datatype-name">permission</span>
+</td>
+      <td>  <span class="datatype-description">The (initial) rights dto for permissions</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_permissionDTO.html">
+      <td>  <span class="datatype-name">permissionDTO</span>
+</td>
+      <td>  <span class="datatype-description">Generic permission dto for client usage
 
-A class to present LAAKITYS_KAYTTOAIHE and KAYTTOAIHE tables in medication functionality
-Used to carry the data from database to the client side.
+Example:
+/hoitoohje/config
+{
+permissions: [
+{
+view: true,
+change: false,
+add: false,
+remove: false,
+type: ExtendFormInfo
+data: {
+formOwnerId: 0,
+fullFormTypeId: 73,
+formTypeInfo: {
+id: 73,
+name: ""
+description: ""
+},
+ownerTypeInfo: {
+id: 0,
+name: ""
+},
+lomakeId: 168,
+name: "",
+hoitosuhdevaatimus: "E"
+}
+}
+}</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rekisteri.html">
+      <td>  <span class="datatype-name">rekisteri</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rekisteritunnus.html">
+      <td>  <span class="datatype-name">rekisteritunnus</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_riskitieto.html">
+      <td>  <s><span class="datatype-name">riskitieto</span></s>
+</td>
+      <td>  <s><span class="datatype-description">DTO for Riskitieto
+
+
+A class to present RISKI table in Medisairaala.
+Used to carry the data from database to the client side.</span></s>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tapahtumalaji.html">
+      <td>  <span class="datatype-name">tapahtumalaji</span>
+</td>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_tutkimuspyynto.html">
-      <td>  tutkimuspyynto
+      <td>  <span class="datatype-name">tutkimuspyynto</span>
 </td>
-      <td>  DTO for LabExamination
+      <td>  <span class="datatype-description">DTO for LabExamination
 
 A class to present TUTKIMUSPYYNTO table in laboratory examination functionality.
-Used to carry the data from database to the client side.
+Used to carry the data from database to the client side.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_tutkimuspyyntoHerkkyys.html">
-      <td>  tutkimuspyyntoHerkkyys
+      <td>  <span class="datatype-name">tutkimuspyyntoHerkkyys</span>
 </td>
-      <td>  DTO for TutkimuspyyntoHerkkyys
+      <td>  <span class="datatype-description">DTO for TutkimuspyyntoHerkkyys
 
 A class to present TUTKIMUSPYYNTOHERKKYYS table in laboratory examination functionality.
-Used to carry the data from database to the client side.
+Used to carry the data from database to the client side.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_tutkimuspyyntoMikrobi.html">
-      <td>  tutkimuspyyntoMikrobi
+      <td>  <span class="datatype-name">tutkimuspyyntoMikrobi</span>
 </td>
-      <td>  DTO for Lab Examination Microbe
+      <td>  <span class="datatype-description">DTO for Lab Examination Microbe
 
 A class to present TUTKIMUSPYYNTOMIKROBI table in laboratory examination functionality.
-Used to carry the data from database to the client side.
+Used to carry the data from database to the client side.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_tutkimuspyyntoTiedot.html">
-      <td>  tutkimuspyyntoTiedot
+      <td>  <span class="datatype-name">tutkimuspyyntoTiedot</span>
 </td>
-      <td>  DTO for Lab Examination Details
+      <td>  <span class="datatype-description">DTO for Lab Examination Details
 
 A class to present TUTKIMUSPYYNTO table in laboratory examination functionality.
-Used to carry the data from database to the client side.
+Used to carry the data from database to the client side.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_diagnoseCode.html">
+      <td>  <span class="datatype-name">diagnoseCode</span>
+</td>
+      <td>  <span class="datatype-description">DTO for presenting a single diagnose code stored in DIAGNOOSI table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_diagnoseCodeType.html">
+      <td>  <span class="datatype-name">diagnoseCodeType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_hoito.html">
-      <td>  hoito
+      <td>  <span class="datatype-name">hoito</span>
 </td>
-      <td>  DTO for Hoito
+      <td>  <span class="datatype-description">DTO for Hoito
 
-A class to present HOITO table in hoito-ohjeet ja -m��r�ykset functionality.
-Used to carry the data from database to the client side.
+A class to present HOITO table in hoito-ohjeet ja -määräykset functionality.
+Used to carry the data from database to the client side.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_ammattilaisenTiedot.html">
+      <td>  <span class="datatype-name">ammattilaisenTiedot</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_documentInfo.html">
+      <td>  <span class="datatype-name">documentInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_kantaDTO.html">
+      <td>  <span class="datatype-name">kantaDTO</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_lomakeTietokentta.html">
+      <td>  <span class="datatype-name">lomakeTietokentta</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_lomakepalveluItem.html">
+      <td>  <span class="datatype-name">lomakepalveluItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_registryInfo.html">
+      <td>  <span class="datatype-name">registryInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_kertomuksetView.html">
+      <td>  <span class="datatype-name">kertomuksetView</span>
+</td>
+      <td>  <span class="datatype-description">DTO model for general medical record(kertomus) component.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_kertomusEntryEdit.html">
+      <td>  <span class="datatype-name">kertomusEntryEdit</span>
+</td>
+      <td>  <span class="datatype-description">DTO model for kertomus edit.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_kertomusEntryView.html">
+      <td>  <span class="datatype-name">kertomusEntryView</span>
+</td>
+      <td>  <span class="datatype-description">DTO model for kertomus view.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_kertomusID.html">
+      <td>  <span class="datatype-name">kertomusID</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_kertomusTilaEnum.html">
+      <td>  <span class="datatype-name">kertomusTilaEnum</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_annostelu.html">
+      <td>  <span class="datatype-name">annostelu</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Annostelu</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_antoreitti.html">
+      <td>  <span class="datatype-name">antoreitti</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Lääkityksen antoreitit</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laake.html">
-      <td>  laake
+      <td>  <span class="datatype-name">laake</span>
 </td>
-      <td>  DTO for Laake, data base table LAAKE_VALMISTE
+      <td>  <span class="datatype-description">DTO for Laake, data base table LAAKE_VALMISTE</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeAine.html">
-      <td>  laakeAine
+      <td>  <span class="datatype-name">laakeAine</span>
 </td>
-      <td>  DTO for LaakeAine, data base table LAAKE_AINE
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_AINE.html
+      <td>  <span class="datatype-description">DTO for LaakeAine, data base table LAAKE_AINE
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_AINE.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_AINE.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeAnnostus.html">
-      <td>  laakeAnnostus
+      <td>  <span class="datatype-name">laakeAnnostus</span>
 </td>
-      <td>  DTO for LaakeAnnostus
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS.html
+      <td>  <span class="datatype-description">DTO for LaakeAnnostus
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeAnnostusSoveltuvuus.html">
-      <td>  laakeAnnostusSoveltuvuus
+      <td>  <span class="datatype-name">laakeAnnostusSoveltuvuus</span>
 </td>
-      <td>  DTO for LaakeAnnostusSoveltuvuus
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS_SOVELTUVUUS.html
+      <td>  <span class="datatype-description">DTO for LaakeAnnostusSoveltuvuus
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS_SOVELTUVUUS.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_ANNOSTUS_SOVELTUVUUS.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeAtc.html">
-      <td>  laakeAtc
+      <td>  <span class="datatype-name">laakeAtc</span>
 </td>
-      <td>  DTO for LaakeAtc, data base table LAAKE_ATC
+      <td>  <span class="datatype-description">DTO for LaakeAtc, data base table LAAKE_ATC</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeKoostumus.html">
-      <td>  laakeKoostumus
+      <td>  <span class="datatype-name">laakeKoostumus</span>
 </td>
-      <td>  DTO for LaakeKoostumus
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html
+      <td>  <span class="datatype-description">DTO for LaakeKoostumus
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html</a></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakePakkaus.html">
+      <td>  <span class="datatype-name">laakePakkaus</span>
+</td>
+      <td>  <span class="datatype-description">DTO for LaakePakkaus</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeSeloste.html">
-      <td>  laakeSeloste
+      <td>  <span class="datatype-name">laakeSeloste</span>
 </td>
-      <td>  DTO for LaakeSeloste
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html
+      <td>  <span class="datatype-description">DTO for LaakeSeloste
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE.html</a> <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_SOVELTUVUUS.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeSelosteTeksti.html">
-      <td>  laakeSelosteTeksti
+      <td>  <span class="datatype-name">laakeSelosteTeksti</span>
 </td>
-      <td>  DTO for LaakeSelosteTeksti
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_TEKSTI.html
+      <td>  <span class="datatype-description">DTO for LaakeSelosteTeksti
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_TEKSTI.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_SELOSTE_TEKSTI.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeTerapiaryhma.html">
-      <td>  laakeTerapiaryhma
+      <td>  <span class="datatype-name">laakeTerapiaryhma</span>
 </td>
-      <td>  DTO for LaakeTerapiaryhma
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TERAPIARYHMA.html
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/TERAPIARYHMA.html
+      <td>  <span class="datatype-description">DTO for LaakeTerapiaryhma
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TERAPIARYHMA.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TERAPIARYHMA.html</a> <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/TERAPIARYHMA.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/TERAPIARYHMA.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeTiivistelma.html">
-      <td>  laakeTiivistelma
+      <td>  <span class="datatype-name">laakeTiivistelma</span>
 </td>
-      <td>  DTO for LaakeTiivistelma
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html
+      <td>  <span class="datatype-description">DTO for LaakeTiivistelma
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA.html</a> <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_SOVELTUVUUS.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeTiivistelmaTeksti.html">
-      <td>  laakeTiivistelmaTeksti
+      <td>  <span class="datatype-name">laakeTiivistelmaTeksti</span>
 </td>
-      <td>  DTO for LaakeTiivistelmaTeksti
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_TEKSTI.html
+      <td>  <span class="datatype-description">DTO for LaakeTiivistelmaTeksti
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_TEKSTI.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_TIIVISTELMA_TEKSTI.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeVastaAihe.html">
-      <td>  laakeVastaAihe
+      <td>  <span class="datatype-name">laakeVastaAihe</span>
 </td>
-      <td>  DTO for LaakeVastaAihe
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html
+      <td>  <span class="datatype-description">DTO for LaakeVastaAihe
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html</a> <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakeYhteisvaikutus.html">
-      <td>  laakeYhteisvaikutus
+      <td>  <span class="datatype-name">laakeYhteisvaikutus</span>
 </td>
-      <td>  DTO for Yhteisvaikutus
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_YHTEISVAIKUTUS.html
+      <td>  <span class="datatype-description">DTO for Yhteisvaikutus
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_YHTEISVAIKUTUS.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_YHTEISVAIKUTUS.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakitys.html">
-      <td>  laakitys
+      <td>  <span class="datatype-name">laakitys</span>
 </td>
-      <td>  DTO for Laakitys
+      <td>  <span class="datatype-description">DTO for Laakitys
+
+Laakitystauko should contain max one element, pause currently active.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakitysKayttoaihe.html">
-      <td>  laakitysKayttoaihe
+      <td>  <span class="datatype-name">laakitysKayttoaihe</span>
 </td>
-      <td>  DTO for LAAKITYS_KAYTTOAIHE and KAYTTOAIHE database tables
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KAYTTOAIHE.html
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/KAYTTOAIHE.html
+      <td>  <span class="datatype-description">DTO for LAAKITYS_KAYTTOAIHE and KAYTTOAIHE database tables
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KAYTTOAIHE.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KAYTTOAIHE.html</a> <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/KAYTTOAIHE.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/KAYTTOAIHE.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakitysKuittaus.html">
-      <td>  laakitysKuittaus
+      <td>  <span class="datatype-name">laakitysKuittaus</span>
 </td>
-      <td>  DTO for LaakitysKuittaus
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KUITTAUS.html
+      <td>  <span class="datatype-description">DTO for LaakitysKuittaus
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KUITTAUS.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_KUITTAUS.html</a></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laakitysLista.html">
+      <td>  <span class="datatype-name">laakitysLista</span>
+</td>
+      <td>  <span class="datatype-description">DTO for LaakitysLista</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakitysTapa.html">
-      <td>  laakitysTapa
+      <td>  <span class="datatype-name">laakitysTapa</span>
 </td>
-      <td>  DTO for LAAKITYS_TAPA
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAPA.html
+      <td>  <span class="datatype-description">DTO for LAAKITYS_TAPA
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAPA.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAPA.html</a></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_laakitysTauko.html">
-      <td>  laakitysTauko
+      <td>  <span class="datatype-name">laakitysTauko</span>
 </td>
-      <td>  DTO for LaakitysTauko
+      <td>  <span class="datatype-description">DTO for LaakitysTauko
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html</a></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_reseptiTiedot.html">
+      <td>  <span class="datatype-name">reseptiTiedot</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Resepti</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_uusimispyynto.html">
+      <td>  <span class="datatype-name">uusimispyynto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Uusimispyynto</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_yhteisvaikutus.html">
+      <td>  <span class="datatype-name">yhteisvaikutus</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Yhteisvaikutus
 
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html
+Stores two medicines and the interaction between them</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_basicInfo.html">
+      <td>  <span class="datatype-name">basicInfo</span>
+</td>
+      <td>  <span class="datatype-description">DTO for BasicInfo (Perustieto).
+Bound to ViewTitleValue class.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_gender.html">
+      <td>  <span class="datatype-name">gender</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_genericOmistaja.html">
+      <td>  <span class="datatype-name">genericOmistaja</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_lazyLoadedDto.html">
+      <td>  <span class="datatype-name">lazyLoadedDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO-class for any client side lazy loading.
+Eg: Patient has lazyloaded hoitosuhde</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_ownerTypeInfo.html">
+      <td>  <span class="datatype-name">ownerTypeInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_patient.html">
+      <td>  <span class="datatype-name">patient</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_patientStateEnum.html">
+      <td>  <span class="datatype-name">patientStateEnum</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_skillsInfo.html">
+      <td>  <span class="datatype-name">skillsInfo</span>
+</td>
+      <td>  <span class="datatype-description">DTO for gathering multiple skills into one DTO that can be lazy loadable.
+Bound to SkillDto class.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_timeInterval.html">
+      <td>  <span class="datatype-name">timeInterval</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_unit.html">
+      <td>  <span class="datatype-name">unit</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Unit (=toimintayksikkö) that combines information both from OMISTAJA and PERUSTIETO tables related
+to units (palveluyksikkö) where users (käyttäjä) signs in and works for.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_user.html">
+      <td>  <span class="datatype-name">user</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_wardCareStatus.html">
+      <td>  <span class="datatype-name">wardCareStatus</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_dataOrigin.html">
+      <td>  <span class="datatype-name">dataOrigin</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_contraindication.html">
+      <td>  <span class="datatype-name">contraindication</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Contraindication</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_diagnosis.html">
+      <td>  <span class="datatype-name">diagnosis</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Diagnosis</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_drug.html">
+      <td>  <span class="datatype-name">drug</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Drug</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_drugsAndPregnancyOrLactation.html">
+      <td>  <span class="datatype-name">drugsAndPregnancyOrLactation</span>
+</td>
+      <td>  <span class="datatype-description">DTO for DrugsAndPregnancyOrLactation</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_drugsAndRenalFunction.html">
+      <td>  <span class="datatype-name">drugsAndRenalFunction</span>
+</td>
+      <td>  <span class="datatype-description">DTO for DrugsAndRenalFunction</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_drugsAndRenalFunctions.html">
+      <td>  <span class="datatype-name">drugsAndRenalFunctions</span>
+</td>
+      <td>  <span class="datatype-description">DTO for DrugsAndRenalFunctions</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_experimentalDataSet.html">
+      <td>  <span class="datatype-name">experimentalDataSet</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Experimental Data Set</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_guidelineLink.html">
+      <td>  <span class="datatype-name">guidelineLink</span>
+</td>
+      <td>  <span class="datatype-description">DTO for GuidelineLink</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_indication.html">
+      <td>  <span class="datatype-name">indication</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Indication</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_interaction.html">
+      <td>  <span class="datatype-name">interaction</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Interaction</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_ptukiResponse.html">
+      <td>  <span class="datatype-name">ptukiResponse</span>
+</td>
+      <td>  <span class="datatype-description">DTO for DSSResponse</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_relevantBreakPoint.html">
+      <td>  <span class="datatype-name">relevantBreakPoint</span>
+</td>
+      <td>  <span class="datatype-description">DTO for RelevantBreakPoint</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_reminder.html">
+      <td>  <span class="datatype-name">reminder</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Reminder</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_suggestedAction.html">
+      <td>  <span class="datatype-name">suggestedAction</span>
+</td>
+      <td>  <span class="datatype-description">DTO for SuggestedAction</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_system.html">
+      <td>  <span class="datatype-name">system</span>
+</td>
+      <td>  <span class="datatype-description">DTO for System</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_paatosSeurantaTilaCodes.html">
+      <td>  <span class="datatype-name">paatosSeurantaTilaCodes</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palvelukeskeytys.html">
+      <td>  <span class="datatype-name">palvelukeskeytys</span>
+</td>
+      <td>  <span class="datatype-description">DTO for palvelukeskeytys (related to palvelupäätökses)</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palveluluokka.html">
+      <td>  <span class="datatype-name">palveluluokka</span>
+</td>
+      <td>  <span class="datatype-description">Stores the information of the following ASETUS-table fields configured for Palveluluokkas:
+
+0.  Nimi (Yleiset tab)
+1.  Käyttäjäryhmä (Yleiset tab)
+2.  Palvelun tarve-otsikko (Yleiset tab)
+3.  Päätöstekstin otsikko (Yleiset tab)
+4.  Lakipykälät (Yleiset tab)
+5.  Suoritekoodi (parsed, but not added Core DTO)
+6.  Diaarinumerosarja (Yleiset tab)
+7.  Päätös avoin (K/E, Yleiset tab)
+8.  Riviotsikko (Maksuperusteet tab)
+9.  Sarakeotsikko (Maksuperusteet tab)
+10. (not used currently in Mediatri)
+11. Laskutus tapahtumien mukaisesti (K/E, Seuranta tab)
+12. Tukipalvelu  (K/E, Yleiset tab)
+13. (a field related to Suorite-handling, parsed, but not added Core DTO))
+14. Päättäjäryhmän otsikko (Yleiset tab)
+15. (not used currently in Mediatri)
+16. Palvelunimikkeistö ((Yleiset tab)
+17. Tapahtumamalli (Yleiset tab)</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palvelupaatos.html">
+      <td>  <span class="datatype-name">palvelupaatos</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laatu.html">
+      <td>  <span class="datatype-name">laatu</span>
+</td>
+      <td>  <span class="datatype-description">Palvelupäätös laatu.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tila.html">
+      <td>  <span class="datatype-name">tila</span>
+</td>
+      <td>  <span class="datatype-description">Tila of palvelupaatos.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_weekday.html">
+      <td>  <span class="datatype-name">weekday</span>
+</td>
+      <td>  <span class="datatype-description">Enum representing weekdays for lasnalot.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_riskitietoStatus.html">
+      <td>  <span class="datatype-name">riskitietoStatus</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_seurantaEntry.html">
+      <td>  <span class="datatype-name">seurantaEntry</span>
+</td>
+      <td>  <span class="datatype-description">DTO edit model for seuranta.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_titleSettings.html">
+      <td>  <span class="datatype-name">titleSettings</span>
+</td>
+      <td>  <span class="datatype-description">Class to present title value settings.
+Most of Mediatri tables use vakio and vapaa fields as title's value presentation.
+It is the reason why base class contains the two methods #getVakio() and #getVapaa() methods as general interface.
+These methods are not used  and not available in client model.
+But all persist managers and Kuha project uses these methods.
+this class also provides basic validation of the title's value.
+Title's value is presented as instance of TitleBaseData class</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_measurementType.html">
+      <td>  <span class="datatype-name">measurementType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_diagnoseData.html">
+      <td>  <span class="datatype-name">diagnoseData</span>
+</td>
+      <td>  <span class="datatype-description">Class to present the diagnose title data.
+This data class defines the data used to return and store diagnose of the patient in the system.
+This data mostly repeats data from DiagnoosikirjausEntity with some enhancements.
+Please take into account that DiagnoseData cannot contain adverseEffect and externalCause simultaneously,
+and therefore only either one. There exist setter and getters for both data values, but those are
+stored to same fields.
+
+NOTE: Validation annotations are done based on creating a new diagnose (CORE-2329) and daignose ending related
+validation is done manually on code level.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_mittausBaseData.html">
+      <td>  <span class="datatype-name">mittausBaseData</span>
+</td>
+      <td>  <span class="datatype-description">Class to present base data for mittaus title's data.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_mittausData.html">
+      <td>  <span class="datatype-name">mittausData</span>
+</td>
+      <td>  <span class="datatype-description">General mittaus item data. Mediatri supports different measurement types from the
+point of units of meaurement. Mediatri support three types: - Kokonaisluku -
+Integer - Numemuotoinen - Float - Teksti String</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_nimikeGroupData.html">
+      <td>  <span class="datatype-name">nimikeGroupData</span>
+</td>
+      <td>  <span class="datatype-description">Class to present the nimike ryhma list.
+The list includes instances of <a href="json_ValueDescriptionData.html">ValueDescriptionData</a> class
+This class is used only for possible options for nimike titles.
+Every Nimike form contains at least default empty group</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_optionsData.html">
+      <td>  <span class="datatype-name">optionsData</span>
+</td>
+      <td>  <span class="datatype-description">Class to present the options title data: Otsikkoluokka#VAIHTOEHTOLUETTELO</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_seurantaOptionsData.html">
+      <td>  <span class="datatype-name">seurantaOptionsData</span>
+</td>
+      <td>  <span class="datatype-description">Class to present mittaus seuranta value for options title: Otsikkoluokka#VAIHTOEHTOLUETTELO</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_seurantaStringData.html">
+      <td>  <span class="datatype-name">seurantaStringData</span>
+</td>
+      <td>  <span class="datatype-description">Class to present simple Seuranta title title value where value can be classes to present Java String data.
+Theoretically it can be used for more complex data object but it is not recommended.
+Supported title's types:
+- Otsikkoluokka#FRRASI
+- Otsikkoluokka#VAPAA_TEKSTI</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_seurantaValueDescriptionData.html">
+      <td>  <span class="datatype-name">seurantaValueDescriptionData</span>
+</td>
+      <td>  <span class="datatype-description">Class to present title's data where both: vakio and vapaa fields are available.
+This class also presents nimike title data.
+vapaa - value
+vakio - description</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_simpleValueData.html">
+      <td>  <span class="datatype-name">simpleValueData</span>
+</td>
+      <td>  <span class="datatype-description">Class to present simple title value where value can be classes to present Java primitive types, String  or Date.
+This class presents the titles which stores the value in vapaa field in DB.
+Theoretically it can be used for more complex data object but it is not recommended yet.
+Supported title's types:
+- Otsikkoluokka#KOKONAISLUKU
+- Otsikkoluokka#NUMERO
+- Otsikkoluokka#NUMEROKOODI
+- Otsikkoluokka#PAIVAYS_NORMAALI
+- Otsikkoluokka#FRRASI
+- kohde titles 51-54</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_titleBaseData.html">
+      <td>  <span class="datatype-name">titleBaseData</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_titleComment.html">
+      <td>  <span class="datatype-name">titleComment</span>
+</td>
+      <td>  <span class="datatype-description">Present comments for the title.
+Comment for the title is special type of tile.
+- Omistajatyyppi#NYKYINEN_KAYTTAJA, Otsikkoluokka#FRAASI
+Data is always stored to vapaa filed in the title's record.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_titleData.html">
+      <td>  <span class="datatype-name">titleData</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_valueDescriptionData.html">
+      <td>  <span class="datatype-name">valueDescriptionData</span>
+</td>
+      <td>  <span class="datatype-description">Class to present title's data where both: vakio and vapaa fields are available.
+This classalso is used for not supported titles.
+vapaa - value
+vakio - description</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_diagnoseProperty.html">
+      <td>  <span class="datatype-name">diagnoseProperty</span>
+</td>
+      <td>  <span class="datatype-description">Describes the diagnose property like ensisijaisuus, pysyvyys and varmuusaste.
+Such property contains the description and value. Both are the significant.
+- desc defines the UI presentation of the property
+- value defines the real value stored to DB
+Client should always send full DiagnoseProperty json object to the server when need store some value for diagnose title.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_mittausTapa.html">
+      <td>  <span class="datatype-name">mittausTapa</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventCategory.html">
+      <td>  <span class="datatype-name">eventCategory</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_meaning.html">
+      <td>  <span class="datatype-name">meaning</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tapahtumaLuonne.html">
+      <td>  <span class="datatype-name">tapahtumaLuonne</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_calendarContextDto.html">
+      <td>  <span class="datatype-name">calendarContextDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for calendar context related fields, utilized to control the visibility of events and courses.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_employee.html">
+      <td>  <span class="datatype-name">employee</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for employee data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_idNamePair.html">
+      <td>  <span class="datatype-name">idNamePair</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_kuhaDtoBase.html">
+      <td>  <span class="datatype-name">kuhaDtoBase</span>
+</td>
+      <td>  <span class="datatype-description">Base class for MediPlan data transfer objects.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_kuhaDtoNameBase.html">
+      <td>  <span class="datatype-name">kuhaDtoNameBase</span>
+</td>
+      <td>  <span class="datatype-description">Base class for data transfer objects for objects with name/abbreviation/description data.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_lockDto.html">
+      <td>  <span class="datatype-name">lockDto</span>
+</td>
+      <td>  <span class="datatype-description">Base class for MediPlan data transfer objects.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_person.html">
+      <td>  <span class="datatype-name">person</span>
+</td>
+      <td>  <span class="datatype-description">Base class for worker & customer DTOs</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_calendarEventContentGroupDto.html">
+      <td>  <span class="datatype-name">calendarEventContentGroupDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for caledar event content groups.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_calendarEventTitleDto.html">
+      <td>  <span class="datatype-name">calendarEventTitleDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for calendar event content group titles.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_contentGroup.html">
+      <td>  <span class="datatype-name">contentGroup</span>
+</td>
+      <td>  <span class="datatype-description">Base class for MediPlan data transfer objects.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_contentGroupTitle.html">
+      <td>  <span class="datatype-name">contentGroupTitle</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for content groups items.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventModelContentGroupDto.html">
+      <td>  <span class="datatype-name">eventModelContentGroupDto</span>
+</td>
+      <td>  <span class="datatype-description">Represents Content Groups in EventModelDto
+
+Example:
+
+<pre>
+<code>
+{
+id: 1,
+name: "Perustiedot",
+type: "SYSTEM_DEFINED"
+}
+</code>
+</pre></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_courseCopyDto.html">
+      <td>  <span class="datatype-name">courseCopyDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for copying course.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_courseEventWorkerCopyOption.html">
+      <td>  <span class="datatype-name">courseEventWorkerCopyOption</span>
+</td>
+      <td>  <span class="datatype-description">Options for course copying</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_courseCustomerDto.html">
+      <td>  <span class="datatype-name">courseCustomerDto</span>
+</td>
+      <td>  <span class="datatype-description">Dto representing a customer attending a course.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_courseDto.html">
+      <td>  <span class="datatype-name">courseDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for course data
+
+Example of course JSON without any "child" dtos:
+<pre>
+ {
+   "courses":[
+      {
+         "created":1444210792000,
+         "id":1,
+         "name":"kela aslak",
+         "abbr":"ka",
+         "status":"DRAFT",
+         "periods":[  ],
+         "tags":[
+            {  },
+            {  }
+         ]
+      }
+   ]
+}
+</pre></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_courseNamedGroupDto.html">
+      <td>  <span class="datatype-name">courseNamedGroupDto</span>
+</td>
+      <td>  <span class="datatype-description">Base class for data transfer objects for objects with name/abbreviation/description data.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_coursePeriodDto.html">
+      <td>  <span class="datatype-name">coursePeriodDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object representing course period data.
+Can be used alone or part of CourseDto
+
+Example:
+
+<pre>
+ "periods":[
+            {
+               "created":1444213751000,
+               "modified":1444214056000,
+               "id":1,
+               "name":"aloitus jakso",
+               "abbr":"aj",
+               "startTime":1444251599000,
+               "endTime":1444510799000,
+               "minAttendees":5,
+               "maxAttendees":10,
+               "status":"DRAFT",
+               "customers":[
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  }
+               ]
+            },
+            {
+               "created":1444213783000,
+               "modified":1444214056000,
+               "id":2,
+               "name":"keskijakso",
+               "abbr":"kj",
+               "startTime":1445288399000,
+               "endTime":1445633999000,
+               "minAttendees":7,
+               "maxAttendees":20,
+               "status":"DRAFT",
+               "customers":[
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  }
+               ]
+            },
+            {
+               "created":1444213814000,
+               "modified":1444214056000,
+               "id":3,
+               "name":"loppu jakso",
+               "abbr":"lj",
+               "startTime":1446501599000,
+               "endTime":1446847199000,
+               "minAttendees":5,
+               "maxAttendees":15,
+               "status":"DRAFT",
+               "customers":[
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  },
+                  {  }
+               ]
+            }
+         ],
+
+ </pre></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_namedGroupMemberDto.html">
+      <td>  <span class="datatype-name">namedGroupMemberDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for named group members.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_periodCancellationDto.html">
+      <td>  <span class="datatype-name">periodCancellationDto</span>
+</td>
+      <td>  <span class="datatype-description">Base class for MediPlan data transfer objects.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tagsForCourseDto.html">
+      <td>  <span class="datatype-name">tagsForCourseDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for course tag data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tagsForPeriodDto.html">
+      <td>  <span class="datatype-name">tagsForPeriodDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO representing one period tag</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_calendarEventDto.html">
+      <td>  <span class="datatype-name">calendarEventDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for calendar events.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_primaryNurseStatus.html">
+      <td>  <span class="datatype-name">primaryNurseStatus</span>
+</td>
+      <td>  <span class="datatype-description">Enum for combined information about whether the primary nurse of the customer(s)
+is required / assigned in the calendar event.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventCoursePeriodDto.html">
+      <td>  <span class="datatype-name">eventCoursePeriodDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for event course period information.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventCustomerDto.html">
+      <td>  <span class="datatype-name">eventCustomerDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for event customer information.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventServiceDecisionStatus.html">
+      <td>  <span class="datatype-name">eventServiceDecisionStatus</span>
+</td>
+      <td>  <span class="datatype-description">Flag values for an event's status regarding having a service decision for a customer.
+A service decision may be
+<li/>not relevant for the event at all
+<li/>missing: there is no service decision in required service class for the customer
+<li/>interrupted: there is a decision, but it is interrupted at event time
+<li/>pending: there is a decision under processing ('KESKEN')
+<li/>available: there is a decision ('VALMIS' & 'MYONTEINEN')</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventDto.html">
+      <td>  <span class="datatype-name">eventDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for events.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventMissingResourcesDto.html">
+      <td>  <span class="datatype-name">eventMissingResourcesDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for missing resource information.
+Comparison is done against requested resources of calendar event related event model.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventOverlapConflictDto.html">
+      <td>  <span class="datatype-name">eventOverlapConflictDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for overlapping reservation conflict information.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventParticipantDto.html">
+      <td>  <span class="datatype-name">eventParticipantDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for event participant information (worker and customer base).</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventResourceDto.html">
+      <td>  <span class="datatype-name">eventResourceDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for event resource information.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventSkillDto.html">
+      <td>  <span class="datatype-name">eventSkillDto</span>
+</td>
+      <td>  <span class="datatype-description">Base class for MediPlan data transfer objects.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventWorkerDto.html">
+      <td>  <span class="datatype-name">eventWorkerDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for event worker information.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventModelDto.html">
+      <td>  <span class="datatype-name">eventModelDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for event models.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventModelSkillDto.html">
+      <td>  <span class="datatype-name">eventModelSkillDto</span>
+</td>
+      <td>  <span class="datatype-description">Base class for MediPlan data transfer objects.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_participantAmountDto.html">
+      <td>  <span class="datatype-name">participantAmountDto</span>
+</td>
+      <td>  <span class="datatype-description">Participant amount information in Tapahtumapohja
+This class is part of EventModelDto</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_planningSettings.html">
+      <td>  <span class="datatype-name">planningSettings</span>
+</td>
+      <td>  <span class="datatype-description">Represents planing settings in Tapahtuman perustiedot and in Kalenteritapahtuma
+This class is part of EventModelDto or  CalendarEventDto</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_planningSettingsChangeable.html">
+      <td>  <span class="datatype-name">planningSettingsChangeable</span>
+</td>
+      <td>  <span class="datatype-description">Represents planing settings in Tapahtuman perustiedot and in Kalenteritapahtuma
+This class is part of EventModelDto or  CalendarEventDto</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_requiredEquipmentTypeDto.html">
+      <td>  <span class="datatype-name">requiredEquipmentTypeDto</span>
+</td>
+      <td>  <span class="datatype-description">Base class for data transfer objects for objects with name/abbreviation/description data.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventOptimizationChangeDataDto.html">
+      <td>  <span class="datatype-name">eventOptimizationChangeDataDto</span>
+</td>
+      <td>  <span class="datatype-description">Dto to carry an event optimization change data information, that is, the responsible change mapping data
+and start times of events the optimizer has optimized.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_idChangePair.html">
+      <td>  <span class="datatype-name">idChangePair</span>
+</td>
+      <td>  <span class="datatype-description">Responsible id pair having the old responsible id and the new responsible id</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventOptimizationConflictDto.html">
+      <td>  <span class="datatype-name">eventOptimizationConflictDto</span>
+</td>
+      <td>  <span class="datatype-description">Dto to carry an event optimization conflict information, that is, a conflicting event (its ID) and its conflicting rules
+Clear rule name and its type (either 'hard' or 'soft') are included. Also a potential conflicting event (its ID) is
+included per rule (this id may be -1 in which case there are no conflicting event (e.g. worker contract expiration rule))</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventOptimizationDataDto.html">
+      <td>  <span class="datatype-name">eventOptimizationDataDto</span>
+</td>
+      <td>  <span class="datatype-description">Dto to carry an event optimization data information, that is, the responsible(s) and start times
+of events the optimizer has optimized.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventOptimizationRuleConflictDto.html">
+      <td>  <span class="datatype-name">eventOptimizationRuleConflictDto</span>
+</td>
+      <td>  <span class="datatype-description">Details on an event and a rule conflicting with the event.
+The conflicting rule might not have an event associated to it (e.g. working hour rule). In that case
+the event id should be -1.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventOptimizationStatusDto.html">
+      <td>  <span class="datatype-name">eventOptimizationStatusDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for the event optimization task status</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_invalidAddresses.html">
+      <td>  <span class="datatype-name">invalidAddresses</span>
+</td>
+      <td>  <span class="datatype-description">Lists of customers, workers and units having an invalid address (could not
+be geocoded properly). The invalid address is mapped to the owner.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_missingAddresses.html">
+      <td>  <span class="datatype-name">missingAddresses</span>
+</td>
+      <td>  <span class="datatype-description">Lists of customers, workers and units missing an address</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventOptimizationTaskBaseDto.html">
+      <td>  <span class="datatype-name">eventOptimizationTaskBaseDto</span>
+</td>
+      <td>  <span class="datatype-description">A base Dto class for event optimization related task Dtos</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_employeeAddressType.html">
+      <td>  <span class="datatype-name">employeeAddressType</span>
+</td>
+      <td>  <span class="datatype-description">Either workers home address, office address or a custom address defined in the UI
+may be used for the workers in the optimization.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_employeeInfo.html">
+      <td>  <span class="datatype-name">employeeInfo</span>
+</td>
+      <td>  <span class="datatype-description">Information of a single worker, its identifier and a unit (or multiple units if the worker
+participates to the optimization process from multiple units). In case of multiple units for
+one worker the working hours from those units are taken into account for that worker.
+Also the means of transition between the events is defined.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_terminationRules.html">
+      <td>  <span class="datatype-name">terminationRules</span>
+</td>
+      <td>  <span class="datatype-description">Event optimization task termination rules</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_transitionType.html">
+      <td>  <span class="datatype-name">transitionType</span>
+</td>
+      <td>  <span class="datatype-description">The means of transition by a worker. Either by car, bicycle or foot.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventOptimizationTaskDetailsDto.html">
+      <td>  <span class="datatype-name">eventOptimizationTaskDetailsDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for starting an event optimization task. Including details on the events to be optimized,
+employees participating in the optimization, potential optimization rule weights and the optim. process
+termination rules.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventCategoryParameters.html">
+      <td>  <span class="datatype-name">eventCategoryParameters</span>
+</td>
+      <td>  <span class="datatype-description">Specifies one event category and how the events belonging to that category should be
+treated by the optimizer. The events in question are from a unit specified.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventInfo.html">
+      <td>  <span class="datatype-name">eventInfo</span>
+</td>
+      <td>  <span class="datatype-description">Definition of one event participating to the optimization process.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_optimizationCategory.html">
+      <td>  <span class="datatype-name">optimizationCategory</span>
+</td>
+      <td>  <span class="datatype-description">The type of optimization to run.
+BASIC - basic optimization with worker resources optimized
+LOCATIONS - optimization with worker and location (rooms) resources optimized</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventReAssignTaskDetailsDto.html">
+      <td>  <span class="datatype-name">eventReAssignTaskDetailsDto</span>
+</td>
+      <td>  <span class="datatype-description">Dto to carry information on the event optimization task where we want to optimize events
+from one employee to other employees.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_courseResourceDtoBase.html">
+      <td>  <span class="datatype-name">courseResourceDtoBase</span>
+</td>
+      <td>  <span class="datatype-description">Base class for data transfer objects for objects with name/abbreviation/description data.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_courseTagDto.html">
+      <td>  <span class="datatype-name">courseTagDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for course tags.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_equipmentDto.html">
+      <td>  <span class="datatype-name">equipmentDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object representing equipment</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_reportingGroupDto.html">
+      <td>  <span class="datatype-name">reportingGroupDto</span>
+</td>
+      <td>  <span class="datatype-description">This DTO pass ReportingGroup (Raportointiryhmä) information</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_roomDto.html">
+      <td>  <span class="datatype-name">roomDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object representing room</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_roomGroupDto.html">
+      <td>  <span class="datatype-name">roomGroupDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object representing room group</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_skillDto.html">
+      <td>  <span class="datatype-name">skillDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for workers skill data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_timeRuleDto.html">
+      <td>  <span class="datatype-name">timeRuleDto</span>
+</td>
+      <td>  <span class="datatype-description">Data transfer object for defining working hour rules.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_basicInfoCategory.html">
+      <td>  <span class="datatype-name">basicInfoCategory</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_contentGroupType.html">
+      <td>  <span class="datatype-name">contentGroupType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_contentGroupVisibility.html">
+      <td>  <span class="datatype-name">contentGroupVisibility</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_equipmentRequirement.html">
+      <td>  <span class="datatype-name">equipmentRequirement</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_courseStatus.html">
+      <td>  <span class="datatype-name">courseStatus</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_eventStatus.html">
+      <td>  <span class="datatype-name">eventStatus</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_exampleDto.html">
+      <td>  <span class="datatype-name">exampleDto</span>
+</td>
+      <td>  <span class="datatype-description">Example data transfer object for Medisos project</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_exampleItemDto.html">
+      <td>  <span class="datatype-name">exampleItemDto</span>
+</td>
+      <td>  <span class="datatype-description">Example item data transfer object for Medisos project</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiaDto.html">
+      <td>  <span class="datatype-name">asiaDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asia
+
+A class to present Asia table in asia functionality.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiaKyselyDto.html">
+      <td>  <span class="datatype-name">asiaKyselyDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for asia filtered query
+
+This class is used to transfer filtering options to a filtered asia query</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiaListaDto.html">
+      <td>  <span class="datatype-name">asiaListaDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for list of asias
+*
+A class to present asialist.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiaSummaryDto.html">
+      <td>  <span class="datatype-name">asiaSummaryDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asia summary information
+Frontend can show</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakasAsiakirjaDto.html">
+      <td>  <span class="datatype-name">asiakasAsiakirjaDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asia
+
+This class is used to carray AsiakasAsiakirja data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakirjaKyselyDto.html">
+      <td>  <span class="datatype-name">asiakirjaKyselyDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asiakirja
+
+This class is used to carry query information of AsiakasAsiakirja data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakirjaSummaryDto.html">
+      <td>  <span class="datatype-name">asiakirjaSummaryDto</span>
+</td>
+      <td>  <span class="datatype-description">This DTO summaries different field values that occur in asiakirjas
+The values can be used as asiakirja search criteria
+NOTE!!! the values in laatijaNumeroLista and laatijaNimiLista are NOT in the corresponding order
+NOTE!!! the values in palveluyksikkoNumeroLista and palveluyksikkoNimiLista are NOT in corresponding order</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakirjaTietoDto.html">
+      <td>  <span class="datatype-name">asiakirjaTietoDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asia
+
+This class is used to carry certain information from AsiakasAsiakirja  data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakirjalistaDto.html">
+      <td>  <span class="datatype-name">asiakirjalistaDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for list of asiakirjas or documents
+
+A class to present asiakirjalist.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakirjanSosiaalipalveluTietoDto.html">
+      <td>  <span class="datatype-name">asiakirjanSosiaalipalveluTietoDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asiakirjan sosiaalipalvelu
+
+This class is used to carry sosiaalipalvelu information from AsiakasAsiakirja  data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakirjaviittausDto.html">
+      <td>  <span class="datatype-name">asiakirjaviittausDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asiakirjaviittaus
+
+A class to present asiakirjaviittaus functionality.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakirjaviittausInputDto.html">
+      <td>  <span class="datatype-name">asiakirjaviittausInputDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asiakirjaviittaus
+
+A class to present asiakirjaviittaus functionality.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakkaanKayttovaratDto.html">
+      <td>  <span class="datatype-name">asiakkaanKayttovaratDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asiakkaan käyttövarat information
+
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakkaanMaksutDto.html">
+      <td>  <span class="datatype-name">asiakkaanMaksutDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asia
+
+A class to present a sum of palvelusetelien arvo, maksusitoomuksien arvo and
+erityinen tuki of certain customer.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiaviittausDto.html">
+      <td>  <span class="datatype-name">asiaviittausDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for AsiaviittausJpa
+
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiaviittausInputDto.html">
+      <td>  <span class="datatype-name">asiaviittausInputDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for adding new asiaviittaus from one asia to several asias
+
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiayhteysDto.html">
+      <td>  <span class="datatype-name">asiayhteysDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for AsiaYhteys
+
+A class to present AsiaYhteys table in asiayhteys functionality.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_blockedInfoDto.html">
+      <td>  <span class="datatype-name">blockedInfoDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for blocking info
+
+Used to carry information if something blocks asked operation</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_documentDto.html">
+      <td>  <span class="datatype-name">documentDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for document
+
+This class is used to carry document data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_documentInformationDto.html">
+      <td>  <span class="datatype-name">documentInformationDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Document
+
+This class is used to carry certain information from document data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_documentKyselyDto.html">
+      <td>  <span class="datatype-name">documentKyselyDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Dokumentti
+
+This class is used to carry query information of Document data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_documentSummaryDto.html">
+      <td>  <span class="datatype-name">documentSummaryDto</span>
+</td>
+      <td>  <span class="datatype-description">/**
+This DTO summaries different field values that occur in documents
+The values can be used as document search criteria
+NOTE!!! the values in laatijaNumeroLista and laatijaNimiLista are NOT in corresponding order
+NOTE!!! the values in palveluyksikkoNumeroLista and palveluyksikkoNimiLista are NOT in corresponding order</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_documentTemplateDto.html">
+      <td>  <span class="datatype-name">documentTemplateDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for document template
+
+This class is used to carry document template data</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_dtoBase.html">
+      <td>  <span class="datatype-name">dtoBase</span>
+</td>
+      <td>  <span class="datatype-description">DTO base
+
+Include common elements for all DTOs</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_groupDto.html">
+      <td>  <span class="datatype-name">groupDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for containing all data of one family group
+
+A class to present family tree structure.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_groupMasterDto.html">
+      <td>  <span class="datatype-name">groupMasterDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for GroupMaster class
+
+A class to present group base information
+Used to carry the data between database and client.
+If Id field is null (DtoBase) new group is created.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_groupMemberDto.html">
+      <td>  <span class="datatype-name">groupMemberDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for GroupMember class
+
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_groupMemberRoleDto.html">
+      <td>  <span class="datatype-name">groupMemberRoleDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for GroupMemberRole class
+
+A class to present Customer role table in family tree.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_groupRoleDto.html">
+      <td>  <span class="datatype-name">groupRoleDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for GroupRole class
+
+A class to present role table in family tree.
+Used to carry the data between database and client.
+User should never set fixed value to True</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_laskuDto.html">
+      <td>  <span class="datatype-name">laskuDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for social lasku
+
+formId: form
+suoritusperuste: AsiakasAsiakirja id
+suoriteryhma:
+yksikko: Mediatri id
+sirrettyPaivamaara: when transferred to Mediatri. Null, if not transferred
+suorite:
+omistaja: Mediatri id
+laatija: Mediatri id
+suoritehinta:
+maksukirjauslinkki: link to Mediatri
+kerroin:
+kerroin2:
+siirretty: true=siirretty, false=laskutettu
+laskutuskohde: Mediatri id
+laskutetaan: K=kyllä, E=ei (corresponds to Mediatri maksukirjaus table)
+laskunnumero
+laskunTila: K=laskun muodostus kesken, L=laskutettu, E=perintä estetty, R=riitautettu, U=siirretty ulosottoon,
+A=aiheeton ulosotto m=mitätöity, S=siirretty ulkoiseen reskontraan, T=luottotappio
+(corresponds to Mediatri laskutus table)
+suoritteeksiSiirto: K=kyllä, E=ei, T=tehty
+vapaateksti:</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_liiteasiakirjaDto.html">
+      <td>  <span class="datatype-name">liiteasiakirjaDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asia
+
+A class to present Asiakirjaliite information.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_lomaketemplaattiDto.html">
+      <td>  <span class="datatype-name">lomaketemplaattiDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asia
+
+A class to present Lomaketemplaatti titles and Ids..
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_lukkoDto.html">
+      <td>  <span class="datatype-name">lukkoDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for setting lukitus for certain item. (eg. asiakirja)
+
+A class to present lukitus functionality.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_maksusummaDto.html">
+      <td>  <span class="datatype-name">maksusummaDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for maksusumma
+
+A class to present a sum of palvelusetelien arvo, maksusitoomuksien arvo and
+erityinen tuki of certain palvelutehtävä.
+Data for this DTO is calculated over several JPAs.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_mediSosDtoBase.html">
+      <td>  <span class="datatype-name">mediSosDtoBase</span>
+</td>
+      <td>  <span class="datatype-description">MediSosDTO base
+
+Include common elements for all Medisos DTOs</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_omatyontekijaDto.html">
+      <td>  <span class="datatype-name">omatyontekijaDto</span>
+</td>
+      <td>  <span class="datatype-description">This Dto defines omatyontekijä</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_osastonKassaDto.html">
+      <td>  <span class="datatype-name">osastonKassaDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for osaston kassa information
+
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_paivitysDto.html">
+      <td>  <span class="datatype-name">paivitysDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for setting suostumus,tulostus and luovutus information
+
+A class to present suostumus,tulostus and luovutus setting functionality.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palvelutehtavanAsiakkaatDto.html">
+      <td>  <span class="datatype-name">palvelutehtavanAsiakkaatDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for listing all asiakkaat of a certain ammattihenkilo grouped by palvelutehtava
+
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palvelutehtavanAsiakkuusDto.html">
+      <td>  <span class="datatype-name">palvelutehtavanAsiakkuusDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Palvelutehtävän asiakkuus
+
+A class to present palvelutehtävän asiakkuus DTO
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palvelutehtavanAsiakkuusKyselyDto.html">
+      <td>  <span class="datatype-name">palvelutehtavanAsiakkuusKyselyDto</span>
+</td>
+      <td>  <span class="datatype-description">Input DTO for palvelutehtävän asiakkuus filtered, grouped and paged query</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palvelutehtavanAsiakkuusListaDto.html">
+      <td>  <span class="datatype-name">palvelutehtavanAsiakkuusListaDto</span>
+</td>
+      <td>  <span class="datatype-description">Output DTO for palvelutehtävän asiakkuus paged query</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palveluyksikkoAsiakkuusDto.html">
+      <td>  <span class="datatype-name">palveluyksikkoAsiakkuusDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Asia
+
+A class to present palveluyksikkö asiakkuus table .
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palveluyksikkoAsiakkuusKyselyDto.html">
+      <td>  <span class="datatype-name">palveluyksikkoAsiakkuusKyselyDto</span>
+</td>
+      <td>  <span class="datatype-description">Input DTO for palvelutehtävän asiakkuus filtered, grouped and paged query</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palveluyksikkoAsiakkuusListaDto.html">
+      <td>  <span class="datatype-name">palveluyksikkoAsiakkuusListaDto</span>
+</td>
+      <td>  <span class="datatype-description">Output DTO for palvelutehtävän asiakkuus paged query</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_phraseDto.html">
+      <td>  <span class="datatype-name">phraseDto</span>
+</td>
+      <td>  <span class="datatype-description">This Dto transfers phrase information</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_socialConfigurationDto.html">
+      <td>  <span class="datatype-name">socialConfigurationDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for a social configuration
+
+A class to present family tree structure.
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_sosiaalihuollonAsiakkuusDto.html">
+      <td>  <span class="datatype-name">sosiaalihuollonAsiakkuusDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for sosiaalihuollon asiakkuus asiakirja
+
+Used to carry sosiaalihuollon asiakkuus data between sosiaalihuollonasiakkuus database table and UI</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_sosiaalihuollonAsiakkuusKyselyDto.html">
+      <td>  <span class="datatype-name">sosiaalihuollonAsiakkuusKyselyDto</span>
+</td>
+      <td>  <span class="datatype-description">Input DTO for sosiaalihuollon asiakkuus filtered, grouped and paged query</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_sosiaalihuollonAsiakkuusListaDto.html">
+      <td>  <span class="datatype-name">sosiaalihuollonAsiakkuusListaDto</span>
+</td>
+      <td>  <span class="datatype-description">Output DTO for sosiaalihuollon asiakkuus paged query</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_templaattiFavourDto.html">
+      <td>  <span class="datatype-name">templaattiFavourDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for Favour list of templates
+
+Used to carry the data between database and client.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_viittausOutputDto.html">
+      <td>  <span class="datatype-name">viittausOutputDto</span>
+</td>
+      <td>  <span class="datatype-description">DTO for AsiaviittausJpa
+
+Used to carry viittaus creation success/fail information from backend to frontend</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_viittausDto.html">
+      <td>  <span class="datatype-name">viittausDto</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiaTila.html">
+      <td>  <span class="datatype-name">asiaTila</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_asiakirjanTila.html">
+      <td>  <span class="datatype-name">asiakirjanTila</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_palveluyksikkoAsiakkuusTila.html">
+      <td>  <span class="datatype-name">palveluyksikkoAsiakkuusTila</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_socialConfigurationTags.html">
+      <td>  <span class="datatype-name">socialConfigurationTags</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_sosiatriGrouping.html">
+      <td>  <span class="datatype-name">sosiatriGrouping</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_timestamp.html">
+      <td>  <span class="datatype-name">timestamp</span>
+</td>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="xml_ns0_date.html">
-      <td>  date
+      <td>  <span class="datatype-name">date</span>
 </td>
-      <td>  
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_time.html">
+      <td>  <span class="datatype-name">time</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_localDate.html">
+      <td>  <span class="datatype-name">localDate</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_localDateTime.html">
+      <td>  <span class="datatype-name">localDateTime</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_localTime.html">
+      <td>  <span class="datatype-name">localTime</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_offsetDateTime.html">
+      <td>  <span class="datatype-name">offsetDateTime</span>
+</td>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
   </tbody>
@@ -331,14 +2124,14 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,12 +51,13 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_MedicalRecordsResource_getMedicalComponentConfig_GET">GET /medicalreports/config</a></li>
-          <li><a href="#resource_MedicalRecordsResource_getMedicalReports_GET">GET /medicalreports/{id}</a></li>
-          <li><a href="#resource_MedicalRecordsResource_addNewMedicalReportEntry_POST">POST /medicalreports/{id}</a></li>
-          <li><a href="#resource_MedicalRecordsResource_lockMedicalReport_PUT">PUT /medicalreports/lock</a></li>
-          <li><a href="#resource_MedicalRecordsResource_unlockMedicalReport_PUT">PUT /medicalreports/unlock</a></li>
-          <li><a href="#resource_MedicalRecordsResource_editMedicalReport_PUT">PUT /medicalreports/{id}</a></li>
+          <li><a href="#resource_MedicalRecordsResource_getMedicalComponentConfig_GET"><abbr title="GET /medicalreports/config"><span class="sideoverflow">GET /medicalreports/config</span></abbr></a></li>
+          <li><a href="#resource_MedicalRecordsResource_lockMedicalReport_PUT"><abbr title="PUT /medicalreports/lock"><span class="sideoverflow">PUT /medicalreports/lock</span></abbr></a></li>
+          <li><a href="#resource_MedicalRecordsResource_unlockMedicalReport_PUT"><abbr title="PUT /medicalreports/unlock"><span class="sideoverflow">PUT /medicalreports/unlock</span></abbr></a></li>
+          <li><a href="#resource_MedicalRecordsResource_getMedicalReports_GET"><abbr title="GET /medicalreports/{id}"><span class="sideoverflow">GET /medicalreports/{id}</span></abbr></a></li>
+          <li><a href="#resource_MedicalRecordsResource_addNewMedicalReportEntry_POST"><abbr title="POST /medicalreports/{id}"><span class="sideoverflow">POST /medicalreports/{id}</span></abbr></a></li>
+          <li><a href="#resource_MedicalRecordsResource_editMedicalReport_PUT"><abbr title="PUT /medicalreports/{id}"><span class="sideoverflow">PUT /medicalreports/{id}</span></abbr></a></li>
+          <li><a href="#resource_MedicalRecordsResource_getMedicalReports_POST"><abbr title="POST /medicalreports/{id}/protected"><span class="sideoverflow">POST /medicalreports/{id}/protected</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -76,166 +75,11 @@
       <p>REST API for kertomukset</p>
 
       <div id="resource_MedicalRecordsResource_getMedicalComponentConfig_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/medicalreports/config <a href="../api/v1medicalreports/config" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/medicalreports/config <a href="../api/v1/medicalreports/config" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p></p>
 
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_KertomusComponentConfig.html">KertomusComponentConfig</a>
- (JSON)</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_MedicalRecordsResource_getMedicalReports_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/medicalreports/{id} <a href="../api/v1medicalreports/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p></p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td></td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>page</td>
-            <td>query</td>
-            <td></td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>pageSize</td>
-            <td>query</td>
-            <td></td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_KertomuksetView.html">KertomuksetView</a>
- (JSON)</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_MedicalRecordsResource_addNewMedicalReportEntry_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/medicalreports/{id} <a href="../api/v1medicalreports/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Create new kertomus entry</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>omistaja id</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>pvt</td>
-            <td>query</td>
-            <td>palvelutapahtuma id</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_KertomusEntryEdit.html">KertomusEntryEdit</a>
- (JSON)</td>
-            <td>entry model with titles values.</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>404</td>
-            <td>Not found: Patient or form is not found</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -246,21 +90,112 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_KertomusID.html">KertomusID</a>
- (JSON)</td>
-            <td>new kertomus ID object.</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_KertomusComponentConfig.html">KertomusComponentConfig</a>
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /medicalreports/config
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;kertomusConfigs&quot; : [ {
+    &quot;lomake&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;mainTitles&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;color&quot; : &quot;...&quot;,
+    &quot;kayttajaRyhmaId&quot; : 12345,
+    &quot;signing&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;valueMandatory&quot; : true,
+      &quot;onlyFromList&quot; : true,
+      &quot;optionsUrl&quot; : &quot;...&quot;,
+      &quot;editableByConfig&quot; : true,
+      &quot;editableByUserRights&quot; : true,
+      &quot;editable&quot; : true,
+      &quot;attribute&quot; : 12345
+    },
+    &quot;modify&quot; : true
+  }, {
+    &quot;lomake&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;mainTitles&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;color&quot; : &quot;...&quot;,
+    &quot;kayttajaRyhmaId&quot; : 12345,
+    &quot;signing&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;valueMandatory&quot; : true,
+      &quot;onlyFromList&quot; : true,
+      &quot;optionsUrl&quot; : &quot;...&quot;,
+      &quot;editableByConfig&quot; : true,
+      &quot;editableByUserRights&quot; : true,
+      &quot;editable&quot; : true,
+      &quot;attribute&quot; : 12345
+    },
+    &quot;modify&quot; : true
+  } ],
+  &quot;titleConfigs&quot; : {
+    &quot;property1&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;valueMandatory&quot; : true,
+      &quot;onlyFromList&quot; : true,
+      &quot;optionsUrl&quot; : &quot;...&quot;,
+      &quot;editableByConfig&quot; : true,
+      &quot;editableByUserRights&quot; : true,
+      &quot;editable&quot; : true,
+      &quot;attribute&quot; : 12345
+    },
+    &quot;property2&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;valueMandatory&quot; : true,
+      &quot;onlyFromList&quot; : true,
+      &quot;optionsUrl&quot; : &quot;...&quot;,
+      &quot;editableByConfig&quot; : true,
+      &quot;editableByUserRights&quot; : true,
+      &quot;editable&quot; : true,
+      &quot;attribute&quot; : 12345
+    }
+  },
+  &quot;configurableSettings&quot; : {
+    &quot;property1&quot; : &quot;...&quot;,
+    &quot;property2&quot; : &quot;...&quot;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_MedicalRecordsResource_lockMedicalReport_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/medicalreports/lock <a href="../api/v1medicalreports/lock" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/medicalreports/lock <a href="../api/v1/medicalreports/lock" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Lock medical report before editing.</p>
 
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -271,15 +206,15 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_KertomusID.html">KertomusID</a>
- (JSON)</td>
-            <td>reportId to lock</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_KertomusID.html">KertomusID</a>
+ (JSON)</span></td>
+            <td><span class="request-description">reportId to lock</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -289,29 +224,29 @@
           </thead>
           <tbody>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>404</td>
-            <td>Not found: Patient or form is not found</td>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: Patient or form is not found</span></td>
           </tr>
           <tr>
-            <td>423</td>
-            <td>Form is locked already</td>
+            <td><span class="label label-warning response-code">423</span></td>
+            <td><span class="response-condition">Form is locked already</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -322,21 +257,55 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>number
- (JSON)</td>
-            <td>lock date if success</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">number
+ (JSON)</span></td>
+            <td><span class="response-description">lock date if success</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /medicalreports/lock
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;ownerId&quot; : 12345,
+  &quot;aika&quot; : 12345,
+  &quot;formId&quot; : 12345,
+  &quot;reportId&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_MedicalRecordsResource_unlockMedicalReport_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/medicalreports/unlock <a href="../api/v1medicalreports/unlock" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/medicalreports/unlock <a href="../api/v1/medicalreports/unlock" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Unlock medical report after editing.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -348,15 +317,21 @@
           </thead>
           <tbody>
           <tr>
-            <td>time</td>
+            <td><span class="parameter-name">changed</span></td>
             <td>query</td>
-            <td>lock date received when locking</td>
-            <td>long</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">time</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">lock date received when locking</span></td>
+            <td><span class="parameter-constraints">long</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -367,15 +342,15 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_KertomusID.html">KertomusID</a>
- (JSON)</td>
-            <td>reportId to unlock</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_KertomusID.html">KertomusID</a>
+ (JSON)</span></td>
+            <td><span class="request-description">reportId to unlock</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -385,29 +360,29 @@
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if time parameter is not present.</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if time parameter is not present.</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>404</td>
-            <td>Not found: Patient or form is not found</td>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: Patient or form is not found</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -418,21 +393,480 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td>success response if success</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">success response if success</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /medicalreports/unlock
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;ownerId&quot; : 12345,
+  &quot;aika&quot; : 12345,
+  &quot;formId&quot; : 12345,
+  &quot;reportId&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_MedicalRecordsResource_getMedicalReports_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/medicalreports/{id} <a href="../api/v1/medicalreports/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Return the list of medical records for one patient depending request parameters.
+only patient is obligatory parameter. All other are optional.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+            <th>multivalued</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">omistaja id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">form</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">page</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">current patient. Can be ommitted. Default value is 1.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">pageSize</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page size. Can be ommitted. Default value is 20.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: Patient or form is not found</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_KertomuksetView.html">KertomuksetView</a>
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /medicalreports/{id}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;entries&quot; : [ {
+    &quot;id&quot; : {
+      &quot;ownerId&quot; : 12345,
+      &quot;aika&quot; : 12345,
+      &quot;formId&quot; : 12345,
+      &quot;reportId&quot; : 12345
+    },
+    &quot;mainTitle&quot; : &quot;...&quot;,
+    &quot;unit&quot; : &quot;...&quot;,
+    &quot;formName&quot; : &quot;...&quot;,
+    &quot;responsible&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ],
+    &quot;kirjaaja&quot; : 12345,
+    &quot;suorittaja&quot; : 12345,
+    &quot;color&quot; : &quot;...&quot;,
+    &quot;vanha&quot; : true,
+    &quot;status&quot; : &quot;KERTOMUS_LUONNOS&quot;,
+    &quot;kirjaajaName&quot; : &quot;...&quot;,
+    &quot;nakyma&quot; : &quot;...&quot;,
+    &quot;unitId&quot; : 12345,
+    &quot;kayttajaRyhma&quot; : &quot;...&quot;,
+    &quot;kayttajaRyhmaId&quot; : 12345,
+    &quot;lockTime&quot; : 12345,
+    &quot;editable&quot; : true
+  }, {
+    &quot;id&quot; : {
+      &quot;ownerId&quot; : 12345,
+      &quot;aika&quot; : 12345,
+      &quot;formId&quot; : 12345,
+      &quot;reportId&quot; : 12345
+    },
+    &quot;mainTitle&quot; : &quot;...&quot;,
+    &quot;unit&quot; : &quot;...&quot;,
+    &quot;formName&quot; : &quot;...&quot;,
+    &quot;responsible&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ],
+    &quot;kirjaaja&quot; : 12345,
+    &quot;suorittaja&quot; : 12345,
+    &quot;color&quot; : &quot;...&quot;,
+    &quot;vanha&quot; : true,
+    &quot;status&quot; : &quot;KERTOMUS_VALMIS&quot;,
+    &quot;kirjaajaName&quot; : &quot;...&quot;,
+    &quot;nakyma&quot; : &quot;...&quot;,
+    &quot;unitId&quot; : 12345,
+    &quot;kayttajaRyhma&quot; : &quot;...&quot;,
+    &quot;kayttajaRyhmaId&quot; : 12345,
+    &quot;lockTime&quot; : 12345,
+    &quot;editable&quot; : true
+  } ],
+  &quot;updated&quot; : true,
+  &quot;currentPage&quot; : 12345,
+  &quot;prevUrl&quot; : &quot;...&quot;,
+  &quot;nextUrl&quot; : &quot;...&quot;,
+  &quot;maxSize&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;protections&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+  &quot;editTime&quot; : 12345,
+  &quot;componentId&quot; : &quot;...&quot;,
+  &quot;ownerId&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_MedicalRecordsResource_addNewMedicalReportEntry_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/medicalreports/{id} <a href="../api/v1/medicalreports/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Create new kertomus entry</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">omistaja id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_KertomusEntryEdit.html">KertomusEntryEdit</a>
+ (JSON)</span></td>
+            <td><span class="request-description">entry model with titles values.</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to add some data provided. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: Patient or form is not found</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_KertomusID.html">KertomusID</a>
+ (JSON)</span></td>
+            <td><span class="response-description">new kertomus ID object.</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /medicalreports/{id}
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;id&quot; : {
+    &quot;ownerId&quot; : 12345,
+    &quot;aika&quot; : 12345,
+    &quot;formId&quot; : 12345,
+    &quot;reportId&quot; : 12345
+  },
+  &quot;mainTitle&quot; : &quot;...&quot;,
+  &quot;titles&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;type&quot; : 12345,
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;type&quot; : 12345,
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
+  } ],
+  &quot;kirjaaja&quot; : 12345,
+  &quot;suorittaja&quot; : 12345,
+  &quot;status&quot; : &quot;KERTOMUS_KESKEN&quot;,
+  &quot;unitId&quot; : 12345,
+  &quot;lockTime&quot; : 12345,
+  &quot;kayttajaRyhmaId&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;ownerId&quot; : 12345,
+  &quot;aika&quot; : 12345,
+  &quot;formId&quot; : 12345,
+  &quot;reportId&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_MedicalRecordsResource_editMedicalReport_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/medicalreports/{id} <a href="../api/v1medicalreports/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/medicalreports/{id} <a href="../api/v1/medicalreports/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Edit already created medical record.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -444,21 +878,15 @@
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>patient omistaja id</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>pvt</td>
-            <td>query</td>
-            <td>palvelutapahtuma id</td>
-            <td>int</td>
+            <td><span class="parameter-description">patient omistaja id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -469,15 +897,15 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_KertomusEntryEdit.html">KertomusEntryEdit</a>
- (JSON)</td>
-            <td>to edit</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_KertomusEntryEdit.html">KertomusEntryEdit</a>
+ (JSON)</span></td>
+            <td><span class="request-description">to edit</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -487,29 +915,29 @@
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if some values are invalid.</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication.</span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to edit this data.</span></td>
           </tr>
           <tr>
-            <td>404</td>
-            <td>Not found: Patient or form is not found</td>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: Report has been deleted or marked as vanha.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error.</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -520,13 +948,333 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_KertomusID.html">KertomusID</a>
- (JSON)</td>
-            <td>edited kertomus id</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_KertomusID.html">KertomusID</a>
+ (JSON)</span></td>
+            <td><span class="response-description">edited kertomus id</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /medicalreports/{id}
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;id&quot; : {
+    &quot;ownerId&quot; : 12345,
+    &quot;aika&quot; : 12345,
+    &quot;formId&quot; : 12345,
+    &quot;reportId&quot; : 12345
+  },
+  &quot;mainTitle&quot; : &quot;...&quot;,
+  &quot;titles&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;type&quot; : 12345,
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;type&quot; : 12345,
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
+  } ],
+  &quot;kirjaaja&quot; : 12345,
+  &quot;suorittaja&quot; : 12345,
+  &quot;status&quot; : &quot;KERTOMUS_KESKEN&quot;,
+  &quot;unitId&quot; : 12345,
+  &quot;lockTime&quot; : 12345,
+  &quot;kayttajaRyhmaId&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;ownerId&quot; : 12345,
+  &quot;aika&quot; : 12345,
+  &quot;formId&quot; : 12345,
+  &quot;reportId&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_MedicalRecordsResource_getMedicalReports_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/medicalreports/{id}/protected <a href="../api/v1/medicalreports/{id}/protected" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+            <th>multivalued</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">form</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">page</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">pageSize</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_ProtectionReason.html">ProtectionReason</a>
+ (JSON)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_KertomuksetView.html">KertomuksetView</a>
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /medicalreports/{id}/protected
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;reason&quot; : &quot;...&quot;,
+  &quot;protection&quot; : &quot;...&quot;
+} ]
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;entries&quot; : [ {
+    &quot;id&quot; : {
+      &quot;ownerId&quot; : 12345,
+      &quot;aika&quot; : 12345,
+      &quot;formId&quot; : 12345,
+      &quot;reportId&quot; : 12345
+    },
+    &quot;mainTitle&quot; : &quot;...&quot;,
+    &quot;unit&quot; : &quot;...&quot;,
+    &quot;formName&quot; : &quot;...&quot;,
+    &quot;responsible&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ],
+    &quot;kirjaaja&quot; : 12345,
+    &quot;suorittaja&quot; : 12345,
+    &quot;color&quot; : &quot;...&quot;,
+    &quot;vanha&quot; : true,
+    &quot;status&quot; : &quot;KERTOMUS_UNDEFIND&quot;,
+    &quot;kirjaajaName&quot; : &quot;...&quot;,
+    &quot;nakyma&quot; : &quot;...&quot;,
+    &quot;unitId&quot; : 12345,
+    &quot;kayttajaRyhma&quot; : &quot;...&quot;,
+    &quot;kayttajaRyhmaId&quot; : 12345,
+    &quot;lockTime&quot; : 12345,
+    &quot;editable&quot; : true
+  }, {
+    &quot;id&quot; : {
+      &quot;ownerId&quot; : 12345,
+      &quot;aika&quot; : 12345,
+      &quot;formId&quot; : 12345,
+      &quot;reportId&quot; : 12345
+    },
+    &quot;mainTitle&quot; : &quot;...&quot;,
+    &quot;unit&quot; : &quot;...&quot;,
+    &quot;formName&quot; : &quot;...&quot;,
+    &quot;responsible&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ],
+    &quot;kirjaaja&quot; : 12345,
+    &quot;suorittaja&quot; : 12345,
+    &quot;color&quot; : &quot;...&quot;,
+    &quot;vanha&quot; : true,
+    &quot;status&quot; : &quot;KERTOMUS_UNDEFIND&quot;,
+    &quot;kirjaajaName&quot; : &quot;...&quot;,
+    &quot;nakyma&quot; : &quot;...&quot;,
+    &quot;unitId&quot; : 12345,
+    &quot;kayttajaRyhma&quot; : &quot;...&quot;,
+    &quot;kayttajaRyhmaId&quot; : 12345,
+    &quot;lockTime&quot; : 12345,
+    &quot;editable&quot; : true
+  } ],
+  &quot;updated&quot; : true,
+  &quot;currentPage&quot; : 12345,
+  &quot;prevUrl&quot; : &quot;...&quot;,
+  &quot;nextUrl&quot; : &quot;...&quot;,
+  &quot;maxSize&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;protections&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+  &quot;editTime&quot; : 12345,
+  &quot;componentId&quot; : &quot;...&quot;,
+  &quot;ownerId&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -541,14 +1289,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#KERTOMUS_LUONNOS"><abbr title="KERTOMUS_LUONNOS"><span class="sideoverflow">KERTOMUS_LUONNOS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_KESKEN"><abbr title="KERTOMUS_KESKEN"><span class="sideoverflow">KERTOMUS_KESKEN</span></abbr></a></li>
+          <li><a href="#KERTOMUS_VALMIS"><abbr title="KERTOMUS_VALMIS"><span class="sideoverflow">KERTOMUS_VALMIS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_UNDEFIND"><abbr title="KERTOMUS_UNDEFIND"><span class="sideoverflow">KERTOMUS_UNDEFIND</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -67,8 +70,7 @@
       <h1 class="page-header">laakitysTauko <small>Data Type</small></h1>
 
       <p>DTO for LaakitysTauko
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html</p>
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html</a></p>
 
       <dl class="dl-horizontal">
         <dt>Namespace</dt>
@@ -77,7 +79,7 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html</p>
         <dd><a href="ns0.xsd">ns0.xsd</a></dd>
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -91,155 +93,173 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html</p>
         </thead>
         <tbody>
         <tr>
-          <td>  alkaa
+          <td>  <span class="property-name">alkaa</span>
 </td>
-          <td>  dateTime
-
+          <td>  <span class="datatype-reference">dateTime
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the starting time of the medication break
-</td>
-        </tr>
-        <tr>
-          <td>  aloittaja
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  1/1
-
-</td>
-          <td>  Returns the id of an user who started the medication break
+          <td>  <span class="property-description">Returns the starting time of the medication break</span>
 </td>
         </tr>
         <tr>
-          <td>  huomautuksia
+          <td>  <span class="property-name">alkaaNew</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">dateTime
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the notes about the medication break
-</td>
-        </tr>
-        <tr>
-          <td>  lopettaja
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the id of an user who ended the medication break
+          <td>  <span class="property-description">&nbsp;</span>
 </td>
         </tr>
         <tr>
-          <td>  loppuu
+          <td>  <span class="property-name">aloittaja</span>
 </td>
-          <td>  dateTime
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
 </td>
-          <td>  Returns the ending time of the medication break
-</td>
-        </tr>
-        <tr>
-          <td>  muutosaika
-</td>
-          <td>  dateTime
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the actual DB-change time of the medication break
+          <td>  <span class="property-description">Returns the id of an user who started the medication break</span>
 </td>
         </tr>
         <tr>
-          <td>  muutospaikka
+          <td>  <span class="property-name">huomautuksia</span>
 </td>
-          <td>  short
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the organization in which the change has been made
+          <td>  <span class="property-description">Returns the notes about the medication break</span>
 </td>
         </tr>
         <tr>
-          <td>  poistettu
+          <td>  <span class="property-name">lopettaja</span>
 </td>
-          <td>  unsignedShort
-
+          <td>  <span class="datatype-reference">int
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the code of the medication break removal. 'E' - not removed, 'K' = removed
+          <td>  <span class="property-description">Returns the id of an user who ended the medication break</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">loppuu</span>
+</td>
+          <td>  <span class="datatype-reference">dateTime
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the ending time of the medication break</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">muutosaika</span>
+</td>
+          <td>  <span class="datatype-reference">dateTime
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the actual DB-change time of the medication break</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">muutospaikka</span>
+</td>
+          <td>  <span class="datatype-reference">short
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the organization in which the change has been made</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">poistettu</span>
+</td>
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the code of the medication break removal. 'E' - not removed, 'K' = removed</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-xml">&lt;laakitysTauko&gt;
+      
+      <pre class="prettyprint language-xml example">&lt;laakitysTauko&gt;
   &lt;alkaa&gt;...&lt;/alkaa&gt;
   &lt;loppuu&gt;...&lt;/loppuu&gt;
   &lt;huomautuksia&gt;...&lt;/huomautuksia&gt;
@@ -248,6 +268,7 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html</p>
   &lt;poistettu&gt;...&lt;/poistettu&gt;
   &lt;muutosaika&gt;...&lt;/muutosaika&gt;
   &lt;muutospaikka&gt;...&lt;/muutospaikka&gt;
+  &lt;alkaaNew&gt;...&lt;/alkaaNew&gt;
 &lt;/laakitysTauko&gt;
 </pre>
 
@@ -263,14 +284,14 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKITYS_TAUKO.html</p>
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

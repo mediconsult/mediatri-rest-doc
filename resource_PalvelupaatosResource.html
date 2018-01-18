@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,13 +51,13 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_PalvelupaatosResource_getServiceDecisionsForPatient_GET"><abbr title="GET /patients/{id}/serviceDecisions">GET /patients/{id}/serviceDeci...</abbr></a></li>
-          <li><a href="#resource_PalvelupaatosResource_getServiceClasses_GET">GET /settings/serviceClasses</a></li>
-          <li><a href="#resource_PalvelupaatosResource_getInterruptionReasons_GET"><abbr title="GET /settings/serviceInterruptReasons">GET /settings/serviceInterrupt...</abbr></a></li>
-          <li><a href="#resource_PalvelupaatosResource_addServiceInterruption_POST"><abbr title="POST /patients/{id}/serviceDecisions/interruptions">POST /patients/{id}/serviceDec...</abbr></a></li>
-          <li><a href="#resource_PalvelupaatosResource_updateServiceInterruption_PUT"><abbr title="PUT /patients/{id}/serviceDecisions/interruptions">PUT /patients/{id}/serviceDeci...</abbr></a></li>
-          <li><a href="#resource_PalvelupaatosResource_deleteServiceInterruption_DELETE"><abbr title="DELETE /patients/{id}/serviceDecisions/interruptions">DELETE /patients/{id}/serviceD...</abbr></a></li>
-          <li><a href="#resource_PalvelupaatosResource_deleteServiceInterruptionWithIdData_DELETE"><abbr title="DELETE /patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}">DELETE /patients/{id}/serviceD...</abbr></a></li>
+          <li><a href="#resource_PalvelupaatosResource_getServiceClasses_GET"><abbr title="GET /settings/serviceClasses"><span class="sideoverflow">GET /settings/serviceClasses</span></abbr></a></li>
+          <li><a href="#resource_PalvelupaatosResource_getInterruptionReasons_GET"><abbr title="GET /settings/serviceInterruptReasons"><span class="sideoverflow">GET /settings/serviceInterruptReasons</span></abbr></a></li>
+          <li><a href="#resource_PalvelupaatosResource_getServiceDecisionsForPatient_GET"><abbr title="GET /patients/{id}/serviceDecisions"><span class="sideoverflow">GET /patients/{id}/serviceDecisions</span></abbr></a></li>
+          <li><a href="#resource_PalvelupaatosResource_deleteServiceInterruption_DELETE"><abbr title="DELETE /patients/{id}/serviceDecisions/interruptions"><span class="sideoverflow">DELETE /patients/{id}/serviceDecisions/interruptions</span></abbr></a></li>
+          <li><a href="#resource_PalvelupaatosResource_addServiceInterruption_POST"><abbr title="POST /patients/{id}/serviceDecisions/interruptions"><span class="sideoverflow">POST /patients/{id}/serviceDecisions/interruptions</span></abbr></a></li>
+          <li><a href="#resource_PalvelupaatosResource_updateServiceInterruption_PUT"><abbr title="PUT /patients/{id}/serviceDecisions/interruptions"><span class="sideoverflow">PUT /patients/{id}/serviceDecisions/interruptions</span></abbr></a></li>
+          <li><a href="#resource_PalvelupaatosResource_deleteServiceInterruptionWithIdData_DELETE"><abbr title="DELETE /patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}"><span class="sideoverflow">DELETE /patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -76,110 +74,12 @@
 
       <p>REST API for palvelupaatokses.</p>
 
-      <div id="resource_PalvelupaatosResource_getServiceDecisionsForPatient_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/{id}/serviceDecisions <a href="../api/v1patients/{id}/serviceDecisions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Gets service decisions for given patient, with given time interval restrictions..</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>endTime</td>
-            <td>query</td>
-            <td>end time (yyyy-MM-dd) for narrowing the returned result set (optional). Also more detailed timestamp allowed (yyyy-MM-dd'T'HH:mm:ss), but decisions are timestamped only at day-level.</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>onlyValid</td>
-            <td>query</td>
-            <td>if set to <code>true</code>, returns only valid palvelup��t�kses (optional)
-i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=K && PAATOSLAATU=NULL || TILA=K && PAATOSLAATU=M)</td>
-            <td>boolean</td>
-          </tr>
-          <tr>
-            <td>serviceClass</td>
-            <td>query</td>
-            <td>if set with non-empty/valid value (i.e. configured/recognized valid service class abbreviation), returns only service decisions matching given service class (optional)</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>startTime</td>
-            <td>query</td>
-            <td>start time (yyyy-MM-dd) for narrowing the returned result set (optional). Also more detailed timestamp allowed (yyyy-MM-dd'T'HH:mm:ss), but decisions are timestamped only at day-level.</td>
-            <td>&nbsp;</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_Palvelupaatos.html">Palvelupaatos</a>
- (JSON)</td>
-            <td>list of service decisions</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
       <div id="resource_PalvelupaatosResource_getServiceClasses_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/settings/serviceClasses <a href="../api/v1settings/serviceClasses" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/settings/serviceClasses <a href="../api/v1/settings/serviceClasses" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets service classes configured to the currently accessed Mediatri database in Palvelup��t�kset-form.</p>
+        <p>Gets service classes configured to the currently accessed Mediatri database in Palvelupäätökset-form.</p>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -189,25 +89,25 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -218,21 +118,64 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_Palveluluokka.html">Palveluluokka</a>
- (JSON)</td>
-            <td>service classes configured to the currently accessed Mediatri database in Palvelup��t�kset-form</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_Palveluluokka.html">Palveluluokka</a>
+ (JSON)</span></td>
+            <td><span class="response-description">service classes configured to the currently accessed Mediatri database in Palvelupäätökset-form</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /settings/serviceClasses
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;tunnus&quot; : &quot;...&quot;,
+  &quot;nimi&quot; : &quot;...&quot;,
+  &quot;kayttajaryhma&quot; : &quot;...&quot;,
+  &quot;palvelunTarveOtsikko&quot; : &quot;...&quot;,
+  &quot;paatostekstinOtsikko&quot; : &quot;...&quot;,
+  &quot;lakipykalat&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+  &quot;suoritekoodi&quot; : &quot;...&quot;,
+  &quot;diaarinumerosarja&quot; : &quot;...&quot;,
+  &quot;paatosAvoin&quot; : true,
+  &quot;riviotsikko&quot; : &quot;...&quot;,
+  &quot;sarakeotsikko&quot; : &quot;...&quot;,
+  &quot;laskutusTapahtumienMukaisesti&quot; : true,
+  &quot;tukipalvelu&quot; : true,
+  &quot;paattajaryhmanOtsikko&quot; : &quot;...&quot;,
+  &quot;palvelunimikkeisto&quot; : &quot;...&quot;,
+  &quot;tapahtumamalli&quot; : &quot;...&quot;,
+  &quot;laskettavatTilat&quot; : [ &quot;PERUUTETTU&quot;, &quot;KESKEYTETTY&quot; ]
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_PalvelupaatosResource_getInterruptionReasons_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/settings/serviceInterruptReasons <a href="../api/v1settings/serviceInterruptReasons" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/settings/serviceInterruptReasons <a href="../api/v1/settings/serviceInterruptReasons" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets service interruption descriptions with related settings configured to the currently accessed Mediatri database in Palvelup��t�kset-form.</p>
+        <p>Gets service interruption descriptions with related settings configured to the currently accessed Mediatri database in Palvelupäätökset-form.</p>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -242,25 +185,25 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -271,21 +214,50 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_PalvelukeskeytysSyy.html">PalvelukeskeytysSyy</a>
- (JSON)</td>
-            <td>service interruption descriptions with related settings configured to the currently accessed Mediatri database in Palvelup��t�kset-form</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_PalvelukeskeytysSyy.html">PalvelukeskeytysSyy</a>
+ (JSON)</span></td>
+            <td><span class="response-description">service interruption descriptions with related settings configured to the currently accessed Mediatri database in Palvelupäätökset-form</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /settings/serviceInterruptReasons
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;billingType&quot; : &quot;FROM_END_OF_PERIOD&quot;,
+  &quot;maxBillingDays&quot; : 12345,
+  &quot;syyDescription&quot; : &quot;...&quot;
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_PalvelupaatosResource_addServiceInterruption_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/patients/{id}/serviceDecisions/interruptions <a href="../api/v1patients/{id}/serviceDecisions/interruptions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_PalvelupaatosResource_getServiceDecisionsForPatient_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/{id}/serviceDecisions <a href="../api/v1/patients/{id}/serviceDecisions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Adds service decision interruption.</p>
+        <p>Gets service decisions for given patient, with given time interval restrictions..</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -297,34 +269,40 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">endTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">end time (yyyy-MM-dd) for narrowing the returned result set (optional). Also more detailed timestamp allowed (yyyy-MM-dd'T'HH:mm:ss), but decisions are timestamped only at day-level.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">onlyValid</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">if set to <code>true</code>, returns only valid palvelupäätökses (optional)
+i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=K && PAATOSLAATU=NULL || TILA=K && PAATOSLAATU=M)</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">serviceClass</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">if set with non-empty/valid value (i.e. configured/recognized valid service class abbreviation), returns only service decisions matching given service class (optional)</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">startTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">start time (yyyy-MM-dd) for narrowing the returned result set (optional). Also more detailed timestamp allowed (yyyy-MM-dd'T'HH:mm:ss), but decisions are timestamped only at day-level.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_Palvelukeskeytys.html">Palvelukeskeytys</a>
- (JSON)</td>
-            <td>interruption DTO</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -334,25 +312,25 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -363,121 +341,308 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">HTTP 204="No Content" on success, otherwise HTTP error response code.</td>
-          </tr>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server.">application/xml</abbr></td>
-            <td>anyType
- (XML)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_Palvelupaatos.html">Palvelupaatos</a>
+ (JSON)</span></td>
+            <td><span class="response-description">list of service decisions</span></td>
           </tr>
           </tbody>
         </table>
-      </div>
+        <h4>Example</h4>
 
-      <div id="resource_PalvelupaatosResource_updateServiceInterruption_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/patients/{id}/serviceDecisions/interruptions <a href="../api/v1patients/{id}/serviceDecisions/interruptions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/{id}/serviceDecisions
+Accept: application/json
 
-        <p>Updates service decision interruption.</p>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_Palvelukeskeytys.html">Palvelukeskeytys</a>
- (JSON)</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">HTTP 204="No Content" on success, otherwise HTTP error response code.</td>
-          </tr>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server.">application/xml</abbr></td>
-            <td>anyType
- (XML)</td>
-          </tr>
-          </tbody>
-        </table>
+                <code class="prettyprint language-js">
+[ {
+  &quot;permissions&quot; : {
+    &quot;add&quot; : true,
+    &quot;data&quot; : {
+      &quot;lomakeId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;hoitosuhdevaatimus&quot; : true,
+      &quot;vastuuyksikko&quot; : 12345,
+      &quot;pohjavari&quot; : 12345,
+      &quot;fullFormTypeId&quot; : 12345,
+      &quot;formTypeInfo&quot; : { },
+      &quot;ownerTypeInfo&quot; : { },
+      &quot;formOwnerId&quot; : 12345
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;change&quot; : true,
+    &quot;view&quot; : true,
+    &quot;remove&quot; : true
+  },
+  &quot;paatos&quot; : 12345,
+  &quot;palveluluokkaTunnus&quot; : &quot;...&quot;,
+  &quot;palveluluokka&quot; : {
+    &quot;tunnus&quot; : &quot;...&quot;,
+    &quot;nimi&quot; : &quot;...&quot;,
+    &quot;kayttajaryhma&quot; : &quot;...&quot;,
+    &quot;palvelunTarveOtsikko&quot; : &quot;...&quot;,
+    &quot;paatostekstinOtsikko&quot; : &quot;...&quot;,
+    &quot;lakipykalat&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;suoritekoodi&quot; : &quot;...&quot;,
+    &quot;diaarinumerosarja&quot; : &quot;...&quot;,
+    &quot;paatosAvoin&quot; : true,
+    &quot;riviotsikko&quot; : &quot;...&quot;,
+    &quot;sarakeotsikko&quot; : &quot;...&quot;,
+    &quot;laskutusTapahtumienMukaisesti&quot; : true,
+    &quot;tukipalvelu&quot; : true,
+    &quot;paattajaryhmanOtsikko&quot; : &quot;...&quot;,
+    &quot;palvelunimikkeisto&quot; : &quot;...&quot;,
+    &quot;tapahtumamalli&quot; : &quot;...&quot;,
+    &quot;laskettavatTilat&quot; : [ &quot;KESKEYTETTY&quot;, &quot;ITSE_PERUNUT&quot; ]
+  },
+  &quot;alkaa&quot; : 12345,
+  &quot;diaarinumero&quot; : &quot;...&quot;,
+  &quot;haettu&quot; : 12345,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;kayttajaryhma&quot; : 12345,
+  &quot;kustannuspaikka&quot; : 12345,
+  &quot;kuukausimaksu&quot; : 12345.0,
+  &quot;laki&quot; : &quot;...&quot;,
+  &quot;laskutusalkaa&quot; : 12345,
+  &quot;loppuu&quot; : 12345,
+  &quot;luokittelu1&quot; : &quot;...&quot;,
+  &quot;luokittelu2&quot; : &quot;...&quot;,
+  &quot;maara&quot; : 12345,
+  &quot;maksuperuste&quot; : &quot;...&quot;,
+  &quot;mitatoija&quot; : 12345,
+  &quot;mitatoijaUser&quot; : {
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;skills&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;skills&quot; : [ { }, { } ]
+    },
+    &quot;startTime&quot; : 12345,
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  },
+  &quot;mitatointisyy&quot; : &quot;...&quot;,
+  &quot;mitatoity&quot; : 12345,
+  &quot;muutosaika&quot; : 12345,
+  &quot;muutospaikka&quot; : 12345,
+  &quot;paatetty&quot; : 12345,
+  &quot;paatosyksikko&quot; : 12345,
+  &quot;paatosyksikkoUnit&quot; : {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  },
+  &quot;paattaja&quot; : 12345,
+  &quot;paattajaUser&quot; : {
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;skills&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;skills&quot; : [ { }, { } ]
+    },
+    &quot;startTime&quot; : 12345,
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  },
+  &quot;paattajaryhma&quot; : &quot;...&quot;,
+  &quot;poistettu&quot; : true,
+  &quot;tarve&quot; : &quot;...&quot;,
+  &quot;teksti&quot; : &quot;...&quot;,
+  &quot;tiedonantaja&quot; : &quot;...&quot;,
+  &quot;tilasto1&quot; : &quot;...&quot;,
+  &quot;tilasto2&quot; : &quot;...&quot;,
+  &quot;tilasto3&quot; : &quot;...&quot;,
+  &quot;tulot&quot; : 12345.0,
+  &quot;valitettu&quot; : 12345,
+  &quot;valmistelija&quot; : 12345,
+  &quot;valmistelijaUser&quot; : {
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;skills&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;skills&quot; : [ { }, { } ]
+    },
+    &quot;startTime&quot; : 12345,
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  },
+  &quot;valmisteluyksikko&quot; : 12345,
+  &quot;valmisteluyksikkoUnit&quot; : {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  },
+  &quot;tila&quot; : &quot;MITATOITY&quot;,
+  &quot;laatu&quot; : &quot;MYONTEINEN&quot;,
+  &quot;lasnaolot&quot; : {
+    &quot;property1&quot; : 12345,
+    &quot;property2&quot; : 12345
+  },
+  &quot;palvelukeskeytykset&quot; : [ {
+    &quot;alkaa&quot; : 12345,
+    &quot;paatos&quot; : 12345,
+    &quot;syy&quot; : &quot;...&quot;,
+    &quot;loppuu&quot; : 12345,
+    &quot;alkuaika&quot; : &quot;...&quot;,
+    &quot;loppuaika&quot; : &quot;...&quot;,
+    &quot;alusta&quot; : true,
+    &quot;laskutetaan&quot; : 12345,
+    &quot;huomautuksia&quot; : &quot;...&quot;,
+    &quot;muutosaika&quot; : 12345,
+    &quot;poistettu&quot; : true
+  }, {
+    &quot;alkaa&quot; : 12345,
+    &quot;paatos&quot; : 12345,
+    &quot;syy&quot; : &quot;...&quot;,
+    &quot;loppuu&quot; : 12345,
+    &quot;alkuaika&quot; : &quot;...&quot;,
+    &quot;loppuaika&quot; : &quot;...&quot;,
+    &quot;alusta&quot; : true,
+    &quot;laskutetaan&quot; : 12345,
+    &quot;huomautuksia&quot; : &quot;...&quot;,
+    &quot;muutosaika&quot; : 12345,
+    &quot;poistettu&quot; : true
+  } ],
+  &quot;effectivePalvelukeskeytykset&quot; : [ {
+    &quot;alkaa&quot; : 12345,
+    &quot;paatos&quot; : 12345,
+    &quot;syy&quot; : &quot;...&quot;,
+    &quot;loppuu&quot; : 12345,
+    &quot;alkuaika&quot; : &quot;...&quot;,
+    &quot;loppuaika&quot; : &quot;...&quot;,
+    &quot;alusta&quot; : true,
+    &quot;laskutetaan&quot; : 12345,
+    &quot;huomautuksia&quot; : &quot;...&quot;,
+    &quot;muutosaika&quot; : 12345,
+    &quot;poistettu&quot; : true
+  }, {
+    &quot;alkaa&quot; : 12345,
+    &quot;paatos&quot; : 12345,
+    &quot;syy&quot; : &quot;...&quot;,
+    &quot;loppuu&quot; : 12345,
+    &quot;alkuaika&quot; : &quot;...&quot;,
+    &quot;loppuaika&quot; : &quot;...&quot;,
+    &quot;alusta&quot; : true,
+    &quot;laskutetaan&quot; : 12345,
+    &quot;huomautuksia&quot; : &quot;...&quot;,
+    &quot;muutosaika&quot; : 12345,
+    &quot;poistettu&quot; : true
+  } ]
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_PalvelupaatosResource_deleteServiceInterruption_DELETE">
-        <h3><span class="resource-method">DELETE</span> <span class="resource-path">/patients/{id}/serviceDecisions/interruptions <a href="../api/v1patients/{id}/serviceDecisions/interruptions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/patients/{id}/serviceDecisions/interruptions <a href="../api/v1/patients/{id}/serviceDecisions/interruptions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Deletes service decision interruption.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -489,15 +654,15 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -507,14 +672,14 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_Palvelukeskeytys.html">Palvelukeskeytys</a>
- (JSON)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Palvelukeskeytys.html">Palvelukeskeytys</a>
+ (JSON)</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -524,25 +689,25 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -553,26 +718,67 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">HTTP 204="No Content" on success, otherwise HTTP error response code.</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">HTTP 204="No Content" on success, otherwise HTTP error response code.</span></td>
           </tr>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server.">application/xml</abbr></td>
-            <td>anyType
- (XML)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">anyType
+ (XML)</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /patients/{id}/serviceDecisions/interruptions
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;alkaa&quot; : 12345,
+  &quot;paatos&quot; : 12345,
+  &quot;syy&quot; : &quot;...&quot;,
+  &quot;loppuu&quot; : 12345,
+  &quot;alkuaika&quot; : &quot;...&quot;,
+  &quot;loppuaika&quot; : &quot;...&quot;,
+  &quot;alusta&quot; : true,
+  &quot;laskutetaan&quot; : 12345,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;muutosaika&quot; : 12345,
+  &quot;poistettu&quot; : true
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_PalvelupaatosResource_deleteServiceInterruptionWithIdData_DELETE">
-        <h3><span class="resource-method">DELETE</span> <span class="resource-path">/patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription} <a href="../api/v1patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_PalvelupaatosResource_addServiceInterruption_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/patients/{id}/serviceDecisions/interruptions <a href="../api/v1/patients/{id}/serviceDecisions/interruptions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Deletes service decision interruption from database matching given identifying data.</p>
+        <p>Adds service decision interruption.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -584,33 +790,34 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td>decisionId</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>service decision id</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>patient id</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>reasonDescription</td>
-            <td>path</td>
-            <td>service interruption description</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>startDate</td>
-            <td>path</td>
-            <td>start date for service decision</td>
-            <td>long</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Palvelukeskeytys.html">Palvelukeskeytys</a>
+ (JSON)</span></td>
+            <td><span class="request-description">interruption DTO</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -620,25 +827,25 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -649,18 +856,316 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">HTTP 204="No Content" on success, otherwise HTTP error response code.</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">HTTP 204="No Content" on success, otherwise HTTP error response code.</span></td>
           </tr>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server.">application/xml</abbr></td>
-            <td>anyType
- (XML)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">anyType
+ (XML)</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /patients/{id}/serviceDecisions/interruptions
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;alkaa&quot; : 12345,
+  &quot;paatos&quot; : 12345,
+  &quot;syy&quot; : &quot;...&quot;,
+  &quot;loppuu&quot; : 12345,
+  &quot;alkuaika&quot; : &quot;...&quot;,
+  &quot;loppuaika&quot; : &quot;...&quot;,
+  &quot;alusta&quot; : true,
+  &quot;laskutetaan&quot; : 12345,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;muutosaika&quot; : 12345,
+  &quot;poistettu&quot; : true
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PalvelupaatosResource_updateServiceInterruption_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/patients/{id}/serviceDecisions/interruptions <a href="../api/v1/patients/{id}/serviceDecisions/interruptions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Updates service decision interruption.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Palvelukeskeytys.html">Palvelukeskeytys</a>
+ (JSON)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">HTTP 204="No Content" on success, otherwise HTTP error response code.</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">anyType
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /patients/{id}/serviceDecisions/interruptions
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;alkaa&quot; : 12345,
+  &quot;paatos&quot; : 12345,
+  &quot;syy&quot; : &quot;...&quot;,
+  &quot;loppuu&quot; : 12345,
+  &quot;alkuaika&quot; : &quot;...&quot;,
+  &quot;loppuaika&quot; : &quot;...&quot;,
+  &quot;alusta&quot; : true,
+  &quot;laskutetaan&quot; : 12345,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;muutosaika&quot; : 12345,
+  &quot;poistettu&quot; : true
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PalvelupaatosResource_deleteServiceInterruptionWithIdData_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription} <a href="../api/v1/patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Deletes service decision interruption from database matching given identifying data.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">decisionId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">service decision id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">reasonDescription</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">service interruption description</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">startDate</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">start date for service decision</span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">HTTP 204="No Content" on success, otherwise HTTP error response code.</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">anyType
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /patients/{id}/serviceDecisions/interruptions/{decisionId}/starts/{startDate}/reason/{reasonDescription}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -675,14 +1180,14 @@ i.e. the ones matching criteria (POISTETTU=E && TILA=V && PAATOSLAATU=M || TILA=
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

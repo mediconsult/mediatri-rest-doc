@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,10 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#SERVICE_PROVIDER"><abbr title="SERVICE_PROVIDER"><span class="sideoverflow">SERVICE_PROVIDER</span></abbr></a></li>
+          <li><a href="#REGISTER"><abbr title="REGISTER"><span class="sideoverflow">REGISTER</span></abbr></a></li>
+          <li><a href="#SERVICE_EVENT"><abbr title="SERVICE_EVENT"><span class="sideoverflow">SERVICE_EVENT</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +73,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,66 +84,84 @@
         </thead>
         <tbody>
         <tr>
-          <td>  lastName
+          <td>  <span class="property-name">omistajaListDescription</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  startTime
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  endTime
+          <td>  <span class="property-name">lastName</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  userName
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  firstName
+          <td>  <span class="property-name">skills</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference"><a href="json_SkillsInfo.html">SkillsInfo</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  basicInfo
-</td>
-          <td>  <a href="json_BasicInfo.html">BasicInfo</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  skills
+          <td>  <span class="property-name">startTime</span>
 </td>
-          <td>  <a href="json_SkillsInfo.html">SkillsInfo</a>
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">basicInfo</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_BasicInfo.html">BasicInfo</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">endTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">userName</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">omistajaDescriptionForSearch</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">firstName</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -150,67 +170,61 @@
         </tr>
         <tbody>
         <tr>
-          <td>name</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">editTime</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>nameExtension</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">type</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>editTime</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">nameExtension</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>omistajaId</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">name</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>omistajaListAvailability</td>
-          <td><a href="json_TimeInterval.html">TimeInterval</a>
-</td>
-          <td></td>
+          <td><span class="property-name">omistajaId</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">omistajaListAvailability</span></td>
+          <td><span class="datatype-reference"><a href="json_TimeInterval.html">TimeInterval</a>
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">identifier</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">alias</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
+  &quot;omistajaListDescription&quot; : &quot;...&quot;,
   &quot;lastName&quot; : &quot;...&quot;,
-  &quot;startTime&quot; : 12345,
-  &quot;endTime&quot; : 12345,
-  &quot;userName&quot; : &quot;...&quot;,
-  &quot;firstName&quot; : &quot;...&quot;,
-  &quot;basicInfo&quot; : {
-    &quot;dataLoaded&quot; : true,
-    &quot;href&quot; : &quot;...&quot;,
-    &quot;titles&quot; : [ {
-      &quot;presentation&quot; : &quot;...&quot;,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
-      &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
-    }, {
-      &quot;presentation&quot; : &quot;...&quot;,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
-      &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
-    } ]
-  },
   &quot;skills&quot; : {
     &quot;dataLoaded&quot; : true,
     &quot;href&quot; : &quot;...&quot;,
@@ -218,7 +232,6 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;changeable&quot; : true,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
@@ -227,21 +240,49 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;changeable&quot; : true,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ]
   },
-  &quot;name&quot; : &quot;...&quot;,
-  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;startTime&quot; : 12345,
+  &quot;basicInfo&quot; : {
+    &quot;dataLoaded&quot; : true,
+    &quot;href&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ]
+  },
+  &quot;endTime&quot; : 12345,
+  &quot;userName&quot; : &quot;...&quot;,
+  &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+  &quot;firstName&quot; : &quot;...&quot;,
   &quot;editTime&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
   &quot;omistajaId&quot; : 12345,
   &quot;omistajaListAvailability&quot; : {
     &quot;startTime&quot; : 12345,
     &quot;endTime&quot; : 12345
-  }
+  },
+  &quot;identifier&quot; : &quot;...&quot;,
+  &quot;alias&quot; : 12345
 }</pre>
 
         <footer class="footer">
@@ -256,14 +297,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

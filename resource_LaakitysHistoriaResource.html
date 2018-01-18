@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,11 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_LaakitysHistoriaResource_getMedication_GET">GET /medication/{id}</a></li>
-          <li><a href="#resource_LaakitysHistoriaResource_getTimes_GET"><abbr title="GET /medication/{id}/part/{osa}/times">GET /medication/{id}/part/{osa...</abbr></a></li>
-          <li><a href="#resource_LaakitysHistoriaResource_modifyTime_PUT"><abbr title="PUT /medication/{id}/part/{osa}/time">PUT /medication/{id}/part/{osa...</abbr></a></li>
-          <li><a href="#resource_LaakitysHistoriaResource_addTime_POST"><abbr title="POST /medication/{id}/part/{osa}/time">POST /medication/{id}/part/{os...</abbr></a></li>
-          <li><a href="#resource_LaakitysHistoriaResource_deleteTime_DELETE"><abbr title="DELETE /medication/{id}/part/{osa}/time">DELETE /medication/{id}/part/{...</abbr></a></li>
+          <li><a href="#resource_LaakitysHistoriaResource_getMedication_GET"><abbr title="GET /medication/{id}"><span class="sideoverflow">GET /medication/{id}</span></abbr></a></li>
+          <li><a href="#resource_LaakitysHistoriaResource_deleteTime_DELETE"><abbr title="DELETE /medication/{id}/part/{osa}/time"><span class="sideoverflow">DELETE /medication/{id}/part/{osa}/time</span></abbr></a></li>
+          <li><a href="#resource_LaakitysHistoriaResource_addTime_POST"><abbr title="POST /medication/{id}/part/{osa}/time"><span class="sideoverflow">POST /medication/{id}/part/{osa}/time</span></abbr></a></li>
+          <li><a href="#resource_LaakitysHistoriaResource_modifyTime_PUT"><abbr title="PUT /medication/{id}/part/{osa}/time"><span class="sideoverflow">PUT /medication/{id}/part/{osa}/time</span></abbr></a></li>
+          <li><a href="#resource_LaakitysHistoriaResource_getTimes_GET"><abbr title="GET /medication/{id}/part/{osa}/times"><span class="sideoverflow">GET /medication/{id}/part/{osa}/times</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -75,11 +73,11 @@
       <p>REST API for medication</p>
 
       <div id="resource_LaakitysHistoriaResource_getMedication_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/medication/{id} <a href="../api/v1medication/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/medication/{id} <a href="../api/v1/medication/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Lists all Medication information for the patient</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -91,21 +89,21 @@
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>patients Mediatri ID</td>
-            <td>int</td>
+            <td><span class="parameter-description">patients Mediatri ID</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>includeFiltered</td>
+            <td><span class="parameter-name">includeFiltered</span></td>
             <td>query</td>
-            <td>if true also non-active medication is included</td>
-            <td>boolean</td>
+            <td><span class="parameter-description">if true also non-active medication is included</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -116,254 +114,236 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_LaakitysView.html">LaakitysView</a>
- (JSON)</td>
-            <td>list of medication information</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_LaakitysView.html">LaakitysView</a>
+ (JSON)</span></td>
+            <td><span class="response-description">list of medication information</span></td>
           </tr>
           </tbody>
         </table>
-      </div>
+        <h4>Example</h4>
 
-      <div id="resource_LaakitysHistoriaResource_getTimes_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/medication/{id}/part/{osa}/times <a href="../api/v1medication/{id}/part/{osa}/times" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /medication/{id}
+Accept: application/json
 
-        <p>Return all medication giving times of a patients medication</p>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>patients Mediatri ID</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>osa</td>
-            <td>path</td>
-            <td>osa</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_LaakitysAnto.html">LaakitysAnto</a>
- (JSON)</td>
-            <td>medication giving times</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_LaakitysHistoriaResource_modifyTime_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/medication/{id}/part/{osa}/time <a href="../api/v1medication/{id}/part/{osa}/time" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Modifies a medication giving time</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>patients Mediatri ID</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>osa</td>
-            <td>path</td>
-            <td>osa</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_LaakitysAnto.html">LaakitysAnto</a>
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">LaakitysAnto</td>
-          </tr>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server.">application/xml</abbr></td>
-            <td><a href="xml_ns0_laakitysAnto.html">laakitysAnto</a>
- (XML)</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td>response</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_LaakitysHistoriaResource_addTime_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/medication/{id}/part/{osa}/time <a href="../api/v1medication/{id}/part/{osa}/time" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Saves a "extra"- or planned-time to database.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>patients Mediatri ID</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>osa</td>
-            <td>path</td>
-            <td>osa</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_LaakitysAnto.html">LaakitysAnto</a>
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">LaakitysAnto</td>
-          </tr>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server.">application/xml</abbr></td>
-            <td><a href="xml_ns0_laakitysAnto.html">laakitysAnto</a>
- (XML)</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td>response</td>
-          </tr>
-          </tbody>
-        </table>
+                <code class="prettyprint language-js">
+{
+  &quot;laakityskategoria&quot; : {
+    &quot;property1&quot; : {
+      &quot;displayName&quot; : &quot;...&quot;,
+      &quot;code&quot; : &quot;...&quot;,
+      &quot;laakityshistoriaList&quot; : [ {
+        &quot;omistaja&quot; : 12345,
+        &quot;osa&quot; : 12345,
+        &quot;nimi&quot; : &quot;...&quot;,
+        &quot;annostus&quot; : &quot;...&quot;,
+        &quot;aloitusPvm&quot; : &quot;...&quot;,
+        &quot;lopetusPvm&quot; : &quot;...&quot;,
+        &quot;kokoNimi&quot; : &quot;...&quot;,
+        &quot;kertaAnnos&quot; : &quot;...&quot;,
+        &quot;toistokuvaus&quot; : &quot;...&quot;,
+        &quot;maaraaja&quot; : &quot;...&quot;,
+        &quot;kirjaaja&quot; : &quot;...&quot;,
+        &quot;huomautuksia&quot; : &quot;...&quot;,
+        &quot;ohjeet&quot; : &quot;...&quot;,
+        &quot;kellonajat&quot; : &quot;...&quot;,
+        &quot;annosteluteksti&quot; : &quot;...&quot;,
+        &quot;kayttotarkoitus&quot; : &quot;...&quot;,
+        &quot;aikayksikko&quot; : &quot;...&quot;,
+        &quot;antotahti&quot; : &quot;...&quot;,
+        &quot;laakeaineet&quot; : &quot;...&quot;,
+        &quot;kuitattava&quot; : &quot;...&quot;,
+        &quot;tauonAloitusPvm&quot; : 12345,
+        &quot;tauonLopetusPvm&quot; : 12345,
+        &quot;taukohuomautuksia&quot; : &quot;...&quot;,
+        &quot;reseptityyppi&quot; : &quot;...&quot;,
+        &quot;laakitysAntoList&quot; : [ { }, { } ],
+        &quot;laakitysKayttoaiheList&quot; : [ { }, { } ],
+        &quot;annettavaMaara&quot; : 12345.0,
+        &quot;annettavaMaksimi&quot; : 12345.0,
+        &quot;annettavaYksikko&quot; : &quot;...&quot;,
+        &quot;laake&quot; : &quot;...&quot;,
+        &quot;vrkmaara&quot; : 12345.0,
+        &quot;vrkmaaraYksikko&quot; : &quot;...&quot;,
+        &quot;vaihtelevaAnnostus&quot; : &quot;...&quot;,
+        &quot;vaihteleva&quot; : true,
+        &quot;paino&quot; : 12345.0,
+        &quot;annettavaMaaraTimesPaino&quot; : 12345.0,
+        &quot;vrkkerratCalc&quot; : 12345,
+        &quot;vrkmaaraCalc&quot; : 12345.0,
+        &quot;tauolla&quot; : true,
+        &quot;pysyvyys&quot; : &quot;...&quot;,
+        &quot;laakitystapaList&quot; : [ { }, { } ]
+      }, {
+        &quot;omistaja&quot; : 12345,
+        &quot;osa&quot; : 12345,
+        &quot;nimi&quot; : &quot;...&quot;,
+        &quot;annostus&quot; : &quot;...&quot;,
+        &quot;aloitusPvm&quot; : &quot;...&quot;,
+        &quot;lopetusPvm&quot; : &quot;...&quot;,
+        &quot;kokoNimi&quot; : &quot;...&quot;,
+        &quot;kertaAnnos&quot; : &quot;...&quot;,
+        &quot;toistokuvaus&quot; : &quot;...&quot;,
+        &quot;maaraaja&quot; : &quot;...&quot;,
+        &quot;kirjaaja&quot; : &quot;...&quot;,
+        &quot;huomautuksia&quot; : &quot;...&quot;,
+        &quot;ohjeet&quot; : &quot;...&quot;,
+        &quot;kellonajat&quot; : &quot;...&quot;,
+        &quot;annosteluteksti&quot; : &quot;...&quot;,
+        &quot;kayttotarkoitus&quot; : &quot;...&quot;,
+        &quot;aikayksikko&quot; : &quot;...&quot;,
+        &quot;antotahti&quot; : &quot;...&quot;,
+        &quot;laakeaineet&quot; : &quot;...&quot;,
+        &quot;kuitattava&quot; : &quot;...&quot;,
+        &quot;tauonAloitusPvm&quot; : 12345,
+        &quot;tauonLopetusPvm&quot; : 12345,
+        &quot;taukohuomautuksia&quot; : &quot;...&quot;,
+        &quot;reseptityyppi&quot; : &quot;...&quot;,
+        &quot;laakitysAntoList&quot; : [ { }, { } ],
+        &quot;laakitysKayttoaiheList&quot; : [ { }, { } ],
+        &quot;annettavaMaara&quot; : 12345.0,
+        &quot;annettavaMaksimi&quot; : 12345.0,
+        &quot;annettavaYksikko&quot; : &quot;...&quot;,
+        &quot;laake&quot; : &quot;...&quot;,
+        &quot;vrkmaara&quot; : 12345.0,
+        &quot;vrkmaaraYksikko&quot; : &quot;...&quot;,
+        &quot;vaihtelevaAnnostus&quot; : &quot;...&quot;,
+        &quot;vaihteleva&quot; : true,
+        &quot;paino&quot; : 12345.0,
+        &quot;annettavaMaaraTimesPaino&quot; : 12345.0,
+        &quot;vrkkerratCalc&quot; : 12345,
+        &quot;vrkmaaraCalc&quot; : 12345.0,
+        &quot;tauolla&quot; : true,
+        &quot;pysyvyys&quot; : &quot;...&quot;,
+        &quot;laakitystapaList&quot; : [ { }, { } ]
+      } ]
+    },
+    &quot;property2&quot; : {
+      &quot;displayName&quot; : &quot;...&quot;,
+      &quot;code&quot; : &quot;...&quot;,
+      &quot;laakityshistoriaList&quot; : [ {
+        &quot;omistaja&quot; : 12345,
+        &quot;osa&quot; : 12345,
+        &quot;nimi&quot; : &quot;...&quot;,
+        &quot;annostus&quot; : &quot;...&quot;,
+        &quot;aloitusPvm&quot; : &quot;...&quot;,
+        &quot;lopetusPvm&quot; : &quot;...&quot;,
+        &quot;kokoNimi&quot; : &quot;...&quot;,
+        &quot;kertaAnnos&quot; : &quot;...&quot;,
+        &quot;toistokuvaus&quot; : &quot;...&quot;,
+        &quot;maaraaja&quot; : &quot;...&quot;,
+        &quot;kirjaaja&quot; : &quot;...&quot;,
+        &quot;huomautuksia&quot; : &quot;...&quot;,
+        &quot;ohjeet&quot; : &quot;...&quot;,
+        &quot;kellonajat&quot; : &quot;...&quot;,
+        &quot;annosteluteksti&quot; : &quot;...&quot;,
+        &quot;kayttotarkoitus&quot; : &quot;...&quot;,
+        &quot;aikayksikko&quot; : &quot;...&quot;,
+        &quot;antotahti&quot; : &quot;...&quot;,
+        &quot;laakeaineet&quot; : &quot;...&quot;,
+        &quot;kuitattava&quot; : &quot;...&quot;,
+        &quot;tauonAloitusPvm&quot; : 12345,
+        &quot;tauonLopetusPvm&quot; : 12345,
+        &quot;taukohuomautuksia&quot; : &quot;...&quot;,
+        &quot;reseptityyppi&quot; : &quot;...&quot;,
+        &quot;laakitysAntoList&quot; : [ { }, { } ],
+        &quot;laakitysKayttoaiheList&quot; : [ { }, { } ],
+        &quot;annettavaMaara&quot; : 12345.0,
+        &quot;annettavaMaksimi&quot; : 12345.0,
+        &quot;annettavaYksikko&quot; : &quot;...&quot;,
+        &quot;laake&quot; : &quot;...&quot;,
+        &quot;vrkmaara&quot; : 12345.0,
+        &quot;vrkmaaraYksikko&quot; : &quot;...&quot;,
+        &quot;vaihtelevaAnnostus&quot; : &quot;...&quot;,
+        &quot;vaihteleva&quot; : true,
+        &quot;paino&quot; : 12345.0,
+        &quot;annettavaMaaraTimesPaino&quot; : 12345.0,
+        &quot;vrkkerratCalc&quot; : 12345,
+        &quot;vrkmaaraCalc&quot; : 12345.0,
+        &quot;tauolla&quot; : true,
+        &quot;pysyvyys&quot; : &quot;...&quot;,
+        &quot;laakitystapaList&quot; : [ { }, { } ]
+      }, {
+        &quot;omistaja&quot; : 12345,
+        &quot;osa&quot; : 12345,
+        &quot;nimi&quot; : &quot;...&quot;,
+        &quot;annostus&quot; : &quot;...&quot;,
+        &quot;aloitusPvm&quot; : &quot;...&quot;,
+        &quot;lopetusPvm&quot; : &quot;...&quot;,
+        &quot;kokoNimi&quot; : &quot;...&quot;,
+        &quot;kertaAnnos&quot; : &quot;...&quot;,
+        &quot;toistokuvaus&quot; : &quot;...&quot;,
+        &quot;maaraaja&quot; : &quot;...&quot;,
+        &quot;kirjaaja&quot; : &quot;...&quot;,
+        &quot;huomautuksia&quot; : &quot;...&quot;,
+        &quot;ohjeet&quot; : &quot;...&quot;,
+        &quot;kellonajat&quot; : &quot;...&quot;,
+        &quot;annosteluteksti&quot; : &quot;...&quot;,
+        &quot;kayttotarkoitus&quot; : &quot;...&quot;,
+        &quot;aikayksikko&quot; : &quot;...&quot;,
+        &quot;antotahti&quot; : &quot;...&quot;,
+        &quot;laakeaineet&quot; : &quot;...&quot;,
+        &quot;kuitattava&quot; : &quot;...&quot;,
+        &quot;tauonAloitusPvm&quot; : 12345,
+        &quot;tauonLopetusPvm&quot; : 12345,
+        &quot;taukohuomautuksia&quot; : &quot;...&quot;,
+        &quot;reseptityyppi&quot; : &quot;...&quot;,
+        &quot;laakitysAntoList&quot; : [ { }, { } ],
+        &quot;laakitysKayttoaiheList&quot; : [ { }, { } ],
+        &quot;annettavaMaara&quot; : 12345.0,
+        &quot;annettavaMaksimi&quot; : 12345.0,
+        &quot;annettavaYksikko&quot; : &quot;...&quot;,
+        &quot;laake&quot; : &quot;...&quot;,
+        &quot;vrkmaara&quot; : 12345.0,
+        &quot;vrkmaaraYksikko&quot; : &quot;...&quot;,
+        &quot;vaihtelevaAnnostus&quot; : &quot;...&quot;,
+        &quot;vaihteleva&quot; : true,
+        &quot;paino&quot; : 12345.0,
+        &quot;annettavaMaaraTimesPaino&quot; : 12345.0,
+        &quot;vrkkerratCalc&quot; : 12345,
+        &quot;vrkmaaraCalc&quot; : 12345.0,
+        &quot;tauolla&quot; : true,
+        &quot;pysyvyys&quot; : &quot;...&quot;,
+        &quot;laakitystapaList&quot; : [ { }, { } ]
+      } ]
+    }
+  },
+  &quot;permissionDTO&quot; : {
+    &quot;permissions&quot; : {
+      &quot;property1&quot; : true,
+      &quot;property2&quot; : true
+    }
+  },
+  &quot;editTime&quot; : 12345,
+  &quot;componentId&quot; : &quot;...&quot;,
+  &quot;ownerId&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_LaakitysHistoriaResource_deleteTime_DELETE">
-        <h3><span class="resource-method">DELETE</span> <span class="resource-path">/medication/{id}/part/{osa}/time <a href="../api/v1medication/{id}/part/{osa}/time" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/medication/{id}/part/{osa}/time <a href="../api/v1/medication/{id}/part/{osa}/time" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p></p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -375,21 +355,21 @@
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td></td>
-            <td>int</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>osa</td>
+            <td><span class="parameter-name">osa</span></td>
             <td>path</td>
-            <td></td>
-            <td>int</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -399,34 +379,469 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_LaakitysAnto.html">LaakitysAnto</a>
- (JSON)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_LaakitysAnto.html">LaakitysAnto</a>
+ (JSON)</span></td>
           </tr>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server.">application/xml</abbr></td>
-            <td><a href="xml_ns0_laakitysAnto.html">laakitysAnto</a>
- (XML)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_laakitysAnto.html">laakitysAnto</a>
+ (XML)</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /medication/{id}/part/{osa}/time
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;antaja&quot; : 12345,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;laake&quot; : &quot;...&quot;,
+  &quot;maara&quot; : 12345.0,
+  &quot;muutosAika&quot; : 12345,
+  &quot;omistaja&quot; : 12345,
+  &quot;osa&quot; : 12345,
+  &quot;poistettu&quot; : { },
+  &quot;suunniteltuAika&quot; : 12345,
+  &quot;toteutunutAika&quot; : 12345,
+  &quot;toteutunutAikaLoppu&quot; : 12345,
+  &quot;tyyppi&quot; : 12345,
+  &quot;yksikko&quot; : &quot;...&quot;,
+  &quot;kirjaajaName&quot; : &quot;...&quot;,
+  &quot;antajaName&quot; : &quot;...&quot;,
+  &quot;annettavaMaara&quot; : 12345.0,
+  &quot;annettavaYksikko&quot; : &quot;...&quot;,
+  &quot;annettavaMaksimi&quot; : 12345.0,
+  &quot;toteutunutAikaOriginal&quot; : 12345,
+  &quot;kello&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_LaakitysHistoriaResource_addTime_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/medication/{id}/part/{osa}/time <a href="../api/v1/medication/{id}/part/{osa}/time" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Saves a "extra"- or planned-time to database.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patients Mediatri ID</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">osa</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">osa</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_LaakitysAnto.html">LaakitysAnto</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">LaakitysAnto</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_laakitysAnto.html">laakitysAnto</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">response</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /medication/{id}/part/{osa}/time
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;antaja&quot; : 12345,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;laake&quot; : &quot;...&quot;,
+  &quot;maara&quot; : 12345.0,
+  &quot;muutosAika&quot; : 12345,
+  &quot;omistaja&quot; : 12345,
+  &quot;osa&quot; : 12345,
+  &quot;poistettu&quot; : { },
+  &quot;suunniteltuAika&quot; : 12345,
+  &quot;toteutunutAika&quot; : 12345,
+  &quot;toteutunutAikaLoppu&quot; : 12345,
+  &quot;tyyppi&quot; : 12345,
+  &quot;yksikko&quot; : &quot;...&quot;,
+  &quot;kirjaajaName&quot; : &quot;...&quot;,
+  &quot;antajaName&quot; : &quot;...&quot;,
+  &quot;annettavaMaara&quot; : 12345.0,
+  &quot;annettavaYksikko&quot; : &quot;...&quot;,
+  &quot;annettavaMaksimi&quot; : 12345.0,
+  &quot;toteutunutAikaOriginal&quot; : 12345,
+  &quot;kello&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_LaakitysHistoriaResource_modifyTime_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/medication/{id}/part/{osa}/time <a href="../api/v1/medication/{id}/part/{osa}/time" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Modifies a medication giving time</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patients Mediatri ID</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">osa</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">osa</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_LaakitysAnto.html">LaakitysAnto</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">LaakitysAnto</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_laakitysAnto.html">laakitysAnto</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">response</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /medication/{id}/part/{osa}/time
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;antaja&quot; : 12345,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;laake&quot; : &quot;...&quot;,
+  &quot;maara&quot; : 12345.0,
+  &quot;muutosAika&quot; : 12345,
+  &quot;omistaja&quot; : 12345,
+  &quot;osa&quot; : 12345,
+  &quot;poistettu&quot; : { },
+  &quot;suunniteltuAika&quot; : 12345,
+  &quot;toteutunutAika&quot; : 12345,
+  &quot;toteutunutAikaLoppu&quot; : 12345,
+  &quot;tyyppi&quot; : 12345,
+  &quot;yksikko&quot; : &quot;...&quot;,
+  &quot;kirjaajaName&quot; : &quot;...&quot;,
+  &quot;antajaName&quot; : &quot;...&quot;,
+  &quot;annettavaMaara&quot; : 12345.0,
+  &quot;annettavaYksikko&quot; : &quot;...&quot;,
+  &quot;annettavaMaksimi&quot; : 12345.0,
+  &quot;toteutunutAikaOriginal&quot; : 12345,
+  &quot;kello&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_LaakitysHistoriaResource_getTimes_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/medication/{id}/part/{osa}/times <a href="../api/v1/medication/{id}/part/{osa}/times" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Return all medication giving times of a patients medication</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patients Mediatri ID</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">osa</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">osa</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_LaakitysAnto.html">LaakitysAnto</a>
+ (JSON)</span></td>
+            <td><span class="response-description">medication giving times</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /medication/{id}/part/{osa}/times
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;antaja&quot; : 12345,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;laake&quot; : &quot;...&quot;,
+  &quot;maara&quot; : 12345.0,
+  &quot;muutosAika&quot; : 12345,
+  &quot;omistaja&quot; : 12345,
+  &quot;osa&quot; : 12345,
+  &quot;poistettu&quot; : { },
+  &quot;suunniteltuAika&quot; : 12345,
+  &quot;toteutunutAika&quot; : 12345,
+  &quot;toteutunutAikaLoppu&quot; : 12345,
+  &quot;tyyppi&quot; : 12345,
+  &quot;yksikko&quot; : &quot;...&quot;,
+  &quot;kirjaajaName&quot; : &quot;...&quot;,
+  &quot;antajaName&quot; : &quot;...&quot;,
+  &quot;annettavaMaara&quot; : 12345.0,
+  &quot;annettavaYksikko&quot; : &quot;...&quot;,
+  &quot;annettavaMaksimi&quot; : 12345.0,
+  &quot;toteutunutAikaOriginal&quot; : 12345,
+  &quot;kello&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -441,14 +856,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

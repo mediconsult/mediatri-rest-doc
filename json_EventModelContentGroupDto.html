@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#WORK"><abbr title="WORK"><span class="sideoverflow">WORK</span></abbr></a></li>
+          <li><a href="#TIME"><abbr title="TIME"><span class="sideoverflow">TIME</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -83,7 +84,7 @@ type: "SYSTEM_DEFINED"
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -99,40 +100,40 @@ type: "SYSTEM_DEFINED"
         </tr>
         <tbody>
         <tr>
-          <td>freeItems</td>
-          <td>array of <a href="json_ContentGroupTitle.html">ContentGroupTitle</a>
-</td>
-          <td></td>
+          <td><span class="property-name">name</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>name</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">removed</span></td>
+          <td><span class="datatype-reference">boolean
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>removed</td>
-          <td>boolean
-</td>
-          <td></td>
+          <td><span class="property-name">order</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>visibility</td>
-          <td><a href="json_ContentGroupVisibility.html">ContentGroupVisibility</a>
-</td>
-          <td></td>
+          <td><span class="property-name">visibility</span></td>
+          <td><span class="datatype-reference"><a href="json_ContentGroupVisibility.html">ContentGroupVisibility</a>
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>order</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">type</span></td>
+          <td><span class="datatype-reference"><a href="json_ContentGroupType.html">ContentGroupType</a>
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>type</td>
-          <td><a href="json_ContentGroupType.html">ContentGroupType</a>
-</td>
-          <td></td>
+          <td><span class="property-name">freeItems</span></td>
+          <td><span class="datatype-reference">array of <a href="json_ContentGroupTitle.html">ContentGroupTitle</a>
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
         <tr>
@@ -140,43 +141,49 @@ type: "SYSTEM_DEFINED"
         </tr>
         <tbody>
         <tr>
-          <td>version</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>id</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>created</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">created</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>modified</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">modified</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;removed&quot; : true,
+  &quot;order&quot; : 12345,
+  &quot;visibility&quot; : &quot;EXCLUDED&quot;,
+  &quot;type&quot; : &quot;SYSTEM_DEFINED_CUSTOMERS&quot;,
   &quot;freeItems&quot; : [ {
     &quot;title&quot; : {
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
       &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
     },
     &quot;meaningId&quot; : 12345,
     &quot;meaningChangeable&quot; : true,
@@ -190,11 +197,12 @@ type: "SYSTEM_DEFINED"
   }, {
     &quot;title&quot; : {
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
       &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
     },
     &quot;meaningId&quot; : 12345,
     &quot;meaningChangeable&quot; : true,
@@ -206,11 +214,6 @@ type: "SYSTEM_DEFINED"
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   } ],
-  &quot;name&quot; : &quot;...&quot;,
-  &quot;removed&quot; : true,
-  &quot;visibility&quot; : &quot;VISIBLE&quot;,
-  &quot;order&quot; : 12345,
-  &quot;type&quot; : &quot;USER_DEFINED&quot;,
   &quot;version&quot; : 12345,
   &quot;id&quot; : 12345,
   &quot;created&quot; : 12345,
@@ -229,14 +232,14 @@ type: "SYSTEM_DEFINED"
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

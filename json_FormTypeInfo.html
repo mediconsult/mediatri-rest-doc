@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,17 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#DRAFT"><abbr title="DRAFT"><span class="sideoverflow">DRAFT</span></abbr></a></li>
+          <li><a href="#PLANNED"><abbr title="PLANNED"><span class="sideoverflow">PLANNED</span></abbr></a></li>
+          <li><a href="#CONFIRMED"><abbr title="CONFIRMED"><span class="sideoverflow">CONFIRMED</span></abbr></a></li>
+          <li><a href="#ONGOING"><abbr title="ONGOING"><span class="sideoverflow">ONGOING</span></abbr></a></li>
+          <li><a href="#DONE"><abbr title="DONE"><span class="sideoverflow">DONE</span></abbr></a></li>
+          <li><a href="#CANCELED"><abbr title="CANCELED"><span class="sideoverflow">CANCELED</span></abbr></a></li>
+          <li><a href="#CANCELED_BY_PARTICIPANT"><abbr title="CANCELED_BY_PARTICIPANT"><span class="sideoverflow">CANCELED_BY_PARTICIPANT</span></abbr></a></li>
+          <li><a href="#CANCELED_BY_PROVIDER"><abbr title="CANCELED_BY_PROVIDER"><span class="sideoverflow">CANCELED_BY_PROVIDER</span></abbr></a></li>
+          <li><a href="#NOT_REALIZED"><abbr title="NOT_REALIZED"><span class="sideoverflow">NOT_REALIZED</span></abbr></a></li>
+          <li><a href="#INTERRUPTED"><abbr title="INTERRUPTED"><span class="sideoverflow">INTERRUPTED</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +80,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,41 +91,41 @@
         </thead>
         <tbody>
         <tr>
-          <td>  name
+          <td>  <span class="property-name">description</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  description
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  id
+          <td>  <span class="property-name">id</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">name</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
-  &quot;name&quot; : &quot;...&quot;,
+      
+      <pre class="prettyprint language-js example">{
   &quot;description&quot; : &quot;...&quot;,
-  &quot;id&quot; : 12345
+  &quot;id&quot; : 12345,
+  &quot;name&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">
@@ -131,14 +140,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

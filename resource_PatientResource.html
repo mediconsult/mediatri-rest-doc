@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,21 +51,22 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_PatientResource_getPatientByMediatriIdDeprecated_GET">GET /patients/id/{id}</a></li>
-          <li><a href="#resource_PatientResource_getPatientByMediatriId_GET">GET /patients/{id}</a></li>
-          <li><a href="#resource_PatientResource_getPatient_GET">GET /patients/ssn/{ssn}</a></li>
-          <li><a href="#resource_PatientResource_getPatientBasicInfoByMediatriId_GET"><abbr title="GET /patients/id/{id}/basicinfos">GET /patients/id/{id}/basicinf...</abbr></a></li>
-          <li><a href="#resource_PatientResource_getPatientBasicInfo_GET"><abbr title="GET /patients/ssn/{ssn}/basicinfos">GET /patients/ssn/{ssn}/basici...</abbr></a></li>
-          <li><a href="#resource_PatientResource_getPatients_GET">GET /patients/list</a></li>
-          <li><a href="#resource_PatientResource_searchPatients_GET">GET /patients/search</a></li>
-          <li><a href="#resource_PatientResource_getListedPatients_GET">GET /patients/listed</a></li>
-          <li><a href="#resource_PatientResource_getListsByMediatriId_GET">GET /patients/id/{id}/lists</a></li>
-          <li><a href="#resource_PatientResource_getLists_GET">GET /patients/ssn/{ssn}/lists</a></li>
-          <li><a href="#resource_PatientResource_getOmistajasFromListByMediatriId_GET"><abbr title="GET /patients/id/{omistajaId}/list/{listId}">GET /patients/id/{omistajaId}/...</abbr></a></li>
-          <li><a href="#resource_PatientResource_getOmistajasFromList_GET"><abbr title="GET /patients/ssn/{ssn}/list/{listId}">GET /patients/ssn/{ssn}/list/{...</abbr></a></li>
-          <li><a href="#resource_PatientResource_getPatientCourses_GET">GET /patients/id/{id}/courses</a></li>
-          <li><a href="#resource_PatientResource_getPatientsRiskitietoStatus_GET"><abbr title="GET /patients/id/{id}/riskistatus">GET /patients/id/{id}/riskista...</abbr></a></li>
-          <li><a href="#resource_PatientResource_putPerson_PUT">PUT /patients/id/{id}</a></li>
+          <li><a href="#resource_PatientResource_postPatient_POST"><abbr title="POST /patients"><span class="sideoverflow">POST /patients</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_getConfig_GET"><abbr title="GET /patients/config"><span class="sideoverflow">GET /patients/config</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_getListedPatients_GET"><abbr title="GET /patients/listed"><span class="sideoverflow">GET /patients/listed</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_searchPatients_GET"><abbr title="GET /patients/search"><span class="sideoverflow">GET /patients/search</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_deletePatient_DELETE"><abbr title="DELETE /patients/{id}"><span class="sideoverflow">DELETE /patients/{id}</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_getPatientByMediatriId_GET"><abbr title="GET /patients/{id}"><span class="sideoverflow">GET /patients/{id}</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_putPatient_PUT"><abbr title="PUT /patients/{id}"><span class="sideoverflow">PUT /patients/{id}</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_getPatientByMediatriIdDeprecated_GET"><abbr title="GET /patients/id/{id}"><span class="sideoverflow">GET /patients/id/{id}</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_lockBasicInfoForEdit_POST"><abbr title="POST /patients/{id}/lock"><span class="sideoverflow">POST /patients/{id}/lock</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_unLockBasicInfoForEdit_PUT"><abbr title="PUT /patients/{id}/unlock"><span class="sideoverflow">PUT /patients/{id}/unlock</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_getPatientBasicInfoByMediatriId_GET"><abbr title="GET /patients/id/{id}/basicinfos"><span class="sideoverflow">GET /patients/id/{id}/basicinfos</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_getPatientCourses_GET"><abbr title="GET /patients/id/{id}/courses"><span class="sideoverflow">GET /patients/id/{id}/courses</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_getListsByMediatriId_GET"><abbr title="GET /patients/id/{id}/lists"><span class="sideoverflow">GET /patients/id/{id}/lists</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_getPatientsRiskitietoStatus_GET"><abbr title="GET /patients/id/{id}/riskistatus"><span class="sideoverflow">GET /patients/id/{id}/riskistatus</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_getPatientsWardCareStatus_GET"><abbr title="GET /patients/id/{id}/wardcarestatus"><span class="sideoverflow">GET /patients/id/{id}/wardcarestatus</span></abbr></a></li>
+          <li><a href="#resource_PatientResource_getOmistajasFromListByMediatriId_GET"><abbr title="GET /patients/id/{id}/list/{listId}"><span class="sideoverflow">GET /patients/id/{id}/list/{listId}</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -84,264 +83,343 @@
 
       <p>REST API for patients</p>
 
-      <div id="resource_PatientResource_getPatientByMediatriIdDeprecated_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id} <a href="../api/v1patients/id/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_PatientResource_postPatient_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/patients <a href="../api/v1/patients" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <div class="alert alert-danger">This method has been deprecated.  </div>
+        <p>Create a new patient</p>
 
-        <p>This RESOURCE is deprecated because URL-naming change.
-Current valid is patients/{id}</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
           <thead>
           <tr>
-            <th>name</th>
-            <th>type</th>
+            <th>media type</th>
+            <th>data type</th>
             <th>description</th>
-            <th>constraints</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
-            <td>path</td>
-            <td></td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>includeBasicInfo</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          <tr>
-            <td>includeCareRelationPreferenceList</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          <tr>
-            <td>includeHoitosuhde</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          <tr>
-            <td>includeRiskitietoStatus</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Patient.html">Patient</a>
+ (JSON)</span></td>
+            <td><span class="request-description">patient input data</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Patient.html">Patient</a>
- (JSON)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Patient.html">Patient</a>
+ (JSON)</span></td>
+            <td><span class="response-description">created patient</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /patients
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;uuid&quot; : &quot;...&quot;,
+  &quot;omistajaListDescription&quot; : &quot;...&quot;,
+  &quot;lastName&quot; : &quot;...&quot;,
+  &quot;state&quot; : &quot;INTEGRATION&quot;,
+  &quot;riskitietoStatus&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : &quot;EI_RISKEJA&quot;
+  },
+  &quot;domainId&quot; : &quot;...&quot;,
+  &quot;wardCareStatus&quot; : {
+    &quot;loaded&quot; : true,
+    &quot;object&quot; : {
+      &quot;inWardCare&quot; : true,
+      &quot;hoitojakso&quot; : { },
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;dataOrigin&quot; : &quot;NO_WARD_CARE_DATA_MATCHES_FOUND&quot;
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+  &quot;hoitojakso&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;patientId&quot; : 12345,
+      &quot;osa&quot; : 12345,
+      &quot;alkoi&quot; : 12345,
+      &quot;loppui&quot; : 12345,
+      &quot;yksikko&quot; : 12345,
+      &quot;kustannuspaikka&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;maksusopimus&quot; : 12345,
+      &quot;palveluala&quot; : &quot;...&quot;,
+      &quot;mistatuli&quot; : &quot;...&quot;,
+      &quot;jatkohoito&quot; : &quot;...&quot;,
+      &quot;ika&quot; : 12345,
+      &quot;eihoitoilmoitusta&quot; : true,
+      &quot;hoitojaksolinkki&quot; : 12345,
+      &quot;poistettu&quot; : &quot;POISTETTU&quot;,
+      &quot;muutosoikeus&quot; : 12345,
+      &quot;projekti&quot; : 12345,
+      &quot;puutteellinen&quot; : &quot;OK&quot;,
+      &quot;tiedot&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;editTime&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;rekisteri&quot; : &quot;...&quot;,
+      &quot;palveluntuottaja&quot; : &quot;...&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;firstName&quot; : &quot;...&quot;,
+  &quot;birthDate&quot; : &quot;...&quot;,
+  &quot;age&quot; : 12345,
+  &quot;register&quot; : {
+    &quot;rekisterinpitajanNimi&quot; : &quot;...&quot;,
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;rekisterityyppi&quot; : &quot;JULKINEN_TERVEYDENHUOLTO&quot;,
+    &quot;socialCareRegister&quot; : true,
+    &quot;healthCareRegister&quot; : true
+  },
+  &quot;basicInfo&quot; : {
+    &quot;dataLoaded&quot; : true,
+    &quot;href&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ]
+  },
+  &quot;gender&quot; : &quot;...&quot;,
+  &quot;passivatedDate&quot; : &quot;...&quot;,
+  &quot;temporaryssn&quot; : true,
+  &quot;hoitosuhde&quot; : {
+    &quot;object&quot; : {
+      &quot;date&quot; : 12345,
+      &quot;unit&quot; : 12345,
+      &quot;patient&quot; : 12345,
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;katselunErityinenSyy&quot; : &quot;...&quot;,
+      &quot;erityissuojausperustelu&quot; : &quot;...&quot;,
+      &quot;user&quot; : 12345,
+      &quot;sallitutErityissuojausryhmat&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;realmId&quot; : &quot;...&quot;,
+  &quot;ssn&quot; : &quot;...&quot;,
+  &quot;passive&quot; : true,
+  &quot;genderHL7Code&quot; : &quot;...&quot;,
+  &quot;careRelationPreferenceList&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;allItemsCount&quot; : 12345,
+      &quot;entries&quot; : [ { }, { } ],
+      &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ],
+      &quot;preferredPalvelutapahtumaSelectStatus&quot; : &quot;HEURISTIC_NO_MATCH&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;editTime&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;omistajaId&quot; : 12345,
+  &quot;omistajaListAvailability&quot; : {
+    &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345
+  },
+  &quot;identifier&quot; : &quot;...&quot;,
+  &quot;alias&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;uuid&quot; : &quot;...&quot;,
+  &quot;omistajaListDescription&quot; : &quot;...&quot;,
+  &quot;lastName&quot; : &quot;...&quot;,
+  &quot;state&quot; : &quot;INTEGRATION&quot;,
+  &quot;riskitietoStatus&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : &quot;KRIITTISIA_JA_HUOMIOITAVIA_RISKEJA&quot;
+  },
+  &quot;domainId&quot; : &quot;...&quot;,
+  &quot;wardCareStatus&quot; : {
+    &quot;loaded&quot; : true,
+    &quot;object&quot; : {
+      &quot;inWardCare&quot; : true,
+      &quot;hoitojakso&quot; : { },
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;dataOrigin&quot; : &quot;ENCOUNTER_EVENT&quot;
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+  &quot;hoitojakso&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;patientId&quot; : 12345,
+      &quot;osa&quot; : 12345,
+      &quot;alkoi&quot; : 12345,
+      &quot;loppui&quot; : 12345,
+      &quot;yksikko&quot; : 12345,
+      &quot;kustannuspaikka&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;maksusopimus&quot; : 12345,
+      &quot;palveluala&quot; : &quot;...&quot;,
+      &quot;mistatuli&quot; : &quot;...&quot;,
+      &quot;jatkohoito&quot; : &quot;...&quot;,
+      &quot;ika&quot; : 12345,
+      &quot;eihoitoilmoitusta&quot; : true,
+      &quot;hoitojaksolinkki&quot; : 12345,
+      &quot;poistettu&quot; : &quot;POISTETTU&quot;,
+      &quot;muutosoikeus&quot; : 12345,
+      &quot;projekti&quot; : 12345,
+      &quot;puutteellinen&quot; : &quot;UNDEFINED&quot;,
+      &quot;tiedot&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;editTime&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;rekisteri&quot; : &quot;...&quot;,
+      &quot;palveluntuottaja&quot; : &quot;...&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;firstName&quot; : &quot;...&quot;,
+  &quot;birthDate&quot; : &quot;...&quot;,
+  &quot;age&quot; : 12345,
+  &quot;register&quot; : {
+    &quot;rekisterinpitajanNimi&quot; : &quot;...&quot;,
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;rekisterityyppi&quot; : &quot;YKSITYINEN_TERVEYDENHUOLTO&quot;,
+    &quot;socialCareRegister&quot; : true,
+    &quot;healthCareRegister&quot; : true
+  },
+  &quot;basicInfo&quot; : {
+    &quot;dataLoaded&quot; : true,
+    &quot;href&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ]
+  },
+  &quot;gender&quot; : &quot;...&quot;,
+  &quot;passivatedDate&quot; : &quot;...&quot;,
+  &quot;temporaryssn&quot; : true,
+  &quot;hoitosuhde&quot; : {
+    &quot;object&quot; : {
+      &quot;date&quot; : 12345,
+      &quot;unit&quot; : 12345,
+      &quot;patient&quot; : 12345,
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;katselunErityinenSyy&quot; : &quot;...&quot;,
+      &quot;erityissuojausperustelu&quot; : &quot;...&quot;,
+      &quot;user&quot; : 12345,
+      &quot;sallitutErityissuojausryhmat&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;realmId&quot; : &quot;...&quot;,
+  &quot;ssn&quot; : &quot;...&quot;,
+  &quot;passive&quot; : true,
+  &quot;genderHL7Code&quot; : &quot;...&quot;,
+  &quot;careRelationPreferenceList&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;allItemsCount&quot; : 12345,
+      &quot;entries&quot; : [ { }, { } ],
+      &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ],
+      &quot;preferredPalvelutapahtumaSelectStatus&quot; : &quot;HEURISTIC_MULTIPLE_MATCHES&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;editTime&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;omistajaId&quot; : 12345,
+  &quot;omistajaListAvailability&quot; : {
+    &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345
+  },
+  &quot;identifier&quot; : &quot;...&quot;,
+  &quot;alias&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_PatientResource_getPatientByMediatriId_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/{id} <a href="../api/v1patients/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_PatientResource_getConfig_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/config <a href="../api/v1/patients/config" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>This fetches patient by patient Id.</p>
+        <p>Get the basic info configuration for patients.</p>
 
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td></td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>includeBasicInfo</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          <tr>
-            <td>includeCareRelationPreferenceList</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          <tr>
-            <td>includeHoitosuhde</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          <tr>
-            <td>includeRiskitietoStatus</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Patient.html">Patient</a>
- (JSON)</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_PatientResource_getPatient_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/ssn/{ssn} <a href="../api/v1patients/ssn/{ssn}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p></p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>ssn</td>
-            <td>path</td>
-            <td></td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>includeBasicInfo</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          <tr>
-            <td>includeCareRelationPreferenceList</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          <tr>
-            <td>includeHoitosuhde</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          <tr>
-            <td>includeRiskitietoStatus</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Patient.html">Patient</a>
- (JSON)</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_PatientResource_getPatientBasicInfoByMediatriId_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id}/basicinfos <a href="../api/v1patients/id/{id}/basicinfos" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Gets patients basic information based on Mediatri owner id.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>Mediari owner id.</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -352,208 +430,73 @@ Current valid is patients/{id}</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_BasicInfo.html">BasicInfo</a>
- (JSON)</td>
-            <td>basic information object</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_PatientTitleGrouping.html">PatientTitleGrouping</a>
+ (JSON)</span></td>
+            <td><span class="response-description">tabs and titles for patient basic info</span></td>
           </tr>
           </tbody>
         </table>
-      </div>
+        <h4>Example</h4>
 
-      <div id="resource_PatientResource_getPatientBasicInfo_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/ssn/{ssn}/basicinfos <a href="../api/v1patients/ssn/{ssn}/basicinfos" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/config
+Accept: application/json
 
-        <p>Gets patients basic information based on patients' social security number.</p>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>ssn</td>
-            <td>path</td>
-            <td>patients' social security number</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_BasicInfo.html">BasicInfo</a>
- (JSON)</td>
-            <td>basic information object</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_PatientResource_getPatients_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/list <a href="../api/v1patients/list" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Gets list of patients. If no limiting parameters are given, returns all active patients from the system.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>maxId</td>
-            <td>query</td>
-            <td>optional parameter, sets minimum owner id for the returned patient list (not inclusive)</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>minId</td>
-            <td>query</td>
-            <td>optional parameter, sets minimum owner id for the returned patient list (inclusive)</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>pageIndex</td>
-            <td>query</td>
-            <td>page index, starting from which client wants to list patients. Minimum value for page index is 1.</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>pageSize</td>
-            <td>query</td>
-            <td>defines page size i.e. maximum amount of patients returned in on query, if page size is set, then also
-<code>pageIndex</code> parameter must be defined. If not set, returning all the patients
-matching given conditions.</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_PatientList.html">PatientList</a>
- (JSON)</td>
-            <td>patient list with paging related metadata</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_PatientResource_searchPatients_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/search <a href="../api/v1patients/search" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Makes search from all patients with given criteria.
-Either none or all search parameters can be set.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>firstNamePrefix</td>
-            <td>query</td>
-            <td>first name starts with condition, or <code>null</code> if not used as criterion</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>fullNameContains</td>
-            <td>query</td>
-            <td>patient's full name contains string condition, or <code>null</code> if not used as criterion
-Full name search overrides more specific lastNamePrefix, firstNamePrefix, userNamePrefix searches.</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>lastNamePrefix</td>
-            <td>query</td>
-            <td>last name starts with condition, or <code>null</code> if not used as criterion</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td>pageIndex</td>
-            <td>query</td>
-            <td>page index starting from which client wants to list patients</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>pageSize</td>
-            <td>query</td>
-            <td>defines page size i.e. maximum amount of patients returned in on query, if page size is set, then also
-<code>pageIndex</code> parameter must be defined. If not set, returning all the patients
-matching given conditions.</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>ssnPrefix</td>
-            <td>query</td>
-            <td>social security starts with condition, or <code>null</code> if not used as criterion</td>
-            <td>&nbsp;</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_PatientList.html">PatientList</a>
- (JSON)</td>
-            <td>patients found with given criteria</td>
-          </tr>
-          </tbody>
-        </table>
+                <code class="prettyprint language-js">
+{
+  &quot;configuredEndTitle&quot; : &quot;...&quot;,
+  &quot;permission&quot; : {
+    &quot;permissions&quot; : {
+      &quot;property1&quot; : true,
+      &quot;property2&quot; : true
+    }
+  },
+  &quot;configuredStartTitle&quot; : &quot;...&quot;,
+  &quot;groups&quot; : {
+    &quot;property1&quot; : {
+      &quot;view&quot; : true,
+      &quot;change&quot; : true,
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;remove&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;property2&quot; : {
+      &quot;view&quot; : true,
+      &quot;change&quot; : true,
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;remove&quot; : true,
+      &quot;type&quot; : &quot;...&quot;
+    }
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_PatientResource_getListedPatients_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/listed <a href="../api/v1patients/listed" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/listed <a href="../api/v1/patients/listed" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Get patients by given unit specific lists.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -566,37 +509,45 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td>endTime</td>
+            <td><span class="parameter-name">endTime</span></td>
             <td>query</td>
-            <td>list members should be valid before this time (inclusive)</td>
-            <td>&nbsp;</td>
-            <td>no</td>
+            <td><span class="parameter-description">list members should be valid before this time (inclusive)</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>list</td>
+            <td><span class="parameter-name">includePassive</span></td>
             <td>query</td>
-            <td>patient list form id</td>
-            <td>int</td>
-            <td>no</td>
+            <td><span class="parameter-description">should passive patients be included in the list? (false by default) NB! Patient's status (passive
+or not) is checked in reference to start time, if given, or current time, if not.</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>startTime</td>
+            <td><span class="parameter-name">list</span></td>
             <td>query</td>
-            <td>list members should be valid after this time (inclusive)</td>
-            <td>&nbsp;</td>
-            <td>no</td>
+            <td><span class="parameter-description">patient list form id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>unit</td>
+            <td><span class="parameter-name">startTime</span></td>
             <td>query</td>
-            <td>unit ids for which list contents should be fetched</td>
-            <td>int</td>
-            <td>yes</td>
+            <td><span class="parameter-description">list members should be valid after this time (inclusive)</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">unit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">unit ids for which list contents should be fetched</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -607,21 +558,472 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_PersonListByUnitAndForm.html">PersonListByUnitAndForm</a>
- (JSON)</td>
-            <td>a list of patient lists grouped by (unit id, list id)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_PersonListByUnitAndFormOfPatient.html">PersonListByUnitAndFormOfPatient</a>
+ (JSON)</span></td>
+            <td><span class="response-description">a list of patient lists grouped by (unit id, list id)</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/listed
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;unitId&quot; : 12345,
+  &quot;people&quot; : [ {
+    &quot;uuid&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;state&quot; : &quot;COMBINED&quot;,
+    &quot;riskitietoStatus&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : &quot;KRIITTISIA_RISKEJA&quot;
+    },
+    &quot;domainId&quot; : &quot;...&quot;,
+    &quot;wardCareStatus&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;hoitojakso&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;birthDate&quot; : &quot;...&quot;,
+    &quot;age&quot; : 12345,
+    &quot;register&quot; : {
+      &quot;rekisterinpitajanNimi&quot; : &quot;...&quot;,
+      &quot;code&quot; : &quot;...&quot;,
+      &quot;rekisterityyppi&quot; : &quot;TYOTERVEYSHUOLTO&quot;,
+      &quot;socialCareRegister&quot; : true,
+      &quot;healthCareRegister&quot; : true
+    },
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;gender&quot; : &quot;...&quot;,
+    &quot;passivatedDate&quot; : &quot;...&quot;,
+    &quot;temporaryssn&quot; : true,
+    &quot;hoitosuhde&quot; : {
+      &quot;object&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;realmId&quot; : &quot;...&quot;,
+    &quot;ssn&quot; : &quot;...&quot;,
+    &quot;passive&quot; : true,
+    &quot;genderHL7Code&quot; : &quot;...&quot;,
+    &quot;careRelationPreferenceList&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  }, {
+    &quot;uuid&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;state&quot; : &quot;REMOVEDANDHIDDEN&quot;,
+    &quot;riskitietoStatus&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : &quot;KRIITTISIA_RISKEJA&quot;
+    },
+    &quot;domainId&quot; : &quot;...&quot;,
+    &quot;wardCareStatus&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;hoitojakso&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;birthDate&quot; : &quot;...&quot;,
+    &quot;age&quot; : 12345,
+    &quot;register&quot; : {
+      &quot;rekisterinpitajanNimi&quot; : &quot;...&quot;,
+      &quot;code&quot; : &quot;...&quot;,
+      &quot;rekisterityyppi&quot; : &quot;JULKINEN_TERVEYDENHUOLTO&quot;,
+      &quot;socialCareRegister&quot; : true,
+      &quot;healthCareRegister&quot; : true
+    },
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;gender&quot; : &quot;...&quot;,
+    &quot;passivatedDate&quot; : &quot;...&quot;,
+    &quot;temporaryssn&quot; : true,
+    &quot;hoitosuhde&quot; : {
+      &quot;object&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;realmId&quot; : &quot;...&quot;,
+    &quot;ssn&quot; : &quot;...&quot;,
+    &quot;passive&quot; : true,
+    &quot;genderHL7Code&quot; : &quot;...&quot;,
+    &quot;careRelationPreferenceList&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  } ],
+  &quot;listId&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_PatientResource_getListsByMediatriId_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id}/lists <a href="../api/v1patients/id/{id}/lists" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_PatientResource_searchPatients_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/search <a href="../api/v1/patients/search" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets all patient's lists based on omistaja id.</p>
+        <p>Makes search from all patients with given criteria.
+Either none or all search parameters can be set.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+            <th>multivalued</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">firstNamePrefix</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">first name starts with condition, or <code>null</code> if not used as criterion</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">fullNameContains</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">patient's full name contains string condition, or <code>null</code> if not used as criterion
+Full name search overrides more specific lastNamePrefix, firstNamePrefix, userNamePrefix searches.
+A little bit unexpectedly full name contain search also include also match in case search string
+is part of patient's SSN i.e. henkilötunnus.</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">lastNamePrefix</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">last name starts with condition, or <code>null</code> if not used as criterion</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">list</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">optional patient list id(s), if not present patients are retrieved from global register</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">pageIndex</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page index starting from which client wants to list patients</span></td>
+            <td><span class="parameter-default-value">1</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">pageSize</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">defines page size i.e. maximum amount of patients returned in on query, if page size is set, then also
+<code>pageIndex</code> parameter must be defined. If not set, returning all the patients
+matching given conditions.</span></td>
+            <td><span class="parameter-default-value">50</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">ssnPrefix</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">social security starts with condition, or <code>null</code> if not used as criterion</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">unit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">optional unit ids, if present patient lists for given units are retrieved, otherwise login unit is assumed</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_PatientList.html">PatientList</a>
+ (JSON)</span></td>
+            <td><span class="response-description">patients found with given criteria</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/search
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;patients&quot; : [ {
+    &quot;uuid&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;state&quot; : &quot;COMBINED&quot;,
+    &quot;riskitietoStatus&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : &quot;KRIITTISIA_JA_HUOMIOITAVIA_RISKEJA&quot;
+    },
+    &quot;domainId&quot; : &quot;...&quot;,
+    &quot;wardCareStatus&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;hoitojakso&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;birthDate&quot; : &quot;...&quot;,
+    &quot;age&quot; : 12345,
+    &quot;register&quot; : {
+      &quot;rekisterinpitajanNimi&quot; : &quot;...&quot;,
+      &quot;code&quot; : &quot;...&quot;,
+      &quot;rekisterityyppi&quot; : &quot;AMMATINHARJOITTAJAT&quot;,
+      &quot;socialCareRegister&quot; : true,
+      &quot;healthCareRegister&quot; : true
+    },
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;gender&quot; : &quot;...&quot;,
+    &quot;passivatedDate&quot; : &quot;...&quot;,
+    &quot;temporaryssn&quot; : true,
+    &quot;hoitosuhde&quot; : {
+      &quot;object&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;realmId&quot; : &quot;...&quot;,
+    &quot;ssn&quot; : &quot;...&quot;,
+    &quot;passive&quot; : true,
+    &quot;genderHL7Code&quot; : &quot;...&quot;,
+    &quot;careRelationPreferenceList&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  }, {
+    &quot;uuid&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;state&quot; : &quot;PASSIVE&quot;,
+    &quot;riskitietoStatus&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;object&quot; : &quot;KRIITTISIA_RISKEJA&quot;
+    },
+    &quot;domainId&quot; : &quot;...&quot;,
+    &quot;wardCareStatus&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;hoitojakso&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;birthDate&quot; : &quot;...&quot;,
+    &quot;age&quot; : 12345,
+    &quot;register&quot; : {
+      &quot;rekisterinpitajanNimi&quot; : &quot;...&quot;,
+      &quot;code&quot; : &quot;...&quot;,
+      &quot;rekisterityyppi&quot; : &quot;AMMATINHARJOITTAJAT&quot;,
+      &quot;socialCareRegister&quot; : true,
+      &quot;healthCareRegister&quot; : true
+    },
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;gender&quot; : &quot;...&quot;,
+    &quot;passivatedDate&quot; : &quot;...&quot;,
+    &quot;temporaryssn&quot; : true,
+    &quot;hoitosuhde&quot; : {
+      &quot;object&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
+    &quot;realmId&quot; : &quot;...&quot;,
+    &quot;ssn&quot; : &quot;...&quot;,
+    &quot;passive&quot; : true,
+    &quot;genderHL7Code&quot; : &quot;...&quot;,
+    &quot;careRelationPreferenceList&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;object&quot; : { },
+      &quot;loaded&quot; : true,
+      &quot;loadUrl&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  } ],
+  &quot;pageIndex&quot; : 12345,
+  &quot;pageItemsCount&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;allItemsCount&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PatientResource_deletePatient_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/patients/{id} <a href="../api/v1/patients/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Deletes a patient.</p>
+
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -633,15 +1035,35 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>omistaja id</td>
-            <td>int</td>
+            <td><span class="parameter-description">id of the patient to be deleted.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">NotFound: Patient was not found</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -652,39 +1074,138 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_OmistajaListConfig.html">OmistajaListConfig</a>
- (JSON)</td>
-            <td>all patient's lists</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /patients/{id}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_PatientResource_getLists_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/ssn/{ssn}/lists <a href="../api/v1patients/ssn/{ssn}/lists" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_PatientResource_getPatientByMediatriId_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/{id} <a href="../api/v1/patients/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets all patient's lists based on social security number.</p>
+        <p>This fetches patient by id.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
             <th>name</th>
             <th>type</th>
             <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>ssn</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>social security number</td>
+            <td><span class="parameter-description">patient id</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">regex: \d+</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeBasicInfo</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">if true, data is pre-loaded, otherwise accessible via lazy load URL</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeCareRelationPreferenceList</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">if true, data is pre-loaded, otherwise accessible via lazy load URL</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeHoitojakso</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">true</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeHoitosuhde</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">if true, data is pre-loaded, otherwise accessible via lazy load URL</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeIsInWardStatus</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">if true, data is pre-loaded, otherwise accessible via lazy load URL</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeRiskitietoStatus</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">if true, data is pre-loaded, otherwise accessible via lazy load URL</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -695,21 +1216,175 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_OmistajaListConfig.html">OmistajaListConfig</a>
- (JSON)</td>
-            <td>all patient's lists</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Patient.html">Patient</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Patient DTO</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/{id}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;uuid&quot; : &quot;...&quot;,
+  &quot;omistajaListDescription&quot; : &quot;...&quot;,
+  &quot;lastName&quot; : &quot;...&quot;,
+  &quot;state&quot; : &quot;INTEGRATION&quot;,
+  &quot;riskitietoStatus&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : &quot;EI_RISKEJA&quot;
+  },
+  &quot;domainId&quot; : &quot;...&quot;,
+  &quot;wardCareStatus&quot; : {
+    &quot;loaded&quot; : true,
+    &quot;object&quot; : {
+      &quot;inWardCare&quot; : true,
+      &quot;hoitojakso&quot; : { },
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;dataOrigin&quot; : &quot;DEFAULT_VALUE&quot;
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+  &quot;hoitojakso&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;patientId&quot; : 12345,
+      &quot;osa&quot; : 12345,
+      &quot;alkoi&quot; : 12345,
+      &quot;loppui&quot; : 12345,
+      &quot;yksikko&quot; : 12345,
+      &quot;kustannuspaikka&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;maksusopimus&quot; : 12345,
+      &quot;palveluala&quot; : &quot;...&quot;,
+      &quot;mistatuli&quot; : &quot;...&quot;,
+      &quot;jatkohoito&quot; : &quot;...&quot;,
+      &quot;ika&quot; : 12345,
+      &quot;eihoitoilmoitusta&quot; : true,
+      &quot;hoitojaksolinkki&quot; : 12345,
+      &quot;poistettu&quot; : &quot;SIIRRETTY&quot;,
+      &quot;muutosoikeus&quot; : 12345,
+      &quot;projekti&quot; : 12345,
+      &quot;puutteellinen&quot; : &quot;OK&quot;,
+      &quot;tiedot&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;editTime&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;rekisteri&quot; : &quot;...&quot;,
+      &quot;palveluntuottaja&quot; : &quot;...&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;firstName&quot; : &quot;...&quot;,
+  &quot;birthDate&quot; : &quot;...&quot;,
+  &quot;age&quot; : 12345,
+  &quot;register&quot; : {
+    &quot;rekisterinpitajanNimi&quot; : &quot;...&quot;,
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;rekisterityyppi&quot; : &quot;AMMATINHARJOITTAJAT&quot;,
+    &quot;socialCareRegister&quot; : true,
+    &quot;healthCareRegister&quot; : true
+  },
+  &quot;basicInfo&quot; : {
+    &quot;dataLoaded&quot; : true,
+    &quot;href&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ]
+  },
+  &quot;gender&quot; : &quot;...&quot;,
+  &quot;passivatedDate&quot; : &quot;...&quot;,
+  &quot;temporaryssn&quot; : true,
+  &quot;hoitosuhde&quot; : {
+    &quot;object&quot; : {
+      &quot;date&quot; : 12345,
+      &quot;unit&quot; : 12345,
+      &quot;patient&quot; : 12345,
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;katselunErityinenSyy&quot; : &quot;...&quot;,
+      &quot;erityissuojausperustelu&quot; : &quot;...&quot;,
+      &quot;user&quot; : 12345,
+      &quot;sallitutErityissuojausryhmat&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;realmId&quot; : &quot;...&quot;,
+  &quot;ssn&quot; : &quot;...&quot;,
+  &quot;passive&quot; : true,
+  &quot;genderHL7Code&quot; : &quot;...&quot;,
+  &quot;careRelationPreferenceList&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;allItemsCount&quot; : 12345,
+      &quot;entries&quot; : [ { }, { } ],
+      &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ],
+      &quot;preferredPalvelutapahtumaSelectStatus&quot; : &quot;HEURISTIC_MULTIPLE_MATCHES&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;editTime&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;omistajaId&quot; : 12345,
+  &quot;omistajaListAvailability&quot; : {
+    &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345
+  },
+  &quot;identifier&quot; : &quot;...&quot;,
+  &quot;alias&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_PatientResource_getOmistajasFromListByMediatriId_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{omistajaId}/list/{listId} <a href="../api/v1patients/id/{omistajaId}/list/{listId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_PatientResource_putPatient_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/patients/{id} <a href="../api/v1/patients/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets omistajas for given list owned by the given owner (=form owner).</p>
+        <p>Edit patient information.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -721,21 +1396,32 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td>listId</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>list id (currently equals to form id)</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>omistajaId</td>
-            <td>path</td>
-            <td>omistaja id that is used as criteria to fetch data from list. It is also checked if this omistaja owns form with <code>lomakeId</code>, but otherwise it is expected that <code>lomakeId</code> refers to form owned by system owner (0) (this method requires always omistaja id)</td>
-            <td>int</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Patient.html">Patient</a>
+ (JSON)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -746,21 +1432,554 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_GenericOmistaja.html">GenericOmistaja</a>
- (JSON)</td>
-            <td>omistajas belonging to the list</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Patient.html">Patient</a>
+ (JSON)</span></td>
+            <td><span class="response-description">edited patient</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /patients/{id}
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;uuid&quot; : &quot;...&quot;,
+  &quot;omistajaListDescription&quot; : &quot;...&quot;,
+  &quot;lastName&quot; : &quot;...&quot;,
+  &quot;state&quot; : &quot;ALIAS&quot;,
+  &quot;riskitietoStatus&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : &quot;HUOMIOITAVIA_RISKEJA&quot;
+  },
+  &quot;domainId&quot; : &quot;...&quot;,
+  &quot;wardCareStatus&quot; : {
+    &quot;loaded&quot; : true,
+    &quot;object&quot; : {
+      &quot;inWardCare&quot; : true,
+      &quot;hoitojakso&quot; : { },
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;dataOrigin&quot; : &quot;ACTIVE_TREATMENT&quot;
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+  &quot;hoitojakso&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;patientId&quot; : 12345,
+      &quot;osa&quot; : 12345,
+      &quot;alkoi&quot; : 12345,
+      &quot;loppui&quot; : 12345,
+      &quot;yksikko&quot; : 12345,
+      &quot;kustannuspaikka&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;maksusopimus&quot; : 12345,
+      &quot;palveluala&quot; : &quot;...&quot;,
+      &quot;mistatuli&quot; : &quot;...&quot;,
+      &quot;jatkohoito&quot; : &quot;...&quot;,
+      &quot;ika&quot; : 12345,
+      &quot;eihoitoilmoitusta&quot; : true,
+      &quot;hoitojaksolinkki&quot; : 12345,
+      &quot;poistettu&quot; : &quot;AKTIIVINEN&quot;,
+      &quot;muutosoikeus&quot; : 12345,
+      &quot;projekti&quot; : 12345,
+      &quot;puutteellinen&quot; : &quot;PUUTTEELLINEN&quot;,
+      &quot;tiedot&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;editTime&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;rekisteri&quot; : &quot;...&quot;,
+      &quot;palveluntuottaja&quot; : &quot;...&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;firstName&quot; : &quot;...&quot;,
+  &quot;birthDate&quot; : &quot;...&quot;,
+  &quot;age&quot; : 12345,
+  &quot;register&quot; : {
+    &quot;rekisterinpitajanNimi&quot; : &quot;...&quot;,
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;rekisterityyppi&quot; : &quot;TYOTERVEYSHUOLTO&quot;,
+    &quot;socialCareRegister&quot; : true,
+    &quot;healthCareRegister&quot; : true
+  },
+  &quot;basicInfo&quot; : {
+    &quot;dataLoaded&quot; : true,
+    &quot;href&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ]
+  },
+  &quot;gender&quot; : &quot;...&quot;,
+  &quot;passivatedDate&quot; : &quot;...&quot;,
+  &quot;temporaryssn&quot; : true,
+  &quot;hoitosuhde&quot; : {
+    &quot;object&quot; : {
+      &quot;date&quot; : 12345,
+      &quot;unit&quot; : 12345,
+      &quot;patient&quot; : 12345,
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;katselunErityinenSyy&quot; : &quot;...&quot;,
+      &quot;erityissuojausperustelu&quot; : &quot;...&quot;,
+      &quot;user&quot; : 12345,
+      &quot;sallitutErityissuojausryhmat&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;realmId&quot; : &quot;...&quot;,
+  &quot;ssn&quot; : &quot;...&quot;,
+  &quot;passive&quot; : true,
+  &quot;genderHL7Code&quot; : &quot;...&quot;,
+  &quot;careRelationPreferenceList&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;allItemsCount&quot; : 12345,
+      &quot;entries&quot; : [ { }, { } ],
+      &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ],
+      &quot;preferredPalvelutapahtumaSelectStatus&quot; : &quot;HEURISTIC_FROM_CARE_RELATION&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;editTime&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;omistajaId&quot; : 12345,
+  &quot;omistajaListAvailability&quot; : {
+    &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345
+  },
+  &quot;identifier&quot; : &quot;...&quot;,
+  &quot;alias&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;uuid&quot; : &quot;...&quot;,
+  &quot;omistajaListDescription&quot; : &quot;...&quot;,
+  &quot;lastName&quot; : &quot;...&quot;,
+  &quot;state&quot; : &quot;COMBINED&quot;,
+  &quot;riskitietoStatus&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : &quot;KRIITTISIA_JA_HUOMIOITAVIA_RISKEJA&quot;
+  },
+  &quot;domainId&quot; : &quot;...&quot;,
+  &quot;wardCareStatus&quot; : {
+    &quot;loaded&quot; : true,
+    &quot;object&quot; : {
+      &quot;inWardCare&quot; : true,
+      &quot;hoitojakso&quot; : { },
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;dataOrigin&quot; : &quot;ENCOUNTER_EVENT&quot;
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+  &quot;hoitojakso&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;patientId&quot; : 12345,
+      &quot;osa&quot; : 12345,
+      &quot;alkoi&quot; : 12345,
+      &quot;loppui&quot; : 12345,
+      &quot;yksikko&quot; : 12345,
+      &quot;kustannuspaikka&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;maksusopimus&quot; : 12345,
+      &quot;palveluala&quot; : &quot;...&quot;,
+      &quot;mistatuli&quot; : &quot;...&quot;,
+      &quot;jatkohoito&quot; : &quot;...&quot;,
+      &quot;ika&quot; : 12345,
+      &quot;eihoitoilmoitusta&quot; : true,
+      &quot;hoitojaksolinkki&quot; : 12345,
+      &quot;poistettu&quot; : &quot;POISTETTU&quot;,
+      &quot;muutosoikeus&quot; : 12345,
+      &quot;projekti&quot; : 12345,
+      &quot;puutteellinen&quot; : &quot;PUUTTEELLINEN&quot;,
+      &quot;tiedot&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;editTime&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;rekisteri&quot; : &quot;...&quot;,
+      &quot;palveluntuottaja&quot; : &quot;...&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;firstName&quot; : &quot;...&quot;,
+  &quot;birthDate&quot; : &quot;...&quot;,
+  &quot;age&quot; : 12345,
+  &quot;register&quot; : {
+    &quot;rekisterinpitajanNimi&quot; : &quot;...&quot;,
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;rekisterityyppi&quot; : &quot;YKSITYINEN_TERVEYDENHUOLTO&quot;,
+    &quot;socialCareRegister&quot; : true,
+    &quot;healthCareRegister&quot; : true
+  },
+  &quot;basicInfo&quot; : {
+    &quot;dataLoaded&quot; : true,
+    &quot;href&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ]
+  },
+  &quot;gender&quot; : &quot;...&quot;,
+  &quot;passivatedDate&quot; : &quot;...&quot;,
+  &quot;temporaryssn&quot; : true,
+  &quot;hoitosuhde&quot; : {
+    &quot;object&quot; : {
+      &quot;date&quot; : 12345,
+      &quot;unit&quot; : 12345,
+      &quot;patient&quot; : 12345,
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;katselunErityinenSyy&quot; : &quot;...&quot;,
+      &quot;erityissuojausperustelu&quot; : &quot;...&quot;,
+      &quot;user&quot; : 12345,
+      &quot;sallitutErityissuojausryhmat&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;realmId&quot; : &quot;...&quot;,
+  &quot;ssn&quot; : &quot;...&quot;,
+  &quot;passive&quot; : true,
+  &quot;genderHL7Code&quot; : &quot;...&quot;,
+  &quot;careRelationPreferenceList&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;allItemsCount&quot; : 12345,
+      &quot;entries&quot; : [ { }, { } ],
+      &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ],
+      &quot;preferredPalvelutapahtumaSelectStatus&quot; : &quot;HEURISTIC_FROM_CARE_RELATION&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;editTime&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;omistajaId&quot; : 12345,
+  &quot;omistajaListAvailability&quot; : {
+    &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345
+  },
+  &quot;identifier&quot; : &quot;...&quot;,
+  &quot;alias&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_PatientResource_getOmistajasFromList_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/ssn/{ssn}/list/{listId} <a href="../api/v1patients/ssn/{ssn}/list/{listId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_PatientResource_getPatientByMediatriIdDeprecated_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/id/{id} <a href="../api/v1/patients/id/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets omistajas for given list owned by the given owner (=form owner).</p>
+        <div class="alert alert-danger">This method has been deprecated.  </div>
 
-        <table class="table">
+        <p>This RESOURCE is deprecated because URL-naming change.
+Current valid is patients/{id}</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeBasicInfo</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeCareRelationPreferenceList</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeHoitojakso</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">true</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeHoitosuhde</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeIsInWardStatus</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeRiskitietoStatus</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Patient.html">Patient</a>
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/id/{id}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;uuid&quot; : &quot;...&quot;,
+  &quot;omistajaListDescription&quot; : &quot;...&quot;,
+  &quot;lastName&quot; : &quot;...&quot;,
+  &quot;state&quot; : &quot;ACTIVE&quot;,
+  &quot;riskitietoStatus&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : &quot;HUOMIOITAVIA_RISKEJA&quot;
+  },
+  &quot;domainId&quot; : &quot;...&quot;,
+  &quot;wardCareStatus&quot; : {
+    &quot;loaded&quot; : true,
+    &quot;object&quot; : {
+      &quot;inWardCare&quot; : true,
+      &quot;hoitojakso&quot; : { },
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;dataOrigin&quot; : &quot;DEFAULT_VALUE&quot;
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+  &quot;hoitojakso&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;patientId&quot; : 12345,
+      &quot;osa&quot; : 12345,
+      &quot;alkoi&quot; : 12345,
+      &quot;loppui&quot; : 12345,
+      &quot;yksikko&quot; : 12345,
+      &quot;kustannuspaikka&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;maksusopimus&quot; : 12345,
+      &quot;palveluala&quot; : &quot;...&quot;,
+      &quot;mistatuli&quot; : &quot;...&quot;,
+      &quot;jatkohoito&quot; : &quot;...&quot;,
+      &quot;ika&quot; : 12345,
+      &quot;eihoitoilmoitusta&quot; : true,
+      &quot;hoitojaksolinkki&quot; : 12345,
+      &quot;poistettu&quot; : &quot;AKTIIVINEN&quot;,
+      &quot;muutosoikeus&quot; : 12345,
+      &quot;projekti&quot; : 12345,
+      &quot;puutteellinen&quot; : &quot;PUUTTEELLINEN&quot;,
+      &quot;tiedot&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;editTime&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;rekisteri&quot; : &quot;...&quot;,
+      &quot;palveluntuottaja&quot; : &quot;...&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;firstName&quot; : &quot;...&quot;,
+  &quot;birthDate&quot; : &quot;...&quot;,
+  &quot;age&quot; : 12345,
+  &quot;register&quot; : {
+    &quot;rekisterinpitajanNimi&quot; : &quot;...&quot;,
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;rekisterityyppi&quot; : &quot;JULKINEN_TERVEYDENHUOLTO&quot;,
+    &quot;socialCareRegister&quot; : true,
+    &quot;healthCareRegister&quot; : true
+  },
+  &quot;basicInfo&quot; : {
+    &quot;dataLoaded&quot; : true,
+    &quot;href&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ]
+  },
+  &quot;gender&quot; : &quot;...&quot;,
+  &quot;passivatedDate&quot; : &quot;...&quot;,
+  &quot;temporaryssn&quot; : true,
+  &quot;hoitosuhde&quot; : {
+    &quot;object&quot; : {
+      &quot;date&quot; : 12345,
+      &quot;unit&quot; : 12345,
+      &quot;patient&quot; : 12345,
+      &quot;palvelutapahtuma&quot; : { },
+      &quot;katselunErityinenSyy&quot; : &quot;...&quot;,
+      &quot;erityissuojausperustelu&quot; : &quot;...&quot;,
+      &quot;user&quot; : 12345,
+      &quot;sallitutErityissuojausryhmat&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;realmId&quot; : &quot;...&quot;,
+  &quot;ssn&quot; : &quot;...&quot;,
+  &quot;passive&quot; : true,
+  &quot;genderHL7Code&quot; : &quot;...&quot;,
+  &quot;careRelationPreferenceList&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;allItemsCount&quot; : 12345,
+      &quot;entries&quot; : [ { }, { } ],
+      &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ],
+      &quot;preferredPalvelutapahtumaSelectStatus&quot; : &quot;HEURISTIC_NO_MATCH&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;editTime&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;omistajaId&quot; : 12345,
+  &quot;omistajaListAvailability&quot; : {
+    &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345
+  },
+  &quot;identifier&quot; : &quot;...&quot;,
+  &quot;alias&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PatientResource_lockBasicInfoForEdit_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/patients/{id}/lock <a href="../api/v1/patients/{id}/lock" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Lock patients basic information for editing</p>
+
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -772,21 +1991,47 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td>listId</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>list id (currently equals to form id)</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>ssn</td>
-            <td>path</td>
-            <td>patient's social security number</td>
-            <td>&nbsp;</td>
+            <td><span class="parameter-description">patient's omistaja id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: Patient or form is not found</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">423</span></td>
+            <td><span class="response-condition">Form is locked already</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -797,21 +2042,290 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_GenericOmistaja.html">GenericOmistaja</a>
- (JSON)</td>
-            <td>omistajas belonging to the list</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">number
+ (JSON)</span></td>
+            <td><span class="response-description">time of lock in epoch milliseconds</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /patients/{id}/lock
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PatientResource_unLockBasicInfoForEdit_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/patients/{id}/unlock <a href="../api/v1/patients/{id}/unlock" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Lock patients basic information for editing</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">patient's omistaja id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">isDataChanged</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: Patient or form is not found</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">423</span></td>
+            <td><span class="response-condition">Form is locked already</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">OK (HTTP status code 200) response (response body will be empty)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /patients/{id}/unlock
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PatientResource_getPatientBasicInfoByMediatriId_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/id/{id}/basicinfos <a href="../api/v1/patients/id/{id}/basicinfos" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets patients basic information based on Mediatri owner id.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">Mediari owner id.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_BasicInfo.html">BasicInfo</a>
+ (JSON)</span></td>
+            <td><span class="response-description">basic information object</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/id/{id}/basicinfos
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;dataLoaded&quot; : true,
+  &quot;href&quot; : &quot;...&quot;,
+  &quot;titles&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;type&quot; : 12345,
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;type&quot; : 12345,
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
+  } ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_PatientResource_getPatientCourses_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id}/courses <a href="../api/v1patients/id/{id}/courses" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/id/{id}/courses <a href="../api/v1/patients/id/{id}/courses" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets information about the patients' course attendance based on Mediatri owner id.</p>
+        <p>Gets information about the given patient's' course attendance.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -823,15 +2337,15 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>Mediari owner id.</td>
-            <td>int</td>
+            <td><span class="parameter-description">omistaja id of the patient</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -842,21 +2356,388 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_CourseCollectionDto.html">CourseCollectionDto</a>
- (JSON)</td>
-            <td>collection of courses</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_CourseCollectionDto.html">CourseCollectionDto</a>
+ (JSON)</span></td>
+            <td><span class="response-description">collection of courses</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/id/{id}/courses
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;courses&quot; : [ {
+    &quot;id&quot; : 12345,
+    &quot;kelaID&quot; : &quot;...&quot;,
+    &quot;dayPrice&quot; : 12345.0,
+    &quot;status&quot; : &quot;ONGOING&quot;,
+    &quot;startTime&quot; : 12345,
+    &quot;startDate&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : 12345,
+    &quot;endDate&quot; : &quot;...&quot;,
+    &quot;periods&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;status&quot; : &quot;CANCELED&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;minAttendees&quot; : 12345,
+      &quot;maxAttendees&quot; : 12345,
+      &quot;startTime&quot; : 12345,
+      &quot;startDate&quot; : &quot;...&quot;,
+      &quot;endTime&quot; : 12345,
+      &quot;endDate&quot; : &quot;...&quot;,
+      &quot;customerCanceled&quot; : true,
+      &quot;customers&quot; : [ { }, { } ],
+      &quot;periodTags&quot; : [ { }, { } ],
+      &quot;courseId&quot; : 12345,
+      &quot;version&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;status&quot; : &quot;DONE&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;minAttendees&quot; : 12345,
+      &quot;maxAttendees&quot; : 12345,
+      &quot;startTime&quot; : 12345,
+      &quot;startDate&quot; : &quot;...&quot;,
+      &quot;endTime&quot; : 12345,
+      &quot;endDate&quot; : &quot;...&quot;,
+      &quot;customerCanceled&quot; : true,
+      &quot;customers&quot; : [ { }, { } ],
+      &quot;periodTags&quot; : [ { }, { } ],
+      &quot;courseId&quot; : 12345,
+      &quot;version&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;periodIds&quot; : [ 12345, 12345 ],
+    &quot;tags&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;courseTagId&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;tagId&quot; : 12345,
+      &quot;version&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;courseTagId&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;tagId&quot; : 12345,
+      &quot;version&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;namedGroups&quot; : [ {
+      &quot;removed&quot; : true,
+      &quot;members&quot; : [ { }, { } ],
+      &quot;newNameGroupId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;removed&quot; : true,
+      &quot;members&quot; : [ { }, { } ],
+      &quot;newNameGroupId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;customers&quot; : [ {
+      &quot;customerId&quot; : 12345,
+      &quot;customer&quot; : { },
+      &quot;canceled&quot; : true,
+      &quot;cancellation&quot; : { },
+      &quot;cancellations&quot; : [ { }, { } ],
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;customerId&quot; : 12345,
+      &quot;customer&quot; : { },
+      &quot;canceled&quot; : true,
+      &quot;cancellation&quot; : { },
+      &quot;cancellations&quot; : [ { }, { } ],
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;calendarContext&quot; : {
+      &quot;unit&quot; : 12345,
+      &quot;unitName&quot; : &quot;...&quot;,
+      &quot;unitAbbreviation&quot; : &quot;...&quot;,
+      &quot;form&quot; : 12345
+    },
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;abbr&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
+  }, {
+    &quot;id&quot; : 12345,
+    &quot;kelaID&quot; : &quot;...&quot;,
+    &quot;dayPrice&quot; : 12345.0,
+    &quot;status&quot; : &quot;CONFIRMED&quot;,
+    &quot;startTime&quot; : 12345,
+    &quot;startDate&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : 12345,
+    &quot;endDate&quot; : &quot;...&quot;,
+    &quot;periods&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;status&quot; : &quot;DRAFT&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;minAttendees&quot; : 12345,
+      &quot;maxAttendees&quot; : 12345,
+      &quot;startTime&quot; : 12345,
+      &quot;startDate&quot; : &quot;...&quot;,
+      &quot;endTime&quot; : 12345,
+      &quot;endDate&quot; : &quot;...&quot;,
+      &quot;customerCanceled&quot; : true,
+      &quot;customers&quot; : [ { }, { } ],
+      &quot;periodTags&quot; : [ { }, { } ],
+      &quot;courseId&quot; : 12345,
+      &quot;version&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;status&quot; : &quot;ONGOING&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;minAttendees&quot; : 12345,
+      &quot;maxAttendees&quot; : 12345,
+      &quot;startTime&quot; : 12345,
+      &quot;startDate&quot; : &quot;...&quot;,
+      &quot;endTime&quot; : 12345,
+      &quot;endDate&quot; : &quot;...&quot;,
+      &quot;customerCanceled&quot; : true,
+      &quot;customers&quot; : [ { }, { } ],
+      &quot;periodTags&quot; : [ { }, { } ],
+      &quot;courseId&quot; : 12345,
+      &quot;version&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;periodIds&quot; : [ 12345, 12345 ],
+    &quot;tags&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;courseTagId&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;tagId&quot; : 12345,
+      &quot;version&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;courseTagId&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;tagId&quot; : 12345,
+      &quot;version&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;namedGroups&quot; : [ {
+      &quot;removed&quot; : true,
+      &quot;members&quot; : [ { }, { } ],
+      &quot;newNameGroupId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;removed&quot; : true,
+      &quot;members&quot; : [ { }, { } ],
+      &quot;newNameGroupId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;customers&quot; : [ {
+      &quot;customerId&quot; : 12345,
+      &quot;customer&quot; : { },
+      &quot;canceled&quot; : true,
+      &quot;cancellation&quot; : { },
+      &quot;cancellations&quot; : [ { }, { } ],
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;customerId&quot; : 12345,
+      &quot;customer&quot; : { },
+      &quot;canceled&quot; : true,
+      &quot;cancellation&quot; : { },
+      &quot;cancellations&quot; : [ { }, { } ],
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
+    &quot;calendarContext&quot; : {
+      &quot;unit&quot; : 12345,
+      &quot;unitName&quot; : &quot;...&quot;,
+      &quot;unitAbbreviation&quot; : &quot;...&quot;,
+      &quot;form&quot; : 12345
+    },
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;abbr&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
+  } ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PatientResource_getListsByMediatriId_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/id/{id}/lists <a href="../api/v1/patients/id/{id}/lists" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets all patient's lists based on omistaja id.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">omistaja id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_OmistajaListConfig.html">OmistajaListConfig</a>
+ (JSON)</span></td>
+            <td><span class="response-description">all patient's lists</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/id/{id}/lists
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;basicInfoTitles&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+  &quot;listName&quot; : &quot;...&quot;,
+  &quot;listOwnerId&quot; : 12345,
+  &quot;listDataOwnerType&quot; : {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345
+  },
+  &quot;linkedFormInfo&quot; : {
+    &quot;fullFormTypeId&quot; : 12345,
+    &quot;formTypeInfo&quot; : {
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;
+    },
+    &quot;ownerTypeInfo&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;id&quot; : 12345
+    },
+    &quot;formOwnerId&quot; : 12345
+  },
+  &quot;listId&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_PatientResource_getPatientsRiskitietoStatus_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/patients/id/{id}/riskistatus <a href="../api/v1patients/id/{id}/riskistatus" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/id/{id}/riskistatus <a href="../api/v1/patients/id/{id}/riskistatus" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets patients iskitieto status based on Mediatri owner id.</p>
+        <p>Gets patients riskitieto status based on Mediatri owner id.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -868,15 +2749,15 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>Mediari owner id.</td>
-            <td>int</td>
+            <td><span class="parameter-description">Mediari owner id.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -887,21 +2768,46 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_RiskitietoStatus.html">RiskitietoStatus</a>
- (JSON)</td>
-            <td>riskitieto status object</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_RiskitietoStatus.html">RiskitietoStatus</a>
+ (JSON)</span></td>
+            <td><span class="response-description">riskitieto status object</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/id/{id}/riskistatus
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_PatientResource_putPerson_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/patients/id/{id} <a href="../api/v1patients/id/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_PatientResource_getPatientsWardCareStatus_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/id/{id}/wardcarestatus <a href="../api/v1/patients/id/{id}/wardcarestatus" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p></p>
+        <p>Gets patients ward care status based on Mediatri owner id.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -913,30 +2819,211 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td></td>
-            <td>int</td>
+            <td><span class="parameter-description">patient's Mediatri owner id.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">referenceTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">reference time to check ward care status at.</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_WardCareStatus.html">WardCareStatus</a>
+ (JSON)</span></td>
+            <td><span class="response-description">ward care status object</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/id/{id}/wardcarestatus
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;inWardCare&quot; : true,
+  &quot;hoitojakso&quot; : {
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;patientId&quot; : 12345,
+      &quot;osa&quot; : 12345,
+      &quot;alkoi&quot; : 12345,
+      &quot;loppui&quot; : 12345,
+      &quot;yksikko&quot; : 12345,
+      &quot;kustannuspaikka&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;maksusopimus&quot; : 12345,
+      &quot;palveluala&quot; : &quot;...&quot;,
+      &quot;mistatuli&quot; : &quot;...&quot;,
+      &quot;jatkohoito&quot; : &quot;...&quot;,
+      &quot;ika&quot; : 12345,
+      &quot;eihoitoilmoitusta&quot; : true,
+      &quot;hoitojaksolinkki&quot; : 12345,
+      &quot;poistettu&quot; : &quot;POISTETTU&quot;,
+      &quot;muutosoikeus&quot; : 12345,
+      &quot;projekti&quot; : 12345,
+      &quot;puutteellinen&quot; : &quot;OK&quot;,
+      &quot;tiedot&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;editTime&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;rekisteri&quot; : &quot;...&quot;,
+      &quot;palveluntuottaja&quot; : &quot;...&quot;
+    },
+    &quot;loaded&quot; : true,
+    &quot;loadUrl&quot; : &quot;...&quot;
+  },
+  &quot;palvelutapahtuma&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true,
+    &quot;object&quot; : {
+      &quot;palvelunantaja&quot; : &quot;...&quot;,
+      &quot;kirjausaika&quot; : 12345,
+      &quot;tyonantaja&quot; : 12345,
+      &quot;tapahtumalaji&quot; : &quot;JONO&quot;,
+      &quot;rekisteri&quot; : &quot;...&quot;,
+      &quot;palveluntuottaja&quot; : &quot;...&quot;,
+      &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+      &quot;kirjaajaInfo&quot; : { },
+      &quot;kirjausyksikko&quot; : { },
+      &quot;aktiivinen&quot; : true,
+      &quot;loppuaika&quot; : 12345,
+      &quot;kirjausyksikkoId&quot; : 12345,
+      &quot;oid&quot; : &quot;...&quot;,
+      &quot;id&quot; : 12345,
+      &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+      &quot;writeUsed&quot; : true,
+      &quot;alkuaika&quot; : 12345,
+      &quot;omistaja&quot; : 12345,
+      &quot;kirjaaja&quot; : 12345,
+      &quot;tyyppi&quot; : &quot;ASIAKKAAN_ASIOIDEN_HOITO_ILMAN_ASIAKASKONTAKTIA&quot;
+    }
+  },
+  &quot;dataOrigin&quot; : &quot;DEFAULT_VALUE&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_PatientResource_getOmistajasFromListByMediatriId_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/patients/id/{id}/list/{listId} <a href="../api/v1/patients/id/{id}/list/{listId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets omistajas for given list owned by the given owner (=form owner).</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">omistaja id that is used as criteria to fetch data from list. It is also checked if this omistaja owns form with <code>lomakeId</code>, but otherwise it is expected that <code>lomakeId</code> refers to form owned by system owner (0) (this method requires always omistaja id)</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">listId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">list id (currently equals to form id)</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_GenericOmistaja.html">GenericOmistaja</a>
+ (JSON)</span></td>
+            <td><span class="response-description">omistajas belonging to the list</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /patients/id/{id}/list/{listId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;editTime&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;omistajaId&quot; : 12345,
+  &quot;omistajaListAvailability&quot; : {
+    &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345
+  },
+  &quot;identifier&quot; : &quot;...&quot;,
+  &quot;alias&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -951,14 +3038,14 @@ matching given conditions.</td>
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

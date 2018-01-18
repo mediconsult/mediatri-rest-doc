@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#WOMAN"><abbr title="WOMAN"><span class="sideoverflow">WOMAN</span></abbr></a></li>
+          <li><a href="#MAN"><abbr title="MAN"><span class="sideoverflow">MAN</span></abbr></a></li>
+          <li><a href="#OTHER"><abbr title="OTHER"><span class="sideoverflow">OTHER</span></abbr></a></li>
+          <li><a href="#UNKNOWN"><abbr title="UNKNOWN"><span class="sideoverflow">UNKNOWN</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -70,13 +73,13 @@
 
 The list of main titles for every form is fetched from asetus table.
 Asetus for main titles has following format in asetus table:
-- asetus: 'P��%'
-- teksti: name of p��otsikko</p>
+- asetus: 'PÄÄ%'
+- teksti: name of pääotsikko</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -87,65 +90,74 @@ Asetus for main titles has following format in asetus table:
         </thead>
         <tbody>
         <tr>
-          <td>  lomake
+          <td>  <span class="property-name">lomake</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  name
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  mainTitles
+          <td>  <span class="property-name">name</span>
 </td>
-          <td>  array of string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  color
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kayttajaRyhmaId
+          <td>  <span class="property-name">mainTitles</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">array of string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  signing
+          <td>  <span class="property-name">color</span>
 </td>
-          <td>  <a href="json_ClientTitleConfig.html">ClientTitleConfig</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">kayttajaRyhmaId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">signing</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_ClientTitleConfig.html">ClientTitleConfig</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">modify</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;lomake&quot; : 12345,
   &quot;name&quot; : &quot;...&quot;,
   &quot;mainTitles&quot; : [ &quot;...&quot;, &quot;...&quot; ],
@@ -154,29 +166,15 @@ Asetus for main titles has following format in asetus table:
   &quot;signing&quot; : {
     &quot;name&quot; : &quot;...&quot;,
     &quot;type&quot; : 12345,
-    &quot;pakollinen&quot; : true,
+    &quot;valueMandatory&quot; : true,
     &quot;onlyFromList&quot; : true,
     &quot;optionsUrl&quot; : &quot;...&quot;,
+    &quot;editableByConfig&quot; : true,
+    &quot;editableByUserRights&quot; : true,
     &quot;editable&quot; : true,
-    &quot;attribute&quot; : 12345,
-    &quot;optionValues&quot; : [ {
-      &quot;presentation&quot; : &quot;...&quot;,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
-      &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
-    }, {
-      &quot;presentation&quot; : &quot;...&quot;,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
-      &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
-    } ]
-  }
+    &quot;attribute&quot; : 12345
+  },
+  &quot;modify&quot; : true
 }</pre>
 
         <footer class="footer">
@@ -191,14 +189,14 @@ Asetus for main titles has following format in asetus table:
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

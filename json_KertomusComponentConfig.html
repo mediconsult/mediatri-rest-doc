@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#WOMAN"><abbr title="WOMAN"><span class="sideoverflow">WOMAN</span></abbr></a></li>
+          <li><a href="#MAN"><abbr title="MAN"><span class="sideoverflow">MAN</span></abbr></a></li>
+          <li><a href="#OTHER"><abbr title="OTHER"><span class="sideoverflow">OTHER</span></abbr></a></li>
+          <li><a href="#UNKNOWN"><abbr title="UNKNOWN"><span class="sideoverflow">UNKNOWN</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -70,7 +73,7 @@
 
 Configuration includes two parts:
 <ul>
-<li>available kertomus form configurations KertomusFormConfig used on the client for every lomake of type Lomakeluokka#KERTOMUSTEKSTI.
+<li>available kertomus form configurations <a href="json_KertomusFormConfig.html">KertomusFormConfig</a> used on the client for every lomake of type Lomakeluokka#KERTOMUSTEKSTI.
 <p>This configuration includes name of the titles with any information about types and titles configuration. </p></li>
 <li>Title's configuration map which contains client configurations ClientTitleConfig for all titles available for the component:</li>
 </ul></p>
@@ -78,7 +81,7 @@ Configuration includes two parts:
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -89,38 +92,38 @@ Configuration includes two parts:
         </thead>
         <tbody>
         <tr>
-          <td>  kertomusConfigs
+          <td>  <span class="property-name">kertomusConfigs</span>
 </td>
-          <td>  array of <a href="json_KertomusFormConfig.html">KertomusFormConfig</a>
-
+          <td>  <span class="datatype-reference">array of <a href="json_KertomusFormConfig.html">KertomusFormConfig</a>
+</span>
 </td>
-          <td>  Method returns all Mediatri kertomus forms configuration.
-</td>
-        </tr>
-        <tr>
-          <td>  titleConfigs
-</td>
-          <td>  object
-
-</td>
-          <td>  
+          <td>  <span class="property-description">Method returns all Mediatri kertomus forms configuration.</span>
 </td>
         </tr>
         <tr>
-          <td>  mainTitleConfigs
+          <td>  <span class="property-name">titleConfigs</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">map of <a href="json_ClientTitleConfig.html">ClientTitleConfig</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description">Returns the map of title name to client configs.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">configurableSettings</span>
+</td>
+          <td>  <span class="datatype-reference">map of string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;kertomusConfigs&quot; : [ {
     &quot;lomake&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
@@ -130,13 +133,15 @@ Configuration includes two parts:
     &quot;signing&quot; : {
       &quot;name&quot; : &quot;...&quot;,
       &quot;type&quot; : 12345,
-      &quot;pakollinen&quot; : true,
+      &quot;valueMandatory&quot; : true,
       &quot;onlyFromList&quot; : true,
       &quot;optionsUrl&quot; : &quot;...&quot;,
+      &quot;editableByConfig&quot; : true,
+      &quot;editableByUserRights&quot; : true,
       &quot;editable&quot; : true,
-      &quot;attribute&quot; : 12345,
-      &quot;optionValues&quot; : [ { }, { } ]
-    }
+      &quot;attribute&quot; : 12345
+    },
+    &quot;modify&quot; : true
   }, {
     &quot;lomake&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
@@ -146,19 +151,41 @@ Configuration includes two parts:
     &quot;signing&quot; : {
       &quot;name&quot; : &quot;...&quot;,
       &quot;type&quot; : 12345,
-      &quot;pakollinen&quot; : true,
+      &quot;valueMandatory&quot; : true,
       &quot;onlyFromList&quot; : true,
       &quot;optionsUrl&quot; : &quot;...&quot;,
+      &quot;editableByConfig&quot; : true,
+      &quot;editableByUserRights&quot; : true,
       &quot;editable&quot; : true,
-      &quot;attribute&quot; : 12345,
-      &quot;optionValues&quot; : [ { }, { } ]
-    }
+      &quot;attribute&quot; : 12345
+    },
+    &quot;modify&quot; : true
   } ],
   &quot;titleConfigs&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
+    &quot;property1&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;valueMandatory&quot; : true,
+      &quot;onlyFromList&quot; : true,
+      &quot;optionsUrl&quot; : &quot;...&quot;,
+      &quot;editableByConfig&quot; : true,
+      &quot;editableByUserRights&quot; : true,
+      &quot;editable&quot; : true,
+      &quot;attribute&quot; : 12345
+    },
+    &quot;property2&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;valueMandatory&quot; : true,
+      &quot;onlyFromList&quot; : true,
+      &quot;optionsUrl&quot; : &quot;...&quot;,
+      &quot;editableByConfig&quot; : true,
+      &quot;editableByUserRights&quot; : true,
+      &quot;editable&quot; : true,
+      &quot;attribute&quot; : 12345
+    }
   },
-  &quot;mainTitleConfigs&quot; : {
+  &quot;configurableSettings&quot; : {
     &quot;property1&quot; : &quot;...&quot;,
     &quot;property2&quot; : &quot;...&quot;
   }
@@ -176,14 +203,14 @@ Configuration includes two parts:
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

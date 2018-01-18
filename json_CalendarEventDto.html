@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#FROM_START_OF_PERIOD"><abbr title="FROM_START_OF_PERIOD"><span class="sideoverflow">FROM_START_OF_PERIOD</span></abbr></a></li>
+          <li><a href="#FROM_END_OF_PERIOD"><abbr title="FROM_END_OF_PERIOD"><span class="sideoverflow">FROM_END_OF_PERIOD</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +72,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,192 +83,219 @@
         </thead>
         <tbody>
         <tr>
-          <td>  restricted
+          <td>  <span class="property-name">restricted</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  startTime
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  status
+          <td>  <span class="property-name">startTime</span>
 </td>
-          <td>  <a href="json_EventStatus.html">EventStatus</a>
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  description
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  durationInMinutes
+          <td>  <span class="property-name">status</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference"><a href="json_EventStatus.html">EventStatus</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  serviceClass
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  startTimeLimit
+          <td>  <span class="property-name">description</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  endTimeLimit
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  internalNote
+          <td>  <span class="property-name">durationInMinutes</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  event
-</td>
-          <td>  <a href="json_EventDto.html">EventDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  workers
+          <td>  <span class="property-name">serviceClass</span>
 </td>
-          <td>  array of <a href="json_EventWorkerDto.html">EventWorkerDto</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  customers
-</td>
-          <td>  array of <a href="json_EventCustomerDto.html">EventCustomerDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  rooms
+          <td>  <span class="property-name">internalNote</span>
 </td>
-          <td>  array of <a href="json_EventResourceDto.html">EventResourceDto</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  equipmentTypes
-</td>
-          <td>  array of <a href="json_EventResourceDto.html">EventResourceDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  coursePeriods
+          <td>  <span class="property-name">transitionType</span>
 </td>
-          <td>  array of <a href="json_EventCoursePeriodDto.html">EventCoursePeriodDto</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  locked
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  lock
+          <td>  <span class="property-name">addressProblem</span>
 </td>
-          <td>  <a href="json_LockDto.html">LockDto</a>
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  contentGroups
-</td>
-          <td>  array of <a href="json_CalendarEventContentGroupDto.html">CalendarEventContentGroupDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  actualStartTime
+          <td>  <span class="property-name">event</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference"><a href="json_EventDto.html">EventDto</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  actualEndTime
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  missingResources
+          <td>  <span class="property-name">workers</span>
 </td>
-          <td>  <a href="json_EventMissingResourcesDto.html">EventMissingResourcesDto</a>
-
+          <td>  <span class="datatype-reference">array of <a href="json_EventWorkerDto.html">EventWorkerDto</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">requiredSkills</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_EventSkillDto.html">EventSkillDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">customers</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_EventCustomerDto.html">EventCustomerDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">rooms</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_EventResourceDto.html">EventResourceDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">equipmentTypes</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_EventResourceDto.html">EventResourceDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">coursePeriods</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_EventCoursePeriodDto.html">EventCoursePeriodDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">locked</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">lock</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_LockDto.html">LockDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">contentGroups</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_CalendarEventContentGroupDto.html">CalendarEventContentGroupDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">actualStartTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">actualEndTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">missingResources</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_EventMissingResourcesDto.html">EventMissingResourcesDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">primaryNurseStatus</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_PrimaryNurseStatus.html">PrimaryNurseStatus</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">planningSettings</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_PlanningSettings.html">PlanningSettings</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -276,44 +304,44 @@
         </tr>
         <tbody>
         <tr>
-          <td>version</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>id</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>created</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">created</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>modified</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">modified</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;restricted&quot; : true,
   &quot;startTime&quot; : 12345,
-  &quot;status&quot; : &quot;DRAFT&quot;,
+  &quot;status&quot; : &quot;CANCELED_BY_PARTICIPANT&quot;,
   &quot;description&quot; : &quot;...&quot;,
   &quot;durationInMinutes&quot; : 12345,
   &quot;serviceClass&quot; : &quot;...&quot;,
-  &quot;startTimeLimit&quot; : &quot;...&quot;,
-  &quot;endTimeLimit&quot; : &quot;...&quot;,
   &quot;internalNote&quot; : &quot;...&quot;,
+  &quot;transitionType&quot; : &quot;...&quot;,
+  &quot;addressProblem&quot; : true,
   &quot;event&quot; : {
     &quot;startTime&quot; : 12345,
     &quot;durationInMinutes&quot; : 12345,
@@ -321,16 +349,19 @@
     &quot;recurrenceEndDate&quot; : &quot;...&quot;,
     &quot;name&quot; : &quot;...&quot;,
     &quot;abbreviation&quot; : &quot;...&quot;,
-    &quot;character&quot; : &quot;ASSIGNED&quot;,
+    &quot;character&quot; : &quot;WORKING_TIME&quot;,
     &quot;eventModelId&quot; : 12345,
+    &quot;eventModelOutdated&quot; : true,
     &quot;calendarContext&quot; : {
       &quot;unit&quot; : 12345,
+      &quot;unitName&quot; : &quot;...&quot;,
+      &quot;unitAbbreviation&quot; : &quot;...&quot;,
       &quot;form&quot; : 12345
     },
     &quot;excludedDays&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;reportingGroup&quot; : {
       &quot;color&quot; : &quot;...&quot;,
-      &quot;meaning&quot; : &quot;AVAILABLE&quot;,
+      &quot;meaning&quot; : &quot;BUSY_OPTIONAL&quot;,
       &quot;calendarModelFormId&quot; : 12345,
       &quot;category&quot; : &quot;WORK&quot;,
       &quot;eventModels&quot; : [ { }, { } ],
@@ -344,31 +375,29 @@
     },
     &quot;eventModel&quot; : {
       &quot;defaultTitleValues&quot; : [ { }, { } ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
       &quot;basicData&quot; : {
-        &quot;property1&quot; : &quot;...&quot;,
-        &quot;property2&quot; : &quot;...&quot;
+        &quot;property1&quot; : [ { }, { } ],
+        &quot;property2&quot; : [ { }, { } ]
       },
       &quot;reportingGroupId&quot; : 12345,
       &quot;calendarModelFormId&quot; : 12345,
       &quot;defaultUnit&quot; : 12345,
       &quot;internalNote&quot; : &quot;...&quot;,
       &quot;defaultDurationInMins&quot; : 12345,
-      &quot;startTimeLimit&quot; : &quot;...&quot;,
-      &quot;endTimeLimit&quot; : &quot;...&quot;,
-      &quot;timeLimitChangeable&quot; : true,
       &quot;requiredSkills&quot; : [ { }, { } ],
       &quot;requiredRoomGroups&quot; : [ { }, { } ],
       &quot;requiredEquipmentTypes&quot; : [ { }, { } ],
       &quot;contentGroups&quot; : [ { }, { } ],
-      &quot;minParticipants&quot; : 12345,
-      &quot;maxParticipants&quot; : 12345,
+      &quot;customerEvent&quot; : true,
+      &quot;participantAmount&quot; : { },
       &quot;waitingRoom&quot; : &quot;...&quot;,
       &quot;serviceClass&quot; : &quot;...&quot;,
       &quot;serviceClassChangeable&quot; : true,
       &quot;outdated&quot; : true,
       &quot;hasEvents&quot; : true,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;planningSettingsChangeable&quot; : { },
       &quot;description&quot; : &quot;...&quot;,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
@@ -377,18 +406,20 @@
     },
     &quot;unitBasicInfoTitles&quot; : [ {
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
       &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
     }, {
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
       &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
     } ],
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
@@ -397,13 +428,20 @@
   },
   &quot;workers&quot; : [ {
     &quot;skillid&quot; : 12345,
+    &quot;skillName&quot; : &quot;...&quot;,
+    &quot;role&quot; : &quot;...&quot;,
     &quot;workingHoursConflict&quot; : true,
-    &quot;required&quot; : true,
+    &quot;primaryNurse&quot; : true,
     &quot;id&quot; : 12345,
     &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
     &quot;name&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
     &quot;delay&quot; : 12345,
     &quot;duration&quot; : 12345,
+    &quot;required&quot; : true,
     &quot;canceled&quot; : true,
     &quot;cancellationReason&quot; : &quot;...&quot;,
     &quot;conflicting&quot; : true,
@@ -418,29 +456,38 @@
     } ],
     &quot;basicInfoTitles&quot; : [ {
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
       &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
     }, {
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
       &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
     } ],
     &quot;participantId&quot; : 12345
   }, {
     &quot;skillid&quot; : 12345,
+    &quot;skillName&quot; : &quot;...&quot;,
+    &quot;role&quot; : &quot;...&quot;,
     &quot;workingHoursConflict&quot; : true,
-    &quot;required&quot; : true,
+    &quot;primaryNurse&quot; : true,
     &quot;id&quot; : 12345,
     &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
     &quot;name&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
     &quot;delay&quot; : 12345,
     &quot;duration&quot; : 12345,
+    &quot;required&quot; : true,
     &quot;canceled&quot; : true,
     &quot;cancellationReason&quot; : &quot;...&quot;,
     &quot;conflicting&quot; : true,
@@ -455,245 +502,354 @@
     } ],
     &quot;basicInfoTitles&quot; : [ {
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
       &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
     }, {
       &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
       &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
     } ],
     &quot;participantId&quot; : 12345
   } ],
-  &quot;customers&quot; : [ {
-    &quot;amount&quot; : 12345,
-    &quot;coursePeriodId&quot; : 12345,
-    &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
-    &quot;serviceDecision&quot; : {
-      &quot;permissions&quot; : { },
-      &quot;paatos&quot; : 12345,
-      &quot;palveluluokkaTunnus&quot; : &quot;...&quot;,
-      &quot;palveluluokka&quot; : { },
-      &quot;alkaa&quot; : 12345,
-      &quot;diaarinumero&quot; : &quot;...&quot;,
-      &quot;haettu&quot; : 12345,
-      &quot;huomautuksia&quot; : &quot;...&quot;,
-      &quot;kayttajaryhma&quot; : 12345,
-      &quot;kustannuspaikka&quot; : 12345,
-      &quot;kuukausimaksu&quot; : 12345.0,
-      &quot;laki&quot; : &quot;...&quot;,
-      &quot;laskutusalkaa&quot; : 12345,
-      &quot;loppuu&quot; : 12345,
-      &quot;luokittelu1&quot; : &quot;...&quot;,
-      &quot;luokittelu2&quot; : &quot;...&quot;,
-      &quot;maara&quot; : 12345,
-      &quot;maksuperuste&quot; : &quot;...&quot;,
-      &quot;mitatoija&quot; : 12345,
-      &quot;mitatoijaUser&quot; : { },
-      &quot;mitatointisyy&quot; : &quot;...&quot;,
-      &quot;mitatoity&quot; : 12345,
-      &quot;muutosaika&quot; : 12345,
-      &quot;muutospaikka&quot; : 12345,
-      &quot;paatetty&quot; : 12345,
-      &quot;paatosyksikko&quot; : 12345,
-      &quot;paatosyksikkoUnit&quot; : { },
-      &quot;paattaja&quot; : 12345,
-      &quot;paattajaUser&quot; : { },
-      &quot;paattajaryhma&quot; : &quot;...&quot;,
-      &quot;poistettu&quot; : true,
-      &quot;tarve&quot; : &quot;...&quot;,
-      &quot;teksti&quot; : &quot;...&quot;,
-      &quot;tiedonantaja&quot; : &quot;...&quot;,
-      &quot;tilasto1&quot; : &quot;...&quot;,
-      &quot;tilasto2&quot; : &quot;...&quot;,
-      &quot;tilasto3&quot; : &quot;...&quot;,
-      &quot;tulot&quot; : 12345.0,
-      &quot;valitettu&quot; : 12345,
-      &quot;valmistelija&quot; : 12345,
-      &quot;valmistelijaUser&quot; : { },
-      &quot;valmisteluyksikko&quot; : 12345,
-      &quot;valmisteluyksikkoUnit&quot; : { },
-      &quot;tila&quot; : &quot;KESKEN&quot;,
-      &quot;laatu&quot; : &quot;KIELTEINEN&quot;,
-      &quot;lasnaolot&quot; : {
-        &quot;property1&quot; : &quot;...&quot;,
-        &quot;property2&quot; : &quot;...&quot;
-      },
-      &quot;palvelukeskeytykset&quot; : [ { }, { } ],
-      &quot;effectivePalvelukeskeytykset&quot; : [ { }, { } ]
-    },
-    &quot;homeAddress&quot; : &quot;...&quot;,
-    &quot;id&quot; : 12345,
-    &quot;unit&quot; : 12345,
+  &quot;requiredSkills&quot; : [ {
+    &quot;role&quot; : &quot;...&quot;,
     &quot;name&quot; : &quot;...&quot;,
-    &quot;delay&quot; : 12345,
-    &quot;duration&quot; : 12345,
-    &quot;canceled&quot; : true,
-    &quot;cancellationReason&quot; : &quot;...&quot;,
-    &quot;conflicting&quot; : true,
-    &quot;overlapConflicts&quot; : [ {
-      &quot;conflictId&quot; : 12345,
-      &quot;calendarEventId&quot; : 12345,
-      &quot;eventName&quot; : &quot;...&quot;
-    }, {
-      &quot;conflictId&quot; : 12345,
-      &quot;calendarEventId&quot; : 12345,
-      &quot;eventName&quot; : &quot;...&quot;
-    } ],
-    &quot;basicInfoTitles&quot; : [ {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
-      &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
-    }, {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
-      &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
-    } ],
-    &quot;participantId&quot; : 12345
-  }, {
-    &quot;amount&quot; : 12345,
-    &quot;coursePeriodId&quot; : 12345,
-    &quot;serviceDecisionStatus&quot; : &quot;NOT_REQUIRED&quot;,
-    &quot;serviceDecision&quot; : {
-      &quot;permissions&quot; : { },
-      &quot;paatos&quot; : 12345,
-      &quot;palveluluokkaTunnus&quot; : &quot;...&quot;,
-      &quot;palveluluokka&quot; : { },
-      &quot;alkaa&quot; : 12345,
-      &quot;diaarinumero&quot; : &quot;...&quot;,
-      &quot;haettu&quot; : 12345,
-      &quot;huomautuksia&quot; : &quot;...&quot;,
-      &quot;kayttajaryhma&quot; : 12345,
-      &quot;kustannuspaikka&quot; : 12345,
-      &quot;kuukausimaksu&quot; : 12345.0,
-      &quot;laki&quot; : &quot;...&quot;,
-      &quot;laskutusalkaa&quot; : 12345,
-      &quot;loppuu&quot; : 12345,
-      &quot;luokittelu1&quot; : &quot;...&quot;,
-      &quot;luokittelu2&quot; : &quot;...&quot;,
-      &quot;maara&quot; : 12345,
-      &quot;maksuperuste&quot; : &quot;...&quot;,
-      &quot;mitatoija&quot; : 12345,
-      &quot;mitatoijaUser&quot; : { },
-      &quot;mitatointisyy&quot; : &quot;...&quot;,
-      &quot;mitatoity&quot; : 12345,
-      &quot;muutosaika&quot; : 12345,
-      &quot;muutospaikka&quot; : 12345,
-      &quot;paatetty&quot; : 12345,
-      &quot;paatosyksikko&quot; : 12345,
-      &quot;paatosyksikkoUnit&quot; : { },
-      &quot;paattaja&quot; : 12345,
-      &quot;paattajaUser&quot; : { },
-      &quot;paattajaryhma&quot; : &quot;...&quot;,
-      &quot;poistettu&quot; : true,
-      &quot;tarve&quot; : &quot;...&quot;,
-      &quot;teksti&quot; : &quot;...&quot;,
-      &quot;tiedonantaja&quot; : &quot;...&quot;,
-      &quot;tilasto1&quot; : &quot;...&quot;,
-      &quot;tilasto2&quot; : &quot;...&quot;,
-      &quot;tilasto3&quot; : &quot;...&quot;,
-      &quot;tulot&quot; : 12345.0,
-      &quot;valitettu&quot; : 12345,
-      &quot;valmistelija&quot; : 12345,
-      &quot;valmistelijaUser&quot; : { },
-      &quot;valmisteluyksikko&quot; : 12345,
-      &quot;valmisteluyksikkoUnit&quot; : { },
-      &quot;tila&quot; : &quot;KESKEN&quot;,
-      &quot;laatu&quot; : &quot;KIELTEINEN&quot;,
-      &quot;lasnaolot&quot; : {
-        &quot;property1&quot; : &quot;...&quot;,
-        &quot;property2&quot; : &quot;...&quot;
-      },
-      &quot;palvelukeskeytykset&quot; : [ { }, { } ],
-      &quot;effectivePalvelukeskeytykset&quot; : [ { }, { } ]
-    },
-    &quot;homeAddress&quot; : &quot;...&quot;,
-    &quot;id&quot; : 12345,
-    &quot;unit&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;delay&quot; : 12345,
-    &quot;duration&quot; : 12345,
-    &quot;canceled&quot; : true,
-    &quot;cancellationReason&quot; : &quot;...&quot;,
-    &quot;conflicting&quot; : true,
-    &quot;overlapConflicts&quot; : [ {
-      &quot;conflictId&quot; : 12345,
-      &quot;calendarEventId&quot; : 12345,
-      &quot;eventName&quot; : &quot;...&quot;
-    }, {
-      &quot;conflictId&quot; : 12345,
-      &quot;calendarEventId&quot; : 12345,
-      &quot;eventName&quot; : &quot;...&quot;
-    } ],
-    &quot;basicInfoTitles&quot; : [ {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
-      &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
-    }, {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;vapaa&quot; : &quot;...&quot;,
-      &quot;emptyValue&quot; : true,
-      &quot;type&quot; : 12345,
-      &quot;vakio&quot; : &quot;...&quot;,
-      &quot;editModel&quot; : true
-    } ],
-    &quot;participantId&quot; : 12345
-  } ],
-  &quot;rooms&quot; : [ {
-    &quot;typeid&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;delay&quot; : 12345,
-    &quot;duration&quot; : 12345,
-    &quot;amount&quot; : 12345,
-    &quot;required&quot; : true,
+    &quot;eventSkillId&quot; : 12345,
+    &quot;changeable&quot; : true,
+    &quot;eventModelSkillId&quot; : 12345,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   }, {
-    &quot;typeid&quot; : 12345,
+    &quot;role&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;eventSkillId&quot; : 12345,
+    &quot;changeable&quot; : true,
+    &quot;eventModelSkillId&quot; : 12345,
+    &quot;version&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
+  } ],
+  &quot;customers&quot; : [ {
+    &quot;amount&quot; : 12345,
+    &quot;coursePeriodId&quot; : 12345,
+    &quot;serviceDecisionStatus&quot; : &quot;MISSING&quot;,
+    &quot;serviceDecision&quot; : {
+      &quot;permissions&quot; : { },
+      &quot;paatos&quot; : 12345,
+      &quot;palveluluokkaTunnus&quot; : &quot;...&quot;,
+      &quot;palveluluokka&quot; : { },
+      &quot;alkaa&quot; : 12345,
+      &quot;diaarinumero&quot; : &quot;...&quot;,
+      &quot;haettu&quot; : 12345,
+      &quot;huomautuksia&quot; : &quot;...&quot;,
+      &quot;kayttajaryhma&quot; : 12345,
+      &quot;kustannuspaikka&quot; : 12345,
+      &quot;kuukausimaksu&quot; : 12345.0,
+      &quot;laki&quot; : &quot;...&quot;,
+      &quot;laskutusalkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;luokittelu1&quot; : &quot;...&quot;,
+      &quot;luokittelu2&quot; : &quot;...&quot;,
+      &quot;maara&quot; : 12345,
+      &quot;maksuperuste&quot; : &quot;...&quot;,
+      &quot;mitatoija&quot; : 12345,
+      &quot;mitatoijaUser&quot; : { },
+      &quot;mitatointisyy&quot; : &quot;...&quot;,
+      &quot;mitatoity&quot; : 12345,
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;paatetty&quot; : 12345,
+      &quot;paatosyksikko&quot; : 12345,
+      &quot;paatosyksikkoUnit&quot; : { },
+      &quot;paattaja&quot; : 12345,
+      &quot;paattajaUser&quot; : { },
+      &quot;paattajaryhma&quot; : &quot;...&quot;,
+      &quot;poistettu&quot; : true,
+      &quot;tarve&quot; : &quot;...&quot;,
+      &quot;teksti&quot; : &quot;...&quot;,
+      &quot;tiedonantaja&quot; : &quot;...&quot;,
+      &quot;tilasto1&quot; : &quot;...&quot;,
+      &quot;tilasto2&quot; : &quot;...&quot;,
+      &quot;tilasto3&quot; : &quot;...&quot;,
+      &quot;tulot&quot; : 12345.0,
+      &quot;valitettu&quot; : 12345,
+      &quot;valmistelija&quot; : 12345,
+      &quot;valmistelijaUser&quot; : { },
+      &quot;valmisteluyksikko&quot; : 12345,
+      &quot;valmisteluyksikkoUnit&quot; : { },
+      &quot;tila&quot; : &quot;KESKEN&quot;,
+      &quot;laatu&quot; : &quot;MYONTEINEN&quot;,
+      &quot;lasnaolot&quot; : {
+        &quot;property1&quot; : 12345,
+        &quot;property2&quot; : 12345
+      },
+      &quot;palvelukeskeytykset&quot; : [ { }, { } ],
+      &quot;effectivePalvelukeskeytykset&quot; : [ { }, { } ]
+    },
+    &quot;homeAddress&quot; : &quot;...&quot;,
+    &quot;birthDate&quot; : &quot;...&quot;,
+    &quot;passivatedDate&quot; : &quot;...&quot;,
+    &quot;age&quot; : 12345,
+    &quot;gender&quot; : &quot;...&quot;,
+    &quot;viewTitle&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    },
+    &quot;riskStatus&quot; : &quot;KRIITTISIA_RISKEJA&quot;,
+    &quot;id&quot; : 12345,
+    &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;delay&quot; : 12345,
+    &quot;duration&quot; : 12345,
+    &quot;required&quot; : true,
+    &quot;canceled&quot; : true,
+    &quot;cancellationReason&quot; : &quot;...&quot;,
+    &quot;conflicting&quot; : true,
+    &quot;overlapConflicts&quot; : [ {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    }, {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    } ],
+    &quot;basicInfoTitles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ],
+    &quot;participantId&quot; : 12345
+  }, {
+    &quot;amount&quot; : 12345,
+    &quot;coursePeriodId&quot; : 12345,
+    &quot;serviceDecisionStatus&quot; : &quot;AVAILABLE&quot;,
+    &quot;serviceDecision&quot; : {
+      &quot;permissions&quot; : { },
+      &quot;paatos&quot; : 12345,
+      &quot;palveluluokkaTunnus&quot; : &quot;...&quot;,
+      &quot;palveluluokka&quot; : { },
+      &quot;alkaa&quot; : 12345,
+      &quot;diaarinumero&quot; : &quot;...&quot;,
+      &quot;haettu&quot; : 12345,
+      &quot;huomautuksia&quot; : &quot;...&quot;,
+      &quot;kayttajaryhma&quot; : 12345,
+      &quot;kustannuspaikka&quot; : 12345,
+      &quot;kuukausimaksu&quot; : 12345.0,
+      &quot;laki&quot; : &quot;...&quot;,
+      &quot;laskutusalkaa&quot; : 12345,
+      &quot;loppuu&quot; : 12345,
+      &quot;luokittelu1&quot; : &quot;...&quot;,
+      &quot;luokittelu2&quot; : &quot;...&quot;,
+      &quot;maara&quot; : 12345,
+      &quot;maksuperuste&quot; : &quot;...&quot;,
+      &quot;mitatoija&quot; : 12345,
+      &quot;mitatoijaUser&quot; : { },
+      &quot;mitatointisyy&quot; : &quot;...&quot;,
+      &quot;mitatoity&quot; : 12345,
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;paatetty&quot; : 12345,
+      &quot;paatosyksikko&quot; : 12345,
+      &quot;paatosyksikkoUnit&quot; : { },
+      &quot;paattaja&quot; : 12345,
+      &quot;paattajaUser&quot; : { },
+      &quot;paattajaryhma&quot; : &quot;...&quot;,
+      &quot;poistettu&quot; : true,
+      &quot;tarve&quot; : &quot;...&quot;,
+      &quot;teksti&quot; : &quot;...&quot;,
+      &quot;tiedonantaja&quot; : &quot;...&quot;,
+      &quot;tilasto1&quot; : &quot;...&quot;,
+      &quot;tilasto2&quot; : &quot;...&quot;,
+      &quot;tilasto3&quot; : &quot;...&quot;,
+      &quot;tulot&quot; : 12345.0,
+      &quot;valitettu&quot; : 12345,
+      &quot;valmistelija&quot; : 12345,
+      &quot;valmistelijaUser&quot; : { },
+      &quot;valmisteluyksikko&quot; : 12345,
+      &quot;valmisteluyksikkoUnit&quot; : { },
+      &quot;tila&quot; : &quot;MITATOITY&quot;,
+      &quot;laatu&quot; : &quot;KIELTEINEN&quot;,
+      &quot;lasnaolot&quot; : {
+        &quot;property1&quot; : 12345,
+        &quot;property2&quot; : 12345
+      },
+      &quot;palvelukeskeytykset&quot; : [ { }, { } ],
+      &quot;effectivePalvelukeskeytykset&quot; : [ { }, { } ]
+    },
+    &quot;homeAddress&quot; : &quot;...&quot;,
+    &quot;birthDate&quot; : &quot;...&quot;,
+    &quot;passivatedDate&quot; : &quot;...&quot;,
+    &quot;age&quot; : 12345,
+    &quot;gender&quot; : &quot;...&quot;,
+    &quot;viewTitle&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    },
+    &quot;riskStatus&quot; : &quot;KRIITTISIA_JA_HUOMIOITAVIA_RISKEJA&quot;,
+    &quot;id&quot; : 12345,
+    &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;delay&quot; : 12345,
+    &quot;duration&quot; : 12345,
+    &quot;required&quot; : true,
+    &quot;canceled&quot; : true,
+    &quot;cancellationReason&quot; : &quot;...&quot;,
+    &quot;conflicting&quot; : true,
+    &quot;overlapConflicts&quot; : [ {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    }, {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    } ],
+    &quot;basicInfoTitles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ],
+    &quot;participantId&quot; : 12345
+  } ],
+  &quot;rooms&quot; : [ {
     &quot;name&quot; : &quot;...&quot;,
     &quot;delay&quot; : 12345,
     &quot;duration&quot; : 12345,
     &quot;amount&quot; : 12345,
+    &quot;waitingRoom&quot; : &quot;...&quot;,
     &quot;required&quot; : true,
+    &quot;conflicting&quot; : true,
+    &quot;overlapConflicts&quot; : [ {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    }, {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    } ],
+    &quot;resourceId&quot; : 12345,
+    &quot;version&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;delay&quot; : 12345,
+    &quot;duration&quot; : 12345,
+    &quot;amount&quot; : 12345,
+    &quot;waitingRoom&quot; : &quot;...&quot;,
+    &quot;required&quot; : true,
+    &quot;conflicting&quot; : true,
+    &quot;overlapConflicts&quot; : [ {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    }, {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    } ],
+    &quot;resourceId&quot; : 12345,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   } ],
   &quot;equipmentTypes&quot; : [ {
-    &quot;typeid&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;delay&quot; : 12345,
     &quot;duration&quot; : 12345,
     &quot;amount&quot; : 12345,
+    &quot;waitingRoom&quot; : &quot;...&quot;,
     &quot;required&quot; : true,
+    &quot;conflicting&quot; : true,
+    &quot;overlapConflicts&quot; : [ {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    }, {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    } ],
+    &quot;resourceId&quot; : 12345,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   }, {
-    &quot;typeid&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;delay&quot; : 12345,
     &quot;duration&quot; : 12345,
     &quot;amount&quot; : 12345,
+    &quot;waitingRoom&quot; : &quot;...&quot;,
     &quot;required&quot; : true,
+    &quot;conflicting&quot; : true,
+    &quot;overlapConflicts&quot; : [ {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    }, {
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
+    } ],
+    &quot;resourceId&quot; : 12345,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
@@ -718,6 +874,7 @@
   &quot;lock&quot; : {
     &quot;user&quot; : 12345,
     &quot;reason&quot; : &quot;...&quot;,
+    &quot;ageInMinutes&quot; : 12345,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
@@ -725,6 +882,11 @@
   },
   &quot;contentGroups&quot; : [ {
     &quot;eventModelContentGroupId&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;removed&quot; : true,
+    &quot;order&quot; : 12345,
+    &quot;visibility&quot; : &quot;COLLAPSED&quot;,
+    &quot;type&quot; : &quot;SYSTEM_DEFINED_WORKERS&quot;,
     &quot;freeItems&quot; : [ {
       &quot;title&quot; : { },
       &quot;meaningId&quot; : 12345,
@@ -748,17 +910,17 @@
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;removed&quot; : true,
-    &quot;visibility&quot; : &quot;VISIBLE&quot;,
-    &quot;order&quot; : 12345,
-    &quot;type&quot; : &quot;USER_DEFINED&quot;,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   }, {
     &quot;eventModelContentGroupId&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;removed&quot; : true,
+    &quot;order&quot; : 12345,
+    &quot;visibility&quot; : &quot;EXCLUDED&quot;,
+    &quot;type&quot; : &quot;SYSTEM_DEFINED_EQUIPMENT&quot;,
     &quot;freeItems&quot; : [ {
       &quot;title&quot; : { },
       &quot;meaningId&quot; : 12345,
@@ -782,11 +944,6 @@
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;removed&quot; : true,
-    &quot;visibility&quot; : &quot;VISIBLE&quot;,
-    &quot;order&quot; : 12345,
-    &quot;type&quot; : &quot;USER_DEFINED&quot;,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
@@ -803,6 +960,14 @@
     &quot;numOfRequiredEquipment&quot; : 12345,
     &quot;numOfMissingRoomGroups&quot; : 12345,
     &quot;missingRoomGroup&quot; : 12345
+  },
+  &quot;primaryNurseStatus&quot; : &quot;NOT_REQUIRED&quot;,
+  &quot;planningSettings&quot; : {
+    &quot;startTimeLimit&quot; : &quot;...&quot;,
+    &quot;endTimeLimit&quot; : &quot;...&quot;,
+    &quot;keepResourcesInOptimization&quot; : true,
+    &quot;customerVisit&quot; : true,
+    &quot;optimizationInUse&quot; : true
   },
   &quot;version&quot; : 12345,
   &quot;id&quot; : 12345,
@@ -822,14 +987,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

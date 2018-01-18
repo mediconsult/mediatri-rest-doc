@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,10 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#VISIBLE"><abbr title="VISIBLE"><span class="sideoverflow">VISIBLE</span></abbr></a></li>
+          <li><a href="#COLLAPSED"><abbr title="COLLAPSED"><span class="sideoverflow">COLLAPSED</span></abbr></a></li>
+          <li><a href="#EXCLUDED"><abbr title="EXCLUDED"><span class="sideoverflow">EXCLUDED</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +73,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,174 +84,234 @@
         </thead>
         <tbody>
         <tr>
-          <td>  username
+          <td>  <span class="property-name">username</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Username in core. This in not unique ID. Usually maps to Omistaja.Tunnus but it's not guaranteed (with Medinet-customer login this can be anything!).
-</td>
-        </tr>
-        <tr>
-          <td>  roles
-</td>
-          <td>  object
-
-</td>
-          <td>  Roles grouped by unit id. Key is the unitId and value is @see UserRoleInfo Maps to UserRoleInfo
+          <td>  <span class="property-description">Username in core. This in not unique ID. Usually maps to Omistaja.Tunnus but it's not guaranteed (with Medinet-customer login this can be anything!).</span>
 </td>
         </tr>
         <tr>
-          <td>  units
+          <td>  <span class="property-name">roles</span>
 </td>
-          <td>  array of <a href="json_Unit.html">Unit</a>
-
+          <td>  <span class="datatype-reference">map of array of <a href="json_UserRoleInfo.html">UserRoleInfo</a>
+</span>
 </td>
-          <td>  Unit map with units long name as key
-</td>
-        </tr>
-        <tr>
-          <td>  activeRole
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns roleId for current session. If roleId is null you must change role+unit using authentication-resource.
+          <td>  <span class="property-description">Roles grouped by unit id. Key is the unitId and value is @see UserRoleInfo Maps to UserRoleInfo</span>
 </td>
         </tr>
         <tr>
-          <td>  activeUnit
+          <td>  <span class="property-name">units</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">array of <a href="json_Unit.html">Unit</a>
+</span>
 </td>
-          <td>  Returns unitId for current session. If unitId is null you must change role+unit using authentication-resource.
-</td>
-        </tr>
-        <tr>
-          <td>  firstNames
-</td>
-          <td>  string
-
-</td>
-          <td>  Authenticated users first names. Can contain multiple names separated by spaces.
+          <td>  <span class="property-description">Unit map with units long name as key</span>
 </td>
         </tr>
         <tr>
-          <td>  lastName
+          <td>  <span class="property-name">activeRole</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Last name of the authenticated user.
-</td>
-        </tr>
-        <tr>
-          <td>  success
-</td>
-          <td>  boolean
-
-</td>
-          <td>  boolean true if authentication was successful. If false, errorMessage is provided in message-key.
+          <td>  <span class="property-description">Returns roleId for current session. If roleId is null you must change role+unit using authentication-resource.</span>
 </td>
         </tr>
         <tr>
-          <td>  message
+          <td>  <span class="property-name">activeUnit</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Error message for authentication if authentication has failed
-</td>
-        </tr>
-        <tr>
-          <td>  patient
-</td>
-          <td>  boolean
-
-</td>
-          <td>  true if authenticated user is patient-type.
+          <td>  <span class="property-description">Returns unitId for current session. If unitId is null you must change role+unit using authentication-resource.</span>
 </td>
         </tr>
         <tr>
-          <td>  userId
+          <td>  <span class="property-name">firstNames</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  developer
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
+          <td>  <span class="property-description">Authenticated users first names. Can contain multiple names separated by spaces.</span>
 </td>
         </tr>
         <tr>
-          <td>  componentRights
+          <td>  <span class="property-name">lastName</span>
 </td>
-          <td>  array of <a href="json_ComponentRightDTO.html">ComponentRightDTO</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description">Last name of the authenticated user.</span>
 </td>
         </tr>
         <tr>
-          <td>  viewConfiguration
+          <td>  <span class="property-name">success</span>
 </td>
-          <td>  <a href="json_ViewConfiguration.html">ViewConfiguration</a>
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description">boolean true if authentication was successful. If false, errorMessage is provided in message-key.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">message</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Error message for authentication if authentication has failed</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">patient</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description">true if authenticated user is patient-type.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">userId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">developer</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">componentRights</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_ComponentRightDTO.html">ComponentRightDTO</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">viewConfiguration</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_ViewConfiguration.html">ViewConfiguration</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">frameworkSettings</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_FrameworkSettings.html">FrameworkSettings</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">context</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_CoreAuthenticationRequestContext.html">CoreAuthenticationRequestContext</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">medikantaURL</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">medireseptiURL</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;username&quot; : &quot;MGR&quot;,
   &quot;roles&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
+    &quot;property1&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ],
+    &quot;property2&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ]
   },
   &quot;units&quot; : [ {
     &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
     &quot;basicInfo&quot; : {
-      &quot;object&quot; : { },
       &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
       &quot;loadUrl&quot; : &quot;...&quot;,
       &quot;type&quot; : &quot;...&quot;
     },
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;nameExtension&quot; : &quot;...&quot;,
     &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
     &quot;omistajaId&quot; : 12345,
     &quot;omistajaListAvailability&quot; : {
       &quot;startTime&quot; : 12345,
       &quot;endTime&quot; : 12345
-    }
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
   }, {
     &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
     &quot;basicInfo&quot; : {
-      &quot;object&quot; : { },
       &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
       &quot;loadUrl&quot; : &quot;...&quot;,
       &quot;type&quot; : &quot;...&quot;
     },
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;nameExtension&quot; : &quot;...&quot;,
     &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
     &quot;omistajaId&quot; : 12345,
     &quot;omistajaListAvailability&quot; : {
       &quot;startTime&quot; : 12345,
       &quot;endTime&quot; : 12345
-    }
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
   } ],
   &quot;activeRole&quot; : 5,
   &quot;activeUnit&quot; : 600000001,
@@ -262,36 +324,100 @@
   &quot;developer&quot; : true,
   &quot;componentRights&quot; : [ {
     &quot;serialversionuid&quot; : 12345,
-    &quot;component&quot; : &quot;BASIC_INFORMATION&quot;,
+    &quot;component&quot; : &quot;EVENTS&quot;,
     &quot;inDevelopment&quot; : true,
     &quot;requiresTarget&quot; : true,
     &quot;permissionDTO&quot; : {
-      &quot;view&quot; : true,
-      &quot;change&quot; : true,
       &quot;add&quot; : true,
       &quot;data&quot; : { },
-      &quot;remove&quot; : true,
-      &quot;type&quot; : &quot;...&quot;
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
     }
   }, {
     &quot;serialversionuid&quot; : 12345,
-    &quot;component&quot; : &quot;BASIC_INFORMATION&quot;,
+    &quot;component&quot; : &quot;AVAINASIAKAS&quot;,
     &quot;inDevelopment&quot; : true,
     &quot;requiresTarget&quot; : true,
     &quot;permissionDTO&quot; : {
-      &quot;view&quot; : true,
-      &quot;change&quot; : true,
       &quot;add&quot; : true,
       &quot;data&quot; : { },
-      &quot;remove&quot; : true,
-      &quot;type&quot; : &quot;...&quot;
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
     }
   } ],
   &quot;viewConfiguration&quot; : {
-    &quot;landingPage&quot; : &quot;BASIC_INFORMATION&quot;,
-    &quot;landingPageWithOwner&quot; : &quot;BASIC_INFORMATION&quot;,
-    &quot;components&quot; : [ &quot;BASIC_INFORMATION&quot;, &quot;BASIC_INFORMATION&quot; ]
-  }
+    &quot;landingPage&quot; : &quot;SUMMARY_MSO_VIEW&quot;,
+    &quot;landingPageWithOwner&quot; : &quot;SEURANTA&quot;,
+    &quot;components&quot; : [ &quot;SUMMARY_MSO_VIEW&quot;, &quot;ASIAKKUUDET&quot; ],
+    &quot;productName&quot; : &quot;...&quot;,
+    &quot;productCode&quot; : &quot;...&quot;,
+    &quot;productConfigurations&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;frameworkSettings&quot; : {
+    &quot;passivateBottomBar&quot; : true,
+    &quot;passivateUserMenu&quot; : true,
+    &quot;passivateResourceMenu&quot; : true,
+    &quot;passivateRiskRedirection&quot; : true,
+    &quot;passivateMainMenu&quot; : true,
+    &quot;preloadPatientDataForOffline&quot; : true
+  },
+  &quot;context&quot; : {
+    &quot;unitOwnerId&quot; : 12345,
+    &quot;userSVNumber&quot; : &quot;...&quot;,
+    &quot;serviceProviderId&quot; : &quot;...&quot;,
+    &quot;userLogonDomain&quot; : &quot;...&quot;,
+    &quot;authorFirstNames&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifierName&quot; : &quot;...&quot;,
+    &quot;patientDateTimeOfBirth&quot; : &quot;...&quot;,
+    &quot;patientSex&quot; : &quot;...&quot;,
+    &quot;unitOid&quot; : &quot;...&quot;,
+    &quot;responsiblePartyType&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterId&quot; : &quot;...&quot;,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;sessionKey&quot; : &quot;...&quot;,
+    &quot;patientCommonRegisterNotified&quot; : true,
+    &quot;patientFirstNames&quot; : &quot;...&quot;,
+    &quot;hostOrganizationOid&quot; : &quot;...&quot;,
+    &quot;patientEArchiveApproval&quot; : true,
+    &quot;patientActiveEncompassingEncounterVisitNumber&quot; : &quot;...&quot;,
+    &quot;userLogonMethod&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementCode&quot; : &quot;...&quot;,
+    &quot;authorSSN&quot; : &quot;...&quot;,
+    &quot;hostUnitOid&quot; : &quot;...&quot;,
+    &quot;role&quot; : &quot;...&quot;,
+    &quot;responsiblePartyName&quot; : &quot;...&quot;,
+    &quot;userSpecialProtection&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterVisitNumberInteger&quot; : 12345,
+    &quot;patientEArchiveNotified&quot; : true,
+    &quot;patientEReseptiNotified&quot; : true,
+    &quot;patientSSN&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifier&quot; : &quot;...&quot;,
+    &quot;registerIdentificationCode&quot; : 12345,
+    &quot;patientName&quot; : &quot;...&quot;,
+    &quot;dirty&quot; : true,
+    &quot;patientSurname&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementText&quot; : &quot;...&quot;,
+    &quot;userOwnerId&quot; : 12345,
+    &quot;encounterPatientRegistryCode&quot; : &quot;...&quot;,
+    &quot;patientOwnerId&quot; : 12345,
+    &quot;registerId&quot; : &quot;...&quot;,
+    &quot;authorSurname&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;register&quot; : &quot;...&quot;,
+    &quot;responsiblePartyId&quot; : &quot;...&quot;,
+    &quot;madeDirtyTime&quot; : 12345,
+    &quot;encounterCustodian&quot; : &quot;...&quot;,
+    &quot;userLogon&quot; : &quot;...&quot;,
+    &quot;authorCardNumber&quot; : &quot;...&quot;,
+    &quot;userCustodianTypeCode&quot; : &quot;...&quot;,
+    &quot;userLogonApplication&quot; : &quot;...&quot;
+  },
+  &quot;medikantaURL&quot; : &quot;...&quot;,
+  &quot;medireseptiURL&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">
@@ -306,14 +432,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

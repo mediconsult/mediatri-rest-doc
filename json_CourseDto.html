@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,10 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#VISIBLE"><abbr title="VISIBLE"><span class="sideoverflow">VISIBLE</span></abbr></a></li>
+          <li><a href="#COLLAPSED"><abbr title="COLLAPSED"><span class="sideoverflow">COLLAPSED</span></abbr></a></li>
+          <li><a href="#EXCLUDED"><abbr title="EXCLUDED"><span class="sideoverflow">EXCLUDED</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -68,7 +70,7 @@
 
       <p>Data transfer object for course data
 
-Examle of course JSON without any "child" dtos:
+Example of course JSON without any "child" dtos:
 <pre>
  {
    "courses":[
@@ -91,7 +93,7 @@ Examle of course JSON without any "child" dtos:
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -102,84 +104,131 @@ Examle of course JSON without any "child" dtos:
         </thead>
         <tbody>
         <tr>
-          <td>  kelaID
+          <td>  <span class="property-name">id</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  dayPrice
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  status
+          <td>  <span class="property-name">kelaID</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  startTime
-</td>
-          <td>  number
-
-</td>
-          <td>  Start time is the day of start time of the first period in course (Unix time stamp in Long)
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  endTime
+          <td>  <span class="property-name">dayPrice</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  End time is the end time of last period in course. (Unix time stamp in Long)
-</td>
-        </tr>
-        <tr>
-          <td>  periods
-</td>
-          <td>  array of <a href="json_CoursePeriodDto.html">CoursePeriodDto</a>
-
-</td>
-          <td>  List of course periods in course ordered by period start time
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  namedGroups
+          <td>  <span class="property-name">status</span>
 </td>
-          <td>  array of <a href="json_CourseNamedGroupDto.html">CourseNamedGroupDto</a>
-
+          <td>  <span class="datatype-reference"><a href="json_CourseStatus.html">CourseStatus</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  tags
-</td>
-          <td>  array of <a href="json_TagsForCourseDto.html">TagsForCourseDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  calendarContext
+          <td>  <span class="property-name">startTime</span>
 </td>
-          <td>  <a href="json_CalendarContextDto.html">CalendarContextDto</a>
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description">Start time is the day of start time of the first period in course (Unix time stamp in Long)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">startDate</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Get start date of a course. Convenience method since the time component of
+start time does not have any actual meaning.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">endTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">End time is the end time of last period in course. (Unix time stamp in Long)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">endDate</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Get end date of a course. Convenience method since the time component of
+end time does not have any actual meaning.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">periods</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_CoursePeriodDto.html">CoursePeriodDto</a>
+</span>
+</td>
+          <td>  <span class="property-description">List of course periods in course ordered by period start time</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">periodIds</span>
+</td>
+          <td>  <span class="datatype-reference">array of number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tags</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_TagsForCourseDto.html">TagsForCourseDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">namedGroups</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_CourseNamedGroupDto.html">CourseNamedGroupDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">customers</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_CourseCustomerDto.html">CourseCustomerDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">calendarContext</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_CalendarContextDto.html">CalendarContextDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -188,22 +237,22 @@ Examle of course JSON without any "child" dtos:
         </tr>
         <tbody>
         <tr>
-          <td>name</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">name</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>abbr</td>
-          <td>string
-</td>
-          <td>Note: in CourseDto and CoursePeriodDto this is used as a field tunniste. (Unique and Mandatory)</td>
+          <td><span class="property-name">abbr</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description">Note: in CourseDto and CoursePeriodDto this is used as a field tunniste. (Unique and Mandatory)</span></td>
         </tr>
         <tr>
-          <td>description</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">description</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
         <tr>
@@ -211,60 +260,72 @@ Examle of course JSON without any "child" dtos:
         </tr>
         <tbody>
         <tr>
-          <td>version</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>id</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>created</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">created</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>modified</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">modified</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
+  &quot;id&quot; : 12345,
   &quot;kelaID&quot; : &quot;...&quot;,
   &quot;dayPrice&quot; : 12345.0,
-  &quot;status&quot; : &quot;...&quot;,
+  &quot;status&quot; : &quot;CONFIRMED&quot;,
   &quot;startTime&quot; : 12345,
+  &quot;startDate&quot; : &quot;...&quot;,
   &quot;endTime&quot; : 12345,
+  &quot;endDate&quot; : &quot;...&quot;,
   &quot;periods&quot; : [ {
-    &quot;status&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;status&quot; : &quot;DRAFT&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;abbr&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
     &quot;minAttendees&quot; : 12345,
     &quot;maxAttendees&quot; : 12345,
     &quot;startTime&quot; : 12345,
+    &quot;startDate&quot; : &quot;...&quot;,
     &quot;endTime&quot; : 12345,
+    &quot;endDate&quot; : &quot;...&quot;,
+    &quot;customerCanceled&quot; : true,
     &quot;customers&quot; : [ {
       &quot;customerId&quot; : 12345,
-      &quot;removed&quot; : true,
+      &quot;customer&quot; : { },
       &quot;canceled&quot; : true,
-      &quot;assignedCoach&quot; : { },
+      &quot;cancellation&quot; : { },
+      &quot;cancellations&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
       &quot;customerId&quot; : 12345,
-      &quot;removed&quot; : true,
+      &quot;customer&quot; : { },
       &quot;canceled&quot; : true,
-      &quot;assignedCoach&quot; : { },
+      &quot;cancellation&quot; : { },
+      &quot;cancellations&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
@@ -274,48 +335,54 @@ Examle of course JSON without any "child" dtos:
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
       &quot;periodTagId&quot; : 12345,
+      &quot;id&quot; : 12345,
       &quot;tagId&quot; : 12345,
       &quot;version&quot; : 12345,
-      &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
       &quot;periodTagId&quot; : 12345,
+      &quot;id&quot; : 12345,
       &quot;tagId&quot; : 12345,
       &quot;version&quot; : 12345,
-      &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;abbr&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
+    &quot;courseId&quot; : 12345,
     &quot;version&quot; : 12345,
-    &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   }, {
-    &quot;status&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;status&quot; : &quot;CANCELED&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;abbr&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
     &quot;minAttendees&quot; : 12345,
     &quot;maxAttendees&quot; : 12345,
     &quot;startTime&quot; : 12345,
+    &quot;startDate&quot; : &quot;...&quot;,
     &quot;endTime&quot; : 12345,
+    &quot;endDate&quot; : &quot;...&quot;,
+    &quot;customerCanceled&quot; : true,
     &quot;customers&quot; : [ {
       &quot;customerId&quot; : 12345,
-      &quot;removed&quot; : true,
+      &quot;customer&quot; : { },
       &quot;canceled&quot; : true,
-      &quot;assignedCoach&quot; : { },
+      &quot;cancellation&quot; : { },
+      &quot;cancellations&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
       &quot;customerId&quot; : 12345,
-      &quot;removed&quot; : true,
+      &quot;customer&quot; : { },
       &quot;canceled&quot; : true,
-      &quot;assignedCoach&quot; : { },
+      &quot;cancellation&quot; : { },
+      &quot;cancellations&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
@@ -325,26 +392,43 @@ Examle of course JSON without any "child" dtos:
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
       &quot;periodTagId&quot; : 12345,
+      &quot;id&quot; : 12345,
       &quot;tagId&quot; : 12345,
       &quot;version&quot; : 12345,
-      &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
       &quot;periodTagId&quot; : 12345,
+      &quot;id&quot; : 12345,
       &quot;tagId&quot; : 12345,
       &quot;version&quot; : 12345,
-      &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;abbr&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
+    &quot;courseId&quot; : 12345,
     &quot;version&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
+  } ],
+  &quot;periodIds&quot; : [ 12345, 12345 ],
+  &quot;tags&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;removed&quot; : true,
+    &quot;courseTagId&quot; : 12345,
     &quot;id&quot; : 12345,
+    &quot;tagId&quot; : 12345,
+    &quot;version&quot; : 12345,
+    &quot;created&quot; : 12345,
+    &quot;modified&quot; : 12345
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;removed&quot; : true,
+    &quot;courseTagId&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;tagId&quot; : 12345,
+    &quot;version&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   } ],
@@ -354,6 +438,7 @@ Examle of course JSON without any "child" dtos:
       &quot;skill&quot; : { },
       &quot;role&quot; : { },
       &quot;removed&quot; : true,
+      &quot;workerId&quot; : 12345,
       &quot;worker&quot; : { },
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
@@ -363,6 +448,7 @@ Examle of course JSON without any "child" dtos:
       &quot;skill&quot; : { },
       &quot;role&quot; : { },
       &quot;removed&quot; : true,
+      &quot;workerId&quot; : 12345,
       &quot;worker&quot; : { },
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
@@ -383,6 +469,7 @@ Examle of course JSON without any "child" dtos:
       &quot;skill&quot; : { },
       &quot;role&quot; : { },
       &quot;removed&quot; : true,
+      &quot;workerId&quot; : 12345,
       &quot;worker&quot; : { },
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
@@ -392,6 +479,7 @@ Examle of course JSON without any "child" dtos:
       &quot;skill&quot; : { },
       &quot;role&quot; : { },
       &quot;removed&quot; : true,
+      &quot;workerId&quot; : 12345,
       &quot;worker&quot; : { },
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
@@ -407,20 +495,78 @@ Examle of course JSON without any "child" dtos:
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   } ],
-  &quot;tags&quot; : [ {
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;removed&quot; : true,
-    &quot;courseTagId&quot; : 12345,
-    &quot;tagId&quot; : 12345,
+  &quot;customers&quot; : [ {
+    &quot;customerId&quot; : 12345,
+    &quot;customer&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;id&quot; : 12345,
+      &quot;data&quot; : { }
+    },
+    &quot;canceled&quot; : true,
+    &quot;cancellation&quot; : {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    },
+    &quot;cancellations&quot; : [ {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
     &quot;modified&quot; : 12345
   }, {
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;removed&quot; : true,
-    &quot;courseTagId&quot; : 12345,
-    &quot;tagId&quot; : 12345,
+    &quot;customerId&quot; : 12345,
+    &quot;customer&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;id&quot; : 12345,
+      &quot;data&quot; : { }
+    },
+    &quot;canceled&quot; : true,
+    &quot;cancellation&quot; : {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    },
+    &quot;cancellations&quot; : [ {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;cancellationStartTime&quot; : 12345,
+      &quot;periodId&quot; : 12345,
+      &quot;cancellationReason&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ],
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
@@ -428,13 +574,14 @@ Examle of course JSON without any "child" dtos:
   } ],
   &quot;calendarContext&quot; : {
     &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
     &quot;form&quot; : 12345
   },
   &quot;name&quot; : &quot;...&quot;,
   &quot;abbr&quot; : &quot;...&quot;,
   &quot;description&quot; : &quot;...&quot;,
   &quot;version&quot; : 12345,
-  &quot;id&quot; : 12345,
   &quot;created&quot; : 12345,
   &quot;modified&quot; : 12345
 }</pre>
@@ -451,14 +598,14 @@ Examle of course JSON without any "child" dtos:
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

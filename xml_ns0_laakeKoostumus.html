@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#KERTOMUS_LUONNOS"><abbr title="KERTOMUS_LUONNOS"><span class="sideoverflow">KERTOMUS_LUONNOS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_KESKEN"><abbr title="KERTOMUS_KESKEN"><span class="sideoverflow">KERTOMUS_KESKEN</span></abbr></a></li>
+          <li><a href="#KERTOMUS_VALMIS"><abbr title="KERTOMUS_VALMIS"><span class="sideoverflow">KERTOMUS_VALMIS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_UNDEFIND"><abbr title="KERTOMUS_UNDEFIND"><span class="sideoverflow">KERTOMUS_UNDEFIND</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -67,8 +70,7 @@
       <h1 class="page-header">laakeKoostumus <small>Data Type</small></h1>
 
       <p>DTO for LaakeKoostumus
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html</p>
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html</a></p>
 
       <dl class="dl-horizontal">
         <dt>Namespace</dt>
@@ -77,7 +79,7 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html</p
         <dd><a href="ns0.xsd">ns0.xsd</a></dd>
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -91,159 +93,159 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html</p
         </thead>
         <tbody>
         <tr>
-          <td>  komponentinKoodi
+          <td>  <span class="property-name">komponentinKoodi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the component code (VNR code)
-</td>
-        </tr>
-        <tr>
-          <td>  komponentti
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the component in text format
+          <td>  <span class="property-description">Returns the component code (VNR code)</span>
 </td>
         </tr>
         <tr>
-          <td>  maara
+          <td>  <span class="property-name">komponentti</span>
 </td>
-          <td>  float
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the amount of component
-</td>
-        </tr>
-        <tr>
-          <td>  osa
-</td>
-          <td>  int
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  1/1
-
-</td>
-          <td>  Returns the part number of the medicine component
+          <td>  <span class="property-description">Returns the component in text format</span>
 </td>
         </tr>
         <tr>
-          <td>  tyyppi
+          <td>  <span class="property-name">maara</span>
 </td>
-          <td>  unsignedShort
-
+          <td>  <span class="datatype-reference">float
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  1/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the type of the medicine component
+          <td>  <span class="property-description">Returns the amount of component</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">osa</span>
+</td>
+          <td>  <span class="datatype-reference">int
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the part number of the medicine component</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tyyppi</span>
+</td>
+          <td>  <span class="datatype-reference">unsignedShort
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">1/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the type of the medicine component
 -'B' if "pohja-aine"
--Perusaine, johon lis�aineet sekoitetaan
--'A' if "lis�aine"
--Lis�aineet ovat yleens� varsinaisia vaikuttavia aineita
+-Perusaine, johon lisäaineet sekoitetaan
+-'A' if "lisäaine"
+-Lisäaineet ovat yleensä varsinaisia vaikuttavia aineita</span>
 </td>
         </tr>
         <tr>
-          <td>  vahvuus
+          <td>  <span class="property-name">vahvuus</span>
 </td>
-          <td>  float
-
+          <td>  <span class="datatype-reference">float
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the strength of the component
-</td>
-        </tr>
-        <tr>
-          <td>  vahvuusyksikko
-</td>
-          <td>  string
-
-</td>
-          <td>  element
-
-</td>
-          <td>  
-
-</td>
-          <td>  0/1
-
-</td>
-          <td>  Returns the unit of strength
+          <td>  <span class="property-description">Returns the strength of the component</span>
 </td>
         </tr>
         <tr>
-          <td>  yksikko
+          <td>  <span class="property-name">vahvuusyksikko</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  element
-
+          <td>  <span class="property-type">element
+</span>
 </td>
-          <td>  
-
+          <td>  <span class="property-namespaceInfo">
+</span>
 </td>
-          <td>  0/1
-
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
 </td>
-          <td>  Returns the unit of amount
+          <td>  <span class="property-description">Returns the unit of strength</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">yksikko</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">Returns the unit of amount</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-xml">&lt;laakeKoostumus&gt;
+      
+      <pre class="prettyprint language-xml example">&lt;laakeKoostumus&gt;
   &lt;osa&gt;...&lt;/osa&gt;
   &lt;tyyppi&gt;...&lt;/tyyppi&gt;
   &lt;komponentinKoodi&gt;...&lt;/komponentinKoodi&gt;
@@ -267,14 +269,14 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_KOOSTUMUS.html</p
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

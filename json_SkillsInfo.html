@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#EMPHASIZE_ROUTING"><abbr title="EMPHASIZE_ROUTING"><span class="sideoverflow">EMPHASIZE_ROUTING</span></abbr></a></li>
+          <li><a href="#EMPHASIZE_CLUSTERING"><abbr title="EMPHASIZE_CLUSTERING"><span class="sideoverflow">EMPHASIZE_CLUSTERING</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -72,7 +73,7 @@ Bound to SkillDto class.</p>
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -83,46 +84,45 @@ Bound to SkillDto class.</p>
         </thead>
         <tbody>
         <tr>
-          <td>  dataLoaded
+          <td>  <span class="property-name">dataLoaded</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  Get data load status for basic information.
-If <code>false</code> then #getHref() will return URL to fetch the missing data.
-</td>
-        </tr>
-        <tr>
-          <td>  href
-</td>
-          <td>  string
-
-</td>
-          <td>  Gets lazy loading URL for missing skills.
+          <td>  <span class="property-description">Get data load status for basic information.
+If <code>false</code> then #getHref() will return URL to fetch the missing data.</span>
 </td>
         </tr>
         <tr>
-          <td>  skills
+          <td>  <span class="property-name">href</span>
 </td>
-          <td>  array of <a href="json_SkillDto.html">SkillDto</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Gets all skills.
+          <td>  <span class="property-description">Gets lazy loading URL for missing skills.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">skills</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_SkillDto.html">SkillDto</a>
+</span>
+</td>
+          <td>  <span class="property-description">Gets all skills.</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;dataLoaded&quot; : true,
   &quot;href&quot; : &quot;...&quot;,
   &quot;skills&quot; : [ {
     &quot;name&quot; : &quot;...&quot;,
     &quot;abbr&quot; : &quot;...&quot;,
     &quot;removed&quot; : true,
-    &quot;changeable&quot; : true,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
@@ -131,7 +131,6 @@ If <code>false</code> then #getHref() will return URL to fetch the missing data.
     &quot;name&quot; : &quot;...&quot;,
     &quot;abbr&quot; : &quot;...&quot;,
     &quot;removed&quot; : true,
-    &quot;changeable&quot; : true,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
     &quot;created&quot; : 12345,
@@ -151,14 +150,14 @@ If <code>false</code> then #getHref() will return URL to fetch the missing data.
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

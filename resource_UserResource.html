@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,25 +51,23 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_UserResource_getUser_GET">GET /users/{id}</a></li>
-          <li><a href="#resource_UserResource_getUserBasicInfo_GET">GET /users/{id}/basicinfos</a></li>
-          <li><a href="#resource_UserResource_getUsersLists_GET">GET /users/{id}/lists</a></li>
-          <li><a href="#resource_UserResource_getOmistajasFromListByMediatriId_GET"><abbr title="GET /users/{omistajaId}/list/{listId}">GET /users/{omistajaId}/list/{...</abbr></a></li>
-          <li><a href="#resource_UserResource_getUsers_GET">GET /users/list</a></li>
-          <li><a href="#resource_UserResource_searchUsers_GET">GET /users/search</a></li>
-          <li><a href="#resource_UserResource_getUserGroups_GET">GET /users/groups</a></li>
-          <li><a href="#resource_UserResource_getListedUsers_GET">GET /users/listed</a></li>
-          <li><a href="#resource_UserResource_getSkills_GET">GET /users/{id}/skills</a></li>
-          <li><a href="#resource_UserResource_editSkills_PUT">PUT /users/{id}/skills</a></li>
-          <li><a href="#resource_UserResource_getTimeRules_GET">GET /users/{id}/timeRules</a></li>
-          <li><a href="#resource_UserResource_addTimeRule_POST">POST /users/{id}/timeRules</a></li>
-          <li><a href="#resource_UserResource_editTimeRule_PUT"><abbr title="PUT /users/{id}/timeRules/{ruleId}">PUT /users/{id}/timeRules/{rul...</abbr></a></li>
-          <li><a href="#resource_UserResource_deleteTimeRule_DELETE"><abbr title="DELETE /users/{id}/timeRules/{ruleId}">DELETE /users/{id}/timeRules/{...</abbr></a></li>
-          <li><a href="#resource_UserResource_editTimeRule_PUT"><abbr title="PUT /users/{id}/timeRules/{ruleId}/instances/{instanceId}">PUT /users/{id}/timeRules/{rul...</abbr></a></li>
-          <li><a href="#resource_UserResource_deleteTimeRuleInstance_DELETE"><abbr title="DELETE /users/{id}/timeRules/{ruleId}/instances/{instanceId}">DELETE /users/{id}/timeRules/{...</abbr></a></li>
-          <li><a href="#resource_UserResource_getAvailability_GET">GET /users/{id}/availability</a></li>
-          <li><a href="#resource_UserResource_searchWorkersWithAvailability_GET">GET /users/availability</a></li>
-          <li><a href="#resource_UserResource_getWorkersWithAvailability_GET"><abbr title="GET /users/listedWithAvailability">GET /users/listedWithAvailabil...</abbr></a></li>
+          <li><a href="#resource_UserResource_getUserGroups_GET"><abbr title="GET /users/groups"><span class="sideoverflow">GET /users/groups</span></abbr></a></li>
+          <li><a href="#resource_UserResource_getListedUsers_GET"><abbr title="GET /users/listed"><span class="sideoverflow">GET /users/listed</span></abbr></a></li>
+          <li><a href="#resource_UserResource_getWorkersWithAvailability_GET"><abbr title="GET /users/listedWithAvailability"><span class="sideoverflow">GET /users/listedWithAvailability</span></abbr></a></li>
+          <li><a href="#resource_UserResource_searchUsers_GET"><abbr title="GET /users/search"><span class="sideoverflow">GET /users/search</span></abbr></a></li>
+          <li><a href="#resource_UserResource_getUser_GET"><abbr title="GET /users/{id}"><span class="sideoverflow">GET /users/{id}</span></abbr></a></li>
+          <li><a href="#resource_UserResource_getAvailability_GET"><abbr title="GET /users/{id}/availability"><span class="sideoverflow">GET /users/{id}/availability</span></abbr></a></li>
+          <li><a href="#resource_UserResource_getUserBasicInfo_GET"><abbr title="GET /users/{id}/basicinfos"><span class="sideoverflow">GET /users/{id}/basicinfos</span></abbr></a></li>
+          <li><a href="#resource_UserResource_getUsersLists_GET"><abbr title="GET /users/{id}/lists"><span class="sideoverflow">GET /users/{id}/lists</span></abbr></a></li>
+          <li><a href="#resource_UserResource_getSkills_GET"><abbr title="GET /users/{id}/skills"><span class="sideoverflow">GET /users/{id}/skills</span></abbr></a></li>
+          <li><a href="#resource_UserResource_editSkills_PUT"><abbr title="PUT /users/{id}/skills"><span class="sideoverflow">PUT /users/{id}/skills</span></abbr></a></li>
+          <li><a href="#resource_UserResource_getTimeRules_GET"><abbr title="GET /users/{id}/timeRules"><span class="sideoverflow">GET /users/{id}/timeRules</span></abbr></a></li>
+          <li><a href="#resource_UserResource_addTimeRule_POST"><abbr title="POST /users/{id}/timeRules"><span class="sideoverflow">POST /users/{id}/timeRules</span></abbr></a></li>
+          <li><a href="#resource_UserResource_deleteTimeRule_DELETE"><abbr title="DELETE /users/{id}/timeRules/{ruleId}"><span class="sideoverflow">DELETE /users/{id}/timeRules/{ruleId}</span></abbr></a></li>
+          <li><a href="#resource_UserResource_editTimeRule_PUT"><abbr title="PUT /users/{id}/timeRules/{ruleId}"><span class="sideoverflow">PUT /users/{id}/timeRules/{ruleId}</span></abbr></a></li>
+          <li><a href="#resource_UserResource_getOmistajasFromListByMediatriId_GET"><abbr title="GET /users/{omistajaId}/list/{listId}"><span class="sideoverflow">GET /users/{omistajaId}/list/{listId}</span></abbr></a></li>
+          <li><a href="#resource_UserResource_deleteTimeRuleInstance_DELETE"><abbr title="DELETE /users/{id}/timeRules/{ruleId}/instances/{instanceId}"><span class="sideoverflow">DELETE /users/{id}/timeRules/{ruleId}/instances/{instanceId}</span></abbr></a></li>
+          <li><a href="#resource_UserResource_editTimeRule_PUT"><abbr title="PUT /users/{id}/timeRules/{ruleId}/instances/{instanceId}"><span class="sideoverflow">PUT /users/{id}/timeRules/{ruleId}/instances/{instanceId}</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -88,60 +84,12 @@
 
       <p>REST API for users</p>
 
-      <div id="resource_UserResource_getUser_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/{id} <a href="../api/v1users/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_UserResource_getUserGroups_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/groups <a href="../api/v1/users/groups" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets user based on user id.</p>
+        <p>Return the list of available user groups in the system.</p>
 
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>user id</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -152,21 +100,49 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_User.html">User</a>
- (JSON)</td>
-            <td>user DTO-object</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_UserGroup.html">UserGroup</a>
+ (JSON)</span></td>
+            <td><span class="response-description">list of available user groups in the system.</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/groups
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;groupdId&quot; : 12345,
+  &quot;name&quot; : &quot;...&quot;
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_UserResource_getUserBasicInfo_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/{id}/basicinfos <a href="../api/v1users/{id}/basicinfos" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_UserResource_getListedUsers_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/listed <a href="../api/v1/users/listed" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets user's basic information based on user id.</p>
+        <p>Get users by given unit specific lists.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -174,47 +150,49 @@
             <th>type</th>
             <th>description</th>
             <th>constraints</th>
+            <th>multivalued</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>user id.</td>
-            <td>int</td>
+            <td><span class="parameter-name">endTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">list members should be valid before this time (inclusive)</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">includeSkillInfo</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">a boolean value controlling whether worker skill information is added in response</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">list</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">worker list form ids</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">startTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">list members should be valid after this time (inclusive)</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">unit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">unit ids for which list contents should be fetched</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -225,21 +203,108 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_BasicInfo.html">BasicInfo</a>
- (JSON)</td>
-            <td>user's basic information</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_PersonListByUnitAndFormOfUser.html">PersonListByUnitAndFormOfUser</a>
+ (JSON)</span></td>
+            <td><span class="response-description">a list of worker lists grouped by (unit id, list id)</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/listed
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;people&quot; : [ {
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;skills&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;skills&quot; : [ { }, { } ]
+    },
+    &quot;startTime&quot; : 12345,
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  }, {
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;skills&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;skills&quot; : [ { }, { } ]
+    },
+    &quot;startTime&quot; : 12345,
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  } ],
+  &quot;listId&quot; : 12345,
+  &quot;unitId&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_UserResource_getUsersLists_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/{id}/lists <a href="../api/v1users/{id}/lists" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_UserResource_getWorkersWithAvailability_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/listedWithAvailability <a href="../api/v1/users/listedWithAvailability" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Gets all user's lists based on omistaja id.</p>
+        <p></p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -247,25 +312,49 @@
             <th>type</th>
             <th>description</th>
             <th>constraints</th>
+            <th>multivalued</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>omistaja id</td>
-            <td>int</td>
+            <td><span class="parameter-name">endTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>fetchSystemOwnedLists</td>
+            <td><span class="parameter-name">includeSkillInfo</span></td>
             <td>query</td>
-            <td>optional, if set to <code>true</code> fetching also system owned lists.</td>
-            <td>boolean</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">list</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">startTime</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">unit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -276,273 +365,212 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_OmistajaListConfig.html">OmistajaListConfig</a>
- (JSON)</td>
-            <td>all user's lists</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_PersonListByUnitAndFormOfWorkerAvailabilityDto.html">PersonListByUnitAndFormOfWorkerAvailabilityDto</a>
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
-      </div>
+        <h4>Example</h4>
 
-      <div id="resource_UserResource_getOmistajasFromListByMediatriId_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/{omistajaId}/list/{listId} <a href="../api/v1users/{omistajaId}/list/{listId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/listedWithAvailability
+Accept: application/json
 
-        <p>Gets omistajas for given list owned by the given owner (=form owner).</p>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>listId</td>
-            <td>path</td>
-            <td>list id (currently equals to form id)</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>omistajaId</td>
-            <td>path</td>
-            <td>omistaja id that is used as criteria to fetch data from list. It is also checked if this omistaja owns form with <code>lomakeId</code>, but otherwise it is expected that <code>lomakeId</code> refers to form owned by system owner (0) (this method requires always omistaja id)</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_GenericOmistaja.html">GenericOmistaja</a>
- (JSON)</td>
-            <td>omistajas belonging to the list</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_UserResource_getUsers_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/list <a href="../api/v1users/list" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Gets list of users. If no limiting parameters are given, returns all active users from the system.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>listId</td>
-            <td>query</td>
-            <td>optional parameter, list id (=form id) to fetch users, if not set returning all users</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>listOwnerId</td>
-            <td>query</td>
-            <td>optional parameter, list owner (=form owner id) if is not system owner list</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>maxId</td>
-            <td>query</td>
-            <td>optional parameter, sets minimum owner id for the returned user list (not inclusive)</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>minId</td>
-            <td>query</td>
-            <td>optional parameter, sets minimum owner id for the returned user list (inclusive)</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>pageIndex</td>
-            <td>query</td>
-            <td>page index, starting from which client wants to list users. Minimum value for page index is 1.</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>pageSize</td>
-            <td>query</td>
-            <td>defines page size i.e. maximum amount of users returned in on query, if page size is set, then also
-<code>pageIndex</code> parameter must be defined. If not set, returning all the users
-matching given conditions.</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_UserList.html">UserList</a>
- (JSON)</td>
-            <td>user list with paging related metadata</td>
-          </tr>
-          </tbody>
-        </table>
+                <code class="prettyprint language-js">
+[ {
+  &quot;unitId&quot; : 12345,
+  &quot;listId&quot; : 12345,
+  &quot;people&quot; : [ {
+    &quot;worker&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;availability&quot; : {
+      &quot;start&quot; : 12345,
+      &quot;end&quot; : 12345,
+      &quot;available&quot; : true,
+      &quot;workingHoursPlanned&quot; : true,
+      &quot;conflicts&quot; : true,
+      &quot;conflictingEvents&quot; : [ { }, { } ]
+    }
+  }, {
+    &quot;worker&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;availability&quot; : {
+      &quot;start&quot; : 12345,
+      &quot;end&quot; : 12345,
+      &quot;available&quot; : true,
+      &quot;workingHoursPlanned&quot; : true,
+      &quot;conflicts&quot; : true,
+      &quot;conflictingEvents&quot; : [ { }, { } ]
+    }
+  } ]
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_UserResource_searchUsers_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/search <a href="../api/v1users/search" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/search <a href="../api/v1/users/search" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Makes search from all users with given criteria.
 Either none or all search parameters can be set.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
             <th>name</th>
             <th>type</th>
             <th>description</th>
+            <th>default</th>
             <th>constraints</th>
             <th>multivalued</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>endTime</td>
+            <td><span class="parameter-name">endTime</span></td>
             <td>query</td>
-            <td>availability condition (user account validity end time, inclusive), or <code>null</code> if not used as criterion</td>
-            <td>long</td>
-            <td>no</td>
+            <td><span class="parameter-description">availability condition (user account validity end time, inclusive), or <code>null</code> if not used as criterion</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">long</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>firstNamePrefix</td>
+            <td><span class="parameter-name">firstNamePrefix</span></td>
             <td>query</td>
-            <td>first name starts with condition, or <code>null</code> if not used as criterion</td>
-            <td>&nbsp;</td>
-            <td>no</td>
+            <td><span class="parameter-description">first name starts with condition, or <code>null</code> if not used as criterion</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>fullNameContains</td>
+            <td><span class="parameter-name">fullNameContains</span></td>
             <td>query</td>
-            <td>user's full name contains string condition, or <code>null</code> if not used as criterion
-Full name search overrides more specific lastNamePrefix, firstNamePrefix, userNamePrefix searches.</td>
-            <td>&nbsp;</td>
-            <td>no</td>
+            <td><span class="parameter-description">user's full name contains string condition, or <code>null</code> if not used as criterion
+Full name search overrides more specific lastNamePrefix, firstNamePrefix, userNamePrefix searches.</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>lastNamePrefix</td>
+            <td><span class="parameter-name">lastNamePrefix</span></td>
             <td>query</td>
-            <td>last name starts with condition, or <code>null</code> if not used as criterion</td>
-            <td>&nbsp;</td>
-            <td>no</td>
+            <td><span class="parameter-description">last name starts with condition, or <code>null</code> if not used as criterion</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>listId</td>
+            <td><span class="parameter-name">list</span></td>
             <td>query</td>
-            <td>optional parameter, list id (=form id) to fetch users, if not set returning all users</td>
-            <td>int</td>
-            <td>no</td>
+            <td><span class="parameter-description">optional user list id(s), if not present users are retrieved from global register</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
           </tr>
           <tr>
-            <td>listOwnerId</td>
+            <td><span class="parameter-name">pageIndex</span></td>
             <td>query</td>
-            <td>optional parameter, list owner (=form owner id) if is not system owner list</td>
-            <td>int</td>
-            <td>no</td>
+            <td><span class="parameter-description">page index starting from which client wants to list users</span></td>
+            <td><span class="parameter-default-value">1</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>pageIndex</td>
+            <td><span class="parameter-name">pageSize</span></td>
             <td>query</td>
-            <td>page index starting from which client wants to list users</td>
-            <td>int</td>
-            <td>no</td>
+            <td><span class="parameter-description">defines page size i.e. maximum amount of users returned in on query</span></td>
+            <td><span class="parameter-default-value">50</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>pageSize</td>
+            <td><span class="parameter-name">skill</span></td>
             <td>query</td>
-            <td>defines page size i.e. maximum amount of users returned in on query, if page size is set, then also
-<code>pageIndex</code> parameter must be defined. If not set, returning all the users
-matching given conditions.</td>
-            <td>int</td>
-            <td>no</td>
+            <td><span class="parameter-description">skill(s) supported condition, or an empty list if not used as criterion</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">long</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
           </tr>
           <tr>
-            <td>skill</td>
+            <td><span class="parameter-name">startTime</span></td>
             <td>query</td>
-            <td>skill(s) supported condition, or an empty list if not used as criterion</td>
-            <td>long</td>
-            <td>yes</td>
+            <td><span class="parameter-description">availability condition (user account validity start time, inclusive), or <code>null</code> if not used as criterion</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">long</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>startTime</td>
+            <td><span class="parameter-name">unit</span></td>
             <td>query</td>
-            <td>availability condition (user account validity start time, inclusive), or <code>null</code> if not used as criterion</td>
-            <td>long</td>
-            <td>no</td>
+            <td><span class="parameter-description">optional unit ids, if present users lists for given units are retrieved, otherwise login unit is assumed</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
           </tr>
           <tr>
-            <td>userNamePrefix</td>
+            <td><span class="parameter-name">userNamePrefix</span></td>
             <td>query</td>
-            <td>username starts with condition, or <code>null</code> if not used as criterion</td>
-            <td>&nbsp;</td>
-            <td>no</td>
+            <td><span class="parameter-description">username starts with condition, or <code>null</code> if not used as criterion</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -552,25 +580,25 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -581,198 +609,110 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_UserList.html">UserList</a>
- (JSON)</td>
-            <td>users found with given criteria</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_UserList.html">UserList</a>
+ (JSON)</span></td>
+            <td><span class="response-description">users found with given criteria</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/search
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;users&quot; : [ {
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;skills&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;skills&quot; : [ { }, { } ]
+    },
+    &quot;startTime&quot; : 12345,
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  }, {
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;lastName&quot; : &quot;...&quot;,
+    &quot;skills&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;skills&quot; : [ { }, { } ]
+    },
+    &quot;startTime&quot; : 12345,
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  } ],
+  &quot;pageIndex&quot; : 12345,
+  &quot;pageItemsCount&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;allItemsCount&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_UserResource_getUserGroups_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/groups <a href="../api/v1users/groups" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_UserResource_getUser_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/{id} <a href="../api/v1/users/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Return the list of available user groups in the system.</p>
+        <p>Gets user based on user id.</p>
 
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_UserGroup.html">UserGroup</a>
- (JSON)</td>
-            <td>list of available user groups in the system.</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_UserResource_getListedUsers_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/listed <a href="../api/v1users/listed" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Get users by given unit specific lists.</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-            <th>multivalued</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>endTime</td>
-            <td>query</td>
-            <td>list members should be valid before this time (inclusive)</td>
-            <td>&nbsp;</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>includeSkillInfo</td>
-            <td>query</td>
-            <td>a boolean value controlling whether worker skill information is added in response</td>
-            <td>boolean</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>list</td>
-            <td>query</td>
-            <td>worker list form ids</td>
-            <td>int</td>
-            <td>yes</td>
-          </tr>
-          <tr>
-            <td>startTime</td>
-            <td>query</td>
-            <td>list members should be valid after this time (inclusive)</td>
-            <td>&nbsp;</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>unit</td>
-            <td>query</td>
-            <td>unit ids for which list contents should be fetched</td>
-            <td>int</td>
-            <td>yes</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_PersonListByUnitAndForm.html">PersonListByUnitAndForm</a>
- (JSON)</td>
-            <td>a list of worker lists grouped by (unit id, list id)</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_UserResource_getSkills_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/{id}/skills <a href="../api/v1users/{id}/skills" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Get the list of skills that the given user has</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>user id</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>404</td>
-            <td>Not found: The requested resource was not found. </td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_SkillDto.html">SkillDto</a>
- (JSON)</td>
-            <td>list of skills</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_UserResource_editSkills_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/users/{id}/skills <a href="../api/v1users/{id}/skills" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Update the list of skills that the given user has</p>
-
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -784,34 +724,15 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>user id</td>
-            <td>int</td>
+            <td><span class="parameter-description">user id</span></td>
+            <td><span class="parameter-constraints">regex: \d+</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td>array of <a href="json_SkillDto.html">SkillDto</a>
- (JSON)</td>
-            <td>a list of skill DTOs. Only skillId and possible 'removed' flag are checked.</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -821,29 +742,25 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>404</td>
-            <td>Not found: The requested resource was not found. </td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -854,595 +771,107 @@ matching given conditions.</td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_SkillDto.html">SkillDto</a>
- (JSON)</td>
-            <td>the current list of skills</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_User.html">User</a>
+ (JSON)</span></td>
+            <td><span class="response-description">user DTO-object</span></td>
           </tr>
           </tbody>
         </table>
-      </div>
+        <h4>Example</h4>
 
-      <div id="resource_UserResource_getTimeRules_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/{id}/timeRules <a href="../api/v1users/{id}/timeRules" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/{id}
+Accept: application/json
 
-        <p>Get the working hour rules of a given user</p>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-            <th>multivalued</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>user id</td>
-            <td>int</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>after</td>
-            <td>query</td>
-            <td>return only rules that are valid after this time, optional parameter</td>
-            <td>&nbsp;</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>unit</td>
-            <td>query</td>
-            <td>list of units ('yksikk�'), the working hour rules linked to which should be returned.
-If no units are given, working hour rules for all units the user has access to are returned</td>
-            <td>int</td>
-            <td>yes</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>404</td>
-            <td>Not found: The requested resource was not found. </td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_TimeRuleDto.html">TimeRuleDto</a>
- (JSON)</td>
-            <td>a list of working hour rules</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_UserResource_addTimeRule_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/users/{id}/timeRules <a href="../api/v1users/{id}/timeRules" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Add a new working hour rule for the given user</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>user id</td>
-            <td>int</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_TimeRuleDto.html">TimeRuleDto</a>
- (JSON)</td>
-            <td>a new working hour rule for the user</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>404</td>
-            <td>Not found: The requested resource was not found. </td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_TimeRuleDto.html">TimeRuleDto</a>
- (JSON)</td>
-            <td>the newly created working hour rule</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_UserResource_editTimeRule_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/users/{id}/timeRules/{ruleId} <a href="../api/v1users/{id}/timeRules/{ruleId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Edit a working hour rule attached to a given user</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>user id</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>ruleId</td>
-            <td>path</td>
-            <td>identifier for the rule</td>
-            <td>long</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_TimeRuleDto.html">TimeRuleDto</a>
- (JSON)</td>
-            <td>a modified working hour rule for the user</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>404</td>
-            <td>Not found: The requested resource was not found. </td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_TimeRuleDto.html">TimeRuleDto</a>
- (JSON)</td>
-            <td>the modified rule</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_UserResource_deleteTimeRule_DELETE">
-        <h3><span class="resource-method">DELETE</span> <span class="resource-path">/users/{id}/timeRules/{ruleId} <a href="../api/v1users/{id}/timeRules/{ruleId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Remove a working hour rule from the given user</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>user id</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>ruleId</td>
-            <td>path</td>
-            <td>identifier for the rule</td>
-            <td>long</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">response</td>
-          </tr>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server.">application/xml</abbr></td>
-            <td>anyType
- (XML)</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_UserResource_editTimeRule_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/users/{id}/timeRules/{ruleId}/instances/{instanceId} <a href="../api/v1users/{id}/timeRules/{ruleId}/instances/{instanceId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Edit a working hour rule instance attached to a given user</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>user id</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>instanceId</td>
-            <td>path</td>
-            <td>identifier for the rule instance</td>
-            <td>long</td>
-          </tr>
-          <tr>
-            <td>ruleId</td>
-            <td>path</td>
-            <td>identifier for the rule</td>
-            <td>long</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_TimeRuleDto.html">TimeRuleDto</a>
- (JSON)</td>
-            <td>a modified working hour rule for the user</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>404</td>
-            <td>Not found: The requested resource was not found. </td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_TimeRuleDto.html">TimeRuleDto</a>
- (JSON)</td>
-            <td>the modified rule instance</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_UserResource_deleteTimeRuleInstance_DELETE">
-        <h3><span class="resource-method">DELETE</span> <span class="resource-path">/users/{id}/timeRules/{ruleId}/instances/{instanceId} <a href="../api/v1users/{id}/timeRules/{ruleId}/instances/{instanceId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Remove a working hour rule instance from the given user</p>
-
-        <table class="table">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>id</td>
-            <td>path</td>
-            <td>user id</td>
-            <td>int</td>
-          </tr>
-          <tr>
-            <td>instanceId</td>
-            <td>path</td>
-            <td>identifier for the rule instance</td>
-            <td>long</td>
-          </tr>
-          <tr>
-            <td>ruleId</td>
-            <td>path</td>
-            <td>identifier for the rule</td>
-            <td>long</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
-          </tr>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">response</td>
-          </tr>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server.">application/xml</abbr></td>
-            <td>anyType
- (XML)</td>
-          </tr>
-          </tbody>
-        </table>
+                <code class="prettyprint language-js">
+{
+  &quot;omistajaListDescription&quot; : &quot;...&quot;,
+  &quot;lastName&quot; : &quot;...&quot;,
+  &quot;skills&quot; : {
+    &quot;dataLoaded&quot; : true,
+    &quot;href&quot; : &quot;...&quot;,
+    &quot;skills&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;removed&quot; : true,
+      &quot;version&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;created&quot; : 12345,
+      &quot;modified&quot; : 12345
+    } ]
+  },
+  &quot;startTime&quot; : 12345,
+  &quot;basicInfo&quot; : {
+    &quot;dataLoaded&quot; : true,
+    &quot;href&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ { }, { } ],
+      &quot;data&quot; : { },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    } ]
+  },
+  &quot;endTime&quot; : 12345,
+  &quot;userName&quot; : &quot;...&quot;,
+  &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+  &quot;firstName&quot; : &quot;...&quot;,
+  &quot;editTime&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;omistajaId&quot; : 12345,
+  &quot;omistajaListAvailability&quot; : {
+    &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345
+  },
+  &quot;identifier&quot; : &quot;...&quot;,
+  &quot;alias&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_UserResource_getAvailability_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/{id}/availability <a href="../api/v1users/{id}/availability" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/{id}/availability <a href="../api/v1/users/{id}/availability" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Get information about a worker's availability to work at a given time period.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -1454,33 +883,33 @@ If no units are given, working hour rules for all units the user has access to a
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>omistaja id of the worker</td>
-            <td>int</td>
+            <td><span class="parameter-description">omistaja id of the worker</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>endTime</td>
+            <td><span class="parameter-name">endTime</span></td>
             <td>query</td>
-            <td>end of the required time period, mandatory</td>
-            <td>&nbsp;</td>
+            <td><span class="parameter-description">end of the required time period, mandatory</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
-            <td>startTime</td>
+            <td><span class="parameter-name">startTime</span></td>
             <td>query</td>
-            <td>start of the required time period, mandatory</td>
-            <td>&nbsp;</td>
+            <td><span class="parameter-description">start of the required time period, mandatory</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
-            <td>unit</td>
+            <td><span class="parameter-name">unit</span></td>
             <td>query</td>
-            <td>unit for which the workers should have working hours defined</td>
-            <td>int</td>
+            <td><span class="parameter-description">unit for which the workers should have working hours defined</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -1490,29 +919,29 @@ If no units are given, working hour rules for all units the user has access to a
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>404</td>
-            <td>Not found: The requested resource was not found. </td>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: The requested resource was not found. </span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -1523,21 +952,574 @@ If no units are given, working hour rules for all units the user has access to a
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_AvailabilityDto.html">AvailabilityDto</a>
- (JSON)</td>
-            <td>worker availability information incl. working hours planned and conflicting events</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AvailabilityDto.html">AvailabilityDto</a>
+ (JSON)</span></td>
+            <td><span class="response-description">worker availability information incl. working hours planned and conflicting events</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/{id}/availability
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;start&quot; : 12345,
+  &quot;end&quot; : 12345,
+  &quot;available&quot; : true,
+  &quot;workingHoursPlanned&quot; : true,
+  &quot;conflicts&quot; : true,
+  &quot;conflictingEvents&quot; : [ {
+    &quot;conflictId&quot; : 12345,
+    &quot;calendarEventId&quot; : 12345,
+    &quot;eventName&quot; : &quot;...&quot;
+  }, {
+    &quot;conflictId&quot; : 12345,
+    &quot;calendarEventId&quot; : 12345,
+    &quot;eventName&quot; : &quot;...&quot;
+  } ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_UserResource_searchWorkersWithAvailability_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/availability <a href="../api/v1users/availability" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_UserResource_getUserBasicInfo_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/{id}/basicinfos <a href="../api/v1/users/{id}/basicinfos" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Search users with given criteria and get their availability to work at a given time.</p>
+        <p>Gets user's basic information based on user id.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">user id.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_BasicInfo.html">BasicInfo</a>
+ (JSON)</span></td>
+            <td><span class="response-description">user's basic information</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/{id}/basicinfos
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;dataLoaded&quot; : true,
+  &quot;href&quot; : &quot;...&quot;,
+  &quot;titles&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;type&quot; : 12345,
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;type&quot; : 12345,
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
+  } ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_UserResource_getUsersLists_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/{id}/lists <a href="../api/v1/users/{id}/lists" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets all user's lists based on omistaja id.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">omistaja id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">fetchSystemOwnedLists</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">optional, if set to <code>true</code> fetching also system owned lists.</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_OmistajaListConfig.html">OmistajaListConfig</a>
+ (JSON)</span></td>
+            <td><span class="response-description">all user's lists</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/{id}/lists
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;basicInfoTitles&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+  &quot;listName&quot; : &quot;...&quot;,
+  &quot;listOwnerId&quot; : 12345,
+  &quot;listDataOwnerType&quot; : {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345
+  },
+  &quot;linkedFormInfo&quot; : {
+    &quot;fullFormTypeId&quot; : 12345,
+    &quot;formTypeInfo&quot; : {
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;
+    },
+    &quot;ownerTypeInfo&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;id&quot; : 12345
+    },
+    &quot;formOwnerId&quot; : 12345
+  },
+  &quot;listId&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_UserResource_getSkills_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/{id}/skills <a href="../api/v1/users/{id}/skills" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get the list of skills that the given user has</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">user id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: The requested resource was not found. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_SkillDto.html">SkillDto</a>
+ (JSON)</span></td>
+            <td><span class="response-description">list of skills</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/{id}/skills
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;abbr&quot; : &quot;...&quot;,
+  &quot;removed&quot; : true,
+  &quot;version&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;created&quot; : 12345,
+  &quot;modified&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_UserResource_editSkills_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/users/{id}/skills <a href="../api/v1/users/{id}/skills" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Update the list of skills that the given user has</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">user id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_SkillDto.html">SkillDto</a>
+ (JSON)</span></td>
+            <td><span class="request-description">a list of skill DTOs. Only skillId and possible 'removed' flag are checked.</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: The requested resource was not found. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_SkillDto.html">SkillDto</a>
+ (JSON)</span></td>
+            <td><span class="response-description">the current list of skills</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /users/{id}/skills
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;abbr&quot; : &quot;...&quot;,
+  &quot;removed&quot; : true,
+  &quot;version&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;created&quot; : 12345,
+  &quot;modified&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;abbr&quot; : &quot;...&quot;,
+  &quot;removed&quot; : true,
+  &quot;version&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;created&quot; : 12345,
+  &quot;modified&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_UserResource_getTimeRules_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/{id}/timeRules <a href="../api/v1/users/{id}/timeRules" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get the working hour rules of a given user</p>
+
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -1550,80 +1532,31 @@ If no units are given, working hour rules for all units the user has access to a
           </thead>
           <tbody>
           <tr>
-            <td>endTime</td>
-            <td>query</td>
-            <td>end of the required period, mandatory</td>
-            <td>&nbsp;</td>
-            <td>no</td>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">user id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>firstNamePrefix</td>
+            <td><span class="parameter-name">after</span></td>
             <td>query</td>
-            <td>first name starts with condition, or <code>null</code> if not used as criterion</td>
-            <td>&nbsp;</td>
-            <td>no</td>
+            <td><span class="parameter-description">return only rules that are valid after this time, optional parameter</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
-            <td>fullNameContains</td>
+            <td><span class="parameter-name">unit</span></td>
             <td>query</td>
-            <td>user's full name contains string condition, or <code>null</code> if not used as criterion
-Full name search overrides more specific lastNamePrefix, firstNamePrefix, userNamePrefix searches.</td>
-            <td>&nbsp;</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>lastNamePrefix</td>
-            <td>query</td>
-            <td>last name starts with condition, or <code>null</code> if not used as criterion</td>
-            <td>&nbsp;</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>listId</td>
-            <td>query</td>
-            <td>optional parameter, list id (=form id) to fetch users, if not set returning all users</td>
-            <td>int</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>listOwnerId</td>
-            <td>query</td>
-            <td>optional parameter, list owner (=form owner id) if is not system owner list</td>
-            <td>int</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>skill</td>
-            <td>query</td>
-            <td>skill(s) supported condition, or an empty list if not used as criterion</td>
-            <td>long</td>
-            <td>yes</td>
-          </tr>
-          <tr>
-            <td>startTime</td>
-            <td>query</td>
-            <td>start of the required period, mandatory</td>
-            <td>&nbsp;</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>unit</td>
-            <td>query</td>
-            <td>unit for which the workers should have working hours defined</td>
-            <td>int</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>userNamePrefix</td>
-            <td>query</td>
-            <td>username starts with condition, or <code>null</code> if not used as criterion</td>
-            <td>&nbsp;</td>
-            <td>no</td>
+            <td><span class="parameter-description">list of units ('yksikkö'), the working hour rules linked to which should be returned.
+If no units are given, working hour rules for all units the user has access to are returned</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -1633,29 +1566,29 @@ Full name search overrides more specific lastNamePrefix, firstNamePrefix, userNa
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>404</td>
-            <td>Not found: The requested resource was not found. </td>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: The requested resource was not found. </span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -1666,21 +1599,63 @@ Full name search overrides more specific lastNamePrefix, firstNamePrefix, userNa
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_WorkerAvailabilityDto.html">WorkerAvailabilityDto</a>
- (JSON)</td>
-            <td>users found with given criteria and information about their availability for work at a given time</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_TimeRuleDto.html">TimeRuleDto</a>
+ (JSON)</span></td>
+            <td><span class="response-description">a list of working hour rules</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/{id}/timeRules
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;start&quot; : 12345,
+  &quot;durationInMinutes&quot; : 12345,
+  &quot;recurrenceEnd&quot; : 12345,
+  &quot;recurrenceCode&quot; : &quot;...&quot;,
+  &quot;calendarContext&quot; : {
+    &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
+    &quot;form&quot; : 12345
+  },
+  &quot;calendarEventIds&quot; : [ 12345, 12345 ],
+  &quot;eventModelId&quot; : 12345,
+  &quot;version&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;created&quot; : 12345,
+  &quot;modified&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_UserResource_getWorkersWithAvailability_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/users/listedWithAvailability <a href="../api/v1users/listedWithAvailability" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_UserResource_addTimeRule_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/users/{id}/timeRules <a href="../api/v1/users/{id}/timeRules" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p></p>
+        <p>Add a new working hour rule for the given user</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -1688,64 +1663,798 @@ Full name search overrides more specific lastNamePrefix, firstNamePrefix, userNa
             <th>type</th>
             <th>description</th>
             <th>constraints</th>
-            <th>multivalued</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>endTime</td>
-            <td>query</td>
-            <td></td>
-            <td>&nbsp;</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>includeSkillInfo</td>
-            <td>query</td>
-            <td></td>
-            <td>boolean</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>list</td>
-            <td>query</td>
-            <td></td>
-            <td>int</td>
-            <td>yes</td>
-          </tr>
-          <tr>
-            <td>startTime</td>
-            <td>query</td>
-            <td></td>
-            <td>&nbsp;</td>
-            <td>no</td>
-          </tr>
-          <tr>
-            <td>unit</td>
-            <td>query</td>
-            <td></td>
-            <td>int</td>
-            <td>yes</td>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">user id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_TimeRuleDto.html">TimeRuleDto</a>
+ (JSON)</span></td>
+            <td><span class="request-description">a new working hour rule for the user</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: The requested resource was not found. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_PersonListByUnitAndForm.html">PersonListByUnitAndForm</a>
- (JSON)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_TimeRuleDto.html">TimeRuleDto</a>
+ (JSON)</span></td>
+            <td><span class="response-description">the newly created working hour rule</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /users/{id}/timeRules
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;start&quot; : 12345,
+  &quot;durationInMinutes&quot; : 12345,
+  &quot;recurrenceEnd&quot; : 12345,
+  &quot;recurrenceCode&quot; : &quot;...&quot;,
+  &quot;calendarContext&quot; : {
+    &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
+    &quot;form&quot; : 12345
+  },
+  &quot;calendarEventIds&quot; : [ 12345, 12345 ],
+  &quot;eventModelId&quot; : 12345,
+  &quot;version&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;created&quot; : 12345,
+  &quot;modified&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;start&quot; : 12345,
+  &quot;durationInMinutes&quot; : 12345,
+  &quot;recurrenceEnd&quot; : 12345,
+  &quot;recurrenceCode&quot; : &quot;...&quot;,
+  &quot;calendarContext&quot; : {
+    &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
+    &quot;form&quot; : 12345
+  },
+  &quot;calendarEventIds&quot; : [ 12345, 12345 ],
+  &quot;eventModelId&quot; : 12345,
+  &quot;version&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;created&quot; : 12345,
+  &quot;modified&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_UserResource_deleteTimeRule_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/users/{id}/timeRules/{ruleId} <a href="../api/v1/users/{id}/timeRules/{ruleId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Remove a working hour rule from the given user</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">user id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">ruleId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">identifier for the rule</span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">response</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">anyType
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /users/{id}/timeRules/{ruleId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_UserResource_editTimeRule_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/users/{id}/timeRules/{ruleId} <a href="../api/v1/users/{id}/timeRules/{ruleId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Edit a working hour rule attached to a given user</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">user id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">ruleId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">identifier for the rule</span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_TimeRuleDto.html">TimeRuleDto</a>
+ (JSON)</span></td>
+            <td><span class="request-description">a modified working hour rule for the user</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: The requested resource was not found. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_TimeRuleDto.html">TimeRuleDto</a>
+ (JSON)</span></td>
+            <td><span class="response-description">the modified rule</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /users/{id}/timeRules/{ruleId}
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;start&quot; : 12345,
+  &quot;durationInMinutes&quot; : 12345,
+  &quot;recurrenceEnd&quot; : 12345,
+  &quot;recurrenceCode&quot; : &quot;...&quot;,
+  &quot;calendarContext&quot; : {
+    &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
+    &quot;form&quot; : 12345
+  },
+  &quot;calendarEventIds&quot; : [ 12345, 12345 ],
+  &quot;eventModelId&quot; : 12345,
+  &quot;version&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;created&quot; : 12345,
+  &quot;modified&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;start&quot; : 12345,
+  &quot;durationInMinutes&quot; : 12345,
+  &quot;recurrenceEnd&quot; : 12345,
+  &quot;recurrenceCode&quot; : &quot;...&quot;,
+  &quot;calendarContext&quot; : {
+    &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
+    &quot;form&quot; : 12345
+  },
+  &quot;calendarEventIds&quot; : [ 12345, 12345 ],
+  &quot;eventModelId&quot; : 12345,
+  &quot;version&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;created&quot; : 12345,
+  &quot;modified&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_UserResource_getOmistajasFromListByMediatriId_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/users/{omistajaId}/list/{listId} <a href="../api/v1/users/{omistajaId}/list/{listId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Gets omistajas for given list owned by the given owner (=form owner).</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">listId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">list id (currently equals to form id)</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">omistajaId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">omistaja id that is used as criteria to fetch data from list. It is also checked if this omistaja owns form with <code>lomakeId</code>, but otherwise it is expected that <code>lomakeId</code> refers to form owned by system owner (0) (this method requires always omistaja id)</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_GenericOmistaja.html">GenericOmistaja</a>
+ (JSON)</span></td>
+            <td><span class="response-description">omistajas belonging to the list</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /users/{omistajaId}/list/{listId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;editTime&quot; : 12345,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;nameExtension&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;omistajaId&quot; : 12345,
+  &quot;omistajaListAvailability&quot; : {
+    &quot;startTime&quot; : 12345,
+    &quot;endTime&quot; : 12345
+  },
+  &quot;identifier&quot; : &quot;...&quot;,
+  &quot;alias&quot; : 12345
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_UserResource_deleteTimeRuleInstance_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/users/{id}/timeRules/{ruleId}/instances/{instanceId} <a href="../api/v1/users/{id}/timeRules/{ruleId}/instances/{instanceId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Remove a working hour rule instance from the given user</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">user id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">instanceId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">identifier for the rule instance</span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">ruleId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">identifier for the rule</span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">response</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">anyType
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /users/{id}/timeRules/{ruleId}/instances/{instanceId}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_UserResource_editTimeRule_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/users/{id}/timeRules/{ruleId}/instances/{instanceId} <a href="../api/v1/users/{id}/timeRules/{ruleId}/instances/{instanceId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Edit a working hour rule instance attached to a given user</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">user id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">instanceId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">identifier for the rule instance</span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">ruleId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">identifier for the rule</span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_TimeRuleDto.html">TimeRuleDto</a>
+ (JSON)</span></td>
+            <td><span class="request-description">a modified working hour rule for the user</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">Not found: The requested resource was not found. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_TimeRuleDto.html">TimeRuleDto</a>
+ (JSON)</span></td>
+            <td><span class="response-description">the modified rule instance</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /users/{id}/timeRules/{ruleId}/instances/{instanceId}
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;start&quot; : 12345,
+  &quot;durationInMinutes&quot; : 12345,
+  &quot;recurrenceEnd&quot; : 12345,
+  &quot;recurrenceCode&quot; : &quot;...&quot;,
+  &quot;calendarContext&quot; : {
+    &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
+    &quot;form&quot; : 12345
+  },
+  &quot;calendarEventIds&quot; : [ 12345, 12345 ],
+  &quot;eventModelId&quot; : 12345,
+  &quot;version&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;created&quot; : 12345,
+  &quot;modified&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;start&quot; : 12345,
+  &quot;durationInMinutes&quot; : 12345,
+  &quot;recurrenceEnd&quot; : 12345,
+  &quot;recurrenceCode&quot; : &quot;...&quot;,
+  &quot;calendarContext&quot; : {
+    &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
+    &quot;form&quot; : 12345
+  },
+  &quot;calendarEventIds&quot; : [ 12345, 12345 ],
+  &quot;eventModelId&quot; : 12345,
+  &quot;version&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;created&quot; : 12345,
+  &quot;modified&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -1760,14 +2469,14 @@ Full name search overrides more specific lastNamePrefix, firstNamePrefix, userNa
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

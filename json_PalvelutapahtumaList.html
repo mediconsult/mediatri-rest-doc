@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,15 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#SUUNNITELTU"><abbr title="SUUNNITELTU"><span class="sideoverflow">SUUNNITELTU</span></abbr></a></li>
+          <li><a href="#MUUTETTU"><abbr title="MUUTETTU"><span class="sideoverflow">MUUTETTU</span></abbr></a></li>
+          <li><a href="#KESKEYTETTY"><abbr title="KESKEYTETTY"><span class="sideoverflow">KESKEYTETTY</span></abbr></a></li>
+          <li><a href="#KESKEN"><abbr title="KESKEN"><span class="sideoverflow">KESKEN</span></abbr></a></li>
+          <li><a href="#TOTEUTUNUT"><abbr title="TOTEUTUNUT"><span class="sideoverflow">TOTEUTUNUT</span></abbr></a></li>
+          <li><a href="#ITSE_PERUNUT"><abbr title="ITSE_PERUNUT"><span class="sideoverflow">ITSE_PERUNUT</span></abbr></a></li>
+          <li><a href="#PERUUTETTU"><abbr title="PERUUTETTU"><span class="sideoverflow">PERUUTETTU</span></abbr></a></li>
+          <li><a href="#EI_TOTEUTUNUT"><abbr title="EI_TOTEUTUNUT"><span class="sideoverflow">EI_TOTEUTUNUT</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -76,7 +83,7 @@ This has:<br>
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -87,99 +94,113 @@ This has:<br>
         </thead>
         <tbody>
         <tr>
-          <td>  totalCount
+          <td>  <span class="property-name">allItemsCount</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  responseItemCount
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  entries
+          <td>  <span class="property-name">entries</span>
 </td>
-          <td>  array of <a href="json_Palvelutapahtuma.html">Palvelutapahtuma</a>
-
+          <td>  <span class="datatype-reference">array of <a href="json_Palvelutapahtuma.html">Palvelutapahtuma</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  preferredPalvelutapahtumaReference
+          <td>  <span class="property-name">preferredPalvelutapahtumaReference</span>
 </td>
-          <td>  array of number
-
+          <td>  <span class="datatype-reference">array of number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">preferredPalvelutapahtumaSelectStatus</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_PalvelutapahtumaSelectType.html">PalvelutapahtumaSelectType</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
-  &quot;totalCount&quot; : 12345,
-  &quot;responseItemCount&quot; : 12345,
+      
+      <pre class="prettyprint language-js example">{
+  &quot;allItemsCount&quot; : 12345,
   &quot;entries&quot; : [ {
-    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
-    &quot;rekisteri&quot; : &quot;...&quot;,
-    &quot;alkuaika&quot; : 12345,
-    &quot;tyyppi&quot; : &quot;VUODEOSASTOHOITOJAKSO&quot;,
-    &quot;palveluntuottaja&quot; : &quot;...&quot;,
-    &quot;kirjausyksikkoId&quot; : 12345,
-    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
-    &quot;oid&quot; : &quot;...&quot;,
     &quot;palvelunantaja&quot; : &quot;...&quot;,
-    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausaika&quot; : 12345,
     &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;LAAKEMAARAYKSEN_UUDISTAMISPYYNTO&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
     &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
       &quot;object&quot; : { },
       &quot;loaded&quot; : true,
-      &quot;loadUrl&quot; : &quot;...&quot;,
       &quot;type&quot; : &quot;...&quot;
     },
-    &quot;tapahtumalaji&quot; : &quot;JONO&quot;,
-    &quot;kirjaaja&quot; : 12345,
-    &quot;kirjausaika&quot; : 12345,
     &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
     &quot;id&quot; : 12345,
-    &quot;omistaja&quot; : 12345
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;AMMATTIHENKILON_KAYNTI_ASIKKAAN_LUONA&quot;
   }, {
-    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
-    &quot;rekisteri&quot; : &quot;...&quot;,
-    &quot;alkuaika&quot; : 12345,
-    &quot;tyyppi&quot; : &quot;VUODEOSASTOHOITOJAKSO&quot;,
-    &quot;palveluntuottaja&quot; : &quot;...&quot;,
-    &quot;kirjausyksikkoId&quot; : 12345,
-    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
-    &quot;oid&quot; : &quot;...&quot;,
     &quot;palvelunantaja&quot; : &quot;...&quot;,
-    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausaika&quot; : 12345,
     &quot;tyonantaja&quot; : 12345,
+    &quot;tapahtumalaji&quot; : &quot;ANESTESIA&quot;,
+    &quot;rekisteri&quot; : &quot;...&quot;,
+    &quot;palveluntuottaja&quot; : &quot;...&quot;,
+    &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+    &quot;kirjaajaInfo&quot; : {
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;loaded&quot; : true
+    },
     &quot;kirjausyksikko&quot; : {
+      &quot;loadUrl&quot; : &quot;...&quot;,
       &quot;object&quot; : { },
       &quot;loaded&quot; : true,
-      &quot;loadUrl&quot; : &quot;...&quot;,
       &quot;type&quot; : &quot;...&quot;
     },
-    &quot;tapahtumalaji&quot; : &quot;JONO&quot;,
-    &quot;kirjaaja&quot; : 12345,
-    &quot;kirjausaika&quot; : 12345,
     &quot;aktiivinen&quot; : true,
+    &quot;loppuaika&quot; : 12345,
+    &quot;kirjausyksikkoId&quot; : 12345,
+    &quot;oid&quot; : &quot;...&quot;,
     &quot;id&quot; : 12345,
-    &quot;omistaja&quot; : 12345
+    &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+    &quot;writeUsed&quot; : true,
+    &quot;alkuaika&quot; : 12345,
+    &quot;omistaja&quot; : 12345,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tyyppi&quot; : &quot;MUU&quot;
   } ],
-  &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ]
+  &quot;preferredPalvelutapahtumaReference&quot; : [ 12345, 12345 ],
+  &quot;preferredPalvelutapahtumaSelectStatus&quot; : &quot;HEURISTIC_MULTIPLE_MATCHES&quot;
 }</pre>
 
         <footer class="footer">
@@ -194,14 +215,14 @@ This has:<br>
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

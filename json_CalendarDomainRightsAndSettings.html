@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#FROM_START_OF_PERIOD"><abbr title="FROM_START_OF_PERIOD"><span class="sideoverflow">FROM_START_OF_PERIOD</span></abbr></a></li>
+          <li><a href="#FROM_END_OF_PERIOD"><abbr title="FROM_END_OF_PERIOD"><span class="sideoverflow">FROM_END_OF_PERIOD</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +72,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,135 +83,219 @@
         </thead>
         <tbody>
         <tr>
-          <td>  name
+          <td>  <span class="property-name">name</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Get the name of the calendarForm.
-</td>
-        </tr>
-        <tr>
-          <td>  setupForm
-</td>
-          <td>  <a href="json_FormRights.html">FormRights</a>
-
-</td>
-          <td>  Get information about the Mediatri form and current user rights for viewing and modifying
-setupForm data: reporting groups, event models, rooms, room groups and equipment.
+          <td>  <span class="property-description">Get the name of the calendarForm.</span>
 </td>
         </tr>
         <tr>
-          <td>  patientList
+          <td>  <span class="property-name">setupForm</span>
 </td>
-          <td>  <a href="json_FormRights.html">FormRights</a>
-
+          <td>  <span class="datatype-reference"><a href="json_FormRights.html">FormRights</a>
+</span>
 </td>
-          <td>  Get information about the Mediatri form and current user rights for the patient list.
-</td>
-        </tr>
-        <tr>
-          <td>  workerLists
-</td>
-          <td>  array of <a href="json_FormRights.html">FormRights</a>
-
-</td>
-          <td>  Get the list of Mediatri forms and current user rights for the worker lists.
+          <td>  <span class="property-description">Get information about the Mediatri form and current user rights for viewing and modifying
+setupForm data: reporting groups, event models, rooms, room groups and equipment.</span>
 </td>
         </tr>
         <tr>
-          <td>  calendarForm
+          <td>  <span class="property-name">patientList</span>
 </td>
-          <td>  <a href="json_FormRights.html">FormRights</a>
-
+          <td>  <span class="datatype-reference"><a href="json_FormRights.html">FormRights</a>
+</span>
 </td>
-          <td>  Get Mediatri form information and current user rights for the calendar, i.e. viewing and modifying
-events.
-</td>
-        </tr>
-        <tr>
-          <td>  coursesForm
-</td>
-          <td>  <a href="json_FormRights.html">FormRights</a>
-
-</td>
-          <td>  Get Mediatri form information and current user rights for courses, i.e. viewing and modifying
-courses, course periods and course related settings (tags, named groups, roles).
+          <td>  <span class="property-description">Get information about the Mediatri form and current user rights for the patient list.</span>
 </td>
         </tr>
         <tr>
-          <td>  workerSettingsForm
+          <td>  <span class="property-name">patientLists</span>
 </td>
-          <td>  <a href="json_FormRights.html">FormRights</a>
-
+          <td>  <span class="datatype-reference">array of <a href="json_FormRights.html">FormRights</a>
+</span>
 </td>
-          <td>  Get Mediatri form information and current user rights for worker related information, i.e. viewing and modifying
-worker skills and working hours.
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  optimization
+          <td>  <span class="property-name">patientSearchAllowed</span>
 </td>
-          <td>  <a href="json_OptimizationRightsAndSettings.html">OptimizationRightsAndSettings</a>
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  Get Mediatri form information and current user rights and settings for optimization.
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">workerLists</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_FormRights.html">FormRights</a>
+</span>
+</td>
+          <td>  <span class="property-description">Get the list of Mediatri forms and current user rights for the worker lists.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">workerSearchAllowed</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">calendarForm</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_FormRights.html">FormRights</a>
+</span>
+</td>
+          <td>  <span class="property-description">Get Mediatri form information and current user rights for the calendar, i.e. viewing and modifying
+events.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">coursesForm</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_FormRights.html">FormRights</a>
+</span>
+</td>
+          <td>  <span class="property-description">Get Mediatri form information and current user rights for courses, i.e. viewing and modifying
+courses, course periods and course related settings (tags, named groups, roles).</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">coursesUsed</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">courseSettings</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_CourseSettings.html">CourseSettings</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">workerSettingsForm</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_FormRights.html">FormRights</a>
+</span>
+</td>
+          <td>  <span class="property-description">Get Mediatri form information and current user rights for worker related information, i.e. viewing and modifying
+worker skills and working hours.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">optimization</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_OptimizationRightsAndSettings.html">OptimizationRightsAndSettings</a>
+</span>
+</td>
+          <td>  <span class="property-description">Get Mediatri form information and current user rights and settings for optimization.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">primaryNurseSettings</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_PrimaryNurseSettings.html">PrimaryNurseSettings</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">viewTitle</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;name&quot; : &quot;...&quot;,
   &quot;setupForm&quot; : {
     &quot;id&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;ownerId&quot; : 12345,
-    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;VIEW&quot; ]
+    &quot;rights&quot; : [ &quot;ADD&quot;, &quot;REMOVE&quot; ]
   },
   &quot;patientList&quot; : {
     &quot;id&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;ownerId&quot; : 12345,
-    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;VIEW&quot; ]
+    &quot;rights&quot; : [ &quot;CHANGE&quot;, &quot;ADD&quot; ]
   },
-  &quot;workerLists&quot; : [ {
+  &quot;patientLists&quot; : [ {
     &quot;id&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;ownerId&quot; : 12345,
-    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;VIEW&quot; ]
+    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;ADD&quot; ]
   }, {
     &quot;id&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;ownerId&quot; : 12345,
-    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;VIEW&quot; ]
+    &quot;rights&quot; : [ &quot;CHANGE&quot;, &quot;ADD&quot; ]
   } ],
+  &quot;patientSearchAllowed&quot; : true,
+  &quot;workerLists&quot; : [ {
+    &quot;id&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;ownerId&quot; : 12345,
+    &quot;rights&quot; : [ &quot;REMOVE&quot;, &quot;ADD&quot; ]
+  }, {
+    &quot;id&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;ownerId&quot; : 12345,
+    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;REMOVE&quot; ]
+  } ],
+  &quot;workerSearchAllowed&quot; : true,
   &quot;calendarForm&quot; : {
     &quot;id&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;ownerId&quot; : 12345,
-    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;VIEW&quot; ]
+    &quot;rights&quot; : [ &quot;REMOVE&quot;, &quot;ADD&quot; ]
   },
   &quot;coursesForm&quot; : {
     &quot;id&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;ownerId&quot; : 12345,
-    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;VIEW&quot; ]
+    &quot;rights&quot; : [ &quot;REMOVE&quot;, &quot;VIEW&quot; ]
+  },
+  &quot;coursesUsed&quot; : true,
+  &quot;courseSettings&quot; : {
+    &quot;coursePeriodTitle&quot; : &quot;...&quot;,
+    &quot;workerRoleTitle&quot; : &quot;...&quot;,
+    &quot;skillTitle&quot; : &quot;...&quot;,
+    &quot;namedGroupTitle&quot; : &quot;...&quot;,
+    &quot;courseTitle&quot; : &quot;...&quot;
   },
   &quot;workerSettingsForm&quot; : {
     &quot;id&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;ownerId&quot; : 12345,
-    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;VIEW&quot; ]
+    &quot;rights&quot; : [ &quot;REMOVE&quot;, &quot;REMOVE&quot; ]
   },
   &quot;optimization&quot; : {
     &quot;form&quot; : {
       &quot;id&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
       &quot;ownerId&quot; : 12345,
-      &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;VIEW&quot; ]
+      &quot;rights&quot; : [ &quot;REMOVE&quot;, &quot;CHANGE&quot; ]
     },
     &quot;streetAddressTitle&quot; : &quot;...&quot;,
     &quot;postOfficeTitle&quot; : &quot;...&quot;,
@@ -218,7 +303,17 @@ worker skills and working hours.
     &quot;byFootTerm&quot; : &quot;...&quot;,
     &quot;byCarTerm&quot; : &quot;...&quot;,
     &quot;byBicycleTerm&quot; : &quot;...&quot;
-  }
+  },
+  &quot;primaryNurseSettings&quot; : {
+    &quot;workerRoleTitle&quot; : &quot;...&quot;,
+    &quot;form&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;CHANGE&quot;, &quot;CHANGE&quot; ]
+    }
+  },
+  &quot;viewTitle&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">
@@ -233,14 +328,14 @@ worker skills and working hours.
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,16 +51,19 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_AuthenticationResource_loginWithForm_POST">POST /authentication/login</a></li>
-          <li><a href="#resource_AuthenticationResource_loginWithContextOldPath_POST">POST /authentication/login</a></li>
-          <li><a href="#resource_AuthenticationResource_loginWithContext_POST"><abbr title="POST /authentication/contextLogin">POST /authentication/contextLo...</abbr></a></li>
-          <li><a href="#resource_AuthenticationResource_loginGet_GET">GET /authentication/login</a></li>
-          <li><a href="#resource_AuthenticationResource_logoutPost_POST">POST /authentication/logout</a></li>
-          <li><a href="#resource_AuthenticationResource_logoutGet_GET">GET /authentication/logout</a></li>
-          <li><a href="#resource_AuthenticationResource_setRole_POST">POST /authentication/role</a></li>
-          <li><a href="#resource_AuthenticationResource_getCurretUser_GET">GET /authentication/identity</a></li>
-          <li><a href="#resource_AuthenticationResource_getPlannerRightsAndSettings_GET"><abbr title="GET /authentication/plannerRights">GET /authentication/plannerRig...</abbr></a></li>
-          <li><a href="#resource_AuthenticationResource_ping_GET">GET /authentication/ping</a></li>
+          <li><a href="#resource_AuthenticationResource_loginWithContextOnlyCardInfo_GET"><abbr title="GET /authentication/contextLogin"><span class="sideoverflow">GET /authentication/contextLogin</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_loginWithContext_POST"><abbr title="POST /authentication/contextLogin"><span class="sideoverflow">POST /authentication/contextLogin</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_loginWithContextToPatientGET_GET"><abbr title="GET /authentication/contextLoginWithPatientId"><span class="sideoverflow">GET /authentication/contextLoginWithPatientId</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_loginWithContextToPatientPOST_POST"><abbr title="POST /authentication/contextLoginWithPatientId"><span class="sideoverflow">POST /authentication/contextLoginWithPatientId</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_getCurretUser_GET"><abbr title="GET /authentication/identity"><span class="sideoverflow">GET /authentication/identity</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_loginGet_GET"><abbr title="GET /authentication/login"><span class="sideoverflow">GET /authentication/login</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_loginWithForm_POST"><abbr title="POST /authentication/login"><span class="sideoverflow">POST /authentication/login</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_logoutGet_GET"><abbr title="GET /authentication/logout"><span class="sideoverflow">GET /authentication/logout</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_logoutPost_POST"><abbr title="POST /authentication/logout"><span class="sideoverflow">POST /authentication/logout</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_setPartlyLoggedIn_POST"><abbr title="POST /authentication/logoutfromrole"><span class="sideoverflow">POST /authentication/logoutfromrole</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_ping_GET"><abbr title="GET /authentication/ping"><span class="sideoverflow">GET /authentication/ping</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_getPlannerRightsAndSettings_GET"><abbr title="GET /authentication/plannerRights"><span class="sideoverflow">GET /authentication/plannerRights</span></abbr></a></li>
+          <li><a href="#resource_AuthenticationResource_setRole_POST"><abbr title="POST /authentication/role"><span class="sideoverflow">POST /authentication/role</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -79,74 +80,12 @@
 
       <p>Service for authentication</p>
 
-      <div id="resource_AuthenticationResource_loginWithForm_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/authentication/login <a href="../api/v1authentication/login" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Login with username and password. This returns with http-200 even authentication fails. Response has "success" true/false if authentication was successful.</p>
-
-        <table class="table">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/x-authc-username-password+json&quot; HTTP header to specify this media type to the server.">application/x-authc-username-password+json</abbr></td>
-            <td><a href="json_LoginCredentials.html">LoginCredentials</a>
- (JSON)</td>
-            <td>LoginCredentials with userId and Password.</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>500</td>
-            <td>Unexpected critical error.</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
- (JSON)</td>
-            <td>CoreAuthenticationDTO on successful login</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_AuthenticationResource_loginWithContextOldPath_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/authentication/login <a href="../api/v1authentication/login" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <div class="alert alert-danger">This method has been deprecated.  Deprecated api. You should use POST /contextLogin instead. See documentation from that.</div>
+      <div id="resource_AuthenticationResource_loginWithContextOnlyCardInfo_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/authentication/contextLogin <a href="../api/v1/authentication/contextLogin" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p></p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -157,35 +96,14 @@
           </thead>
           <tbody>
           <tr>
-            <td>domain</td>
-            <td>form</td>
-            <td>domain</td>
-          </tr>
-          <tr>
-            <td>sessionKey</td>
-            <td>form</td>
-            <td>key</td>
+            <td><span class="parameter-name">contextId</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -196,23 +114,48 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
- (JSON)</td>
-            <td>response</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /authentication/contextLogin
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_AuthenticationResource_loginWithContext_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/authentication/contextLogin <a href="../api/v1authentication/contextLogin" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/authentication/contextLogin <a href="../api/v1/authentication/contextLogin" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Login with context. Currently this will join context once with given sessionKey and fetch all keys.
 Context login will fetch User.Co.[mediconsult.fi]UserId that is mediatri omistajaId. It can be professional or customer too. Customers have very limited priviledges.
 If context doesn't contain value in User.Co.[mediconsult.fi]UserId then User.Id.Logon value is used to search for username from mediatri. User.Id.Logon login is limited only to professionals logging in.   *</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -223,19 +166,19 @@ If context doesn't contain value in User.Co.[mediconsult.fi]UserId then User.Id.
           </thead>
           <tbody>
           <tr>
-            <td>domain</td>
+            <td><span class="parameter-name">domain</span></td>
             <td>form</td>
-            <td>Mediatri-domainId</td>
+            <td><span class="parameter-description">Mediatri-domainId</span></td>
           </tr>
           <tr>
-            <td>sessionKey</td>
+            <td><span class="parameter-name">sessionKey</span></td>
             <td>form</td>
-            <td>Context session-key to be used in join</td>
+            <td><span class="parameter-description">Context session-key to be used in join</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -245,13 +188,13 @@ If context doesn't contain value in User.Co.[mediconsult.fi]UserId then User.Id.
           </thead>
           <tbody>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -262,22 +205,594 @@ If context doesn't contain value in User.Co.[mediconsult.fi]UserId then User.Id.
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
- (JSON)</td>
-            <td>200 if ok</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</span></td>
+            <td><span class="response-description">200 if ok</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /authentication/contextLogin
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;username&quot; : &quot;MGR&quot;,
+  &quot;roles&quot; : {
+    &quot;property1&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ],
+    &quot;property2&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ]
+  },
+  &quot;units&quot; : [ {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  }, {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  } ],
+  &quot;activeRole&quot; : 5,
+  &quot;activeUnit&quot; : 600000001,
+  &quot;firstNames&quot; : &quot;Etunimi Toinennimi&quot;,
+  &quot;lastName&quot; : &quot;Sukunimi&quot;,
+  &quot;success&quot; : true,
+  &quot;message&quot; : &quot;Could not join context&quot;,
+  &quot;patient&quot; : true,
+  &quot;userId&quot; : 12345,
+  &quot;developer&quot; : true,
+  &quot;componentRights&quot; : [ {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;ASIAKIRJAT&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  }, {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;SEURANTA&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  } ],
+  &quot;viewConfiguration&quot; : {
+    &quot;landingPage&quot; : &quot;WARD_LIST&quot;,
+    &quot;landingPageWithOwner&quot; : &quot;LOMAKE_EDITORI&quot;,
+    &quot;components&quot; : [ &quot;ASIAKIRJATLIST&quot;, &quot;LOMAKE_EDITORI&quot; ],
+    &quot;productName&quot; : &quot;...&quot;,
+    &quot;productCode&quot; : &quot;...&quot;,
+    &quot;productConfigurations&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;frameworkSettings&quot; : {
+    &quot;passivateBottomBar&quot; : true,
+    &quot;passivateUserMenu&quot; : true,
+    &quot;passivateResourceMenu&quot; : true,
+    &quot;passivateRiskRedirection&quot; : true,
+    &quot;passivateMainMenu&quot; : true,
+    &quot;preloadPatientDataForOffline&quot; : true
+  },
+  &quot;context&quot; : {
+    &quot;unitOwnerId&quot; : 12345,
+    &quot;userSVNumber&quot; : &quot;...&quot;,
+    &quot;serviceProviderId&quot; : &quot;...&quot;,
+    &quot;userLogonDomain&quot; : &quot;...&quot;,
+    &quot;authorFirstNames&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifierName&quot; : &quot;...&quot;,
+    &quot;patientDateTimeOfBirth&quot; : &quot;...&quot;,
+    &quot;patientSex&quot; : &quot;...&quot;,
+    &quot;unitOid&quot; : &quot;...&quot;,
+    &quot;responsiblePartyType&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterId&quot; : &quot;...&quot;,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;sessionKey&quot; : &quot;...&quot;,
+    &quot;patientCommonRegisterNotified&quot; : true,
+    &quot;patientFirstNames&quot; : &quot;...&quot;,
+    &quot;hostOrganizationOid&quot; : &quot;...&quot;,
+    &quot;patientEArchiveApproval&quot; : true,
+    &quot;patientActiveEncompassingEncounterVisitNumber&quot; : &quot;...&quot;,
+    &quot;userLogonMethod&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementCode&quot; : &quot;...&quot;,
+    &quot;authorSSN&quot; : &quot;...&quot;,
+    &quot;hostUnitOid&quot; : &quot;...&quot;,
+    &quot;role&quot; : &quot;...&quot;,
+    &quot;responsiblePartyName&quot; : &quot;...&quot;,
+    &quot;userSpecialProtection&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterVisitNumberInteger&quot; : 12345,
+    &quot;patientEArchiveNotified&quot; : true,
+    &quot;patientEReseptiNotified&quot; : true,
+    &quot;patientSSN&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifier&quot; : &quot;...&quot;,
+    &quot;registerIdentificationCode&quot; : 12345,
+    &quot;patientName&quot; : &quot;...&quot;,
+    &quot;dirty&quot; : true,
+    &quot;patientSurname&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementText&quot; : &quot;...&quot;,
+    &quot;userOwnerId&quot; : 12345,
+    &quot;encounterPatientRegistryCode&quot; : &quot;...&quot;,
+    &quot;patientOwnerId&quot; : 12345,
+    &quot;registerId&quot; : &quot;...&quot;,
+    &quot;authorSurname&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;register&quot; : &quot;...&quot;,
+    &quot;responsiblePartyId&quot; : &quot;...&quot;,
+    &quot;madeDirtyTime&quot; : 12345,
+    &quot;encounterCustodian&quot; : &quot;...&quot;,
+    &quot;userLogon&quot; : &quot;...&quot;,
+    &quot;authorCardNumber&quot; : &quot;...&quot;,
+    &quot;userCustodianTypeCode&quot; : &quot;...&quot;,
+    &quot;userLogonApplication&quot; : &quot;...&quot;
+  },
+  &quot;medikantaURL&quot; : &quot;...&quot;,
+  &quot;medireseptiURL&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AuthenticationResource_loginWithContextToPatientGET_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/authentication/contextLoginWithPatientId <a href="../api/v1/authentication/contextLoginWithPatientId" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">omistaja</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">polku</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sessionKey</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /authentication/contextLoginWithPatientId
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AuthenticationResource_loginWithContextToPatientPOST_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/authentication/contextLoginWithPatientId <a href="../api/v1/authentication/contextLoginWithPatientId" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">domain</span></td>
+            <td>form</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">omistaja</span></td>
+            <td>form</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">polku</span></td>
+            <td>form</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sessionKey</span></td>
+            <td>form</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /authentication/contextLoginWithPatientId
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AuthenticationResource_getCurretUser_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/authentication/identity <a href="../api/v1/authentication/identity" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>You can verify current session information using this API.</p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Information about the session</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /authentication/identity
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;username&quot; : &quot;MGR&quot;,
+  &quot;roles&quot; : {
+    &quot;property1&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ],
+    &quot;property2&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ]
+  },
+  &quot;units&quot; : [ {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  }, {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  } ],
+  &quot;activeRole&quot; : 5,
+  &quot;activeUnit&quot; : 600000001,
+  &quot;firstNames&quot; : &quot;Etunimi Toinennimi&quot;,
+  &quot;lastName&quot; : &quot;Sukunimi&quot;,
+  &quot;success&quot; : true,
+  &quot;message&quot; : &quot;Could not join context&quot;,
+  &quot;patient&quot; : true,
+  &quot;userId&quot; : 12345,
+  &quot;developer&quot; : true,
+  &quot;componentRights&quot; : [ {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;CARE_ORDERS&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  }, {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;WIDGETS&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  } ],
+  &quot;viewConfiguration&quot; : {
+    &quot;landingPage&quot; : &quot;ASIA&quot;,
+    &quot;landingPageWithOwner&quot; : &quot;SOSIAALIPALVELUT&quot;,
+    &quot;components&quot; : [ &quot;CARE_RECORDS&quot;, &quot;CARE_RECORDS&quot; ],
+    &quot;productName&quot; : &quot;...&quot;,
+    &quot;productCode&quot; : &quot;...&quot;,
+    &quot;productConfigurations&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;frameworkSettings&quot; : {
+    &quot;passivateBottomBar&quot; : true,
+    &quot;passivateUserMenu&quot; : true,
+    &quot;passivateResourceMenu&quot; : true,
+    &quot;passivateRiskRedirection&quot; : true,
+    &quot;passivateMainMenu&quot; : true,
+    &quot;preloadPatientDataForOffline&quot; : true
+  },
+  &quot;context&quot; : {
+    &quot;unitOwnerId&quot; : 12345,
+    &quot;userSVNumber&quot; : &quot;...&quot;,
+    &quot;serviceProviderId&quot; : &quot;...&quot;,
+    &quot;userLogonDomain&quot; : &quot;...&quot;,
+    &quot;authorFirstNames&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifierName&quot; : &quot;...&quot;,
+    &quot;patientDateTimeOfBirth&quot; : &quot;...&quot;,
+    &quot;patientSex&quot; : &quot;...&quot;,
+    &quot;unitOid&quot; : &quot;...&quot;,
+    &quot;responsiblePartyType&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterId&quot; : &quot;...&quot;,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;sessionKey&quot; : &quot;...&quot;,
+    &quot;patientCommonRegisterNotified&quot; : true,
+    &quot;patientFirstNames&quot; : &quot;...&quot;,
+    &quot;hostOrganizationOid&quot; : &quot;...&quot;,
+    &quot;patientEArchiveApproval&quot; : true,
+    &quot;patientActiveEncompassingEncounterVisitNumber&quot; : &quot;...&quot;,
+    &quot;userLogonMethod&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementCode&quot; : &quot;...&quot;,
+    &quot;authorSSN&quot; : &quot;...&quot;,
+    &quot;hostUnitOid&quot; : &quot;...&quot;,
+    &quot;role&quot; : &quot;...&quot;,
+    &quot;responsiblePartyName&quot; : &quot;...&quot;,
+    &quot;userSpecialProtection&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterVisitNumberInteger&quot; : 12345,
+    &quot;patientEArchiveNotified&quot; : true,
+    &quot;patientEReseptiNotified&quot; : true,
+    &quot;patientSSN&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifier&quot; : &quot;...&quot;,
+    &quot;registerIdentificationCode&quot; : 12345,
+    &quot;patientName&quot; : &quot;...&quot;,
+    &quot;dirty&quot; : true,
+    &quot;patientSurname&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementText&quot; : &quot;...&quot;,
+    &quot;userOwnerId&quot; : 12345,
+    &quot;encounterPatientRegistryCode&quot; : &quot;...&quot;,
+    &quot;patientOwnerId&quot; : 12345,
+    &quot;registerId&quot; : &quot;...&quot;,
+    &quot;authorSurname&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;register&quot; : &quot;...&quot;,
+    &quot;responsiblePartyId&quot; : &quot;...&quot;,
+    &quot;madeDirtyTime&quot; : 12345,
+    &quot;encounterCustodian&quot; : &quot;...&quot;,
+    &quot;userLogon&quot; : &quot;...&quot;,
+    &quot;authorCardNumber&quot; : &quot;...&quot;,
+    &quot;userCustodianTypeCode&quot; : &quot;...&quot;,
+    &quot;userLogonApplication&quot; : &quot;...&quot;
+  },
+  &quot;medikantaURL&quot; : &quot;...&quot;,
+  &quot;medireseptiURL&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_AuthenticationResource_loginGet_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/authentication/login <a href="../api/v1authentication/login" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/authentication/login <a href="../api/v1/authentication/login" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>API for authenticating to Core.
-Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?username=MGR&password=&mediatritunnus= </p>
+Can be used in browser <code>http://localhost:8080/CoreWEB/rest/authentication/login?username=MGR&password=&mediatritunnus= </code></p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -289,39 +804,39 @@ Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?u
           </thead>
           <tbody>
           <tr>
-            <td>mediatritunnus</td>
+            <td><span class="parameter-name">mediatritunnus</span></td>
             <td>query</td>
-            <td>Mediatri-domainID</td>
-            <td>&nbsp;</td>
+            <td><span class="parameter-description">Mediatri-domainID</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
-            <td>password</td>
+            <td><span class="parameter-name">password</span></td>
             <td>query</td>
-            <td>password for user. Password can be reset in mediatri</td>
-            <td>&nbsp;</td>
+            <td><span class="parameter-description">password for user. Password can be reset in mediatri</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
-            <td>role</td>
+            <td><span class="parameter-name">role</span></td>
             <td>query</td>
-            <td>Must have optionalUnitId-parameter too if role is given. If role+unit doesnt exist, bad request is thrown and user is logged out.</td>
-            <td>int</td>
+            <td><span class="parameter-description">Must have optionalUnitId-parameter too if role is given. If role+unit doesnt exist, bad request is thrown and user is logged out.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>unit</td>
+            <td><span class="parameter-name">unit</span></td>
             <td>query</td>
-            <td>UnitId can be given directly as parameter-&gt; session will use this unit and no 2-nd login step is required.</td>
-            <td>int</td>
+            <td><span class="parameter-description">UnitId can be given directly as parameter-&gt; session will use this unit and no 2-nd login step is required.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>username</td>
+            <td><span class="parameter-name">username</span></td>
             <td>query</td>
-            <td>Username eg "MGR"</td>
-            <td>&nbsp;</td>
+            <td><span class="parameter-description">Username eg "MGR"</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -331,13 +846,13 @@ Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?u
           </thead>
           <tbody>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -348,71 +863,214 @@ Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?u
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
- (JSON)</td>
-            <td>Status 200 with json message status:"Authenticated"</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Status 200 with json message status:"Authenticated"</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /authentication/login
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;username&quot; : &quot;MGR&quot;,
+  &quot;roles&quot; : {
+    &quot;property1&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ],
+    &quot;property2&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ]
+  },
+  &quot;units&quot; : [ {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  }, {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  } ],
+  &quot;activeRole&quot; : 5,
+  &quot;activeUnit&quot; : 600000001,
+  &quot;firstNames&quot; : &quot;Etunimi Toinennimi&quot;,
+  &quot;lastName&quot; : &quot;Sukunimi&quot;,
+  &quot;success&quot; : true,
+  &quot;message&quot; : &quot;Could not join context&quot;,
+  &quot;patient&quot; : true,
+  &quot;userId&quot; : 12345,
+  &quot;developer&quot; : true,
+  &quot;componentRights&quot; : [ {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;UNIT_CUSTOMERS&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  }, {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;MEASUREMENTS&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  } ],
+  &quot;viewConfiguration&quot; : {
+    &quot;landingPage&quot; : &quot;CALENDAR&quot;,
+    &quot;landingPageWithOwner&quot; : &quot;EVENTTIMELINE&quot;,
+    &quot;components&quot; : [ &quot;SOSIAALIPALVELUT&quot;, &quot;LABORATORY_EXAMINATIONS&quot; ],
+    &quot;productName&quot; : &quot;...&quot;,
+    &quot;productCode&quot; : &quot;...&quot;,
+    &quot;productConfigurations&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;frameworkSettings&quot; : {
+    &quot;passivateBottomBar&quot; : true,
+    &quot;passivateUserMenu&quot; : true,
+    &quot;passivateResourceMenu&quot; : true,
+    &quot;passivateRiskRedirection&quot; : true,
+    &quot;passivateMainMenu&quot; : true,
+    &quot;preloadPatientDataForOffline&quot; : true
+  },
+  &quot;context&quot; : {
+    &quot;unitOwnerId&quot; : 12345,
+    &quot;userSVNumber&quot; : &quot;...&quot;,
+    &quot;serviceProviderId&quot; : &quot;...&quot;,
+    &quot;userLogonDomain&quot; : &quot;...&quot;,
+    &quot;authorFirstNames&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifierName&quot; : &quot;...&quot;,
+    &quot;patientDateTimeOfBirth&quot; : &quot;...&quot;,
+    &quot;patientSex&quot; : &quot;...&quot;,
+    &quot;unitOid&quot; : &quot;...&quot;,
+    &quot;responsiblePartyType&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterId&quot; : &quot;...&quot;,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;sessionKey&quot; : &quot;...&quot;,
+    &quot;patientCommonRegisterNotified&quot; : true,
+    &quot;patientFirstNames&quot; : &quot;...&quot;,
+    &quot;hostOrganizationOid&quot; : &quot;...&quot;,
+    &quot;patientEArchiveApproval&quot; : true,
+    &quot;patientActiveEncompassingEncounterVisitNumber&quot; : &quot;...&quot;,
+    &quot;userLogonMethod&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementCode&quot; : &quot;...&quot;,
+    &quot;authorSSN&quot; : &quot;...&quot;,
+    &quot;hostUnitOid&quot; : &quot;...&quot;,
+    &quot;role&quot; : &quot;...&quot;,
+    &quot;responsiblePartyName&quot; : &quot;...&quot;,
+    &quot;userSpecialProtection&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterVisitNumberInteger&quot; : 12345,
+    &quot;patientEArchiveNotified&quot; : true,
+    &quot;patientEReseptiNotified&quot; : true,
+    &quot;patientSSN&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifier&quot; : &quot;...&quot;,
+    &quot;registerIdentificationCode&quot; : 12345,
+    &quot;patientName&quot; : &quot;...&quot;,
+    &quot;dirty&quot; : true,
+    &quot;patientSurname&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementText&quot; : &quot;...&quot;,
+    &quot;userOwnerId&quot; : 12345,
+    &quot;encounterPatientRegistryCode&quot; : &quot;...&quot;,
+    &quot;patientOwnerId&quot; : 12345,
+    &quot;registerId&quot; : &quot;...&quot;,
+    &quot;authorSurname&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;register&quot; : &quot;...&quot;,
+    &quot;responsiblePartyId&quot; : &quot;...&quot;,
+    &quot;madeDirtyTime&quot; : 12345,
+    &quot;encounterCustodian&quot; : &quot;...&quot;,
+    &quot;userLogon&quot; : &quot;...&quot;,
+    &quot;authorCardNumber&quot; : &quot;...&quot;,
+    &quot;userCustodianTypeCode&quot; : &quot;...&quot;,
+    &quot;userLogonApplication&quot; : &quot;...&quot;
+  },
+  &quot;medikantaURL&quot; : &quot;...&quot;,
+  &quot;medireseptiURL&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_AuthenticationResource_logoutPost_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/authentication/logout <a href="../api/v1authentication/logout" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_AuthenticationResource_loginWithForm_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/authentication/login <a href="../api/v1/authentication/login" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>A simple logout method using POST</p>
+        <p>Login with username and password. This returns with <a target="_blank" href="http-200">http-200</a> even authentication fails. Response has "success" true/false if authentication was successful.</p>
 
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td>200 http code without body IF ok.</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_AuthenticationResource_logoutGet_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/authentication/logout <a href="../api/v1authentication/logout" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>A simple logout method using GET</p>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td>200 http code without body IF ok.</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="resource_AuthenticationResource_setRole_POST">
-        <h3><span class="resource-method">POST</span> <span class="resource-path">/authentication/role <a href="../api/v1authentication/role" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Set the active role</p>
-
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -423,15 +1081,15 @@ Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?u
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_RoleDTO.html">RoleDTO</a>
- (JSON)</td>
-            <td>RoleDTO which contains info about current selected role</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/x-authc-username-password+json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/x-authc-username-password+json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_LoginCredentials.html">LoginCredentials</a>
+ (JSON)</span></td>
+            <td><span class="request-description">LoginCredentials with userId and Password.</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -441,17 +1099,13 @@ Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?u
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>If given role+unit was invalid for current user</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected critical error.</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -462,21 +1116,222 @@ Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?u
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
- (JSON)</td>
-            <td>CoreAuthenticationDTO returns CoreAuthenticationDTO on succesfull role change</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</span></td>
+            <td><span class="response-description">CoreAuthenticationDTO on successful login</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /authentication/login
+Content-Type: application/x-authc-username-password+json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;username&quot; : &quot;...&quot;,
+  &quot;password&quot; : &quot;...&quot;,
+  &quot;domainName&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;username&quot; : &quot;MGR&quot;,
+  &quot;roles&quot; : {
+    &quot;property1&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ],
+    &quot;property2&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ]
+  },
+  &quot;units&quot; : [ {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  }, {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  } ],
+  &quot;activeRole&quot; : 5,
+  &quot;activeUnit&quot; : 600000001,
+  &quot;firstNames&quot; : &quot;Etunimi Toinennimi&quot;,
+  &quot;lastName&quot; : &quot;Sukunimi&quot;,
+  &quot;success&quot; : true,
+  &quot;message&quot; : &quot;Could not join context&quot;,
+  &quot;patient&quot; : true,
+  &quot;userId&quot; : 12345,
+  &quot;developer&quot; : true,
+  &quot;componentRights&quot; : [ {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;ASIAKIRJATLIST&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  }, {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;ASIAKIRJAT&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  } ],
+  &quot;viewConfiguration&quot; : {
+    &quot;landingPage&quot; : &quot;HOITOTAHTO&quot;,
+    &quot;landingPageWithOwner&quot; : &quot;CALENDAR_EVENT&quot;,
+    &quot;components&quot; : [ &quot;WARD_LIST&quot;, &quot;ASIAKKUUDET&quot; ],
+    &quot;productName&quot; : &quot;...&quot;,
+    &quot;productCode&quot; : &quot;...&quot;,
+    &quot;productConfigurations&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;frameworkSettings&quot; : {
+    &quot;passivateBottomBar&quot; : true,
+    &quot;passivateUserMenu&quot; : true,
+    &quot;passivateResourceMenu&quot; : true,
+    &quot;passivateRiskRedirection&quot; : true,
+    &quot;passivateMainMenu&quot; : true,
+    &quot;preloadPatientDataForOffline&quot; : true
+  },
+  &quot;context&quot; : {
+    &quot;unitOwnerId&quot; : 12345,
+    &quot;userSVNumber&quot; : &quot;...&quot;,
+    &quot;serviceProviderId&quot; : &quot;...&quot;,
+    &quot;userLogonDomain&quot; : &quot;...&quot;,
+    &quot;authorFirstNames&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifierName&quot; : &quot;...&quot;,
+    &quot;patientDateTimeOfBirth&quot; : &quot;...&quot;,
+    &quot;patientSex&quot; : &quot;...&quot;,
+    &quot;unitOid&quot; : &quot;...&quot;,
+    &quot;responsiblePartyType&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterId&quot; : &quot;...&quot;,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;sessionKey&quot; : &quot;...&quot;,
+    &quot;patientCommonRegisterNotified&quot; : true,
+    &quot;patientFirstNames&quot; : &quot;...&quot;,
+    &quot;hostOrganizationOid&quot; : &quot;...&quot;,
+    &quot;patientEArchiveApproval&quot; : true,
+    &quot;patientActiveEncompassingEncounterVisitNumber&quot; : &quot;...&quot;,
+    &quot;userLogonMethod&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementCode&quot; : &quot;...&quot;,
+    &quot;authorSSN&quot; : &quot;...&quot;,
+    &quot;hostUnitOid&quot; : &quot;...&quot;,
+    &quot;role&quot; : &quot;...&quot;,
+    &quot;responsiblePartyName&quot; : &quot;...&quot;,
+    &quot;userSpecialProtection&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterVisitNumberInteger&quot; : 12345,
+    &quot;patientEArchiveNotified&quot; : true,
+    &quot;patientEReseptiNotified&quot; : true,
+    &quot;patientSSN&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifier&quot; : &quot;...&quot;,
+    &quot;registerIdentificationCode&quot; : 12345,
+    &quot;patientName&quot; : &quot;...&quot;,
+    &quot;dirty&quot; : true,
+    &quot;patientSurname&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementText&quot; : &quot;...&quot;,
+    &quot;userOwnerId&quot; : 12345,
+    &quot;encounterPatientRegistryCode&quot; : &quot;...&quot;,
+    &quot;patientOwnerId&quot; : 12345,
+    &quot;registerId&quot; : &quot;...&quot;,
+    &quot;authorSurname&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;register&quot; : &quot;...&quot;,
+    &quot;responsiblePartyId&quot; : &quot;...&quot;,
+    &quot;madeDirtyTime&quot; : 12345,
+    &quot;encounterCustodian&quot; : &quot;...&quot;,
+    &quot;userLogon&quot; : &quot;...&quot;,
+    &quot;authorCardNumber&quot; : &quot;...&quot;,
+    &quot;userCustodianTypeCode&quot; : &quot;...&quot;,
+    &quot;userLogonApplication&quot; : &quot;...&quot;
+  },
+  &quot;medikantaURL&quot; : &quot;...&quot;,
+  &quot;medireseptiURL&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_AuthenticationResource_getCurretUser_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/authentication/identity <a href="../api/v1authentication/identity" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_AuthenticationResource_logoutGet_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/authentication/logout <a href="../api/v1/authentication/logout" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>You can verify current session information using this API.</p>
+        <p>A simple logout method using GET</p>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -487,21 +1342,46 @@ Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?u
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
- (JSON)</td>
-            <td>Information about the session</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">200 <a target="_blank" href="http code">http code</a> without body IF ok.</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /authentication/logout
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="resource_AuthenticationResource_getPlannerRightsAndSettings_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/authentication/plannerRights <a href="../api/v1authentication/plannerRights" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_AuthenticationResource_logoutPost_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/authentication/logout <a href="../api/v1/authentication/logout" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Get information about Mediplan related rights and settings that are configured in Mediatri.</p>
+        <p>A simple logout method using POST</p>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -512,21 +1392,96 @@ Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?u
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_PlannerRightsAndSettings.html">PlannerRightsAndSettings</a>
- (JSON)</td>
-            <td>planner rights of the current user, settings for planner features</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">200 <a target="_blank" href="http code">http code</a> without body IF ok.</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /authentication/logout
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AuthenticationResource_setPartlyLoggedIn_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/authentication/logoutfromrole <a href="../api/v1/authentication/logoutfromrole" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /authentication/logoutfromrole
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_AuthenticationResource_ping_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/authentication/ping <a href="../api/v1authentication/ping" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/authentication/ping <a href="../api/v1/authentication/ping" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Client Side ping for server every 30 sec on offline.</p>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -537,13 +1492,517 @@ Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?u
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/plain&quot; HTTP header to request that this media type be provided by the server.">text/plain</abbr></td>
-            <td>(custom)
-</td>
-            <td>200 http code, body to be desided later</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/plain&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/plain</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">200 <a target="_blank" href="http code,">http code,</a> body to be desided later</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /authentication/ping
+Accept: text/plain
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: text/plain
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AuthenticationResource_getPlannerRightsAndSettings_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/authentication/plannerRights <a href="../api/v1/authentication/plannerRights" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get information about Mediplan related rights and settings that are configured in Mediatri.</p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_PlannerRightsAndSettings.html">PlannerRightsAndSettings</a>
+ (JSON)</span></td>
+            <td><span class="response-description">planner rights of the current user, settings for planner features</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /authentication/plannerRights
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;skillsForm&quot; : {
+    &quot;id&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;ownerId&quot; : 12345,
+    &quot;rights&quot; : [ &quot;CHANGE&quot;, &quot;REMOVE&quot; ]
+  },
+  &quot;calendarDomains&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;setupForm&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;ADD&quot;, &quot;VIEW&quot; ]
+    },
+    &quot;patientList&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;ADD&quot;, &quot;REMOVE&quot; ]
+    },
+    &quot;patientLists&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;REMOVE&quot; ]
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;CHANGE&quot;, &quot;REMOVE&quot; ]
+    } ],
+    &quot;patientSearchAllowed&quot; : true,
+    &quot;workerLists&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;ADD&quot;, &quot;VIEW&quot; ]
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;CHANGE&quot;, &quot;CHANGE&quot; ]
+    } ],
+    &quot;workerSearchAllowed&quot; : true,
+    &quot;calendarForm&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;CHANGE&quot;, &quot;ADD&quot; ]
+    },
+    &quot;coursesForm&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;ADD&quot;, &quot;ADD&quot; ]
+    },
+    &quot;coursesUsed&quot; : true,
+    &quot;courseSettings&quot; : {
+      &quot;coursePeriodTitle&quot; : &quot;...&quot;,
+      &quot;workerRoleTitle&quot; : &quot;...&quot;,
+      &quot;skillTitle&quot; : &quot;...&quot;,
+      &quot;namedGroupTitle&quot; : &quot;...&quot;,
+      &quot;courseTitle&quot; : &quot;...&quot;
+    },
+    &quot;workerSettingsForm&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;CHANGE&quot; ]
+    },
+    &quot;optimization&quot; : {
+      &quot;form&quot; : { },
+      &quot;streetAddressTitle&quot; : &quot;...&quot;,
+      &quot;postOfficeTitle&quot; : &quot;...&quot;,
+      &quot;travelModeTitle&quot; : &quot;...&quot;,
+      &quot;byFootTerm&quot; : &quot;...&quot;,
+      &quot;byCarTerm&quot; : &quot;...&quot;,
+      &quot;byBicycleTerm&quot; : &quot;...&quot;
+    },
+    &quot;primaryNurseSettings&quot; : {
+      &quot;workerRoleTitle&quot; : &quot;...&quot;,
+      &quot;form&quot; : { }
+    },
+    &quot;viewTitle&quot; : &quot;...&quot;
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;setupForm&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;ADD&quot;, &quot;REMOVE&quot; ]
+    },
+    &quot;patientList&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;REMOVE&quot;, &quot;REMOVE&quot; ]
+    },
+    &quot;patientLists&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;CHANGE&quot; ]
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;CHANGE&quot; ]
+    } ],
+    &quot;patientSearchAllowed&quot; : true,
+    &quot;workerLists&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;CHANGE&quot;, &quot;VIEW&quot; ]
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;ADD&quot;, &quot;VIEW&quot; ]
+    } ],
+    &quot;workerSearchAllowed&quot; : true,
+    &quot;calendarForm&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;ADD&quot;, &quot;CHANGE&quot; ]
+    },
+    &quot;coursesForm&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;CHANGE&quot;, &quot;ADD&quot; ]
+    },
+    &quot;coursesUsed&quot; : true,
+    &quot;courseSettings&quot; : {
+      &quot;coursePeriodTitle&quot; : &quot;...&quot;,
+      &quot;workerRoleTitle&quot; : &quot;...&quot;,
+      &quot;skillTitle&quot; : &quot;...&quot;,
+      &quot;namedGroupTitle&quot; : &quot;...&quot;,
+      &quot;courseTitle&quot; : &quot;...&quot;
+    },
+    &quot;workerSettingsForm&quot; : {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;ownerId&quot; : 12345,
+      &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;REMOVE&quot; ]
+    },
+    &quot;optimization&quot; : {
+      &quot;form&quot; : { },
+      &quot;streetAddressTitle&quot; : &quot;...&quot;,
+      &quot;postOfficeTitle&quot; : &quot;...&quot;,
+      &quot;travelModeTitle&quot; : &quot;...&quot;,
+      &quot;byFootTerm&quot; : &quot;...&quot;,
+      &quot;byCarTerm&quot; : &quot;...&quot;,
+      &quot;byBicycleTerm&quot; : &quot;...&quot;
+    },
+    &quot;primaryNurseSettings&quot; : {
+      &quot;workerRoleTitle&quot; : &quot;...&quot;,
+      &quot;form&quot; : { }
+    },
+    &quot;viewTitle&quot; : &quot;...&quot;
+  } ],
+  &quot;mainUser&quot; : true
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AuthenticationResource_setRole_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/authentication/role <a href="../api/v1/authentication/role" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Set the active role</p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_RoleDTO.html">RoleDTO</a>
+ (JSON)</span></td>
+            <td><span class="request-description">RoleDTO which contains info about current selected role</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If given role+unit was invalid for current user</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_CoreAuthenticationDTO.html">CoreAuthenticationDTO</a>
+ (JSON)</span></td>
+            <td><span class="response-description">CoreAuthenticationDTO returns CoreAuthenticationDTO on successful role change</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /authentication/role
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;role&quot; : 12345,
+  &quot;unit&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;username&quot; : &quot;MGR&quot;,
+  &quot;roles&quot; : {
+    &quot;property1&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ],
+    &quot;property2&quot; : [ {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    }, {
+      &quot;id&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;forceVahvatunnistus&quot; : true
+    } ]
+  },
+  &quot;units&quot; : [ {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  }, {
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
+    &quot;basicInfo&quot; : {
+      &quot;loaded&quot; : true,
+      &quot;object&quot; : { },
+      &quot;loadUrl&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;omistajaId&quot; : 12345,
+    &quot;omistajaListAvailability&quot; : {
+      &quot;startTime&quot; : 12345,
+      &quot;endTime&quot; : 12345
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
+  } ],
+  &quot;activeRole&quot; : 5,
+  &quot;activeUnit&quot; : 600000001,
+  &quot;firstNames&quot; : &quot;Etunimi Toinennimi&quot;,
+  &quot;lastName&quot; : &quot;Sukunimi&quot;,
+  &quot;success&quot; : true,
+  &quot;message&quot; : &quot;Could not join context&quot;,
+  &quot;patient&quot; : true,
+  &quot;userId&quot; : 12345,
+  &quot;developer&quot; : true,
+  &quot;componentRights&quot; : [ {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;PERINTA&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  }, {
+    &quot;serialversionuid&quot; : 12345,
+    &quot;component&quot; : &quot;IFRAME_MEDIKANTA&quot;,
+    &quot;inDevelopment&quot; : true,
+    &quot;requiresTarget&quot; : true,
+    &quot;permissionDTO&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  } ],
+  &quot;viewConfiguration&quot; : {
+    &quot;landingPage&quot; : &quot;SUMMARY_MSO_VIEW&quot;,
+    &quot;landingPageWithOwner&quot; : &quot;ASIA&quot;,
+    &quot;components&quot; : [ &quot;ASIA&quot;, &quot;SUOSTUMUKSENHALLINTA&quot; ],
+    &quot;productName&quot; : &quot;...&quot;,
+    &quot;productCode&quot; : &quot;...&quot;,
+    &quot;productConfigurations&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;frameworkSettings&quot; : {
+    &quot;passivateBottomBar&quot; : true,
+    &quot;passivateUserMenu&quot; : true,
+    &quot;passivateResourceMenu&quot; : true,
+    &quot;passivateRiskRedirection&quot; : true,
+    &quot;passivateMainMenu&quot; : true,
+    &quot;preloadPatientDataForOffline&quot; : true
+  },
+  &quot;context&quot; : {
+    &quot;unitOwnerId&quot; : 12345,
+    &quot;userSVNumber&quot; : &quot;...&quot;,
+    &quot;serviceProviderId&quot; : &quot;...&quot;,
+    &quot;userLogonDomain&quot; : &quot;...&quot;,
+    &quot;authorFirstNames&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifierName&quot; : &quot;...&quot;,
+    &quot;patientDateTimeOfBirth&quot; : &quot;...&quot;,
+    &quot;patientSex&quot; : &quot;...&quot;,
+    &quot;unitOid&quot; : &quot;...&quot;,
+    &quot;responsiblePartyType&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterId&quot; : &quot;...&quot;,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;sessionKey&quot; : &quot;...&quot;,
+    &quot;patientCommonRegisterNotified&quot; : true,
+    &quot;patientFirstNames&quot; : &quot;...&quot;,
+    &quot;hostOrganizationOid&quot; : &quot;...&quot;,
+    &quot;patientEArchiveApproval&quot; : true,
+    &quot;patientActiveEncompassingEncounterVisitNumber&quot; : &quot;...&quot;,
+    &quot;userLogonMethod&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementCode&quot; : &quot;...&quot;,
+    &quot;authorSSN&quot; : &quot;...&quot;,
+    &quot;hostUnitOid&quot; : &quot;...&quot;,
+    &quot;role&quot; : &quot;...&quot;,
+    &quot;responsiblePartyName&quot; : &quot;...&quot;,
+    &quot;userSpecialProtection&quot; : &quot;...&quot;,
+    &quot;patientActiveEncompassingEncounterVisitNumberInteger&quot; : 12345,
+    &quot;patientEArchiveNotified&quot; : true,
+    &quot;patientEReseptiNotified&quot; : true,
+    &quot;patientSSN&quot; : &quot;...&quot;,
+    &quot;patientRegistrySpecifier&quot; : &quot;...&quot;,
+    &quot;registerIdentificationCode&quot; : 12345,
+    &quot;patientName&quot; : &quot;...&quot;,
+    &quot;dirty&quot; : true,
+    &quot;patientSurname&quot; : &quot;...&quot;,
+    &quot;patientDetectedIssueManagementText&quot; : &quot;...&quot;,
+    &quot;userOwnerId&quot; : 12345,
+    &quot;encounterPatientRegistryCode&quot; : &quot;...&quot;,
+    &quot;patientOwnerId&quot; : 12345,
+    &quot;registerId&quot; : &quot;...&quot;,
+    &quot;authorSurname&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;register&quot; : &quot;...&quot;,
+    &quot;responsiblePartyId&quot; : &quot;...&quot;,
+    &quot;madeDirtyTime&quot; : 12345,
+    &quot;encounterCustodian&quot; : &quot;...&quot;,
+    &quot;userLogon&quot; : &quot;...&quot;,
+    &quot;authorCardNumber&quot; : &quot;...&quot;,
+    &quot;userCustodianTypeCode&quot; : &quot;...&quot;,
+    &quot;userLogonApplication&quot; : &quot;...&quot;
+  },
+  &quot;medikantaURL&quot; : &quot;...&quot;,
+  &quot;medireseptiURL&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -558,14 +2017,14 @@ Can be used in browser http://localhost:8080/CoreWEB/rest/authentication/login?u
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

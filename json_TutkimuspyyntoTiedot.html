@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#UNDEFINED"><abbr title="UNDEFINED"><span class="sideoverflow">UNDEFINED</span></abbr></a></li>
+          <li><a href="#CAR"><abbr title="CAR"><span class="sideoverflow">CAR</span></abbr></a></li>
+          <li><a href="#BICYCLE"><abbr title="BICYCLE"><span class="sideoverflow">BICYCLE</span></abbr></a></li>
+          <li><a href="#AFOOT"><abbr title="AFOOT"><span class="sideoverflow">AFOOT</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -74,7 +77,7 @@ Used to carry the data from database to the client side.</p>
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -85,489 +88,489 @@ Used to carry the data from database to the client side.</p>
         </thead>
         <tbody>
         <tr>
-          <td>  pyynto
+          <td>  <span class="property-name">pyynto</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Returns the pyynto id
-</td>
-        </tr>
-        <tr>
-          <td>  rivi
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the row number
+          <td>  <span class="property-description">Returns the pyynto id</span>
 </td>
         </tr>
         <tr>
-          <td>  tutkimus
+          <td>  <span class="property-name">rivi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Returns the Tutkimus name
-</td>
-        </tr>
-        <tr>
-          <td>  versio
-</td>
-          <td>  string
-
-</td>
-          <td>  Returns the version
+          <td>  <span class="property-description">Returns the row number</span>
 </td>
         </tr>
         <tr>
-          <td>  hajautettu
+          <td>  <span class="property-name">tutkimus</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the char value for Hajautettu
-</td>
-        </tr>
-        <tr>
-          <td>  hoitojakso
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the Hoitojakso
+          <td>  <span class="property-description">Returns the Tutkimus name</span>
 </td>
         </tr>
         <tr>
-          <td>  huomautuksia
+          <td>  <span class="property-name">versio</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the notifications
-</td>
-        </tr>
-        <tr>
-          <td>  kontrolloitava
-</td>
-          <td>  <a href="json_Date.html">Date</a>
-
-</td>
-          <td>  Returns the possible control date
+          <td>  <span class="property-description">Returns the version</span>
 </td>
         </tr>
         <tr>
-          <td>  korvausluokka
+          <td>  <span class="property-name">hajautettu</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the korvausluokka
-</td>
-        </tr>
-        <tr>
-          <td>  kunta
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the county council
+          <td>  <span class="property-description">Returns the char value for Hajautettu</span>
 </td>
         </tr>
         <tr>
-          <td>  kustannuslinkki
+          <td>  <span class="property-name">hoitojakso</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Returns the Kustannuslinkki
-</td>
-        </tr>
-        <tr>
-          <td>  lisatietoja
-</td>
-          <td>  string
-
-</td>
-          <td>  Return the info about if there is some extra information
+          <td>  <span class="property-description">Returns the Hoitojakso</span>
 </td>
         </tr>
         <tr>
-          <td>  lomakelinkki
+          <td>  <span class="property-name">huomautuksia</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Return the Lomakelinkki
-</td>
-        </tr>
-        <tr>
-          <td>  maksaja
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the payer
+          <td>  <span class="property-description">Returns the notifications</span>
 </td>
         </tr>
         <tr>
-          <td>  mikrobitietoja
+          <td>  <span class="property-name">kontrolloitava</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference"><a href="json_Date.html">Date</a>
+</span>
 </td>
-          <td>  Return the info about if there is Mikrobitietoja available
-</td>
-        </tr>
-        <tr>
-          <td>  muutosaika
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the time of change
+          <td>  <span class="property-description">Returns the possible control date</span>
 </td>
         </tr>
         <tr>
-          <td>  muutospaikka
+          <td>  <span class="property-name">korvausluokka</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Return the place of change
-</td>
-        </tr>
-        <tr>
-          <td>  nayte
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the sample
+          <td>  <span class="property-description">Returns the korvausluokka</span>
 </td>
         </tr>
         <tr>
-          <td>  naytetietoja
+          <td>  <span class="property-name">kunta</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the info about if there is sample information
-</td>
-        </tr>
-        <tr>
-          <td>  numerotulos
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the result in numeric format
+          <td>  <span class="property-description">Returns the county council</span>
 </td>
         </tr>
         <tr>
-          <td>  numeroyksikko
+          <td>  <span class="property-name">kustannuslinkki</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the unit of the result
-</td>
-        </tr>
-        <tr>
-          <td>  osalinkki
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the Osalinkki
+          <td>  <span class="property-description">Returns the Kustannuslinkki</span>
 </td>
         </tr>
         <tr>
-          <td>  osasto
+          <td>  <span class="property-name">lisatietoja</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Return the department
-</td>
-        </tr>
-        <tr>
-          <td>  ottoaika
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the time when the lab examination is done
+          <td>  <span class="property-description">Return the info about if there is some extra information</span>
 </td>
         </tr>
         <tr>
-          <td>  paketti
+          <td>  <span class="property-name">lomakelinkki</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the package
-</td>
-        </tr>
-        <tr>
-          <td>  piiri
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the V�est�vastuupiiri
+          <td>  <span class="property-description">Return the Lomakelinkki</span>
 </td>
         </tr>
         <tr>
-          <td>  poistettu
+          <td>  <span class="property-name">maksaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the info about if the result is removed
-</td>
-        </tr>
-        <tr>
-          <td>  pyydetty
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the time when the lab examination is ordered
+          <td>  <span class="property-description">Return the payer</span>
 </td>
         </tr>
         <tr>
-          <td>  sanallinenvastaus
+          <td>  <span class="property-name">mikrobitietoja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Return the verbal result
-</td>
-        </tr>
-        <tr>
-          <td>  sijaintiosasto
-</td>
-          <td>  string
-
-</td>
-          <td>  Return the location (department)
+          <td>  <span class="property-description">Return the info about if there is Mikrobitietoja available</span>
 </td>
         </tr>
         <tr>
-          <td>  sijaintipaikka
+          <td>  <span class="property-name">muutosaika</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the location (place)
-</td>
-        </tr>
-        <tr>
-          <td>  sisainenMaksaja
-</td>
-          <td>  string
-
-</td>
-          <td>  Return the internal payer
+          <td>  <span class="property-description">Return the time of change</span>
 </td>
         </tr>
         <tr>
-          <td>  suoritelinkki
+          <td>  <span class="property-name">muutospaikka</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the Suoritelinkki
-</td>
-        </tr>
-        <tr>
-          <td>  tehty
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the time when lab examination is done
+          <td>  <span class="property-description">Return the place of change</span>
 </td>
         </tr>
         <tr>
-          <td>  tekopaikka
+          <td>  <span class="property-name">nayte</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the place where lab examination is done
-</td>
-        </tr>
-        <tr>
-          <td>  tekstitulos
-</td>
-          <td>  string
-
-</td>
-          <td>  Return the result in textual format
+          <td>  <span class="property-description">Return the sample</span>
 </td>
         </tr>
         <tr>
-          <td>  tekstiviesti
+          <td>  <span class="property-name">naytetietoja</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Return the SMS
-</td>
-        </tr>
-        <tr>
-          <td>  tila
-</td>
-          <td>  object
-
-</td>
-          <td>  Return the state
+          <td>  <span class="property-description">Return the info about if there is sample information</span>
 </td>
         </tr>
         <tr>
-          <td>  tilaaja
+          <td>  <span class="property-name">numerotulos</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the orderer
-</td>
-        </tr>
-        <tr>
-          <td>  tilaajaNimi
-</td>
-          <td>  string
-
-</td>
-          <td>  Return the name of the orderer
+          <td>  <span class="property-description">Return the result in numeric format</span>
 </td>
         </tr>
         <tr>
-          <td>  tilaajayksikko
+          <td>  <span class="property-name">numeroyksikko</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Return the unit of the orderer
-</td>
-        </tr>
-        <tr>
-          <td>  tilaustunnus
-</td>
-          <td>  string
-
-</td>
-          <td>  Return the identifier of the order
+          <td>  <span class="property-description">Return the unit of the result</span>
 </td>
         </tr>
         <tr>
-          <td>  toistoloppuu
+          <td>  <span class="property-name">osalinkki</span>
 </td>
-          <td>  <a href="json_Date.html">Date</a>
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the date when the repetition ends
-</td>
-        </tr>
-        <tr>
-          <td>  toistovali
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the interval of the repetition
+          <td>  <span class="property-description">Return the Osalinkki</span>
 </td>
         </tr>
         <tr>
-          <td>  tulkinta
+          <td>  <span class="property-name">osasto</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the interpretation
-</td>
-        </tr>
-        <tr>
-          <td>  tuottaja
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the producer
+          <td>  <span class="property-description">Return the department</span>
 </td>
         </tr>
         <tr>
-          <td>  tyonantaja
+          <td>  <span class="property-name">ottoaika</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Return the employer
-</td>
-        </tr>
-        <tr>
-          <td>  vastaustietoja
-</td>
-          <td>  string
-
-</td>
-          <td>  Return the info about if there is Vastaustietoja available
+          <td>  <span class="property-description">Return the time when the lab examination is done</span>
 </td>
         </tr>
         <tr>
-          <td>  viitearvot
+          <td>  <span class="property-name">paketti</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Return the Viitearvot, which contains min and max values for the
-result. Result is normal, if the value is between the min and max values.
-</td>
-        </tr>
-        <tr>
-          <td>  kirjaaja
-</td>
-          <td>  number
-
-</td>
-          <td>  Return the recorder of the result
+          <td>  <span class="property-description">Return the package</span>
 </td>
         </tr>
         <tr>
-          <td>  tilaKoodi
+          <td>  <span class="property-name">piiri</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  poikkeava
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description">Return the Väestövastuupiiri</span>
 </td>
         </tr>
         <tr>
-          <td>  mikrobit
+          <td>  <span class="property-name">poistettu</span>
 </td>
-          <td>  array of <a href="json_TutkimuspyyntoMikrobi.html">TutkimuspyyntoMikrobi</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description">Return the info about if the result is removed</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">pyydetty</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the time when the lab examination is ordered</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">sanallinenvastaus</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Return the verbal result</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">sijaintiosasto</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Return the location (department)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">sijaintipaikka</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Return the location (place)</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">sisainenMaksaja</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Return the internal payer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">suoritelinkki</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the Suoritelinkki</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tehty</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the time when lab examination is done</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tekopaikka</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the place where lab examination is done</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tekstitulos</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Return the result in textual format</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tekstiviesti</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the SMS</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tila</span>
+</td>
+          <td>  <span class="datatype-reference">object
+</span>
+</td>
+          <td>  <span class="property-description">Return the state</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tilaaja</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the orderer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tilaajaNimi</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Return the name of the orderer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tilaajayksikko</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the unit of the orderer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tilaustunnus</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Return the identifier of the order</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">toistoloppuu</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_Date.html">Date</a>
+</span>
+</td>
+          <td>  <span class="property-description">Return the date when the repetition ends</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">toistovali</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the interval of the repetition</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tulkinta</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Return the interpretation</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tuottaja</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the producer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tyonantaja</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the employer</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">vastaustietoja</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Return the info about if there is Vastaustietoja available</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">viitearvot</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Return the Viitearvot, which contains min and max values for the
+result. Result is normal, if the value is between the min and max values.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">kirjaaja</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Return the recorder of the result</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tilaKoodi</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">poikkeava</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">mikrobit</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_TutkimuspyyntoMikrobi.html">TutkimuspyyntoMikrobi</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;pyynto&quot; : 12345,
   &quot;rivi&quot; : 12345,
   &quot;tutkimus&quot; : &quot;...&quot;,
@@ -689,14 +692,14 @@ result. Result is normal, if the value is between the min and max values.
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,16 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#USER_DEFINED"><abbr title="USER_DEFINED"><span class="sideoverflow">USER_DEFINED</span></abbr></a></li>
+          <li><a href="#SYSTEM_DEFINED_GENERAL"><abbr title="SYSTEM_DEFINED_GENERAL"><span class="sideoverflow">SYSTEM_DEFINED_GENERAL</span></abbr></a></li>
+          <li><a href="#SYSTEM_DEFINED_WORKERS"><abbr title="SYSTEM_DEFINED_WORKERS"><span class="sideoverflow">SYSTEM_DEFINED_WORKERS</span></abbr></a></li>
+          <li><a href="#SYSTEM_DEFINED_CUSTOMERS"><abbr title="SYSTEM_DEFINED_CUSTOMERS"><span class="sideoverflow">SYSTEM_DEFINED_CUSTOMERS</span></abbr></a></li>
+          <li><a href="#SYSTEM_DEFINED_EQUIPMENT"><abbr title="SYSTEM_DEFINED_EQUIPMENT"><span class="sideoverflow">SYSTEM_DEFINED_EQUIPMENT</span></abbr></a></li>
+          <li><a href="#SYSTEM_DEFINED_ROOM"><abbr title="SYSTEM_DEFINED_ROOM"><span class="sideoverflow">SYSTEM_DEFINED_ROOM</span></abbr></a></li>
+          <li><a href="#SYSTEM_DEFINED_BASIC_INFORMATION"><abbr title="SYSTEM_DEFINED_BASIC_INFORMATION"><span class="sideoverflow">SYSTEM_DEFINED_BASIC_INFORMATION</span></abbr></a></li>
+          <li><a href="#SYSTEM_DEFINED_SERVICE_CLASS"><abbr title="SYSTEM_DEFINED_SERVICE_CLASS"><span class="sideoverflow">SYSTEM_DEFINED_SERVICE_CLASS</span></abbr></a></li>
+          <li><a href="#SYSTEM_DEFINED_PLANNING_SETTINGS"><abbr title="SYSTEM_DEFINED_PLANNING_SETTINGS"><span class="sideoverflow">SYSTEM_DEFINED_PLANNING_SETTINGS</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +79,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-values">
         <caption>Values</caption>
         <thead>
         <tr>
@@ -81,36 +89,40 @@
         </thead>
         <tbody>
         <tr>
-          <td>USER_DEFINED</td>
-          <td></td>
+          <td><span class="value-value" id="USER_DEFINED">USER_DEFINED</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>SYSTEM_DEFINED_GENERAL</td>
-          <td></td>
+          <td><span class="value-value" id="SYSTEM_DEFINED_GENERAL">SYSTEM_DEFINED_GENERAL</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>SYSTEM_DEFINED_WORKERS</td>
-          <td></td>
+          <td><span class="value-value" id="SYSTEM_DEFINED_WORKERS">SYSTEM_DEFINED_WORKERS</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>SYSTEM_DEFINED_CUSTOMERS</td>
-          <td></td>
+          <td><span class="value-value" id="SYSTEM_DEFINED_CUSTOMERS">SYSTEM_DEFINED_CUSTOMERS</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>SYSTEM_DEFINED_EQUIPMENT</td>
-          <td></td>
+          <td><span class="value-value" id="SYSTEM_DEFINED_EQUIPMENT">SYSTEM_DEFINED_EQUIPMENT</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>SYSTEM_DEFINED_ROOM</td>
-          <td></td>
+          <td><span class="value-value" id="SYSTEM_DEFINED_ROOM">SYSTEM_DEFINED_ROOM</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>SYSTEM_DEFINED_BASIC_INFORMATION</td>
-          <td></td>
+          <td><span class="value-value" id="SYSTEM_DEFINED_BASIC_INFORMATION">SYSTEM_DEFINED_BASIC_INFORMATION</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>SYSTEM_DEFINED_SERVICE_CLASS</td>
-          <td></td>
+          <td><span class="value-value" id="SYSTEM_DEFINED_SERVICE_CLASS">SYSTEM_DEFINED_SERVICE_CLASS</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="SYSTEM_DEFINED_PLANNING_SETTINGS">SYSTEM_DEFINED_PLANNING_SETTINGS</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         </tbody>
       </table>
@@ -127,14 +139,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

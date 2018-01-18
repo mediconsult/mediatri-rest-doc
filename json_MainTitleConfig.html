@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#KUMOAN_HOITOTAHTONI"><abbr title="KUMOAN_HOITOTAHTONI"><span class="sideoverflow">KUMOAN_HOITOTAHTONI</span></abbr></a></li>
+          <li><a href="#MAARAAN_HOITOTAHTONANI"><abbr title="MAARAAN_HOITOTAHTONANI"><span class="sideoverflow">MAARAAN_HOITOTAHTONANI</span></abbr></a></li>
+          <li><a href="#NO_WILL"><abbr title="NO_WILL"><span class="sideoverflow">NO_WILL</span></abbr></a></li>
+          <li><a href="#ERROR"><abbr title="ERROR"><span class="sideoverflow">ERROR</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -66,7 +69,7 @@
 
       <h1 class="page-header">MainTitleConfig <small>Data Type</small></h1>
 
-      <p>DTO model to present configuration for main titles used in kertomus configuration DTO KertomusFormConfig.
+      <p>DTO model to present configuration for main titles used in kertomus configuration DTO <a href="json_KertomusFormConfig.html">KertomusFormConfig</a>.
 This configuration includes two lists:
 <ul>
 <li>Map of titles from Mallikirjaukset. <p>
@@ -74,12 +77,16 @@ Key is the otsikko name from teksti table and value is title's value stored in v
 Based class from ViewTitleValue presents the default value depending from type of otsikko.
 </li>
 <li>Map of groups with list of titles in every group.</li>
-</ul></p>
+</ul>
+
+Main title can have general näkymä/view code protection.
+Codes under protection is hardcoded now and contains in core.properties file.
+Server reads core.properties file to check if main title is under propection.</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -90,57 +97,194 @@ Based class from ViewTitleValue presents the default value depending from type o
         </thead>
         <tbody>
         <tr>
-          <td>  templateTitles
+          <td>  <span class="property-name">templateTitles</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">map of <a href="json_TitleSettings.html">TitleSettings</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  groupTitles
-</td>
-          <td>  object
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  name
+          <td>  <span class="property-name">groupTitles</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">array of <a href="json_GroupTitlesConfig.html">GroupTitlesConfig</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  paanakyma
+          <td>  <span class="property-name">name</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">paanakyma</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">deleteEmptyTitle</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">userGroup</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">signTitle</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">lisanakyma</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">lisanakymat</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_CodeDTO.html">CodeDTO</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;templateTitles&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
+    &quot;property1&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      }, {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      } ],
+      &quot;data&quot; : {
+        &quot;valueAsString&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345,
+        &quot;link&quot; : 12345,
+        &quot;emptyValue&quot; : true,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;vapaa&quot; : &quot;...&quot;
+      },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    },
+    &quot;property2&quot; : {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;presentation&quot; : &quot;...&quot;,
+      &quot;comments&quot; : [ {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      }, {
+        &quot;value&quot; : &quot;...&quot;,
+        &quot;annotation&quot; : &quot;...&quot;,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;emptyValue&quot; : true,
+        &quot;link&quot; : 12345,
+        &quot;vapaa&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345
+      } ],
+      &quot;data&quot; : {
+        &quot;valueAsString&quot; : &quot;...&quot;,
+        &quot;row&quot; : 12345,
+        &quot;link&quot; : 12345,
+        &quot;emptyValue&quot; : true,
+        &quot;vakio&quot; : &quot;...&quot;,
+        &quot;vapaa&quot; : &quot;...&quot;
+      },
+      &quot;linkedTitles&quot; : [ { }, { } ],
+      &quot;row&quot; : 12345
+    }
   },
-  &quot;groupTitles&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
-  },
+  &quot;groupTitles&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    }, {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    } ],
+    &quot;empty&quot; : true
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;titles&quot; : [ {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    }, {
+      &quot;titleName&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true
+    } ],
+    &quot;empty&quot; : true
+  } ],
   &quot;name&quot; : &quot;...&quot;,
-  &quot;paanakyma&quot; : &quot;...&quot;
+  &quot;paanakyma&quot; : &quot;...&quot;,
+  &quot;deleteEmptyTitle&quot; : true,
+  &quot;userGroup&quot; : 12345,
+  &quot;signTitle&quot; : &quot;...&quot;,
+  &quot;lisanakyma&quot; : &quot;...&quot;,
+  &quot;lisanakymat&quot; : [ {
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;
+  }, {
+    &quot;code&quot; : &quot;...&quot;,
+    &quot;abbreviation&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;
+  } ]
 }</pre>
 
         <footer class="footer">
@@ -155,14 +299,14 @@ Based class from ViewTitleValue presents the default value depending from type o
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

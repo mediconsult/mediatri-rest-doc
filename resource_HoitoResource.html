@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,9 +51,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_HoitoResource_getHoidot_GET">GET /hoidot/{id}</a></li>
-          <li><a href="#resource_HoitoResource_markHoitoAsDone_PUT">PUT /hoidot/{id}/done</a></li>
-          <li><a href="#resource_HoitoResource_markHoitoAsEnded_PUT">PUT /hoidot/{id}/end</a></li>
+          <li><a href="#resource_HoitoResource_getHoidot_GET"><abbr title="GET /hoidot/{id}"><span class="sideoverflow">GET /hoidot/{id}</span></abbr></a></li>
+          <li><a href="#resource_HoitoResource_markHoitoAsDone_PUT"><abbr title="PUT /hoidot/{id}/done"><span class="sideoverflow">PUT /hoidot/{id}/done</span></abbr></a></li>
+          <li><a href="#resource_HoitoResource_markHoitoAsEnded_PUT"><abbr title="PUT /hoidot/{id}/end"><span class="sideoverflow">PUT /hoidot/{id}/end</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -70,14 +68,14 @@
 
       <h1 class="page-header">HoitoResource <small>Resource</small></h1>
 
-      <p>REST API for Hoito (Hoito-ohjeet ja m��r�ykset)</p>
+      <p>REST API for Hoito (Hoito-ohjeet ja määräykset)</p>
 
       <div id="resource_HoitoResource_getHoidot_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/hoidot/{id} <a href="../api/v1hoidot/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/hoidot/{id} <a href="../api/v1/hoidot/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Fetch Hoidot with patient id</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -89,15 +87,15 @@
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>Patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">Patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -108,21 +106,130 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Hoidot.html">Hoidot</a>
- (JSON)</td>
-            <td>Hoidot List of Hoito objects</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoidot.html">Hoidot</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Hoidot List of Hoito objects</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /hoidot/{id}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;omistaja&quot; : 12345,
+  &quot;hoidot&quot; : [ {
+    &quot;alkaa&quot; : { },
+    &quot;loppuu&quot; : { },
+    &quot;maaraaja&quot; : 12345,
+    &quot;tekija&quot; : 12345,
+    &quot;otsikko&quot; : &quot;...&quot;,
+    &quot;vakio&quot; : &quot;...&quot;,
+    &quot;vapaa&quot; : &quot;...&quot;,
+    &quot;huomautuksia&quot; : &quot;...&quot;,
+    &quot;kellonajat&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;lopettaja&quot; : 12345,
+    &quot;lopetettu&quot; : 12345,
+    &quot;kerta&quot; : &quot;...&quot;,
+    &quot;tehty&quot; : 12345,
+    &quot;lomake&quot; : 12345,
+    &quot;rivi&quot; : 12345,
+    &quot;muutosaika&quot; : 12345,
+    &quot;maaraajaNimi&quot; : &quot;...&quot;,
+    &quot;kirjaajaNimi&quot; : &quot;...&quot;,
+    &quot;tekijaNimi&quot; : &quot;...&quot;,
+    &quot;lopettajaNimi&quot; : &quot;...&quot;,
+    &quot;lomakeNimi&quot; : &quot;...&quot;
+  }, {
+    &quot;alkaa&quot; : { },
+    &quot;loppuu&quot; : { },
+    &quot;maaraaja&quot; : 12345,
+    &quot;tekija&quot; : 12345,
+    &quot;otsikko&quot; : &quot;...&quot;,
+    &quot;vakio&quot; : &quot;...&quot;,
+    &quot;vapaa&quot; : &quot;...&quot;,
+    &quot;huomautuksia&quot; : &quot;...&quot;,
+    &quot;kellonajat&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;lopettaja&quot; : 12345,
+    &quot;lopetettu&quot; : 12345,
+    &quot;kerta&quot; : &quot;...&quot;,
+    &quot;tehty&quot; : 12345,
+    &quot;lomake&quot; : 12345,
+    &quot;rivi&quot; : 12345,
+    &quot;muutosaika&quot; : 12345,
+    &quot;maaraajaNimi&quot; : &quot;...&quot;,
+    &quot;kirjaajaNimi&quot; : &quot;...&quot;,
+    &quot;tekijaNimi&quot; : &quot;...&quot;,
+    &quot;lopettajaNimi&quot; : &quot;...&quot;,
+    &quot;lomakeNimi&quot; : &quot;...&quot;
+  } ],
+  &quot;permissions&quot; : [ {
+    &quot;add&quot; : true,
+    &quot;data&quot; : {
+      &quot;lomakeId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;hoitosuhdevaatimus&quot; : true,
+      &quot;vastuuyksikko&quot; : 12345,
+      &quot;pohjavari&quot; : 12345,
+      &quot;fullFormTypeId&quot; : 12345,
+      &quot;formTypeInfo&quot; : { },
+      &quot;ownerTypeInfo&quot; : { },
+      &quot;formOwnerId&quot; : 12345
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;change&quot; : true,
+    &quot;view&quot; : true,
+    &quot;remove&quot; : true
+  }, {
+    &quot;add&quot; : true,
+    &quot;data&quot; : {
+      &quot;lomakeId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;hoitosuhdevaatimus&quot; : true,
+      &quot;vastuuyksikko&quot; : 12345,
+      &quot;pohjavari&quot; : 12345,
+      &quot;fullFormTypeId&quot; : 12345,
+      &quot;formTypeInfo&quot; : { },
+      &quot;ownerTypeInfo&quot; : { },
+      &quot;formOwnerId&quot; : 12345
+    },
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;change&quot; : true,
+    &quot;view&quot; : true,
+    &quot;remove&quot; : true
+  } ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_HoitoResource_markHoitoAsDone_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/hoidot/{id}/done <a href="../api/v1hoidot/{id}/done" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/hoidot/{id}/done <a href="../api/v1/hoidot/{id}/done" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Mark Hoito entity as done</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -134,15 +241,15 @@
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>Patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">Patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -153,20 +260,20 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_Hoito.html">Hoito</a>
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">HoitoDTO</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoito.html">Hoito</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">HoitoDTO</span></td>
           </tr>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server.">application/xml</abbr></td>
-            <td><a href="xml_ns0_hoito.html">hoito</a>
- (XML)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_hoito.html">hoito</a>
+ (XML)</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -177,21 +284,73 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td>Status of the modification</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">Status of the modification</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /hoidot/{id}/done
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;alkaa&quot; : { },
+  &quot;loppuu&quot; : { },
+  &quot;maaraaja&quot; : 12345,
+  &quot;tekija&quot; : 12345,
+  &quot;otsikko&quot; : &quot;...&quot;,
+  &quot;vakio&quot; : &quot;...&quot;,
+  &quot;vapaa&quot; : &quot;...&quot;,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;kellonajat&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;lopettaja&quot; : 12345,
+  &quot;lopetettu&quot; : 12345,
+  &quot;kerta&quot; : &quot;...&quot;,
+  &quot;tehty&quot; : 12345,
+  &quot;lomake&quot; : 12345,
+  &quot;rivi&quot; : 12345,
+  &quot;muutosaika&quot; : 12345,
+  &quot;maaraajaNimi&quot; : &quot;...&quot;,
+  &quot;kirjaajaNimi&quot; : &quot;...&quot;,
+  &quot;tekijaNimi&quot; : &quot;...&quot;,
+  &quot;lopettajaNimi&quot; : &quot;...&quot;,
+  &quot;lomakeNimi&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_HoitoResource_markHoitoAsEnded_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/hoidot/{id}/end <a href="../api/v1hoidot/{id}/end" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/hoidot/{id}/end <a href="../api/v1/hoidot/{id}/end" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Mark Hoito entity as ended</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -203,15 +362,15 @@
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>Patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">Patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -222,20 +381,20 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_Hoito.html">Hoito</a>
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">HoitoDTO</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Hoito.html">Hoito</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">HoitoDTO</span></td>
           </tr>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server.">application/xml</abbr></td>
-            <td><a href="xml_ns0_hoito.html">hoito</a>
- (XML)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_hoito.html">hoito</a>
+ (XML)</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -246,13 +405,65 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td>Status of the modification</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">Status of the modification</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /hoidot/{id}/end
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;alkaa&quot; : { },
+  &quot;loppuu&quot; : { },
+  &quot;maaraaja&quot; : 12345,
+  &quot;tekija&quot; : 12345,
+  &quot;otsikko&quot; : &quot;...&quot;,
+  &quot;vakio&quot; : &quot;...&quot;,
+  &quot;vapaa&quot; : &quot;...&quot;,
+  &quot;huomautuksia&quot; : &quot;...&quot;,
+  &quot;kellonajat&quot; : &quot;...&quot;,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;lopettaja&quot; : 12345,
+  &quot;lopetettu&quot; : 12345,
+  &quot;kerta&quot; : &quot;...&quot;,
+  &quot;tehty&quot; : 12345,
+  &quot;lomake&quot; : 12345,
+  &quot;rivi&quot; : 12345,
+  &quot;muutosaika&quot; : 12345,
+  &quot;maaraajaNimi&quot; : &quot;...&quot;,
+  &quot;kirjaajaNimi&quot; : &quot;...&quot;,
+  &quot;tekijaNimi&quot; : &quot;...&quot;,
+  &quot;lopettajaNimi&quot; : &quot;...&quot;,
+  &quot;lomakeNimi&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -267,14 +478,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

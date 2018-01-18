@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#KERTOMUS_LUONNOS"><abbr title="KERTOMUS_LUONNOS"><span class="sideoverflow">KERTOMUS_LUONNOS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_KESKEN"><abbr title="KERTOMUS_KESKEN"><span class="sideoverflow">KERTOMUS_KESKEN</span></abbr></a></li>
+          <li><a href="#KERTOMUS_VALMIS"><abbr title="KERTOMUS_VALMIS"><span class="sideoverflow">KERTOMUS_VALMIS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_UNDEFIND"><abbr title="KERTOMUS_UNDEFIND"><span class="sideoverflow">KERTOMUS_UNDEFIND</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -67,14 +70,12 @@
       <h1 class="page-header">LaakeVastaAihe <small>Data Type</small></h1>
 
       <p>DTO for LaakeVastaAihe
-
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html
-http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html</p>
+ <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/LAAKE_VASTA_AIHE.html</a> <a target="_blank" href="http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html">http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html</a></p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -85,39 +86,39 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html</p>
         </thead>
         <tbody>
         <tr>
-          <td>  vastaAihe
+          <td>  <span class="property-name">vastaAihe</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Returns the id
-</td>
-        </tr>
-        <tr>
-          <td>  vastaAiheAlkupera
-</td>
-          <td>  object
-
-</td>
-          <td>  Returns the origin of the contraindication
+          <td>  <span class="property-description">Returns the id</span>
 </td>
         </tr>
         <tr>
-          <td>  selite
+          <td>  <span class="property-name">vastaAiheAlkupera</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  Returns the name of the contraindication in plain language
+          <td>  <span class="property-description">Returns the origin of the contraindication</span>
 </td>
         </tr>
         <tr>
-          <td>  rajoite
+          <td>  <span class="property-name">selite</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Returns the type of the contraindication
+          <td>  <span class="property-description">Returns the name of the contraindication in plain language</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">rajoite</span>
+</td>
+          <td>  <span class="datatype-reference">object
+</span>
+</td>
+          <td>  <span class="property-description">Returns the type of the contraindication
 -'Y' age in years
 -'M' age in months
 -'W' age in weeks
@@ -126,71 +127,71 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html</p>
 -'B' breastfeeding
 -'D' diagnose
 -'1' male
--'2' female
+-'2' female</span>
 </td>
         </tr>
         <tr>
-          <td>  alaraja
+          <td>  <span class="property-name">alaraja</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Returns the lower limit of the contraindication
-</td>
-        </tr>
-        <tr>
-          <td>  ylaraja
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the upper limit of the contraindication
+          <td>  <span class="property-description">Returns the lower limit of the contraindication</span>
 </td>
         </tr>
         <tr>
-          <td>  alkupera
+          <td>  <span class="property-name">ylaraja</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Returns the origin of the contraindication
+          <td>  <span class="property-description">Returns the upper limit of the contraindication</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">alkupera</span>
+</td>
+          <td>  <span class="datatype-reference">object
+</span>
+</td>
+          <td>  <span class="property-description">Returns the origin of the contraindication
 -'O' if therapy group is linked in the current organization
--'A' or 'M' otherwise
+-'A' or 'M' otherwise</span>
 </td>
         </tr>
         <tr>
-          <td>  poistettu
+          <td>  <span class="property-name">poistettu</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  Returns the code of the contraindication removal. 'E' - not removed, 'K' = removed
-</td>
-        </tr>
-        <tr>
-          <td>  muutosaika
-</td>
-          <td>  number
-
-</td>
-          <td>  Returns the actual DB-change time of the contraindication
+          <td>  <span class="property-description">Returns the code of the contraindication removal. 'E' - not removed, 'K' = removed</span>
 </td>
         </tr>
         <tr>
-          <td>  muutospaikka
+          <td>  <span class="property-name">muutosaika</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  Returns the organization in which the change has been made
+          <td>  <span class="property-description">Returns the actual DB-change time of the contraindication</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">muutospaikka</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the organization in which the change has been made</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;vastaAihe&quot; : 12345,
   &quot;vastaAiheAlkupera&quot; : { },
   &quot;selite&quot; : &quot;...&quot;,
@@ -215,14 +216,14 @@ http://vc-buildsrv1/documents/mediatridocs/latest/tables/VASTA_AIHE.html</p>
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

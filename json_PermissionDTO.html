@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,14 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#ACTIVE"><abbr title="ACTIVE"><span class="sideoverflow">ACTIVE</span></abbr></a></li>
+          <li><a href="#PASSIVE"><abbr title="PASSIVE"><span class="sideoverflow">PASSIVE</span></abbr></a></li>
+          <li><a href="#REMOVED"><abbr title="REMOVED"><span class="sideoverflow">REMOVED</span></abbr></a></li>
+          <li><a href="#INTEGRATION"><abbr title="INTEGRATION"><span class="sideoverflow">INTEGRATION</span></abbr></a></li>
+          <li><a href="#REMOVEDANDHIDDEN"><abbr title="REMOVEDANDHIDDEN"><span class="sideoverflow">REMOVEDANDHIDDEN</span></abbr></a></li>
+          <li><a href="#ALIAS"><abbr title="ALIAS"><span class="sideoverflow">ALIAS</span></abbr></a></li>
+          <li><a href="#COMBINED"><abbr title="COMBINED"><span class="sideoverflow">COMBINED</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -100,7 +106,7 @@ hoitosuhdevaatimus: "E"
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -111,65 +117,65 @@ hoitosuhdevaatimus: "E"
         </thead>
         <tbody>
         <tr>
-          <td>  view
+          <td>  <span class="property-name">view</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  change
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  add
+          <td>  <span class="property-name">change</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  data
-</td>
-          <td>  object
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  remove
+          <td>  <span class="property-name">add</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  type
+          <td>  <span class="property-name">data</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">remove</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">type</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;view&quot; : true,
   &quot;change&quot; : true,
   &quot;add&quot; : true,
@@ -190,14 +196,14 @@ hoitosuhdevaatimus: "E"
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

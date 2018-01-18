@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#WORK"><abbr title="WORK"><span class="sideoverflow">WORK</span></abbr></a></li>
+          <li><a href="#TIME"><abbr title="TIME"><span class="sideoverflow">TIME</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +72,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,120 +83,129 @@
         </thead>
         <tbody>
         <tr>
-          <td>  startTime
+          <td>  <span class="property-name">startTime</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  durationInMinutes
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  recurrenceCode
+          <td>  <span class="property-name">durationInMinutes</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  recurrenceEndDate
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  name
+          <td>  <span class="property-name">recurrenceCode</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  abbreviation
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  character
+          <td>  <span class="property-name">recurrenceEndDate</span>
 </td>
-          <td>  <a href="json_TapahtumaLuonne.html">TapahtumaLuonne</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  eventModelId
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  calendarContext
+          <td>  <span class="property-name">name</span>
 </td>
-          <td>  <a href="json_CalendarContextDto.html">CalendarContextDto</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  excludedDays
-</td>
-          <td>  array of string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  reportingGroup
+          <td>  <span class="property-name">abbreviation</span>
 </td>
-          <td>  <a href="json_ReportingGroupDto.html">ReportingGroupDto</a>
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  eventModel
-</td>
-          <td>  <a href="json_EventModelDto.html">EventModelDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  unitBasicInfoTitles
+          <td>  <span class="property-name">character</span>
 </td>
-          <td>  array of <a href="json_BaseTitleValue.html">BaseTitleValue</a>
-
+          <td>  <span class="datatype-reference"><a href="json_TapahtumaLuonne.html">TapahtumaLuonne</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">eventModelId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">eventModelOutdated</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">calendarContext</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_CalendarContextDto.html">CalendarContextDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">excludedDays</span>
+</td>
+          <td>  <span class="datatype-reference">array of string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">reportingGroup</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_ReportingGroupDto.html">ReportingGroupDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">eventModel</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_EventModelDto.html">EventModelDto</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">unitBasicInfoTitles</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_TitleSettings.html">TitleSettings</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -204,80 +214,81 @@
         </tr>
         <tbody>
         <tr>
-          <td>version</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>id</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>created</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">created</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>modified</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">modified</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;startTime&quot; : 12345,
   &quot;durationInMinutes&quot; : 12345,
   &quot;recurrenceCode&quot; : &quot;...&quot;,
   &quot;recurrenceEndDate&quot; : &quot;...&quot;,
   &quot;name&quot; : &quot;...&quot;,
   &quot;abbreviation&quot; : &quot;...&quot;,
-  &quot;character&quot; : &quot;ASSIGNED&quot;,
+  &quot;character&quot; : &quot;ANCHOR&quot;,
   &quot;eventModelId&quot; : 12345,
+  &quot;eventModelOutdated&quot; : true,
   &quot;calendarContext&quot; : {
     &quot;unit&quot; : 12345,
+    &quot;unitName&quot; : &quot;...&quot;,
+    &quot;unitAbbreviation&quot; : &quot;...&quot;,
     &quot;form&quot; : 12345
   },
   &quot;excludedDays&quot; : [ &quot;...&quot;, &quot;...&quot; ],
   &quot;reportingGroup&quot; : {
     &quot;color&quot; : &quot;...&quot;,
-    &quot;meaning&quot; : &quot;AVAILABLE&quot;,
+    &quot;meaning&quot; : &quot;BUSY_OPTIONAL&quot;,
     &quot;calendarModelFormId&quot; : 12345,
     &quot;category&quot; : &quot;WORK&quot;,
     &quot;eventModels&quot; : [ {
       &quot;defaultTitleValues&quot; : [ { }, { } ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
       &quot;basicData&quot; : {
-        &quot;property1&quot; : &quot;...&quot;,
-        &quot;property2&quot; : &quot;...&quot;
+        &quot;property1&quot; : [ { }, { } ],
+        &quot;property2&quot; : [ { }, { } ]
       },
       &quot;reportingGroupId&quot; : 12345,
       &quot;calendarModelFormId&quot; : 12345,
       &quot;defaultUnit&quot; : 12345,
       &quot;internalNote&quot; : &quot;...&quot;,
       &quot;defaultDurationInMins&quot; : 12345,
-      &quot;startTimeLimit&quot; : &quot;...&quot;,
-      &quot;endTimeLimit&quot; : &quot;...&quot;,
-      &quot;timeLimitChangeable&quot; : true,
       &quot;requiredSkills&quot; : [ { }, { } ],
       &quot;requiredRoomGroups&quot; : [ { }, { } ],
       &quot;requiredEquipmentTypes&quot; : [ { }, { } ],
       &quot;contentGroups&quot; : [ { }, { } ],
-      &quot;minParticipants&quot; : 12345,
-      &quot;maxParticipants&quot; : 12345,
+      &quot;customerEvent&quot; : true,
+      &quot;participantAmount&quot; : { },
       &quot;waitingRoom&quot; : &quot;...&quot;,
       &quot;serviceClass&quot; : &quot;...&quot;,
       &quot;serviceClassChangeable&quot; : true,
       &quot;outdated&quot; : true,
       &quot;hasEvents&quot; : true,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;planningSettingsChangeable&quot; : { },
       &quot;description&quot; : &quot;...&quot;,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
@@ -285,31 +296,29 @@
       &quot;modified&quot; : 12345
     }, {
       &quot;defaultTitleValues&quot; : [ { }, { } ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;abbr&quot; : &quot;...&quot;,
       &quot;basicData&quot; : {
-        &quot;property1&quot; : &quot;...&quot;,
-        &quot;property2&quot; : &quot;...&quot;
+        &quot;property1&quot; : [ { }, { } ],
+        &quot;property2&quot; : [ { }, { } ]
       },
       &quot;reportingGroupId&quot; : 12345,
       &quot;calendarModelFormId&quot; : 12345,
       &quot;defaultUnit&quot; : 12345,
       &quot;internalNote&quot; : &quot;...&quot;,
       &quot;defaultDurationInMins&quot; : 12345,
-      &quot;startTimeLimit&quot; : &quot;...&quot;,
-      &quot;endTimeLimit&quot; : &quot;...&quot;,
-      &quot;timeLimitChangeable&quot; : true,
       &quot;requiredSkills&quot; : [ { }, { } ],
       &quot;requiredRoomGroups&quot; : [ { }, { } ],
       &quot;requiredEquipmentTypes&quot; : [ { }, { } ],
       &quot;contentGroups&quot; : [ { }, { } ],
-      &quot;minParticipants&quot; : 12345,
-      &quot;maxParticipants&quot; : 12345,
+      &quot;customerEvent&quot; : true,
+      &quot;participantAmount&quot; : { },
       &quot;waitingRoom&quot; : &quot;...&quot;,
       &quot;serviceClass&quot; : &quot;...&quot;,
       &quot;serviceClassChangeable&quot; : true,
       &quot;outdated&quot; : true,
       &quot;hasEvents&quot; : true,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
+      &quot;planningSettingsChangeable&quot; : { },
       &quot;description&quot; : &quot;...&quot;,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
@@ -327,54 +336,65 @@
   &quot;eventModel&quot; : {
     &quot;defaultTitleValues&quot; : [ {
       &quot;eventModelContentGroupId&quot; : 12345,
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;COLLAPSED&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_SERVICE_CLASS&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
       &quot;eventModelContentGroupId&quot; : 12345,
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;EXCLUDED&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_EQUIPMENT&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;abbr&quot; : &quot;...&quot;,
     &quot;basicData&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
+      &quot;property1&quot; : [ {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      }, {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      } ],
+      &quot;property2&quot; : [ {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      }, {
+        &quot;title&quot; : { },
+        &quot;displayOrder&quot; : 12345
+      } ]
     },
     &quot;reportingGroupId&quot; : 12345,
     &quot;calendarModelFormId&quot; : 12345,
     &quot;defaultUnit&quot; : 12345,
     &quot;internalNote&quot; : &quot;...&quot;,
     &quot;defaultDurationInMins&quot; : 12345,
-    &quot;startTimeLimit&quot; : &quot;...&quot;,
-    &quot;endTimeLimit&quot; : &quot;...&quot;,
-    &quot;timeLimitChangeable&quot; : true,
     &quot;requiredSkills&quot; : [ {
+      &quot;role&quot; : &quot;...&quot;,
+      &quot;eventModelSkillId&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;removed&quot; : true,
       &quot;changeable&quot; : true,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
+      &quot;role&quot; : &quot;...&quot;,
+      &quot;eventModelSkillId&quot; : 12345,
       &quot;name&quot; : &quot;...&quot;,
-      &quot;abbr&quot; : &quot;...&quot;,
-      &quot;removed&quot; : true,
       &quot;changeable&quot; : true,
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
@@ -401,8 +421,8 @@
       &quot;modified&quot; : 12345
     } ],
     &quot;requiredEquipmentTypes&quot; : [ {
-      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER&quot;,
       &quot;amount&quot; : 12345,
+      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER_AND_WORKER&quot;,
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -411,8 +431,8 @@
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
-      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER&quot;,
       &quot;amount&quot; : 12345,
+      &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER_AND_WORKER&quot;,
       &quot;name&quot; : &quot;...&quot;,
       &quot;abbr&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -422,37 +442,52 @@
       &quot;modified&quot; : 12345
     } ],
     &quot;contentGroups&quot; : [ {
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;COLLAPSED&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_CUSTOMERS&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     }, {
-      &quot;freeItems&quot; : [ { }, { } ],
       &quot;name&quot; : &quot;...&quot;,
       &quot;removed&quot; : true,
-      &quot;visibility&quot; : &quot;VISIBLE&quot;,
       &quot;order&quot; : 12345,
-      &quot;type&quot; : &quot;USER_DEFINED&quot;,
+      &quot;visibility&quot; : &quot;VISIBLE&quot;,
+      &quot;type&quot; : &quot;SYSTEM_DEFINED_CUSTOMERS&quot;,
+      &quot;freeItems&quot; : [ { }, { } ],
       &quot;version&quot; : 12345,
       &quot;id&quot; : 12345,
       &quot;created&quot; : 12345,
       &quot;modified&quot; : 12345
     } ],
-    &quot;minParticipants&quot; : 12345,
-    &quot;maxParticipants&quot; : 12345,
+    &quot;customerEvent&quot; : true,
+    &quot;participantAmount&quot; : {
+      &quot;min&quot; : 12345,
+      &quot;max&quot; : 12345,
+      &quot;minMandatoryInCreation&quot; : true,
+      &quot;minMandatoryWhenDone&quot; : true,
+      &quot;maxLimited&quot; : true
+    },
     &quot;waitingRoom&quot; : &quot;...&quot;,
     &quot;serviceClass&quot; : &quot;...&quot;,
     &quot;serviceClassChangeable&quot; : true,
     &quot;outdated&quot; : true,
     &quot;hasEvents&quot; : true,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;abbr&quot; : &quot;...&quot;,
+    &quot;planningSettingsChangeable&quot; : {
+      &quot;timeLimitChangeable&quot; : true,
+      &quot;optimizationInUseChangeable&quot; : true,
+      &quot;keepResourcesInOptimizationChangeable&quot; : true,
+      &quot;customerVisitChangeable&quot; : true,
+      &quot;startTimeLimit&quot; : &quot;...&quot;,
+      &quot;endTimeLimit&quot; : &quot;...&quot;,
+      &quot;keepResourcesInOptimization&quot; : true,
+      &quot;customerVisit&quot; : true,
+      &quot;optimizationInUse&quot; : true
+    },
     &quot;description&quot; : &quot;...&quot;,
     &quot;version&quot; : 12345,
     &quot;id&quot; : 12345,
@@ -461,18 +496,66 @@
   },
   &quot;unitBasicInfoTitles&quot; : [ {
     &quot;name&quot; : &quot;...&quot;,
-    &quot;vapaa&quot; : &quot;...&quot;,
-    &quot;emptyValue&quot; : true,
     &quot;type&quot; : 12345,
-    &quot;vakio&quot; : &quot;...&quot;,
-    &quot;editModel&quot; : true
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
   }, {
     &quot;name&quot; : &quot;...&quot;,
-    &quot;vapaa&quot; : &quot;...&quot;,
-    &quot;emptyValue&quot; : true,
     &quot;type&quot; : 12345,
-    &quot;vakio&quot; : &quot;...&quot;,
-    &quot;editModel&quot; : true
+    &quot;presentation&quot; : &quot;...&quot;,
+    &quot;comments&quot; : [ {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;value&quot; : &quot;...&quot;,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ],
+    &quot;data&quot; : {
+      &quot;valueAsString&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345,
+      &quot;link&quot; : 12345,
+      &quot;emptyValue&quot; : true,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;vapaa&quot; : &quot;...&quot;
+    },
+    &quot;linkedTitles&quot; : [ { }, { } ],
+    &quot;row&quot; : 12345
   } ],
   &quot;version&quot; : 12345,
   &quot;id&quot; : 12345,
@@ -492,14 +575,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

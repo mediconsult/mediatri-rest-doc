@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,14 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#MA"><abbr title="MA"><span class="sideoverflow">MA</span></abbr></a></li>
+          <li><a href="#TI"><abbr title="TI"><span class="sideoverflow">TI</span></abbr></a></li>
+          <li><a href="#KE"><abbr title="KE"><span class="sideoverflow">KE</span></abbr></a></li>
+          <li><a href="#TO"><abbr title="TO"><span class="sideoverflow">TO</span></abbr></a></li>
+          <li><a href="#PE"><abbr title="PE"><span class="sideoverflow">PE</span></abbr></a></li>
+          <li><a href="#LA"><abbr title="LA"><span class="sideoverflow">LA</span></abbr></a></li>
+          <li><a href="#SU"><abbr title="SU"><span class="sideoverflow">SU</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -66,12 +72,12 @@
 
       <h1 class="page-header">WorkerAvailabilityDto <small>Data Type</small></h1>
 
-      <p></p>
+      <p>Data transfer object for worker availability data</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,53 +88,58 @@
         </thead>
         <tbody>
         <tr>
-          <td>  worker
+          <td>  <span class="property-name">worker</span>
 </td>
-          <td>  <a href="json_User.html">User</a>
-
+          <td>  <span class="datatype-reference"><a href="json_User.html">User</a>
+</span>
 </td>
-          <td>  Get general user information for the worker
+          <td>  <span class="property-description">Get general user information for the worker</span>
 </td>
         </tr>
         <tr>
-          <td>  availability
+          <td>  <span class="property-name">availability</span>
 </td>
-          <td>  <a href="json_AvailabilityDto.html">AvailabilityDto</a>
-
+          <td>  <span class="datatype-reference"><a href="json_AvailabilityDto.html">AvailabilityDto</a>
+</span>
 </td>
-          <td>  Get availability information for the worker
+          <td>  <span class="property-description">Get availability information for the worker</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;worker&quot; : {
+    &quot;omistajaListDescription&quot; : &quot;...&quot;,
     &quot;lastName&quot; : &quot;...&quot;,
-    &quot;startTime&quot; : 12345,
-    &quot;endTime&quot; : 12345,
-    &quot;userName&quot; : &quot;...&quot;,
-    &quot;firstName&quot; : &quot;...&quot;,
-    &quot;basicInfo&quot; : {
-      &quot;dataLoaded&quot; : true,
-      &quot;href&quot; : &quot;...&quot;,
-      &quot;titles&quot; : [ { }, { } ]
-    },
     &quot;skills&quot; : {
       &quot;dataLoaded&quot; : true,
       &quot;href&quot; : &quot;...&quot;,
       &quot;skills&quot; : [ { }, { } ]
     },
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : 12345,
+    &quot;basicInfo&quot; : {
+      &quot;dataLoaded&quot; : true,
+      &quot;href&quot; : &quot;...&quot;,
+      &quot;titles&quot; : [ { }, { } ]
+    },
+    &quot;endTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+    &quot;firstName&quot; : &quot;...&quot;,
     &quot;editTime&quot; : 12345,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;nameExtension&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
     &quot;omistajaId&quot; : 12345,
     &quot;omistajaListAvailability&quot; : {
       &quot;startTime&quot; : 12345,
       &quot;endTime&quot; : 12345
-    }
+    },
+    &quot;identifier&quot; : &quot;...&quot;,
+    &quot;alias&quot; : 12345
   },
   &quot;availability&quot; : {
     &quot;start&quot; : 12345,
@@ -136,111 +147,14 @@
     &quot;available&quot; : true,
     &quot;workingHoursPlanned&quot; : true,
     &quot;conflicts&quot; : true,
-    &quot;workingHourEvents&quot; : [ {
-      &quot;restricted&quot; : true,
-      &quot;startTime&quot; : 12345,
-      &quot;status&quot; : &quot;DRAFT&quot;,
-      &quot;description&quot; : &quot;...&quot;,
-      &quot;durationInMinutes&quot; : 12345,
-      &quot;serviceClass&quot; : &quot;...&quot;,
-      &quot;startTimeLimit&quot; : &quot;...&quot;,
-      &quot;endTimeLimit&quot; : &quot;...&quot;,
-      &quot;internalNote&quot; : &quot;...&quot;,
-      &quot;event&quot; : { },
-      &quot;workers&quot; : [ { }, { } ],
-      &quot;customers&quot; : [ { }, { } ],
-      &quot;rooms&quot; : [ { }, { } ],
-      &quot;equipmentTypes&quot; : [ { }, { } ],
-      &quot;coursePeriods&quot; : [ { }, { } ],
-      &quot;locked&quot; : true,
-      &quot;lock&quot; : { },
-      &quot;contentGroups&quot; : [ { }, { } ],
-      &quot;actualStartTime&quot; : 12345,
-      &quot;actualEndTime&quot; : 12345,
-      &quot;missingResources&quot; : { },
-      &quot;version&quot; : 12345,
-      &quot;id&quot; : 12345,
-      &quot;created&quot; : 12345,
-      &quot;modified&quot; : 12345
-    }, {
-      &quot;restricted&quot; : true,
-      &quot;startTime&quot; : 12345,
-      &quot;status&quot; : &quot;DRAFT&quot;,
-      &quot;description&quot; : &quot;...&quot;,
-      &quot;durationInMinutes&quot; : 12345,
-      &quot;serviceClass&quot; : &quot;...&quot;,
-      &quot;startTimeLimit&quot; : &quot;...&quot;,
-      &quot;endTimeLimit&quot; : &quot;...&quot;,
-      &quot;internalNote&quot; : &quot;...&quot;,
-      &quot;event&quot; : { },
-      &quot;workers&quot; : [ { }, { } ],
-      &quot;customers&quot; : [ { }, { } ],
-      &quot;rooms&quot; : [ { }, { } ],
-      &quot;equipmentTypes&quot; : [ { }, { } ],
-      &quot;coursePeriods&quot; : [ { }, { } ],
-      &quot;locked&quot; : true,
-      &quot;lock&quot; : { },
-      &quot;contentGroups&quot; : [ { }, { } ],
-      &quot;actualStartTime&quot; : 12345,
-      &quot;actualEndTime&quot; : 12345,
-      &quot;missingResources&quot; : { },
-      &quot;version&quot; : 12345,
-      &quot;id&quot; : 12345,
-      &quot;created&quot; : 12345,
-      &quot;modified&quot; : 12345
-    } ],
     &quot;conflictingEvents&quot; : [ {
-      &quot;restricted&quot; : true,
-      &quot;startTime&quot; : 12345,
-      &quot;status&quot; : &quot;DRAFT&quot;,
-      &quot;description&quot; : &quot;...&quot;,
-      &quot;durationInMinutes&quot; : 12345,
-      &quot;serviceClass&quot; : &quot;...&quot;,
-      &quot;startTimeLimit&quot; : &quot;...&quot;,
-      &quot;endTimeLimit&quot; : &quot;...&quot;,
-      &quot;internalNote&quot; : &quot;...&quot;,
-      &quot;event&quot; : { },
-      &quot;workers&quot; : [ { }, { } ],
-      &quot;customers&quot; : [ { }, { } ],
-      &quot;rooms&quot; : [ { }, { } ],
-      &quot;equipmentTypes&quot; : [ { }, { } ],
-      &quot;coursePeriods&quot; : [ { }, { } ],
-      &quot;locked&quot; : true,
-      &quot;lock&quot; : { },
-      &quot;contentGroups&quot; : [ { }, { } ],
-      &quot;actualStartTime&quot; : 12345,
-      &quot;actualEndTime&quot; : 12345,
-      &quot;missingResources&quot; : { },
-      &quot;version&quot; : 12345,
-      &quot;id&quot; : 12345,
-      &quot;created&quot; : 12345,
-      &quot;modified&quot; : 12345
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
     }, {
-      &quot;restricted&quot; : true,
-      &quot;startTime&quot; : 12345,
-      &quot;status&quot; : &quot;DRAFT&quot;,
-      &quot;description&quot; : &quot;...&quot;,
-      &quot;durationInMinutes&quot; : 12345,
-      &quot;serviceClass&quot; : &quot;...&quot;,
-      &quot;startTimeLimit&quot; : &quot;...&quot;,
-      &quot;endTimeLimit&quot; : &quot;...&quot;,
-      &quot;internalNote&quot; : &quot;...&quot;,
-      &quot;event&quot; : { },
-      &quot;workers&quot; : [ { }, { } ],
-      &quot;customers&quot; : [ { }, { } ],
-      &quot;rooms&quot; : [ { }, { } ],
-      &quot;equipmentTypes&quot; : [ { }, { } ],
-      &quot;coursePeriods&quot; : [ { }, { } ],
-      &quot;locked&quot; : true,
-      &quot;lock&quot; : { },
-      &quot;contentGroups&quot; : [ { }, { } ],
-      &quot;actualStartTime&quot; : 12345,
-      &quot;actualEndTime&quot; : 12345,
-      &quot;missingResources&quot; : { },
-      &quot;version&quot; : 12345,
-      &quot;id&quot; : 12345,
-      &quot;created&quot; : 12345,
-      &quot;modified&quot; : 12345
+      &quot;conflictId&quot; : 12345,
+      &quot;calendarEventId&quot; : 12345,
+      &quot;eventName&quot; : &quot;...&quot;
     } ]
   }
 }</pre>
@@ -257,14 +171,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

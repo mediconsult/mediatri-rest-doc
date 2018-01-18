@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,15 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#SUUNNITELTU"><abbr title="SUUNNITELTU"><span class="sideoverflow">SUUNNITELTU</span></abbr></a></li>
+          <li><a href="#MUUTETTU"><abbr title="MUUTETTU"><span class="sideoverflow">MUUTETTU</span></abbr></a></li>
+          <li><a href="#KESKEYTETTY"><abbr title="KESKEYTETTY"><span class="sideoverflow">KESKEYTETTY</span></abbr></a></li>
+          <li><a href="#KESKEN"><abbr title="KESKEN"><span class="sideoverflow">KESKEN</span></abbr></a></li>
+          <li><a href="#TOTEUTUNUT"><abbr title="TOTEUTUNUT"><span class="sideoverflow">TOTEUTUNUT</span></abbr></a></li>
+          <li><a href="#ITSE_PERUNUT"><abbr title="ITSE_PERUNUT"><span class="sideoverflow">ITSE_PERUNUT</span></abbr></a></li>
+          <li><a href="#PERUUTETTU"><abbr title="PERUUTETTU"><span class="sideoverflow">PERUUTETTU</span></abbr></a></li>
+          <li><a href="#EI_TOTEUTUNUT"><abbr title="EI_TOTEUTUNUT"><span class="sideoverflow">EI_TOTEUTUNUT</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +78,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,196 +89,251 @@
         </thead>
         <tbody>
         <tr>
-          <td>  peruuntumisSyyKoodi
+          <td>  <span class="property-name">palvelunantaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  rekisteri
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  alkuaika
+          <td>  <span class="property-name">kirjausaika</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  tyyppi
-</td>
-          <td>  <a href="json_Palvelutapahtumaluokitus.html">Palvelutapahtumaluokitus</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  palveluntuottaja
+          <td>  <span class="property-name">tyonantaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  kirjausyksikkoId
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  luovutusHaunPalvelutapahtuma
+          <td>  <span class="property-name">tapahtumalaji</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference"><a href="json_Tapahtumalaji.html">Tapahtumalaji</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  oid
-</td>
-          <td>  string
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  palvelunantaja
+          <td>  <span class="property-name">rekisteri</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  loppuaika
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tyonantaja
+          <td>  <span class="property-name">palveluntuottaja</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  kirjausyksikko
-</td>
-          <td>  <a href="json_LazyLoadedDto.html">LazyLoadedDto</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tapahtumalaji
+          <td>  <span class="property-name">luovutusHaunPalvelutapahtuma</span>
 </td>
-          <td>  <a href="json_Tapahtumalaji.html">Tapahtumalaji</a>
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  kirjaaja
-</td>
-          <td>  number
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kirjausaika
+          <td>  <span class="property-name">kirjaajaInfo</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfUser.html">LazyLoadedDtoOfUser</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  aktiivinen
-</td>
-          <td>  boolean
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  id
+          <td>  <span class="property-name">kirjausyksikko</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference"><a href="json_LazyLoadedDtoOfUnit.html">LazyLoadedDtoOfUnit</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  omistaja
+          <td>  <span class="property-name">aktiivinen</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">loppuaika</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">kirjausyksikkoId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">oid</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">id</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">peruuntumisSyyKoodi</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">writeUsed</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">alkuaika</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">omistaja</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">kirjaaja</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">tyyppi</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_Palvelutapahtumaluokitus.html">Palvelutapahtumaluokitus</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
-  &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
-  &quot;rekisteri&quot; : &quot;...&quot;,
-  &quot;alkuaika&quot; : 12345,
-  &quot;tyyppi&quot; : &quot;VUODEOSASTOHOITOJAKSO&quot;,
-  &quot;palveluntuottaja&quot; : &quot;...&quot;,
-  &quot;kirjausyksikkoId&quot; : 12345,
-  &quot;luovutusHaunPalvelutapahtuma&quot; : true,
-  &quot;oid&quot; : &quot;...&quot;,
+      
+      <pre class="prettyprint language-js example">{
   &quot;palvelunantaja&quot; : &quot;...&quot;,
-  &quot;loppuaika&quot; : 12345,
+  &quot;kirjausaika&quot; : 12345,
   &quot;tyonantaja&quot; : 12345,
-  &quot;kirjausyksikko&quot; : {
-    &quot;object&quot; : { },
-    &quot;loaded&quot; : true,
+  &quot;tapahtumalaji&quot; : &quot;RADIOLOGIA&quot;,
+  &quot;rekisteri&quot; : &quot;...&quot;,
+  &quot;palveluntuottaja&quot; : &quot;...&quot;,
+  &quot;luovutusHaunPalvelutapahtuma&quot; : true,
+  &quot;kirjaajaInfo&quot; : {
+    &quot;object&quot; : {
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;lastName&quot; : &quot;...&quot;,
+      &quot;skills&quot; : { },
+      &quot;startTime&quot; : 12345,
+      &quot;basicInfo&quot; : { },
+      &quot;endTime&quot; : 12345,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;omistajaDescriptionForSearch&quot; : &quot;...&quot;,
+      &quot;firstName&quot; : &quot;...&quot;,
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
     &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;,
+    &quot;loaded&quot; : true
+  },
+  &quot;kirjausyksikko&quot; : {
+    &quot;loadUrl&quot; : &quot;...&quot;,
+    &quot;object&quot; : {
+      &quot;abbreviation&quot; : &quot;...&quot;,
+      &quot;omistajaListDescription&quot; : &quot;...&quot;,
+      &quot;basicInfo&quot; : { },
+      &quot;editTime&quot; : 12345,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;nameExtension&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;omistajaId&quot; : 12345,
+      &quot;omistajaListAvailability&quot; : { },
+      &quot;identifier&quot; : &quot;...&quot;,
+      &quot;alias&quot; : 12345
+    },
+    &quot;loaded&quot; : true,
     &quot;type&quot; : &quot;...&quot;
   },
-  &quot;tapahtumalaji&quot; : &quot;JONO&quot;,
-  &quot;kirjaaja&quot; : 12345,
-  &quot;kirjausaika&quot; : 12345,
   &quot;aktiivinen&quot; : true,
+  &quot;loppuaika&quot; : 12345,
+  &quot;kirjausyksikkoId&quot; : 12345,
+  &quot;oid&quot; : &quot;...&quot;,
   &quot;id&quot; : 12345,
-  &quot;omistaja&quot; : 12345
+  &quot;peruuntumisSyyKoodi&quot; : &quot;...&quot;,
+  &quot;writeUsed&quot; : true,
+  &quot;alkuaika&quot; : 12345,
+  &quot;omistaja&quot; : 12345,
+  &quot;kirjaaja&quot; : 12345,
+  &quot;tyyppi&quot; : &quot;AMMATTIHENKILON_KAYNTI_ASIKKAAN_LUONA&quot;
 }</pre>
 
         <footer class="footer">
@@ -286,14 +348,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#JULKINEN_TERVEYDENHUOLTO"><abbr title="JULKINEN_TERVEYDENHUOLTO"><span class="sideoverflow">JULKINEN_TERVEYDENHUOLTO</span></abbr></a></li>
+          <li><a href="#YKSITYINEN_TERVEYDENHUOLTO"><abbr title="YKSITYINEN_TERVEYDENHUOLTO"><span class="sideoverflow">YKSITYINEN_TERVEYDENHUOLTO</span></abbr></a></li>
+          <li><a href="#TYOTERVEYSHUOLTO"><abbr title="TYOTERVEYSHUOLTO"><span class="sideoverflow">TYOTERVEYSHUOLTO</span></abbr></a></li>
+          <li><a href="#AMMATINHARJOITTAJAT"><abbr title="AMMATINHARJOITTAJAT"><span class="sideoverflow">AMMATINHARJOITTAJAT</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -66,12 +69,12 @@
 
       <h1 class="page-header">RequiredEquipmentTypeDto <small>Data Type</small></h1>
 
-      <p></p>
+      <p>Base class for data transfer objects for objects with name/abbreviation/description data.</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,21 +85,21 @@
         </thead>
         <tbody>
         <tr>
-          <td>  requirement
+          <td>  <span class="property-name">amount</span>
 </td>
-          <td>  <a href="json_EquipmentRequirement.html">EquipmentRequirement</a>
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  amount
+          <td>  <span class="property-name">requirement</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference"><a href="json_EquipmentRequirement.html">EquipmentRequirement</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -105,22 +108,22 @@
         </tr>
         <tbody>
         <tr>
-          <td>name</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">name</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>abbr</td>
-          <td>string
-</td>
-          <td>Note: in CourseDto and CoursePeriodDto this is used as a field tunniste. (Unique and Mandatory)</td>
+          <td><span class="property-name">abbr</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description">Note: in CourseDto and CoursePeriodDto this is used as a field tunniste. (Unique and Mandatory)</span></td>
         </tr>
         <tr>
-          <td>description</td>
-          <td>string
-</td>
-          <td></td>
+          <td><span class="property-name">description</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
         <tr>
@@ -128,37 +131,37 @@
         </tr>
         <tbody>
         <tr>
-          <td>version</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>id</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>created</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">created</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td>modified</td>
-          <td>number
-</td>
-          <td></td>
+          <td><span class="property-name">modified</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
-  &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER&quot;,
+      
+      <pre class="prettyprint language-js example">{
   &quot;amount&quot; : 12345,
+  &quot;requirement&quot; : &quot;FOR_EVERY_CUSTOMER_AND_WORKER&quot;,
   &quot;name&quot; : &quot;...&quot;,
   &quot;abbr&quot; : &quot;...&quot;,
   &quot;description&quot; : &quot;...&quot;,
@@ -180,14 +183,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

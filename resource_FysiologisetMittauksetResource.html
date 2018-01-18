@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,8 +51,8 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_FysiologisetMittauksetResource_getMittaukset_GET">GET /measurements/{id}</a></li>
-          <li><a href="#resource_FysiologisetMittauksetResource_getMedicalComponentConfig_GET">GET /measurements/config</a></li>
+          <li><a href="#resource_FysiologisetMittauksetResource_getMedicalComponentConfig_GET"><abbr title="GET /measurements/config"><span class="sideoverflow">GET /measurements/config</span></abbr></a></li>
+          <li><a href="#resource_FysiologisetMittauksetResource_getMittaukset_GET"><abbr title="GET /measurements/{id}"><span class="sideoverflow">GET /measurements/{id}</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -71,13 +69,119 @@
 
       <p>REST API for measurements (Fysiologiset mittaukset)</p>
 
+      <div id="resource_FysiologisetMittauksetResource_getMedicalComponentConfig_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/measurements/config <a href="../api/v1/measurements/config" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_MittausComponentConfig.html">MittausComponentConfig</a>
+ (JSON)</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /measurements/config
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;kertomusConfigs&quot; : [ {
+    &quot;mainTitles&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;kayttajaRyhmaId&quot; : 12345,
+    &quot;editable&quot; : true,
+    &quot;permission&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  }, {
+    &quot;mainTitles&quot; : {
+      &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+    },
+    &quot;kayttajaRyhmaId&quot; : 12345,
+    &quot;editable&quot; : true,
+    &quot;permission&quot; : {
+      &quot;add&quot; : true,
+      &quot;data&quot; : { },
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;change&quot; : true,
+      &quot;view&quot; : true,
+      &quot;remove&quot; : true
+    }
+  } ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="resource_FysiologisetMittauksetResource_getMittaukset_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/measurements/{id} <a href="../api/v1measurements/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/measurements/{id} <a href="../api/v1/measurements/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Fetch the list of measurements. Service returns the list of measurements for the last month from the current day.
 The measurements are grouped by title first. Titles are returned in alphabetical order.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -89,21 +193,27 @@ The measurements are grouped by title first. Titles are returned in alphabetical
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>Patient omistajaId for whom to fetch the data</td>
-            <td>int</td>
+            <td><span class="parameter-description">Patient omistajaId for whom to fetch the data</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>count</td>
+            <td><span class="parameter-name">count</span></td>
             <td>query</td>
-            <td>Set the limit to the result set. Default is 5 if no value is given. It means that service returns 5 latest measurements for each title.</td>
-            <td>int</td>
+            <td><span class="parameter-description">Set the limit to the result set. Default is 5 if no value is given. It means that service returns 5 latest measurements for each title.</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">start</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">long</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-codes">
           <caption>Response Codes</caption>
           <thead>
           <tr>
@@ -113,33 +223,33 @@ The measurements are grouped by title first. Titles are returned in alphabetical
           </thead>
           <tbody>
           <tr>
-            <td>400</td>
-            <td>Bad Request: if values were invalid</td>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Bad Request: if values were invalid</span></td>
           </tr>
           <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
+            <td><span class="label label-warning response-code">401</span></td>
+            <td><span class="response-condition">Unauthenticated: The request requires user authentication. </span></td>
           </tr>
           <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
+            <td><span class="label label-warning response-code">403</span></td>
+            <td><span class="response-condition">Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</span></td>
           </tr>
           <tr>
-            <td>410</td>
-            <td>Gone: Patient has been removed</td>
+            <td><span class="label label-warning response-code">410</span></td>
+            <td><span class="response-condition">Gone: Patient has been removed</span></td>
           </tr>
           <tr>
-            <td>412</td>
-            <td>Precondition failed: Authenticated user must pick proper encounter event before accessing this API</td>
+            <td><span class="label label-warning response-code">412</span></td>
+            <td><span class="response-condition">Precondition failed: Authenticated user must pick proper encounter event before accessing this API</span></td>
           </tr>
           <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
+            <td><span class="label label-danger response-code">500</span></td>
+            <td><span class="response-condition">Unexpected error</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -150,60 +260,121 @@ The measurements are grouped by title first. Titles are returned in alphabetical
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_FysiologisetMittauksetView.html">FysiologisetMittauksetView</a>
- (JSON)</td>
-            <td>list of measurements</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_FysiologisetMittauksetView.html">FysiologisetMittauksetView</a>
+ (JSON)</span></td>
+            <td><span class="response-description">list of measurements</span></td>
           </tr>
           </tbody>
         </table>
-      </div>
+        <h4>Example</h4>
 
-      <div id="resource_FysiologisetMittauksetResource_getMedicalComponentConfig_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/measurements/config <a href="../api/v1measurements/config" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /measurements/{id}
+Accept: application/json
 
-        <p></p>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-        <table class="table">
-          <caption>Response Codes</caption>
-          <thead>
-          <tr>
-            <th>code</th>
-            <th>condition</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>401</td>
-            <td>Unauthenticated: The request requires user authentication. </td>
-          </tr>
-          <tr>
-            <td>403</td>
-            <td>Forbidden: User is authenticated but doesn't have enough priviledges to access this data. Re-login will not help and the request SHOULD NOT be repeated.</td>
-          </tr>
-          <tr>
-            <td>500</td>
-            <td>Unexpected error</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_MittausComponentConfig.html">MittausComponentConfig</a>
- (JSON)</td>
-          </tr>
-          </tbody>
-        </table>
+                <code class="prettyprint language-js">
+{
+  &quot;patientId&quot; : 12345,
+  &quot;fysiologinenMittausList&quot; : [ {
+    &quot;type&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;mittausInfo&quot; : [ {
+      &quot;editable&quot; : true,
+      &quot;normal&quot; : true,
+      &quot;responsible&quot; : &quot;...&quot;,
+      &quot;userUnit&quot; : &quot;...&quot;,
+      &quot;muutosAika&quot; : 12345,
+      &quot;unit&quot; : &quot;...&quot;,
+      &quot;mtType&quot; : &quot;Numeromuotoinen&quot;,
+      &quot;aika&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;vanhaAika&quot; : 12345,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;editable&quot; : true,
+      &quot;normal&quot; : true,
+      &quot;responsible&quot; : &quot;...&quot;,
+      &quot;userUnit&quot; : &quot;...&quot;,
+      &quot;muutosAika&quot; : 12345,
+      &quot;unit&quot; : &quot;...&quot;,
+      &quot;mtType&quot; : &quot;Numeromuotoinen&quot;,
+      &quot;aika&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;vanhaAika&quot; : 12345,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ]
+  }, {
+    &quot;type&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;mittausInfo&quot; : [ {
+      &quot;editable&quot; : true,
+      &quot;normal&quot; : true,
+      &quot;responsible&quot; : &quot;...&quot;,
+      &quot;userUnit&quot; : &quot;...&quot;,
+      &quot;muutosAika&quot; : 12345,
+      &quot;unit&quot; : &quot;...&quot;,
+      &quot;mtType&quot; : &quot;Kokonaisluku&quot;,
+      &quot;aika&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;vanhaAika&quot; : 12345,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    }, {
+      &quot;editable&quot; : true,
+      &quot;normal&quot; : true,
+      &quot;responsible&quot; : &quot;...&quot;,
+      &quot;userUnit&quot; : &quot;...&quot;,
+      &quot;muutosAika&quot; : 12345,
+      &quot;unit&quot; : &quot;...&quot;,
+      &quot;mtType&quot; : &quot;Teksti&quot;,
+      &quot;aika&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : 12345,
+      &quot;vanhaAika&quot; : 12345,
+      &quot;annotation&quot; : &quot;...&quot;,
+      &quot;vakio&quot; : &quot;...&quot;,
+      &quot;emptyValue&quot; : true,
+      &quot;link&quot; : 12345,
+      &quot;vapaa&quot; : &quot;...&quot;,
+      &quot;row&quot; : 12345
+    } ]
+  } ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -218,14 +389,14 @@ The measurements are grouped by title first. Titles are returned in alphabetical
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

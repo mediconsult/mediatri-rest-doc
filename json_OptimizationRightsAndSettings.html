@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#BASIC"><abbr title="BASIC"><span class="sideoverflow">BASIC</span></abbr></a></li>
+          <li><a href="#LOCATIONS"><abbr title="LOCATIONS"><span class="sideoverflow">LOCATIONS</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +72,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,79 +83,79 @@
         </thead>
         <tbody>
         <tr>
-          <td>  form
+          <td>  <span class="property-name">form</span>
 </td>
-          <td>  <a href="json_FormRights.html">FormRights</a>
-
+          <td>  <span class="datatype-reference"><a href="json_FormRights.html">FormRights</a>
+</span>
 </td>
-          <td>  Get information about the Mediatri form and current user rights for optimization.
-</td>
-        </tr>
-        <tr>
-          <td>  streetAddressTitle
-</td>
-          <td>  string
-
-</td>
-          <td>  Get the name of the Mediatri title (otsikko) to be used for customer/worker street address.
+          <td>  <span class="property-description">Get information about the Mediatri form and current user rights for optimization.</span>
 </td>
         </tr>
         <tr>
-          <td>  postOfficeTitle
+          <td>  <span class="property-name">streetAddressTitle</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Get the name of the Mediatri title (otsikko) to be used for customer/worker post office (postitoimipaikka).
-</td>
-        </tr>
-        <tr>
-          <td>  travelModeTitle
-</td>
-          <td>  string
-
-</td>
-          <td>  Get the name of the Mediatri title (otsikko) to be used for worker travel mode (kulkutapa).
+          <td>  <span class="property-description">Get the name of the Mediatri title (otsikko) to be used for customer/worker street address.</span>
 </td>
         </tr>
         <tr>
-          <td>  byFootTerm
+          <td>  <span class="property-name">postOfficeTitle</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Get the term used to mean traveling by foot in Mediatri.
-</td>
-        </tr>
-        <tr>
-          <td>  byCarTerm
-</td>
-          <td>  string
-
-</td>
-          <td>  * Get the term used to mean traveling by car in Mediatri.
+          <td>  <span class="property-description">Get the name of the Mediatri title (otsikko) to be used for customer/worker post office (postitoimipaikka).</span>
 </td>
         </tr>
         <tr>
-          <td>  byBicycleTerm
+          <td>  <span class="property-name">travelModeTitle</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  Get the term used to mean traveling by bike in Mediatri.
+          <td>  <span class="property-description">Get the name of the Mediatri title (otsikko) to be used for worker travel mode (kulkutapa).</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">byFootTerm</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Get the term used to mean traveling by foot in Mediatri.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">byCarTerm</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">* Get the term used to mean traveling by car in Mediatri.</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">byBicycleTerm</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Get the term used to mean traveling by bike in Mediatri.</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;form&quot; : {
     &quot;id&quot; : 12345,
     &quot;name&quot; : &quot;...&quot;,
     &quot;ownerId&quot; : 12345,
-    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;VIEW&quot; ]
+    &quot;rights&quot; : [ &quot;VIEW&quot;, &quot;REMOVE&quot; ]
   },
   &quot;streetAddressTitle&quot; : &quot;...&quot;,
   &quot;postOfficeTitle&quot; : &quot;...&quot;,
@@ -176,14 +177,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

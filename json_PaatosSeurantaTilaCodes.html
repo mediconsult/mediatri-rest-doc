@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,15 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#SUUNNITELTU"><abbr title="SUUNNITELTU"><span class="sideoverflow">SUUNNITELTU</span></abbr></a></li>
+          <li><a href="#MUUTETTU"><abbr title="MUUTETTU"><span class="sideoverflow">MUUTETTU</span></abbr></a></li>
+          <li><a href="#KESKEYTETTY"><abbr title="KESKEYTETTY"><span class="sideoverflow">KESKEYTETTY</span></abbr></a></li>
+          <li><a href="#KESKEN"><abbr title="KESKEN"><span class="sideoverflow">KESKEN</span></abbr></a></li>
+          <li><a href="#TOTEUTUNUT"><abbr title="TOTEUTUNUT"><span class="sideoverflow">TOTEUTUNUT</span></abbr></a></li>
+          <li><a href="#ITSE_PERUNUT"><abbr title="ITSE_PERUNUT"><span class="sideoverflow">ITSE_PERUNUT</span></abbr></a></li>
+          <li><a href="#PERUUTETTU"><abbr title="PERUUTETTU"><span class="sideoverflow">PERUUTETTU</span></abbr></a></li>
+          <li><a href="#EI_TOTEUTUNUT"><abbr title="EI_TOTEUTUNUT"><span class="sideoverflow">EI_TOTEUTUNUT</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -71,7 +78,7 @@
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-values">
         <caption>Values</caption>
         <thead>
         <tr>
@@ -81,36 +88,36 @@
         </thead>
         <tbody>
         <tr>
-          <td>SUUNNITELTU</td>
-          <td></td>
+          <td><span class="value-value" id="SUUNNITELTU">SUUNNITELTU</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>MUUTETTU</td>
-          <td></td>
+          <td><span class="value-value" id="MUUTETTU">MUUTETTU</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>KESKEYTETTY</td>
-          <td></td>
+          <td><span class="value-value" id="KESKEYTETTY">KESKEYTETTY</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>KESKEN</td>
-          <td></td>
+          <td><span class="value-value" id="KESKEN">KESKEN</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>TOTEUTUNUT</td>
-          <td></td>
+          <td><span class="value-value" id="TOTEUTUNUT">TOTEUTUNUT</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>ITSE_PERUNUT</td>
-          <td></td>
+          <td><span class="value-value" id="ITSE_PERUNUT">ITSE_PERUNUT</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>PERUUTETTU</td>
-          <td></td>
+          <td><span class="value-value" id="PERUUTETTU">PERUUTETTU</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td>EI_TOTEUTUNUT</td>
-          <td></td>
+          <td><span class="value-value" id="EI_TOTEUTUNUT">EI_TOTEUTUNUT</span></td>
+          <td><span class="value-description"></span></td>
         </tr>
         </tbody>
       </table>
@@ -127,14 +134,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

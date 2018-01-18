@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,9 +51,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_MetadataResource_getMetadata_GET">GET /metadata</a></li>
-          <li><a href="#resource_MetadataResource_getMetadataGroup_GET">GET /metadata/{groupID}</a></li>
-          <li><a href="#resource_MetadataResource_getMetadataFromGroup_GET"><abbr title="GET /metadata/{groupID}/{metadataID}">GET /metadata/{groupID}/{metad...</abbr></a></li>
+          <li><a href="#resource_MetadataResource_getMetadata_GET"><abbr title="GET /metadata"><span class="sideoverflow">GET /metadata</span></abbr></a></li>
+          <li><a href="#resource_MetadataResource_getMetadataGroup_GET"><abbr title="GET /metadata/{groupID}"><span class="sideoverflow">GET /metadata/{groupID}</span></abbr></a></li>
+          <li><a href="#resource_MetadataResource_getMetadataFromGroup_GET"><abbr title="GET /metadata/{groupID}/{metadataID}"><span class="sideoverflow">GET /metadata/{groupID}/{metadataID}</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -73,11 +71,11 @@
       <p>REST API for metadata</p>
 
       <div id="resource_MetadataResource_getMetadata_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/metadata <a href="../api/v1metadata" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/metadata <a href="../api/v1/metadata" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Returns all metadata</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -89,21 +87,21 @@
           </thead>
           <tbody>
           <tr>
-            <td>date</td>
+            <td><span class="parameter-name">date</span></td>
             <td>query</td>
-            <td>time when validity is checked</td>
-            <td>&nbsp;</td>
+            <td><span class="parameter-description">time when validity is checked</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
-            <td>onlyValid</td>
+            <td><span class="parameter-name">onlyValid</span></td>
             <td>query</td>
-            <td>should only time valid metadata be returned</td>
-            <td>boolean</td>
+            <td><span class="parameter-description">should only time valid metadata be returned</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -114,21 +112,68 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>array of <a href="json_MetadataGroup.html">MetadataGroup</a>
- (JSON)</td>
-            <td>Metadata group identified by ID</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_MetadataGroup.html">MetadataGroup</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Metadata group identified by ID</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /metadata
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;groupID&quot; : 12345,
+  &quot;groupName&quot; : &quot;...&quot;,
+  &quot;startDate&quot; : 12345,
+  &quot;endDate&quot; : 12345,
+  &quot;metadata&quot; : [ {
+    &quot;groupID&quot; : 12345,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;metadataID&quot; : 12345,
+    &quot;metadataName&quot; : &quot;...&quot;,
+    &quot;mandatory&quot; : true,
+    &quot;startDate&quot; : 12345,
+    &quot;endDate&quot; : 12345
+  }, {
+    &quot;groupID&quot; : 12345,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;metadataID&quot; : 12345,
+    &quot;metadataName&quot; : &quot;...&quot;,
+    &quot;mandatory&quot; : true,
+    &quot;startDate&quot; : 12345,
+    &quot;endDate&quot; : 12345
+  } ]
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_MetadataResource_getMetadataGroup_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/metadata/{groupID} <a href="../api/v1metadata/{groupID}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/metadata/{groupID} <a href="../api/v1/metadata/{groupID}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Returns all metadata belonging to an identified group</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -140,27 +185,27 @@
           </thead>
           <tbody>
           <tr>
-            <td>groupID</td>
+            <td><span class="parameter-name">groupID</span></td>
             <td>path</td>
-            <td>metadata group id</td>
-            <td>int</td>
+            <td><span class="parameter-description">metadata group id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>date</td>
+            <td><span class="parameter-name">date</span></td>
             <td>query</td>
-            <td>time when validity is checked</td>
-            <td>&nbsp;</td>
+            <td><span class="parameter-description">time when validity is checked</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
-            <td>onlyValid</td>
+            <td><span class="parameter-name">onlyValid</span></td>
             <td>query</td>
-            <td>should only time valid metadata be returned</td>
-            <td>boolean</td>
+            <td><span class="parameter-description">should only time valid metadata be returned</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -171,21 +216,68 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_MetadataGroup.html">MetadataGroup</a>
- (JSON)</td>
-            <td>Metadata group identified by ID</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_MetadataGroup.html">MetadataGroup</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Metadata group identified by ID</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /metadata/{groupID}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;groupID&quot; : 12345,
+  &quot;groupName&quot; : &quot;...&quot;,
+  &quot;startDate&quot; : 12345,
+  &quot;endDate&quot; : 12345,
+  &quot;metadata&quot; : [ {
+    &quot;groupID&quot; : 12345,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;metadataID&quot; : 12345,
+    &quot;metadataName&quot; : &quot;...&quot;,
+    &quot;mandatory&quot; : true,
+    &quot;startDate&quot; : 12345,
+    &quot;endDate&quot; : 12345
+  }, {
+    &quot;groupID&quot; : 12345,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;metadataID&quot; : 12345,
+    &quot;metadataName&quot; : &quot;...&quot;,
+    &quot;mandatory&quot; : true,
+    &quot;startDate&quot; : 12345,
+    &quot;endDate&quot; : 12345
+  } ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_MetadataResource_getMetadataFromGroup_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/metadata/{groupID}/{metadataID} <a href="../api/v1metadata/{groupID}/{metadataID}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/metadata/{groupID}/{metadataID} <a href="../api/v1/metadata/{groupID}/{metadataID}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Return specific metadata with provided ID in provided group</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -197,21 +289,21 @@
           </thead>
           <tbody>
           <tr>
-            <td>groupID</td>
+            <td><span class="parameter-name">groupID</span></td>
             <td>path</td>
-            <td>metadata group id</td>
-            <td>int</td>
+            <td><span class="parameter-description">metadata group id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>metadataID</td>
+            <td><span class="parameter-name">metadataID</span></td>
             <td>path</td>
-            <td>metadata id</td>
-            <td>int</td>
+            <td><span class="parameter-description">metadata id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -222,13 +314,46 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Metadata.html">Metadata</a>
- (JSON)</td>
-            <td>Metadata identified by IDs</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Metadata.html">Metadata</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Metadata identified by IDs</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /metadata/{groupID}/{metadataID}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;groupID&quot; : 12345,
+  &quot;groupName&quot; : &quot;...&quot;,
+  &quot;metadataID&quot; : 12345,
+  &quot;metadataName&quot; : &quot;...&quot;,
+  &quot;mandatory&quot; : true,
+  &quot;startDate&quot; : 12345,
+  &quot;endDate&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -243,14 +368,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

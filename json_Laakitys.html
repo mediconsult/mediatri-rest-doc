@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,6 +51,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#KERTOMUS_LUONNOS"><abbr title="KERTOMUS_LUONNOS"><span class="sideoverflow">KERTOMUS_LUONNOS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_KESKEN"><abbr title="KERTOMUS_KESKEN"><span class="sideoverflow">KERTOMUS_KESKEN</span></abbr></a></li>
+          <li><a href="#KERTOMUS_VALMIS"><abbr title="KERTOMUS_VALMIS"><span class="sideoverflow">KERTOMUS_VALMIS</span></abbr></a></li>
+          <li><a href="#KERTOMUS_UNDEFIND"><abbr title="KERTOMUS_UNDEFIND"><span class="sideoverflow">KERTOMUS_UNDEFIND</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -66,12 +69,14 @@
 
       <h1 class="page-header">Laakitys <small>Data Type</small></h1>
 
-      <p>DTO for Laakitys</p>
+      <p>DTO for Laakitys
+
+Laakitystauko should contain max one element, pause currently active.</p>
 
       <dl class="dl-horizontal">
       </dl>
 
-      <table class="table">
+      <table class="table datatype-properties">
         <caption>Properties</caption>
         <thead>
         <tr>
@@ -82,1064 +87,1019 @@
         </thead>
         <tbody>
         <tr>
-          <td>  omistaja
+          <td>  <span class="property-name">omistaja</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  osa
+          <td>  <span class="property-name">osa</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  laakevalmiste
+          <td>  <span class="property-name">laakevalmiste</span>
 </td>
-          <td>  <a href="json_Laake.html">Laake</a>
-
+          <td>  <span class="datatype-reference"><a href="json_Laake.html">Laake</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  laake
+          <td>  <span class="property-name">laake</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  aloitettu
+          <td>  <span class="property-name">aloitettu</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tapahtunut
+          <td>  <span class="property-name">tapahtunut</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tapahtuma
+          <td>  <span class="property-name">tapahtuma</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  riittoisuus
+          <td>  <span class="property-name">riittoisuus</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  lopetettu
+          <td>  <span class="property-name">lopetettu</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  lopetussyy
+          <td>  <span class="property-name">lopetussyy</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  reseptiteksti
+          <td>  <span class="property-name">reseptiteksti</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  malli
+          <td>  <span class="property-name">malli</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  lyhyesti
+          <td>  <span class="property-name">lyhyesti</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vaihdettavuus
+          <td>  <span class="property-name">vaihdettavuus</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  annettavaMaara
+          <td>  <span class="property-name">annettavaMaara</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  annettavaMaksimi
+          <td>  <span class="property-name">annettavaMaksimi</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  annettavaYksikko
+          <td>  <span class="property-name">annettavaYksikko</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kertaAnnos
+          <td>  <span class="property-name">kertaAnnos</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  annosteluteksti
+          <td>  <span class="property-name">annosteluteksti</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  desimaaleja
+          <td>  <span class="property-name">desimaaleja</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  paino
+          <td>  <span class="property-name">paino</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  lapsenPaino
+          <td>  <span class="property-name">lapsenPaino</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  toisto
+          <td>  <span class="property-name">toisto</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  toistokuvaus
+          <td>  <span class="property-name">toistokuvaus</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kellonajat
+          <td>  <span class="property-name">kellonajat</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kellonajatString
+          <td>  <span class="property-name">kellonajatString</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  aikayksikko
+          <td>  <span class="property-name">aikayksikko</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  antotahti
+          <td>  <span class="property-name">antotahti</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  antotahtiString
+          <td>  <span class="property-name">antotahtiString</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  antotahtiyksikko
+          <td>  <span class="property-name">antotahtiyksikko</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vrkMaara
+          <td>  <span class="property-name">kokonaiskesto</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vrkMaaraYksikko
+          <td>  <span class="property-name">kokonaismaara</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kokonaiskesto
+          <td>  <span class="property-name">kokonaismaarayksikko</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kokonaismaara
+          <td>  <span class="property-name">pakkauksia</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kokonaismaarayksikko
+          <td>  <span class="property-name">kirjaaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  pakkauksia
+          <td>  <span class="property-name">kirjaajaString</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kirjaaja
+          <td>  <span class="property-name">maaraaja</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kirjaajaString
+          <td>  <span class="property-name">maaraajaString</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  maaraaja
+          <td>  <span class="property-name">maaraysyksikko</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  maaraajaString
+          <td>  <span class="property-name">varmistus</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  maaraysyksikko
+          <td>  <span class="property-name">kayttotarkoitus</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  varmistus
+          <td>  <span class="property-name">ohjeet</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kayttotarkoitus
+          <td>  <span class="property-name">perustelu</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  ohjeet
+          <td>  <span class="property-name">iterointi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  perustelu
+          <td>  <span class="property-name">uusittu</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  iterointi
+          <td>  <span class="property-name">kuitattava</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  uusittu
+          <td>  <span class="property-name">pysyva</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kuitattava
+          <td>  <span class="property-name">tarvittaessa</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  pysyva
+          <td>  <span class="property-name">terapiaryhma</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tarvittaessa
+          <td>  <span class="property-name">soveltumaton</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  terapiaryhma
+          <td>  <span class="property-name">vaikutus</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  soveltumaton
+          <td>  <span class="property-name">huomautuksia</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vaikutus
+          <td>  <span class="property-name">reseptityyppi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  huomautuksia
+          <td>  <span class="property-name">reseptityyppiString</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  reseptityyppi
+          <td>  <span class="property-name">tulostaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  reseptityyppiString
+          <td>  <span class="property-name">tulostettu</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tulostaja
+          <td>  <span class="property-name">oid</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tulostettu
+          <td>  <span class="property-name">tunnistustapa</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  oid
+          <td>  <span class="property-name">tunnistustapaselite</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tunnistustapa
+          <td>  <span class="property-name">annosjakeluperuste</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tunnistustapaselite
+          <td>  <span class="property-name">iterointivali</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  annosjakeluperuste
+          <td>  <span class="property-name">erillisselvityskoodi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  iterointivali
+          <td>  <span class="property-name">erillisselvitys</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  erillisselvityskoodi
+          <td>  <span class="property-name">apteekkiviesti</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  erillisselvitys
+          <td>  <span class="property-name">ereseptikielto</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  apteekkiviesti
+          <td>  <span class="property-name">hoitolaji</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  ereseptikielto
+          <td>  <span class="property-name">uusi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  hoitolaji
+          <td>  <span class="property-name">lahetetty</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  uusi
+          <td>  <span class="property-name">reseptinLaji</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  lahetetty
+          <td>  <span class="property-name">muutoksenSyy</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  reseptinLaji
+          <td>  <span class="property-name">muutoksenPerustelu</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  muutoksenSyy
+          <td>  <span class="property-name">uusimiskielto</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  muutoksenPerustelu
+          <td>  <span class="property-name">uusimiskiellonSyy</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  uusimiskielto
+          <td>  <span class="property-name">uusimiskiellonPerustelu</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  uusimiskiellonSyy
+          <td>  <span class="property-name">potilasohjekielto</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  uusimiskiellonPerustelu
+          <td>  <span class="property-name">tyonantaja</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  potilasohjekielto
+          <td>  <span class="property-name">vakuutusyhtio</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tyonantaja
+          <td>  <span class="property-name">voimassaoloLoppu</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference"><a href="json_Date.html">Date</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vakuutusyhtio
+          <td>  <span class="property-name">annostuslinkki</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  voimassaoloLoppu
+          <td>  <span class="property-name">hoitojakso</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  annostuslinkki
+          <td>  <span class="property-name">alkuperainen</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  hoitojakso
+          <td>  <span class="property-name">palkkio</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  alkuperainen
+          <td>  <span class="property-name">palkkioErikoislaakarina</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  palkkio
+          <td>  <span class="property-name">tartuntatautilaake</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  palkkioErikoislaakarina
+          <td>  <span class="property-name">palvelutapahtuma</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tartuntatautilaake
+          <td>  <span class="property-name">palvelutapahtumaOid</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  palvelutapahtuma
+          <td>  <span class="property-name">sairaalaApteekkiOid</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  palvelutapahtumaOid
+          <td>  <span class="property-name">sairaalaApteekkiNimi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  sairaalaApteekkiOid
+          <td>  <span class="property-name">tarkistus</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  sairaalaApteekkiNimi
+          <td>  <span class="property-name">poistosyy</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tarkistus
+          <td>  <span class="property-name">poistettu</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">object
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  poistosyy
+          <td>  <span class="property-name">muutosaika</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  poistettu
+          <td>  <span class="property-name">muutospaikka</span>
 </td>
-          <td>  object
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  muutosaika
+          <td>  <span class="property-name">pysyvyys</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  muutospaikka
+          <td>  <span class="property-name">nimi</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  pysyvyys
+          <td>  <span class="property-name">annostus</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  nimi
+          <td>  <span class="property-name">vaihteleva</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">boolean
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  annostus
+          <td>  <span class="property-name">vaihtelevaAnnostus</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vaihteleva
+          <td>  <span class="property-name">sic</span>
 </td>
-          <td>  boolean
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vaihtelevaAnnostus
+          <td>  <span class="property-name">kokoNimi</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  sic
+          <td>  <span class="property-name">laakeaineet</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  kokoNimi
+          <td>  <span class="property-name">annettavaMaaraTimesPaino</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  laakeaineet
+          <td>  <span class="property-name">vrkmaara</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tauonAloitusPvm
+          <td>  <span class="property-name">vrkkerratCalc</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tauonLopetusPvm
+          <td>  <span class="property-name">vrkmaaraCalc</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">number
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  taukohuomautuksia
+          <td>  <span class="property-name">vrkmaaraYksikko</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">string
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  annettavaMaaraTimesPaino
+          <td>  <span class="property-name">tauot</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">array of <a href="json_LaakitysTauko.html">LaakitysTauko</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vrkmaara
+          <td>  <span class="property-name">annot</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">array of <a href="json_LaakitysAnto.html">LaakitysAnto</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vrkkerratCalc
+          <td>  <span class="property-name">tavat</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">array of <a href="json_LaakitysTapa.html">LaakitysTapa</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vrkmaaraCalc
+          <td>  <span class="property-name">kayttoaiheet</span>
 </td>
-          <td>  number
-
+          <td>  <span class="datatype-reference">array of <a href="json_LaakitysKayttoaihe.html">LaakitysKayttoaihe</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  vrkmaaraYksikko
+          <td>  <span class="property-name">laakitysKayttoaiheList</span>
 </td>
-          <td>  string
-
+          <td>  <span class="datatype-reference">array of <a href="json_KayttoaiheView.html">KayttoaiheView</a>
+</span>
 </td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  tauot
+          <td>  <span class="property-name">kuittaukset</span>
 </td>
-          <td>  array of <a href="json_LaakitysTauko.html">LaakitysTauko</a>
-
+          <td>  <span class="datatype-reference">array of <a href="json_LaakitysKuittaus.html">LaakitysKuittaus</a>
+</span>
 </td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  annot
-</td>
-          <td>  array of <a href="json_LaakitysAnto.html">LaakitysAnto</a>
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  tavat
-</td>
-          <td>  array of <a href="json_LaakitysTapa.html">LaakitysTapa</a>
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  kayttoaiheet
-</td>
-          <td>  array of <a href="json_LaakitysKayttoaihe.html">LaakitysKayttoaihe</a>
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  laakitysKayttoaiheList
-</td>
-          <td>  array of <a href="json_LaakitysKayttoaiheView.html">LaakitysKayttoaiheView</a>
-
-</td>
-          <td>  
-</td>
-        </tr>
-        <tr>
-          <td>  kuittaukset
-</td>
-          <td>  array of <a href="json_LaakitysKuittaus.html">LaakitysKuittaus</a>
-
-</td>
-          <td>  
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
-
-      <pre class="prettyprint lang-js">{
+      
+      <pre class="prettyprint language-js example">{
   &quot;omistaja&quot; : 12345,
   &quot;osa&quot; : 12345,
   &quot;laakevalmiste&quot; : {
@@ -1167,7 +1127,7 @@
     &quot;alkupera&quot; : { },
     &quot;tila&quot; : { },
     &quot;halytys&quot; : &quot;...&quot;,
-    &quot;erityislupaVanhenee&quot; : 12345,
+    &quot;erityislupaVanhenee&quot; : &quot;...&quot;,
     &quot;vero&quot; : &quot;...&quot;,
     &quot;peruslaakevalikoima&quot; : &quot;...&quot;,
     &quot;kelpoisuusaika&quot; : &quot;...&quot;,
@@ -1217,10 +1177,14 @@
     &quot;lisatiedot&quot; : &quot;...&quot;,
     &quot;atc&quot; : [ {
       &quot;atc&quot; : &quot;...&quot;,
-      &quot;alkupera&quot; : { }
+      &quot;alkupera&quot; : { },
+      &quot;atcCategory&quot; : &quot;...&quot;,
+      &quot;atcCategoryString&quot; : &quot;...&quot;
     }, {
       &quot;atc&quot; : &quot;...&quot;,
-      &quot;alkupera&quot; : { }
+      &quot;alkupera&quot; : { },
+      &quot;atcCategory&quot; : &quot;...&quot;,
+      &quot;atcCategoryString&quot; : &quot;...&quot;
     } ],
     &quot;annostusSoveltuvuus&quot; : [ {
       &quot;laake&quot; : &quot;...&quot;,
@@ -1353,14 +1317,40 @@
       &quot;ainekoodi&quot; : &quot;...&quot;,
       &quot;atc&quot; : &quot;...&quot;,
       &quot;jarjestys&quot; : 12345
+    } ],
+    &quot;kayttoaiheet&quot; : [ {
+      &quot;numero&quot; : 12345,
+      &quot;selite&quot; : &quot;...&quot;,
+      &quot;reseptiteksti&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : { },
+      &quot;tyyppi&quot; : { },
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345
+    }, {
+      &quot;numero&quot; : 12345,
+      &quot;selite&quot; : &quot;...&quot;,
+      &quot;reseptiteksti&quot; : &quot;...&quot;,
+      &quot;alkupera&quot; : { },
+      &quot;tyyppi&quot; : { },
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345
+    } ],
+    &quot;antoreitit&quot; : [ {
+      &quot;koodi&quot; : &quot;...&quot;,
+      &quot;lyhenne&quot; : &quot;...&quot;
+    }, {
+      &quot;koodi&quot; : &quot;...&quot;,
+      &quot;lyhenne&quot; : &quot;...&quot;
     } ]
   },
   &quot;laake&quot; : &quot;...&quot;,
-  &quot;aloitettu&quot; : 12345,
-  &quot;tapahtunut&quot; : 12345,
+  &quot;aloitettu&quot; : &quot;...&quot;,
+  &quot;tapahtunut&quot; : &quot;...&quot;,
   &quot;tapahtuma&quot; : { },
-  &quot;riittoisuus&quot; : 12345,
-  &quot;lopetettu&quot; : 12345,
+  &quot;riittoisuus&quot; : &quot;...&quot;,
+  &quot;lopetettu&quot; : &quot;...&quot;,
   &quot;lopetussyy&quot; : &quot;...&quot;,
   &quot;reseptiteksti&quot; : &quot;...&quot;,
   &quot;malli&quot; : &quot;...&quot;,
@@ -1382,8 +1372,6 @@
   &quot;antotahti&quot; : 12345.0,
   &quot;antotahtiString&quot; : &quot;...&quot;,
   &quot;antotahtiyksikko&quot; : &quot;...&quot;,
-  &quot;vrkMaara&quot; : 12345.0,
-  &quot;vrkMaaraYksikko&quot; : &quot;...&quot;,
   &quot;kokonaiskesto&quot; : &quot;...&quot;,
   &quot;kokonaismaara&quot; : 12345.0,
   &quot;kokonaismaarayksikko&quot; : &quot;...&quot;,
@@ -1431,7 +1419,7 @@
   &quot;potilasohjekielto&quot; : &quot;...&quot;,
   &quot;tyonantaja&quot; : &quot;...&quot;,
   &quot;vakuutusyhtio&quot; : &quot;...&quot;,
-  &quot;voimassaoloLoppu&quot; : 12345,
+  &quot;voimassaoloLoppu&quot; : { },
   &quot;annostuslinkki&quot; : 12345,
   &quot;hoitojakso&quot; : 12345,
   &quot;alkuperainen&quot; : 12345,
@@ -1455,9 +1443,6 @@
   &quot;sic&quot; : &quot;...&quot;,
   &quot;kokoNimi&quot; : &quot;...&quot;,
   &quot;laakeaineet&quot; : &quot;...&quot;,
-  &quot;tauonAloitusPvm&quot; : 12345,
-  &quot;tauonLopetusPvm&quot; : 12345,
-  &quot;taukohuomautuksia&quot; : &quot;...&quot;,
   &quot;annettavaMaaraTimesPaino&quot; : 12345.0,
   &quot;vrkmaara&quot; : 12345.0,
   &quot;vrkkerratCalc&quot; : 12345,
@@ -1471,7 +1456,8 @@
     &quot;lopettaja&quot; : 12345,
     &quot;poistettu&quot; : { },
     &quot;muutosaika&quot; : 12345,
-    &quot;muutospaikka&quot; : 12345
+    &quot;muutospaikka&quot; : 12345,
+    &quot;alkaaNew&quot; : 12345
   }, {
     &quot;alkaa&quot; : 12345,
     &quot;loppuu&quot; : 12345,
@@ -1480,7 +1466,8 @@
     &quot;lopettaja&quot; : 12345,
     &quot;poistettu&quot; : { },
     &quot;muutosaika&quot; : 12345,
-    &quot;muutospaikka&quot; : 12345
+    &quot;muutospaikka&quot; : 12345,
+    &quot;alkaaNew&quot; : 12345
   } ],
   &quot;annot&quot; : [ {
     &quot;antaja&quot; : 12345,
@@ -1502,7 +1489,8 @@
     &quot;annettavaMaara&quot; : 12345.0,
     &quot;annettavaYksikko&quot; : &quot;...&quot;,
     &quot;annettavaMaksimi&quot; : 12345.0,
-    &quot;toteutunutAikaOriginal&quot; : 12345
+    &quot;toteutunutAikaOriginal&quot; : 12345,
+    &quot;kello&quot; : 12345
   }, {
     &quot;antaja&quot; : 12345,
     &quot;huomautuksia&quot; : &quot;...&quot;,
@@ -1523,7 +1511,8 @@
     &quot;annettavaMaara&quot; : 12345.0,
     &quot;annettavaYksikko&quot; : &quot;...&quot;,
     &quot;annettavaMaksimi&quot; : 12345.0,
-    &quot;toteutunutAikaOriginal&quot; : 12345
+    &quot;toteutunutAikaOriginal&quot; : 12345,
+    &quot;kello&quot; : 12345
   } ],
   &quot;tavat&quot; : [ {
     &quot;reittikoodi&quot; : &quot;...&quot;,
@@ -1533,7 +1522,8 @@
     &quot;valinekoodi&quot; : &quot;...&quot;,
     &quot;valineteksti&quot; : &quot;...&quot;,
     &quot;tapakoodi&quot; : &quot;...&quot;,
-    &quot;tapateksti&quot; : &quot;...&quot;
+    &quot;tapateksti&quot; : &quot;...&quot;,
+    &quot;rivi&quot; : 12345
   }, {
     &quot;reittikoodi&quot; : &quot;...&quot;,
     &quot;reittiteksti&quot; : &quot;...&quot;,
@@ -1542,7 +1532,8 @@
     &quot;valinekoodi&quot; : &quot;...&quot;,
     &quot;valineteksti&quot; : &quot;...&quot;,
     &quot;tapakoodi&quot; : &quot;...&quot;,
-    &quot;tapateksti&quot; : &quot;...&quot;
+    &quot;tapateksti&quot; : &quot;...&quot;,
+    &quot;rivi&quot; : 12345
   } ],
   &quot;kayttoaiheet&quot; : [ {
     &quot;rivi&quot; : 12345,
@@ -1566,9 +1557,6 @@
     &quot;muutospaikka&quot; : 12345
   } ],
   &quot;laakitysKayttoaiheList&quot; : [ {
-    &quot;omistaja&quot; : 12345,
-    &quot;osa&quot; : 12345,
-    &quot;rivi&quot; : 12345,
     &quot;numero&quot; : 12345,
     &quot;selite&quot; : &quot;...&quot;,
     &quot;reseptiteksti&quot; : &quot;...&quot;,
@@ -1578,9 +1566,6 @@
     &quot;muutosaika&quot; : 12345,
     &quot;muutospaikka&quot; : 12345
   }, {
-    &quot;omistaja&quot; : 12345,
-    &quot;osa&quot; : 12345,
-    &quot;rivi&quot; : 12345,
     &quot;numero&quot; : 12345,
     &quot;selite&quot; : &quot;...&quot;,
     &quot;reseptiteksti&quot; : &quot;...&quot;,
@@ -1613,14 +1598,14 @@
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {

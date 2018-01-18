@@ -15,9 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,8 +51,8 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_TutkimuspyyntoResource_getTutkimuspyynnot_GET">GET /labs/{id}</a></li>
-          <li><a href="#resource_TutkimuspyyntoResource_acknowledgeTutkimuspyynto_PUT">PUT /labs/{id}/acknowledge</a></li>
+          <li><a href="#resource_TutkimuspyyntoResource_getTutkimuspyynnot_GET"><abbr title="GET /labs/{id}"><span class="sideoverflow">GET /labs/{id}</span></abbr></a></li>
+          <li><a href="#resource_TutkimuspyyntoResource_acknowledgeTutkimuspyynto_PUT"><abbr title="PUT /labs/{id}/acknowledge"><span class="sideoverflow">PUT /labs/{id}/acknowledge</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -72,11 +70,11 @@
       <p>REST API for laboratory examinations</p>
 
       <div id="resource_TutkimuspyyntoResource_getTutkimuspyynnot_GET">
-        <h3><span class="resource-method">GET</span> <span class="resource-path">/labs/{id} <a href="../api/v1labs/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/labs/{id} <a href="../api/v1/labs/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Fetch Tutkimuspyynnot with patient id</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -88,21 +86,21 @@
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>Patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">Patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
-            <td>daysBack</td>
+            <td><span class="parameter-name">daysBack</span></td>
             <td>query</td>
-            <td>the amount of days from which the lab results are fetched</td>
-            <td>int</td>
+            <td><span class="parameter-description">the amount of days from which the lab results are fetched</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -113,24 +111,284 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td><a href="json_Tutkimuspyynnot.html">Tutkimuspyynnot</a>
- (JSON)</td>
-            <td>Tutkimuspyynnot List of Tutkimuspyynto objects</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Tutkimuspyynnot.html">Tutkimuspyynnot</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Tutkimuspyynnot List of Tutkimuspyynto objects</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /labs/{id}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;permissionDTO&quot; : {
+    &quot;permissions&quot; : {
+      &quot;property1&quot; : true,
+      &quot;property2&quot; : true
+    }
+  },
+  &quot;patientId&quot; : 12345,
+  &quot;tutkimuspyyntoList&quot; : [ {
+    &quot;tutkimus&quot; : &quot;...&quot;,
+    &quot;tutkimuspyyntoTiedotList&quot; : [ {
+      &quot;pyynto&quot; : 12345,
+      &quot;rivi&quot; : 12345,
+      &quot;tutkimus&quot; : &quot;...&quot;,
+      &quot;versio&quot; : &quot;...&quot;,
+      &quot;hajautettu&quot; : &quot;...&quot;,
+      &quot;hoitojakso&quot; : 12345,
+      &quot;huomautuksia&quot; : &quot;...&quot;,
+      &quot;kontrolloitava&quot; : { },
+      &quot;korvausluokka&quot; : &quot;...&quot;,
+      &quot;kunta&quot; : 12345,
+      &quot;kustannuslinkki&quot; : 12345,
+      &quot;lisatietoja&quot; : &quot;...&quot;,
+      &quot;lomakelinkki&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;mikrobitietoja&quot; : &quot;...&quot;,
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;nayte&quot; : 12345,
+      &quot;naytetietoja&quot; : &quot;...&quot;,
+      &quot;numerotulos&quot; : 12345.0,
+      &quot;numeroyksikko&quot; : &quot;...&quot;,
+      &quot;osalinkki&quot; : 12345,
+      &quot;osasto&quot; : 12345,
+      &quot;ottoaika&quot; : 12345,
+      &quot;paketti&quot; : &quot;...&quot;,
+      &quot;piiri&quot; : 12345,
+      &quot;poistettu&quot; : &quot;...&quot;,
+      &quot;pyydetty&quot; : 12345,
+      &quot;sanallinenvastaus&quot; : &quot;...&quot;,
+      &quot;sijaintiosasto&quot; : &quot;...&quot;,
+      &quot;sijaintipaikka&quot; : &quot;...&quot;,
+      &quot;sisainenMaksaja&quot; : &quot;...&quot;,
+      &quot;suoritelinkki&quot; : 12345,
+      &quot;tehty&quot; : 12345,
+      &quot;tekopaikka&quot; : 12345,
+      &quot;tekstitulos&quot; : &quot;...&quot;,
+      &quot;tekstiviesti&quot; : 12345,
+      &quot;tila&quot; : { },
+      &quot;tilaaja&quot; : 12345,
+      &quot;tilaajaNimi&quot; : &quot;...&quot;,
+      &quot;tilaajayksikko&quot; : 12345,
+      &quot;tilaustunnus&quot; : &quot;...&quot;,
+      &quot;toistoloppuu&quot; : { },
+      &quot;toistovali&quot; : 12345,
+      &quot;tulkinta&quot; : &quot;...&quot;,
+      &quot;tuottaja&quot; : 12345,
+      &quot;tyonantaja&quot; : 12345,
+      &quot;vastaustietoja&quot; : &quot;...&quot;,
+      &quot;viitearvot&quot; : &quot;...&quot;,
+      &quot;kirjaaja&quot; : 12345,
+      &quot;tilaKoodi&quot; : &quot;...&quot;,
+      &quot;poikkeava&quot; : 12345,
+      &quot;mikrobit&quot; : [ { }, { } ]
+    }, {
+      &quot;pyynto&quot; : 12345,
+      &quot;rivi&quot; : 12345,
+      &quot;tutkimus&quot; : &quot;...&quot;,
+      &quot;versio&quot; : &quot;...&quot;,
+      &quot;hajautettu&quot; : &quot;...&quot;,
+      &quot;hoitojakso&quot; : 12345,
+      &quot;huomautuksia&quot; : &quot;...&quot;,
+      &quot;kontrolloitava&quot; : { },
+      &quot;korvausluokka&quot; : &quot;...&quot;,
+      &quot;kunta&quot; : 12345,
+      &quot;kustannuslinkki&quot; : 12345,
+      &quot;lisatietoja&quot; : &quot;...&quot;,
+      &quot;lomakelinkki&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;mikrobitietoja&quot; : &quot;...&quot;,
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;nayte&quot; : 12345,
+      &quot;naytetietoja&quot; : &quot;...&quot;,
+      &quot;numerotulos&quot; : 12345.0,
+      &quot;numeroyksikko&quot; : &quot;...&quot;,
+      &quot;osalinkki&quot; : 12345,
+      &quot;osasto&quot; : 12345,
+      &quot;ottoaika&quot; : 12345,
+      &quot;paketti&quot; : &quot;...&quot;,
+      &quot;piiri&quot; : 12345,
+      &quot;poistettu&quot; : &quot;...&quot;,
+      &quot;pyydetty&quot; : 12345,
+      &quot;sanallinenvastaus&quot; : &quot;...&quot;,
+      &quot;sijaintiosasto&quot; : &quot;...&quot;,
+      &quot;sijaintipaikka&quot; : &quot;...&quot;,
+      &quot;sisainenMaksaja&quot; : &quot;...&quot;,
+      &quot;suoritelinkki&quot; : 12345,
+      &quot;tehty&quot; : 12345,
+      &quot;tekopaikka&quot; : 12345,
+      &quot;tekstitulos&quot; : &quot;...&quot;,
+      &quot;tekstiviesti&quot; : 12345,
+      &quot;tila&quot; : { },
+      &quot;tilaaja&quot; : 12345,
+      &quot;tilaajaNimi&quot; : &quot;...&quot;,
+      &quot;tilaajayksikko&quot; : 12345,
+      &quot;tilaustunnus&quot; : &quot;...&quot;,
+      &quot;toistoloppuu&quot; : { },
+      &quot;toistovali&quot; : 12345,
+      &quot;tulkinta&quot; : &quot;...&quot;,
+      &quot;tuottaja&quot; : 12345,
+      &quot;tyonantaja&quot; : 12345,
+      &quot;vastaustietoja&quot; : &quot;...&quot;,
+      &quot;viitearvot&quot; : &quot;...&quot;,
+      &quot;kirjaaja&quot; : 12345,
+      &quot;tilaKoodi&quot; : &quot;...&quot;,
+      &quot;poikkeava&quot; : 12345,
+      &quot;mikrobit&quot; : [ { }, { } ]
+    } ],
+    &quot;kategoria&quot; : &quot;...&quot;,
+    &quot;latestTime&quot; : 12345
+  }, {
+    &quot;tutkimus&quot; : &quot;...&quot;,
+    &quot;tutkimuspyyntoTiedotList&quot; : [ {
+      &quot;pyynto&quot; : 12345,
+      &quot;rivi&quot; : 12345,
+      &quot;tutkimus&quot; : &quot;...&quot;,
+      &quot;versio&quot; : &quot;...&quot;,
+      &quot;hajautettu&quot; : &quot;...&quot;,
+      &quot;hoitojakso&quot; : 12345,
+      &quot;huomautuksia&quot; : &quot;...&quot;,
+      &quot;kontrolloitava&quot; : { },
+      &quot;korvausluokka&quot; : &quot;...&quot;,
+      &quot;kunta&quot; : 12345,
+      &quot;kustannuslinkki&quot; : 12345,
+      &quot;lisatietoja&quot; : &quot;...&quot;,
+      &quot;lomakelinkki&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;mikrobitietoja&quot; : &quot;...&quot;,
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;nayte&quot; : 12345,
+      &quot;naytetietoja&quot; : &quot;...&quot;,
+      &quot;numerotulos&quot; : 12345.0,
+      &quot;numeroyksikko&quot; : &quot;...&quot;,
+      &quot;osalinkki&quot; : 12345,
+      &quot;osasto&quot; : 12345,
+      &quot;ottoaika&quot; : 12345,
+      &quot;paketti&quot; : &quot;...&quot;,
+      &quot;piiri&quot; : 12345,
+      &quot;poistettu&quot; : &quot;...&quot;,
+      &quot;pyydetty&quot; : 12345,
+      &quot;sanallinenvastaus&quot; : &quot;...&quot;,
+      &quot;sijaintiosasto&quot; : &quot;...&quot;,
+      &quot;sijaintipaikka&quot; : &quot;...&quot;,
+      &quot;sisainenMaksaja&quot; : &quot;...&quot;,
+      &quot;suoritelinkki&quot; : 12345,
+      &quot;tehty&quot; : 12345,
+      &quot;tekopaikka&quot; : 12345,
+      &quot;tekstitulos&quot; : &quot;...&quot;,
+      &quot;tekstiviesti&quot; : 12345,
+      &quot;tila&quot; : { },
+      &quot;tilaaja&quot; : 12345,
+      &quot;tilaajaNimi&quot; : &quot;...&quot;,
+      &quot;tilaajayksikko&quot; : 12345,
+      &quot;tilaustunnus&quot; : &quot;...&quot;,
+      &quot;toistoloppuu&quot; : { },
+      &quot;toistovali&quot; : 12345,
+      &quot;tulkinta&quot; : &quot;...&quot;,
+      &quot;tuottaja&quot; : 12345,
+      &quot;tyonantaja&quot; : 12345,
+      &quot;vastaustietoja&quot; : &quot;...&quot;,
+      &quot;viitearvot&quot; : &quot;...&quot;,
+      &quot;kirjaaja&quot; : 12345,
+      &quot;tilaKoodi&quot; : &quot;...&quot;,
+      &quot;poikkeava&quot; : 12345,
+      &quot;mikrobit&quot; : [ { }, { } ]
+    }, {
+      &quot;pyynto&quot; : 12345,
+      &quot;rivi&quot; : 12345,
+      &quot;tutkimus&quot; : &quot;...&quot;,
+      &quot;versio&quot; : &quot;...&quot;,
+      &quot;hajautettu&quot; : &quot;...&quot;,
+      &quot;hoitojakso&quot; : 12345,
+      &quot;huomautuksia&quot; : &quot;...&quot;,
+      &quot;kontrolloitava&quot; : { },
+      &quot;korvausluokka&quot; : &quot;...&quot;,
+      &quot;kunta&quot; : 12345,
+      &quot;kustannuslinkki&quot; : 12345,
+      &quot;lisatietoja&quot; : &quot;...&quot;,
+      &quot;lomakelinkki&quot; : 12345,
+      &quot;maksaja&quot; : 12345,
+      &quot;mikrobitietoja&quot; : &quot;...&quot;,
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;nayte&quot; : 12345,
+      &quot;naytetietoja&quot; : &quot;...&quot;,
+      &quot;numerotulos&quot; : 12345.0,
+      &quot;numeroyksikko&quot; : &quot;...&quot;,
+      &quot;osalinkki&quot; : 12345,
+      &quot;osasto&quot; : 12345,
+      &quot;ottoaika&quot; : 12345,
+      &quot;paketti&quot; : &quot;...&quot;,
+      &quot;piiri&quot; : 12345,
+      &quot;poistettu&quot; : &quot;...&quot;,
+      &quot;pyydetty&quot; : 12345,
+      &quot;sanallinenvastaus&quot; : &quot;...&quot;,
+      &quot;sijaintiosasto&quot; : &quot;...&quot;,
+      &quot;sijaintipaikka&quot; : &quot;...&quot;,
+      &quot;sisainenMaksaja&quot; : &quot;...&quot;,
+      &quot;suoritelinkki&quot; : 12345,
+      &quot;tehty&quot; : 12345,
+      &quot;tekopaikka&quot; : 12345,
+      &quot;tekstitulos&quot; : &quot;...&quot;,
+      &quot;tekstiviesti&quot; : 12345,
+      &quot;tila&quot; : { },
+      &quot;tilaaja&quot; : 12345,
+      &quot;tilaajaNimi&quot; : &quot;...&quot;,
+      &quot;tilaajayksikko&quot; : 12345,
+      &quot;tilaustunnus&quot; : &quot;...&quot;,
+      &quot;toistoloppuu&quot; : { },
+      &quot;toistovali&quot; : 12345,
+      &quot;tulkinta&quot; : &quot;...&quot;,
+      &quot;tuottaja&quot; : 12345,
+      &quot;tyonantaja&quot; : 12345,
+      &quot;vastaustietoja&quot; : &quot;...&quot;,
+      &quot;viitearvot&quot; : &quot;...&quot;,
+      &quot;kirjaaja&quot; : 12345,
+      &quot;tilaKoodi&quot; : &quot;...&quot;,
+      &quot;poikkeava&quot; : 12345,
+      &quot;mikrobit&quot; : [ { }, { } ]
+    } ],
+    &quot;kategoria&quot; : &quot;...&quot;,
+    &quot;latestTime&quot; : 12345
+  } ]
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_TutkimuspyyntoResource_acknowledgeTutkimuspyynto_PUT">
-        <h3><span class="resource-method">PUT</span> <span class="resource-path">/labs/{id}/acknowledge <a href="../api/v1labs/{id}/acknowledge" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/labs/{id}/acknowledge <a href="../api/v1/labs/{id}/acknowledge" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Acknowledge one or more laboratory results.
 If tutkimuspyyntoDTO is not valid, ValidationException is thrown.
 If tutkimuspyyntos in tutkimuspyyntoDTO are ordered by someone else than
 the current user, AccessDeniedException is thrown.</p>
 
-        <table class="table">
+        <table class="table resource-parameters">
           <caption>Request Parameters</caption>
           <thead>
           <tr>
@@ -142,15 +400,15 @@ the current user, AccessDeniedException is thrown.</p>
           </thead>
           <tbody>
           <tr>
-            <td>id</td>
+            <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td>Patient id</td>
-            <td>int</td>
+            <td><span class="parameter-description">Patient id</span></td>
+            <td><span class="parameter-constraints">int</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-request-body">
           <caption>Request Body</caption>
           <thead>
           <tr>
@@ -161,20 +419,20 @@ the current user, AccessDeniedException is thrown.</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server.">application/json</abbr></td>
-            <td><a href="json_Tutkimuspyynto.html">Tutkimuspyynto</a>
- (JSON)</td>
-            <td rowspan="2" class="multi-row-description">tutkimuspyyntoDTO</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_Tutkimuspyynto.html">Tutkimuspyynto</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">tutkimuspyyntoDTO</span></td>
           </tr>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server.">application/xml</abbr></td>
-            <td><a href="xml_ns0_tutkimuspyynto.html">tutkimuspyynto</a>
- (XML)</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_tutkimuspyynto.html">tutkimuspyynto</a>
+ (XML)</span></td>
           </tr>
           </tbody>
         </table>
 
-        <table class="table">
+        <table class="table resource-response-body">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -185,13 +443,199 @@ the current user, AccessDeniedException is thrown.</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server.">application/json</abbr></td>
-            <td>object
- (JSON)</td>
-            <td>response</td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td><span class="response-description">response</span></td>
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /labs/{id}/acknowledge
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;tutkimus&quot; : &quot;...&quot;,
+  &quot;tutkimuspyyntoTiedotList&quot; : [ {
+    &quot;pyynto&quot; : 12345,
+    &quot;rivi&quot; : 12345,
+    &quot;tutkimus&quot; : &quot;...&quot;,
+    &quot;versio&quot; : &quot;...&quot;,
+    &quot;hajautettu&quot; : &quot;...&quot;,
+    &quot;hoitojakso&quot; : 12345,
+    &quot;huomautuksia&quot; : &quot;...&quot;,
+    &quot;kontrolloitava&quot; : { },
+    &quot;korvausluokka&quot; : &quot;...&quot;,
+    &quot;kunta&quot; : 12345,
+    &quot;kustannuslinkki&quot; : 12345,
+    &quot;lisatietoja&quot; : &quot;...&quot;,
+    &quot;lomakelinkki&quot; : 12345,
+    &quot;maksaja&quot; : 12345,
+    &quot;mikrobitietoja&quot; : &quot;...&quot;,
+    &quot;muutosaika&quot; : 12345,
+    &quot;muutospaikka&quot; : 12345,
+    &quot;nayte&quot; : 12345,
+    &quot;naytetietoja&quot; : &quot;...&quot;,
+    &quot;numerotulos&quot; : 12345.0,
+    &quot;numeroyksikko&quot; : &quot;...&quot;,
+    &quot;osalinkki&quot; : 12345,
+    &quot;osasto&quot; : 12345,
+    &quot;ottoaika&quot; : 12345,
+    &quot;paketti&quot; : &quot;...&quot;,
+    &quot;piiri&quot; : 12345,
+    &quot;poistettu&quot; : &quot;...&quot;,
+    &quot;pyydetty&quot; : 12345,
+    &quot;sanallinenvastaus&quot; : &quot;...&quot;,
+    &quot;sijaintiosasto&quot; : &quot;...&quot;,
+    &quot;sijaintipaikka&quot; : &quot;...&quot;,
+    &quot;sisainenMaksaja&quot; : &quot;...&quot;,
+    &quot;suoritelinkki&quot; : 12345,
+    &quot;tehty&quot; : 12345,
+    &quot;tekopaikka&quot; : 12345,
+    &quot;tekstitulos&quot; : &quot;...&quot;,
+    &quot;tekstiviesti&quot; : 12345,
+    &quot;tila&quot; : { },
+    &quot;tilaaja&quot; : 12345,
+    &quot;tilaajaNimi&quot; : &quot;...&quot;,
+    &quot;tilaajayksikko&quot; : 12345,
+    &quot;tilaustunnus&quot; : &quot;...&quot;,
+    &quot;toistoloppuu&quot; : { },
+    &quot;toistovali&quot; : 12345,
+    &quot;tulkinta&quot; : &quot;...&quot;,
+    &quot;tuottaja&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;vastaustietoja&quot; : &quot;...&quot;,
+    &quot;viitearvot&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tilaKoodi&quot; : &quot;...&quot;,
+    &quot;poikkeava&quot; : 12345,
+    &quot;mikrobit&quot; : [ {
+      &quot;rivi&quot; : 12345,
+      &quot;mikrobi&quot; : &quot;...&quot;,
+      &quot;tutkimustyyppi&quot; : &quot;...&quot;,
+      &quot;maara&quot; : &quot;...&quot;,
+      &quot;numero&quot; : &quot;...&quot;,
+      &quot;kommentti&quot; : &quot;...&quot;,
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;herkkyydet&quot; : [ { }, { } ]
+    }, {
+      &quot;rivi&quot; : 12345,
+      &quot;mikrobi&quot; : &quot;...&quot;,
+      &quot;tutkimustyyppi&quot; : &quot;...&quot;,
+      &quot;maara&quot; : &quot;...&quot;,
+      &quot;numero&quot; : &quot;...&quot;,
+      &quot;kommentti&quot; : &quot;...&quot;,
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;herkkyydet&quot; : [ { }, { } ]
+    } ]
+  }, {
+    &quot;pyynto&quot; : 12345,
+    &quot;rivi&quot; : 12345,
+    &quot;tutkimus&quot; : &quot;...&quot;,
+    &quot;versio&quot; : &quot;...&quot;,
+    &quot;hajautettu&quot; : &quot;...&quot;,
+    &quot;hoitojakso&quot; : 12345,
+    &quot;huomautuksia&quot; : &quot;...&quot;,
+    &quot;kontrolloitava&quot; : { },
+    &quot;korvausluokka&quot; : &quot;...&quot;,
+    &quot;kunta&quot; : 12345,
+    &quot;kustannuslinkki&quot; : 12345,
+    &quot;lisatietoja&quot; : &quot;...&quot;,
+    &quot;lomakelinkki&quot; : 12345,
+    &quot;maksaja&quot; : 12345,
+    &quot;mikrobitietoja&quot; : &quot;...&quot;,
+    &quot;muutosaika&quot; : 12345,
+    &quot;muutospaikka&quot; : 12345,
+    &quot;nayte&quot; : 12345,
+    &quot;naytetietoja&quot; : &quot;...&quot;,
+    &quot;numerotulos&quot; : 12345.0,
+    &quot;numeroyksikko&quot; : &quot;...&quot;,
+    &quot;osalinkki&quot; : 12345,
+    &quot;osasto&quot; : 12345,
+    &quot;ottoaika&quot; : 12345,
+    &quot;paketti&quot; : &quot;...&quot;,
+    &quot;piiri&quot; : 12345,
+    &quot;poistettu&quot; : &quot;...&quot;,
+    &quot;pyydetty&quot; : 12345,
+    &quot;sanallinenvastaus&quot; : &quot;...&quot;,
+    &quot;sijaintiosasto&quot; : &quot;...&quot;,
+    &quot;sijaintipaikka&quot; : &quot;...&quot;,
+    &quot;sisainenMaksaja&quot; : &quot;...&quot;,
+    &quot;suoritelinkki&quot; : 12345,
+    &quot;tehty&quot; : 12345,
+    &quot;tekopaikka&quot; : 12345,
+    &quot;tekstitulos&quot; : &quot;...&quot;,
+    &quot;tekstiviesti&quot; : 12345,
+    &quot;tila&quot; : { },
+    &quot;tilaaja&quot; : 12345,
+    &quot;tilaajaNimi&quot; : &quot;...&quot;,
+    &quot;tilaajayksikko&quot; : 12345,
+    &quot;tilaustunnus&quot; : &quot;...&quot;,
+    &quot;toistoloppuu&quot; : { },
+    &quot;toistovali&quot; : 12345,
+    &quot;tulkinta&quot; : &quot;...&quot;,
+    &quot;tuottaja&quot; : 12345,
+    &quot;tyonantaja&quot; : 12345,
+    &quot;vastaustietoja&quot; : &quot;...&quot;,
+    &quot;viitearvot&quot; : &quot;...&quot;,
+    &quot;kirjaaja&quot; : 12345,
+    &quot;tilaKoodi&quot; : &quot;...&quot;,
+    &quot;poikkeava&quot; : 12345,
+    &quot;mikrobit&quot; : [ {
+      &quot;rivi&quot; : 12345,
+      &quot;mikrobi&quot; : &quot;...&quot;,
+      &quot;tutkimustyyppi&quot; : &quot;...&quot;,
+      &quot;maara&quot; : &quot;...&quot;,
+      &quot;numero&quot; : &quot;...&quot;,
+      &quot;kommentti&quot; : &quot;...&quot;,
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;herkkyydet&quot; : [ { }, { } ]
+    }, {
+      &quot;rivi&quot; : 12345,
+      &quot;mikrobi&quot; : &quot;...&quot;,
+      &quot;tutkimustyyppi&quot; : &quot;...&quot;,
+      &quot;maara&quot; : &quot;...&quot;,
+      &quot;numero&quot; : &quot;...&quot;,
+      &quot;kommentti&quot; : &quot;...&quot;,
+      &quot;poistettu&quot; : { },
+      &quot;muutosaika&quot; : 12345,
+      &quot;muutospaikka&quot; : 12345,
+      &quot;herkkyydet&quot; : [ { }, { } ]
+    } ]
+  } ],
+  &quot;kategoria&quot; : &quot;...&quot;,
+  &quot;latestTime&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -206,14 +650,14 @@ the current user, AccessDeniedException is thrown.</p>
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {
